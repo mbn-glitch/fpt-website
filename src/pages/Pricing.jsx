@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, ArrowRight, X, GitCompare, Info } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO.jsx';
 import Section, { Eyebrow, SectionHeader } from '../components/ui/Section.jsx';
 import Button from '../components/ui/Button.jsx';
@@ -15,7 +16,14 @@ import {
   formatSize,
 } from '../data/pricing.js';
 
+const TAB_KEY_MAP = {
+  '2-step': 'pricing.tabs.twoStep',
+  '1-step': 'pricing.tabs.oneStep',
+  'instant': 'pricing.tabs.instant',
+};
+
 export default function Pricing() {
+  const { t } = useTranslation();
   const [typeId, setTypeId] = useState('2-step');
   const [sizeIdx, setSizeIdx] = useState(3); // default $50K
   const [currency, setCurrency] = useState('USD');
@@ -23,7 +31,11 @@ export default function Pricing() {
 
   const size = ACCOUNT_SIZES[sizeIdx];
   const fee = calcFee(size, currency, typeId);
-  const type = CHALLENGE_TYPES.find((t) => t.id === typeId);
+  const type = CHALLENGE_TYPES.find((ct) => ct.id === typeId);
+
+  const titleParts = t('pricing.title').split(' ');
+  const titleLine1 = titleParts.slice(0, Math.ceil(titleParts.length / 2)).join(' ');
+  const titleLine2 = titleParts.slice(Math.ceil(titleParts.length / 2)).join(' ');
 
   return (
     <>
@@ -41,18 +53,21 @@ export default function Pricing() {
         <div className="relative max-w-5xl mx-auto px-6 sm:px-8 text-center">
           <Eyebrow dot>One-time entry. No retry.</Eyebrow>
           <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-semibold leading-[1] tracking-tight">
-            Choose the size.
+            {titleLine1}
             <br />
-            <span className="gradient-text">Match the conviction.</span>
+            <span className="gradient-text">{titleLine2}</span>
           </h1>
           <p className="mt-8 text-lg text-secondary max-w-2xl mx-auto leading-relaxed">
-            Account sizes from $5K to $200K. Three challenge structures.
-            Transparent terms.
+            {t('pricing.subtitle')}
           </p>
 
           {/* Info badges */}
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            {['One-time fee', 'Non-refundable', 'No retry included'].map((b) => (
+            {[
+              t('pricing.badges.oneTime'),
+              t('pricing.badges.nonRefundable'),
+              t('pricing.badges.noRetry'),
+            ].map((b) => (
               <span
                 key={b}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-subtle bg-white/5 text-sm text-secondary"
@@ -70,17 +85,17 @@ export default function Pricing() {
         <div className="bg-[#0A0A0A] border border-subtle rounded-3xl p-6 sm:p-10">
           {/* Tabs */}
           <div className="grid sm:grid-cols-3 gap-2 p-1 rounded-full bg-black/60 border border-subtle">
-            {CHALLENGE_TYPES.map((t) => (
+            {CHALLENGE_TYPES.map((ct) => (
               <button
-                key={t.id}
-                onClick={() => setTypeId(t.id)}
+                key={ct.id}
+                onClick={() => setTypeId(ct.id)}
                 className={`px-5 py-3 rounded-full text-sm font-medium transition-all ${
-                  typeId === t.id
+                  typeId === ct.id
                     ? 'gradient-red text-white btn-red-glow'
                     : 'text-secondary hover:text-white'
                 }`}
               >
-                {t.label}
+                {TAB_KEY_MAP[ct.id] ? t(TAB_KEY_MAP[ct.id]) : ct.label}
               </button>
             ))}
           </div>
@@ -94,7 +109,7 @@ export default function Pricing() {
                 <div className="flex items-end justify-between">
                   <div>
                     <div className="text-xs uppercase tracking-[0.18em] text-tertiary">
-                      Account size
+                      {t('pricing.accountSize')}
                     </div>
                     <div className="mt-2 text-5xl sm:text-6xl font-semibold font-mono-num gradient-text leading-none">
                       {formatSize(size)}
@@ -135,7 +150,7 @@ export default function Pricing() {
               {/* Currency switcher */}
               <div className="mt-10">
                 <div className="text-xs uppercase tracking-[0.18em] text-tertiary mb-3">
-                  Display currency
+                  {t('pricing.currency')}
                 </div>
                 <div className="inline-flex p-1 rounded-full bg-black/60 border border-subtle">
                   {Object.keys(CURRENCIES).map((c) => (
@@ -196,7 +211,7 @@ export default function Pricing() {
                       onClick={() => setCompareOpen(true)}
                       className="w-full h-11 inline-flex items-center justify-center gap-2 text-sm text-secondary hover:text-white border border-subtle rounded-full transition-colors"
                     >
-                      <GitCompare size={14} /> Compare two plans
+                      <GitCompare size={14} /> {t('pricing.compare.button')}
                     </button>
                   </div>
                 </div>
@@ -283,6 +298,7 @@ function FeatureRow({ k, v, highlight = false }) {
 }
 
 function ProfitCalculator({ size, currency }) {
+  const { t } = useTranslation();
   const [perf, setPerf] = useState(5);
 
   const monthlyProfit = size * (perf / 100);
@@ -295,12 +311,12 @@ function ProfitCalculator({ size, currency }) {
       <div className="text-xs uppercase tracking-[0.18em] text-[#D4AF37]">
         Project your earnings
       </div>
-      <h3 className="mt-2 text-2xl font-semibold">Your monthly share</h3>
+      <h3 className="mt-2 text-2xl font-semibold">{t('pricing.calculator.title')}</h3>
 
       <div className="mt-6">
         <div className="flex items-center justify-between">
-          <span className="text-sm text-secondary">Estimated monthly performance</span>
-          <span className="font-mono-num text-white">{perf}%</span>
+          <span className="text-sm text-secondary">{t('pricing.calculator.performance')}</span>
+          <span className="font-mono-num text-white" dir="ltr">{perf}%</span>
         </div>
         <input
           type="range"
@@ -319,13 +335,13 @@ function ProfitCalculator({ size, currency }) {
 
       <div className="mt-8 pt-6 border-t border-[#D4AF37]/20">
         <div className="text-xs uppercase tracking-wider text-tertiary">
-          Projected monthly share (80%)
+          {t('pricing.calculator.output')}
         </div>
-        <div className="mt-2 text-4xl sm:text-5xl font-semibold font-mono-num text-[#D4AF37]">
+        <div className="mt-2 text-4xl sm:text-5xl font-semibold font-mono-num text-[#D4AF37]" dir="ltr">
           {formatCurrency(shareLocal, currency)}
         </div>
         <p className="mt-3 text-[11px] italic text-tertiary leading-relaxed">
-          Projections only. Past performance does not guarantee future results.
+          {t('pricing.calculator.disclaimer')}
         </p>
       </div>
     </div>
@@ -333,6 +349,7 @@ function ProfitCalculator({ size, currency }) {
 }
 
 function CompareModal({ onClose, currency }) {
+  const { t } = useTranslation();
   const [a, setA] = useState({ type: '2-step', sizeIdx: 2 });
   const [b, setB] = useState({ type: '1-step', sizeIdx: 3 });
 
@@ -364,7 +381,7 @@ function CompareModal({ onClose, currency }) {
         </button>
 
         <Eyebrow>Plan comparison</Eyebrow>
-        <h2 className="mt-3 text-3xl sm:text-4xl font-semibold">Side by side.</h2>
+        <h2 className="mt-3 text-3xl sm:text-4xl font-semibold">{t('pricing.compare.title')}</h2>
 
         <div className="mt-10 grid md:grid-cols-2 gap-5">
           <PlanPicker label="Plan A" state={a} setState={setA} plan={planA} currency={currency} />

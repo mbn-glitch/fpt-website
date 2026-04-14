@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import {
   Target, TrendingDown, AlertTriangle, Calendar, Clock, Zap, Users, CalendarCheck, ArrowRight,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO.jsx';
 import Section, { Eyebrow, SectionHeader } from '../components/ui/Section.jsx';
 import Button from '../components/ui/Button.jsx';
@@ -9,21 +10,27 @@ import WaveBg from '../components/ui/WaveBg.jsx';
 import { CHALLENGE_TYPES } from '../data/pricing.js';
 
 const RULES = [
-  { icon: Target, label: 'Profit Target', value: '10%' },
-  { icon: TrendingDown, label: 'Daily Drawdown', value: '5%' },
-  { icon: AlertTriangle, label: 'Max Drawdown', value: '9%' },
-  { icon: Calendar, label: 'Minimum Trading Days', value: '5 (Phase 1)' },
-  { icon: CalendarCheck, label: 'Funded Minimum Days', value: '10' },
-  { icon: Clock, label: 'Time Limit', value: 'Yes (during evaluation)' },
-  { icon: Zap, label: 'Leverage', value: 'Up to 1:100' },
-  { icon: Users, label: 'Max Accounts per Trader', value: '10' },
+  { icon: Target, key: 'profitTarget', value: '10%' },
+  { icon: TrendingDown, key: 'dailyDrawdown', value: '5%' },
+  { icon: AlertTriangle, key: 'maxDrawdown', value: '9%' },
+  { icon: Calendar, key: 'minDaysPhase1', value: '5 (Phase 1)' },
+  { icon: CalendarCheck, key: 'minDaysFunded', value: '10' },
+  { icon: Clock, key: 'timeLimit', valueKey: 'timeLimitValue' },
+  { icon: Zap, key: 'leverage', valueKey: 'leverageValue' },
+  { icon: Users, key: 'maxAccounts', value: '10' },
 ];
 
 export default function Challenges() {
+  const { t } = useTranslation();
+
+  const titleParts = t('challenges.title').split('. ');
+  const line1 = titleParts[0] + (titleParts.length > 1 ? '.' : '');
+  const line2 = titleParts.slice(1).join('. ');
+
   return (
     <>
       <SEO
-        title="Challenges"
+        title={t('nav.challenges')}
         path="/challenges"
         description="Three structured evaluation paths to a funded FPT account. Clear rules, transparent drawdowns, cTrader execution, up to 1:100 leverage."
         keywords="prop trading challenge, 1-step challenge, 2-step evaluation, funded trader evaluation, FPT challenges"
@@ -36,13 +43,12 @@ export default function Challenges() {
         <div className="relative max-w-5xl mx-auto px-6 sm:px-8 text-center">
           <Eyebrow dot>The Evaluation</Eyebrow>
           <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold leading-[0.98] tracking-tight">
-            Prove the edge.
+            {line1}
             <br />
-            <span className="gradient-text">Earn the capital.</span>
+            <span className="gradient-text">{line2}</span>
           </h1>
           <p className="mt-8 text-lg sm:text-xl text-secondary max-w-2xl mx-auto leading-relaxed">
-            Three structured paths. One outcome — a funded account backed
-            by Fiper Global infrastructure.
+            {t('challenges.subtitle')}
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Button href="https://crm.fptraders.com/register" external size="lg">
@@ -63,9 +69,9 @@ export default function Challenges() {
         />
 
         <div className="mt-16 grid lg:grid-cols-3 gap-5">
-          {CHALLENGE_TYPES.map((t, i) => (
+          {CHALLENGE_TYPES.map((ct, i) => (
             <motion.div
-              key={t.id}
+              key={ct.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
@@ -82,17 +88,17 @@ export default function Challenges() {
                     Default
                   </span>
                 )}
-                <h3 className="text-2xl font-semibold">{t.label}</h3>
-                <p className="mt-3 text-sm text-secondary leading-relaxed">{t.subtitle}</p>
+                <h3 className="text-2xl font-semibold">{ct.label}</h3>
+                <p className="mt-3 text-sm text-secondary leading-relaxed">{ct.subtitle}</p>
                 <div className="mt-6 pt-6 border-t border-subtle space-y-2.5 text-sm">
-                  <Row k="Profit Target" v="10%" />
+                  <Row k={t('challenges.rules.profitTarget')} v="10%" />
                   <Row k="Max Daily Loss" v="5%" />
                   <Row k="Max Loss" v="9%" />
                   <Row k="Profit Share" v="80%" />
                 </div>
                 <div className="mt-8">
                   <Button to="/pricing" variant={i === 0 ? 'primary' : 'ghost'} className="w-full">
-                    Configure {t.label}
+                    Configure {ct.label}
                   </Button>
                 </div>
               </div>
@@ -112,14 +118,18 @@ export default function Challenges() {
         <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {RULES.map((r) => (
             <div
-              key={r.label}
+              key={r.key}
               className="bg-card border border-subtle rounded-xl p-6 hover:border-white/15 transition-colors"
             >
               <div className="w-10 h-10 rounded-lg bg-white/5 border border-subtle flex items-center justify-center">
                 <r.icon size={18} className="text-[#F42821]" />
               </div>
-              <div className="mt-5 text-xs uppercase tracking-wider text-tertiary">{r.label}</div>
-              <div className="mt-1 text-base font-semibold font-mono-num text-white">{r.value}</div>
+              <div className="mt-5 text-xs uppercase tracking-wider text-tertiary">
+                {t(`challenges.rules.${r.key}`)}
+              </div>
+              <div className="mt-1 text-base font-semibold font-mono-num text-white" dir="ltr">
+                {r.valueKey ? t(`challenges.rules.${r.valueKey}`) : r.value}
+              </div>
             </div>
           ))}
         </div>
@@ -128,8 +138,7 @@ export default function Challenges() {
         <div className="mt-10 flex items-start gap-4 rounded-xl border border-[#D4AF37]/25 bg-[#D4AF37]/5 p-6 max-w-4xl">
           <AlertTriangle size={20} className="text-[#D4AF37] shrink-0 mt-0.5" />
           <p className="text-sm text-secondary leading-relaxed">
-            Trading conditions vary by instrument and live market context.
-            The rules above govern the evaluation; the dashboard reflects the live state.
+            {t('challenges.note')}
           </p>
         </div>
       </Section>
@@ -146,7 +155,7 @@ export default function Challenges() {
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Button href="https://crm.fptraders.com/register" external size="lg">
-              Get Started
+              {t('challenges.cta')}
             </Button>
             <Button href="https://crm.fptraders.com/login" external variant="ghost" size="lg">
               Sign In

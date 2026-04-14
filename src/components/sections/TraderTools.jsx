@@ -1,5 +1,6 @@
 import { Sparkles, Trophy } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Section, { SectionHeader } from '../ui/Section.jsx';
 
 const LEADERS = [
@@ -10,11 +11,13 @@ const LEADERS = [
 ];
 
 export default function TraderTools() {
+  const { t } = useTranslation();
   return (
     <Section>
       <SectionHeader
         eyebrow="Intelligence layer"
-        title="The tools serious traders compound with."
+        title={t('traderTools.title')}
+        subtitle={t('traderTools.subtitle')}
       />
 
       <div className="mt-16 grid lg:grid-cols-2 gap-6">
@@ -36,11 +39,10 @@ export default function TraderTools() {
               AI Performance Analysis
             </div>
             <h3 className="mt-3 text-3xl font-semibold leading-tight">
-              Your trading patterns. Surfaced.
+              {t('traderTools.ai.title')}
             </h3>
             <p className="mt-4 text-secondary leading-relaxed">
-              An AI layer that reads your trade history, identifies behavioral patterns,
-              and surfaces what's working — and what's quietly draining your edge.
+              {t('traderTools.ai.desc')}
             </p>
 
             {/* Mockup */}
@@ -97,11 +99,10 @@ export default function TraderTools() {
               Trader Leaderboard
             </div>
             <h3 className="mt-3 text-3xl font-semibold leading-tight">
-              Where you stand. In real time.
+              {t('traderTools.leaderboard.title')}
             </h3>
             <p className="mt-4 text-secondary leading-relaxed">
-              A live ranking of FPT-funded traders by risk-adjusted return.
-              Compete, learn, and benchmark against the top of the global cohort.
+              {t('traderTools.leaderboard.desc')}
             </p>
 
             {/* Leaderboard mockup */}
@@ -121,8 +122,8 @@ export default function TraderTools() {
                     <span className="text-base">{l.country}</span>
                     <span className="text-white">{l.name}</span>
                   </span>
-                  <span className="text-end font-mono-num text-[#10B981]">{l.ret}</span>
-                  <span className="text-end font-mono-num text-white">{l.sharpe}</span>
+                  <span dir="ltr" className="text-end font-mono-num text-[#10B981]">{l.ret}</span>
+                  <span dir="ltr" className="text-end font-mono-num text-white">{l.sharpe}</span>
                 </div>
               ))}
             </div>

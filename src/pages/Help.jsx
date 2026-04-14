@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { localizedPath } from '../hooks/useLocalizedPath.js';
 import SEO from '../components/SEO.jsx';
 import Section, { SectionHeader } from '../components/ui/Section.jsx';
 import Button from '../components/ui/Button.jsx';
@@ -20,6 +22,7 @@ import {
 const REGISTER = 'https://crm.fptraders.com/register';
 
 export default function Help() {
+  const { i18n } = useTranslation();
   const popular = getPopularFaqs();
 
   return (
@@ -62,7 +65,7 @@ export default function Help() {
             return (
               <Link
                 key={f.id}
-                to={`/help/${cat.slug}#${f.id}`}
+                to={localizedPath(`/help/${cat.slug}#${f.id}`, i18n.language)}
                 className="group relative block rounded-2xl p-7 bg-[#141414] border border-subtle hover:border-[#F42821]/40 transition-all hover:-translate-y-0.5"
               >
                 <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#FCA5A5]">

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Section, { SectionHeader } from '../ui/Section.jsx';
 
 const FEATURES = [
@@ -10,12 +11,13 @@ const FEATURES = [
 ];
 
 export default function Platforms() {
+  const { t } = useTranslation();
   return (
     <Section>
       <SectionHeader
         eyebrow="Execute where you're fastest"
-        title="One platform. Engineered for precision."
-        subtitle="We support cTrader — a terminal built from the ground up for serious order flow. Not a port, not a fork. Native."
+        title={t('platforms.title')}
+        subtitle={t('platforms.subtitle')}
       />
 
       <motion.div
@@ -89,7 +91,7 @@ export default function Platforms() {
 function Metric({ value, label }) {
   return (
     <div>
-      <div className="text-2xl sm:text-3xl font-semibold font-mono-num gradient-text leading-none">
+      <div dir="ltr" className="text-2xl sm:text-3xl font-semibold font-mono-num gradient-text leading-none">
         {value}
       </div>
       <div className="mt-2 text-[10px] uppercase tracking-[0.18em] text-tertiary">

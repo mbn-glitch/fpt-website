@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { localizedPath } from '../../hooks/useLocalizedPath.js';
 
 const base =
   'inline-flex items-center justify-center gap-2 font-medium transition-all duration-200 rounded-full whitespace-nowrap';
@@ -30,10 +32,11 @@ export default function Button({
   ...props
 }) {
   const cls = `${base} ${sizes[size]} ${variants[variant]} ${className}`;
+  const { i18n } = useTranslation();
 
   if (to) {
     return (
-      <Link to={to} className={cls} {...props}>
+      <Link to={localizedPath(to, i18n.language)} className={cls} {...props}>
         {children}
       </Link>
     );

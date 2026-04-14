@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { LayoutDashboard, TrendingUp, TrendingDown, Activity, Wallet, Gauge, Settings } from 'lucide-react';
 import Section, { SectionHeader } from '../ui/Section.jsx';
 
@@ -27,14 +28,15 @@ const SIDEBAR_ITEMS = [
 ];
 
 export default function DashboardPreview() {
+  const { t } = useTranslation();
   return (
     <Section className="relative overflow-hidden">
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] radial-red opacity-50 pointer-events-none" />
 
       <SectionHeader
         eyebrow="The trader cockpit"
-        title="Built for traders who measure twice."
-        subtitle="Real-time P&L. Risk-adjusted metrics. Position-level transparency. A dashboard you'd expect from an institutional desk."
+        title={t('dashboardPreview.title')}
+        subtitle={t('dashboardPreview.subtitle')}
         center
         className="mx-auto"
       />
@@ -147,8 +149,8 @@ export default function DashboardPreview() {
                     <span className="text-[10px] uppercase tracking-wider text-tertiary">{m.label}</span>
                     <m.icon size={12} className="text-tertiary" />
                   </div>
-                  <div className="mt-1.5 text-lg font-semibold font-mono-num">{m.value}</div>
-                  <div className={`text-[11px] font-mono-num ${m.up ? 'text-[#10B981]' : 'text-[#F42821]'}`}>
+                  <div dir="ltr" className="mt-1.5 text-lg font-semibold font-mono-num">{m.value}</div>
+                  <div dir="ltr" className={`text-[11px] font-mono-num ${m.up ? 'text-[#10B981]' : 'text-[#F42821]'}`}>
                     {m.up ? '▲' : '▼'} {m.sub}
                   </div>
                 </div>
@@ -157,7 +159,7 @@ export default function DashboardPreview() {
 
             <div className="mt-4 rounded-lg border border-[#F42821]/30 bg-[#F42821]/5 p-3">
               <div className="text-[10px] uppercase tracking-wider text-[#FCA5A5]">Sharpe Ratio</div>
-              <div className="text-xl font-semibold font-mono-num mt-1">1.87</div>
+              <div dir="ltr" className="text-xl font-semibold font-mono-num mt-1">1.87</div>
               <div className="text-[10px] text-secondary mt-1">Above institutional threshold.</div>
             </div>
           </aside>

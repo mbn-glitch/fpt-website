@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import {
   Mail,
   MessageSquare,
@@ -58,10 +59,11 @@ const TOPICS = [
 ];
 
 export default function Contact() {
+  const { t } = useTranslation();
   return (
     <>
       <SEO
-        title="Contact"
+        title={t('contact.title')}
         path="/contact"
         description="Reach the FPT team directly. Trader support, institutional partnerships, press. Typical reply under 4 hours."
         keywords="FPT contact, Fiper Pro Traders support, prop firm contact"
@@ -74,13 +76,10 @@ export default function Contact() {
         <div className="relative max-w-5xl mx-auto px-6 sm:px-8 text-center">
           <Eyebrow dot>Get in touch</Eyebrow>
           <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold leading-[0.98] tracking-tight">
-            Direct lines.
-            <br />
-            <span className="gradient-text">Real responses.</span>
+            <span className="gradient-text">{t('contact.title')}</span>
           </h1>
           <p className="mt-8 text-lg sm:text-xl text-secondary max-w-2xl mx-auto leading-relaxed">
-            Whether you are mid-evaluation, scaling a desk, or writing
-            about the industry — one of these channels is the right one.
+            {t('contact.subtitle')}
           </p>
 
           <div className="mt-10 flex flex-wrap justify-center gap-3 text-sm text-secondary">
@@ -208,6 +207,7 @@ export default function Contact() {
 }
 
 function WhatsAppCard() {
+  const { t } = useTranslation();
   return (
     <motion.a
       href={WHATSAPP_URL}
@@ -238,15 +238,15 @@ function WhatsAppCard() {
           <div>
             <div className="flex items-center gap-3">
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#4ADE80]">
-                WhatsApp Support
+                {t('contact.whatsapp.title')}
               </span>
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#25D366]/15 border border-[#25D366]/30 text-[10px] font-semibold uppercase tracking-wider text-[#4ADE80]">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#4ADE80] animate-pulse-dot" />
-                24/7 Available
+                {t('contact.whatsapp.badge')}
               </span>
             </div>
             <h3 className="mt-2 text-2xl sm:text-3xl font-semibold leading-tight">
-              Chat with our support team instantly.
+              {t('contact.whatsapp.desc')}
             </h3>
             <div className="mt-3 font-mono-num text-white text-lg tracking-wide">
               {WHATSAPP_PHONE}
@@ -263,7 +263,7 @@ function WhatsAppCard() {
             }}
           >
             <WhatsAppIcon size={18} />
-            Start Chat
+            {t('contact.whatsapp.cta')}
             <ArrowRight size={16} />
           </span>
         </div>
@@ -293,6 +293,7 @@ function InfoBlock({ label, value }) {
 }
 
 function ContactForm() {
+  const { t } = useTranslation();
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -353,7 +354,7 @@ function ContactForm() {
       </h2>
 
       <div className="mt-8 grid sm:grid-cols-2 gap-4">
-        <Field label="Your name">
+        <Field label={t('contact.form.name')}>
           <input
             type="text"
             value={form.name}
@@ -363,7 +364,7 @@ function ContactForm() {
             className="input"
           />
         </Field>
-        <Field label="Email">
+        <Field label={t('contact.form.email')}>
           <input
             type="email"
             value={form.email}
@@ -376,7 +377,7 @@ function ContactForm() {
       </div>
 
       <div className="mt-5">
-        <Field label="What's this about?">
+        <Field label={t('contact.form.subject')}>
           <div className="flex flex-wrap gap-2">
             {TOPICS.map((t) => (
               <button
@@ -397,7 +398,7 @@ function ContactForm() {
       </div>
 
       <div className="mt-5">
-        <Field label="Message">
+        <Field label={t('contact.form.message')}>
           <textarea
             value={form.message}
             onChange={update('message')}
@@ -421,7 +422,7 @@ function ContactForm() {
         >
           {status === 'sending' ? 'Sending…' : (
             <>
-              Send message <Send size={16} />
+              {t('contact.form.submit')} <Send size={16} />
             </>
           )}
         </button>

@@ -1,32 +1,35 @@
 import { CheckCircle2, Globe2, CreditCard, Layers, AlertTriangle, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Section, { SectionHeader } from '../ui/Section.jsx';
 import Button from '../ui/Button.jsx';
 
-const FEATURES = [
-  {
-    icon: CheckCircle2,
-    title: 'Settled. Not pending.',
-    body: 'Approved profits land on your card. No multi-day clearing windows.',
-  },
-  {
-    icon: Globe2,
-    title: 'Spend anywhere VISA is accepted',
-    body: 'Online, in-store, across 200+ countries and territories.',
-  },
-  {
-    icon: CreditCard,
-    title: 'Virtual or physical, on your terms',
-    body: 'Issue a virtual card in seconds. Order a physical one when you need it.',
-  },
-  {
-    icon: Layers,
-    title: 'Native to the Fiper ecosystem',
-    body: 'Your trading account, your card, your CRM — one identity, one infrastructure.',
-  },
-];
-
 export default function FPTCard() {
+  const { t } = useTranslation();
+
+  const FEATURES = [
+    {
+      icon: CheckCircle2,
+      title: t('fptCard.features.instant.title'),
+      body: t('fptCard.features.instant.desc'),
+    },
+    {
+      icon: Globe2,
+      title: t('fptCard.features.global.title'),
+      body: t('fptCard.features.global.desc'),
+    },
+    {
+      icon: CreditCard,
+      title: t('fptCard.features.virtual.title'),
+      body: t('fptCard.features.virtual.desc'),
+    },
+    {
+      icon: Layers,
+      title: t('fptCard.features.integrated.title'),
+      body: t('fptCard.features.integrated.desc'),
+    },
+  ];
+
   return (
     <Section className="bg-[#0A0A0A] relative overflow-hidden">
       <div className="absolute -top-40 -right-40 w-[600px] h-[600px] radial-red opacity-40 pointer-events-none" />
@@ -35,13 +38,13 @@ export default function FPTCard() {
         <div>
           <SectionHeader
             eyebrow="Profits to your pocket"
-            title={<>The Fiper Card.</>}
-            subtitle="Move your earnings from screen to spend in one motion. Virtual or physical. Issued exclusively for FPT traders through the Fiper Global ecosystem."
+            title={t('fptCard.title')}
+            subtitle={t('fptCard.subtitle')}
           />
 
           <div className="mt-8">
             <Button href="https://fiper-landing-page.vercel.app/" external size="lg">
-              Explore the Fiper Card <ArrowRight size={18} />
+              {t('fptCard.cta')} <ArrowRight size={18} />
             </Button>
           </div>
         </div>
@@ -114,8 +117,7 @@ export default function FPTCard() {
       <div className="mt-10 flex items-start gap-4 rounded-xl border border-[#D4AF37]/25 bg-[#D4AF37]/5 p-5">
         <AlertTriangle size={20} className="text-[#D4AF37] shrink-0 mt-0.5" />
         <p className="text-sm text-secondary leading-relaxed">
-          Profit withdrawals follow internal approval and payout schedules.
-          Card eligibility depends on account status.
+          {t('fptCard.note1')} {t('fptCard.note2')}
         </p>
       </div>
     </Section>

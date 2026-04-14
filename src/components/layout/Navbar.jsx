@@ -1,17 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
 import Logo from '../brand/Logo.jsx';
 import Button from '../ui/Button.jsx';
-
-const LINKS = [
-  { label: 'Challenges', to: '/challenges' },
-  { label: 'Pricing', to: '/pricing' },
-  { label: 'How It Works', to: '/#how-it-works', hash: true },
-  { label: 'Ecosystem', to: '/#ecosystem', hash: true },
-  { label: 'About', to: '/about' },
-  { label: 'Help', to: '/help' },
-];
+import LanguageSwitcher from '../ui/LanguageSwitcher.jsx';
+import { localizedPath } from '../../hooks/useLocalizedPath.js';
 
 const REGISTER = 'https://crm.fptraders.com/register';
 const LOGIN = 'https://crm.fptraders.com/login';
@@ -19,6 +13,17 @@ const LOGIN = 'https://crm.fptraders.com/login';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language;
+
+  const LINKS = [
+    { label: t('nav.challenges'), to: '/challenges' },
+    { label: t('nav.pricing'), to: '/pricing' },
+    { label: t('nav.howItWorks'), to: '/#how-it-works', hash: true },
+    { label: t('nav.ecosystem'), to: '/#ecosystem', hash: true },
+    { label: t('nav.about'), to: '/about' },
+    { label: 'Help', to: '/help' },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -34,12 +39,12 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between gap-6">
-        <Link to="/" className="flex items-center gap-3 shrink-0" aria-label="Fiper Pro Traders home">
+        <Link to={localizedPath('/', lang)} className="flex items-center gap-3 shrink-0" aria-label="Fiper Pro Traders home">
           <Logo variant="icon" size={38} />
           <div className="flex flex-col leading-none">
             <span className="text-[15px] font-semibold tracking-tight">Fiper Pro Traders</span>
             <span className="text-[9px] font-medium uppercase tracking-[0.2em] text-tertiary mt-1">
-              Part of Fiper Global
+              {t('nav.partOfFiperGlobal')}
             </span>
           </div>
         </Link>
@@ -49,7 +54,7 @@ export default function Navbar() {
             l.hash ? (
               <li key={l.label}>
                 <a
-                  href={l.to}
+                  href={localizedPath(l.to, lang)}
                   className="px-4 py-2 text-sm text-secondary hover:text-white transition-colors"
                 >
                   {l.label}
@@ -58,7 +63,7 @@ export default function Navbar() {
             ) : (
               <li key={l.label}>
                 <NavLink
-                  to={l.to}
+                  to={localizedPath(l.to, lang)}
                   className={({ isActive }) =>
                     `px-4 py-2 text-sm transition-colors ${
                       isActive ? 'text-white' : 'text-secondary hover:text-white'
@@ -73,26 +78,30 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden lg:flex items-center gap-3">
+          <LanguageSwitcher />
           <a
             href={LOGIN}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-secondary hover:text-white transition-colors"
           >
-            Sign In
+            {t('nav.login')}
           </a>
           <Button href={REGISTER} external size="sm">
-            Get Started
+            {t('nav.startChallenge')}
           </Button>
         </div>
 
-        <button
-          className="lg:hidden p-2 text-white"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex lg:hidden items-center gap-2">
+          <LanguageSwitcher compact />
+          <button
+            className="p-2 text-white"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </nav>
 
       {open && (
@@ -102,7 +111,7 @@ export default function Navbar() {
               l.hash ? (
                 <a
                   key={l.label}
-                  href={l.to}
+                  href={localizedPath(l.to, lang)}
                   onClick={() => setOpen(false)}
                   className="py-3 text-base text-secondary hover:text-white"
                 >
@@ -111,7 +120,7 @@ export default function Navbar() {
               ) : (
                 <NavLink
                   key={l.label}
-                  to={l.to}
+                  to={localizedPath(l.to, lang)}
                   onClick={() => setOpen(false)}
                   className="py-3 text-base text-secondary hover:text-white"
                 >
@@ -126,10 +135,10 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 className="text-center py-3 text-sm text-secondary border border-subtle rounded-full"
               >
-                Sign In
+                {t('nav.login')}
               </a>
               <Button href={REGISTER} external size="md">
-                Get Started
+                {t('nav.startChallenge')}
               </Button>
             </div>
           </div>

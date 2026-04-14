@@ -1,25 +1,30 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Star } from 'lucide-react';
 import Logo from '../brand/Logo.jsx';
+import { localizedPath } from '../../hooks/useLocalizedPath.js';
 
 const LEGAL_URL = 'https://fiper.me/legal-documentation';
 const SOCIAL_URL = 'https://linktr.ee/fiper';
 
 export default function Footer() {
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language;
+
   return (
     <footer className="relative bg-[#0A0A0A] border-t border-subtle pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
           <div className="col-span-2 md:col-span-1">
-            <Link to="/" className="flex items-center gap-3">
+            <Link to={localizedPath('/', lang)} className="flex items-center gap-3">
               <Logo variant="icon" size={44} />
               <span className="text-base font-semibold">Fiper Pro Traders</span>
             </Link>
             <p className="mt-5 text-sm text-secondary leading-relaxed">
-              Engineered for Fast, Smart Trading.
+              {t('footer.tagline')}
             </p>
             <p className="mt-2 text-xs italic text-tertiary">
-              A division of Fiper Global.
+              {t('footer.partOf')}
             </p>
             <a
               href={SOCIAL_URL}
@@ -31,50 +36,50 @@ export default function Footer() {
             </a>
           </div>
 
-          <FooterCol title="Products">
-            <FooterLink to="/challenges">
-              <LinkLabel emoji="🔥">FPT Challenges</LinkLabel>
+          <FooterCol title={t('footer.products')}>
+            <FooterLink to={localizedPath('/challenges', lang)}>
+              <LinkLabel emoji="🔥">{t('footer.links.challenges')}</LinkLabel>
             </FooterLink>
-            <FooterLink to="/pricing">Pricing</FooterLink>
-            <FooterLink href="https://fiper-landing-page.vercel.app" external>Fiper Card</FooterLink>
+            <FooterLink to={localizedPath('/pricing', lang)}>{t('footer.links.pricing')}</FooterLink>
+            <FooterLink href="https://fiper-landing-page.vercel.app" external>{t('footer.links.fiperCard')}</FooterLink>
           </FooterCol>
 
-          <FooterCol title="Fiper Global">
+          <FooterCol title={t('footer.fiperGlobal')}>
             <FooterLink href="https://linktr.ee/fiper" external>
-              <LinkLabel emoji="🏦">About Fiper Global</LinkLabel>
+              <LinkLabel emoji="🏦">{t('footer.links.aboutFiperGlobal')}</LinkLabel>
             </FooterLink>
             <FooterLink href="https://fiper-landing-page.vercel.app" external>
-              <LinkLabel emoji="🏧">Fiper Card</LinkLabel>
+              <LinkLabel emoji="🏧">{t('footer.links.fiperCard')}</LinkLabel>
             </FooterLink>
             <FooterLink href="https://crm.fiper.me/login" external>
-              <LinkLabel emoji="🌐">Fiper CRM</LinkLabel>
+              <LinkLabel emoji="🌐">{t('footer.links.fiperCRM')}</LinkLabel>
             </FooterLink>
-            <FooterLink to="/help">
-              <LinkLabel emoji="🔘">Help Center</LinkLabel>
+            <FooterLink to={localizedPath('/help', lang)}>
+              <LinkLabel emoji="🔘">{t('footer.links.helpCenter')}</LinkLabel>
             </FooterLink>
-            <FooterLink href="https://linktr.ee/fiper" external>Fiper Global</FooterLink>
+            <FooterLink href="https://linktr.ee/fiper" external>{t('footer.links.fiperGlobalSite')}</FooterLink>
           </FooterCol>
 
-          <FooterCol title="Legal">
-            <FooterLink href={LEGAL_URL} external>Terms of Service</FooterLink>
-            <FooterLink href={LEGAL_URL} external>Privacy Policy</FooterLink>
-            <FooterLink href={LEGAL_URL} external>Cookie Policy</FooterLink>
-            <FooterLink href={LEGAL_URL} external>Refund Policy</FooterLink>
-            <FooterLink href={LEGAL_URL} external>Risk Disclosure</FooterLink>
+          <FooterCol title={t('footer.legal')}>
+            <FooterLink href={LEGAL_URL} external>{t('footer.links.terms')}</FooterLink>
+            <FooterLink href={LEGAL_URL} external>{t('footer.links.privacy')}</FooterLink>
+            <FooterLink href={LEGAL_URL} external>{t('footer.links.cookies')}</FooterLink>
+            <FooterLink href={LEGAL_URL} external>{t('footer.links.refund')}</FooterLink>
+            <FooterLink href={LEGAL_URL} external>{t('footer.links.risk')}</FooterLink>
           </FooterCol>
         </div>
 
         <div className="mt-16 pt-8 border-t border-subtle flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
-              <div className="flex items-center gap-1 text-[#00B67A]">
+              <div className="flex items-center gap-1 text-[#00B67A]" dir="ltr">
                 {[...Array(4)].map((_, i) => (
                   <Star key={i} size={16} fill="currentColor" strokeWidth={0} />
                 ))}
                 <Star size={16} fill="currentColor" strokeWidth={0} className="opacity-50" />
               </div>
               <span className="text-xs text-secondary">
-                <span className="font-mono-num text-white font-semibold">4.2</span> · Excellent on Trustpilot
+                <span className="font-mono-num text-white font-semibold" dir="ltr">4.2</span> · Excellent on Trustpilot
               </span>
             </div>
             <a
@@ -87,13 +92,12 @@ export default function Footer() {
             </a>
           </div>
           <p className="text-xs text-tertiary">
-            © 2026 Fiper Pro Traders. A division of Fiper Global. All rights reserved.
+            {t('footer.copyright')}
           </p>
         </div>
 
         <p className="mt-6 text-[11px] italic text-tertiary leading-relaxed max-w-4xl">
-          Trading simulated accounts involves substantial risk. Past performance is not indicative of
-          future results. All accounts offered are demo accounts funded with simulated capital.
+          {t('footer.riskDisclosure')}
         </p>
       </div>
     </footer>

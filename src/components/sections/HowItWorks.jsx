@@ -1,30 +1,33 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Section, { SectionHeader } from '../ui/Section.jsx';
 
-const STEPS = [
-  {
-    num: '01',
-    title: 'Choose your structure',
-    body: 'Select an account size and challenge type that fits your strategy. From $5K to $200K, in 1-step, 2-step, or instant configurations.',
-  },
-  {
-    num: '02',
-    title: 'Prove your edge',
-    body: 'Hit the profit target while respecting the risk parameters. Trade with conviction — the rules are the same every time.',
-  },
-  {
-    num: '03',
-    title: 'Scale with our capital',
-    body: 'Get funded, trade real markets with FPT capital, and keep up to 80% of your performance. Withdraw via Fiper Card.',
-  },
-];
-
 export default function HowItWorks() {
+  const { t } = useTranslation();
+
+  const STEPS = [
+    {
+      num: '01',
+      title: t('howItWorks.step1Title'),
+      body: t('howItWorks.step1Desc'),
+    },
+    {
+      num: '02',
+      title: t('howItWorks.step2Title'),
+      body: t('howItWorks.step2Desc'),
+    },
+    {
+      num: '03',
+      title: t('howItWorks.step3Title'),
+      body: t('howItWorks.step3Desc'),
+    },
+  ];
+
   return (
     <Section id="how-it-works">
       <SectionHeader
         eyebrow="The path to funded"
-        title="From evaluation to capital. In three steps."
+        title={t('howItWorks.title')}
       />
 
       <div className="mt-20 grid lg:grid-cols-3 gap-6 relative">

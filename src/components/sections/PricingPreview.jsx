@@ -1,20 +1,22 @@
 import { Check, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Section, { SectionHeader } from '../ui/Section.jsx';
 import Button from '../ui/Button.jsx';
 
-const FEATURES = [
-  ['Account Size', '$50,000'],
-  ['One-time fee', '$555 USD'],
-  ['Profit Target', '10%'],
-  ['Max Daily Loss', '5%'],
-  ['Max Loss', '9%'],
-  ['Minimum Trading Days', '5'],
-  ['Profit Share', '80%'],
-  ['Refund', 'Not available'],
-];
-
 export default function PricingPreview() {
+  const { t } = useTranslation();
+
+  const FEATURES = [
+    [t('pricingPreview.features.accountSize'), '$50,000'],
+    [t('pricingPreview.features.profitTarget'), '10%'],
+    [t('pricingPreview.features.maxDailyLoss'), '5%'],
+    [t('pricingPreview.features.maxLoss'), '9%'],
+    [t('pricingPreview.features.minDays'), '5'],
+    [t('pricingPreview.features.profitSplit'), '80%'],
+    [t('pricingPreview.features.refund'), t('pricingPreview.features.refundValue')],
+  ];
+
   return (
     <Section className="bg-[#0A0A0A]">
       <SectionHeader
@@ -27,16 +29,16 @@ export default function PricingPreview() {
       <div className="mt-16 max-w-2xl mx-auto">
         <div className="relative">
           <div className="absolute -top-3 right-8 z-10 px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-[0.15em] bg-[#D4AF37] text-black">
-            Most Popular
+            {t('pricingPreview.mostPopular')}
           </div>
 
           <div className="relative gradient-border rounded-3xl p-8 sm:p-10">
             <div className="relative z-10">
               <div className="flex items-baseline gap-3">
-                <span className="text-5xl sm:text-6xl font-semibold font-mono-num gradient-text">
+                <span dir="ltr" className="text-5xl sm:text-6xl font-semibold font-mono-num gradient-text">
                   $555
                 </span>
-                <span className="text-secondary">USD · one-time</span>
+                <span className="text-secondary">USD {t('pricingPreview.oneTime')}</span>
               </div>
 
               <div className="mt-8 space-y-3">
@@ -58,7 +60,7 @@ export default function PricingPreview() {
 
               <div className="mt-8">
                 <Button href="https://crm.fptraders.com/register" external size="lg" className="w-full">
-                  Get Started — $50K <ArrowRight size={18} />
+                  {t('pricingPreview.cta')} <ArrowRight size={18} />
                 </Button>
               </div>
             </div>
@@ -70,7 +72,7 @@ export default function PricingPreview() {
             to="/pricing"
             className="inline-flex items-center gap-2 text-sm text-secondary hover:text-white transition-colors"
           >
-            View all account sizes <ArrowRight size={14} />
+            {t('pricingPreview.viewAll')} <ArrowRight size={14} />
           </Link>
         </div>
       </div>

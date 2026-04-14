@@ -1,20 +1,23 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { Star, TrendingUp } from 'lucide-react';
 import Button from '../ui/Button.jsx';
 import { Eyebrow } from '../ui/Section.jsx';
 import WaveBg from '../ui/WaveBg.jsx';
 
-const STATS = [
-  { value: '$200K', label: 'Maximum Account' },
-  { value: '80%', label: 'Profit Share' },
-  { value: '10', label: 'Active Accounts' },
-  { value: '1:100', label: 'Leverage' },
-];
-
 const REGISTER = 'https://crm.fptraders.com/register';
 const LOGIN = 'https://crm.fptraders.com/login';
 
 export default function Hero() {
+  const { t } = useTranslation();
+
+  const STATS = [
+    { value: '$200K', label: t('hero.stats.maxAccount') },
+    { value: '80%', label: t('hero.stats.profitSplit') },
+    { value: '10', label: t('hero.stats.maxAccounts') },
+    { value: '1:100', label: t('hero.stats.leverage') },
+  ];
+
   return (
     <section className="relative pt-36 sm:pt-44 pb-24 overflow-hidden">
       <WaveBg opacity={0.25} />
@@ -24,26 +27,24 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 grid lg:grid-cols-[1.3fr_1fr] gap-16 lg:gap-12 items-center">
         {/* Left */}
         <div>
-          <Eyebrow dot>Engineered for Fast, Smart Trading</Eyebrow>
+          <Eyebrow dot>{t('hero.eyebrow')}</Eyebrow>
 
           <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl xl:text-[96px] font-semibold leading-[0.98] tracking-tight">
-            Where discipline
+            {t('hero.title1')}
             <br />
-            <span className="gradient-text">meets capital.</span>
+            <span className="gradient-text">{t('hero.title2')}</span>
           </h1>
 
           <p className="mt-8 text-lg sm:text-xl text-secondary leading-relaxed max-w-[520px]">
-            Pass our evaluation. Trade up to $200,000 of our capital.
-            Keep up to 80% of every dollar you earn — backed by the
-            Fiper Global infrastructure.
+            {t('hero.subtitle')}
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
             <Button href={REGISTER} external size="lg">
-              Get Started
+              {t('hero.ctaPrimary')}
             </Button>
             <Button href={LOGIN} external variant="ghost" size="lg">
-              Sign In
+              {t('hero.ctaSecondary')}
             </Button>
           </div>
 
@@ -55,7 +56,7 @@ export default function Hero() {
               <Star size={16} fill="currentColor" strokeWidth={0} className="opacity-50" />
             </div>
             <span className="text-sm text-secondary">
-              <span className="text-white font-semibold font-mono-num">Trustpilot 4.2</span> · Excellent
+              {t('hero.trustpilot')}
             </span>
           </div>
 
@@ -65,7 +66,7 @@ export default function Hero() {
                 key={s.label}
                 className={`px-1 sm:px-3 ${i !== 0 ? 'sm:border-l border-subtle' : ''}`}
               >
-                <div className="text-2xl sm:text-3xl font-semibold font-mono-num text-[#F42821]">
+                <div dir="ltr" className="text-2xl sm:text-3xl font-semibold font-mono-num text-[#F42821]">
                   {s.value}
                 </div>
                 <div className="mt-1 text-xs uppercase tracking-wider text-tertiary">
@@ -114,8 +115,8 @@ function HeroMockup() {
         <div className="mt-6">
           <div className="text-xs text-tertiary uppercase tracking-wider">Balance</div>
           <div className="mt-1 flex items-baseline gap-2">
-            <span className="text-3xl font-semibold font-mono-num">$53,077</span>
-            <span className="text-sm text-[#10B981] font-mono-num">+6.15%</span>
+            <span dir="ltr" className="text-3xl font-semibold font-mono-num">$53,077</span>
+            <span dir="ltr" className="text-sm text-[#10B981] font-mono-num">+6.15%</span>
           </div>
         </div>
         {/* Mini chart */}
@@ -234,7 +235,7 @@ function HeroMockup() {
         <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse-dot" />
         <div>
           <div className="text-[11px] uppercase tracking-wider text-tertiary">Payout settled</div>
-          <div className="text-sm font-semibold font-mono-num text-[#10B981]">+$3,077</div>
+          <div dir="ltr" className="text-sm font-semibold font-mono-num text-[#10B981]">+$3,077</div>
         </div>
         <TrendingUp size={14} className="text-[#10B981]" />
       </motion.div>

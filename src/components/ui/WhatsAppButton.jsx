@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 export const WHATSAPP_URL = 'https://wa.me/97433600905';
 export const WHATSAPP_PHONE = '+974 3360 0905';
@@ -19,6 +20,7 @@ export function WhatsAppIcon({ size = 28, className = '' }) {
 }
 
 export default function WhatsAppButton() {
+  const { t } = useTranslation();
   return (
     <div className="fixed bottom-6 right-6 z-[999] group">
       {/* Pulse rings */}
@@ -31,7 +33,7 @@ export default function WhatsAppButton() {
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat with us on WhatsApp"
+        aria-label={t('whatsapp.ariaLabel')}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         className="relative flex items-center justify-center rounded-full text-white transition-shadow w-12 h-12 sm:w-14 sm:h-14"
@@ -52,7 +54,7 @@ export default function WhatsAppButton() {
       {/* Tooltip (desktop only) */}
       <div className="hidden lg:block pointer-events-none absolute right-full top-1/2 -translate-y-1/2 mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
         <div className="bg-[#0A0A0A] border border-subtle text-white text-xs font-medium px-3 py-2 rounded-lg whitespace-nowrap shadow-xl">
-          Chat with us on WhatsApp
+          {t('whatsapp.tooltip')}
         </div>
       </div>
 

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Section, { SectionHeader } from '../ui/Section.jsx';
 
 const STORIES = [
@@ -35,12 +36,13 @@ const STORIES = [
 ];
 
 export default function TraderStories() {
+  const { t } = useTranslation();
   return (
     <Section className="bg-[#0A0A0A]">
       <SectionHeader
         eyebrow="Trader stories"
-        title="Discipline, capital, and a payout that landed."
-        subtitle="Names and numbers from our funded community. Real strategies. Real outcomes."
+        title={t('traderStories.title')}
+        subtitle={t('traderStories.subtitle')}
       />
 
       <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -68,7 +70,7 @@ export default function TraderStories() {
 
             <div className="mt-6 pb-6 border-b border-subtle">
               <div className="text-[10px] uppercase tracking-wider text-tertiary">Profit paid out</div>
-              <div className="mt-1 text-3xl font-semibold font-mono-num text-[#D4AF37]">
+              <div dir="ltr" className="mt-1 text-3xl font-semibold font-mono-num text-[#D4AF37]">
                 ${s.profit.toLocaleString('en-US')}
               </div>
               <div className="mt-2 text-xs text-secondary">{s.strategy}</div>

@@ -1,47 +1,50 @@
 import { TrendingUp, CreditCard, LayoutDashboard, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Section, { SectionHeader } from '../ui/Section.jsx';
 
-const NODES = [
-  {
-    icon: TrendingUp,
-    label: 'Prop Trading',
-    name: 'FPT',
-    description: 'The capital and the challenge.',
-    badge: 'You are here',
-    badgeStyle: 'bg-[#F42821]/15 text-[#FCA5A5] border-[#F42821]/30',
-    href: null,
-    featured: true,
-  },
-  {
-    icon: CreditCard,
-    label: 'Capital Access',
-    name: 'Fiper Card',
-    description: 'Instant payouts, global spending.',
-    badge: 'Live',
-    badgeStyle: 'bg-[#10B981]/10 text-[#10B981] border-[#10B981]/25',
-    href: 'https://fiper-landing-page.vercel.app/',
-  },
-  {
-    icon: LayoutDashboard,
-    label: 'Command Center',
-    name: 'Fiper CRM',
-    description: 'Accounts, performance, payouts — unified.',
-    badge: 'Live',
-    badgeStyle: 'bg-[#10B981]/10 text-[#10B981] border-[#10B981]/25',
-    href: 'https://crm.fptraders.com/login',
-  },
-];
-
 export default function Ecosystem() {
+  const { t } = useTranslation();
+
+  const NODES = [
+    {
+      icon: TrendingUp,
+      label: 'Prop Trading',
+      name: t('ecosystem.fpt.title'),
+      description: t('ecosystem.fpt.desc'),
+      badge: t('ecosystem.fpt.badge'),
+      badgeStyle: 'bg-[#F42821]/15 text-[#FCA5A5] border-[#F42821]/30',
+      href: null,
+      featured: true,
+    },
+    {
+      icon: CreditCard,
+      label: 'Capital Access',
+      name: t('ecosystem.card.title'),
+      description: t('ecosystem.card.desc'),
+      badge: t('ecosystem.card.badge'),
+      badgeStyle: 'bg-[#10B981]/10 text-[#10B981] border-[#10B981]/25',
+      href: 'https://fiper-landing-page.vercel.app/',
+    },
+    {
+      icon: LayoutDashboard,
+      label: 'Command Center',
+      name: t('ecosystem.crm.title'),
+      description: t('ecosystem.crm.desc'),
+      badge: t('ecosystem.crm.badge'),
+      badgeStyle: 'bg-[#10B981]/10 text-[#10B981] border-[#10B981]/25',
+      href: 'https://crm.fptraders.com/login',
+    },
+  ];
+
   return (
     <Section id="ecosystem" className="bg-[#0A0A0A] relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] radial-red opacity-30 pointer-events-none" />
 
       <SectionHeader
         eyebrow="Powered by Fiper Global"
-        title="One identity. Three coordinated products."
-        subtitle="FPT does not stand alone. It is engineered to work in lockstep with the rest of the Fiper Global stack."
+        title={t('ecosystem.title')}
+        subtitle={t('ecosystem.subtitle')}
         center
         className="mx-auto"
       />
@@ -118,7 +121,7 @@ export default function Ecosystem() {
       </div>
 
       <p className="mt-12 text-center text-xs uppercase tracking-[0.2em] text-tertiary">
-        Explore all of Fiper Global → linktr.ee/fiper
+        {t('ecosystem.footerNote')}
       </p>
     </Section>
   );

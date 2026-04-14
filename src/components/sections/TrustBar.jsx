@@ -1,17 +1,20 @@
+import { useTranslation } from 'react-i18next';
 import Section, { Eyebrow } from '../ui/Section.jsx';
 import CountUp from '../ui/CountUp.jsx';
-
-const STATS = [
-  { end: 125, suffix: 'K+', label: 'Funded Accounts' },
-  { end: 43, suffix: 'K+', label: 'Rewarded Traders' },
-  { end: 150, prefix: '$', suffix: 'M+', label: 'Capital Deployed' },
-  { end: 140, suffix: '+', label: 'Countries Served' },
-  { end: 24, suffix: '/7', label: 'Trader Support' },
-];
 
 const LOGOS = ['FORBES', 'EY', 'FINANCE MAGNATES', 'TRUSTPILOT', 'BLOOMBERG'];
 
 export default function TrustBar() {
+  const { t } = useTranslation();
+
+  const STATS = [
+    { end: 125, suffix: 'K+', label: t('trustBar.fundedAccounts') },
+    { end: 43, suffix: 'K+', label: t('trustBar.rewardedTraders') },
+    { end: 150, prefix: '$', suffix: 'M+', label: t('trustBar.totalRewarded') },
+    { end: 140, suffix: '+', label: t('trustBar.countries') },
+    { end: 24, suffix: '/7', label: t('trustBar.support') },
+  ];
+
   return (
     <Section className="!py-20 bg-[#0A0A0A] border-y border-subtle">
       <div className="text-center">
@@ -21,7 +24,7 @@ export default function TrustBar() {
       <div className="mt-12 grid grid-cols-2 md:grid-cols-5 gap-10 md:gap-6">
         {STATS.map((s) => (
           <div key={s.label} className="text-center">
-            <div className="text-3xl sm:text-4xl font-semibold text-white">
+            <div dir="ltr" className="text-3xl sm:text-4xl font-semibold text-white">
               <CountUp end={s.end} prefix={s.prefix || ''} suffix={s.suffix || ''} />
             </div>
             <div className="mt-2 text-xs uppercase tracking-wider text-tertiary">

@@ -1,42 +1,39 @@
 import { Shield, Building2, LineChart, CreditCard } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Section, { SectionHeader } from '../ui/Section.jsx';
 
-const FEATURES = [
-  {
-    icon: Shield,
-    title: 'Disciplined evaluation',
-    body: 'A transparent path from challenge to funded account, governed by clear risk rules.',
-  },
-  {
-    icon: Building2,
-    title: 'Institutional environment',
-    body: 'Raw spreads, deep liquidity, and execution built for serious volume.',
-  },
-  {
-    icon: LineChart,
-    title: 'Performance intelligence',
-    body: 'A trader dashboard engineered for clarity — every metric, every position, in one place.',
-  },
-  {
-    icon: CreditCard,
-    title: 'Capital that moves with you',
-    body: 'Withdraw via the Fiper Card. Spend globally. No clearing delays.',
-  },
-];
-
 export default function ValueProposition() {
+  const { t } = useTranslation();
+
+  const FEATURES = [
+    {
+      icon: Shield,
+      title: t('valueProp.features.evaluation'),
+      body: 'A transparent path from challenge to funded account, governed by clear risk rules.',
+    },
+    {
+      icon: Building2,
+      title: t('valueProp.features.environment'),
+      body: 'Raw spreads, deep liquidity, and execution built for serious volume.',
+    },
+    {
+      icon: LineChart,
+      title: t('valueProp.features.dashboard'),
+      body: 'A trader dashboard engineered for clarity — every metric, every position, in one place.',
+    },
+    {
+      icon: CreditCard,
+      title: t('valueProp.features.funding'),
+      body: 'Withdraw via the Fiper Card. Spend globally. No clearing delays.',
+    },
+  ];
+
   return (
     <Section>
       <SectionHeader
         eyebrow="The FPT advantage"
-        title={
-          <>
-            Most prop firms hand you an account.
-            <br />
-            <span className="text-secondary">We hand you an ecosystem.</span>
-          </>
-        }
+        title={t('valueProp.title')}
         subtitle="FPT is built on the Fiper Global financial infrastructure — a coordinated stack of trading, capital, and payout tools that no standalone prop firm can match."
       />
 

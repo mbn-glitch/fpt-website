@@ -9,6 +9,7 @@ import {
   LayoutDashboard,
   ArrowRight,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO.jsx';
 import Section, { Eyebrow, SectionHeader } from '../components/ui/Section.jsx';
 import Button from '../components/ui/Button.jsx';
@@ -67,10 +68,11 @@ const ECOSYSTEM = [
 ];
 
 export default function About() {
+  const { t } = useTranslation();
   return (
     <>
       <SEO
-        title="About"
+        title={t('about.title')}
         path="/about"
         description="FPT is the prop-trading arm of Fiper Global. Transparent terms, risk before reward, infrastructure over marketing."
         keywords="about Fiper Pro Traders, Fiper Global, prop firm mission, FPT company"
@@ -83,14 +85,10 @@ export default function About() {
         <div className="relative max-w-5xl mx-auto px-6 sm:px-8 text-center">
           <Eyebrow dot>Fiper Pro Traders</Eyebrow>
           <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold leading-[0.98] tracking-tight">
-            Built for traders who
-            <br />
-            <span className="gradient-text">outlast the cycle.</span>
+            <span className="gradient-text">{t('about.title')}</span>
           </h1>
           <p className="mt-8 text-lg sm:text-xl text-secondary max-w-2xl mx-auto leading-relaxed">
-            FPT is the prop-trading arm of Fiper Global — a financial
-            infrastructure company engineering capital, execution, and
-            payouts into a single coordinated stack.
+            {t('about.subtitle')}
           </p>
         </div>
       </section>
@@ -101,29 +99,12 @@ export default function About() {
           <div className="lg:sticky lg:top-32">
             <Eyebrow>Our thesis</Eyebrow>
             <h2 className="mt-4 text-4xl sm:text-5xl font-semibold leading-[1.05] tracking-tight">
-              Most prop firms sell access.
-              <br />
-              <span className="text-secondary">We sell continuity.</span>
+              {t('about.story.title')}
             </h2>
           </div>
           <div className="space-y-6 text-[17px] leading-relaxed text-secondary">
-            <p>
-              The prop-trading industry has spent a decade competing on
-              fee discounts and flashier dashboards. The result: traders
-              who pass challenges, then wait weeks for payouts that never
-              quite arrive on the terms they were promised.
-            </p>
-            <p>
-              FPT was built to remove those fractures. Evaluation sits on
-              the same identity as your funded account. Your funded
-              account sits on the same identity as your Fiper Card. A
-              payout is not a bank wire and a hope — it is a balance
-              movement inside a stack we operate end-to-end.
-            </p>
-            <p>
-              We do not promise shortcuts. We promise that the path, once
-              you start walking it, does not shift under your feet.
-            </p>
+            <p>{t('about.story.content')}</p>
+            <p>{t('about.mission.content')}</p>
           </div>
         </div>
       </Section>

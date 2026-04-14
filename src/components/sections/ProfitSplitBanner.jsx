@@ -1,8 +1,10 @@
+import { useTranslation } from 'react-i18next';
 import Section, { Eyebrow } from '../ui/Section.jsx';
 import CountUp from '../ui/CountUp.jsx';
 import WaveBg from '../ui/WaveBg.jsx';
 
 export default function ProfitSplitBanner() {
+  const { t } = useTranslation();
   return (
     <Section className="relative overflow-hidden" >
       <div
@@ -18,10 +20,11 @@ export default function ProfitSplitBanner() {
         <Eyebrow>Performance reward</Eyebrow>
 
         <h2 className="mt-8 text-3xl sm:text-4xl lg:text-5xl font-medium text-secondary leading-tight">
-          Keep up to
+          {t('profitSplit.title')}
         </h2>
 
         <div
+          dir="ltr"
           className="my-4 leading-none font-semibold font-mono-num gradient-text"
           style={{
             fontSize: 'clamp(120px, 18vw, 220px)',
@@ -33,7 +36,7 @@ export default function ProfitSplitBanner() {
         </div>
 
         <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight">
-          of every trade you win.
+          {t('profitSplit.subtitle')}
         </h3>
 
         <p className="mt-10 text-base sm:text-lg text-secondary max-w-xl mx-auto">

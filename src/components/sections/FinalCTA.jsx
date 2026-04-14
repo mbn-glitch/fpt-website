@@ -1,8 +1,10 @@
+import { useTranslation } from 'react-i18next';
 import Section, { Eyebrow } from '../ui/Section.jsx';
 import Button from '../ui/Button.jsx';
 import WaveBg from '../ui/WaveBg.jsx';
 
 export default function FinalCTA() {
+  const { t } = useTranslation();
   return (
     <Section className="relative overflow-hidden">
       <div
@@ -18,14 +20,12 @@ export default function FinalCTA() {
         <Eyebrow>Ready?</Eyebrow>
 
         <h2 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight">
-          The market opens at the same time for everyone.
-          <br />
-          <span className="gradient-text">What you do with it is the difference.</span>
+          {t('finalCta.title')}
         </h2>
 
         <div className="mt-12 flex flex-wrap justify-center gap-4">
           <Button href="https://crm.fptraders.com/register" external size="lg">
-            Get Started
+            {t('finalCta.cta')}
           </Button>
           <Button href="https://crm.fptraders.com/login" external variant="ghost" size="lg">
             Sign In

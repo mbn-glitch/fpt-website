@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "title": "FPT — Fiper Pro Traders | Engineered for Fast, Smart Trading",
+    "description": "Fiper Pro Traders (FPT) — Part of Fiper Global. Prove your trading skills, access funded capital up to $200K with an 80% profit split."
+  },
+  "nav": {
+    "challenges": "Challenges",
+    "pricing": "Pricing",
+    "howItWorks": "How It Works",
+    "ecosystem": "Ecosystem",
+    "about": "About",
+    "login": "Login",
+    "startChallenge": "Start FPT Challenge",
+    "partOfFiperGlobal": "PART OF FIPER GLOBAL"
+  },
+  "hero": {
+    "eyebrow": "ENGINEERED FOR FAST, SMART TRADING",
+    "title1": "Trade with Confidence.",
+    "title2": "Get Funded.",
+    "subtitle": "Prove your trading skills, access funded capital, and trade in a structured environment designed for serious traders.",
+    "ctaPrimary": "Start FPT Challenge",
+    "ctaSecondary": "View Plans",
+    "trustpilot": "Trustpilot 4.2 · Excellent",
+    "stats": {
+      "maxAccount": "Max Account",
+      "profitSplit": "Profit Split",
+      "maxAccounts": "Max Accounts",
+      "leverage": "Leverage"
+    }
+  },
+  "trustBar": {
+    "fundedAccounts": "Funded Accounts",
+    "rewardedTraders": "Rewarded Traders",
+    "totalRewarded": "Total Rewarded",
+    "countries": "Countries",
+    "support": "Support"
+  },
+  "valueProp": {
+    "title": "A Complete Trading Ecosystem — Not Just a Prop Firm",
+    "features": {
+      "evaluation": "Structured evaluation model",
+      "environment": "Professional trading environment",
+      "dashboard": "Advanced performance dashboard",
+      "funding": "Seamless funding process"
+    }
+  },
+  "keyRules": {
+    "title": "Clear Rules. Full Transparency.",
+    "profitTarget": "Profit Target",
+    "dailyDrawdown": "Daily Drawdown",
+    "maxDrawdown": "Max Drawdown",
+    "minDays": "Min Trading Days",
+    "minDaysValue": "Phase 1: 5 / Funded: 10",
+    "timeLimit": "Time Limit",
+    "timeLimitValue": "Applicable",
+    "leverage": "Leverage",
+    "leverageValue": "Up to 1:100"
+  },
+  "profitSplit": {
+    "title": "Earn up to",
+    "highlight": "80%",
+    "subtitle": "of your trading performance"
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "step1Title": "Choose Your Challenge",
+    "step1Desc": "Select the account size that matches your trading goals.",
+    "step2Title": "Pass the Evaluation",
+    "step2Desc": "Reach the profit target while respecting risk parameters.",
+    "step3Title": "Get Funded",
+    "step3Desc": "Access a funded account and start trading under firm conditions."
+  },
+  "pricingPreview": {
+    "mostPopular": "MOST POPULAR",
+    "oneTime": "(one-time)",
+    "features": {
+      "accountSize": "Account Size",
+      "profitTarget": "Profit Target",
+      "maxDailyLoss": "Max Daily Loss",
+      "maxLoss": "Max Loss",
+      "minDays": "Minimum Trading Days",
+      "profitSplit": "Profit Split",
+      "refund": "Refund",
+      "refundValue": "Not available"
+    },
+    "cta": "Start Challenge",
+    "viewAll": "View All Account Sizes"
+  },
+  "dashboardPreview": {
+    "title": "Track Your Performance in Real-Time",
+    "subtitle": "A professional dashboard built for serious traders."
+  },
+  "fptCard": {
+    "title": "Access Your Profits with the Fiper Card",
+    "subtitle": "FPT offers access to Fiper Card — enabling both virtual and physical card solutions for profit withdrawals and real-world usage.",
+    "features": {
+      "instant": {
+        "title": "Instant Access",
+        "desc": "Easily access your approved profits without unnecessary delays."
+      },
+      "global": {
+        "title": "Global Usage",
+        "desc": "Use your card online or in-store worldwide."
+      },
+      "virtual": {
+        "title": "Virtual & Physical Cards",
+        "desc": "Choose between virtual and physical cards depending on your needs."
+      },
+      "integrated": {
+        "title": "Integrated with Fiper Ecosystem",
+        "desc": "Your trading account connects to a complete financial infrastructure."
+      }
+    },
+    "note1": "Profit withdrawals are subject to internal approval processes and payout conditions.",
+    "note2": "Card availability depends on account status and eligibility.",
+    "cta": "Get Your FPT Card"
+  },
+  "platforms": {
+    "title": "Trade on Industry-Leading Platforms",
+    "subtitle": "Access global markets through the world's most trusted trading platforms."
+  },
+  "ecosystem": {
+    "title": "Part of the Fiper Global Ecosystem",
+    "subtitle": "FPT is powered by Fiper Global — a complete financial infrastructure built for modern traders.",
+    "fpt": {
+      "title": "FPT",
+      "desc": "Prop Trading Challenges",
+      "badge": "You Are Here"
+    },
+    "card": {
+      "title": "Fiper Card",
+      "desc": "Instant Profit Access",
+      "badge": "Live"
+    },
+    "crm": {
+      "title": "Fiper CRM",
+      "desc": "Your Command Center",
+      "badge": "Live"
+    },
+    "footerNote": "Visit fiperglobal.com (coming soon) to learn more."
+  },
+  "traderTools": {
+    "title": "Tools Built for Smart Traders",
+    "subtitle": "Everything you need to track, analyze, and optimize your performance.",
+    "ai": {
+      "title": "AI Assistant Analysis",
+      "desc": "Track your progress, understand your trading patterns, and optimize your results with AI-powered insights."
+    },
+    "leaderboard": {
+      "title": "Real Trader Leaderboard",
+      "desc": "See how you rank against top traders globally. Compete, learn, and grow with the FPT community."
+    }
+  },
+  "traderStories": {
+    "title": "Built by Traders, for Traders",
+    "subtitle": "Real results from our global community."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": "How do I start?",
+    "a1": "Choose a challenge size, complete registration, and begin trading on our platform. The evaluation starts immediately after payment confirmation.",
+    "q2": "Are the fees refundable?",
+    "a2": "Challenge fees are one-time and non-refundable. However, you keep your full profit share once funded.",
+    "q3": "How long until I get funded?",
+    "a3": "After reaching the profit target and completing the minimum trading days, account verification typically takes 1-3 business days.",
+    "q4": "How do I withdraw my profits?",
+    "a4": "Profits can be withdrawn via Fiper Card (instant) or bank transfer after the minimum funded trading period.",
+    "q5": "What markets can I trade?",
+    "a5": "Access forex, indices, commodities, and selected cryptocurrencies across MT4, MT5, and cTrader platforms.",
+    "q6": "Do I need prior experience?",
+    "a6": "No formal experience required, but understanding risk management and the trading rules is essential for success.",
+    "seeAll": "See all FAQs"
+  },
+  "finalCta": {
+    "title": "Start your challenge today and take your trading to the next level.",
+    "cta": "Start Challenge"
+  },
+  "footer": {
+    "tagline": "Engineered for Fast, Smart Trading",
+    "partOf": "Part of Fiper Global",
+    "products": "Products",
+    "fiperGlobal": "Fiper Global",
+    "legal": "Legal",
+    "links": {
+      "challenges": "FPT Challenges",
+      "pricing": "Pricing",
+      "fiperCard": "Fiper Card",
+      "aboutFiperGlobal": "About Fiper Global",
+      "fiperCRM": "Fiper CRM",
+      "helpCenter": "Help Center",
+      "fiperGlobalSite": "Fiper Global",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "cookies": "Cookie Policy",
+      "refund": "Refund Policy",
+      "risk": "Risk Disclosure"
+    },
+    "copyright": "© 2026 Fiper Pro Traders — A Fiper Global Company. All rights reserved.",
+    "riskDisclosure": "Trading simulated accounts involves substantial risk. Past performance is not indicative of future results. All accounts offered are demo accounts with simulated funds."
+  },
+  "challenges": {
+    "title": "Prove Your Skills. Access Funded Capital.",
+    "subtitle": "Choose between three structured paths designed for different trading styles.",
+    "rules": {
+      "profitTarget": "Profit Target",
+      "dailyDrawdown": "Daily Drawdown",
+      "maxDrawdown": "Max Drawdown",
+      "minDaysPhase1": "Minimum Trading Days (Phase 1)",
+      "minDaysFunded": "Funded Minimum Days",
+      "timeLimit": "Time Limit",
+      "timeLimitValue": "Yes",
+      "leverage": "Leverage",
+      "leverageValue": "Up to 1:100 (depending on instrument)",
+      "maxAccounts": "Maximum Accounts per User"
+    },
+    "note": "Trading conditions may vary depending on the instrument and market conditions.",
+    "cta": "Start Challenge"
+  },
+  "pricing": {
+    "title": "Choose Your Challenge",
+    "subtitle": "Start your journey and prove your trading discipline.",
+    "badges": {
+      "oneTime": "One-time fee",
+      "nonRefundable": "Non-refundable",
+      "noRetry": "No retry included"
+    },
+    "tabs": {
+      "twoStep": "2-Step Challenge",
+      "oneStep": "1-Step Challenge",
+      "instant": "Instant Funding"
+    },
+    "accountSize": "Account Size",
+    "currency": "Currency",
+    "calculator": {
+      "title": "Estimate Your Earnings",
+      "performance": "Estimated Monthly Performance",
+      "output": "Estimated Monthly Earnings",
+      "disclaimer": "Estimates only. Past performance does not guarantee future results."
+    },
+    "compare": {
+      "button": "Compare Plans Side-by-Side",
+      "title": "Compare Plans"
+    }
+  },
+  "about": {
+    "title": "Engineered for Fast, Smart Trading",
+    "subtitle": "FPT is the prop trading division of Fiper Global — a complete financial infrastructure built for modern traders.",
+    "story": {
+      "title": "Our Story",
+      "content": "Fiper Global was founded with a vision to empower traders worldwide. FPT represents our commitment to professional trading infrastructure, combining rigorous evaluation standards with exceptional trader support."
+    },
+    "mission": {
+      "title": "The FPT Mission",
+      "content": "We believe skilled traders deserve access to capital without unnecessary barriers. FPT provides a transparent, structured path from evaluation to funded trading."
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "We're here to help. Reach out through any channel below.",
+    "whatsapp": {
+      "title": "WhatsApp Support",
+      "desc": "Chat with our support team instantly",
+      "badge": "24/7 Available",
+      "cta": "Start Chat"
+    },
+    "email": {
+      "title": "Email Support",
+      "desc": "Get a detailed response within 24 hours"
+    },
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message"
+    }
+  },
+  "whatsapp": {
+    "tooltip": "Chat with us on WhatsApp",
+    "ariaLabel": "Chat with us on WhatsApp"
+  }
+}

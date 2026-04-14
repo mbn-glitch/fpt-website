@@ -4,8 +4,6 @@ import Logo from '../brand/Logo.jsx';
 
 const LEGAL_URL = 'https://fiper.me/legal-documentation';
 const SOCIAL_URL = 'https://linktr.ee/fiper';
-const CARD_URL = 'https://fiper-landing-page.vercel.app/';
-const CRM_URL = 'https://crm.fptraders.com/login';
 
 export default function Footer() {
   return (
@@ -34,18 +32,27 @@ export default function Footer() {
           </div>
 
           <FooterCol title="Products">
-            <FooterLink to="/challenges">Challenges</FooterLink>
+            <FooterLink to="/challenges">
+              <LinkLabel emoji="🔥">FPT Challenges</LinkLabel>
+            </FooterLink>
             <FooterLink to="/pricing">Pricing</FooterLink>
-            <FooterLink href={CARD_URL} external>Fiper Card</FooterLink>
-            <FooterLink href="/#how-it-works">How It Works</FooterLink>
+            <FooterLink href="https://fiper-landing-page.vercel.app" external>Fiper Card</FooterLink>
           </FooterCol>
 
           <FooterCol title="Fiper Global">
-            <FooterLink to="/about">About Fiper Global</FooterLink>
-            <FooterLink href={CARD_URL} external>Fiper Card</FooterLink>
-            <FooterLink href={CRM_URL} external>Fiper CRM</FooterLink>
-            <FooterLink href={SOCIAL_URL} external>Help Center</FooterLink>
-            <FooterLink href={SOCIAL_URL} external>Fiper Global</FooterLink>
+            <FooterLink href="https://linktr.ee/fiper" external>
+              <LinkLabel emoji="🏦">About Fiper Global</LinkLabel>
+            </FooterLink>
+            <FooterLink href="https://fiper-landing-page.vercel.app" external>
+              <LinkLabel emoji="🏧">Fiper Card</LinkLabel>
+            </FooterLink>
+            <FooterLink href="https://crm.fiper.me/login" external>
+              <LinkLabel emoji="🌐">Fiper CRM</LinkLabel>
+            </FooterLink>
+            <FooterLink to="/help">
+              <LinkLabel emoji="🔘">Help Center</LinkLabel>
+            </FooterLink>
+            <FooterLink href="https://linktr.ee/fiper" external>Fiper Global</FooterLink>
           </FooterCol>
 
           <FooterCol title="Legal">
@@ -101,6 +108,15 @@ function FooterCol({ title, children }) {
         {Array.isArray(children) ? children.map((c, i) => <li key={i}>{c}</li>) : <li>{children}</li>}
       </ul>
     </div>
+  );
+}
+
+function LinkLabel({ emoji, children }) {
+  return (
+    <span className="inline-flex items-center gap-2">
+      <span>{children}</span>
+      <span className="text-[17px] leading-none">{emoji}</span>
+    </span>
   );
 }
 

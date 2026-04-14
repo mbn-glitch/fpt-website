@@ -25,4 +25,17 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://fpt-website.vercel.app/help</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url><loc>https://fpt-website.vercel.app/help/getting-started</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fpt-website.vercel.app/help/challenges-rules</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fpt-website.vercel.app/help/funded-accounts</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fpt-website.vercel.app/help/payouts-fiper-card</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fpt-website.vercel.app/help/trading-conditions</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fpt-website.vercel.app/help/account-management</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fpt-website.vercel.app/help/technical-platform</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fpt-website.vercel.app/help/legal-general</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

@@ -10,6 +10,7 @@ const LINKS = [
   { label: 'How It Works', to: '/#how-it-works', hash: true },
   { label: 'Ecosystem', to: '/#ecosystem', hash: true },
   { label: 'About', to: '/about' },
+  { label: 'Help', to: '/help' },
 ];
 
 const REGISTER = 'https://crm.fptraders.com/register';

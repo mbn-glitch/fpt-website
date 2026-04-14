@@ -1,0 +1,11 @@
+node_modules
+.mcp.json
+.env
+.env.*
+dist
+.vercel
+docs/
+.DS_Store
+*.log
+.vite
+.claude/

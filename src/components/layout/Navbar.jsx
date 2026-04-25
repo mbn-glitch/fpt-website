@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Menu, X } from 'lucide-react';
@@ -17,12 +17,12 @@ export default function Navbar() {
   const lang = i18n.language;
 
   const LINKS = [
+    { label: t('nav.home'), to: '/' },
     { label: t('nav.challenges'), to: '/challenges' },
-    { label: t('nav.pricing'), to: '/pricing' },
     { label: t('nav.howItWorks'), to: '/#how-it-works', hash: true },
     { label: t('nav.ecosystem'), to: '/#ecosystem', hash: true },
     { label: t('nav.about'), to: '/about' },
-    { label: 'Help', to: '/help' },
+    { label: t('nav.help'), to: '/help' },
   ];
 
   useEffect(() => {

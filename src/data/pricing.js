@@ -1,53 +1,46 @@
-// Single source of truth for account sizes and fees.
-// Prices provided by the user; update here when finalized.
-
-export const ACCOUNT_SIZES = [5000, 10000, 25000, 50000, 100000, 200000];
+﻿export const ACCOUNT_SIZES = [10000, 25000, 50000, 100000, 200000];
 
 export const FEES_USD = {
-  5000: 55,
-  10000: 110,
-  25000: 275,
-  50000: 555,
-  100000: 1110,
-  200000: 2220,
+  10000: 90,
+  25000: 160,
+  50000: 280,
+  100000: 540,
+  200000: 1070,
 };
 
-// Currency conversion rates (placeholders — swap with live rates when available).
 export const CURRENCIES = {
-  USD: { symbol: '$', code: 'USD', rate: 1 },
-  EUR: { symbol: '€', code: 'EUR', rate: 0.92 },
-  AED: { symbol: 'AED ', code: 'AED', rate: 3.67 },
+  USD: { symbol: "$", code: "USD", rate: 1 },
+  EUR: { symbol: "€", code: "EUR", rate: 0.92 },
+  AED: { symbol: "AED ", code: "AED", rate: 3.67 },
 };
 
 export const CHALLENGE_TYPES = [
   {
-    id: '2-step',
-    label: '2-Step Challenge',
-    subtitle: 'Structured. Two phases. Standard path.',
+    id: "2-step",
+    label: "FPT Challenge",
+    subtitle: "Phase 1: Demo evaluation. Prove your skills.",
     multiplier: 1.0,
   },
   {
-    id: '1-step',
-    label: '1-Step Challenge',
-    subtitle: 'Faster. Single evaluation.',
-    multiplier: 1.2,
-  },
-  {
-    id: 'instant',
-    label: 'Instant Funding',
-    subtitle: 'No evaluation. Trade capital immediately.',
-    multiplier: 1.8,
+    id: "1-step",
+    label: "Live Account",
+    subtitle: "Phase 2: Real funded account after passing the challenge.",
+    multiplier: 1.0,
   },
 ];
 
 export const BASE_RULES = {
-  profitTarget: '10%',
-  maxDailyLoss: '5%',
-  maxLoss: '9%',
+  profitTarget: "10%",
+  maxDailyLoss: "5%",
+  maxLoss: "9%",
   minTradingDays: 5,
-  profitShare: '80%',
-  leverage: '1:100',
-  refund: 'Not available',
+  profitShare: "80%",
+  leverage: "1:100",
+  refund: "Not available",
+  swapFree: "Yes",
+  timeLimit: "31 Days",
+  minPayout: "$100",
+  maxPayout: "$5,000",
 };
 
 export function calcFee(size, currency, typeId) {
@@ -61,7 +54,7 @@ export function calcFee(size, currency, typeId) {
 export function formatCurrency(amount, currencyCode) {
   const cur = CURRENCIES[currencyCode] || CURRENCIES.USD;
   const rounded = amount >= 100 ? Math.round(amount) : Math.round(amount * 100) / 100;
-  return `${cur.symbol}${rounded.toLocaleString('en-US')}`;
+  return `${cur.symbol}${rounded.toLocaleString("en-US")}`;
 }
 
 export function formatSize(size) {

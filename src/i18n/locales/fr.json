@@ -1,282 +1,447 @@
-{
-  "meta": {
-    "title": "FPT — Fiper Pro Traders | Conçu pour un Trading Rapide et Intelligent",
-    "description": "Fiper Pro Traders (FPT) — Membre de Fiper Global. Prouvez vos compétences en trading, accédez à un capital financé jusqu'à 200 000 $ avec un partage des profits de 80%."
-  },
-  "nav": {
-    "challenges": "Défis",
-    "pricing": "Tarifs",
-    "howItWorks": "Comment ça Marche",
-    "ecosystem": "Écosystème",
-    "about": "À Propos",
-    "login": "Connexion",
-    "startChallenge": "Démarrer le Défi FPT",
-    "partOfFiperGlobal": "MEMBRE DE FIPER GLOBAL"
-  },
-  "hero": {
-    "eyebrow": "CONÇU POUR UN TRADING RAPIDE ET INTELLIGENT",
-    "title1": "Tradez en Toute Confiance.",
-    "title2": "Soyez Financé.",
-    "subtitle": "Prouvez vos compétences en trading, accédez à un capital financé et tradez dans un environnement structuré conçu pour les traders sérieux.",
-    "ctaPrimary": "Démarrer le Défi FPT",
-    "ctaSecondary": "Voir les Plans",
-    "trustpilot": "Trustpilot 4.2 · Excellent",
-    "stats": {
-      "maxAccount": "Compte Max",
-      "profitSplit": "Partage des Profits",
-      "maxAccounts": "Comptes Max",
-      "leverage": "Effet de Levier"
-    }
-  },
-  "trustBar": {
-    "fundedAccounts": "Comptes Financés",
-    "rewardedTraders": "Traders Récompensés",
-    "totalRewarded": "Total Récompensé",
-    "countries": "Pays",
-    "support": "Support"
-  },
-  "valueProp": {
-    "title": "Un Écosystème de Trading Complet — Pas Juste une Prop Firm",
-    "features": {
-      "evaluation": "Modèle d'évaluation structuré",
-      "environment": "Environnement de trading professionnel",
-      "dashboard": "Tableau de bord de performance avancé",
-      "funding": "Processus de financement fluide"
-    }
-  },
-  "keyRules": {
-    "title": "Règles Claires. Transparence Totale.",
-    "profitTarget": "Objectif de Profit",
-    "dailyDrawdown": "Drawdown Quotidien",
-    "maxDrawdown": "Drawdown Maximum",
-    "minDays": "Jours de Trading Min.",
-    "minDaysValue": "Phase 1: 5 / Financé: 10",
-    "timeLimit": "Limite de Temps",
-    "timeLimitValue": "Applicable",
-    "leverage": "Effet de Levier",
-    "leverageValue": "Jusqu'à 1:100"
-  },
-  "profitSplit": {
-    "title": "Gagnez jusqu'à",
-    "highlight": "80%",
-    "subtitle": "de vos performances de trading"
-  },
-  "howItWorks": {
-    "title": "Comment ça Marche",
-    "step1Title": "Choisissez Votre Défi",
-    "step1Desc": "Sélectionnez la taille de compte qui correspond à vos objectifs de trading.",
-    "step2Title": "Passez l'Évaluation",
-    "step2Desc": "Atteignez l'objectif de profit tout en respectant les paramètres de risque.",
-    "step3Title": "Soyez Financé",
-    "step3Desc": "Accédez à un compte financé et commencez à trader selon les conditions de la firme."
-  },
-  "pricingPreview": {
-    "mostPopular": "LE PLUS POPULAIRE",
-    "oneTime": "(paiement unique)",
-    "features": {
-      "accountSize": "Taille du Compte",
-      "profitTarget": "Objectif de Profit",
-      "maxDailyLoss": "Perte Quotidienne Max",
-      "maxLoss": "Perte Max",
-      "minDays": "Jours de Trading Min.",
-      "profitSplit": "Partage des Profits",
-      "refund": "Remboursement",
-      "refundValue": "Non disponible"
-    },
-    "cta": "Démarrer le Défi",
-    "viewAll": "Voir Toutes les Tailles de Comptes"
-  },
-  "dashboardPreview": {
-    "title": "Suivez Vos Performances en Temps Réel",
-    "subtitle": "Un tableau de bord professionnel conçu pour les traders sérieux."
-  },
-  "fptCard": {
-    "title": "Accédez à Vos Profits avec la Fiper Card",
-    "subtitle": "FPT offre l'accès à la Fiper Card — des solutions de cartes virtuelles et physiques pour le retrait de profits et l'utilisation dans le monde réel.",
-    "features": {
-      "instant": {
-        "title": "Accès Instantané",
-        "desc": "Accédez facilement à vos profits approuvés sans délais inutiles."
-      },
-      "global": {
-        "title": "Utilisation Globale",
-        "desc": "Utilisez votre carte en ligne ou en magasin dans le monde entier."
-      },
-      "virtual": {
-        "title": "Cartes Virtuelles et Physiques",
-        "desc": "Choisissez entre des cartes virtuelles et physiques selon vos besoins."
-      },
-      "integrated": {
-        "title": "Intégrée à l'Écosystème Fiper",
-        "desc": "Votre compte de trading se connecte à une infrastructure financière complète."
-      }
-    },
-    "note1": "Les retraits de profits sont soumis à des processus d'approbation internes et à des conditions de paiement.",
-    "note2": "La disponibilité de la carte dépend du statut du compte et de l'éligibilité.",
-    "cta": "Obtenez Votre FPT Card"
-  },
-  "platforms": {
-    "title": "Tradez sur des Plateformes Leaders du Secteur",
-    "subtitle": "Accédez aux marchés mondiaux via les plateformes de trading les plus fiables au monde."
-  },
-  "ecosystem": {
-    "title": "Membre de l'Écosystème Fiper Global",
-    "subtitle": "FPT est propulsé par Fiper Global — une infrastructure financière complète conçue pour les traders modernes.",
-    "fpt": {
-      "title": "FPT",
-      "desc": "Défis de Prop Trading",
-      "badge": "Vous Êtes Ici"
-    },
-    "card": {
-      "title": "Fiper Card",
-      "desc": "Accès Instantané aux Profits",
-      "badge": "Actif"
-    },
-    "crm": {
-      "title": "Fiper CRM",
-      "desc": "Votre Centre de Commande",
-      "badge": "Actif"
-    },
-    "footerNote": "Visitez fiperglobal.com (bientôt disponible) pour en savoir plus."
-  },
-  "traderTools": {
-    "title": "Outils Conçus pour les Traders Intelligents",
-    "subtitle": "Tout ce dont vous avez besoin pour suivre, analyser et optimiser vos performances.",
-    "ai": {
-      "title": "Analyse par Assistant IA",
-      "desc": "Suivez vos progrès, comprenez vos schémas de trading et optimisez vos résultats avec des insights alimentés par l'IA."
-    },
-    "leaderboard": {
-      "title": "Classement des Vrais Traders",
-      "desc": "Voyez votre classement parmi les meilleurs traders mondiaux. Rivalisez, apprenez et grandissez avec la communauté FPT."
-    }
-  },
-  "traderStories": {
-    "title": "Par des Traders, pour des Traders",
-    "subtitle": "Des résultats réels de notre communauté mondiale."
-  },
-  "faq": {
-    "title": "Questions Fréquentes",
-    "q1": "Comment commencer ?",
-    "a1": "Choisissez une taille de défi, complétez l'inscription et commencez à trader sur notre plateforme. L'évaluation commence immédiatement après la confirmation du paiement.",
-    "q2": "Les frais sont-ils remboursables ?",
-    "a2": "Les frais du défi sont uniques et non remboursables. Cependant, vous conservez l'intégralité de votre part de profits une fois financé.",
-    "q3": "Combien de temps avant d'être financé ?",
-    "a3": "Après avoir atteint l'objectif de profit et complété le nombre minimum de jours de trading, la vérification du compte prend généralement 1 à 3 jours ouvrables.",
-    "q4": "Comment retirer mes profits ?",
-    "a4": "Les profits peuvent être retirés via Fiper Card (instantané) ou virement bancaire après la période minimale de trading financé.",
-    "q5": "Quels marchés puis-je trader ?",
-    "a5": "Accédez au forex, aux indices, aux matières premières et à certaines cryptomonnaies sur les plateformes MT4, MT5 et cTrader.",
-    "q6": "Ai-je besoin d'une expérience préalable ?",
-    "a6": "Aucune expérience formelle n'est requise, mais comprendre la gestion des risques et les règles de trading est essentiel au succès.",
-    "seeAll": "Voir toutes les FAQ"
-  },
-  "finalCta": {
-    "title": "Démarrez votre défi aujourd'hui et faites passer votre trading au niveau supérieur.",
-    "cta": "Démarrer le Défi"
-  },
-  "footer": {
-    "tagline": "Conçu pour un Trading Rapide et Intelligent",
-    "partOf": "Membre de Fiper Global",
-    "products": "Produits",
-    "fiperGlobal": "Fiper Global",
-    "legal": "Juridique",
-    "links": {
-      "challenges": "Défis FPT",
-      "pricing": "Tarifs",
-      "fiperCard": "Fiper Card",
-      "aboutFiperGlobal": "À Propos de Fiper Global",
-      "fiperCRM": "Fiper CRM",
-      "helpCenter": "Centre d'Aide",
-      "fiperGlobalSite": "Fiper Global",
-      "terms": "Conditions d'Utilisation",
-      "privacy": "Politique de Confidentialité",
-      "cookies": "Politique des Cookies",
-      "refund": "Politique de Remboursement",
-      "risk": "Divulgation des Risques"
-    },
-    "copyright": "© 2026 Fiper Pro Traders — Une Société Fiper Global. Tous droits réservés.",
-    "riskDisclosure": "Le trading sur comptes simulés implique des risques substantiels. Les performances passées ne préjugent pas des résultats futurs. Tous les comptes offerts sont des comptes démo avec des fonds simulés."
-  },
-  "challenges": {
-    "title": "Prouvez Vos Compétences. Accédez à un Capital Financé.",
-    "subtitle": "Choisissez parmi trois parcours structurés conçus pour différents styles de trading.",
-    "rules": {
-      "profitTarget": "Objectif de Profit",
-      "dailyDrawdown": "Drawdown Quotidien",
-      "maxDrawdown": "Drawdown Maximum",
-      "minDaysPhase1": "Jours de Trading Min. (Phase 1)",
-      "minDaysFunded": "Jours Min. Financés",
-      "timeLimit": "Limite de Temps",
-      "timeLimitValue": "Oui",
-      "leverage": "Effet de Levier",
-      "leverageValue": "Jusqu'à 1:100 (selon l'instrument)",
-      "maxAccounts": "Comptes Max par Utilisateur"
-    },
-    "note": "Les conditions de trading peuvent varier selon l'instrument et les conditions du marché.",
-    "cta": "Démarrer le Défi"
-  },
-  "pricing": {
-    "title": "Choisissez Votre Défi",
-    "subtitle": "Commencez votre voyage et prouvez votre discipline de trading.",
-    "badges": {
-      "oneTime": "Paiement unique",
-      "nonRefundable": "Non remboursable",
-      "noRetry": "Pas de nouvelle tentative incluse"
-    },
-    "tabs": {
-      "twoStep": "Défi en 2 Étapes",
-      "oneStep": "Défi en 1 Étape",
-      "instant": "Financement Instantané"
-    },
-    "accountSize": "Taille du Compte",
-    "currency": "Devise",
-    "calculator": {
-      "title": "Estimez Vos Gains",
-      "performance": "Performance Mensuelle Estimée",
-      "output": "Gains Mensuels Estimés",
-      "disclaimer": "Estimations uniquement. Les performances passées ne garantissent pas les résultats futurs."
-    },
-    "compare": {
-      "button": "Comparer les Plans Côte à Côte",
-      "title": "Comparer les Plans"
-    }
-  },
-  "about": {
-    "title": "Conçu pour un Trading Rapide et Intelligent",
-    "subtitle": "FPT est la division prop trading de Fiper Global — une infrastructure financière complète conçue pour les traders modernes.",
-    "story": {
-      "title": "Notre Histoire",
-      "content": "Fiper Global a été fondé avec une vision : autonomiser les traders du monde entier. FPT représente notre engagement envers une infrastructure de trading professionnelle, combinant des normes d'évaluation rigoureuses avec un support exceptionnel aux traders."
-    },
-    "mission": {
-      "title": "La Mission FPT",
-      "content": "Nous croyons que les traders compétents méritent l'accès au capital sans barrières inutiles. FPT offre un parcours transparent et structuré de l'évaluation au trading financé."
-    }
-  },
-  "contact": {
-    "title": "Contactez-Nous",
-    "subtitle": "Nous sommes là pour vous aider. Contactez-nous via n'importe quel canal ci-dessous.",
-    "whatsapp": {
-      "title": "Support WhatsApp",
-      "desc": "Discutez instantanément avec notre équipe de support",
-      "badge": "Disponible 24/7",
-      "cta": "Commencer la Discussion"
-    },
-    "email": {
-      "title": "Support par Email",
-      "desc": "Obtenez une réponse détaillée sous 24 heures"
-    },
-    "form": {
-      "name": "Nom",
-      "email": "Email",
-      "subject": "Sujet",
-      "message": "Message",
-      "submit": "Envoyer le Message"
-    }
-  },
-  "whatsapp": {
-    "tooltip": "Discutez avec nous sur WhatsApp",
-    "ariaLabel": "Discutez avec nous sur WhatsApp"
-  }
+﻿{
+    "meta":  {
+                 "title":  "FPT — Fiper Pro Traders | Conçu pour un Trading Rapide et Intelligent",
+                 "description":  "Fiper Pro Traders (FPT) — Membre de Fiper Global. Prouvez vos compétences en trading, accédez à un capital financé jusqu\u0027à 200 000 $ avec un partage des profits de 80%."
+             },
+    "nav":  {
+                "challenges":  "Défis",
+                "pricing":  "Tarifs",
+                "howItWorks":  "Comment ça Marche",
+                "ecosystem":  "Écosystème",
+                "about":  "À Propos",
+                "login":  "Connexion",
+                "startChallenge":  "Démarrer le Défi FPT",
+                "partOfFiperGlobal":  "MEMBRE DE FIPER GLOBAL",
+                "home":  "Accueil",
+                "help":  "Aide"
+            },
+    "hero":  {
+                 "eyebrow":  "CONÇU POUR UN TRADING RAPIDE ET INTELLIGENT",
+                 "title1":  "Tradez en Toute Confiance.",
+                 "title2":  "Soyez Financé.",
+                 "subtitle":  "Prouvez vos compétences en trading, accédez à un capital financé et tradez dans un environnement structuré conçu pour les traders sérieux.",
+                 "ctaPrimary":  "Démarrer le Défi FPT",
+                 "ctaSecondary":  "Voir les Plans",
+                 "trustpilot":  "Trustpilot 4.2 · Excellent",
+                 "stats":  {
+                               "maxAccount":  "Compte Max",
+                               "profitSplit":  "Partage des Profits",
+                               "maxAccounts":  "Comptes Max",
+                               "leverage":  "Effet de Levier"
+                           }
+             },
+    "trustBar":  {
+                     "fundedAccounts":  "Comptes Financés",
+                     "rewardedTraders":  "Traders Récompensés",
+                     "totalRewarded":  "Total Récompensé",
+                     "countries":  "Pays",
+                     "support":  "Support"
+                 },
+    "valueProp":  {
+                      "title":  "Un Écosystème de Trading Complet — Pas Juste une Prop Firm",
+                      "features":  {
+                                       "evaluation":  "Modèle d\u0027évaluation structuré",
+                                       "environment":  "Environnement de trading professionnel",
+                                       "dashboard":  "Tableau de bord de performance avancé",
+                                       "funding":  "Processus de financement fluide"
+                                   }
+                  },
+    "keyRules":  {
+                     "title":  "Règles Claires. Transparence Totale.",
+                     "profitTarget":  "Objectif de Profit",
+                     "dailyDrawdown":  "Drawdown Quotidien",
+                     "maxDrawdown":  "Drawdown Maximum",
+                     "minDays":  "Jours de Trading Min.",
+                     "minDaysValue":  "Phase 1: 5 / Financé: 10",
+                     "timeLimit":  "Limite de Temps",
+                     "timeLimitValue":  "Applicable",
+                     "leverage":  "Effet de Levier",
+                     "leverageValue":  "Jusqu\u0027à 1:100"
+                 },
+    "profitSplit":  {
+                        "title":  "Gagnez jusqu\u0027à",
+                        "highlight":  "80%",
+                        "subtitle":  "de vos performances de trading"
+                    },
+    "howItWorks":  {
+                       "title":  "Comment ça Marche",
+                       "step1Title":  "Choisissez Votre Défi",
+                       "step1Desc":  "Sélectionnez la taille de compte qui correspond à vos objectifs de trading.",
+                       "step2Title":  "Passez l\u0027Évaluation",
+                       "step2Desc":  "Atteignez l\u0027objectif de profit tout en respectant les paramètres de risque.",
+                       "step3Title":  "Soyez Financé",
+                       "step3Desc":  "Accédez à un compte financé et commencez à trader selon les conditions de la firme."
+                   },
+    "pricingPreview":  {
+                           "mostPopular":  "LE PLUS POPULAIRE",
+                           "oneTime":  "(paiement unique)",
+                           "features":  {
+                                            "accountSize":  "Taille du Compte",
+                                            "profitTarget":  "Objectif de Profit",
+                                            "maxDailyLoss":  "Perte Quotidienne Max",
+                                            "maxLoss":  "Perte Max",
+                                            "minDays":  "Jours de Trading Min.",
+                                            "profitSplit":  "Partage des Profits",
+                                            "refund":  "Remboursement",
+                                            "refundValue":  "Non disponible"
+                                        },
+                           "cta":  "Démarrer le Défi",
+                           "viewAll":  "Voir Toutes les Tailles de Comptes"
+                       },
+    "dashboardPreview":  {
+                             "title":  "Suivez Vos Performances en Temps Réel",
+                             "subtitle":  "Un tableau de bord professionnel conçu pour les traders sérieux."
+                         },
+    "fptCard":  {
+                    "title":  "Accédez à Vos Profits avec la Fiper Card",
+                    "subtitle":  "FPT offre l\u0027accès à la Fiper Card — des solutions de cartes virtuelles et physiques pour le retrait de profits et l\u0027utilisation dans le monde réel.",
+                    "features":  {
+                                     "instant":  {
+                                                     "title":  "Accès Instantané",
+                                                     "desc":  "Accédez facilement à vos profits approuvés sans délais inutiles."
+                                                 },
+                                     "global":  {
+                                                    "title":  "Utilisation Globale",
+                                                    "desc":  "Utilisez votre carte en ligne ou en magasin dans le monde entier."
+                                                },
+                                     "virtual":  {
+                                                     "title":  "Cartes Virtuelles et Physiques",
+                                                     "desc":  "Choisissez entre des cartes virtuelles et physiques selon vos besoins."
+                                                 },
+                                     "integrated":  {
+                                                        "title":  "Intégrée à l\u0027Écosystème Fiper",
+                                                        "desc":  "Votre compte de trading se connecte à une infrastructure financière complète."
+                                                    }
+                                 },
+                    "note1":  "Les retraits de profits sont soumis à des processus d\u0027approbation internes et à des conditions de paiement.",
+                    "note2":  "La disponibilité de la carte dépend du statut du compte et de l\u0027éligibilité.",
+                    "cta":  "Obtenez Votre FPT Card"
+                },
+    "platforms":  {
+                      "title":  "Tradez sur des Plateformes Leaders du Secteur",
+                      "subtitle":  "Accédez aux marchés mondiaux via les plateformes de trading les plus fiables au monde."
+                  },
+    "ecosystem":  {
+                      "title":  "Membre de l\u0027Écosystème Fiper Global",
+                      "subtitle":  "FPT est propulsé par Fiper Global — une infrastructure financière complète conçue pour les traders modernes.",
+                      "fpt":  {
+                                  "title":  "FPT",
+                                  "desc":  "Défis de Prop Trading",
+                                  "badge":  "Vous Êtes Ici"
+                              },
+                      "card":  {
+                                   "title":  "Fiper Card",
+                                   "desc":  "Accès Instantané aux Profits",
+                                   "badge":  "Actif"
+                               },
+                      "crm":  {
+                                  "title":  "Fiper CRM",
+                                  "desc":  "Votre Centre de Commande",
+                                  "badge":  "Actif"
+                              },
+                      "footerNote":  "Visitez fiperglobal.com (bientôt disponible) pour en savoir plus."
+                  },
+    "traderTools":  {
+                        "title":  "Outils Conçus pour les Traders Intelligents",
+                        "subtitle":  "Tout ce dont vous avez besoin pour suivre, analyser et optimiser vos performances.",
+                        "ai":  {
+                                   "title":  "Analyse par Assistant IA",
+                                   "desc":  "Suivez vos progrès, comprenez vos schémas de trading et optimisez vos résultats avec des insights alimentés par l\u0027IA."
+                               },
+                        "leaderboard":  {
+                                            "title":  "Classement des Vrais Traders",
+                                            "desc":  "Voyez votre classement parmi les meilleurs traders mondiaux. Rivalisez, apprenez et grandissez avec la communauté FPT."
+                                        }
+                    },
+    "traderStories":  {
+                          "title":  "Par des Traders, pour des Traders",
+                          "subtitle":  "Des résultats réels de notre communauté mondiale."
+                      },
+    "faq":  {
+                "title":  "Questions Fréquentes",
+                "q1":  "Comment commencer ?",
+                "a1":  "Choisissez une taille de défi, complétez l\u0027inscription et commencez à trader sur notre plateforme. L\u0027évaluation commence immédiatement après la confirmation du paiement.",
+                "q2":  "Les frais sont-ils remboursables ?",
+                "a2":  "Les frais du défi sont uniques et non remboursables. Cependant, vous conservez l\u0027intégralité de votre part de profits une fois financé.",
+                "q3":  "Combien de temps avant d\u0027être financé ?",
+                "a3":  "Après avoir atteint l\u0027objectif de profit et complété le nombre minimum de jours de trading, la vérification du compte prend généralement 1 à 3 jours ouvrables.",
+                "q4":  "Comment retirer mes profits ?",
+                "a4":  "Les profits peuvent être retirés via Fiper Card (instantané) ou virement bancaire après la période minimale de trading financé.",
+                "q5":  "Quels marchés puis-je trader ?",
+                "a5":  "Accédez au forex, aux indices, aux matières premières et à certaines cryptomonnaies sur les plateformes MT4, MT5 et cTrader.",
+                "q6":  "Ai-je besoin d\u0027une expérience préalable ?",
+                "a6":  "Aucune expérience formelle n\u0027est requise, mais comprendre la gestion des risques et les règles de trading est essentiel au succès.",
+                "seeAll":  "Voir toutes les FAQ"
+            },
+    "finalCta":  {
+                     "title":  "Démarrez votre défi aujourd\u0027hui et faites passer votre trading au niveau supérieur.",
+                     "cta":  "Démarrer le Défi"
+                 },
+    "footer":  {
+                   "tagline":  "Conçu pour un Trading Rapide et Intelligent",
+                   "partOf":  "Membre de Fiper Global",
+                   "products":  "Produits",
+                   "fiperGlobal":  "Fiper Global",
+                   "legal":  "Juridique",
+                   "links":  {
+                                 "challenges":  "Défis FPT",
+                                 "pricing":  "Tarifs",
+                                 "fiperCard":  "Fiper Card",
+                                 "aboutFiperGlobal":  "À Propos de Fiper Global",
+                                 "fiperCRM":  "Fiper CRM",
+                                 "helpCenter":  "Centre d\u0027Aide",
+                                 "fiperGlobalSite":  "Fiper Global",
+                                 "terms":  "Conditions d\u0027Utilisation",
+                                 "privacy":  "Politique de Confidentialité",
+                                 "cookies":  "Politique des Cookies",
+                                 "refund":  "Politique de Remboursement",
+                                 "risk":  "Divulgation des Risques"
+                             },
+                   "copyright":  "© 2026 Fiper Pro Traders — Une Société Fiper Global. Tous droits réservés.",
+                   "riskDisclosure":  "Le trading sur comptes simulés implique des risques substantiels. Les performances passées ne préjugent pas des résultats futurs. Tous les comptes offerts sont des comptes démo avec des fonds simulés."
+               },
+    "challenges":  {
+                       "title":  "Prouvez Vos Compétences. Accédez à un Capital Financé.",
+                       "subtitle":  "Choisissez parmi trois parcours structurés conçus pour différents styles de trading.",
+                       "rules":  {
+                                     "profitTarget":  "Objectif de Profit",
+                                     "dailyDrawdown":  "Drawdown Quotidien",
+                                     "maxDrawdown":  "Drawdown Maximum",
+                                     "minDaysPhase1":  "Jours de Trading Min. (Phase 1)",
+                                     "minDaysFunded":  "Jours Min. Financés",
+                                     "timeLimit":  "Limite de Temps",
+                                     "timeLimitValue":  "Oui",
+                                     "leverage":  "Effet de Levier",
+                                     "leverageValue":  "Jusqu\u0027à 1:100 (selon l\u0027instrument)",
+                                     "maxAccounts":  "Comptes Max par Utilisateur"
+                                 },
+                       "note":  "Les conditions de trading peuvent varier selon l\u0027instrument et les conditions du marché.",
+                       "cta":  "Démarrer le Défi"
+                   },
+    "pricing":  {
+                    "title":  "Choisissez Votre Défi",
+                    "subtitle":  "Commencez votre voyage et prouvez votre discipline de trading.",
+                    "badges":  {
+                                   "oneTime":  "Paiement unique",
+                                   "nonRefundable":  "Non remboursable",
+                                   "noRetry":  "Pas de nouvelle tentative incluse"
+                               },
+                    "tabs":  {
+                                 "twoStep":  "Défi en 2 Étapes",
+                                 "oneStep":  "Défi en 1 Étape",
+                                 "instant":  "Financement Instantané"
+                             },
+                    "accountSize":  "Taille du Compte",
+                    "currency":  "Devise",
+                    "calculator":  {
+                                       "title":  "Estimez Vos Gains",
+                                       "performance":  "Performance Mensuelle Estimée",
+                                       "output":  "Gains Mensuels Estimés",
+                                       "disclaimer":  "Estimations uniquement. Les performances passées ne garantissent pas les résultats futurs."
+                                   },
+                    "compare":  {
+                                    "button":  "Comparer les Plans Côte à Côte",
+                                    "title":  "Comparer les Plans"
+                                }
+                },
+    "whatsapp":  {
+                     "tooltip":  "Discutez avec nous sur WhatsApp",
+                     "ariaLabel":  "Discutez avec nous sur WhatsApp"
+                 },
+    "challengePricing":  {
+                             "eyebrow":  "L\u0027Évaluation",
+                             "heroTitle1":  "Prouvez vos compétences.",
+                             "heroTitle2":  "Obtenez un financement.",
+                             "heroSubtitle":  "Une phase d\u0027évaluation. Règles claires. Jusqu\u0027à 80% de partage des bénéfices sur un compte financé.",
+                             "signIn":  "Se connecter",
+                             "startChallenge":  "Commencer le défi",
+                             "howItWorksEyebrow":  "Comment ça marche",
+                             "howItWorksTitle":  "Deux phases. Un chemin vers le financement.",
+                             "howItWorksSubtitle":  "Réussissez le défi, puis tradez avec du vrai capital.",
+                             "phase1Label":  "Défi FPT",
+                             "phase1Subtitle":  "Évaluation démo — prouvez votre discipline et votre constance.",
+                             "phase2Label":  "Compte Réel",
+                             "phase2Subtitle":  "Compte financé — tradez avec du vrai capital après avoir réussi le défi.",
+                             "pricingEyebrow":  "Tarifs",
+                             "pricingTitle":  "Frais uniques. Sans abonnement.",
+                             "pricingSubtitle":  "Choisissez la taille de votre compte et commencez votre évaluation aujourd\u0027hui.",
+                             "accountSize":  "Taille du compte",
+                             "mostPopular":  "Populaire",
+                             "currencyLabel":  "Devise",
+                             "convertedNote":  "Converti à des taux indicatifs. Règlement en USD.",
+                             "challengeLabel":  "Défi FPT",
+                             "accountLabel":  "Compte",
+                             "oneTime":  "paiement unique",
+                             "getStarted":  "Commencer",
+                             "accountSizeLabel":  "Taille du compte",
+                             "profitTarget":  "Objectif de profit",
+                             "maxDailyLoss":  "Perte quotidienne max",
+                             "maxLoss":  "Perte maximale",
+                             "timeLimit":  "Limite de temps",
+                             "profitShare":  "Partage des bénéfices",
+                             "swapFree":  "Sans swap",
+                             "feeLabel":  "Frais",
+                             "rulesEyebrow":  "Règles du jeu",
+                             "rulesTitle":  "Objectifs clairs. Limites définies. Sans surprises.",
+                             "rulesSubtitle":  "L\u0027ensemble des règles qui régissent chaque évaluation et compte financé FPT.",
+                             "rulesWarning":  "Les conditions de trading, calculs de drawdown et niveaux de levier peuvent varier selon l\u0027instrument et les conditions du marché.",
+                             "leverageEyebrow":  "Levier",
+                             "leverageTitle":  "Détail du levier par instrument.",
+                             "instrument":  "Instrument",
+                             "maxLeverage":  "Levier maximum",
+                             "ctaTitle":  "Les règles sont les mêmes à chaque fois.",
+                             "ctaSubtitle":  "Tradez avec conviction. L\u0027évaluation récompense la discipline.",
+                             "startYourChallenge":  "Commencer votre défi",
+                             "rules":  {
+                                           "profitTarget":  "Objectif de profit",
+                                           "dailyDrawdown":  "Drawdown quotidien",
+                                           "maxDrawdown":  "Drawdown maximum",
+                                           "minDaysPhase1":  "Jours min (Phase 1)",
+                                           "minDaysFunded":  "Jours min (Financé)",
+                                           "timeLimit":  "Limite de temps",
+                                           "leverageForex":  "Levier (Forex)",
+                                           "maxAccounts":  "Comptes maximum",
+                                           "swapFree":  "Sans swap",
+                                           "minPayout":  "Paiement minimum",
+                                           "maxPayout":  "Paiement maximum",
+                                           "profitShare":  "Partage des bénéfices"
+                                       },
+                             "leverage":  {
+                                              "forex":  "Forex",
+                                              "metals":  "Métaux",
+                                              "indices":  "Indices",
+                                              "commodities":  "Matières premières",
+                                              "crypto":  "Crypto"
+                                          }
+                         },
+    "about":  {
+                  "principles":  {
+                                     "p1title":  "Termes transparents",
+                                     "p1body":  "Chaque règle, chaque frais, chaque paiement est publié avant que vous payiez.",
+                                     "p2title":  "Le risque avant la récompense",
+                                     "p2body":  "Un trader qui survit aux drawdowns capitalise. Nos règles existent pour protéger le capital.",
+                                     "p3title":  "Un chemin, clairement balisé",
+                                     "p3body":  "Évaluation, financement, paiement, carte. Pas de gadgets.",
+                                     "p4title":  "L\u0027infrastructure avant le marketing",
+                                     "p4body":  "Nous investissons dans l\u0027exécution, la liquidité et les tableaux de bord."
+                                 },
+                  "stats":  {
+                                "countries":  "Pays desservis",
+                                "profitShare":  "Part de profit au trader",
+                                "products":  "Produits coordonnés",
+                                "support":  "Couverture du support"
+                            },
+                  "ecosystem":  {
+                                    "fptTag":  "Trading Prop",
+                                    "fptBody":  "L\u0027évaluation, le compte financé, la discipline.",
+                                    "cardTag":  "Accès au Capital",
+                                    "cardBody":  "Paiements réglés sur une carte mondiale.",
+                                    "globalTag":  "Centre de Commande",
+                                    "globalBody":  "Comptes, métriques et paiements unifiés."
+                                },
+                  "eyebrow":  "Fiper Pro Traders",
+                  "thesis":  "Notre thèse",
+                  "principlesEyebrow":  "Ce à quoi nous adhérons",
+                  "principlesTitle":  "Quatre principes. Sans exceptions.",
+                  "ecosystemEyebrow":  "Partie de quelque chose de plus grand",
+                  "ecosystemTitle":  "Fiper Global, de bout en bout.",
+                  "ecosystemSubtitle":  "FPT est un produit parmi trois coordonnés sous Fiper Global.",
+                  "ctaEyebrow":  "Commencez quand vous êtes prêt",
+                  "ctaTitle1":  "L\u0027infrastructure est construite.",
+                  "ctaTitle2":  "Le prochain mouvement vous appartient.",
+                  "getStarted":  "Commencer",
+                  "talkToTeam":  "Parler à l\u0027équipe",
+                  "story":  {
+                                "title":  "Notre histoire",
+                                "content":  "Fiper Global a été fondé avec la vision de donner du pouvoir aux traders du monde entier. FPT représente notre engagement envers une infrastructure de trading professionnelle."
+                            },
+                  "mission":  {
+                                  "title":  "",
+                                  "content":  "Nous croyons que les traders talentueux méritent un accès au capital sans obstacles inutiles. FPT offre un chemin transparent de l\u0027évaluation au trading financé."
+                              },
+                  "subtitle":  "FPT est la division prop trading de Fiper Global — une infrastructure financière intégrée pour les traders modernes.",
+                  "title":  "Conçu pour un Trading Rapide et Intelligent"
+              },
+    "contact":  {
+                    "pills":  {
+                                  "support":  "Support trader 24/7",
+                                  "countries":  "12+ pays",
+                                  "reply":  "Réponse sous 4h"
+                              },
+                    "channels":  {
+                                     "c1tag":  "Support trader",
+                                     "c1title":  "Aide compte \u0026 évaluation",
+                                     "c1body":  "Réponse sous 4 heures, 24/7.",
+                                     "c2tag":  "Institutionnel",
+                                     "c2title":  "Partenariats \u0026 desks",
+                                     "c2body":  "Fournisseurs de liquidité et desks prop.",
+                                     "c3tag":  "Presse \u0026 médias",
+                                     "c3title":  "Presse \u0026 communications",
+                                     "c3body":  "Demandes éditoriales et interviews."
+                                 },
+                    "topics":  {
+                                   "t1":  "Règles d\u0027évaluation",
+                                   "t2":  "Compte financé",
+                                   "t3":  "Paiements \u0026 Fiper Card",
+                                   "t4":  "Accès plateforme",
+                                   "t5":  "Partenariats",
+                                   "t6":  "Autre chose"
+                               },
+                    "infoBlocks":  {
+                                       "sla":  "SLA de réponse",
+                                       "slaValue":  "\u003c 4 heures",
+                                       "coverage":  "Couverture",
+                                       "coverageValue":  "24 / 7",
+                                       "languages":  "Langues",
+                                       "languagesValue":  "EN · ES · FR",
+                                       "hq":  "Siège social",
+                                       "hqValue":  "Fiper Global"
+                                   },
+                    "eyebrow":  "Contactez-nous",
+                    "formEyebrow":  "Envoyer un message",
+                    "formTitle":  "Dites-nous ce dont vous avez besoin.",
+                    "whySimpleEyebrow":  "Pourquoi nous gardons ça simple",
+                    "whySimpleTitle1":  "Vous écrivez à un humain.",
+                    "whySimpleTitle2":  "Un humain vous répond.",
+                    "whySimpleBody":  "Pas de bots. Chaque message arrive à un membre de l\u0027équipe.",
+                    "alreadyTrading":  "Vous tradez déjà ?",
+                    "alreadyTradingBody":  "Ouvrez un ticket depuis le tableau de bord.",
+                    "openCRM":  "Ouvrir CRM",
+                    "formPrivacy":  "En soumettant, vous acceptez d\u0027être contacté.",
+                    "sending":  "Envoi…",
+                    "messageSent":  "Message reçu.",
+                    "messageSentBody":  "Réponse sous 4 heures.",
+                    "sendAnother":  "Envoyer un autre message",
+                    "ctaEyebrow":  "Préférez-vous sauter le formulaire ?",
+                    "ctaTitle1":  "Commencez l\u0027évaluation.",
+                    "ctaTitle2":  "Nous vous retrouverons à l\u0027intérieur.",
+                    "learnAbout":  "En savoir plus sur FPT"
+                },
+    "help":  {
+                 "popular":  {
+                                 "q1":  "Comment commencer",
+                                 "q2":  "Paiements",
+                                 "q3":  "Règles de drawdown",
+                                 "q4":  "Objectif de profit"
+                             },
+                 "eyebrow":  "Centre d\u0027aide",
+                 "title1":  "Réponses. Organisées.",
+                 "title2":  "Recherchables.",
+                 "subtitle":  "Tout ce dont vous avez besoin pour naviguer dans FPT.",
+                 "popularSearches":  "Recherches populaires :",
+                 "browseEyebrow":  "Parcourir par sujet",
+                 "browseTitle":  "Chaque réponse, triée.",
+                 "mostAskedEyebrow":  "Les plus demandées",
+                 "mostAskedTitle":  "Réponses rapides.",
+                 "relatedTopics":  "Sujets connexes",
+                 "keepExploring":  "Continuer à explorer.",
+                 "articles":  "articles",
+                 "article":  "article",
+                 "stillNeedHelp":  "Vous avez encore besoin d\u0027aide ?",
+                 "stillNeedHelpBody":  "Notre équipe est disponible 24/7.",
+                 "contactSupport":  "Contacter le support",
+                 "startChallenge":  "Commencer le défi",
+                 "whatsappBanner":  "Besoin d\u0027aide ? Chattez sur WhatsApp.",
+                 "searchPlaceholder":  "Rechercher…"
+             }
 }

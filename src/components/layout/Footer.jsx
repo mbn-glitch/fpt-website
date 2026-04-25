@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Star } from 'lucide-react';
 import Logo from '../brand/Logo.jsx';
@@ -41,17 +41,17 @@ export default function Footer() {
               <LinkLabel emoji="🔥">{t('footer.links.challenges')}</LinkLabel>
             </FooterLink>
             <FooterLink to={localizedPath('/pricing', lang)}>{t('footer.links.pricing')}</FooterLink>
-            <FooterLink href="https://fiper-landing-page.vercel.app" external>{t('footer.links.fiperCard')}</FooterLink>
+            <FooterLink href="https://fiperhub.com" external>{t('footer.links.fiperCard')}</FooterLink>
           </FooterCol>
 
           <FooterCol title={t('footer.fiperGlobal')}>
             <FooterLink href="https://linktr.ee/fiper" external>
               <LinkLabel emoji="🏦">{t('footer.links.aboutFiperGlobal')}</LinkLabel>
             </FooterLink>
-            <FooterLink href="https://fiper-landing-page.vercel.app" external>
+            <FooterLink href="https://fiperhub.com" external>
               <LinkLabel emoji="🏧">{t('footer.links.fiperCard')}</LinkLabel>
             </FooterLink>
-            <FooterLink href="https://crm.fiper.me/login" external>
+            <FooterLink href="https://fiperhub.com" external>
               <LinkLabel emoji="🌐">{t('footer.links.fiperCRM')}</LinkLabel>
             </FooterLink>
             <FooterLink to={localizedPath('/help', lang)}>

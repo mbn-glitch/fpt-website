@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Star, TrendingUp } from 'lucide-react';
 import Button from '../ui/Button.jsx';
@@ -6,7 +6,7 @@ import { Eyebrow } from '../ui/Section.jsx';
 import WaveBg from '../ui/WaveBg.jsx';
 
 const REGISTER = 'https://crm.fptraders.com/register';
-const LOGIN = 'https://crm.fptraders.com/login';
+
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -40,10 +40,10 @@ export default function Hero() {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <Button href={REGISTER} external size="lg">
+            <Button to={REGISTER} size="lg">
               {t('hero.ctaPrimary')}
             </Button>
-            <Button href={LOGIN} external variant="ghost" size="lg">
+            <Button to="/challenges" variant="ghost" size="lg">
               {t('hero.ctaSecondary')}
             </Button>
           </div>

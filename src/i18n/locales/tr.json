@@ -1,282 +1,447 @@
-{
-  "meta": {
-    "title": "FPT — Fiper Pro Traders | Hızlı ve Akıllı Ticaret için Tasarlandı",
-    "description": "Fiper Pro Traders (FPT) — Fiper Global'in bir parçası. Ticaret becerilerinizi kanıtlayın, 200.000 dolara kadar sermaye erişimi ve %80 kar payı kazanın."
-  },
-  "nav": {
-    "challenges": "Zorluklar",
-    "pricing": "Fiyatlandırma",
-    "howItWorks": "Nasıl Çalışır",
-    "ecosystem": "Ekosistem",
-    "about": "Hakkımızda",
-    "login": "Giriş",
-    "startChallenge": "FPT Zorluğuna Başla",
-    "partOfFiperGlobal": "FIPER GLOBAL'İN BİR PARÇASI"
-  },
-  "hero": {
-    "eyebrow": "HIZLI VE AKILLI TİCARET İÇİN TASARLANDI",
-    "title1": "Güvenle Ticaret Yapın.",
-    "title2": "Fonlanın.",
-    "subtitle": "Ticaret becerilerinizi kanıtlayın, fonlanmış sermayeye erişin ve ciddi tüccarlar için tasarlanmış yapılandırılmış bir ortamda işlem yapın.",
-    "ctaPrimary": "FPT Zorluğuna Başla",
-    "ctaSecondary": "Planları Gör",
-    "trustpilot": "Trustpilot 4.2 · Mükemmel",
-    "stats": {
-      "maxAccount": "Maks. Hesap",
-      "profitSplit": "Kar Payı",
-      "maxAccounts": "Maks. Hesap Sayısı",
-      "leverage": "Kaldıraç"
-    }
-  },
-  "trustBar": {
-    "fundedAccounts": "Fonlanmış Hesap",
-    "rewardedTraders": "Ödüllendirilmiş Tüccar",
-    "totalRewarded": "Toplam Ödül",
-    "countries": "Ülke",
-    "support": "Destek"
-  },
-  "valueProp": {
-    "title": "Tam Bir Ticaret Ekosistemi — Sadece Bir Prop Firması Değil",
-    "features": {
-      "evaluation": "Yapılandırılmış değerlendirme modeli",
-      "environment": "Profesyonel ticaret ortamı",
-      "dashboard": "Gelişmiş performans panosu",
-      "funding": "Sorunsuz fonlama süreci"
-    }
-  },
-  "keyRules": {
-    "title": "Net Kurallar. Tam Şeffaflık.",
-    "profitTarget": "Kar Hedefi",
-    "dailyDrawdown": "Günlük Maks. Kayıp",
-    "maxDrawdown": "Toplam Maks. Kayıp",
-    "minDays": "Min. İşlem Günü",
-    "minDaysValue": "Faz 1: 5 / Fonlanmış: 10",
-    "timeLimit": "Süre Limiti",
-    "timeLimitValue": "Uygulanır",
-    "leverage": "Kaldıraç",
-    "leverageValue": "1:100'e kadar"
-  },
-  "profitSplit": {
-    "title": "Şuna kadar kazanın:",
-    "highlight": "80%",
-    "subtitle": "ticaret performansınızdan"
-  },
-  "howItWorks": {
-    "title": "Nasıl Çalışır",
-    "step1Title": "Zorluğunuzu Seçin",
-    "step1Desc": "Ticaret hedeflerinize uygun hesap boyutunu seçin.",
-    "step2Title": "Değerlendirmeyi Geçin",
-    "step2Desc": "Risk parametrelerine uyarak kar hedefine ulaşın.",
-    "step3Title": "Fonlanın",
-    "step3Desc": "Fonlanmış bir hesaba erişin ve firma koşulları altında ticarete başlayın."
-  },
-  "pricingPreview": {
-    "mostPopular": "EN POPÜLER",
-    "oneTime": "(tek seferlik)",
-    "features": {
-      "accountSize": "Hesap Boyutu",
-      "profitTarget": "Kar Hedefi",
-      "maxDailyLoss": "Günlük Maks. Kayıp",
-      "maxLoss": "Maks. Kayıp",
-      "minDays": "Min. İşlem Günü",
-      "profitSplit": "Kar Payı",
-      "refund": "İade",
-      "refundValue": "Mevcut değil"
-    },
-    "cta": "Zorluğa Başla",
-    "viewAll": "Tüm Hesap Boyutlarını Gör"
-  },
-  "dashboardPreview": {
-    "title": "Performansınızı Gerçek Zamanlı Takip Edin",
-    "subtitle": "Ciddi tüccarlar için tasarlanmış profesyonel bir pano."
-  },
-  "fptCard": {
-    "title": "Kârlarınıza Fiper Kartı ile Erişin",
-    "subtitle": "FPT, Fiper Kartına erişim sunar — kar çekimi ve gerçek dünya kullanımı için sanal ve fiziksel kart çözümleri sağlar.",
-    "features": {
-      "instant": {
-        "title": "Anında Erişim",
-        "desc": "Onaylanmış karlarınıza gereksiz gecikmeler olmadan kolayca erişin."
-      },
-      "global": {
-        "title": "Küresel Kullanım",
-        "desc": "Kartınızı dünya genelinde çevrimiçi veya mağazada kullanın."
-      },
-      "virtual": {
-        "title": "Sanal ve Fiziksel Kartlar",
-        "desc": "İhtiyaçlarınıza göre sanal ve fiziksel kartlar arasında seçim yapın."
-      },
-      "integrated": {
-        "title": "Fiper Ekosistemi ile Entegre",
-        "desc": "Ticaret hesabınız tam bir finansal altyapıya bağlanır."
-      }
-    },
-    "note1": "Kar çekimleri dahili onay süreçlerine ve ödeme koşullarına tabidir.",
-    "note2": "Kart kullanılabilirliği hesap durumu ve uygunluğa bağlıdır.",
-    "cta": "FPT Kartınızı Alın"
-  },
-  "platforms": {
-    "title": "Sektör Lideri Platformlarda İşlem Yapın",
-    "subtitle": "Dünyanın en güvenilir ticaret platformları aracılığıyla küresel pazarlara erişin."
-  },
-  "ecosystem": {
-    "title": "Fiper Global Ekosisteminin Parçası",
-    "subtitle": "FPT, Fiper Global tarafından desteklenir — modern tüccarlar için tasarlanmış tam bir finansal altyapı.",
-    "fpt": {
-      "title": "FPT",
-      "desc": "Prop Ticaret Zorlukları",
-      "badge": "Şu Andasınız"
-    },
-    "card": {
-      "title": "Fiper Kart",
-      "desc": "Anında Kar Erişimi",
-      "badge": "Aktif"
-    },
-    "crm": {
-      "title": "Fiper CRM",
-      "desc": "Komuta Merkeziniz",
-      "badge": "Aktif"
-    },
-    "footerNote": "Daha fazla bilgi için fiperglobal.com'u ziyaret edin (yakında)."
-  },
-  "traderTools": {
-    "title": "Akıllı Tüccarlar için Araçlar",
-    "subtitle": "Performansınızı takip etmek, analiz etmek ve optimize etmek için gereken her şey.",
-    "ai": {
-      "title": "AI Asistan Analizi",
-      "desc": "İlerlemenizi takip edin, ticaret desenlerinizi anlayın ve yapay zeka destekli içgörülerle sonuçlarınızı optimize edin."
-    },
-    "leaderboard": {
-      "title": "Gerçek Tüccar Liderlik Tablosu",
-      "desc": "Küresel en iyi tüccarlara karşı sıralamanızı görün. FPT topluluğuyla yarışın, öğrenin ve büyüyün."
-    }
-  },
-  "traderStories": {
-    "title": "Tüccarlardan Tüccarlara",
-    "subtitle": "Küresel topluluğumuzdan gerçek sonuçlar."
-  },
-  "faq": {
-    "title": "Sıkça Sorulan Sorular",
-    "q1": "Nasıl başlarım?",
-    "a1": "Bir zorluk boyutu seçin, kaydı tamamlayın ve platformumuzda ticarete başlayın. Değerlendirme, ödeme onayından hemen sonra başlar.",
-    "q2": "Ücretler iade edilebilir mi?",
-    "a2": "Zorluk ücretleri tek seferliktir ve iade edilemez. Ancak fonlandıktan sonra tam kar payınızı korursunuz.",
-    "q3": "Ne kadar sürede fonlanırım?",
-    "a3": "Kar hedefine ulaşıp minimum işlem günlerini tamamladıktan sonra hesap doğrulaması genellikle 1-3 iş günü sürer.",
-    "q4": "Karlarımı nasıl çekerim?",
-    "a4": "Karlar minimum fonlanmış ticaret süresinden sonra Fiper Kart (anında) veya banka transferi ile çekilebilir.",
-    "q5": "Hangi pazarlarda işlem yapabilirim?",
-    "a5": "MT4, MT5 ve cTrader platformlarında forex, endeksler, emtialar ve seçili kripto paralara erişin.",
-    "q6": "Önceden deneyime ihtiyacım var mı?",
-    "a6": "Resmi bir deneyim gerekmez, ancak risk yönetimini ve ticaret kurallarını anlamak başarı için esastır.",
-    "seeAll": "Tüm SSS'leri Gör"
-  },
-  "finalCta": {
-    "title": "Bugün zorluğunuza başlayın ve ticaretinizi bir üst seviyeye taşıyın.",
-    "cta": "Zorluğa Başla"
-  },
-  "footer": {
-    "tagline": "Hızlı ve Akıllı Ticaret için Tasarlandı",
-    "partOf": "Fiper Global'in bir parçası",
-    "products": "Ürünler",
-    "fiperGlobal": "Fiper Global",
-    "legal": "Yasal",
-    "links": {
-      "challenges": "FPT Zorlukları",
-      "pricing": "Fiyatlandırma",
-      "fiperCard": "Fiper Kart",
-      "aboutFiperGlobal": "Fiper Global Hakkında",
-      "fiperCRM": "Fiper CRM",
-      "helpCenter": "Yardım Merkezi",
-      "fiperGlobalSite": "Fiper Global",
-      "terms": "Hizmet Şartları",
-      "privacy": "Gizlilik Politikası",
-      "cookies": "Çerez Politikası",
-      "refund": "İade Politikası",
-      "risk": "Risk Beyanı"
-    },
-    "copyright": "© 2026 Fiper Pro Traders — Bir Fiper Global Şirketi. Tüm hakları saklıdır.",
-    "riskDisclosure": "Simüle edilmiş hesaplarda işlem yapmak önemli riskler içerir. Geçmiş performans gelecekteki sonuçların göstergesi değildir. Sunulan tüm hesaplar simüle edilmiş fonlarla demo hesaplardır."
-  },
-  "challenges": {
-    "title": "Becerilerinizi Kanıtlayın. Fonlanmış Sermayeye Erişin.",
-    "subtitle": "Farklı ticaret stilleri için tasarlanmış üç yapılandırılmış yol arasından seçim yapın.",
-    "rules": {
-      "profitTarget": "Kar Hedefi",
-      "dailyDrawdown": "Günlük Maks. Kayıp",
-      "maxDrawdown": "Toplam Maks. Kayıp",
-      "minDaysPhase1": "Min. İşlem Günü (Faz 1)",
-      "minDaysFunded": "Fonlanmış Min. Gün",
-      "timeLimit": "Süre Limiti",
-      "timeLimitValue": "Evet",
-      "leverage": "Kaldıraç",
-      "leverageValue": "1:100'e kadar (enstrümana bağlı)",
-      "maxAccounts": "Kullanıcı Başına Maks. Hesap"
-    },
-    "note": "Ticaret koşulları enstrümana ve piyasa koşullarına göre değişebilir.",
-    "cta": "Zorluğa Başla"
-  },
-  "pricing": {
-    "title": "Zorluğunuzu Seçin",
-    "subtitle": "Yolculuğunuza başlayın ve ticaret disiplininizi kanıtlayın.",
-    "badges": {
-      "oneTime": "Tek seferlik ücret",
-      "nonRefundable": "İade edilemez",
-      "noRetry": "Yeniden deneme dahil değil"
-    },
-    "tabs": {
-      "twoStep": "2 Aşamalı Zorluk",
-      "oneStep": "1 Aşamalı Zorluk",
-      "instant": "Anında Fonlama"
-    },
-    "accountSize": "Hesap Boyutu",
-    "currency": "Para Birimi",
-    "calculator": {
-      "title": "Kazançlarınızı Tahmin Edin",
-      "performance": "Tahmini Aylık Performans",
-      "output": "Tahmini Aylık Kazanç",
-      "disclaimer": "Yalnızca tahminler. Geçmiş performans gelecekteki sonuçları garanti etmez."
-    },
-    "compare": {
-      "button": "Planları Yan Yana Karşılaştır",
-      "title": "Planları Karşılaştır"
-    }
-  },
-  "about": {
-    "title": "Hızlı ve Akıllı Ticaret için Tasarlandı",
-    "subtitle": "FPT, Fiper Global'in prop ticaret bölümüdür — modern tüccarlar için tasarlanmış tam bir finansal altyapı.",
-    "story": {
-      "title": "Hikayemiz",
-      "content": "Fiper Global, dünya çapındaki tüccarları güçlendirme vizyonuyla kuruldu. FPT, titiz değerlendirme standartlarını istisnai tüccar desteğiyle birleştiren profesyonel ticaret altyapısına olan bağlılığımızı temsil eder."
-    },
-    "mission": {
-      "title": "FPT Misyonu",
-      "content": "Yetenekli tüccarların gereksiz engeller olmadan sermayeye erişimi hak ettiğine inanıyoruz. FPT, değerlendirmeden fonlanmış ticarete şeffaf ve yapılandırılmış bir yol sağlar."
-    }
-  },
-  "contact": {
-    "title": "İletişime Geçin",
-    "subtitle": "Yardım etmek için buradayız. Aşağıdaki herhangi bir kanaldan ulaşın.",
-    "whatsapp": {
-      "title": "WhatsApp Desteği",
-      "desc": "Destek ekibimizle anında sohbet edin",
-      "badge": "7/24 Mevcut",
-      "cta": "Sohbete Başla"
-    },
-    "email": {
-      "title": "E-posta Desteği",
-      "desc": "24 saat içinde ayrıntılı yanıt alın"
-    },
-    "form": {
-      "name": "Ad",
-      "email": "E-posta",
-      "subject": "Konu",
-      "message": "Mesaj",
-      "submit": "Mesaj Gönder"
-    }
-  },
-  "whatsapp": {
-    "tooltip": "WhatsApp'ta bizimle sohbet edin",
-    "ariaLabel": "WhatsApp'ta bizimle sohbet edin"
-  }
+﻿{
+    "meta":  {
+                 "title":  "FPT — Fiper Pro Traders | Hızlı ve Akıllı Ticaret için Tasarlandı",
+                 "description":  "Fiper Pro Traders (FPT) — Fiper Global\u0027in bir parçası. Ticaret becerilerinizi kanıtlayın, 200.000 dolara kadar sermaye erişimi ve %80 kar payı kazanın."
+             },
+    "nav":  {
+                "challenges":  "Zorluklar",
+                "pricing":  "Fiyatlandırma",
+                "howItWorks":  "Nasıl Çalışır",
+                "ecosystem":  "Ekosistem",
+                "about":  "Hakkımızda",
+                "login":  "Giriş",
+                "startChallenge":  "FPT Zorluğuna Başla",
+                "partOfFiperGlobal":  "FIPER GLOBAL\u0027İN BİR PARÇASI",
+                "home":  "Ana Sayfa",
+                "help":  "Yardım"
+            },
+    "hero":  {
+                 "eyebrow":  "HIZLI VE AKILLI TİCARET İÇİN TASARLANDI",
+                 "title1":  "Güvenle Ticaret Yapın.",
+                 "title2":  "Fonlanın.",
+                 "subtitle":  "Ticaret becerilerinizi kanıtlayın, fonlanmış sermayeye erişin ve ciddi tüccarlar için tasarlanmış yapılandırılmış bir ortamda işlem yapın.",
+                 "ctaPrimary":  "FPT Zorluğuna Başla",
+                 "ctaSecondary":  "Planları Gör",
+                 "trustpilot":  "Trustpilot 4.2 · Mükemmel",
+                 "stats":  {
+                               "maxAccount":  "Maks. Hesap",
+                               "profitSplit":  "Kar Payı",
+                               "maxAccounts":  "Maks. Hesap Sayısı",
+                               "leverage":  "Kaldıraç"
+                           }
+             },
+    "trustBar":  {
+                     "fundedAccounts":  "Fonlanmış Hesap",
+                     "rewardedTraders":  "Ödüllendirilmiş Tüccar",
+                     "totalRewarded":  "Toplam Ödül",
+                     "countries":  "Ülke",
+                     "support":  "Destek"
+                 },
+    "valueProp":  {
+                      "title":  "Tam Bir Ticaret Ekosistemi — Sadece Bir Prop Firması Değil",
+                      "features":  {
+                                       "evaluation":  "Yapılandırılmış değerlendirme modeli",
+                                       "environment":  "Profesyonel ticaret ortamı",
+                                       "dashboard":  "Gelişmiş performans panosu",
+                                       "funding":  "Sorunsuz fonlama süreci"
+                                   }
+                  },
+    "keyRules":  {
+                     "title":  "Net Kurallar. Tam Şeffaflık.",
+                     "profitTarget":  "Kar Hedefi",
+                     "dailyDrawdown":  "Günlük Maks. Kayıp",
+                     "maxDrawdown":  "Toplam Maks. Kayıp",
+                     "minDays":  "Min. İşlem Günü",
+                     "minDaysValue":  "Faz 1: 5 / Fonlanmış: 10",
+                     "timeLimit":  "Süre Limiti",
+                     "timeLimitValue":  "Uygulanır",
+                     "leverage":  "Kaldıraç",
+                     "leverageValue":  "1:100\u0027e kadar"
+                 },
+    "profitSplit":  {
+                        "title":  "Şuna kadar kazanın:",
+                        "highlight":  "80%",
+                        "subtitle":  "ticaret performansınızdan"
+                    },
+    "howItWorks":  {
+                       "title":  "Nasıl Çalışır",
+                       "step1Title":  "Zorluğunuzu Seçin",
+                       "step1Desc":  "Ticaret hedeflerinize uygun hesap boyutunu seçin.",
+                       "step2Title":  "Değerlendirmeyi Geçin",
+                       "step2Desc":  "Risk parametrelerine uyarak kar hedefine ulaşın.",
+                       "step3Title":  "Fonlanın",
+                       "step3Desc":  "Fonlanmış bir hesaba erişin ve firma koşulları altında ticarete başlayın."
+                   },
+    "pricingPreview":  {
+                           "mostPopular":  "EN POPÜLER",
+                           "oneTime":  "(tek seferlik)",
+                           "features":  {
+                                            "accountSize":  "Hesap Boyutu",
+                                            "profitTarget":  "Kar Hedefi",
+                                            "maxDailyLoss":  "Günlük Maks. Kayıp",
+                                            "maxLoss":  "Maks. Kayıp",
+                                            "minDays":  "Min. İşlem Günü",
+                                            "profitSplit":  "Kar Payı",
+                                            "refund":  "İade",
+                                            "refundValue":  "Mevcut değil"
+                                        },
+                           "cta":  "Zorluğa Başla",
+                           "viewAll":  "Tüm Hesap Boyutlarını Gör"
+                       },
+    "dashboardPreview":  {
+                             "title":  "Performansınızı Gerçek Zamanlı Takip Edin",
+                             "subtitle":  "Ciddi tüccarlar için tasarlanmış profesyonel bir pano."
+                         },
+    "fptCard":  {
+                    "title":  "Kârlarınıza Fiper Kartı ile Erişin",
+                    "subtitle":  "FPT, Fiper Kartına erişim sunar — kar çekimi ve gerçek dünya kullanımı için sanal ve fiziksel kart çözümleri sağlar.",
+                    "features":  {
+                                     "instant":  {
+                                                     "title":  "Anında Erişim",
+                                                     "desc":  "Onaylanmış karlarınıza gereksiz gecikmeler olmadan kolayca erişin."
+                                                 },
+                                     "global":  {
+                                                    "title":  "Küresel Kullanım",
+                                                    "desc":  "Kartınızı dünya genelinde çevrimiçi veya mağazada kullanın."
+                                                },
+                                     "virtual":  {
+                                                     "title":  "Sanal ve Fiziksel Kartlar",
+                                                     "desc":  "İhtiyaçlarınıza göre sanal ve fiziksel kartlar arasında seçim yapın."
+                                                 },
+                                     "integrated":  {
+                                                        "title":  "Fiper Ekosistemi ile Entegre",
+                                                        "desc":  "Ticaret hesabınız tam bir finansal altyapıya bağlanır."
+                                                    }
+                                 },
+                    "note1":  "Kar çekimleri dahili onay süreçlerine ve ödeme koşullarına tabidir.",
+                    "note2":  "Kart kullanılabilirliği hesap durumu ve uygunluğa bağlıdır.",
+                    "cta":  "FPT Kartınızı Alın"
+                },
+    "platforms":  {
+                      "title":  "Sektör Lideri Platformlarda İşlem Yapın",
+                      "subtitle":  "Dünyanın en güvenilir ticaret platformları aracılığıyla küresel pazarlara erişin."
+                  },
+    "ecosystem":  {
+                      "title":  "Fiper Global Ekosisteminin Parçası",
+                      "subtitle":  "FPT, Fiper Global tarafından desteklenir — modern tüccarlar için tasarlanmış tam bir finansal altyapı.",
+                      "fpt":  {
+                                  "title":  "FPT",
+                                  "desc":  "Prop Ticaret Zorlukları",
+                                  "badge":  "Şu Andasınız"
+                              },
+                      "card":  {
+                                   "title":  "Fiper Kart",
+                                   "desc":  "Anında Kar Erişimi",
+                                   "badge":  "Aktif"
+                               },
+                      "crm":  {
+                                  "title":  "Fiper CRM",
+                                  "desc":  "Komuta Merkeziniz",
+                                  "badge":  "Aktif"
+                              },
+                      "footerNote":  "Daha fazla bilgi için fiperglobal.com\u0027u ziyaret edin (yakında)."
+                  },
+    "traderTools":  {
+                        "title":  "Akıllı Tüccarlar için Araçlar",
+                        "subtitle":  "Performansınızı takip etmek, analiz etmek ve optimize etmek için gereken her şey.",
+                        "ai":  {
+                                   "title":  "AI Asistan Analizi",
+                                   "desc":  "İlerlemenizi takip edin, ticaret desenlerinizi anlayın ve yapay zeka destekli içgörülerle sonuçlarınızı optimize edin."
+                               },
+                        "leaderboard":  {
+                                            "title":  "Gerçek Tüccar Liderlik Tablosu",
+                                            "desc":  "Küresel en iyi tüccarlara karşı sıralamanızı görün. FPT topluluğuyla yarışın, öğrenin ve büyüyün."
+                                        }
+                    },
+    "traderStories":  {
+                          "title":  "Tüccarlardan Tüccarlara",
+                          "subtitle":  "Küresel topluluğumuzdan gerçek sonuçlar."
+                      },
+    "faq":  {
+                "title":  "Sıkça Sorulan Sorular",
+                "q1":  "Nasıl başlarım?",
+                "a1":  "Bir zorluk boyutu seçin, kaydı tamamlayın ve platformumuzda ticarete başlayın. Değerlendirme, ödeme onayından hemen sonra başlar.",
+                "q2":  "Ücretler iade edilebilir mi?",
+                "a2":  "Zorluk ücretleri tek seferliktir ve iade edilemez. Ancak fonlandıktan sonra tam kar payınızı korursunuz.",
+                "q3":  "Ne kadar sürede fonlanırım?",
+                "a3":  "Kar hedefine ulaşıp minimum işlem günlerini tamamladıktan sonra hesap doğrulaması genellikle 1-3 iş günü sürer.",
+                "q4":  "Karlarımı nasıl çekerim?",
+                "a4":  "Karlar minimum fonlanmış ticaret süresinden sonra Fiper Kart (anında) veya banka transferi ile çekilebilir.",
+                "q5":  "Hangi pazarlarda işlem yapabilirim?",
+                "a5":  "MT4, MT5 ve cTrader platformlarında forex, endeksler, emtialar ve seçili kripto paralara erişin.",
+                "q6":  "Önceden deneyime ihtiyacım var mı?",
+                "a6":  "Resmi bir deneyim gerekmez, ancak risk yönetimini ve ticaret kurallarını anlamak başarı için esastır.",
+                "seeAll":  "Tüm SSS\u0027leri Gör"
+            },
+    "finalCta":  {
+                     "title":  "Bugün zorluğunuza başlayın ve ticaretinizi bir üst seviyeye taşıyın.",
+                     "cta":  "Zorluğa Başla"
+                 },
+    "footer":  {
+                   "tagline":  "Hızlı ve Akıllı Ticaret için Tasarlandı",
+                   "partOf":  "Fiper Global\u0027in bir parçası",
+                   "products":  "Ürünler",
+                   "fiperGlobal":  "Fiper Global",
+                   "legal":  "Yasal",
+                   "links":  {
+                                 "challenges":  "FPT Zorlukları",
+                                 "pricing":  "Fiyatlandırma",
+                                 "fiperCard":  "Fiper Kart",
+                                 "aboutFiperGlobal":  "Fiper Global Hakkında",
+                                 "fiperCRM":  "Fiper CRM",
+                                 "helpCenter":  "Yardım Merkezi",
+                                 "fiperGlobalSite":  "Fiper Global",
+                                 "terms":  "Hizmet Şartları",
+                                 "privacy":  "Gizlilik Politikası",
+                                 "cookies":  "Çerez Politikası",
+                                 "refund":  "İade Politikası",
+                                 "risk":  "Risk Beyanı"
+                             },
+                   "copyright":  "© 2026 Fiper Pro Traders — Bir Fiper Global Şirketi. Tüm hakları saklıdır.",
+                   "riskDisclosure":  "Simüle edilmiş hesaplarda işlem yapmak önemli riskler içerir. Geçmiş performans gelecekteki sonuçların göstergesi değildir. Sunulan tüm hesaplar simüle edilmiş fonlarla demo hesaplardır."
+               },
+    "challenges":  {
+                       "title":  "Becerilerinizi Kanıtlayın. Fonlanmış Sermayeye Erişin.",
+                       "subtitle":  "Farklı ticaret stilleri için tasarlanmış üç yapılandırılmış yol arasından seçim yapın.",
+                       "rules":  {
+                                     "profitTarget":  "Kar Hedefi",
+                                     "dailyDrawdown":  "Günlük Maks. Kayıp",
+                                     "maxDrawdown":  "Toplam Maks. Kayıp",
+                                     "minDaysPhase1":  "Min. İşlem Günü (Faz 1)",
+                                     "minDaysFunded":  "Fonlanmış Min. Gün",
+                                     "timeLimit":  "Süre Limiti",
+                                     "timeLimitValue":  "Evet",
+                                     "leverage":  "Kaldıraç",
+                                     "leverageValue":  "1:100\u0027e kadar (enstrümana bağlı)",
+                                     "maxAccounts":  "Kullanıcı Başına Maks. Hesap"
+                                 },
+                       "note":  "Ticaret koşulları enstrümana ve piyasa koşullarına göre değişebilir.",
+                       "cta":  "Zorluğa Başla"
+                   },
+    "pricing":  {
+                    "title":  "Zorluğunuzu Seçin",
+                    "subtitle":  "Yolculuğunuza başlayın ve ticaret disiplininizi kanıtlayın.",
+                    "badges":  {
+                                   "oneTime":  "Tek seferlik ücret",
+                                   "nonRefundable":  "İade edilemez",
+                                   "noRetry":  "Yeniden deneme dahil değil"
+                               },
+                    "tabs":  {
+                                 "twoStep":  "2 Aşamalı Zorluk",
+                                 "oneStep":  "1 Aşamalı Zorluk",
+                                 "instant":  "Anında Fonlama"
+                             },
+                    "accountSize":  "Hesap Boyutu",
+                    "currency":  "Para Birimi",
+                    "calculator":  {
+                                       "title":  "Kazançlarınızı Tahmin Edin",
+                                       "performance":  "Tahmini Aylık Performans",
+                                       "output":  "Tahmini Aylık Kazanç",
+                                       "disclaimer":  "Yalnızca tahminler. Geçmiş performans gelecekteki sonuçları garanti etmez."
+                                   },
+                    "compare":  {
+                                    "button":  "Planları Yan Yana Karşılaştır",
+                                    "title":  "Planları Karşılaştır"
+                                }
+                },
+    "whatsapp":  {
+                     "tooltip":  "WhatsApp\u0027ta bizimle sohbet edin",
+                     "ariaLabel":  "WhatsApp\u0027ta bizimle sohbet edin"
+                 },
+    "challengePricing":  {
+                             "eyebrow":  "Değerlendirme",
+                             "heroTitle1":  "Becerilerini Kanıtla.",
+                             "heroTitle2":  "Finansman Al.",
+                             "heroSubtitle":  "Tek değerlendirme aşaması. Net kurallar. Finanse edilmiş hesapta %80\u0027e kadar kar paylaşımı.",
+                             "signIn":  "Giriş Yap",
+                             "startChallenge":  "Meydan Okumayı Başlat",
+                             "howItWorksEyebrow":  "Nasıl Çalışır",
+                             "howItWorksTitle":  "İki aşama. Finansmana giden tek yol.",
+                             "howItWorksSubtitle":  "Zorluğu geç, sonra gerçek sermaye ile işlem yap.",
+                             "phase1Label":  "FPT Meydan Okuma",
+                             "phase1Subtitle":  "Demo değerlendirme — disiplininizi ve tutarlılığınızı kanıtlayın.",
+                             "phase2Label":  "Canlı Hesap",
+                             "phase2Subtitle":  "Finanse edilmiş hesap — zorluğu geçtikten sonra gerçek sermaye ile işlem yapın.",
+                             "pricingEyebrow":  "Fiyatlandırma",
+                             "pricingTitle":  "Tek seferlik ücret. Abonelik yok.",
+                             "pricingSubtitle":  "Hesap boyutunuzu seçin ve değerlendirmenize bugün başlayın.",
+                             "accountSize":  "Hesap Boyutu",
+                             "mostPopular":  "Popüler",
+                             "currencyLabel":  "Para Birimi",
+                             "convertedNote":  "Gösterge niteliğindeki kurlardan dönüştürülmüştür. USD cinsinden ödeme.",
+                             "challengeLabel":  "FPT Meydan Okuma",
+                             "accountLabel":  "Hesap",
+                             "oneTime":  "tek seferlik",
+                             "getStarted":  "Başla",
+                             "accountSizeLabel":  "Hesap Boyutu",
+                             "profitTarget":  "Kar Hedefi",
+                             "maxDailyLoss":  "Maks Günlük Kayıp",
+                             "maxLoss":  "Maksimum Kayıp",
+                             "timeLimit":  "Zaman Limiti",
+                             "profitShare":  "Kar Paylaşımı",
+                             "swapFree":  "Swap Ücretsiz",
+                             "feeLabel":  "Ücret",
+                             "rulesEyebrow":  "Oyunun Kuralları",
+                             "rulesTitle":  "Net hedefler. Tanımlanmış sınırlar. Sürpriz yok.",
+                             "rulesSubtitle":  "Her FPT değerlendirmesini ve finanse edilmiş hesabı yöneten tam kural seti.",
+                             "rulesWarning":  "İşlem koşulları, düşüş hesaplamaları ve kaldıraç seviyeleri araca ve piyasa koşullarına göre değişebilir.",
+                             "leverageEyebrow":  "Kaldıraç",
+                             "leverageTitle":  "Araca göre kaldıraç dağılımı.",
+                             "instrument":  "Araç",
+                             "maxLeverage":  "Maksimum Kaldıraç",
+                             "ctaTitle":  "Kurallar her seferinde aynıdır.",
+                             "ctaSubtitle":  "İnançla işlem yapın. Değerlendirme disiplini ödüllendirir.",
+                             "startYourChallenge":  "Meydan Okumana Başla",
+                             "rules":  {
+                                           "profitTarget":  "Kar Hedefi",
+                                           "dailyDrawdown":  "Günlük Düşüş",
+                                           "maxDrawdown":  "Maksimum Düşüş",
+                                           "minDaysPhase1":  "Min Günler (Aşama 1)",
+                                           "minDaysFunded":  "Min Günler (Finanse)",
+                                           "timeLimit":  "Zaman Limiti",
+                                           "leverageForex":  "Kaldıraç (Forex)",
+                                           "maxAccounts":  "Maks Hesap",
+                                           "swapFree":  "Swap Ücretsiz",
+                                           "minPayout":  "Min Ödeme",
+                                           "maxPayout":  "Maks Ödeme",
+                                           "profitShare":  "Kar Paylaşımı"
+                                       },
+                             "leverage":  {
+                                              "forex":  "Forex",
+                                              "metals":  "Metaller",
+                                              "indices":  "Endeksler",
+                                              "commodities":  "Emtialar",
+                                              "crypto":  "Kripto"
+                                          }
+                         },
+    "about":  {
+                  "principles":  {
+                                     "p1title":  "Şeffaf koşullar",
+                                     "p1body":  "Her kural, her ücret, her ödeme siz ödemeden önce yayınlanır.",
+                                     "p2title":  "Ödülden önce risk",
+                                     "p2body":  "Düşüşlerden kurtulan bir trader bileşik büyür.",
+                                     "p3title":  "Bir yol, açıkça işaretlenmiş",
+                                     "p3body":  "Değerlendirme, finansman, ödeme, kart. Numara yok.",
+                                     "p4title":  "Pazarlama yerine altyapı",
+                                     "p4body":  "Yürütme, likidite ve panolara yatırım yapıyoruz."
+                                 },
+                  "stats":  {
+                                "countries":  "Hizmet verilen ülke",
+                                "profitShare":  "Trader\u0027a kar payı",
+                                "products":  "Koordineli ürün",
+                                "support":  "Destek kapsamı"
+                            },
+                  "ecosystem":  {
+                                    "fptTag":  "Prop Trading",
+                                    "fptBody":  "Değerlendirme, finanse edilmiş hesap, disiplin.",
+                                    "cardTag":  "Sermaye Erişimi",
+                                    "cardBody":  "Ödemeler küresel harcama kartında.",
+                                    "globalTag":  "Komuta Merkezi",
+                                    "globalBody":  "Hesaplar, metrikler ve ödemeler birleştirildi."
+                                },
+                  "eyebrow":  "Fiper Pro Traders",
+                  "thesis":  "Tezimiz",
+                  "principlesEyebrow":  "Bağlı kaldığımız şeyler",
+                  "principlesTitle":  "Dört ilke. İstisna yok.",
+                  "ecosystemEyebrow":  "Daha büyük bir şeyin parçası",
+                  "ecosystemTitle":  "Fiper Global, baştan sona.",
+                  "ecosystemSubtitle":  "FPT, Fiper Global bünyesinde üç koordineli üründen biridir.",
+                  "ctaEyebrow":  "Hazır olduğunuzda başlayın",
+                  "ctaTitle1":  "Altyapı hazır.",
+                  "ctaTitle2":  "Bir sonraki hareket sizin.",
+                  "getStarted":  "Başla",
+                  "talkToTeam":  "Ekiple konuş",
+                  "story":  {
+                                "title":  "Hikayemiz",
+                                "content":  "Fiper Global, dünya genelinde traderlara güç katma vizyonuyla kuruldu. FPT, kurumsal altyapı ve trader desteğinin birleşimiyle profesyonel trading ortamı sunma taahhüdümüzü temsil eder."
+                            },
+                  "mission":  {
+                                  "title":  "",
+                                  "content":  "Yetenekli traderlarin gereksiz engellerle karşılaşmadan sermayeye erişmesi gerektiğine inanıyoruz. FPT, değerlendirmeden finanse edilmiş işleme şeffaf ve yapılandırılmış bir yol sunar."
+                              },
+                  "subtitle":  "FPT, Fiper Global\u0027in prop trading kolu — modern traderlar için tasarlanmış entegre bir finansal altyapı.",
+                  "title":  "Akıllı, Hızlı Trading için Tasarlandı"
+              },
+    "contact":  {
+                    "pills":  {
+                                  "support":  "7/24 trader desteği",
+                                  "countries":  "12+ ülke",
+                                  "reply":  "4 saat içinde yanıt"
+                              },
+                    "channels":  {
+                                     "c1tag":  "Trader desteği",
+                                     "c1title":  "Hesap ve değerlendirme yardımı",
+                                     "c1body":  "7/24, 4 saat içinde yanıt.",
+                                     "c2tag":  "Kurumsal",
+                                     "c2title":  "Ortaklıklar ve masalar",
+                                     "c2body":  "Likidite sağlayıcıları ve prop masaları.",
+                                     "c3tag":  "Basın",
+                                     "c3title":  "Basın ve iletişim",
+                                     "c3body":  "Editoryal talepler ve röportajlar."
+                                 },
+                    "topics":  {
+                                   "t1":  "Değerlendirme kuralları",
+                                   "t2":  "Finanse edilmiş hesap",
+                                   "t3":  "Ödemeler ve Fiper Card",
+                                   "t4":  "Platform erişimi",
+                                   "t5":  "Ortaklıklar",
+                                   "t6":  "Başka bir şey"
+                               },
+                    "infoBlocks":  {
+                                       "sla":  "Yanıt SLA",
+                                       "slaValue":  "\u003c 4 saat",
+                                       "coverage":  "Kapsam",
+                                       "coverageValue":  "24 / 7",
+                                       "languages":  "Diller",
+                                       "languagesValue":  "EN · ES · FR",
+                                       "hq":  "Merkez",
+                                       "hqValue":  "Fiper Global"
+                                   },
+                    "eyebrow":  "İletişime geçin",
+                    "formEyebrow":  "Mesaj gönder",
+                    "formTitle":  "Neye ihtiyacınız olduğunu söyleyin.",
+                    "whySimpleEyebrow":  "Neden basit tutuyoruz",
+                    "whySimpleTitle1":  "Bir insana yazıyorsunuz.",
+                    "whySimpleTitle2":  "Bir insan yanıt veriyor.",
+                    "whySimpleBody":  "Bot yok. Her mesaj ekip üyesine ulaşır.",
+                    "alreadyTrading":  "Zaten işlem yapıyor musunuz?",
+                    "alreadyTradingBody":  "Panodan bilet açın.",
+                    "openCRM":  "CRM\u0027i Aç",
+                    "formPrivacy":  "Göndererek iletişime geçilmeyi kabul ediyorsunuz.",
+                    "sending":  "Gönderiliyor…",
+                    "messageSent":  "Mesaj alındı.",
+                    "messageSentBody":  "4 saat içinde yanıt verilecek.",
+                    "sendAnother":  "Başka mesaj gönder",
+                    "ctaEyebrow":  "Formu atlamayı mı tercih edersiniz?",
+                    "ctaTitle1":  "Değerlendirmeyi başlatın.",
+                    "ctaTitle2":  "İçeride buluşacağız.",
+                    "learnAbout":  "FPT hakkında bilgi al"
+                },
+    "help":  {
+                 "popular":  {
+                                 "q1":  "Nasıl başlanır",
+                                 "q2":  "Ödemeler",
+                                 "q3":  "Drawdown kuralları",
+                                 "q4":  "Kar hedefi"
+                             },
+                 "eyebrow":  "Yardım Merkezi",
+                 "title1":  "Yanıtlar. Düzenlenmiş.",
+                 "title2":  "Aranabilir.",
+                 "subtitle":  "FPT\u0027de gezinmek için ihtiyacınız olan her şey.",
+                 "popularSearches":  "Popüler aramalar:",
+                 "browseEyebrow":  "Konuya göre gözat",
+                 "browseTitle":  "Her yanıt, sıralanmış.",
+                 "mostAskedEyebrow":  "En çok sorulan",
+                 "mostAskedTitle":  "Hızlı yanıtlar.",
+                 "relatedTopics":  "İlgili konular",
+                 "keepExploring":  "Keşfetmeye devam edin.",
+                 "articles":  "makale",
+                 "article":  "makale",
+                 "stillNeedHelp":  "Hâlâ yardıma mı ihtiyacınız var?",
+                 "stillNeedHelpBody":  "Ekibimiz 7/24 müsait.",
+                 "contactSupport":  "Desteğe başvur",
+                 "startChallenge":  "Meydan okumayı başlat",
+                 "whatsappBanner":  "Yardıma mı ihtiyacınız var? WhatsApp\u0027ta sohbet edin.",
+                 "searchPlaceholder":  "Yanıt ara…"
+             }
 }

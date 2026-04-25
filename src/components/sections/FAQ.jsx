@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Plus, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -70,7 +70,7 @@ export default function FAQ() {
 
         <div className="mt-10 text-center">
           <a
-            href="https://linktr.ee/fiper"
+            href="/help"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-secondary hover:text-white transition-colors"

@@ -1,10 +1,12 @@
-import { Check, ArrowRight } from 'lucide-react';
+﻿import { Check, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Section, { SectionHeader } from '../ui/Section.jsx';
 import Button from '../ui/Button.jsx';
+import useLocalizedPath from '../../hooks/useLocalizedPath.js';
 
 export default function PricingPreview() {
+  const { to } = useLocalizedPath();
   const { t } = useTranslation();
 
   const FEATURES = [
@@ -36,7 +38,7 @@ export default function PricingPreview() {
             <div className="relative z-10">
               <div className="flex items-baseline gap-3">
                 <span dir="ltr" className="text-5xl sm:text-6xl font-semibold font-mono-num gradient-text">
-                  $555
+                  $280
                 </span>
                 <span className="text-secondary">USD {t('pricingPreview.oneTime')}</span>
               </div>
@@ -69,7 +71,7 @@ export default function PricingPreview() {
 
         <div className="mt-8 text-center">
           <Link
-            to="/pricing"
+            to={to("/challenges")}
             className="inline-flex items-center gap-2 text-sm text-secondary hover:text-white transition-colors"
           >
             {t('pricingPreview.viewAll')} <ArrowRight size={14} />

@@ -1,4 +1,4 @@
-import { CheckCircle2, Globe2, CreditCard, Layers, AlertTriangle, ArrowRight } from 'lucide-react';
+﻿import { CheckCircle2, Globe2, CreditCard, Layers, AlertTriangle, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import Section, { SectionHeader } from '../ui/Section.jsx';
@@ -43,7 +43,7 @@ export default function FPTCard() {
           />
 
           <div className="mt-8">
-            <Button href="https://fiper-landing-page.vercel.app/" external size="lg">
+            <Button href="https://fiperhub.com" external size="lg">
               {t('fptCard.cta')} <ArrowRight size={18} />
             </Button>
           </div>

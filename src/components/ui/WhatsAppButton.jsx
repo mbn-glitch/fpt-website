@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
-export const WHATSAPP_URL = 'https://wa.me/97433600905';
-export const WHATSAPP_PHONE = '+974 3360 0905';
+export const WHATSAPP_URL = 'https://wa.me/971561111855';
+export const WHATSAPP_PHONE = '+971 56 111 1855';
 
 export function WhatsAppIcon({ size = 28, className = '' }) {
   return (

@@ -1,517 +1,850 @@
 import {
-  Rocket,
-  Target,
-  TrendingUp,
-  CreditCard,
-  LineChart,
-  Settings,
-  Monitor,
-  Scale,
+  Rocket, Target, TrendingUp, CreditCard, LineChart, Settings, Monitor, Scale,
 } from 'lucide-react';
 
 export const categories = [
   {
-    id: 'getting-started',
-    slug: 'getting-started',
-    icon: Rocket,
+    id: 'getting-started', slug: 'getting-started', icon: Rocket,
     title: 'Getting Started',
+    titles: { ar: 'البداية', fr: 'Commencer', es: 'Empezar', pt: 'Começar', tr: 'Başlangıç' },
     description: 'Everything you need to begin your FPT journey.',
+    descriptions: {
+      ar: 'كل ما تحتاجه لبدء رحلتك مع FPT.',
+      fr: 'Tout ce dont vous avez besoin pour commencer votre parcours FPT.',
+      es: 'Todo lo que necesitas para comenzar tu viaje FPT.',
+      pt: 'Tudo que você precisa para começar sua jornada FPT.',
+      tr: "FPT yolculuğunuza başlamak için ihtiyacınız olan her şey.",
+    },
   },
   {
-    id: 'challenges-rules',
-    slug: 'challenges-rules',
-    icon: Target,
+    id: 'challenges-rules', slug: 'challenges-rules', icon: Target,
     title: 'Challenges & Rules',
+    titles: { ar: 'التحديات والقواعد', fr: 'Défis et Règles', es: 'Desafíos y Reglas', pt: 'Desafios e Regras', tr: 'Meydan Okumalar ve Kurallar' },
     description: 'Clear targets. Defined limits. No surprises.',
+    descriptions: {
+      ar: 'أهداف واضحة. حدود محددة. بدون مفاجآت.',
+      fr: 'Objectifs clairs. Limites définies. Pas de surprises.',
+      es: 'Objetivos claros. Límites definidos. Sin sorpresas.',
+      pt: 'Metas claras. Limites definidos. Sem surpresas.',
+      tr: 'Net hedefler. Tanımlanmış sınırlar. Sürpriz yok.',
+    },
   },
   {
-    id: 'funded-accounts',
-    slug: 'funded-accounts',
-    icon: TrendingUp,
+    id: 'funded-accounts', slug: 'funded-accounts', icon: TrendingUp,
     title: 'Funded Accounts',
+    titles: { ar: 'الحسابات الممولة', fr: 'Comptes Financés', es: 'Cuentas Financiadas', pt: 'Contas Financiadas', tr: 'Finanse Edilmiş Hesaplar' },
     description: 'What happens after you pass the evaluation.',
+    descriptions: {
+      ar: 'ما يحدث بعد اجتياز التقييم.',
+      fr: "Ce qui se passe après avoir réussi l’évaluation.",
+      es: 'Lo que sucede después de pasar la evaluación.',
+      pt: 'O que acontece depois de passar na avaliação.',
+      tr: 'Değerlendirmeyi geçtikten sonra ne olur.',
+    },
   },
   {
-    id: 'payouts-fiper-card',
-    slug: 'payouts-fiper-card',
-    icon: CreditCard,
+    id: 'payouts-fiper-card', slug: 'payouts-fiper-card', icon: CreditCard,
     title: 'Payouts & Fiper Card',
+    titles: { ar: 'الدفعات وبطاقة Fiper', fr: 'Paiements et Fiper Card', es: 'Pagos y Fiper Card', pt: 'Pagamentos e Fiper Card', tr: 'Ödemeler ve Fiper Kartı' },
     description: 'From screen to spend. How you access your earnings.',
+    descriptions: {
+      ar: 'من الشاشة إلى الإنفاق. كيف تصل إلى أرباحك.',
+      fr: "De l’écran à la dépense. Comment accéder à vos gains.",
+      es: 'De la pantalla al gasto. Cómo accedes a tus ganancias.',
+      pt: 'Da tela ao gasto. Como você acessa seus ganhos.',
+      tr: 'Ekrandan harcamaya. Kazançlarınıza nasıl erişirsiniz.',
+    },
   },
   {
-    id: 'trading-conditions',
-    slug: 'trading-conditions',
-    icon: LineChart,
+    id: 'trading-conditions', slug: 'trading-conditions', icon: LineChart,
     title: 'Trading Conditions',
+    titles: { ar: 'شروط التداول', fr: 'Conditions de Trading', es: 'Condiciones de Trading', pt: 'Condições de Trading', tr: 'Trading Koşulları' },
     description: 'The environment you trade in.',
+    descriptions: {
+      ar: 'البيئة التي تتداول فيها.',
+      fr: "L’environnement dans lequel vous tradez.",
+      es: 'El entorno en el que operas.',
+      pt: 'O ambiente em que você opera.',
+      tr: 'İşlem yaptığınız ortam.',
+    },
   },
   {
-    id: 'account-management',
-    slug: 'account-management',
-    icon: Settings,
+    id: 'account-management', slug: 'account-management', icon: Settings,
     title: 'Account Management',
+    titles: { ar: 'إدارة الحساب', fr: 'Gestion du Compte', es: 'Gestión de Cuenta', pt: 'Gestão de Conta', tr: 'Hesap Yönetimi' },
     description: 'Managing your accounts, resets, and activity.',
+    descriptions: {
+      ar: 'إدارة حساباتك وإعادة التعيين والنشاط.',
+      fr: 'Gérer vos comptes, réinitialisations et activité.',
+      es: 'Gestiona tus cuentas, restablecimientos y actividad.',
+      pt: 'Gerencie suas contas, redefinições e atividade.',
+      tr: 'Hesaplarınızı, sıfırlamalarınızı ve aktivitenizi yönetin.',
+    },
   },
   {
-    id: 'technical-platform',
-    slug: 'technical-platform',
-    icon: Monitor,
+    id: 'technical-platform', slug: 'technical-platform', icon: Monitor,
     title: 'Technical & Platform',
+    titles: { ar: 'التقني والمنصة', fr: 'Technique et Plateforme', es: 'Técnico y Plataforma', pt: 'Técnico e Plataforma', tr: 'Teknik ve Platform' },
     description: 'Platforms, logins, and support for technical issues.',
+    descriptions: {
+      ar: 'المنصات وتسجيل الدخول والدعم للمشكلات التقنية.',
+      fr: 'Plateformes, connexions et support pour les problèmes techniques.',
+      es: 'Plataformas, inicios de sesión y soporte para problemas técnicos.',
+      pt: 'Plataformas, logins e suporte para problemas técnicos.',
+      tr: 'Platformlar, girişler ve teknik sorunlar için destek.',
+    },
   },
   {
-    id: 'legal-general',
-    slug: 'legal-general',
-    icon: Scale,
+    id: 'legal-general', slug: 'legal-general', icon: Scale,
     title: 'Legal & General',
+    titles: { ar: 'القانوني والعام', fr: 'Légal et Général', es: 'Legal y General', pt: 'Legal e Geral', tr: 'Hukuki ve Genel' },
     description: 'Regulatory, legal, and structural information.',
+    descriptions: {
+      ar: 'معلومات تنظيمية وقانونية وهيكلية.',
+      fr: 'Informations réglementaires, juridiques et structurelles.',
+      es: 'Información regulatoria, legal y estructural.',
+      pt: 'Informações regulatórias, legais e estruturais.',
+      tr: 'Düzenleyici, hukuki ve yapısal bilgiler.',
+    },
   },
 ];
 
 export const faqs = [
-  // Getting Started
   {
-    id: 'what-is-fpt',
-    categoryId: 'getting-started',
+    id: 'what-is-fpt', categoryId: 'getting-started',
     question: 'What is FPT?',
-    answer:
-      'FPT (Fiper Pro Traders) is a proprietary trading program that provides traders with access to funded accounts through a structured evaluation process. It is the prop trading division of Fiper Global.',
+    questions: { ar: 'ما هو FPT؟', fr: "Qu’est-ce que FPT ?", es: '¿Qué es FPT?', pt: 'O que é FPT?', tr: 'FPT nedir?' },
+    answer: 'FPT (Fiper Pro Traders) is a proprietary trading program that provides traders with access to funded accounts through a structured evaluation process. It is the prop trading division of Fiper Global.',
+    answers: {
+      ar: 'FPT (Fiper Pro Traders) هو برنامج تداول احترافي يتيح للمتداولين الوصول إلى حسابات ممولة من خلال عملية تقييم منظمة. وهو قسم التداول الاحترافي في Fiper Global.',
+      fr: "FPT (Fiper Pro Traders) est un programme de trading qui donne accès à des comptes financés via un processus d’évaluation structuré. C’est la division prop trading de Fiper Global.",
+      es: 'FPT (Fiper Pro Traders) es un programa de trading propietario que proporciona acceso a cuentas financiadas mediante un proceso de evaluación estructurado.',
+      pt: 'FPT (Fiper Pro Traders) é um programa de trading proprietário que fornece acesso a contas financiadas por meio de um processo de avaliação estruturado.',
+      tr: "FPT (Fiper Pro Traders), yapılandırılmış bir değerlendirme süreci aracılığıyla trader'lara finanse edilmiş hesaplara erişim sağlayan bir prop trading programıdır.",
+    },
   },
   {
-    id: 'how-do-i-start',
-    categoryId: 'getting-started',
+    id: 'how-do-i-start', categoryId: 'getting-started', popular: true,
     question: 'How do I start?',
-    answer:
-      'Select your preferred account size, purchase a challenge, and begin trading immediately. Login credentials are delivered to your email within minutes of payment.',
-    popular: true,
+    questions: { ar: 'كيف أبدأ؟', fr: 'Comment commencer ?', es: '¿Cómo empiezo?', pt: 'Como começo?', tr: 'Nasıl başlarım?' },
+    answer: 'Select your preferred account size, purchase a challenge, and begin trading immediately. Login credentials are delivered to your email within minutes of payment.',
+    answers: {
+      ar: 'اختر حجم الحساب المفضل لديك، واشترِ تحدياً، وابدأ التداول فوراً. سيتم إرسال بيانات تسجيل الدخول إلى بريدك الإلكتروني في غضون دقائق من الدفع.',
+      fr: "Sélectionnez la taille de compte souhaitée, achetez un défi et commencez à trader immédiatement. Les identifiants sont envoyés à votre email dans les minutes suivant le paiement.",
+      es: 'Selecciona el tamaño de cuenta preferido, compra un desafío y comienza a operar de inmediato.',
+      pt: 'Selecione o tamanho de conta preferido, compre um desafio e comece a operar imediatamente.',
+      tr: 'Tercih ettiğiniz hesap boyutunu seçin, bir meydan okuma satın alın ve hemen işlem yapmaya başlayın.',
+    },
   },
   {
-    id: 'do-i-need-prior-experience',
-    categoryId: 'getting-started',
+    id: 'do-i-need-prior-experience', categoryId: 'getting-started',
     question: 'Do I need prior experience?',
-    answer:
-      'Yes. FPT is built for traders who already understand core market concepts, order execution, and risk management. It is not a beginner training program.',
+    questions: { ar: 'هل أحتاج خبرة سابقة؟', fr: "Ai-je besoin d’expérience préalable ?", es: '¿Necesito experiencia previa?', pt: 'Preciso de experiência prévia?', tr: 'Önceden deneyim gerekiyor mu?' },
+    answer: 'Yes. FPT is built for traders who already understand core market concepts, order execution, and risk management. It is not a beginner training program.',
+    answers: {
+      ar: 'نعم. FPT مصمم للمتداولين الذين يفهمون بالفعل مفاهيم السوق الأساسية وتنفيذ الأوامر وإدارة المخاطر. إنه ليس برنامجاً تدريبياً للمبتدئين.',
+      fr: "Oui. FPT est conçu pour les traders qui comprennent déjà les concepts fondamentaux, l’exécution des ordres et la gestion des risques.",
+      es: 'Sí. FPT está diseñado para traders que ya comprenden los conceptos básicos del mercado, la ejecución de órdenes y la gestión de riesgos.',
+      pt: 'Sim. FPT é desenvolvido para traders que já entendem conceitos básicos de mercado, execução de ordens e gestão de risco.',
+      tr: 'Evet. FPT, temel piyasa kavramlarını, emir yürütmeyi ve risk yönetimini anlayan traderlar için tasarlanmıştır.',
+    },
   },
   {
-    id: 'how-do-i-receive-my-account',
-    categoryId: 'getting-started',
+    id: 'how-do-i-receive-my-account', categoryId: 'getting-started',
     question: 'How do I receive my account?',
-    answer:
-      'Login credentials are sent to your registered email instantly after your challenge purchase is completed. Check your inbox — and spam folder — if it does not appear within 5 minutes.',
+    questions: { ar: 'كيف أستلم حسابي؟', fr: 'Comment recevoir mon compte ?', es: '¿Cómo recibo mi cuenta?', pt: 'Como recebo minha conta?', tr: 'Hesabımı nasıl alırım?' },
+    answer: 'Login credentials are sent to your registered email instantly after your challenge purchase is completed. Check your inbox — and spam folder — if it does not appear within 5 minutes.',
+    answers: {
+      ar: 'يتم إرسال بيانات تسجيل الدخول إلى بريدك الإلكتروني فور اكتمال شراء التحدي. تحقق من صندوق الوارد ومجلد البريد المزعج إذا لم تظهر خلال 5 دقائق.',
+      fr: "Les identifiants sont envoyés instantanément à votre email après l’achat. Vérifiez votre boîte de réception et le dossier spam.",
+      es: 'Las credenciales se envían instantáneamente a tu email. Revisa bandeja de entrada y spam si no aparecen en 5 minutos.',
+      pt: 'As credenciais são enviadas instantaneamente ao seu email. Verifique a caixa de entrada e spam se não aparecerem em 5 minutos.',
+      tr: 'Satın alma tamamlandıktan hemen sonra giriş bilgileri e-postanıza gönderilir. 5 dakika içinde gelmezse spam klasörünüzü kontrol edin.',
+    },
   },
   {
-    id: 'how-much-does-a-challenge-cost',
-    categoryId: 'getting-started',
+    id: 'how-much-does-a-challenge-cost', categoryId: 'getting-started', popular: true,
     question: 'How much does a challenge cost?',
-    answer:
-      'Challenge fees start at $55 for a $5K account and scale with account size, up to $2,220 for a $200K account. The $50K challenge at $555 is our most chosen tier. Full pricing is available on the Pricing page.',
-    popular: true,
+    questions: { ar: 'كم يكلف التحدي؟', fr: 'Combien coûte un défi ?', es: '¿Cuánto cuesta un desafío?', pt: 'Quanto custa um desafio?', tr: 'Meydan okuma ne kadar?' },
+    answer: 'Challenge fees start at $90 for a $10K account and scale up to $1,070 for a $200K account. The $50K challenge at $280 is our most popular tier.',
+    answers: {
+      ar: 'تبدأ رسوم التحدي من 90 دولاراً لحساب 10 آلاف دولار وترتفع إلى 1,070 دولار لحساب 200 ألف دولار. تحدي 50 ألف دولار بـ 280 دولار هو الأكثر شعبية.',
+      fr: "Les frais commencent à 90 $ pour un compte de 10 000 $ et vont jusqu’à 1 070 $ pour un compte de 200 000 $.",
+      es: 'Los honorarios comienzan en $90 para una cuenta de $10K y llegan hasta $1,070 para una de $200K.',
+      pt: 'As taxas começam em $90 para uma conta de $10K e chegam a $1.070 para uma conta de $200K.',
+      tr: "Ücretler $10K hesap için $90’dan başlar ve $200K hesap için $1.070’e kadar çıkar.",
+    },
   },
   {
-    id: 'what-trading-styles-work-best',
-    categoryId: 'getting-started',
+    id: 'what-trading-styles-work-best', categoryId: 'getting-started',
     question: 'What trading styles work best with FPT?',
-    answer:
-      'FPT accommodates scalping, day trading, swing trading, and algorithmic execution via EAs. High-frequency trading and arbitrage strategies are not permitted.',
+    questions: { ar: 'ما أساليب التداول الأنسب مع FPT؟', fr: 'Quels styles de trading fonctionnent le mieux ?', es: '¿Qué estilos de trading funcionan mejor?', pt: 'Quais estilos de trading funcionam melhor?', tr: 'Hangi trading stilleri en iyi çalışır?' },
+    answer: 'FPT accommodates scalping, day trading, swing trading, and algorithmic execution via EAs. High-frequency trading and arbitrage strategies are not permitted.',
+    answers: {
+      ar: 'يستوعب FPT التداول السريع والتداول اليومي وتداول التأرجح والتنفيذ الخوارزمي. استراتيجيات HFT والمراجحة غير مسموح بها.',
+      fr: "FPT accepte le scalping, le day trading, le swing trading et l’exécution algorithmique. Le HFT et l’arbitrage ne sont pas permis.",
+      es: 'FPT admite scalping, day trading, swing trading y EAs. El HFT y el arbitraje no están permitidos.',
+      pt: 'FPT acomoda scalping, day trading, swing trading e EAs. HFT e arbitragem não são permitidos.',
+      tr: 'FPT scalping, day trading, swing trading ve EA destekler. HFT ve arbitraja izin verilmez.',
+    },
   },
   {
-    id: 'can-i-test-a-demo-account',
-    categoryId: 'getting-started',
+    id: 'can-i-test-a-demo-account', categoryId: 'getting-started',
     question: 'Can I test a demo account before purchasing?',
-    answer:
-      'FPT does not offer a free demo of the funded program. However, all challenge accounts operate in a simulated environment — purchasing a challenge is the equivalent of starting a monitored demo with the opportunity to earn.',
+    questions: { ar: 'هل يمكنني تجربة حساب تجريبي قبل الشراء؟', fr: "Puis-je tester un compte démo avant d’acheter ?", es: '¿Puedo probar una cuenta demo antes de comprar?', pt: 'Posso testar uma conta demo antes de comprar?', tr: 'Satın almadan önce demo hesabı test edebilir miyim?' },
+    answer: 'FPT does not offer a free demo. However, all challenge accounts operate in a simulated environment — purchasing a challenge is the equivalent of starting a monitored demo with the opportunity to earn.',
+    answers: {
+      ar: 'لا يقدم FPT تجربة مجانية. ومع ذلك، تعمل جميع حسابات التحدي في بيئة محاكاة.',
+      fr: "FPT n’offre pas de démo gratuite. Les comptes de défi fonctionnent dans un environnement simulé.",
+      es: 'FPT no ofrece una demo gratuita. Las cuentas de desafío operan en entorno simulado.',
+      pt: 'FPT não oferece demo gratuita. As contas de desafio operam em ambiente simulado.',
+      tr: 'FPT ücretsiz demo sunmaz. Meydan okuma hesapları simüle ortamda çalışır.',
+    },
   },
-
-  // Challenges & Rules
   {
-    id: 'what-is-the-profit-target',
-    categoryId: 'challenges-rules',
+    id: 'what-is-the-profit-target', categoryId: 'challenges-rules', popular: true,
     question: 'What is the profit target?',
+    questions: { ar: 'ما هو هدف الربح؟', fr: "Quel est l’objectif de profit ?", es: '¿Cuál es el objetivo de ganancia?', pt: 'Qual é a meta de lucro?', tr: 'Kar hedefi nedir?' },
     answer: '10% of the starting account balance during the evaluation phase.',
-    popular: true,
+    answers: {
+      ar: '10% من رصيد الحساب الابتدائي خلال مرحلة التقييم.',
+      fr: "10 % du solde initial du compte pendant la phase d’évaluation.",
+      es: '10% del saldo inicial de la cuenta durante la fase de evaluación.',
+      pt: '10% do saldo inicial da conta durante a fase de avaliação.',
+      tr: "Değerlendirme aşamasında başlangıç hesap bakiyesinin %10'u.",
+    },
   },
   {
-    id: 'what-is-the-maximum-daily-loss',
-    categoryId: 'challenges-rules',
+    id: 'what-is-the-maximum-daily-loss', categoryId: 'challenges-rules',
     question: 'What is the maximum daily loss?',
-    answer:
-      '5% of the account balance. This is measured from the previous day\u2019s closing equity.',
+    questions: { ar: 'ما الحد الأقصى للخسارة اليومية؟', fr: 'Quelle est la perte quotidienne maximale ?', es: '¿Cuál es la pérdida diaria máxima?', pt: 'Qual é a perda diária máxima?', tr: 'Maksimum günlük kayıp nedir?' },
+    answer: '5% of the account balance. This is measured from the previous day’s closing equity.',
+    answers: {
+      ar: '5% من رصيد الحساب. يُقاس من حقوق ملكية اليوم السابق عند الإغلاق.',
+      fr: "5 % du solde du compte. Mesuré depuis la clôture de la veille.",
+      es: '5% del saldo de la cuenta. Se mide desde el cierre del día anterior.',
+      pt: '5% do saldo da conta. Medido a partir do fechamento do dia anterior.',
+      tr: "Hesap bakiyesinin %5'i. Önceki günün kapanış öz sermayesinden ölçülür.",
+    },
   },
   {
-    id: 'what-is-the-maximum-total-drawdown',
-    categoryId: 'challenges-rules',
+    id: 'what-is-the-maximum-total-drawdown', categoryId: 'challenges-rules',
     question: 'What is the maximum total drawdown?',
-    answer:
-      '9% of the initial account balance, measured from the starting equity.',
+    questions: { ar: 'ما الحد الأقصى للسحب الإجمالي؟', fr: 'Quel est le drawdown total maximum ?', es: '¿Cuál es el drawdown total máximo?', pt: 'Qual é o drawdown total máximo?', tr: 'Maksimum toplam drawdown nedir?' },
+    answer: '9% of the initial account balance, measured from the starting equity.',
+    answers: {
+      ar: '9% من رصيد الحساب الابتدائي، مقاساً من حقوق الملكية الأولية.',
+      fr: "9 % du solde initial, mesuré depuis l’équité de départ.",
+      es: '9% del saldo inicial de la cuenta, medido desde el capital inicial.',
+      pt: '9% do saldo inicial da conta, medido a partir do patrimônio inicial.',
+      tr: "Başlangıç öz sermayesinden ölçülen hesap bakiyesinin %9'u.",
+    },
   },
   {
-    id: 'how-is-drawdown-calculated',
-    categoryId: 'challenges-rules',
+    id: 'how-is-drawdown-calculated', categoryId: 'challenges-rules',
     question: 'How is drawdown calculated — based on equity or balance?',
-    answer:
-      'The daily drawdown is measured against the previous day\u2019s closing equity. The maximum drawdown is calculated from the initial account balance. Both include unrealized P&L from open positions.',
+    questions: { ar: 'كيف يُحسب السحب؟', fr: 'Comment le drawdown est-il calculé ?', es: '¿Cómo se calcula el drawdown?', pt: 'Como o drawdown é calculado?', tr: 'Drawdown nasıl hesaplanır?' },
+    answer: 'The daily drawdown is measured against the previous day’s closing equity. The maximum drawdown is calculated from the initial account balance. Both include unrealized P&L from open positions.',
+    answers: {
+      ar: 'يُقاس السحب اليومي مقابل حقوق ملكية اليوم السابق عند الإغلاق. يُحسب الحد الأقصى للسحب من رصيد الحساب الابتدائي.',
+      fr: "Le drawdown quotidien est mesuré par rapport à la clôture de la veille. Le drawdown maximum est calculé depuis le solde initial.",
+      es: 'El drawdown diario se mide respecto al cierre del día anterior. El máximo se calcula desde el saldo inicial.',
+      pt: 'O drawdown diário é medido em relação ao fechamento do dia anterior. O máximo é calculado a partir do saldo inicial.',
+      tr: 'Günlük drawdown önceki günün kapanışına göre ölçülür. Maksimum drawdown başlangıç bakiyesinden hesaplanır.',
+    },
   },
   {
-    id: 'does-daily-drawdown-reset',
-    categoryId: 'challenges-rules',
+    id: 'does-daily-drawdown-reset', categoryId: 'challenges-rules',
     question: 'Does the daily drawdown reset each day?',
-    answer:
-      'Yes. The 5% daily drawdown limit resets at the end of each trading day (server time). Your new threshold is based on the higher of either your starting balance or the prior day\u2019s closing equity.',
+    questions: { ar: 'هل يُعاد تعيين السحب اليومي كل يوم؟', fr: 'Le drawdown quotidien se réinitialise-t-il ?', es: '¿Se reinicia el drawdown diario?', pt: 'O drawdown diário é reiniciado?', tr: 'Günlük drawdown her gün sıfırlanır mı?' },
+    answer: 'Yes. The 5% daily drawdown limit resets at the end of each trading day (server time).',
+    answers: {
+      ar: 'نعم. يُعاد تعيين حد السحب اليومي البالغ 5% في نهاية كل يوم تداول.',
+      fr: "Oui. La limite de 5 % se réinitialise à la fin de chaque journée de trading.",
+      es: 'Sí. El límite del 5% se reinicia al final de cada día de trading.',
+      pt: 'Sim. O limite de 5% é reiniciado no final de cada dia de trading.',
+      tr: "%5 günlük limit her trading gününün sonunda sıfırlanır.",
+    },
   },
   {
-    id: 'what-counts-as-a-trading-day',
-    categoryId: 'challenges-rules',
+    id: 'what-counts-as-a-trading-day', categoryId: 'challenges-rules',
     question: 'What counts as a trading day?',
-    answer:
-      'A trading day is any 24-hour period in which you open at least one position. Weekend days and days with no trade activity do not count toward your minimum trading day requirement.',
+    questions: { ar: 'ما الذي يُحتسب يوم تداول؟', fr: "Qu’est-ce qui compte comme un jour de trading ?", es: '¿Qué cuenta como día de trading?', pt: 'O que conta como dia de trading?', tr: 'Trading günü ne sayılır?' },
+    answer: 'A trading day is any 24-hour period in which you open at least one position.',
+    answers: {
+      ar: 'يوم التداول هو أي فترة 24 ساعة تفتح فيها مركزاً واحداً على الأقل.',
+      fr: "Un jour de trading est toute période de 24 heures où vous ouvrez au moins une position.",
+      es: 'Un día de trading es cualquier período de 24 horas en el que abras al menos una posición.',
+      pt: 'Um dia de trading é qualquer período de 24 horas em que você abre pelo menos uma posição.',
+      tr: 'Trading günü, en az bir pozisyon açtığınız herhangi bir 24 saatlik dönemdir.',
+    },
   },
   {
-    id: 'what-are-the-minimum-trading-days',
-    categoryId: 'challenges-rules',
+    id: 'what-are-the-minimum-trading-days', categoryId: 'challenges-rules',
     question: 'What are the minimum trading days?',
-    answer:
-      'Phase 1 evaluation requires a minimum of 5 trading days. Funded accounts require a minimum of 10 trading days before a payout request is eligible.',
+    questions: { ar: 'ما الحد الأدنى لأيام التداول؟', fr: 'Quel est le minimum de jours de trading ?', es: '¿Cuál es el mínimo de días de trading?', pt: 'Qual é o mínimo de dias de trading?', tr: 'Minimum trading günü sayısı nedir?' },
+    answer: 'Phase 1 evaluation requires a minimum of 5 trading days. Funded accounts require a minimum of 10 trading days before a payout request is eligible.',
+    answers: {
+      ar: 'يتطلب تقييم المرحلة الأولى 5 أيام تداول كحد أدنى. تتطلب الحسابات الممولة 10 أيام قبل أن يكون طلب الدفع مؤهلاً.',
+      fr: "La phase 1 nécessite au minimum 5 jours de trading. Les comptes financés nécessitent 10 jours avant d’être éligibles.",
+      es: 'La fase 1 requiere mínimo 5 días de trading. Las cuentas financiadas requieren 10 días.',
+      pt: 'A fase 1 requer mínimo de 5 dias. Contas financiadas requerem 10 dias.',
+      tr: 'Aşama 1 minimum 5 trading günü gerektirir. Finanse edilmiş hesaplar 10 gün gerektirir.',
+    },
   },
   {
-    id: 'is-there-a-time-limit',
-    categoryId: 'challenges-rules',
+    id: 'is-there-a-time-limit', categoryId: 'challenges-rules',
     question: 'Is there a time limit?',
-    answer:
-      'Yes. A defined trading period applies to the evaluation phase. The exact duration is specified in your challenge dashboard at purchase.',
+    questions: { ar: 'هل هناك حد زمني؟', fr: 'Y a-t-il une limite de temps ?', es: '¿Hay un límite de tiempo?', pt: 'Existe limite de tempo?', tr: 'Zaman sınırı var mı?' },
+    answer: 'Yes. The evaluation phase has a 31-day time limit.',
+    answers: {
+      ar: 'نعم. مرحلة التقييم لها حد زمني مدته 31 يوماً.',
+      fr: "Oui. La phase d’évaluation a une limite de 31 jours.",
+      es: 'Sí. La fase de evaluación tiene un límite de 31 días.',
+      pt: 'Sim. A fase de avaliação tem limite de 31 dias.',
+      tr: 'Evet. Değerlendirme aşamasının 31 günlük zaman sınırı vardır.',
+    },
   },
   {
-    id: 'what-happens-if-i-break-a-rule',
-    categoryId: 'challenges-rules',
+    id: 'what-happens-if-i-break-a-rule', categoryId: 'challenges-rules', popular: true,
     question: 'What happens if I break a rule?',
-    answer:
-      'The account is marked as failed and trading access is revoked. The challenge fee is non-refundable.',
-    popular: true,
+    questions: { ar: 'ماذا يحدث إذا خالفت قاعدة؟', fr: 'Que se passe-t-il si je viole une règle ?', es: '¿Qué pasa si incumplo una regla?', pt: 'O que acontece se eu quebrar uma regra?', tr: 'Bir kuralı ihlal edersem ne olur?' },
+    answer: 'The account is marked as failed and trading access is revoked. The challenge fee is non-refundable.',
+    answers: {
+      ar: 'يُصنَّف الحساب على أنه فاشل وتُسحب صلاحية التداول. رسوم التحدي غير قابلة للاسترداد.',
+      fr: "Le compte est marqué comme échoué et l’accès au trading est révoqué. Les frais sont non remboursables.",
+      es: 'La cuenta se marca como fallida y se revoca el acceso. La tarifa no es reembolsable.',
+      pt: 'A conta é marcada como reprovada e o acesso é revogado. A taxa não é reembolsável.',
+      tr: 'Hesap başarısız olarak işaretlenir ve erişim iptal edilir. Ücret iade edilmez.',
+    },
   },
   {
-    id: 'can-i-try-again-if-i-fail',
-    categoryId: 'challenges-rules',
+    id: 'can-i-try-again-if-i-fail', categoryId: 'challenges-rules',
     question: 'Can I try again if I fail?',
-    answer:
-      'Yes. You can purchase a new challenge at any time. There is no waiting period between attempts.',
+    questions: { ar: 'هل يمكنني المحاولة مجدداً إذا فشلت؟', fr: "Puis-je réessayer si j’échoue ?", es: '¿Puedo intentarlo de nuevo si fallo?', pt: 'Posso tentar de novo se falhar?', tr: 'Başarısız olursam tekrar deneyebilir miyim?' },
+    answer: 'Yes. You can purchase a new challenge at any time. There is no waiting period between attempts.',
+    answers: {
+      ar: 'نعم. يمكنك شراء تحدٍّ جديد في أي وقت. لا توجد فترة انتظار بين المحاولات.',
+      fr: "Oui. Vous pouvez acheter un nouveau défi à tout moment. Il n’y a pas de période d’attente.",
+      es: 'Sí. Puedes comprar un nuevo desafío en cualquier momento. No hay período de espera.',
+      pt: 'Sim. Você pode comprar um novo desafio a qualquer momento. Não há período de espera.',
+      tr: 'Evet. İstediğiniz zaman yeni bir meydan okuma satın alabilirsiniz.',
+    },
   },
   {
-    id: 'is-there-a-refund',
-    categoryId: 'challenges-rules',
+    id: 'is-there-a-refund', categoryId: 'challenges-rules',
     question: 'Is there a refund?',
-    answer:
-      'No. All challenge fees are one-time and non-refundable. Your return is earned through your funded account performance, not from the fee structure.',
+    questions: { ar: 'هل هناك استرداد؟', fr: 'Y a-t-il un remboursement ?', es: '¿Hay reembolso?', pt: 'Há reembolso?', tr: 'Geri ödeme var mı?' },
+    answer: 'No. All challenge fees are one-time and non-refundable.',
+    answers: {
+      ar: 'لا. جميع رسوم التحدي تُدفع مرة واحدة وغير قابلة للاسترداد.',
+      fr: "Non. Tous les frais sont uniques et non remboursables.",
+      es: 'No. Todos los honorarios son únicos y no reembolsables.',
+      pt: 'Não. Todas as taxas são únicas e não reembolsáveis.',
+      tr: 'Hayır. Tüm ücretler tek seferlik ve iade edilmezdir.',
+    },
   },
-
-  // Funded Accounts
   {
-    id: 'what-happens-after-i-pass',
-    categoryId: 'funded-accounts',
+    id: 'what-happens-after-i-pass', categoryId: 'funded-accounts',
     question: 'What happens after I pass?',
-    answer:
-      'Your account enters a verification and review process. Once cleared, you gain access to a funded account under FPT capital.',
+    questions: { ar: 'ماذا يحدث بعد أن أجتاز؟', fr: "Que se passe-t-il après avoir réussi ?", es: '¿Qué pasa después de pasar?', pt: 'O que acontece depois de passar?', tr: 'Geçtikten sonra ne olur?' },
+    answer: 'Your account enters a verification and review process. Once cleared, you gain access to a funded account under FPT capital.',
+    answers: {
+      ar: 'يدخل حسابك في عملية التحقق والمراجعة. بمجرد الموافقة، تحصل على حساب ممول تحت رأسمال FPT.',
+      fr: "Votre compte entre dans un processus de vérification. Une fois approuvé, vous accédez à un compte financé.",
+      es: 'Tu cuenta entra en proceso de verificación. Una vez aprobada, obtienes acceso a una cuenta financiada.',
+      pt: 'Sua conta entra em processo de verificação. Após aprovação, você acessa uma conta financiada.',
+      tr: 'Hesabınız doğrulama sürecine girer. Onaylandıktan sonra finanse edilmiş hesaba erişirsiniz.',
+    },
   },
   {
-    id: 'how-long-does-activation-take',
-    categoryId: 'funded-accounts',
+    id: 'how-long-does-activation-take', categoryId: 'funded-accounts', popular: true,
     question: 'How long does activation take?',
-    answer:
-      'Up to 2 business days for review, plus 1 business day for activation. Most traders are live within 72 hours of passing the evaluation.',
-    popular: true,
+    questions: { ar: 'كم يستغرق التفعيل؟', fr: "Combien de temps prend l’activation ?", es: '¿Cuánto tarda la activación?', pt: 'Quanto tempo leva a ativação?', tr: 'Aktivasyon ne kadar sürer?' },
+    answer: 'Up to 2 business days for review, plus 1 business day for activation. Most traders are live within 72 hours of passing.',
+    answers: {
+      ar: 'يستغرق المراجعة حتى يومين عمل، بالإضافة إلى يوم عمل واحد للتفعيل. معظم المتداولين يبدؤون خلال 72 ساعة.',
+      fr: "Jusqu’à 2 jours ouvrables pour la vérification, plus 1 jour pour l’activation.",
+      es: 'Hasta 2 días hábiles para revisión, más 1 día para activación.',
+      pt: 'Até 2 dias úteis para revisão, mais 1 dia para ativação.',
+      tr: 'İnceleme için 2 iş günü, aktivasyon için 1 iş günü.',
+    },
   },
   {
-    id: 'how-much-profit-can-i-keep',
-    categoryId: 'funded-accounts',
+    id: 'how-much-profit-can-i-keep', categoryId: 'funded-accounts', popular: true,
     question: 'How much profit can I keep?',
-    answer:
-      'You receive up to 80% of the net profit generated on your funded account. FPT retains the remaining 20%.',
-    popular: true,
+    questions: { ar: 'كم يمكنني الاحتفاظ من الأرباح؟', fr: 'Combien de profit puis-je garder ?', es: '¿Cuánto beneficio puedo conservar?', pt: 'Quanto lucro posso guardar?', tr: 'Ne kadar kar tutabilirim?' },
+    answer: 'You receive up to 80% of the net profit generated on your funded account. FPT retains the remaining 20%.',
+    answers: {
+      ar: 'تحصل على ما يصل إلى 80% من صافي الربح المحقق على حسابك الممول.',
+      fr: "Vous recevez jusqu’à 80 % du bénéfice net. FPT conserve les 20 % restants.",
+      es: 'Recibes hasta el 80% del beneficio neto. FPT retiene el 20% restante.',
+      pt: 'Você recebe até 80% do lucro líquido. FPT retém os 20% restantes.',
+      tr: "Finanse edilmiş hesabınızda elde edilen net kârın %80'ine kadarını alırsınız.",
+    },
   },
   {
-    id: 'can-i-have-multiple-funded-accounts',
-    categoryId: 'funded-accounts',
+    id: 'can-i-have-multiple-funded-accounts', categoryId: 'funded-accounts',
     question: 'Can I have multiple funded accounts?',
-    answer:
-      'Yes. Each trader can operate up to 10 active funded accounts simultaneously.',
+    questions: { ar: 'هل يمكنني الحصول على حسابات ممولة متعددة؟', fr: 'Puis-je avoir plusieurs comptes financés ?', es: '¿Puedo tener varias cuentas financiadas?', pt: 'Posso ter várias contas financiadas?', tr: 'Birden fazla finanse edilmiş hesabım olabilir mi?' },
+    answer: 'Yes. Each trader can operate up to 10 active funded accounts simultaneously.',
+    answers: {
+      ar: 'نعم. يمكن لكل متداول تشغيل ما يصل إلى 10 حسابات ممولة نشطة في وقت واحد.',
+      fr: "Oui. Chaque trader peut opérer jusqu’à 10 comptes financés actifs simultanément.",
+      es: 'Sí. Cada trader puede operar hasta 10 cuentas financiadas activas simultáneamente.',
+      pt: 'Sim. Cada trader pode operar até 10 contas financiadas ativas simultaneamente.',
+      tr: 'Evet. Her trader aynı anda 10 aktif finanse edilmiş hesap işletebilir.',
+    },
   },
   {
-    id: 'do-funded-accounts-follow-same-rules',
-    categoryId: 'funded-accounts',
+    id: 'do-funded-accounts-follow-same-rules', categoryId: 'funded-accounts',
     question: 'Do funded accounts follow the same rules as the evaluation?',
-    answer:
-      'The core risk parameters remain — daily drawdown, maximum drawdown, and minimum trading days. The profit target no longer applies, as you are now operating under funded conditions.',
+    questions: { ar: 'هل تتبع الحسابات الممولة نفس قواعد التقييم؟', fr: 'Les comptes financés suivent-ils les mêmes règles ?', es: '¿Las cuentas financiadas siguen las mismas reglas?', pt: 'As contas financiadas seguem as mesmas regras?', tr: 'Finanse edilmiş hesaplar aynı kuralları takip ediyor mu?' },
+    answer: 'The core risk parameters remain — daily drawdown, maximum drawdown, and minimum trading days. The profit target no longer applies.',
+    answers: {
+      ar: 'تبقى معاملات المخاطر الأساسية — السحب اليومي والسحب الأقصى والحد الأدنى لأيام التداول. لا ينطبق هدف الربح بعد الآن.',
+      fr: "Les paramètres de risque principaux restent. L’objectif de profit ne s’applique plus.",
+      es: 'Los parámetros de riesgo principales permanecen. El objetivo de ganancia ya no aplica.',
+      pt: 'Os parâmetros de risco principais permanecem. A meta de lucro não se aplica mais.',
+      tr: 'Temel risk parametreleri kalır. Kar hedefi artık geçerli değildir.',
+    },
   },
   {
-    id: 'is-there-a-scaling-plan',
-    categoryId: 'funded-accounts',
+    id: 'is-there-a-scaling-plan', categoryId: 'funded-accounts',
     question: 'Is there a scaling plan as I grow?',
-    answer:
-      'Scaling opportunities are available for consistent performers. Specific criteria and account size expansions are communicated directly through your FPT dashboard.',
+    questions: { ar: 'هل هناك خطة تطوير مع نموي؟', fr: 'Y a-t-il un plan de scaling ?', es: '¿Hay un plan de escalado?', pt: 'Há um plano de escalabilidade?', tr: 'Büyüdükçe ölçekleme planı var mı?' },
+    answer: 'Scaling opportunities are available for consistent performers. Criteria are communicated through your FPT dashboard.',
+    answers: {
+      ar: 'تتوفر فرص التطوير للمتداولين المتسقين. تُبلَّغ بالمعايير من خلال لوحة تحكم FPT.',
+      fr: "Des opportunités de scaling sont disponibles pour les performers réguliers.",
+      es: 'Hay oportunidades de escalado para traders consistentes.',
+      pt: 'Oportunidades de escalabilidade estão disponíveis para performers consistentes.',
+      tr: 'Tutarlı performans gösterenler için ölçekleme fırsatları mevcuttur.',
+    },
   },
-
-  // Payouts & Fiper Card
   {
-    id: 'when-can-i-withdraw-profits',
-    categoryId: 'payouts-fiper-card',
+    id: 'when-can-i-withdraw-profits', categoryId: 'payouts-fiper-card', popular: true,
     question: 'When can I withdraw profits?',
-    answer:
-      'Payouts can be requested every 14 days, starting from your first qualifying trade on the funded account.',
-    popular: true,
+    questions: { ar: 'متى يمكنني سحب الأرباح؟', fr: 'Quand puis-je retirer mes bénéfices ?', es: '¿Cuándo puedo retirar ganancias?', pt: 'Quando posso sacar lucros?', tr: 'Karları ne zaman çekebilirim?' },
+    answer: 'Payouts can be requested every 14 days, starting from your first qualifying trade on the funded account.',
+    answers: {
+      ar: 'يمكن طلب الدفعات كل 14 يوماً، اعتباراً من أول صفقة مؤهلة لك على الحساب الممول.',
+      fr: "Les paiements peuvent être demandés tous les 14 jours.",
+      es: 'Los pagos se pueden solicitar cada 14 días.',
+      pt: 'Os pagamentos podem ser solicitados a cada 14 dias.',
+      tr: 'Ödemeler her 14 günde bir talep edilebilir.',
+    },
   },
   {
-    id: 'what-payout-methods-are-available',
-    categoryId: 'payouts-fiper-card',
+    id: 'what-payout-methods-are-available', categoryId: 'payouts-fiper-card',
     question: 'What payout methods are available?',
-    answer:
-      'Profits can be disbursed via cryptocurrency, bank transfer, card, or internal transfer to a Fiper account.',
+    questions: { ar: 'ما طرق الدفع المتاحة؟', fr: 'Quelles méthodes de paiement sont disponibles ?', es: '¿Qué métodos de pago están disponibles?', pt: 'Quais métodos de pagamento estão disponíveis?', tr: 'Hangi ödeme yöntemleri mevcut?' },
+    answer: 'Profits can be disbursed via cryptocurrency, bank transfer, card, or internal transfer to a Fiper account.',
+    answers: {
+      ar: 'يمكن صرف الأرباح عبر العملة المشفرة أو التحويل المصرفي أو البطاقة أو التحويل الداخلي إلى حساب Fiper.',
+      fr: 'Les bénéfices peuvent être versés via crypto, virement bancaire, carte ou transfert interne.',
+      es: 'Los beneficios se pueden desembolsar mediante criptomoneda, transferencia bancaria, tarjeta o transferencia interna.',
+      pt: 'Os lucros podem ser pagos via criptomoeda, transferência bancária, cartão ou transferência interna.',
+      tr: 'Karlar kripto, banka havalesi, kart veya dahili transfer yoluyla ödenebilir.',
+    },
   },
   {
-    id: 'can-i-access-my-funds-faster',
-    categoryId: 'payouts-fiper-card',
+    id: 'can-i-access-my-funds-faster', categoryId: 'payouts-fiper-card',
     question: 'Can I access my funds faster?',
-    answer:
-      'Yes. An internal transfer to your Fiper account is the fastest route — funds are typically available in the same session. From there, you can spend directly using the Fiper Card.',
+    questions: { ar: 'هل يمكنني الوصول إلى أموالي بشكل أسرع؟', fr: 'Puis-je accéder à mes fonds plus rapidement ?', es: '¿Puedo acceder a mis fondos más rápido?', pt: 'Posso acessar meus fundos mais rápido?', tr: 'Fonlarıma daha hızlı erişebilir miyim?' },
+    answer: 'Yes. An internal transfer to your Fiper account is the fastest route. From there, you can spend directly using the Fiper Card.',
+    answers: {
+      ar: 'نعم. التحويل الداخلي إلى حساب Fiper هو الأسرع. ومن ثَم يمكنك الإنفاق مباشرةً باستخدام بطاقة Fiper.',
+      fr: "Oui. Le transfert interne vers votre compte Fiper est le plus rapide.",
+      es: 'Sí. La transferencia interna a tu cuenta Fiper es la más rápida.',
+      pt: 'Sim. A transferência interna para sua conta Fiper é a mais rápida.',
+      tr: 'Evet. Fiper hesabına dahili transfer en hızlı yoldur.',
+    },
   },
   {
-    id: 'what-is-the-fiper-card',
-    categoryId: 'payouts-fiper-card',
+    id: 'what-is-the-fiper-card', categoryId: 'payouts-fiper-card',
     question: 'What is the Fiper Card?',
-    answer:
-      'The Fiper Card is a payment solution from the Fiper Global ecosystem. It allows you to spend your profits in real life — online or in-store — through a virtual or physical card.',
+    questions: { ar: 'ما هي بطاقة Fiper؟', fr: "Qu’est-ce que la Fiper Card ?", es: '¿Qué es la Fiper Card?', pt: 'O que é o Fiper Card?', tr: 'Fiper Kartı nedir?' },
+    answer: 'The Fiper Card is a payment solution from the Fiper Global ecosystem. It allows you to spend your profits online or in-store through a virtual or physical card.',
+    answers: {
+      ar: 'بطاقة Fiper هي حل دفع من منظومة Fiper Global. تتيح لك إنفاق أرباحك عبر الإنترنت أو في المتاجر.',
+      fr: "La Fiper Card est une solution de paiement permettant de dépenser vos bénéfices en ligne ou en magasin.",
+      es: 'La Fiper Card es una solución de pago que te permite gastar tus ganancias online o en tienda.',
+      pt: 'O Fiper Card é uma solução de pagamento que permite gastar seus lucros online ou em lojas.',
+      tr: 'Fiper Kartı, karlarınızı online veya mağazada harcamanızı sağlayan bir ödeme çözümüdür.',
+    },
   },
   {
-    id: 'how-do-i-get-the-fiper-card',
-    categoryId: 'payouts-fiper-card',
+    id: 'how-do-i-get-the-fiper-card', categoryId: 'payouts-fiper-card',
     question: 'How do I get the Fiper Card?',
-    answer:
-      'Create a Fiper account through the Fiper Global platform, then issue your card directly from the dashboard. Virtual cards activate in minutes; physical cards are shipped to eligible regions.',
+    questions: { ar: 'كيف أحصل على بطاقة Fiper؟', fr: 'Comment obtenir la Fiper Card ?', es: '¿Cómo obtengo la Fiper Card?', pt: 'Como obtenho o Fiper Card?', tr: 'Fiper Kartını nasıl alabilirim?' },
+    answer: 'Create a Fiper account through the Fiper Global platform, then issue your card directly from the dashboard. Virtual cards activate in minutes.',
+    answers: {
+      ar: 'أنشئ حساب Fiper عبر منصة Fiper Global، ثم أصدر بطاقتك مباشرةً من لوحة التحكم.',
+      fr: "Créez un compte Fiper via la plateforme Fiper Global, puis émettez votre carte depuis le tableau de bord.",
+      es: 'Crea una cuenta Fiper en la plataforma Fiper Global, luego emite tu tarjeta desde el dashboard.',
+      pt: 'Crie uma conta Fiper pela plataforma Fiper Global, depois emita seu cartão pelo dashboard.',
+      tr: 'Fiper Global platformu üzerinden bir Fiper hesabı oluşturun, ardından kartınızı dashboard’dan çıkarın.',
+    },
   },
   {
-    id: 'can-i-use-my-fpt-profits-with-the-card',
-    categoryId: 'payouts-fiper-card',
+    id: 'can-i-use-my-fpt-profits-with-the-card', categoryId: 'payouts-fiper-card',
     question: 'Can I use my FPT profits with the card?',
-    answer:
-      'Yes. Transfer your FPT balance to your linked Fiper account, then access the funds instantly via your Fiper Card.',
+    questions: { ar: 'هل يمكنني استخدام أرباح FPT مع البطاقة؟', fr: 'Puis-je utiliser mes bénéfices FPT avec la carte ?', es: '¿Puedo usar mis ganancias FPT con la tarjeta?', pt: 'Posso usar meus lucros FPT com o cartão?', tr: 'FPT karlarımı kartla kullanabilir miyim?' },
+    answer: 'Yes. Transfer your FPT balance to your linked Fiper account, then access the funds instantly via your Fiper Card.',
+    answers: {
+      ar: 'نعم. حوِّل رصيد FPT إلى حساب Fiper المرتبط، ثم ادخل إلى الأموال فوراً عبر بطاقة Fiper.',
+      fr: "Oui. Transférez votre solde FPT vers votre compte Fiper lié, puis accédez aux fonds via la Fiper Card.",
+      es: 'Sí. Transfiere tu saldo FPT a tu cuenta Fiper vinculada y accede con la Fiper Card.',
+      pt: 'Sim. Transfira seu saldo FPT para sua conta Fiper e acesse com o Fiper Card.',
+      tr: 'Evet. FPT bakiyenizi Fiper hesabınıza aktarın ve Fiper Kartı ile erişin.',
+    },
   },
   {
-    id: 'is-the-card-available-worldwide',
-    categoryId: 'payouts-fiper-card',
+    id: 'is-the-card-available-worldwide', categoryId: 'payouts-fiper-card',
     question: 'Is the card available worldwide?',
-    answer:
-      'The Fiper Card supports global usage anywhere VISA is accepted. Physical card shipping is available in select markets.',
+    questions: { ar: 'هل البطاقة متاحة في جميع أنحاء العالم؟', fr: 'La carte est-elle disponible dans le monde entier ?', es: '¿La tarjeta está disponible en todo el mundo?', pt: 'O cartão está disponível mundialmente?', tr: 'Kart dünya genelinde kullanılabilir mi?' },
+    answer: 'The Fiper Card supports global usage anywhere VISA is accepted. Physical card shipping is available in select markets.',
+    answers: {
+      ar: 'تدعم بطاقة Fiper الاستخدام العالمي في أي مكان يُقبل فيه VISA.',
+      fr: "La Fiper Card est utilisable partout où VISA est accepté.",
+      es: 'La Fiper Card es utilizable donde VISA es aceptado.',
+      pt: 'O Fiper Card é utilizável onde VISA é aceito.',
+      tr: 'Fiper Kartı, VISA’nın kabul edildiği her yerde kullanılabilir.',
+    },
   },
-
-  // Trading Conditions
   {
-    id: 'what-leverage-do-you-offer',
-    categoryId: 'trading-conditions',
+    id: 'what-leverage-do-you-offer', categoryId: 'trading-conditions',
     question: 'What leverage do you offer?',
-    answer:
-      'Up to 1:100, depending on the instrument. Leverage varies by asset class and current market conditions.',
+    questions: { ar: 'ما الرافعة المالية التي تقدمونها؟', fr: 'Quel levier proposez-vous ?', es: '¿Qué apalancamiento ofrecen?', pt: 'Qual alavancagem vocês oferecem?', tr: 'Hangi kaldıraç sunuyorsunuz?' },
+    answer: 'Leverage varies by instrument: Forex 1:100, Metals 1:20, Indices 1:30, Commodities 1:10, Crypto 1:2.',
+    answers: {
+      ar: 'تختلف الرافعة المالية حسب الأداة: فوركس 1:100، معادن 1:20، مؤشرات 1:30، سلع 1:10، كريبتو 1:2.',
+      fr: 'Le levier varie selon l’instrument : Forex 1:100, Métaux 1:20, Indices 1:30, Matières premières 1:10, Crypto 1:2.',
+      es: 'El apalancamiento varía: Forex 1:100, Metales 1:20, Índices 1:30, Materias primas 1:10, Cripto 1:2.',
+      pt: 'A alavancagem varia: Forex 1:100, Metais 1:20, Índices 1:30, Commodities 1:10, Cripto 1:2.',
+      tr: 'Kaldıraç araca göre: Forex 1:100, Metaller 1:20, Endeksler 1:30, Emtialar 1:10, Kripto 1:2.',
+    },
   },
   {
-    id: 'what-instruments-can-i-trade',
-    categoryId: 'trading-conditions',
+    id: 'what-instruments-can-i-trade', categoryId: 'trading-conditions',
     question: 'What instruments can I trade?',
-    answer:
-      'FX majors and minors, indices, commodities (metals and energies), and select cryptocurrency pairs. The full instrument list is available inside your trading dashboard.',
+    questions: { ar: 'ما الأدوات التي يمكنني تداولها؟', fr: 'Quels instruments puis-je trader ?', es: '¿Qué instrumentos puedo operar?', pt: 'Quais instrumentos posso negociar?', tr: 'Hangi enstrümanları işlem yapabilirim?' },
+    answer: 'FX majors and minors, indices, commodities (metals and energies), and select cryptocurrency pairs.',
+    answers: {
+      ar: 'أزواج الفوركس الرئيسية والثانوية والمؤشرات والسلع وأزواج عملات رقمية مختارة.',
+      fr: 'Paires FX majeures et mineures, indices, matières premières et cryptos sélectionnées.',
+      es: 'Pares FX mayores y menores, índices, materias primas y criptos seleccionadas.',
+      pt: 'Pares FX principais e secundários, índices, commodities e criptos selecionadas.',
+      tr: 'FX majör ve minör pariteler, endeksler, emtialar ve seçili kripto çiftleri.',
+    },
   },
   {
-    id: 'what-are-the-spreads-and-commissions',
-    categoryId: 'trading-conditions',
+    id: 'what-are-the-spreads-and-commissions', categoryId: 'trading-conditions',
     question: 'What are the spreads and commissions?',
-    answer:
-      'FPT provides raw institutional spreads sourced from liquidity providers, with a standard commission per lot. Exact values vary by instrument and are displayed in real time on your platform.',
+    questions: { ar: 'ما السبريد والعمولات؟', fr: 'Quels sont les spreads et commissions ?', es: '¿Cuáles son los spreads y comisiones?', pt: 'Quais são os spreads e comissões?', tr: 'Spreadler ve komisyonlar nelerdir?' },
+    answer: 'FPT provides raw institutional spreads with a standard commission per lot. Exact values vary by instrument.',
+    answers: {
+      ar: 'يقدم FPT سبريدات مؤسسية خام مع عمولة قياسية لكل لوت.',
+      fr: 'FPT propose des spreads bruts institutionnels avec une commission standard par lot.',
+      es: 'FPT ofrece spreads institucionales brutos con comisión estándar por lote.',
+      pt: 'FPT oferece spreads brutos institucionais com comissão padrão por lote.',
+      tr: 'FPT ham kurumsal spreadler ve lot başına standart komisyon sunar.',
+    },
   },
   {
-    id: 'can-i-use-expert-advisors',
-    categoryId: 'trading-conditions',
+    id: 'can-i-use-expert-advisors', categoryId: 'trading-conditions',
     question: 'Can I use Expert Advisors (EAs)?',
-    answer:
-      'Yes. Automated trading via EAs is permitted under standard trading conditions.',
+    questions: { ar: 'هل يمكنني استخدام الـ EAs؟', fr: 'Puis-je utiliser des Expert Advisors ?', es: '¿Puedo usar Expert Advisors (EAs)?', pt: 'Posso usar Expert Advisors (EAs)?', tr: 'Expert Advisors kullanabilir miyim?' },
+    answer: 'Yes. Automated trading via EAs is permitted under standard trading conditions.',
+    answers: {
+      ar: 'نعم. التداول الآلي عبر الـ EAs مسموح به في ظل شروط التداول القياسية.',
+      fr: "Oui. Le trading automatisé via EAs est autorisé.",
+      es: 'Sí. El trading automatizado mediante EAs está permitido.',
+      pt: 'Sim. O trading automatizado via EAs é permitido.',
+      tr: 'Evet. EA’lar aracılığıyla otomatik trading izinlidir.',
+    },
   },
   {
-    id: 'is-high-frequency-trading-allowed',
-    categoryId: 'trading-conditions',
+    id: 'is-high-frequency-trading-allowed', categoryId: 'trading-conditions',
     question: 'Is high-frequency trading allowed?',
-    answer:
-      'No. HFT strategies, arbitrage, tick scalping, and latency-based strategies are not permitted.',
+    questions: { ar: 'هل التداول عالي التردد مسموح به؟', fr: 'Le trading haute fréquence est-il autorisé ?', es: '¿Está permitido el trading de alta frecuencia?', pt: 'O trading de alta frequência é permitido?', tr: 'Yüksek frekanslı trading izinli mi?' },
+    answer: 'No. HFT strategies, arbitrage, tick scalping, and latency-based strategies are not permitted.',
+    answers: {
+      ar: 'لا. استراتيجيات HFT والمراجحة والتداول السريع على التدوينات غير مسموح بها.',
+      fr: "Non. Les stratégies HFT, l’arbitrage et le tick scalping ne sont pas autorisés.",
+      es: 'No. HFT, arbitraje y tick scalping no están permitidos.',
+      pt: 'Não. HFT, arbitragem e tick scalping não são permitidos.',
+      tr: 'Hayır. HFT, arbitraj ve tick scalping izinli değildir.',
+    },
   },
   {
-    id: 'is-hedging-allowed',
-    categoryId: 'trading-conditions',
+    id: 'is-hedging-allowed', categoryId: 'trading-conditions',
     question: 'Is hedging allowed?',
-    answer:
-      'Yes. Hedging within a single account is permitted. Hedging across multiple FPT accounts is not allowed.',
+    questions: { ar: 'هل التحوط مسموح به؟', fr: 'La couverture est-elle autorisée ?', es: '¿Está permitido el hedging?', pt: 'O hedging é permitido?', tr: 'Hedging izinli mi?' },
+    answer: 'Yes. Hedging within a single account is permitted. Hedging across multiple FPT accounts is not allowed.',
+    answers: {
+      ar: 'نعم. التحوط داخل حساب واحد مسموح به. التحوط عبر حسابات FPT متعددة غير مسموح به.',
+      fr: "Oui. La couverture au sein d’un seul compte est autorisée. Entre plusieurs comptes, non.",
+      es: 'Sí. Hedging dentro de una cuenta está permitido. Entre varias cuentas FPT, no.',
+      pt: 'Sim. Hedging dentro de uma conta é permitido. Entre múltiplas contas FPT, não.',
+      tr: 'Evet. Tek hesap içinde hedging izinlidir. Birden fazla hesap arasında izinli değildir.',
+    },
   },
   {
-    id: 'is-martingale-or-grid-allowed',
-    categoryId: 'trading-conditions',
+    id: 'is-martingale-or-grid-allowed', categoryId: 'trading-conditions',
     question: 'Is martingale or grid trading allowed?',
-    answer:
-      'These strategies are permitted, but they must respect the maximum drawdown and daily loss limits. Excessive risk concentration may trigger a manual review.',
+    questions: { ar: 'هل المارتينجيل أو التداول الشبكي مسموح به؟', fr: 'Le martingale ou grid trading est-il autorisé ?', es: '¿Está permitido el martingala o grid?', pt: 'Martingale ou grid são permitidos?', tr: 'Martingale veya grid izinli mi?' },
+    answer: 'These strategies are permitted, but they must respect the maximum drawdown and daily loss limits.',
+    answers: {
+      ar: 'هذه الاستراتيجيات مسموح بها، لكن يجب أن تحترم حدود السحب الأقصى والخسارة اليومية.',
+      fr: 'Ces stratégies sont autorisées mais doivent respecter les limites de drawdown.',
+      es: 'Estas estrategias están permitidas pero deben respetar los límites de drawdown.',
+      pt: 'Essas estratégias são permitidas mas devem respeitar os limites de drawdown.',
+      tr: 'Bu stratejilere izin verilir ancak drawdown limitlerine uymaları gerekir.',
+    },
   },
   {
-    id: 'can-i-trade-during-news',
-    categoryId: 'trading-conditions',
+    id: 'can-i-trade-during-news', categoryId: 'trading-conditions',
     question: 'Can I trade during news?',
-    answer:
-      'Yes, with one limitation: trades opened or closed within 5 minutes before or after a high-impact news release are capped at 1% profit of the account balance.',
+    questions: { ar: 'هل يمكنني التداول خلال الأخبار؟', fr: 'Puis-je trader pendant les nouvelles ?', es: '¿Puedo operar durante las noticias?', pt: 'Posso operar durante notícias?', tr: 'Haber sırasında işlem yapabilir miyim?' },
+    answer: 'Yes, with one limitation: trades opened or closed within 5 minutes before or after a high-impact news release are capped at 1% profit.',
+    answers: {
+      ar: 'نعم، مع قيد واحد: الصفقات المفتوحة أو المغلقة خلال 5 دقائق قبل أو بعد الأخبار محدودة بـ 1% ربح.',
+      fr: "Oui, avec une restriction : les trades dans les 5 minutes autour d’une publication d’impact élevé sont plafonnés à 1 %.",
+      es: 'Sí, con una limitación: operaciones en 5 min antes/después de noticias están limitadas al 1%.',
+      pt: 'Sim, com uma limitação: operações em 5 min antes/depois de notícias são limitadas a 1%.',
+      tr: 'Evet, bir kısıtlamayla: yüksek etkili haberlerden 5 dakika önce/sonraki işlemler %1 ile sınırlıdır.',
+    },
   },
   {
-    id: 'what-happens-if-i-exceed-news-limit',
-    categoryId: 'trading-conditions',
+    id: 'what-happens-if-i-exceed-news-limit', categoryId: 'trading-conditions',
     question: 'What happens if I exceed this news trading limit?',
-    answer:
-      'The excess profit is removed from your account without any additional penalty. Your account status remains unchanged.',
+    questions: { ar: 'ماذا يحدث إذا تجاوزت حد تداول الأخبار؟', fr: 'Que se passe-t-il si je dépasse cette limite ?', es: '¿Qué pasa si supero este límite?', pt: 'O que acontece se eu exceder esse limite?', tr: 'Bu limiti aşarsam ne olur?' },
+    answer: 'The excess profit is removed from your account without any additional penalty. Your account status remains unchanged.',
+    answers: {
+      ar: 'يُزال الربح الزائد من حسابك دون أي عقوبة إضافية.',
+      fr: 'Le bénéfice excédentaire est retiré sans pénalité supplémentaire.',
+      es: 'El beneficio excedente se elimina sin penalización adicional.',
+      pt: 'O lucro excedente é removido sem penalidade adicional.',
+      tr: 'Fazla kar ek ceza olmaksızın kaldırılır.',
+    },
   },
   {
-    id: 'can-i-hold-trades-overnight',
-    categoryId: 'trading-conditions',
+    id: 'can-i-hold-trades-overnight', categoryId: 'trading-conditions',
     question: 'Can I hold trades overnight or over the weekend?',
-    answer:
-      'Yes. Overnight and weekend positions are permitted across all account types.',
+    questions: { ar: 'هل يمكنني الاحتفاظ بالصفقات ليلاً أو نهاية الأسبوع؟', fr: 'Puis-je conserver des positions du jour au lendemain ?', es: '¿Puedo mantener operaciones overnight?', pt: 'Posso manter operações overnight?', tr: 'Geceye veya hafta sonuna işlem tutabilir miyim?' },
+    answer: 'Yes. Overnight and weekend positions are permitted across all account types.',
+    answers: {
+      ar: 'نعم. المراكز الليلية وعطلة نهاية الأسبوع مسموح بها في جميع أنواع الحسابات.',
+      fr: 'Oui. Les positions du jour au lendemain et du week-end sont autorisées.',
+      es: 'Sí. Las posiciones overnight y de fin de semana están permitidas.',
+      pt: 'Sim. Posições overnight e de fim de semana são permitidas.',
+      tr: 'Evet. Gecelik ve hafta sonu pozisyonlarına izin verilir.',
+    },
   },
-
-  // Account Management
   {
-    id: 'how-many-accounts-can-i-have',
-    categoryId: 'account-management',
+    id: 'how-many-accounts-can-i-have', categoryId: 'account-management',
     question: 'How many accounts can I have?',
+    questions: { ar: 'كم عدد الحسابات التي يمكنني امتلاكها؟', fr: 'Combien de comptes puis-je avoir ?', es: '¿Cuántas cuentas puedo tener?', pt: 'Quantas contas posso ter?', tr: 'Kaç hesabım olabilir?' },
     answer: 'Up to 10 active accounts per verified trader.',
+    answers: {
+      ar: 'حتى 10 حسابات نشطة لكل متداول موثق.',
+      fr: "Jusqu’à 10 comptes actifs par trader vérifié.",
+      es: 'Hasta 10 cuentas activas por trader verificado.',
+      pt: 'Até 10 contas ativas por trader verificado.',
+      tr: 'Doğrulanmış trader başına 10 aktif hesaba kadar.',
+    },
   },
   {
-    id: 'what-happens-if-i-dont-trade',
-    categoryId: 'account-management',
-    question: 'What happens if I don\u2019t trade?',
-    answer:
-      'Accounts inactive for 30 consecutive days may be terminated. Re-activation is at FPT\u2019s discretion.',
+    id: 'what-happens-if-i-dont-trade', categoryId: 'account-management',
+    question: "What happens if I don’t trade?",
+    questions: { ar: 'ماذا يحدث إذا لم أتداول؟', fr: "Que se passe-t-il si je ne trade pas ?", es: '¿Qué pasa si no opero?', pt: 'O que acontece se eu não operar?', tr: 'İşlem yapmazsam ne olur?' },
+    answer: "Accounts inactive for 30 consecutive days may be terminated. Re-activation is at FPT’s discretion.",
+    answers: {
+      ar: 'قد تُنهى الحسابات الخاملة لمدة 30 يوماً متتالياً.',
+      fr: "Les comptes inactifs pendant 30 jours consécutifs peuvent être résiliés.",
+      es: 'Las cuentas inactivas durante 30 días pueden terminarse.',
+      pt: 'Contas inativas por 30 dias podem ser encerradas.',
+      tr: '30 ardışık gün boyunca aktif olmayan hesaplar sonlandırılabilir.',
+    },
   },
   {
-    id: 'can-i-reset-my-account',
-    categoryId: 'account-management',
+    id: 'can-i-reset-my-account', categoryId: 'account-management',
     question: 'Can I reset my account?',
-    answer:
-      'No reset option is included with any challenge. If your account fails, you must purchase a new challenge to continue.',
+    questions: { ar: 'هل يمكنني إعادة تعيين حسابي؟', fr: 'Puis-je réinitialiser mon compte ?', es: '¿Puedo restablecer mi cuenta?', pt: 'Posso redefinir minha conta?', tr: 'Hesabımı sıfırlayabilir miyim?' },
+    answer: 'No reset option is included with any challenge. If your account fails, you must purchase a new challenge.',
+    answers: {
+      ar: 'لا يوجد خيار إعادة تعيين مع أي تحدٍّ. إذا فشل حسابك، يجب عليك شراء تحدٍّ جديد.',
+      fr: "Aucune option de réinitialisation n’est incluse. En cas d’échec, vous devez acheter un nouveau défi.",
+      es: 'Ningún desafío incluye opción de restablecimiento. Debes comprar uno nuevo si fallas.',
+      pt: 'Nenhum desafio inclui redefinição. Você deve comprar um novo se falhar.',
+      tr: 'Hiçbir meydan okumada sıfırlama seçeneği yoktur.',
+    },
   },
   {
-    id: 'can-i-transfer-my-account',
-    categoryId: 'account-management',
+    id: 'can-i-transfer-my-account', categoryId: 'account-management',
     question: 'Can I transfer my account to another person?',
-    answer:
-      'No. Accounts are bound to the verified identity of the registered trader and are non-transferable.',
+    questions: { ar: 'هل يمكنني نقل حسابي لشخص آخر؟', fr: 'Puis-je transférer mon compte ?', es: '¿Puedo transferir mi cuenta?', pt: 'Posso transferir minha conta?', tr: 'Hesabımı devredebilir miyim?' },
+    answer: 'No. Accounts are bound to the verified identity of the registered trader and are non-transferable.',
+    answers: {
+      ar: 'لا. الحسابات مرتبطة بهوية المتداول المسجل الموثقة وغير قابلة للنقل.',
+      fr: "Non. Les comptes sont liés à l’identité vérifiée du trader et ne sont pas transférables.",
+      es: 'No. Las cuentas están vinculadas al trader registrado y no son transferibles.',
+      pt: 'Não. As contas estão vinculadas ao trader registrado e não são transferíveis.',
+      tr: 'Hayır. Hesaplar kayıtlı trader kimliğine bağlıdır ve devredilemez.',
+    },
   },
-
-  // Technical & Platform
   {
-    id: 'which-platform-do-you-use',
-    categoryId: 'technical-platform',
+    id: 'which-platform-do-you-use', categoryId: 'technical-platform',
     question: 'Which platform do you use?',
-    answer:
-      'FPT operates on cTrader — chosen for its institutional-grade execution, native depth-of-market, and advanced algorithmic capabilities.',
+    questions: { ar: 'ما المنصة التي تستخدمونها؟', fr: 'Quelle plateforme utilisez-vous ?', es: '¿Qué plataforma usan?', pt: 'Qual plataforma vocês usam?', tr: 'Hangi platformu kullanıyorsunuz?' },
+    answer: 'FPT operates on cTrader — chosen for its institutional-grade execution, native depth-of-market, and advanced algorithmic capabilities.',
+    answers: {
+      ar: 'يعمل FPT على cTrader — المختار لتنفيذه المؤسسي الممتاز وعمق السوق الأصلي.',
+      fr: "FPT opère sur cTrader, choisi pour son exécution institutionnelle et ses capacités algorithmiques.",
+      es: 'FPT opera en cTrader, elegido por su ejecución institucional y capacidades algorítmicas.',
+      pt: 'FPT opera no cTrader, escolhido por execução institucional e capacidades algorítmicas.',
+      tr: 'FPT, kurumsal yürütme için tercih edilen cTrader üzerinde çalışır.',
+    },
   },
   {
-    id: 'what-if-i-dont-receive-my-login',
-    categoryId: 'technical-platform',
-    question: 'What if I don\u2019t receive my login details?',
-    answer:
-      'Check both your inbox and spam folder. If credentials are not received within 30 minutes of purchase, contact FPT support via live chat or email.',
+    id: 'what-if-i-dont-receive-my-login', categoryId: 'technical-platform',
+    question: "What if I don’t receive my login details?",
+    questions: { ar: 'ماذا لو لم أتلق بيانات تسجيل الدخول؟', fr: 'Que faire si je ne reçois pas mes identifiants ?', es: '¿Qué hago si no recibo mis credenciales?', pt: 'E se eu não receber meus dados de login?', tr: 'Giriş bilgilerimi almazsam?' },
+    answer: 'Check both your inbox and spam folder. If credentials are not received within 30 minutes, contact FPT support.',
+    answers: {
+      ar: 'تحقق من صندوق الوارد ومجلد البريد المزعج. إذا لم تُستلم خلال 30 دقيقة، تواصل مع دعم FPT.',
+      fr: "Vérifiez votre boîte de réception et le dossier spam. Si rien dans les 30 minutes, contactez le support.",
+      es: 'Revisa bandeja de entrada y spam. Si no llegan en 30 minutos, contacta soporte.',
+      pt: 'Verifique caixa de entrada e spam. Se não chegar em 30 minutos, contate o suporte.',
+      tr: 'Gelen kutusu ve spam klasörünüzü kontrol edin. 30 dakika içinde gelmezse destek ile iletişime geçin.',
+    },
   },
   {
-    id: 'what-if-i-face-technical-issues',
-    categoryId: 'technical-platform',
+    id: 'what-if-i-face-technical-issues', categoryId: 'technical-platform',
     question: 'What if I face technical issues during trading?',
-    answer:
-      'Reach out to support immediately through live chat or email. Document the issue with a screenshot and timestamp to expedite resolution.',
+    questions: { ar: 'ماذا لو واجهت مشاكل تقنية أثناء التداول؟', fr: 'Que faire en cas de problèmes techniques ?', es: '¿Qué hago si tengo problemas técnicos?', pt: 'E se eu tiver problemas técnicos?', tr: 'Teknik sorunla karşılaşırsam?' },
+    answer: 'Reach out to support immediately through live chat or email. Document the issue with a screenshot.',
+    answers: {
+      ar: 'تواصل مع الدعم فوراً عبر الدردشة المباشرة أو البريد الإلكتروني.',
+      fr: 'Contactez immédiatement le support via chat ou email avec une capture d’écran.',
+      es: 'Contacta el soporte por chat o email con captura de pantalla.',
+      pt: 'Entre em contato com suporte por chat ou email com screenshot.',
+      tr: 'Ekran görüntüsüyle canlı sohbet veya e-posta ile hemen desteğe başvurun.',
+    },
   },
   {
-    id: 'do-you-support-mobile-trading',
-    categoryId: 'technical-platform',
+    id: 'do-you-support-mobile-trading', categoryId: 'technical-platform',
     question: 'Do you support mobile trading?',
-    answer:
-      'Yes. cTrader is available on iOS, Android, and web. All FPT account features are accessible from any device.',
+    questions: { ar: 'هل تدعمون التداول عبر الجوال؟', fr: 'Soutenez-vous le trading mobile ?', es: '¿Apoyan el trading móvil?', pt: 'Vocês suportam trading móvel?', tr: 'Mobil trading destekleniyor mu?' },
+    answer: 'Yes. cTrader is available on iOS, Android, and web.',
+    answers: {
+      ar: 'نعم. cTrader متاح على iOS وAndroid والويب.',
+      fr: 'Oui. cTrader est disponible sur iOS, Android et web.',
+      es: 'Sí. cTrader está disponible en iOS, Android y web.',
+      pt: 'Sim. cTrader está disponível em iOS, Android e web.',
+      tr: 'Evet. cTrader iOS, Android ve web’de mevcuttur.',
+    },
   },
-
-  // Legal & General
   {
-    id: 'is-fpt-a-broker',
-    categoryId: 'legal-general',
+    id: 'is-fpt-a-broker', categoryId: 'legal-general',
     question: 'Is FPT a broker?',
-    answer:
-      'No. FPT is a proprietary trading evaluation program, not a regulated broker. We do not hold client funds or execute retail brokerage services.',
+    questions: { ar: 'هل FPT وسيط؟', fr: 'FPT est-il un courtier ?', es: '¿FPT es un bróker?', pt: 'FPT é uma corretora?', tr: 'FPT bir broker mıdır?' },
+    answer: 'No. FPT is a proprietary trading evaluation program, not a regulated broker.',
+    answers: {
+      ar: 'لا. FPT برنامج تقييم للتداول الاحترافي وليس وسيطاً منظماً.',
+      fr: "Non. FPT est un programme d’évaluation de trading propriétaire, pas un courtier réglementé.",
+      es: 'No. FPT es un programa de evaluación de trading propietario, no un bróker regulado.',
+      pt: 'Não. FPT é um programa de avaliação de trading proprietário, não uma corretora.',
+      tr: 'Hayır. FPT düzenlenmiş bir broker değil, tescilli bir trading değerlendirme programıdır.',
+    },
   },
   {
-    id: 'is-trading-real-or-simulated',
-    categoryId: 'legal-general',
+    id: 'is-trading-real-or-simulated', categoryId: 'legal-general',
     question: 'Is trading real or simulated?',
-    answer:
-      'FPT provides a structured trading environment designed for evaluation and performance measurement. All accounts operate with simulated capital in live market conditions.',
+    questions: { ar: 'هل التداول حقيقي أم محاكاة؟', fr: 'Le trading est-il réel ou simulé ?', es: '¿El trading es real o simulado?', pt: 'O trading é real ou simulado?', tr: 'Trading gerçek mi yoksa simüle mi?' },
+    answer: 'All accounts operate with simulated capital in live market conditions.',
+    answers: {
+      ar: 'تعمل جميع الحسابات برأس مال محاكاة في ظروف السوق الحية.',
+      fr: 'Tous les comptes opèrent avec du capital simulé dans des conditions de marché réelles.',
+      es: 'Todas las cuentas operan con capital simulado en condiciones reales de mercado.',
+      pt: 'Todas as contas operam com capital simulado em condições reais de mercado.',
+      tr: 'Tüm hesaplar gerçek piyasa koşullarında simüle sermaye ile çalışır.',
+    },
   },
   {
-    id: 'do-you-provide-investment-advice',
-    categoryId: 'legal-general',
+    id: 'do-you-provide-investment-advice', categoryId: 'legal-general',
     question: 'Do you provide investment advice?',
-    answer:
-      'No. FPT does not provide investment advice, trading signals, or portfolio management. All trading decisions are the sole responsibility of the trader.',
+    questions: { ar: 'هل تقدمون نصائح استثمارية؟', fr: "Fournissez-vous des conseils en investissement ?", es: '¿Brindan asesoría de inversión?', pt: 'Vocês fornecem consultoria?', tr: 'Yatırım tavsiyesi veriyor musunuz?' },
+    answer: 'No. FPT does not provide investment advice, trading signals, or portfolio management.',
+    answers: {
+      ar: 'لا. لا يقدم FPT نصائح استثمارية أو إشارات تداول أو إدارة محافظ.',
+      fr: "Non. FPT ne fournit pas de conseils en investissement ni de signaux de trading.",
+      es: 'No. FPT no proporciona asesoría de inversión ni señales de trading.',
+      pt: 'Não. FPT não fornece consultoria de investimento nem sinais de trading.',
+      tr: 'Hayır. FPT yatırım tavsiyesi veya trading sinyalleri sağlamaz.',
+    },
   },
   {
-    id: 'can-you-guarantee-profits',
-    categoryId: 'legal-general',
+    id: 'can-you-guarantee-profits', categoryId: 'legal-general',
     question: 'Can you guarantee profits?',
-    answer:
-      'No. Trading involves substantial risk, and no outcome is guaranteed. Past performance is not indicative of future results.',
+    questions: { ar: 'هل تضمنون الأرباح؟', fr: 'Pouvez-vous garantir des profits ?', es: '¿Pueden garantizar ganancias?', pt: 'Vocês garantem lucros?', tr: 'Kar garanti edebilir misiniz?' },
+    answer: 'No. Trading involves substantial risk. Past performance is not indicative of future results.',
+    answers: {
+      ar: 'لا. ينطوي التداول على مخاطر جسيمة. الأداء السابق لا يُشير إلى النتائج المستقبلية.',
+      fr: 'Non. Le trading implique des risques substantiels. Les performances passées ne garantissent pas les résultats futurs.',
+      es: 'No. El trading implica riesgos sustanciales. El rendimiento pasado no garantiza resultados futuros.',
+      pt: 'Não. O trading envolve risco substancial. Desempenho passado não garante resultados futuros.',
+      tr: 'Hayır. Trading önemli risk içerir. Geçmiş performans gelecekteki sonuçların göstergesi değildir.',
+    },
   },
   {
-    id: 'in-which-jurisdiction-is-fpt-registered',
-    categoryId: 'legal-general',
+    id: 'in-which-jurisdiction-is-fpt-registered', categoryId: 'legal-general',
     question: 'In which jurisdiction is FPT registered?',
-    answer:
-      'FPT operates under the Fiper Global corporate structure. Full entity details and registration information are available in the Legal Documentation portal.',
+    questions: { ar: 'في أي ولاية قضائية يُسجَّل FPT؟', fr: 'Dans quelle juridiction FPT est-il enregistré ?', es: '¿En qué jurisdicción está registrado FPT?', pt: 'Em qual jurisdição FPT está registrado?', tr: 'FPT hangi yargı bölgesinde kayıtlıdır?' },
+    answer: 'FPT operates under the Fiper Global corporate structure. Full details are available in the Legal Documentation portal.',
+    answers: {
+      ar: 'يعمل FPT تحت الهيكل المؤسسي لـ Fiper Global. التفاصيل متاحة في بوابة التوثيق القانوني.',
+      fr: "FPT opère sous la structure corporative de Fiper Global. Les détails sont disponibles dans le portail légal.",
+      es: 'FPT opera bajo la estructura corporativa de Fiper Global.',
+      pt: 'FPT opera sob a estrutura corporativa da Fiper Global.',
+      tr: 'FPT, Fiper Global kurumsal yapısı altında faaliyet gösterir.',
+    },
   },
   {
-    id: 'how-is-my-personal-data-protected',
-    categoryId: 'legal-general',
+    id: 'how-is-my-personal-data-protected', categoryId: 'legal-general',
     question: 'How is my personal data protected?',
-    answer:
-      'FPT follows industry-standard data protection practices including encryption at rest and in transit. Full details are outlined in the Privacy Policy available at fiper.me/legal-documentation.',
+    questions: { ar: 'كيف تُحمى بياناتي الشخصية؟', fr: 'Comment mes données personnelles sont-elles protégées ?', es: '¿Cómo se protegen mis datos personales?', pt: 'Como meus dados pessoais são protegidos?', tr: 'Kişisel verilerim nasıl korunur?' },
+    answer: 'FPT follows industry-standard data protection practices including encryption at rest and in transit.',
+    answers: {
+      ar: 'يتبع FPT ممارسات حماية البيانات القياسية بما في ذلك التشفير.',
+      fr: 'FPT suit les pratiques standard de protection des données incluant le chiffrement.',
+      es: 'FPT sigue prácticas estándar de protección de datos incluyendo cifrado.',
+      pt: 'FPT segue práticas padrão de proteção de dados incluindo criptografia.',
+      tr: 'FPT, şifreleme dahil endüstri standardı veri koruma uygulamalarını takip eder.',
+    },
   },
 ];
 
-// Helpers
-export const getCategoryBySlug = (slug) =>
-  categories.find((c) => c.slug === slug);
-
-export const getFaqsByCategory = (categoryId) =>
-  faqs.filter((f) => f.categoryId === categoryId);
-
+export const getCategoryBySlug = (slug) => categories.find((c) => c.slug === slug);
+export const getFaqsByCategory = (categoryId) => faqs.filter((f) => f.categoryId === categoryId);
 export const getPopularFaqs = () => faqs.filter((f) => f.popular);
+export const getArticleCount = (categoryId) => faqs.filter((f) => f.categoryId === categoryId).length;
 
-export const getArticleCount = (categoryId) =>
-  faqs.filter((f) => f.categoryId === categoryId).length;
-
-// Lightweight search — returns scored top results
 export function searchFaqs(query, limit = 8) {
   const q = query.trim().toLowerCase();
   if (!q) return [];
   const tokens = q.split(/\s+/).filter(Boolean);
-
   const scored = faqs.map((f) => {
-    const question = f.question.toLowerCase();
-    const answer = f.answer.toLowerCase();
+    const allText = [
+      f.question, f.answer,
+      ...Object.values(f.questions || {}),
+      ...Object.values(f.answers || {}),
+    ].join(' ').toLowerCase();
     let score = 0;
-    let allInQuestion = true;
-    for (const t of tokens) {
-      if (question.includes(t)) score += 3;
-      else allInQuestion = false;
-      if (answer.includes(t)) score += 1;
-    }
-    if (allInQuestion && tokens.length > 1) score += 2;
-    if (question.startsWith(q)) score += 2;
+    for (const t of tokens) { if (allText.includes(t)) score += 1; }
     return { faq: f, score };
   });
-
-  return scored
-    .filter((s) => s.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, limit)
-    .map((s) => s.faq);
+  return scored.filter((s) => s.score > 0).sort((a, b) => b.score - a.score).slice(0, limit).map((s) => s.faq);
 }

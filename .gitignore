@@ -9,3 +9,4 @@ docs/
 *.log
 .vite
 .claude/
+.env*.local

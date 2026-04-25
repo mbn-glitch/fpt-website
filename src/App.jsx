@@ -7,8 +7,7 @@ import WhatsAppButton from './components/ui/WhatsAppButton.jsx';
 import Home from './pages/Home.jsx';
 import { LANG_CODES, isRtl, persistLang } from './i18n/config.js';
 
-const Challenges = lazy(() => import('./pages/Challenges.jsx'));
-const Pricing = lazy(() => import('./pages/Pricing.jsx'));
+const ChallengePricing = lazy(() => import('./pages/ChallengePricing.jsx'));
 const About = lazy(() => import('./pages/About.jsx'));
 const Contact = lazy(() => import('./pages/Contact.jsx'));
 const Help = lazy(() => import('./pages/Help.jsx'));
@@ -64,8 +63,8 @@ const RouteFallback = () => <div style={{ minHeight: '60vh' }} />;
 const PAGES = (
   <>
     <Route index element={<Home />} />
-    <Route path="challenges" element={<Challenges />} />
-    <Route path="pricing" element={<Pricing />} />
+    <Route path="challenges" element={<ChallengePricing />} />
+    <Route path="pricing" element={<ChallengePricing />} />
     <Route path="about" element={<About />} />
     <Route path="contact" element={<Contact />} />
     <Route path="help" element={<Help />} />
@@ -84,8 +83,8 @@ export default function App() {
             <Routes>
               <Route element={<EnglishPathGuard />}>
                 <Route path="/" element={<Home />} />
-                <Route path="/challenges" element={<Challenges />} />
-                <Route path="/pricing" element={<Pricing />} />
+                <Route path="/challenges" element={<ChallengePricing />} />
+                <Route path="/pricing" element={<ChallengePricing />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/help" element={<Help />} />

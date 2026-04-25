@@ -1,4 +1,4 @@
-import { TrendingUp, CreditCard, LayoutDashboard, ArrowRight } from 'lucide-react';
+﻿import { TrendingUp, CreditCard, LayoutDashboard, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import Section, { SectionHeader } from '../ui/Section.jsx';
@@ -24,7 +24,7 @@ export default function Ecosystem() {
       description: t('ecosystem.card.desc'),
       badge: t('ecosystem.card.badge'),
       badgeStyle: 'bg-[#10B981]/10 text-[#10B981] border-[#10B981]/25',
-      href: 'https://fiper-landing-page.vercel.app/',
+      href: 'https://fiperhub.com',
     },
     {
       icon: LayoutDashboard,
@@ -33,7 +33,7 @@ export default function Ecosystem() {
       description: t('ecosystem.crm.desc'),
       badge: t('ecosystem.crm.badge'),
       badgeStyle: 'bg-[#10B981]/10 text-[#10B981] border-[#10B981]/25',
-      href: 'https://crm.fptraders.com/login',
+      href: 'https://fiperhub.com',
     },
   ];
 
@@ -121,7 +121,7 @@ export default function Ecosystem() {
       </div>
 
       <p className="mt-12 text-center text-xs uppercase tracking-[0.2em] text-tertiary">
-        {t('ecosystem.footerNote')}
+        Visit <a href="https://fiperhub.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#FCA5A5] transition-colors font-medium">fiperhub.com</a> to learn more
       </p>
     </Section>
   );

@@ -40,7 +40,7 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between gap-6">
         <Link to={localizedPath('/', lang)} className="flex items-center gap-3 shrink-0" aria-label="Fiper Pro Traders home">
-          <Logo variant="icon" size={38} />
+          <Logo variant="icon" size={46} />
           <div className="flex flex-col leading-none">
             <span className="text-[15px] font-semibold tracking-tight">Fiper Pro Traders</span>
             <span className="text-[9px] font-medium uppercase tracking-[0.2em] text-tertiary mt-1">

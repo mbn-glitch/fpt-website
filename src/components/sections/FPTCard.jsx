@@ -49,49 +49,33 @@ export default function FPTCard() {
           </div>
         </div>
 
-        {/* Card mockup */}
-        <div className="relative h-[400px] flex items-center justify-center">
-          <motion.div
-            initial={{ rotate: -10, y: 30, opacity: 0 }}
-            whileInView={{ rotate: -8, y: 0, opacity: 1 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="absolute w-[300px] h-[190px] rounded-2xl bg-[#1A1A1A] border border-subtle p-5 animate-float-slow"
-            style={{ transform: 'rotate(-8deg) translateX(-40px)' }}
-          >
-            <div className="text-[10px] text-tertiary tracking-[0.2em]">VIRTUAL</div>
-            <div className="absolute bottom-5 left-5 right-5">
-              <div className="font-mono-num text-white/80 text-sm tracking-[0.15em]">
-                •••• •••• •••• 7821
-              </div>
-            </div>
-          </motion.div>
+        {/* Physical card centerpiece */}
+        <div className="relative h-[420px] sm:h-[480px] flex items-center justify-center">
+          {/* Red glow halo behind the card */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                'radial-gradient(ellipse at center, rgba(244,40,33,0.45) 0%, rgba(244,40,33,0.15) 35%, rgba(0,0,0,0) 70%)',
+              filter: 'blur(20px)',
+            }}
+          />
+          {/* Soft drop-shadow plate */}
+          <div
+            className="absolute left-1/2 -translate-x-1/2 bottom-10 w-[70%] h-8 rounded-full blur-2xl opacity-80"
+            style={{ background: 'radial-gradient(ellipse, rgba(0,0,0,0.85), rgba(0,0,0,0) 70%)' }}
+          />
 
-          <motion.div
-            initial={{ rotate: 12, y: 30, opacity: 0 }}
-            whileInView={{ rotate: 8, y: 0, opacity: 1 }}
+          <motion.img
+            src="/images/fiper-physical-card.png"
+            alt="Fiper physical card"
+            initial={{ opacity: 0, y: 40, rotate: -4, scale: 0.96 }}
+            whileInView={{ opacity: 1, y: 0, rotate: -2, scale: 1 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.8, delay: 0.25 }}
-            className="relative w-[340px] h-[210px] gradient-red rounded-2xl p-6 shadow-[0_40px_80px_-20px_rgba(244,40,33,0.6)] animate-float"
-            style={{ transform: 'rotate(8deg)' }}
-          >
-            <div className="flex items-start justify-between">
-              <div className="text-white font-bold tracking-wider text-sm">FIPER CARD</div>
-              <div className="w-10 h-7 rounded bg-white/10" />
-            </div>
-            <div className="absolute bottom-6 left-6 right-6">
-              <div className="font-mono-num text-white tracking-[0.18em] text-lg">
-                •••• •••• •••• 4821
-              </div>
-              <div className="mt-4 flex items-end justify-between">
-                <div>
-                  <div className="text-[9px] text-white/60 uppercase tracking-wider">Cardholder</div>
-                  <div className="text-sm text-white font-semibold mt-0.5">FPT TRADER</div>
-                </div>
-                <div className="text-white font-bold text-lg italic">VISA</div>
-              </div>
-            </div>
-          </motion.div>
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="relative z-10 w-full max-w-[460px] h-auto animate-float-slow drop-shadow-[0_40px_60px_rgba(244,40,33,0.35)]"
+            draggable={false}
+          />
         </div>
       </div>
 

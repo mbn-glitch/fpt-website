@@ -39,7 +39,7 @@ export default function Platforms() {
               }}
             >
               <img
-                src="/logos/cTrader light + safespace.png"
+                src="/images/ctrader/Logo/svg/ctrader-logo-light.svg"
                 alt="cTrader"
                 className="w-full max-w-[280px] h-auto"
                 draggable={false}

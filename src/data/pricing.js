@@ -18,13 +18,13 @@ export const CHALLENGE_TYPES = [
   {
     id: "2-step",
     label: "FPT Challenge",
-    subtitle: "Phase 1: Demo evaluation. Prove your skills.",
+    subtitle: "One-phase demo evaluation. Prove your skills.",
     multiplier: 1.0,
   },
   {
     id: "1-step",
     label: "Live Account",
-    subtitle: "Phase 2: Real funded account after passing the challenge.",
+    subtitle: "Real funded account after passing the evaluation.",
     multiplier: 1.0,
   },
 ];

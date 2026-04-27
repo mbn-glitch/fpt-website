@@ -27,6 +27,24 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 grid lg:grid-cols-[1.3fr_1fr] gap-16 lg:gap-12 items-center">
         {/* Left */}
         <div>
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-3 mb-6 pl-2 pr-4 py-1.5 rounded-full border border-[#F42821]/25 bg-gradient-to-r from-[#F42821]/10 to-transparent backdrop-blur-sm"
+          >
+            <img
+              src="/images/fiper/fiper-logo-white.png"
+              alt=""
+              aria-hidden="true"
+              className="h-5 w-auto opacity-90"
+              draggable={false}
+            />
+            <span className="text-[11px] sm:text-xs font-medium text-white/90 leading-tight">
+              Backed by <span className="font-semibold">Fiper Global</span> — established financial infrastructure with proven broker experience
+            </span>
+          </motion.div>
+
           <Eyebrow dot>{t('hero.eyebrow')}</Eyebrow>
 
           <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl xl:text-[96px] font-semibold leading-[0.98] tracking-tight">

@@ -95,6 +95,20 @@ export default function About() {
 
       <Section className="bg-[#0A0A0A] relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] radial-red opacity-30 pointer-events-none" />
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.5 }}
+          className="relative flex justify-center mb-10"
+        >
+          <img
+            src="/images/fiper/fiper-logo-white.png"
+            alt="Fiper Global"
+            className="h-16 sm:h-20 w-auto opacity-90"
+            draggable={false}
+          />
+        </motion.div>
         <SectionHeader eyebrow={t('about.ecosystemEyebrow')} title={t('about.ecosystemTitle')} subtitle={t('about.ecosystemSubtitle')} center className="mx-auto" />
         <div className="mt-16 grid lg:grid-cols-3 gap-5">
           {ECOSYSTEM.map((e, i) => (

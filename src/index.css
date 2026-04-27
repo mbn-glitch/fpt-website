@@ -20,6 +20,7 @@
     color: #fff;
     -webkit-font-smoothing: antialiased;
     font-family: 'DIN Next LT Arabic', 'Inter', system-ui, sans-serif;
+    font-weight: 400;
   }
   html { scroll-behavior: smooth; }
 
@@ -39,13 +40,13 @@
   ::-webkit-scrollbar-thumb { background: #1A1A1A; border-radius: 4px; }
   ::-webkit-scrollbar-thumb:hover { background: #F42821; }
 
-  h1, h2, h3, h4, h5, h6 { letter-spacing: -0.02em; }
+  h1, h2, h3, h4, h5, h6 { letter-spacing: -0.02em; font-weight: 600; }
 }
 
 @layer utilities {
   .font-mono-num { font-family: 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
-  .text-secondary { color: rgba(255, 255, 255, 0.65); }
-  .text-tertiary { color: rgba(255, 255, 255, 0.40); }
+  .text-secondary { color: rgba(255, 255, 255, 0.78); }
+  .text-tertiary { color: rgba(255, 255, 255, 0.55); }
   .border-subtle { border-color: rgba(255, 255, 255, 0.08); }
   .bg-card { background-color: #141414; }
   .bg-elevated { background-color: #1A1A1A; }

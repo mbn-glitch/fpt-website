@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { Mail, MessageSquare, LifeBuoy, Briefcase, Send, Check, Clock, Globe, ArrowRight } from 'lucide-react';
+import { Mail, MessageSquare, LifeBuoy, Briefcase, Send, Check, Clock, Globe, ArrowRight, MapPin, Phone } from 'lucide-react';
 import SEO from '../components/SEO.jsx';
 import Section, { Eyebrow, SectionHeader } from '../components/ui/Section.jsx';
 import Button from '../components/ui/Button.jsx';
@@ -63,6 +63,8 @@ export default function Contact() {
             </motion.a>
           ))}
         </div>
+
+        <AddressCard />
       </Section>
 
       <Section className="bg-[#0A0A0A]">
@@ -151,6 +153,45 @@ function WhatsAppCard() {
         </div>
       </div>
     </motion.a>
+  );
+}
+
+function AddressCard() {
+  const { t } = useTranslation();
+  const fullAddress = `${t('contact.address.line1')}, ${t('contact.address.line2')}, ${t('contact.address.line3')}`;
+  const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`;
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.55 }}
+      className="mt-5 grid md:grid-cols-[auto_1fr_auto] gap-8 items-center bg-card border border-subtle rounded-2xl p-8">
+      <div className="w-14 h-14 rounded-2xl flex items-center justify-center gradient-red btn-red-glow">
+        <MapPin size={26} className="text-white" />
+      </div>
+      <div>
+        <div className="text-xs uppercase tracking-[0.18em] text-tertiary">{t('contact.address.tag')}</div>
+        <h3 className="mt-2 text-xl font-semibold">{t('contact.address.title')}</h3>
+        <div className="mt-3 text-sm text-secondary leading-relaxed">
+          <div>{t('contact.address.line1')}</div>
+          <div>{t('contact.address.line2')}</div>
+          <div>{t('contact.address.line3')}</div>
+        </div>
+        <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors font-mono-num">
+            <Phone size={14} className="text-[#FCA5A5]" /> {WHATSAPP_PHONE}
+          </a>
+          <a href="mailto:Fpt@fiper.me"
+            className="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors font-mono-num">
+            <Mail size={14} className="text-[#FCA5A5]" /> Fpt@fiper.me
+          </a>
+        </div>
+      </div>
+      <a href={mapsHref} target="_blank" rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 h-11 px-5 rounded-full border border-subtle bg-black/40 text-sm text-white hover:border-white/25 hover:bg-black/60 transition-colors shrink-0">
+        {t('contact.address.directions')} <ArrowRight size={14} />
+      </a>
+    </motion.div>
   );
 }
 

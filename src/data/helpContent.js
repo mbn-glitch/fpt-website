@@ -1,5 +1,5 @@
 import {
-  Rocket, Target, TrendingUp, CreditCard, LineChart, Settings, Monitor, Scale,
+  Rocket, Target, TrendingUp, CreditCard, LineChart, Settings, Monitor, Scale, Handshake,
 } from 'lucide-react';
 
 export const categories = [
@@ -105,6 +105,19 @@ export const categories = [
       es: 'Información regulatoria, legal y estructural.',
       pt: 'Informações regulatórias, legais e estruturais.',
       tr: 'Düzenleyici, hukuki ve yapısal bilgiler.',
+    },
+  },
+  {
+    id: 'partner-program', slug: 'partner-program', icon: Handshake,
+    title: 'Partner Program',
+    titles: { ar: 'برنامج الشركاء', fr: 'Programme Partenaires', es: 'Programa de Socios', pt: 'Programa de Parceiros', tr: 'Ortaklık Programı' },
+    description: 'Earn commissions by referring traders to FPT.',
+    descriptions: {
+      ar: 'اربح عمولات بإحالة المتداولين إلى FPT.',
+      fr: 'Gagnez des commissions en parrainant des traders chez FPT.',
+      es: 'Gana comisiones refiriendo traders a FPT.',
+      pt: 'Ganhe comissões indicando traders para a FPT.',
+      tr: "FPT'ye trader yönlendirerek komisyon kazanın.",
     },
   },
 ];
@@ -823,6 +836,71 @@ export const faqs = [
       es: 'FPT sigue prácticas estándar de protección de datos incluyendo cifrado.',
       pt: 'FPT segue práticas padrão de proteção de dados incluindo criptografia.',
       tr: 'FPT, şifreleme dahil endüstri standardı veri koruma uygulamalarını takip eder.',
+    },
+  },
+  {
+    id: 'what-is-the-partner-program', categoryId: 'partner-program', popular: true,
+    question: 'What is the FPT Partner Program?',
+    questions: { ar: 'ما هو برنامج شركاء FPT؟', fr: "Qu’est-ce que le Programme Partenaires FPT ?", es: '¿Qué es el Programa de Socios FPT?', pt: 'O que é o Programa de Parceiros FPT?', tr: 'FPT Ortaklık Programı nedir?' },
+    answer: 'Earn commissions by referring traders to FPT. Standard: 15%, Silver (10+ sales/month): 17.5%, Gold (25+ sales/month): 20%, VIP: custom.',
+    answers: {
+      ar: 'اربح عمولات بإحالة المتداولين إلى FPT. الأساسي: 15%، الفضي (10+ مبيعات/شهر): 17.5%، الذهبي (25+ مبيعات/شهر): 20%، VIP: مخصّصة.',
+      fr: "Gagnez des commissions en parrainant des traders chez FPT. Standard : 15 %, Silver (10+ ventes/mois) : 17,5 %, Gold (25+ ventes/mois) : 20 %, VIP : sur mesure.",
+      es: 'Gana comisiones refiriendo traders a FPT. Estándar: 15%, Silver (10+ ventas/mes): 17.5%, Gold (25+ ventas/mes): 20%, VIP: personalizada.',
+      pt: 'Ganhe comissões indicando traders para a FPT. Padrão: 15%, Silver (10+ vendas/mês): 17,5%, Gold (25+ vendas/mês): 20%, VIP: personalizada.',
+      tr: "FPT'ye trader yönlendirerek komisyon kazanın. Standart: %15, Silver (ayda 10+ satış): %17,5, Gold (ayda 25+ satış): %20, VIP: özel.",
+    },
+  },
+  {
+    id: 'what-are-the-commission-tiers', categoryId: 'partner-program', popular: true,
+    question: 'What are the commission tiers?',
+    questions: { ar: 'ما هي مستويات العمولة؟', fr: 'Quels sont les paliers de commission ?', es: '¿Cuáles son los niveles de comisión?', pt: 'Quais são os níveis de comissão?', tr: 'Komisyon seviyeleri nelerdir?' },
+    answer: 'Standard 15% / Silver 17.5% / Gold 20% / VIP custom — tier upgrades automatically based on monthly sales.',
+    answers: {
+      ar: 'الأساسي 15% / الفضي 17.5% / الذهبي 20% / VIP مخصّصة — تتم ترقية المستوى تلقائياً بناءً على المبيعات الشهرية.',
+      fr: "Standard 15 % / Silver 17,5 % / Gold 20 % / VIP sur mesure — le palier est mis à niveau automatiquement selon les ventes mensuelles.",
+      es: 'Estándar 15% / Silver 17.5% / Gold 20% / VIP personalizada — el nivel sube automáticamente según las ventas mensuales.',
+      pt: 'Padrão 15% / Silver 17,5% / Gold 20% / VIP personalizada — o nível é atualizado automaticamente com base nas vendas mensais.',
+      tr: 'Standart %15 / Silver %17,5 / Gold %20 / VIP özel — seviye aylık satışlara göre otomatik olarak yükselir.',
+    },
+  },
+  {
+    id: 'how-does-the-sub-affiliate-system-work', categoryId: 'partner-program',
+    question: 'How does the sub-affiliate system work?',
+    questions: { ar: 'كيف يعمل نظام الشركاء الفرعيين؟', fr: 'Comment fonctionne le système de sous-affiliation ?', es: '¿Cómo funciona el sistema de subafiliados?', pt: 'Como funciona o sistema de subafiliados?', tr: 'Alt-ortak sistemi nasıl çalışır?' },
+    answer: 'Recruit other affiliates under you and earn 2% override commission on all their sales.',
+    answers: {
+      ar: 'جنّد شركاء آخرين تحتك واربح عمولة إضافية 2% على جميع مبيعاتهم.',
+      fr: "Recrutez d’autres affiliés sous vous et gagnez 2 % de commission sur toutes leurs ventes.",
+      es: 'Recluta a otros afiliados bajo tu cuenta y gana un 2% de comisión sobre todas sus ventas.',
+      pt: 'Recrute outros afiliados sob você e ganhe 2% de comissão sobre todas as vendas deles.',
+      tr: 'Altınıza başka ortaklar getirin ve tüm satışlarından %2 ek komisyon kazanın.',
+    },
+  },
+  {
+    id: 'when-are-partner-payouts-made', categoryId: 'partner-program',
+    question: 'When are payouts made?',
+    questions: { ar: 'متى تُصرف الدفعات؟', fr: 'Quand les paiements sont-ils effectués ?', es: '¿Cuándo se realizan los pagos?', pt: 'Quando os pagamentos são feitos?', tr: 'Ödemeler ne zaman yapılır?' },
+    answer: 'Weekly payouts. No minimum threshold mentioned.',
+    answers: {
+      ar: 'دفعات أسبوعية. لا يوجد حد أدنى مذكور.',
+      fr: "Paiements hebdomadaires. Aucun seuil minimum mentionné.",
+      es: 'Pagos semanales. No se menciona un umbral mínimo.',
+      pt: 'Pagamentos semanais. Nenhum limite mínimo mencionado.',
+      tr: 'Haftalık ödemeler. Belirtilen bir minimum eşik yoktur.',
+    },
+  },
+  {
+    id: 'how-do-i-join-the-partner-program', categoryId: 'partner-program',
+    question: 'How do I join?',
+    questions: { ar: 'كيف أنضم؟', fr: 'Comment rejoindre le programme ?', es: '¿Cómo me uno?', pt: 'Como faço para participar?', tr: 'Nasıl katılırım?' },
+    answer: 'Register at crm.fptraders.com/register and apply for the partner program from your dashboard.',
+    answers: {
+      ar: 'سجّل على crm.fptraders.com/register وقدّم طلب الانضمام إلى برنامج الشركاء من لوحة التحكم.',
+      fr: "Inscrivez-vous sur crm.fptraders.com/register et postulez au programme partenaires depuis votre tableau de bord.",
+      es: 'Regístrate en crm.fptraders.com/register y solicita el programa de socios desde tu panel.',
+      pt: 'Cadastre-se em crm.fptraders.com/register e candidate-se ao programa de parceiros pelo seu painel.',
+      tr: 'crm.fptraders.com/register adresinden kaydolun ve panelinizden ortaklık programına başvurun.',
     },
   },
 ];

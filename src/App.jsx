@@ -8,6 +8,7 @@ import Home from './pages/Home.jsx';
 import { LANG_CODES, isRtl, persistLang } from './i18n/config.js';
 
 const ChallengePricing = lazy(() => import('./pages/ChallengePricing.jsx'));
+const Partners = lazy(() => import('./pages/Partners.jsx'));
 const About = lazy(() => import('./pages/About.jsx'));
 const Contact = lazy(() => import('./pages/Contact.jsx'));
 const Help = lazy(() => import('./pages/Help.jsx'));
@@ -65,6 +66,7 @@ const PAGES = (
     <Route index element={<Home />} />
     <Route path="challenges" element={<ChallengePricing />} />
     <Route path="pricing" element={<ChallengePricing />} />
+    <Route path="partners" element={<Partners />} />
     <Route path="about" element={<About />} />
     <Route path="contact" element={<Contact />} />
     <Route path="help" element={<Help />} />
@@ -85,6 +87,7 @@ export default function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/challenges" element={<ChallengePricing />} />
                 <Route path="/pricing" element={<ChallengePricing />} />
+                <Route path="/partners" element={<Partners />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/help" element={<Help />} />

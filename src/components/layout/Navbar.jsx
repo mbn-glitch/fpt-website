@@ -50,32 +50,21 @@ export default function Navbar() {
           </div>
         </Link>
 
-        <ul className="hidden lg:flex items-center gap-1">
-          {LINKS.map((l) =>
-            l.hash ? (
-              <li key={l.label}>
-                <a
-                  href={localizedPath(l.to, lang)}
-                  className="px-4 py-2 text-sm text-secondary hover:text-white transition-colors"
-                >
-                  {l.label}
-                </a>
-              </li>
-            ) : (
-              <li key={l.label}>
-                <NavLink
-                  to={localizedPath(l.to, lang)}
-                  className={({ isActive }) =>
-                    `px-4 py-2 text-sm transition-colors ${
-                      isActive ? 'text-white' : 'text-secondary hover:text-white'
-                    }`
-                  }
-                >
-                  {l.label}
-                </NavLink>
-              </li>
-            )
-          )}
+        <ul className="hidden lg:flex items-center gap-3">
+          {LINKS.filter((l) => !l.hash).map((l) => (
+            <li key={l.label}>
+              <NavLink
+                to={localizedPath(l.to, lang)}
+                className={({ isActive }) =>
+                  `px-2 py-2 text-sm whitespace-nowrap transition-colors ${
+                    isActive ? 'text-white' : 'text-secondary hover:text-white'
+                  }`
+                }
+              >
+                {l.label}
+              </NavLink>
+            </li>
+          ))}
         </ul>
 
         <div className="hidden lg:flex items-center gap-3">

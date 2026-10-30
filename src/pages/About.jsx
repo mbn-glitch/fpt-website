@@ -103,7 +103,7 @@ export default function About() {
           className="relative flex justify-center mb-10"
         >
           <img
-            src="/images/fiper/fiper-logo-white.png"
+            src="/images/fiper/fiper-lockup-horizontal-colour.svg"
             alt="Fiper Global"
             className="h-16 sm:h-20 w-auto opacity-90"
             draggable={false}

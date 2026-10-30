@@ -34,7 +34,7 @@ export default function Hero() {
             className="inline-flex items-center gap-3 mb-6 pl-2 pr-4 py-1.5 rounded-full border border-[#F42821]/25 bg-gradient-to-r from-[#F42821]/10 to-transparent backdrop-blur-sm"
           >
             <img
-              src="/images/fiper/fiper-logo-white.png"
+              src="/images/fiper/fiper-lockup-horizontal-colour.svg"
               alt=""
               aria-hidden="true"
               className="h-5 w-auto opacity-90"

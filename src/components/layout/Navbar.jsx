@@ -42,8 +42,8 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between gap-6">
         <Link to={localizedPath('/', lang)} className="flex flex-col items-start gap-1 shrink-0" aria-label="Fiper Pro Traders home">
           {/* logo v2: the official white lockup (fpt-brand v1.1.2) — 32 px on phones, 46 px from sm; never clipped, never mirrored */}
-          <Logo variant="lockup" size={32} lang={lang} className="sm:hidden" />
-          <Logo variant="lockup" size={46} lang={lang} className="hidden sm:inline-flex" />
+          <span className="sm:hidden"><Logo variant="lockup" size={32} lang={lang} /></span>
+          <span className="hidden sm:block"><Logo variant="lockup" size={46} lang={lang} /></span>
           {/* CR-02 (owner, 31 Oct 2026): «Part of Fiper Global» in sentence case, 12 px, label colour, no uppercase, no tracking */}
           <span className="text-xs text-tertiary leading-none" lang={lang}>{t('footer.partOf')}</span>
         </Link>

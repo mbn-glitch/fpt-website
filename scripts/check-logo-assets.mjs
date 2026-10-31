@@ -33,7 +33,7 @@ for (const f of readdirSync(BRAND)) if (f !== 'SHA256SUMS' && !listed.has(f)) fa
 // 2. OLD-LOGO-FILE: no legacy file anywhere, no retyped wordmark favicon, no source reference
 const walk = (d, out = []) => {
   for (const e of readdirSync(d)) {
-    if (e === 'node_modules' || e === '.git' || e === 'dist' || e === '.vercel') continue;
+    if (e === 'node_modules' || e === '.git' || e === 'dist' || e === '.vercel' || e === 'handover') continue; // handover/ documents the legacy names to DELETE on fptraders.com
     const p = path.join(d, e);
     if (statSync(p).isDirectory()) walk(p, out);
     else out.push(p);

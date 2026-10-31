@@ -10,3 +10,4 @@ docs/
 .vite
 .claude/
 .env*.local
+.env*

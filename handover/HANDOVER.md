@@ -5,11 +5,11 @@
 ## 1. المحتوى
 | الملف | ما هو |
 |---|---|
-| `fpt-website-dist-84ea05d.zip` | مجلد `dist/` النهائي من بناء الالتزام `84ea05d` (Vite، `npm run build`) — موقع ساكن (SPA) |
-| `fpt-website-dist-84ea05d.zip.sha256` | بصمة sha256 للملف المضغوط — تحقّق قبل الرفع: `sha256sum -c fpt-website-dist-84ea05d.zip.sha256` |
+| `fpt-website-dist-9e71359.zip` | مجلد `dist/` النهائي من بناء الالتزام `9e71359` (Vite، `npm run build`) — موقع ساكن (SPA) |
+| `fpt-website-dist-9e71359.zip.sha256` | بصمة sha256 للملف المضغوط — تحقّق قبل الرفع: `sha256sum -c fpt-website-dist-9e71359.zip.sha256` |
 | `HANDOVER.md` | هذا الملف |
 
-المصدر: مستودع `mbn-glitch/fpt-website` على الالتزام `84ea05d` (main). هوية FPT: fpt-brand **v1.1.2** (الشعار v2، اعتماد الرئيس التنفيذي 30 أكتوبر 2026)؛ قفل فايبر: fiper-brand **v2.3.0** (القفل A، حرف i منقوط).
+المصدر: مستودع `mbn-glitch/fpt-website` على الالتزام `9e71359` (main). هوية FPT: fpt-brand **v1.1.2** (الشعار v2، اعتماد الرئيس التنفيذي 30 أكتوبر 2026)؛ قفل فايبر: fiper-brand **v2.3.0** (القفل A، حرف i منقوط).
 
 ## 2. ما يُستبدل
 - **كل محتوى جذر الموقع** على fptraders.com يُستبدل بمحتوى `dist/` كاملاً (`index.html`، `assets/`، `brand/`، `images/`، `site.webmanifest`، `robots.txt`، `sitemap.xml`).

@@ -13,8 +13,8 @@ export default function Footer() {
   const lang = i18n.language;
 
   return (
-    {/* FPT-BRAND-ALIGN: the foot clears the fixed WhatsApp button (bottom-6 right-6, 56 px) so the risk line is never covered on a phone (real-iPhone capture) */}
     <footer className="relative bg-[#0A0A0A] border-t border-subtle pt-20 pb-28">
+      {/* FPT-BRAND-ALIGN: pb-28 clears the fixed WhatsApp button (bottom-6 right-6, 56 px) so the risk line is never covered on a phone (real-iPhone capture) */}
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
           <div className="col-span-2 md:col-span-1">

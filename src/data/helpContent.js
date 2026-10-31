@@ -803,9 +803,9 @@ export const faqs = [
     id: 'can-you-guarantee-profits', categoryId: 'legal-general',
     question: 'Can you guarantee profits?',
     questions: { ar: 'هل تضمنون الأرباح؟', fr: 'Pouvez-vous garantir des profits ?', es: '¿Pueden garantizar ganancias?', pt: 'Vocês garantem lucros?', tr: 'Kar garanti edebilir misiniz?' },
-    answer: 'No. Trading involves substantial risk. Past performance is not indicative of future results.',
+    answer: 'No. Investing involves risk. Past performance is not indicative of future results.',
     answers: {
-      ar: 'لا. ينطوي التداول على مخاطر جسيمة. الأداء السابق لا يُشير إلى النتائج المستقبلية.',
+      ar: 'لا. الاستثمار ينطوي على مخاطر. الأداء السابق لا يُشير إلى النتائج المستقبلية.',
       fr: 'Non. Le trading implique des risques substantiels. Les performances passées ne garantissent pas les résultats futurs.',
       es: 'No. El trading implica riesgos sustanciales. El rendimiento pasado no garantiza resultados futuros.',
       pt: 'Não. O trading envolve risco substancial. Desempenho passado não garante resultados futuros.',

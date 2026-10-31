@@ -1,4 +1,4 @@
-﻿import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Star, TrendingUp } from 'lucide-react';
 import Button from '../ui/Button.jsx';
@@ -201,9 +201,11 @@ function HeroMockup() {
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-2">
                 <img
-                  src="/logos/fpt-logo-icon-shield.jpeg"
+                  src="/brand/fpt-tile-small.svg"
                   alt=""
-                  className="w-5 h-5 rounded-[22%] object-cover"
+                  width={20}
+                  height={20}
+                  className="w-5 h-5 block"
                 />
                 <span className="text-[10px] font-semibold tracking-[0.22em] text-[#F42821]">
                   FPT CARD

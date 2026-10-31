@@ -1,0 +1,18 @@
+# fpt-brand v1.1.2 (Fiper-Global/fpt-brand 5e7a65f) — byte copies of brand/logos/{svg,png,icons,derived}; gate: node scripts/check-logo-assets.mjs
+08af256bc64663fd3df02171edafa1036a2935402913ab247a27af68ecfbc83e  favicon.svg
+bbc14d2af3ee72914abece517722b7a816c069069c94cb1bf204ea6824661ff0  fpt-lockup-horizontal-ar-white.svg
+2c6ca5311b5dd620cd638f3b31a2eead84858fb25fbdf4be61ace6c5a6ed00ec  fpt-lockup-horizontal-en-white.svg
+cfe7f4901a8788f9afe04c9560b58ba2c56af23366d4bbd68ae466486a39b972  fpt-lockup-vertical-en-white.svg
+08af256bc64663fd3df02171edafa1036a2935402913ab247a27af68ecfbc83e  fpt-tile-small.svg
+7665d134eb6aa3694b496f85f52095930ea222db26bdd2ebcfab927136138a1f  fpt-tile.svg
+c2cfe4fdd3d345efc16a31a5f67bc4e4e3fc2f73618aa750f8dea0f2f53f8aae  apple-touch-icon-180.png
+423c2305e2d3c55772c32daa87ec30822544c12550c243db094a58be193a7732  favicon-16.png
+f38eeaabb08125d1f6cbc12dae7fef6d5e4a157a4fbbbbdaca42a20abfcc7cdb  favicon-32.png
+99eeec99a709d534484245bd29f5ed20372fa39dc0dcee5ff0bb58095a7a5b33  favicon-48.png
+26108bb2ab9b9ec4077c1f2c9ba2e43b0933e620a1b3a98e419dd8caea7f9da3  favicon-64.png
+5795018738394231e6c9e9da8d99ffc1e7b2d05cd5a8f6f06ebb67e7885c7e12  fpt-tile-512.png
+b9737ba55e4a039352cd54381d839425ff731e77ab4812a448579ba8a8a02de8  og-1200x630.png
+2a46d965aff982a05c28b1b2ff6c87663ec64700908355f0a1db7b108783f48a  pwa-icon-192.png
+90b8675b9b7e4136c97b571ba5d216918fbdf3cbfdfcb73a1a2b93f3b76a863e  pwa-icon-512.png
+68cc988f1a926983be826aefc904ace0c5fd6a905867ff855e9d755041c681be  pwa-maskable-512.png
+4596ac7a2ca93fd9ebb1bfca8ddddff6a28c8aaaf3f203bc651b97c89d53df69  favicon.ico

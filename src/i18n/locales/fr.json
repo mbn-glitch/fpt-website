@@ -1,4 +1,4 @@
-﻿{
+{
   "meta": {
     "title": "FPT — Fiper Pro Traders | Conçu pour un Trading Rapide et Intelligent",
     "description": "Fiper Pro Traders (FPT) — Membre de Fiper Global. Prouvez vos compétences en trading, accédez à un capital financé jusqu'à 200 000 $ avec un partage des profits de 80%."
@@ -11,7 +11,6 @@
     "about": "À Propos",
     "login": "Connexion",
     "startChallenge": "Démarrer le Défi FPT",
-    "partOfFiperGlobal": "MEMBRE DE FIPER GLOBAL",
     "home": "Accueil",
     "help": "Aide",
     "partners": "Partenaires"
@@ -198,8 +197,7 @@
       "refund": "Politique de Remboursement",
       "risk": "Divulgation des Risques"
     },
-    "copyright": "© 2026 Fiper Pro Traders — Une Société Fiper Global. Tous droits réservés.",
-    "riskDisclosure": "Le trading sur comptes simulés implique des risques substantiels. Les performances passées ne préjugent pas des résultats futurs. Tous les comptes offerts sont des comptes démo avec des fonds simulés."
+    "copyright": "© 2026 Fiper Pro Traders — Une Société Fiper Global. Tous droits réservés."
   },
   "challenges": {
     "title": "Prouvez Vos Compétences. Accédez à un Capital Financé.",

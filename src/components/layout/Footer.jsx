@@ -1,7 +1,8 @@
-﻿import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Star } from 'lucide-react';
 import Logo from '../brand/Logo.jsx';
+import RiskLine from '../brand/RiskLine.jsx';
 import { localizedPath } from '../../hooks/useLocalizedPath.js';
 
 const LEGAL_URL = 'https://fiper.me/legal-documentation';
@@ -16,14 +17,15 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
           <div className="col-span-2 md:col-span-1">
-            <Link to={localizedPath('/', lang)} className="flex items-center gap-3">
-              <Logo variant="icon" size={44} />
-              <span className="text-base font-semibold">Fiper Pro Traders</span>
+            <Link to={localizedPath('/', lang)} className="inline-flex items-center" aria-label="Fiper Pro Traders home">
+              {/* logo v2: the official white lockup at the footer height (44 px, OBSERVED) — replaces tile + typed name */}
+              <Logo variant="lockup" size={44} lang={lang} />
             </Link>
             <p className="mt-5 text-sm text-secondary leading-relaxed">
               {t('footer.tagline')}
             </p>
-            <p className="mt-2 text-xs italic text-tertiary">
+            {/* CR-02: the relationship line verbatim, sentence case, not italic, no tracking */}
+            <p className="mt-2 text-xs text-tertiary" lang={lang}>
               {t('footer.partOf')}
             </p>
             <a
@@ -38,7 +40,7 @@ export default function Footer() {
 
           <FooterCol title={t('footer.products')}>
             <FooterLink to={localizedPath('/challenges', lang)}>
-              <LinkLabel emoji="🔥">{t('footer.links.challenges')}</LinkLabel>
+              {t('footer.links.challenges')}
             </FooterLink>
             <FooterLink to={localizedPath('/pricing', lang)}>{t('footer.links.pricing')}</FooterLink>
             <FooterLink href="https://fiperhub.com" external>{t('footer.links.fiperCard')}</FooterLink>
@@ -46,16 +48,16 @@ export default function Footer() {
 
           <FooterCol title={t('footer.fiperGlobal')}>
             <FooterLink href="https://linktr.ee/fiper" external>
-              <LinkLabel emoji="🏦">{t('footer.links.aboutFiperGlobal')}</LinkLabel>
+              {t('footer.links.aboutFiperGlobal')}
             </FooterLink>
             <FooterLink href="https://fiperhub.com" external>
-              <LinkLabel emoji="🏧">{t('footer.links.fiperCard')}</LinkLabel>
+              {t('footer.links.fiperCard')}
             </FooterLink>
             <FooterLink href="https://fiperhub.com" external>
-              <LinkLabel emoji="🌐">{t('footer.links.fiperCRM')}</LinkLabel>
+              {t('footer.links.fiperCRM')}
             </FooterLink>
             <FooterLink to={localizedPath('/help', lang)}>
-              <LinkLabel emoji="🔘">{t('footer.links.helpCenter')}</LinkLabel>
+              {t('footer.links.helpCenter')}
             </FooterLink>
             <FooterLink href="https://linktr.ee/fiper" external>{t('footer.links.fiperGlobalSite')}</FooterLink>
           </FooterCol>
@@ -96,9 +98,9 @@ export default function Footer() {
           </p>
         </div>
 
-        <p className="mt-6 text-[11px] italic text-tertiary leading-relaxed max-w-4xl">
-          {t('footer.riskDisclosure')}
-        </p>
+        {/* The fixed risk line (fiper-brand v2.3.0 Q4 / R12) — the only risk wording on the site; the former `footer.riskDisclosure`
+            sentence was an unapproved legal text (fpt-brand MISSING-ASSETS #14) and is removed. Legal documents: REQUIRED DECISION. */}
+        <RiskLine lang={lang} className="mt-6" />
       </div>
     </footer>
   );
@@ -112,15 +114,6 @@ function FooterCol({ title, children }) {
         {Array.isArray(children) ? children.map((c, i) => <li key={i}>{c}</li>) : <li>{children}</li>}
       </ul>
     </div>
-  );
-}
-
-function LinkLabel({ emoji, children }) {
-  return (
-    <span className="inline-flex items-center gap-2">
-      <span>{children}</span>
-      <span className="text-[17px] leading-none">{emoji}</span>
-    </span>
   );
 }
 

@@ -46,9 +46,9 @@ export default function LanguageSwitcher({ compact = false }) {
         aria-haspopup="listbox"
         aria-expanded={open}
       >
-        <span className="text-base leading-none">{current.flag}</span>
+        {/* item 4: no emoji in the UI — the globe icon and the language name, never a flag emoji */}
+        <Globe size={16} aria-hidden="true" />
         {!compact && <span className="hidden sm:inline">{current.name}</span>}
-        {compact && <Globe size={14} className="sm:hidden" />}
         <ChevronDown size={14} className={`transition-transform ${open ? 'rotate-180' : ''}`} />
       </button>
 
@@ -77,7 +77,6 @@ export default function LanguageSwitcher({ compact = false }) {
                     role="option"
                     aria-selected={active}
                   >
-                    <span className="text-base leading-none">{l.flag}</span>
                     <span className="flex-1 text-start">{l.name}</span>
                     {active && <Check size={14} className="text-brand-red" />}
                   </button>

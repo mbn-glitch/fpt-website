@@ -8,6 +8,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "check": "node scripts/check-logo-assets.mjs && node scripts/check-risk-line.mjs",
+    "prebuild": "npm run check",
     "build": "vite build",
     "preview": "vite preview"
   },

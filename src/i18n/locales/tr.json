@@ -1,4 +1,4 @@
-﻿{
+{
   "meta": {
     "title": "FPT — Fiper Pro Traders | Hızlı ve Akıllı Ticaret için Tasarlandı",
     "description": "Fiper Pro Traders (FPT) — Fiper Global'in bir parçası. Ticaret becerilerinizi kanıtlayın, 200.000 dolara kadar sermaye erişimi ve %80 kar payı kazanın."
@@ -11,7 +11,6 @@
     "about": "Hakkımızda",
     "login": "Giriş",
     "startChallenge": "FPT Zorluğuna Başla",
-    "partOfFiperGlobal": "FIPER GLOBAL'İN BİR PARÇASI",
     "home": "Ana Sayfa",
     "help": "Yardım",
     "partners": "Ortaklar"
@@ -198,8 +197,7 @@
       "refund": "İade Politikası",
       "risk": "Risk Beyanı"
     },
-    "copyright": "© 2026 Fiper Pro Traders — Bir Fiper Global Şirketi. Tüm hakları saklıdır.",
-    "riskDisclosure": "Simüle edilmiş hesaplarda işlem yapmak önemli riskler içerir. Geçmiş performans gelecekteki sonuçların göstergesi değildir. Sunulan tüm hesaplar simüle edilmiş fonlarla demo hesaplardır."
+    "copyright": "© 2026 Fiper Pro Traders — Bir Fiper Global Şirketi. Tüm hakları saklıdır."
   },
   "challenges": {
     "title": "Becerilerinizi Kanıtlayın. Fonlanmış Sermayeye Erişin.",

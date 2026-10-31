@@ -1,4 +1,4 @@
-﻿{
+{
   "meta": {
     "title": "FPT — Fiper Pro Traders | مصمَّم للتداول السريع والذكي",
     "description": "Fiper Pro Traders (FPT) — جزء من Fiper Global. أثبت مهاراتك في التداول واحصل على تمويل يصل إلى 200,000 دولار بنسبة أرباح 80%."
@@ -11,7 +11,6 @@
     "about": "من نحن",
     "login": "تسجيل الدخول",
     "startChallenge": "ابدأ تحدي FPT",
-    "partOfFiperGlobal": "جزء من FIPER GLOBAL",
     "home": "الرئيسية",
     "help": "المساعدة",
     "partners": "الشركاء"
@@ -198,8 +197,7 @@
       "refund": "سياسة الاسترداد",
       "risk": "إفصاح المخاطر"
     },
-    "copyright": "© 2026 Fiper Pro Traders — شركة تابعة لـ Fiper Global. جميع الحقوق محفوظة.",
-    "riskDisclosure": "ينطوي تداول الحسابات التجريبية على مخاطر جسيمة. الأداء السابق لا يضمن النتائج المستقبلية. جميع الحسابات المقدمة هي حسابات تجريبية بأموال افتراضية."
+    "copyright": "© 2026 Fiper Pro Traders — شركة تابعة لـ Fiper Global. جميع الحقوق محفوظة."
   },
   "challenges": {
     "title": "أثبت مهاراتك. احصل على رأس مال ممول.",

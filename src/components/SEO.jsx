@@ -4,7 +4,7 @@ import { LANGUAGES } from '../i18n/config.js';
 import { localizedPath } from '../hooks/useLocalizedPath.js';
 
 const BASE = 'https://fpt-website.vercel.app';
-const OG_IMAGE = `${BASE}/logos/fpt-logo-vertical.jpeg`;
+const OG_IMAGE = `${BASE}/brand/og-1200x630.png`; // logo v2 — brand/logos/derived/og-1200x630.png (byte copy)
 
 export default function SEO({ title, description, path = '/', keywords }) {
   const { i18n, t } = useTranslation();

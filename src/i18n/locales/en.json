@@ -1,4 +1,4 @@
-﻿{
+{
   "meta": {
     "title": "FPT — Fiper Pro Traders | Engineered for Fast, Smart Trading",
     "description": "Fiper Pro Traders (FPT) — Part of Fiper Global. Prove your trading skills, access funded capital up to $200K with an 80% profit split."
@@ -11,7 +11,6 @@
     "about": "About",
     "login": "Login",
     "startChallenge": "Start FPT Challenge",
-    "partOfFiperGlobal": "PART OF FIPER GLOBAL",
     "home": "Home",
     "help": "Help",
     "partners": "Partners"
@@ -198,8 +197,7 @@
       "refund": "Refund Policy",
       "risk": "Risk Disclosure"
     },
-    "copyright": "© 2026 Fiper Pro Traders — A Fiper Global Company. All rights reserved.",
-    "riskDisclosure": "Trading simulated accounts involves substantial risk. Past performance is not indicative of future results. All accounts offered are demo accounts with simulated funds."
+    "copyright": "© 2026 Fiper Pro Traders — A Fiper Global Company. All rights reserved."
   },
   "challenges": {
     "title": "Prove Your Skills. Access Funded Capital.",

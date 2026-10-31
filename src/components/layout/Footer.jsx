@@ -13,7 +13,8 @@ export default function Footer() {
   const lang = i18n.language;
 
   return (
-    <footer className="relative bg-[#0A0A0A] border-t border-subtle pt-20 pb-10">
+    {/* FPT-BRAND-ALIGN: the foot clears the fixed WhatsApp button (bottom-6 right-6, 56 px) so the risk line is never covered on a phone (real-iPhone capture) */}
+    <footer className="relative bg-[#0A0A0A] border-t border-subtle pt-20 pb-28">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
           <div className="col-span-2 md:col-span-1">
@@ -100,7 +101,7 @@ export default function Footer() {
 
         {/* The fixed risk line (fiper-brand v2.3.0 Q4 / R12) — the only risk wording on the site; the former `footer.riskDisclosure`
             sentence was an unapproved legal text (fpt-brand MISSING-ASSETS #14) and is removed. Legal documents: REQUIRED DECISION. */}
-        <RiskLine lang={lang} className="mt-6" />
+        <RiskLine lang={lang} className="mt-6 pr-20" />
       </div>
     </footer>
   );

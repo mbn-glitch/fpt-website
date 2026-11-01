@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Favicon set — FPT logo v2 (fpt-brand v1.1.2): byte copies of brand/logos/icons under /brand (gate: scripts/check-logo-assets.mjs) -->
+    <!-- Favicon set — FPT logo v2 (fpt-brand v1.2.0): byte copies of brand/logos/icons under /brand (gate: scripts/check-logo-assets.mjs) -->
     <link rel="icon" href="/brand/favicon.ico" sizes="48x48" />
     <link rel="icon" type="image/svg+xml" href="/brand/favicon.svg" />
     <link rel="icon" type="image/png" sizes="16x16" href="/brand/favicon-16.png" />
@@ -14,36 +14,13 @@
 
     <meta name="theme-color" content="#F42821" />
     <meta name="color-scheme" content="dark" />
-
-    <title>Fiper Pro Traders — Where Discipline Meets Capital</title>
-    <meta name="description" content="Pass the FPT evaluation. Trade up to $200,000 of our capital. Keep up to 80% of every dollar you earn — backed by Fiper Global infrastructure." />
-    <meta name="keywords" content="prop trading, funded account, FPT, Fiper Pro Traders, Fiper Global, forex challenge, trading capital, cTrader, prop firm" />
     <meta name="author" content="Fiper Pro Traders" />
-    <link rel="canonical" href="https://fpt-website.vercel.app/" />
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Fiper Pro Traders" />
-    <meta property="og:title" content="Fiper Pro Traders — Where Discipline Meets Capital" />
-    <meta property="og:description" content="Pass the evaluation. Trade our capital. Keep up to 80%. Backed by Fiper Global." />
-    <meta property="og:image" content="https://fpt-website.vercel.app/brand/og-1200x630.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Fiper Pro Traders — logo" />
-    <meta property="og:url" content="https://fpt-website.vercel.app/" />
-    <meta property="og:locale" content="en_US" />
+    <!-- Fonts: self-hosted from the fpt-brand v1.2.0 package (brand/fonts, OFL) — byte copies under /brand/fonts, declared inside the one
+         bundled stylesheet (src/fonts.css), font-display: swap; no Google Fonts. Arabic pages preload the regular Plex Arabic face (prerender.mjs). -->
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Fiper Pro Traders" />
-    <meta name="twitter:description" content="Engineered for Fast, Smart Trading." />
-    <meta name="twitter:image" content="https://fpt-website.vercel.app/brand/og-1200x630.png" />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- title / description / canonical / hreflang / Open Graph / Twitter: rendered ONCE per page by src/components/SEO.jsx (React 19 hoistable head tags)
+         and written into the static HTML of every route × language at build time (scripts/prerender.mjs). -->
 
     <!-- Schema.org Organization -->
     <script type="application/ld+json">
@@ -52,16 +29,15 @@
       "@type": "Organization",
       "name": "Fiper Pro Traders",
       "alternateName": "FPT",
-      "url": "https://fpt-website.vercel.app/",
-      "logo": "https://fpt-website.vercel.app/brand/fpt-tile-512.png",
-      "description": "Prop trading arm of Fiper Global. Pass the evaluation, trade up to $200,000 of our capital, keep up to 80%.",
+      "url": "https://fptraders.com/",
+      "logo": "https://fptraders.com/brand/fpt-tile-512.png",
+      "description": "Fiper Pro Traders (FPT) — Part of Fiper Global. A one-phase evaluation on a simulated account; funded accounts up to 200,000 USD with an 80 % reward share.",
       "sameAs": [
         "https://linktr.ee/fiper"
       ],
       "parentOrganization": {
         "@type": "Organization",
-        "name": "Fiper Global",
-        "url": "https://linktr.ee/fiper"
+        "name": "Fiper Global"
       }
     }
     </script>

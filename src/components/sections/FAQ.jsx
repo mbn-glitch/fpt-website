@@ -1,82 +1,51 @@
 ﻿import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { Plus, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ChevronDown, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Section, { SectionHeader } from '../ui/Section.jsx';
+import useLocalizedPath from '../../hooks/useLocalizedPath.js';
 
+/** Six list rows (.fpt-listrow, ≥ 56 px, mirrored chevron); answers verbatim from the locale (faq.a5 = cTrader only, ID-16). "See all" is a localized internal link. */
 export default function FAQ() {
   const [open, setOpen] = useState(0);
   const { t } = useTranslation();
+  const { to } = useLocalizedPath();
 
-  const QAS = [
-    { q: t('faq.q1'), a: t('faq.a1') },
-    { q: t('faq.q2'), a: t('faq.a2') },
-    { q: t('faq.q3'), a: t('faq.a3') },
-    { q: t('faq.q4'), a: t('faq.a4') },
-    { q: t('faq.q5'), a: t('faq.a5') },
-    { q: t('faq.q6'), a: t('faq.a6') },
-  ];
+  const QAS = [1, 2, 3, 4, 5, 6].map((n) => ({ q: t(`faq.q${n}`), a: t(`faq.a${n}`) }));
 
   return (
-    <Section>
-      <SectionHeader
-        eyebrow="Before you begin"
-        title={t('faq.title')}
-      />
+    <Section aria-labelledby="faq-title">
+      <SectionHeader eyebrow={t('faq.eyebrow')} title={<span id="faq-title">{t('faq.title')}</span>} />
 
-      <div className="mt-16 max-w-3xl mx-auto">
-        <ul className="space-y-3">
+      <div className="mt-12 max-w-3xl">
+        <ul className="divide-y divide-[var(--fpt-line-ash)] border-y border-subtle">
           {QAS.map((item, i) => {
             const isOpen = open === i;
             return (
-              <li
-                key={i}
-                className={`bg-card border rounded-2xl overflow-hidden transition-colors ${
-                  isOpen ? 'border-[#F42821]/40' : 'border-subtle hover:border-white/15'
-                }`}
-              >
+              <li key={i}>
                 <button
+                  type="button"
                   onClick={() => setOpen(isOpen ? -1 : i)}
-                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-start"
+                  className="w-full flex items-center justify-between gap-4 min-h-14 py-4 text-start"
                   aria-expanded={isOpen}
+                  aria-controls={`faq-a-${i}`}
+                  id={`faq-q-${i}`}
                 >
-                  <span className="text-base sm:text-lg font-medium">{item.q}</span>
-                  <Plus
-                    size={18}
-                    className={`shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'rotate-45 text-[#F42821]' : 'text-secondary'
-                    }`}
-                  />
+                  <span className="text-base sm:text-lg font-semibold leading-[1.4]">{item.q}</span>
+                  <ChevronDown size={18} aria-hidden="true" className={`shrink-0 text-fg-muted transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
                 </button>
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: 'easeOut' }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-6 pb-6 text-sm text-secondary leading-relaxed max-w-2xl">
-                        {item.a}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <div id={`faq-a-${i}`} role="region" aria-labelledby={`faq-q-${i}`} hidden={!isOpen} className="pb-5 text-base text-secondary leading-relaxed max-w-2xl">
+                  {item.a}
+                </div>
               </li>
             );
           })}
         </ul>
 
-        <div className="mt-10 text-center">
-          <a
-            href="/help"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-secondary hover:text-white transition-colors"
-          >
-            {t('faq.seeAll')} <ArrowRight size={14} />
-          </a>
+        <div className="mt-8">
+          <Link to={to('/help')} className="inline-flex items-center gap-2 min-h-11 text-sm text-secondary hover:text-white transition-colors">
+            {t('faq.seeAll')} <ArrowRight size={14} className="flip-rtl" aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </Section>

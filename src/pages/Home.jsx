@@ -1,50 +1,35 @@
-import { lazy, Suspense } from 'react';
+import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO.jsx';
 import Hero from '../components/sections/Hero.jsx';
-import TrustBar from '../components/sections/TrustBar.jsx';
-import ValueProposition from '../components/sections/ValueProposition.jsx';
 import KeyRules from '../components/sections/KeyRules.jsx';
 import ProfitSplitBanner from '../components/sections/ProfitSplitBanner.jsx';
 import HowItWorks from '../components/sections/HowItWorks.jsx';
 import PricingPreview from '../components/sections/PricingPreview.jsx';
-import FinalCTA from '../components/sections/FinalCTA.jsx';
+import DashboardPreview from '../components/sections/DashboardPreview.jsx';
+import FPTCard from '../components/sections/FPTCard.jsx';
+import Platforms from '../components/sections/Platforms.jsx';
+import Ecosystem from '../components/sections/Ecosystem.jsx';
+import FAQ from '../components/sections/FAQ.jsx';
 
-// Heavier / below-the-fold: lazy-loaded to trim initial bundle
-const DashboardPreview = lazy(() => import('../components/sections/DashboardPreview.jsx'));
-const FPTCard = lazy(() => import('../components/sections/FPTCard.jsx'));
-const Platforms = lazy(() => import('../components/sections/Platforms.jsx'));
-const Ecosystem = lazy(() => import('../components/sections/Ecosystem.jsx'));
-const TraderTools = lazy(() => import('../components/sections/TraderTools.jsx'));
-const TraderStories = lazy(() => import('../components/sections/TraderStories.jsx'));
-const FAQ = lazy(() => import('../components/sections/FAQ.jsx'));
-
-const Fallback = () => <div style={{ minHeight: 400 }} />;
-
+/**
+ * Home — nine sections (UXFW-013): the invented trust bar, trader stories, leaderboard / AI card, the duplicate final CTA and the
+ * generic value-proposition claims are gone (owner decision 4, AN-11); every figure left comes from the platform rules (src/data/rules.js).
+ */
 export default function Home() {
+  const { t } = useTranslation();
   return (
     <>
-      <SEO
-        path="/"
-        description="Pass the FPT evaluation. Trade up to $200,000 of our capital. Keep up to 80% of every dollar you earn — backed by Fiper Global infrastructure."
-        keywords="prop trading, funded account, FPT, Fiper Pro Traders, forex challenge, trading capital, cTrader"
-      />
+      <SEO path="/" description={t('meta.description')} keywords={t('meta.keywords')} />
       <Hero />
-      <TrustBar />
-      <ValueProposition />
       <KeyRules />
       <ProfitSplitBanner />
       <HowItWorks />
       <PricingPreview />
-      <Suspense fallback={<Fallback />}>
-        <DashboardPreview />
-        <FPTCard />
-        <Platforms />
-        <Ecosystem />
-        <TraderTools />
-        <TraderStories />
-        <FAQ />
-      </Suspense>
-      <FinalCTA />
+      <DashboardPreview />
+      <FPTCard />
+      <Platforms />
+      <Ecosystem />
+      <FAQ />
     </>
   );
 }

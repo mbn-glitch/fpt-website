@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FPT end card — بطاقة الختام (playable, 5 s)</title>
+<link rel="stylesheet" href="../../fonts/fonts.css"><link rel="stylesheet" href="../../tokens.css">
+<!-- FPT Brand Identity System v1.0 — video end card. Playable CSS animation, 5 s, deterministic: open with ?t=<seconds> to freeze a frame (scripts/build-video.mjs renders sample.mp4 from it);
+     ?aspect=16x9 for 1920×1080 (default 9x16 = 1080×1920). Motion = the brand's three principles only: the tile SETTLES once (350 ms, cubic-bezier(.22,1,.36,1)), text REVEALS (fade + 8 px, 500 ms), nothing bounces, glows or loops.
+     Logo = the official tile JPEG clipped 22 % (never redrawn). Red roles: the tile + the one CTA. Reduced motion → static final frame. Fonts from brand/fonts. -->
+<style>
+html,body{margin:0;background:var(--fpt-ground-bg);color:var(--fpt-text-primary);font-family:'IBM Plex Sans Arabic','Inter',sans-serif;font-synthesis:none;letter-spacing:0;overflow:hidden}
+.frame{position:relative;width:1080px;height:1920px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 84px;box-sizing:border-box}
+html[data-aspect="16x9"] .frame{width:1920px;height:1080px;padding:0 112px}
+.tile{height:220px;width:auto;display:block;animation:settle 350ms cubic-bezier(.22,1,.36,1) both}
+.name{font-family:'Inter','IBM Plex Sans Arabic',sans-serif;font-weight:700;font-size:56px;margin-top:48px;animation:reveal 500ms cubic-bezier(.22,1,.36,1) both;animation-delay:.45s}
+.part{font-family:'Inter','IBM Plex Sans Arabic',sans-serif;font-weight:600;font-size:22px;letter-spacing:.06em;text-transform:uppercase;color:var(--fpt-text-muted);margin-top:14px;animation:reveal 500ms cubic-bezier(.22,1,.36,1) both;animation-delay:.6s}
+.part-ar{font-size:26px;color:var(--fpt-text-muted);margin-top:10px;animation:reveal 500ms cubic-bezier(.22,1,.36,1) both;animation-delay:.7s}
+.cta{display:inline-block;margin-top:72px;padding:28px 80px;border-radius:999px;background:linear-gradient(135deg,var(--fpt-brand-red),var(--fpt-brand-red-gradient-end));color:var(--fpt-text-on-brand);font-weight:600;font-size:42px;animation:reveal 500ms cubic-bezier(.22,1,.36,1) both;animation-delay:1.1s}
+.url{margin-top:40px;font-family:'IBM Plex Mono','IBM Plex Sans Arabic',monospace;font-size:34px;color:var(--fpt-text-muted);direction:ltr;unicode-bidi:isolate;animation:reveal 500ms cubic-bezier(.22,1,.36,1) both;animation-delay:1.3s}
+.meta{position:absolute;inset-inline:84px;inset-block-end:300px;display:flex;justify-content:space-between;font-size:24px;color:var(--fpt-text-muted);direction:ltr;animation:reveal 500ms cubic-bezier(.22,1,.36,1) both;animation-delay:1.6s}
+html[data-aspect="16x9"] .meta{inset-inline:112px;inset-block-end:56px}
+@keyframes settle{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes reveal{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;opacity:1!important;transform:none!important}}
+html[data-frozen] *{animation-play-state:paused!important}
+</style>
+</head>
+<body>
+<div class="frame">
+  <img class="tile" src="../../logos/svg/fpt-lockup-vertical-en-white.svg" alt="Fiper Pro Traders">
+  <div class="part">Part of Fiper Global</div>
+  <div class="part-ar">جزء من Fiper Global</div>
+  <div class="cta">ابدأ تحدي FPT</div>
+  <div class="url">fptraders.com</div>
+  <div class="meta"><span>cTrader</span><span>Trading involves risk · التداول ينطوي على مخاطر</span></div>
+</div>
+<script>
+// deterministic frame freeze: ?t=1.25 pauses every animation at 1.25 s (used by scripts/build-video.mjs); ?aspect=16x9 switches the canvas
+(function(){ var q=new URLSearchParams(location.search); if(q.get('aspect')==='16x9') document.documentElement.dataset.aspect='16x9';
+  var t=q.get('t'); if(t!==null){ var s=parseFloat(t); document.documentElement.dataset.frozen='1'; document.querySelectorAll('.frame *').forEach(function(el){ var cs=getComputedStyle(el); var d=parseFloat(cs.animationDelay)||0; el.style.animationDelay=(d - s)+'s'; el.style.animationPlayState='paused'; });
+    requestAnimationFrame(function(){ document.documentElement.dataset.ready='1'; }); } else document.documentElement.dataset.ready='1'; })();
+</script>
+</body>
+</html>

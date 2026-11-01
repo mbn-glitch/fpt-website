@@ -1,1 +1,16 @@
-{"rewrites":[{"source":"/(.*)","destination":"/index.html"}]}
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/pricing", "destination": "/challenges", "permanent": true },
+    { "source": "/:lang(ar|fr|es|pt|tr)/pricing", "destination": "/:lang/challenges", "permanent": true },
+    { "source": "/en", "destination": "/", "permanent": true },
+    { "source": "/en/:path*", "destination": "/:path*", "permanent": true },
+    { "source": "/images/fiper/:file*", "destination": "/images/third-party/fiper/:file*", "permanent": true },
+    { "source": "/images/ctrader/:file*", "destination": "/images/third-party/ctrader/:file*", "permanent": true }
+  ],
+  "headers": [
+    { "source": "/brand/fonts/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
+    { "source": "/assets/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] }
+  ]
+}

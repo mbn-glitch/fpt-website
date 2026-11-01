@@ -1,63 +1,48 @@
-﻿export const ACCOUNT_SIZES = [10000, 25000, 50000, 100000, 200000];
+﻿/**
+ * Pricing data — derived from the platform catalogue (src/data/rules.js ← fpt-platform CATALOG_V1 / RULES_V1). Nothing here is a site invention.
+ * EUR / AED are shown as indicative conversions only (challengePricing.convertedNote); settlement is in USD.
+ */
+import { CATALOG_V1, RULES_V1, pct } from './rules.js';
 
-export const FEES_USD = {
-  10000: 90,
-  25000: 160,
-  50000: 280,
-  100000: 540,
-  200000: 1070,
-};
+export const ACCOUNT_SIZES = CATALOG_V1.map((p) => p.sizeCents / 100);
+export const FEES_USD = Object.fromEntries(CATALOG_V1.map((p) => [p.sizeCents / 100, p.priceCents / 100]));
 
 export const CURRENCIES = {
-  USD: { symbol: "$", code: "USD", rate: 1 },
-  EUR: { symbol: "€", code: "EUR", rate: 0.92 },
-  AED: { symbol: "AED ", code: "AED", rate: 3.67 },
+  USD: { code: 'USD', rate: 1 },
+  EUR: { code: 'EUR', rate: 0.92 },
+  AED: { code: 'AED', rate: 3.67 },
 };
-
-export const CHALLENGE_TYPES = [
-  {
-    id: "2-step",
-    label: "FPT Challenge",
-    subtitle: "One-phase demo evaluation. Prove your skills.",
-    multiplier: 1.0,
-  },
-  {
-    id: "1-step",
-    label: "Live Account",
-    subtitle: "Real funded account after passing the evaluation.",
-    multiplier: 1.0,
-  },
-];
 
 export const BASE_RULES = {
-  profitTarget: "10%",
-  maxDailyLoss: "5%",
-  maxLoss: "9%",
-  minTradingDays: 5,
-  profitShare: "80%",
-  leverage: "1:100",
-  refund: "Not available",
-  swapFree: "Yes",
-  timeLimit: "31 Days",
-  minPayout: "$100",
-  maxPayout: "$5,000",
+  profitTarget: pct(RULES_V1.profitTargetBps),
+  maxDailyLoss: pct(RULES_V1.dailyLossBps),
+  maxLoss: pct(RULES_V1.maxLossBps),
+  minTradingDays: RULES_V1.minTradingDaysEvaluation,
+  minTradingDaysFunded: RULES_V1.minTradingDaysFunded,
+  profitShare: pct(RULES_V1.payoutShareBps),
+  leverageForex: `1:${RULES_V1.leverage.forex}`,
+  swapFree: RULES_V1.swapFree,
+  timeLimitDays: RULES_V1.evaluationDays,
+  maxAccounts: RULES_V1.maxAccountsPerClient,
+  payoutMinUsd: RULES_V1.payoutMinCents / 100,
+  payoutMaxUsd: RULES_V1.payoutMaxPerTransactionCents / 100,
+  payoutCycleDays: RULES_V1.payoutCycleDays,
+  commissionPerLotUsd: RULES_V1.commissionPerLotCents.forex / 100,
 };
 
-export function calcFee(size, currency, typeId) {
-  const usd = FEES_USD[size];
-  const type = CHALLENGE_TYPES.find((t) => t.id === typeId) || CHALLENGE_TYPES[0];
-  const feeUsd = usd * type.multiplier;
+export function calcFee(size, currency) {
   const cur = CURRENCIES[currency] || CURRENCIES.USD;
-  return feeUsd * cur.rate;
+  return FEES_USD[size] * cur.rate;
 }
 
+/** «280 USD» / «258 EUR» — amount then the currency code, Latin digits (ID-05). */
 export function formatCurrency(amount, currencyCode) {
   const cur = CURRENCIES[currencyCode] || CURRENCIES.USD;
   const rounded = amount >= 100 ? Math.round(amount) : Math.round(amount * 100) / 100;
-  return `${cur.symbol}${rounded.toLocaleString("en-US")}`;
+  return `${rounded.toLocaleString('en-US')} ${cur.code}`;
 }
 
+/** «50,000 USD» — the account size with its code (GLOSSARY § 6). */
 export function formatSize(size) {
-  if (size >= 1000) return `$${(size / 1000).toFixed(0)}K`;
-  return `$${size}`;
+  return `${size.toLocaleString('en-US')} USD`;
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FPT social master — FPT Brand Identity System v1.0 (child of fiper-brand v2.0.0). Link preview (OG): official lockup on paper, one Arabic line, English secondary line.
+     Editable <text>; fonts by family name (install brand/fonts/*.woff2). Margin = 2 × tile height (72–84 px on 1080). Body text ≥ 42 px on the 1080 canvas (≥ 14 px at 360 wide).
+     Logo = the official v2 vector masters (tile / lockups), never clipped, redrawn or recoloured. No glow, no decorative red, no gold.
+     Regulatory line belongs in the caption (REQUIRED DECISION — none exists), never on the image. SAMPLE chip wherever a sample figure appears. Platform: cTrader only. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="630" viewBox="0 0 1200 630" font-synthesis="none">
+  <rect width="1200" height="630" fill="#F7F4F1"/>
+  <image id="logo-lockup" href="../../logos/svg/fpt-lockup-horizontal-en.svg" x="665" y="120" width="455" height="96" preserveAspectRatio="xMinYMin meet"/>
+  <text id="line" x="1120" y="380" direction="rtl" text-anchor="start" font-family="IBM Plex Sans Arabic" font-weight="700" font-size="54" letter-spacing="0" fill="#120D0E">تداول بثقة. احصل على التمويل.</text>
+  <text id="line-en" x="1120" y="440" direction="ltr" text-anchor="end" font-family="Inter" font-weight="500" font-size="28" fill="#6B635E">Prove your trading skills, access funded capital · cTrader</text>
+  <line x1="80" y1="500" x2="1120" y2="500" stroke="rgba(18,13,14,0.35)" stroke-width="1"/>
+  <text id="part" x="1120" y="556" direction="ltr" text-anchor="end" font-family="Inter" font-weight="600" font-size="22" fill="#6B635E" letter-spacing="1">PART OF FIPER GLOBAL</text>
+  <text id="meta" x="80" y="556" direction="ltr" text-anchor="start" font-family="IBM Plex Mono, IBM Plex Sans Arabic, Inter" font-weight="500" font-size="22" fill="#6B635E">fptraders.com</text>
+</svg>

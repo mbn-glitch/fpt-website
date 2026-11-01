@@ -4,77 +4,69 @@ import { useTranslation } from 'react-i18next';
 import Section, { SectionHeader } from '../ui/Section.jsx';
 import Button from '../ui/Button.jsx';
 import useLocalizedPath from '../../hooks/useLocalizedPath.js';
+import { REGISTER_URL } from '../../data/legal.js';
+import { CATALOG_V1, RULES_V1, pct, usd } from '../../data/rules.js';
 
+/**
+ * The challenge card (.fpt-challenge-card) for the catalogue's middle product «Evaluation 50,000 USD» (seed PRODUCT_NAMES): size and fee in
+ * Plex Mono with the currency code, the popular mark as a text label + the selected red border (no gold badge, no gradient border / text),
+ * rule rows with muted checks, one primary action, "view all" as a text link with a mirrored chevron.
+ */
 export default function PricingPreview() {
   const { to } = useLocalizedPath();
   const { t } = useTranslation();
+  const product = CATALOG_V1[2];
 
   const FEATURES = [
-    [t('pricingPreview.features.accountSize'), '$50,000'],
-    [t('pricingPreview.features.profitTarget'), '10%'],
-    [t('pricingPreview.features.maxDailyLoss'), '5%'],
-    [t('pricingPreview.features.maxLoss'), '9%'],
-    [t('pricingPreview.features.minDays'), '5'],
-    [t('pricingPreview.features.profitSplit'), '80%'],
-    [t('pricingPreview.features.refund'), t('pricingPreview.features.refundValue')],
+    [t('pricingPreview.features.accountSize'), usd(product.sizeCents), true],
+    [t('pricingPreview.features.profitTarget'), pct(RULES_V1.profitTargetBps), true],
+    [t('pricingPreview.features.maxDailyLoss'), pct(RULES_V1.dailyLossBps), true],
+    [t('pricingPreview.features.maxLoss'), pct(RULES_V1.maxLossBps), true],
+    [t('pricingPreview.features.minDays'), String(RULES_V1.minTradingDaysEvaluation), true],
+    [t('pricingPreview.features.profitSplit'), pct(RULES_V1.payoutShareBps), true],
+    [t('pricingPreview.features.refund'), t('pricingPreview.features.refundValue'), false],
   ];
 
   return (
-    <Section className="bg-[#0A0A0A]">
+    <Section className="bg-bg" aria-labelledby="pricing-preview-title">
       <SectionHeader
-        eyebrow="Most chosen by traders"
-        title="The $50K Challenge"
-        subtitle="The benchmark. Balanced size, full ruleset."
+        eyebrow={t('pricingPreview.eyebrow')}
+        title={<span id="pricing-preview-title">{t('pricingPreview.title', { product: t('common.evaluationSize', { size: usd(product.sizeCents) }) })}</span>}
+        subtitle={t('pricingPreview.subtitle')}
         center
       />
 
-      <div className="mt-16 max-w-2xl mx-auto">
-        <div className="relative">
-          <div className="absolute -top-3 right-8 z-10 px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-[0.15em] bg-[#D4AF37] text-black">
-            {t('pricingPreview.mostPopular')}
+      <div className="mt-12 max-w-2xl mx-auto">
+        <div className="rounded-3xl p-7 sm:p-10 bg-card border border-brand-red">
+          <div className="fpt-eyebrow">{t('pricingPreview.mostPopular')}</div>
+          <h3 className="mt-3 text-2xl font-semibold leading-[1.3]">{t('common.evaluationSize', { size: usd(product.sizeCents) })}</h3>
+          <div className="mt-4 flex items-baseline gap-3 flex-wrap">
+            <span className="text-[min(2.25rem,10vw)] sm:text-5xl font-semibold text-white fpt-unit">{usd(product.priceCents)}</span>
+            <span className="text-secondary">{t('pricingPreview.oneTime')}</span>
           </div>
 
-          <div className="relative gradient-border rounded-3xl p-8 sm:p-10">
-            <div className="relative z-10">
-              <div className="flex items-baseline gap-3">
-                <span dir="ltr" className="text-5xl sm:text-6xl font-semibold font-mono-num gradient-text">
-                  $280
+          <ul className="mt-8">
+            {FEATURES.map(([k, v, mono]) => (
+              <li key={k} className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-3 border-b border-subtle last:border-0">
+                <span className="flex items-center gap-3 text-sm text-secondary">
+                  <Check size={16} className="text-fg-muted shrink-0" aria-hidden="true" />
+                  <span>{k}</span>
                 </span>
-                <span className="text-secondary">USD {t('pricingPreview.oneTime')}</span>
-              </div>
+                <span className={`text-sm text-white font-semibold text-end ${mono ? 'fpt-unit' : ''}`}>{v}</span>
+              </li>
+            ))}
+          </ul>
 
-              <div className="mt-8 space-y-3">
-                {FEATURES.map(([k, v]) => (
-                  <div
-                    key={k}
-                    className="flex items-center justify-between py-3 border-b border-subtle last:border-0"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Check size={16} className="text-[#F42821] shrink-0" />
-                      <span className="text-sm text-secondary">{k}</span>
-                    </div>
-                    <span className="text-sm font-mono-num text-white font-medium">
-                      {v}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-8">
-                <Button href="https://crm.fptraders.com/register" external size="lg" className="w-full">
-                  {t('pricingPreview.cta')} <ArrowRight size={18} />
-                </Button>
-              </div>
-            </div>
+          <div className="mt-8">
+            <Button href={REGISTER_URL} external size="lg" className="w-full">
+              {t('pricingPreview.cta')}
+            </Button>
           </div>
         </div>
 
-        <div className="mt-8 text-center">
-          <Link
-            to={to("/challenges")}
-            className="inline-flex items-center gap-2 text-sm text-secondary hover:text-white transition-colors"
-          >
-            {t('pricingPreview.viewAll')} <ArrowRight size={14} />
+        <div className="mt-6 text-center">
+          <Link to={to('/challenges')} className="inline-flex items-center gap-2 min-h-11 px-2 text-sm text-secondary hover:text-white transition-colors">
+            {t('pricingPreview.viewAll')} <ArrowRight size={14} className="flip-rtl" aria-hidden="true" />
           </Link>
         </div>
       </div>

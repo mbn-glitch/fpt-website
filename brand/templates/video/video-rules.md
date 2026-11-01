@@ -1,0 +1,13 @@
+# Video rules — FPT Brand Identity System v1.0
+
+Files: `safe-areas.svg` (9:16 1080 × 1920 and 16:9 1920 × 1080 guides side by side; action-safe 5 % amber, title-safe 10 % blue, platform UI zones washed), `lower-third.svg` (1920 × 1080, panel bottom-start: official tile 72 px, name, title, AR + EN), `end-card.html` (playable, 5 s; `?t=<seconds>` freezes a frame, `?aspect=16x9`), `sample.mp4` (H.264, 1080 × 1920, 30 fps, 5 s, 109 KB) + `sample.webm` (VP9) rendered from `end-card.html` by `scripts/build-video.mjs`. Frames for inspection: `dist/checks/video/frame-*.png`.
+
+## Rules
+1. **Logo corner**: the official tile at **56 px per 1080 px of frame width** (112 px at 1920), top-start inside the title-safe area, 100 % opacity, never mirrored, never animated beyond the single settle (350 ms, `cubic-bezier(.22,1,.36,1)`, 8 px rise + .98 → 1). The name is text beside or under it; no white-wordmark lockup exists (MISSING ASSET #2).
+2. **Motion** = the three brand principles only: respond (140 ms), settle (250–350 ms, once), reveal (fade + 8 px, 500 ms, first view only). No bounce, zoom-through, glow pulse, particle, wipe or loop. Reduced motion → static final frame (`end-card.html` honours `prefers-reduced-motion`).
+3. **Captions / titles**: IBM Plex Sans Arabic ≥ 48 px on a 1080-wide frame (≥ 86 px at 1920), letter-spacing 0, white on the dark ground, inside title-safe; English in Inter; numbers in IBM Plex Mono.
+4. **Finance figures** on screen: word + sign + colour (ربح ▲ +, خسارة ▼ −) in the finance tokens, never brand red; every figure from `brand/scripts/sample-data.mjs` carries "SAMPLE". No performance claims.
+5. **Red roles**: the tile and the one CTA. Lower-third panel = ground at 85 % + 1 px rule, radius 16, no shadow.
+6. **End card** (last 3–5 s): tile → name → "Part of Fiper Global" / «جزء من Fiper Global» → one CTA «ابدأ تحدي FPT» → `fptraders.com` in mono. Platform line "cTrader" only. Regulatory line: REQUIRED DECISION (`../legal/REQUIRED-DECISION.md`) — until decided the end card carries the generic risk line "Trading involves risk · التداول ينطوي على مخاطر" as a PROPOSED placeholder, not legal text.
+7. **Not provided / not claimed**: no music or voice-over (the samples are silent; any audio choice is a separate brief); no After Effects / Premiere / DaVinci native template — rebuild from `end-card.html` + the official tile; no real footage policy beyond the parent's imagery rule (real cTrader screens only, no stock, no AI faces).
+8. **Delivery**: 9:16 for stories/reels, 16:9 for YouTube/web; H.264 MP4 (CRF 20, yuv420p, faststart) for platforms, WebM for the web; always export from the deterministic frames (`node scripts/build-video.mjs`).

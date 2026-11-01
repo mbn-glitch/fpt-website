@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FPT social master — FPT Brand Identity System v1.0 (child of fiper-brand v2.0.0). Story: headline-dominant, tile top-start, one headline block at the optical centre, one CTA line, meta at the foot. Platform UI zones kept clear (top 250 / bottom 300).
+     Editable <text>; fonts by family name (install brand/fonts/*.woff2). Margin = 2 × tile height (72–84 px on 1080). Body text ≥ 42 px on the 1080 canvas (≥ 14 px at 360 wide).
+     Logo = the official v2 vector masters (tile / lockups), never clipped, redrawn or recoloured. No glow, no decorative red, no gold.
+     Regulatory line belongs in the caption (REQUIRED DECISION — none exists), never on the image. SAMPLE chip wherever a sample figure appears. Platform: cTrader only. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1920" viewBox="0 0 1080 1920" font-synthesis="none">
+  <rect width="1080" height="1920" fill="#0A0A0A"/>
+  <image id="logo-lockup" href="../../logos/svg/fpt-lockup-horizontal-en-white.svg" x="598" y="270" width="398" height="84" preserveAspectRatio="xMaxYMin meet"/>
+  <text id="brand-part" x="996" y="382" direction="ltr" text-anchor="end" font-family="Inter" font-weight="600" font-size="17" fill="rgba(255,255,255,0.55)" letter-spacing="1">PART OF FIPER GLOBAL</text>
+  <text id="kind" x="996" y="760" direction="rtl" text-anchor="start" font-family="IBM Plex Sans Arabic" font-weight="500" font-size="32" letter-spacing="0" fill="rgba(255,255,255,0.55)">تحدي FPT</text>
+  <text id="headline" direction="rtl" text-anchor="start" font-family="IBM Plex Sans Arabic" font-weight="700" font-size="88" fill="#FFFFFF" letter-spacing="0"><tspan x="996" y="880">أثبت مهاراتك.</tspan><tspan x="996" dy="110">احصل على التمويل.</tspan></text>
+  <text id="sub" x="996" y="1120" direction="rtl" text-anchor="start" font-family="IBM Plex Sans Arabic" font-weight="400" font-size="42" letter-spacing="0" fill="rgba(255,255,255,0.55)">مرحلة تقييم واحدة · حساب ممول · نسبة أرباح 80 / 20 ثابتة</text>
+  <line x1="84" y1="1200" x2="996" y2="1200" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+  <text id="cta" x="996" y="1290" direction="rtl" text-anchor="start" font-family="IBM Plex Sans Arabic" font-weight="700" font-size="40" letter-spacing="0" fill="#FFFFFF">ابدأ تحدي FPT</text>
+  <path id="cta-arrow" d="M 656 1276 h-44 m14 -14 l-14 14 14 14" fill="none" stroke="#F42821" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text id="meta" x="84" y="1590" direction="ltr" text-anchor="start" font-family="IBM Plex Mono, IBM Plex Sans Arabic, Inter" font-weight="500" font-size="26" fill="rgba(255,255,255,0.55)">fptraders.com · cTrader</text>
+  <text id="part" x="996" y="1590" direction="ltr" text-anchor="end" font-family="Inter" font-weight="600" font-size="24" fill="rgba(255,255,255,0.55)" letter-spacing="1">PART OF FIPER GLOBAL</text>
+</svg>

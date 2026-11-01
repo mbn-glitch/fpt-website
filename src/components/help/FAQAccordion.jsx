@@ -1,5 +1,4 @@
 ﻿import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -10,26 +9,23 @@ export default function FAQAccordion({ faqs }) {
   const [prevLang, setPrevLang] = useState(lang);
   if (lang !== prevLang) { setPrevLang(lang); setOpen(null); }
 
-  const getQuestion = (faq) => (lang !== 'en' && faq.questions?.[lang]) ? faq.questions[lang] : faq.question;
-  const getAnswer = (faq) => (lang !== 'en' && faq.answers?.[lang]) ? faq.answers[lang] : faq.answer;
+  const getQuestion = (faq) => ((lang !== 'en' && faq.questions?.[lang]) ? faq.questions[lang] : faq.question);
+  const getAnswer = (faq) => ((lang !== 'en' && faq.answers?.[lang]) ? faq.answers[lang] : faq.answer);
 
   return (
-    <div className="space-y-3">
-      {faqs.map((faq) => (
-        <div key={`${faq.id}-${lang}`} id={faq.id} className="bg-card border border-subtle rounded-2xl overflow-hidden hover:border-white/15 transition-colors">
-          <button onClick={() => setOpen(open === faq.id ? null : faq.id)} className="w-full text-left px-6 py-5 flex items-start justify-between gap-4">
-            <span className="text-[15px] font-medium leading-snug">{getQuestion(faq)}</span>
-            <ChevronDown size={18} className={`shrink-0 mt-0.5 text-tertiary transition-transform duration-200 ${open === faq.id ? 'rotate-180' : ''}`} />
-          </button>
-          <AnimatePresence initial={false}>
-            {open === faq.id && (
-              <motion.div key="body" initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.25, ease: 'easeInOut' }} className="overflow-hidden">
-                <div className="px-6 pb-6 text-sm text-secondary leading-relaxed border-t border-subtle pt-4">{getAnswer(faq)}</div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      ))}
-    </div>
+    <ul className="divide-y divide-[var(--fpt-line-ash)] border-y border-subtle">
+      {faqs.map((faq) => {
+        const isOpen = open === faq.id;
+        return (
+          <li key={`${faq.id}-${lang}`} id={faq.id}>
+            <button type="button" onClick={() => setOpen(isOpen ? null : faq.id)} className="w-full text-start min-h-14 py-4 flex items-center justify-between gap-4" aria-expanded={isOpen} aria-controls={`${faq.id}-a`} id={`${faq.id}-q`}>
+              <span className="text-base font-semibold leading-[1.4]">{getQuestion(faq)}</span>
+              <ChevronDown size={18} aria-hidden="true" className={`shrink-0 text-tertiary transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <div id={`${faq.id}-a`} role="region" aria-labelledby={`${faq.id}-q`} hidden={!isOpen} className="pb-5 text-base text-secondary leading-relaxed">{getAnswer(faq)}</div>
+          </li>
+        );
+      })}
+    </ul>
   );
 }

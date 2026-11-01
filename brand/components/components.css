@@ -1,0 +1,504 @@
+/* FPT Brand Identity System v1.0 — components.css (reference implementation) — CHILD of fiper-brand v2.0.0 components.css v2.0
+   Inherited unchanged: the approved composition language (number-dominant screens .fpt-figure, cards only where they group related
+   information or bound an action .fpt-group, rules instead of boxes, plain labels, red = logo tile · the one primary action · active state,
+   finance semantics word + sign + colour, unbreakable numeric units .fpt-unit/.fpt-num, charts generated from one SAMPLE dataset inside .fpt-chart,
+   Arabic always in IBM Plex Sans Arabic (font-ui), monospace for digits/codes only, labels Inter 600 (no mono, no .2em caps), NO glow on buttons,
+   field boundary ≥ 3:1 (--fpt-line-input), Lucide icons with size/stroke rules).
+   FPT overrides: brand red #F42821 (LOCKED) with the observed 135deg gradient to #A30100 as the ONLY gradient (primary button); ground #0A0A0A /
+   panel #141414 / elevated #1A1A1A; three text tiers (primary, secondary .78, muted .55); press scale .98; buttons 44/48/56; the logo is the
+   official logo v2 (brand/logos/svg: gradient tile as drawn, white lockup on dark, ink lockup on paper — never clipped); loss = coral, drawdown warning = amber (decision item 3);
+   FPT-specific components at the end (challenge card, rule row, drawdown progress, phase stepper, endorsement badge, partner row, equity chart legend).
+   Requires: fonts/fonts.css + tokens.css loaded first. Every colour is a var(--fpt-*) token; no hex literals. DARK ONLY for apps —
+   the .fpt-paper class on a document root switches the semantic variables to the paper ground (documents, e-mail, print; not an app theme).
+   RTL: logical properties only. Directional icons mirror with .fpt-icon--dir under [dir="rtl"]. Numbers, charts, logos and media never mirror. Prefix: .fpt-  */
+
+
+/* ───────────────────────── 0. base helpers ───────────────────────── */
+[class^="fpt-"],[class*=" fpt-"],[class^="fpt-"] *,[class*=" fpt-"] *{box-sizing:border-box;font-synthesis:none}
+.fpt-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.fpt-num{font-family:var(--fpt-font-family-mono);font-variant-numeric:tabular-nums lining-nums;direction:ltr;unicode-bidi:isolate;letter-spacing:0;white-space:nowrap}
+.fpt-unit{display:inline-block;white-space:nowrap;direction:ltr;unicode-bidi:isolate;font-family:var(--fpt-font-ui);font-variant-numeric:tabular-nums lining-nums;letter-spacing:0;font-size:max(var(--fpt-font-size-app-unit-floor),1em)}/* CR-06 (owner, 1 Nov 2026): numeric-unit floor 16 px on app screens (was 15 in the platform) */
+.fpt-paper .fpt-unit{font-size:1em}/* paper documents and mail keep their own sizes (CR-06 scope: app screens) *//* amount+currency · sign+number+% · date parts: one unbreakable unit. CR-01 (owner, 31 Oct 2026): inside a sentence, list, chip or summary card the unit is set in the TEXT font (Plex Arabic / Inter) with tabular digits; IBM Plex Mono only through .fpt-figure__value (the hero amount), .fpt-num (identifiers, codes, logins) and td.fpt-td-num (dense financial tables) */
+.fpt-eyebrow{font-family:var(--fpt-c-eyebrow-font);font-size:var(--fpt-c-eyebrow-size);font-weight:var(--fpt-c-eyebrow-weight);letter-spacing:var(--fpt-c-eyebrow-letter-spacing);color:var(--fpt-c-eyebrow-color);text-transform:uppercase;margin-block-end:12px;display:block}
+.fpt-eyebrow__slash{display:none}/* v2.0: the “//” prefix is retired — eyebrow is a plain label */
+[lang="ar"] .fpt-eyebrow,.fpt-eyebrow[lang="ar"]{font-family:var(--fpt-c-eyebrow-arabic-font);font-weight:var(--fpt-c-eyebrow-arabic-weight);letter-spacing:0;text-transform:none}
+.fpt-label-sm{font-family:var(--fpt-font-ui);font-size:var(--fpt-font-size-sm);font-weight:var(--fpt-font-weight-semibold);color:var(--fpt-text-label);letter-spacing:0}
+.fpt-h{font-family:var(--fpt-font-family-display);text-transform:uppercase;letter-spacing:var(--fpt-font-letterSpacing-heading);line-height:var(--fpt-font-lineHeight-heading);font-weight:var(--fpt-font-weight-display)}
+[lang="ar"] .fpt-h{font-family:var(--fpt-font-family-arabic);text-transform:none;letter-spacing:0;line-height:var(--fpt-font-lineHeight-arabic-heading);font-weight:700}
+.fpt-muted{color:var(--fpt-text-muted)}
+/* icons — Lucide (brand/icons/lucide, ISC). One line style only. 24 grid, stroke 2; 20 px (md) stroke 2; 16 px (sm) stroke 1.75.
+   Alignment: the icon sits in an inline-flex row, align-items:center, 8 px gap; never baseline-aligned. Space around an icon = its own size / 2.
+   An icon means a function or a state; never decoration, never inside a coloured tile in app UI. Directional icons (chevrons, arrows) mirror in RTL via .fpt-icon--dir. */
+.fpt-icon{width:var(--fpt-size-icon-lg);height:var(--fpt-size-icon-lg);flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+.fpt-icon--md{width:var(--fpt-size-icon-md);height:var(--fpt-size-icon-md);stroke-width:2}
+.fpt-icon--sm{width:var(--fpt-size-icon-sm);height:var(--fpt-size-icon-sm);stroke-width:1.75}
+.fpt-icon--lg{width:var(--fpt-size-icon-lg);height:var(--fpt-size-icon-lg)}
+.fpt-icon--muted{color:var(--fpt-text-muted)}
+.fpt-ico-row{display:inline-flex;align-items:center;gap:var(--fpt-space-2)}
+[dir="rtl"] .fpt-icon--dir{transform:scaleX(-1)}
+.fpt-stack{display:grid;gap:var(--fpt-space-3)}
+.fpt-row{display:flex;align-items:center;gap:var(--fpt-space-2);flex-wrap:wrap}
+
+/* ───────────────────────── 1. buttons ───────────────────────── */
+.fpt-btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--fpt-space-2);
+  min-height:var(--fpt-c-button-primary-height);padding:0 var(--fpt-space-btn-x);
+  border-radius:var(--fpt-radius-pill);border:1px solid transparent;
+  font:inherit;font-family:var(--fpt-font-ui);font-weight:var(--fpt-c-button-primary-font-weight);font-size:var(--fpt-c-button-primary-font-size);line-height:1.2;
+  color:var(--fpt-text-primary);background:transparent;cursor:pointer;text-decoration:none;white-space:nowrap;
+  transition:transform var(--fpt-motion-duration-press) var(--fpt-motion-easing-press),box-shadow var(--fpt-motion-duration-state),background var(--fpt-motion-duration-state),border-color var(--fpt-motion-duration-hover)}
+.fpt-btn:active{transform:scale(var(--fpt-motion-press-scale))}
+.fpt-btn:focus-visible{outline:2px solid var(--fpt-action-focus-ring);outline-offset:2px}
+.fpt-btn--primary{background:linear-gradient(135deg,var(--fpt-brand-red),var(--fpt-brand-red-gradient-end));color:var(--fpt-text-on-brand);box-shadow:var(--fpt-c-button-primary-shadow)}
+.fpt-btn--primary:active{background:var(--fpt-action-primary-pressed);box-shadow:none}
+.fpt-btn--secondary{background:var(--fpt-c-button-secondary-fill);border-color:var(--fpt-c-button-secondary-border)}
+.fpt-btn--ghost{background:var(--fpt-c-button-ghost-fill);border-color:var(--fpt-c-button-ghost-border)}
+.fpt-btn--destructive{background:transparent;border-color:var(--fpt-c-button-destructive-border);color:var(--fpt-c-button-destructive-label)}/* CR-07 (owner, 1 Nov 2026 — inherits fiper-brand v2.3.4): a destructive action (delete · cancel · void · reject · disable) is OUTLINE (transparent fill, danger border + danger label + a Lucide icon) or TEXT — never a filled button; hover / pressed = the danger wash. v1.0–v1.1.2 (wash at rest, solid on hover / pressed) is superseded. */
+.fpt-btn--destructive:active{background:var(--fpt-c-button-destructive-hover)}
+.fpt-btn--destructive.fpt-btn--text{border-color:transparent;padding:0 var(--fpt-space-3)}/* text form: no border, danger label + icon */
+.fpt-btn--destructive-solid{background:var(--fpt-c-button-destructive-fill);border-color:transparent;color:var(--fpt-c-button-destructive-text)}/* the ONE filled danger button — inside the final confirmation dialog only (<dialog>, [role=dialog], .fpt-modal, .fpt-sheet) when that dialog holds no other primary (CR-07 fill-scope; gate DANGER-FILLED-OUTSIDE-DIALOG) */
+.fpt-btn--destructive-solid:active{filter:brightness(.92)}
+@media (hover:hover) and (pointer:fine){
+  .fpt-btn--primary:hover{background:linear-gradient(135deg,var(--fpt-brand-red-gradient-end),var(--fpt-brand-red-deep))}
+  .fpt-btn--secondary:hover{border-color:var(--fpt-line-strong)}
+  .fpt-btn--ghost:hover{border-color:var(--fpt-c-button-ghost-border-hover);background:var(--fpt-c-button-ghost-fill-hover)}
+  .fpt-btn--destructive:hover{background:var(--fpt-c-button-destructive-hover)}
+  .fpt-btn--destructive-solid:hover{filter:brightness(.92)}
+}
+.fpt-btn--sm{min-height:var(--fpt-c-button-primary-height-sm);padding:0 var(--fpt-space-btn-sm-x);font-size:var(--fpt-font-size-md)}
+.fpt-btn--lg{min-height:var(--fpt-c-button-primary-height-lg);padding:0 var(--fpt-space-btn-lg-x);font-size:var(--fpt-font-size-lg)}
+.fpt-btn--block{display:flex;width:100%}
+.fpt-btn .fpt-icon{width:var(--fpt-size-icon-md);height:var(--fpt-size-icon-md)}
+.fpt-btn--icon{padding:0;width:var(--fpt-size-touch-min);height:var(--fpt-size-touch-min)}
+.fpt-btn[disabled],.fpt-btn[aria-disabled="true"]{background:var(--fpt-action-disabled-bg);color:var(--fpt-action-disabled-fg);border-color:transparent;box-shadow:none;cursor:not-allowed;transform:none}
+.fpt-btn[data-loading="true"]{pointer-events:none;position:relative;color:transparent}
+.fpt-btn[data-loading="true"]::after{content:"···";position:absolute;inset:0;display:grid;place-items:center;color:var(--fpt-text-on-brand);font-family:var(--fpt-font-ui);font-size:1.3em;letter-spacing:.1em;animation:fpt-dots 1.2s steps(3,end) infinite}
+.fpt-btn--secondary[data-loading="true"]::after,.fpt-btn--ghost[data-loading="true"]::after{color:var(--fpt-text-primary)}
+@keyframes fpt-dots{0%{opacity:.35}50%{opacity:1}100%{opacity:.35}}
+
+/* ───────────────────────── 2. inputs & forms ───────────────────────── */
+.fpt-field{display:grid;gap:6px}
+.fpt-label{font-size:var(--fpt-font-size-md);font-weight:var(--fpt-font-weight-semibold);color:var(--fpt-text-primary)}
+.fpt-label .fpt-req{color:var(--fpt-state-danger);margin-inline-start:2px}
+.fpt-help{font-size:var(--fpt-font-size-sm);color:var(--fpt-text-muted)}
+.fpt-error{display:flex;align-items:flex-start;gap:6px;font-size:var(--fpt-font-size-sm);color:var(--fpt-state-danger)}
+.fpt-error .fpt-icon{width:16px;height:16px;stroke-width:1.75;margin-block-start:1px}
+.fpt-input,.fpt-select,.fpt-textarea{width:100%;min-height:var(--fpt-size-touch-min);padding:12px 14px;
+  background:var(--fpt-ground-coal);border:1px solid var(--fpt-line-input);border-radius:var(--fpt-radius-input);
+  color:var(--fpt-text-primary);font:inherit;font-family:var(--fpt-font-ui);font-size:var(--fpt-font-size-app-body);line-height:1.4;
+  transition:border-color var(--fpt-motion-duration-hover),background var(--fpt-motion-duration-hover)}
+.fpt-input::placeholder,.fpt-textarea::placeholder{color:var(--fpt-text-muted);opacity:1}
+.fpt-input:hover,.fpt-select:hover,.fpt-textarea:hover{border-color:var(--fpt-line-strong)}
+.fpt-input:focus-visible,.fpt-select:focus-visible,.fpt-textarea:focus-visible{outline:2px solid var(--fpt-action-focus-ring);outline-offset:1px;border-color:var(--fpt-line-strong)}
+.fpt-field[data-invalid="true"] .fpt-input,.fpt-field[data-invalid="true"] .fpt-select,.fpt-field[data-invalid="true"] .fpt-textarea{border-color:var(--fpt-state-danger)}
+.fpt-input[disabled],.fpt-select[disabled],.fpt-textarea[disabled]{background:var(--fpt-action-disabled-bg);color:var(--fpt-action-disabled-fg);cursor:not-allowed}
+.fpt-input--num{font-family:var(--fpt-font-family-mono);font-variant-numeric:tabular-nums;direction:ltr;text-align:end}
+[dir="rtl"] .fpt-input--num{text-align:start}
+.fpt-textarea{min-height:96px;resize:vertical}
+.fpt-select{appearance:none;padding-inline-end:44px}
+.fpt-select-wrap{position:relative}
+.fpt-select-wrap .fpt-icon{position:absolute;inset-inline-end:14px;inset-block-start:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--fpt-text-muted);pointer-events:none}/* Lucide chevron-down, not a CSS caret */
+.fpt-input-wrap{position:relative;display:flex;align-items:center;direction:ltr}
+.fpt-input-wrap .fpt-affix{position:absolute;right:14px;/* physical by design: the numeric input is LTR and the currency affix is pinned right in both directions (SPEC § inputs) */font-family:var(--fpt-font-family-mono);/* ISO code = code */font-size:var(--fpt-font-size-sm);color:var(--fpt-text-muted);pointer-events:none}
+.fpt-input-wrap .fpt-input{padding-right:56px/* physical by design: LTR numeric control */}
+/* OTP */
+.fpt-otp{display:flex;gap:var(--fpt-space-2);direction:ltr;width:100%;max-width:304px;min-width:0}
+.fpt-field>*{min-width:0}
+.fpt-otp input{flex:1 1 0;min-width:0;width:auto;max-width:44px;height:52px;text-align:center;padding:0;font-family:var(--fpt-font-family-mono);font-size:22px;font-weight:600;
+  background:var(--fpt-ground-coal);border:1px solid var(--fpt-line-input);border-radius:var(--fpt-radius-input);color:var(--fpt-text-primary);caret-color:var(--fpt-brand-red)}
+.fpt-otp input:focus-visible{outline:2px solid var(--fpt-action-focus-ring);outline-offset:1px}
+.fpt-otp[data-invalid="true"] input{border-color:var(--fpt-state-danger)}
+.fpt-otp input[data-filled="true"]{border-color:var(--fpt-line-strong)}
+/* checkbox / radio / switch */
+.fpt-check{display:flex;align-items:flex-start;gap:10px;min-height:var(--fpt-size-touch-min);padding-block:6px;cursor:pointer;font-size:var(--fpt-font-size-app-body)}
+.fpt-check input{appearance:none;flex:none;width:22px;height:22px;margin:0;margin-block-start:1px;border:1.5px solid var(--fpt-line-input);border-radius:6px;background:var(--fpt-ground-coal);display:grid;place-items:center;transition:background var(--fpt-motion-duration-press),border-color var(--fpt-motion-duration-press)}
+.fpt-check input[type="radio"]{border-radius:50%}
+.fpt-check input:checked{background:var(--fpt-brand-red);border-color:var(--fpt-brand-red)}
+.fpt-check input[type="checkbox"]:checked::after{content:"";width:11px;height:6px;border-left:2.5px solid var(--fpt-text-on-brand);/* physical by design: the check glyph never mirrors */border-bottom:2.5px solid var(--fpt-text-on-brand);transform:translateY(-2px) rotate(-45deg)}
+.fpt-check input[type="radio"]:checked::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--fpt-text-on-brand)}
+.fpt-check input:focus-visible{outline:2px solid var(--fpt-action-focus-ring);outline-offset:2px}
+.fpt-check input[disabled]{opacity:.4;cursor:not-allowed}
+.fpt-switch{display:inline-flex;align-items:center;gap:10px;min-height:var(--fpt-size-touch-min);cursor:pointer;font-size:var(--fpt-font-size-app-body)}
+.fpt-switch input{appearance:none;margin:0;width:44px;height:26px;border-radius:var(--fpt-radius-pill);background:var(--fpt-line-input);position:relative;flex:none;transition:background var(--fpt-motion-duration-state)}
+.fpt-switch input::after{content:"";position:absolute;inset-block-start:3px;inset-inline-start:3px;width:20px;height:20px;border-radius:50%;background:var(--fpt-text-primary);transition:transform var(--fpt-motion-duration-state) var(--fpt-motion-easing-standard)}
+.fpt-switch input:checked{background:var(--fpt-state-success)}
+.fpt-switch input:checked::after{transform:translateX(18px)}
+[dir="rtl"] .fpt-switch input:checked::after{transform:translateX(-18px)}
+.fpt-switch input:focus-visible{outline:2px solid var(--fpt-action-focus-ring);outline-offset:2px}
+
+/* ───────────────────────── 3. cards ───────────────────────── */
+.fpt-card{position:relative;background:var(--fpt-ground-panel);border:1px solid var(--fpt-line-ash);border-radius:var(--fpt-radius-card);padding:var(--fpt-space-card-y) var(--fpt-space-card-x);transition:border-color var(--fpt-motion-duration-state)}
+.fpt-card--compact{padding:var(--fpt-space-4)}
+.fpt-card--interactive{cursor:pointer}
+@media (hover:hover){.fpt-card--interactive:hover{border-color:var(--fpt-line-brand)}}
+.fpt-card--interactive:focus-visible{outline:2px solid var(--fpt-action-focus-ring);outline-offset:2px}
+.fpt-card--interactive:active{border-color:var(--fpt-line-brand)}
+.fpt-card__title{font-size:var(--fpt-font-size-xl);margin-block-end:8px}
+.fpt-card__body{font-size:var(--fpt-font-size-md);color:var(--fpt-text-muted)}
+.fpt-card__stat{margin-block-start:14px;font-size:var(--fpt-font-size-sm);font-weight:var(--fpt-font-weight-bold)}
+.fpt-card__stat b{color:var(--fpt-text-primary);font-family:var(--fpt-font-family-mono)}
+.fpt-card__corner{position:absolute;inset-block-start:18px;inset-inline-end:20px}
+/* stat card */
+.fpt-stat{display:grid;gap:4px}
+.fpt-stat__label{font-size:var(--fpt-font-size-sm);color:var(--fpt-text-muted);font-weight:var(--fpt-font-weight-semibold)}
+.fpt-stat__value{font-family:var(--fpt-font-family-mono);font-variant-numeric:tabular-nums;font-size:var(--fpt-font-size-app-display);font-weight:600;line-height:1.1;direction:ltr;unicode-bidi:isolate;color:var(--fpt-text-primary);overflow-wrap:anywhere}
+.fpt-stat__value small{font-family:var(--fpt-font-ui);font-weight:600}
+.fpt-stat__value--display{font-family:var(--fpt-font-family-display);font-weight:var(--fpt-font-weight-display);font-size:var(--fpt-font-size-2xl);color:var(--fpt-text-primary)}/* marketing stat: never red for a number (CEO review 8) */
+.fpt-stat__delta{font-family:var(--fpt-font-ui);font-size:var(--fpt-font-size-sm);font-weight:var(--fpt-font-weight-semibold);display:inline-flex;gap:6px;align-items:center;flex-wrap:wrap}
+.fpt-stat__delta .fpt-num,.fpt-stat__delta .fpt-delta{font-weight:600}
+
+
+/* v2.0 — hero figure: the one number that carries the screen. Mono 600, unit label small in font-ui, delta line = icon + word + unit */
+.fpt-figure{display:grid;gap:6px;min-width:0}
+.fpt-figure__label{font-family:var(--fpt-font-ui);font-size:var(--fpt-font-size-sm);font-weight:var(--fpt-font-weight-medium);color:var(--fpt-text-label)}
+.fpt-figure__value{display:flex;align-items:baseline;gap:8px;direction:ltr;unicode-bidi:isolate;font-family:var(--fpt-font-family-mono);font-variant-numeric:tabular-nums lining-nums;font-weight:600;font-size:var(--fpt-font-size-app-display);line-height:1.05;color:var(--fpt-text-primary);white-space:nowrap}
+[dir="rtl"] .fpt-figure__value{justify-content:flex-end}
+.fpt-figure__unit{font-family:var(--fpt-font-family-body);font-size:var(--fpt-font-size-md);font-weight:600;color:var(--fpt-text-muted)}
+.fpt-figure--hero .fpt-figure__value{font-size:38px}
+.fpt-figure--md .fpt-figure__value{font-size:var(--fpt-font-size-app-display)}
+.fpt-figure--sm .fpt-figure__value{font-size:var(--fpt-font-size-app-title)}
+.fpt-figure--sm .fpt-figure__unit{font-size:var(--fpt-font-size-sm)}
+.fpt-figure__delta{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap;font-family:var(--fpt-font-ui);font-size:var(--fpt-font-size-md);font-weight:var(--fpt-font-weight-semibold)}
+.fpt-figure__delta .fpt-icon{width:16px;height:16px}
+.fpt-figure__delta .fpt-unit{font-weight:600}
+.fpt-figure__since{color:var(--fpt-text-muted);font-weight:var(--fpt-font-weight-medium)}
+.fpt-figure--ruled{padding-block-start:12px;border-block-start:2px solid var(--fpt-text-primary)}/* document / dashboard KPI: heavy top rule instead of a card */
+.fpt-figure--ruled .fpt-figure__value{font-size:var(--fpt-font-size-app-display)}
+/* v2.0 — grouping card: used only when it groups related information (facts of one order, a chart with its controls) or bounds an action */
+.fpt-group{background:var(--fpt-ground-panel);border:1px solid var(--fpt-line-ash);border-radius:var(--fpt-radius-card);padding:14px 16px;display:grid;gap:0;min-width:0}
+.fpt-group--tight{border-radius:var(--fpt-radius-input);padding:10px 14px}
+.fpt-group__title{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-family:var(--fpt-font-ui);font-size:var(--fpt-font-size-md);font-weight:var(--fpt-font-weight-semibold);padding-block-end:8px;border-block-end:1px solid var(--fpt-line-ash);margin-block-end:4px}
+.fpt-group__title small{font-size:var(--fpt-font-size-sm);font-weight:var(--fpt-font-weight-medium);color:var(--fpt-text-muted)}
+.fpt-group .fpt-kv:last-child{border-block-end:0}
+/* v2.0 — open sections: a titled block separated by rules, no box */
+.fpt-section{display:grid;gap:0;min-width:0}
+.fpt-section__h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-family:var(--fpt-font-ui);font-size:var(--fpt-font-size-app-body);font-weight:var(--fpt-font-weight-bold);padding-block:16px 8px;border-block-end:1px solid var(--fpt-line-strong)}
+.fpt-section__h small{font-size:var(--fpt-font-size-sm);font-weight:var(--fpt-font-weight-medium);color:var(--fpt-text-muted)}
+/* v2.0 — holding row (portfolio): name + sub on the start, amount+unit and state on the end; rules, not cards */
+.fpt-holding{display:grid;grid-template-columns:1fr auto;gap:12px;padding:12px 0;border-block-end:1px solid var(--fpt-line-ash);align-items:start;min-width:0}
+.fpt-holding__t{font-weight:var(--fpt-font-weight-semibold);font-size:var(--fpt-font-size-app-body);display:block}
+.fpt-holding__s{font-size:var(--fpt-font-size-sm);color:var(--fpt-text-muted);display:block;margin-block-start:2px}
+.fpt-holding__end{text-align:end;direction:ltr;display:grid;gap:3px;justify-items:end}
+[dir="rtl"] .fpt-holding__end{justify-items:start;text-align:start}
+.fpt-holding__amt{font-family:var(--fpt-font-family-mono);font-variant-numeric:tabular-nums;font-weight:600;font-size:var(--fpt-font-size-app-body);white-space:nowrap;direction:ltr;unicode-bidi:isolate}
+.fpt-holding__amt i{font-style:normal;font-family:var(--fpt-font-family-body);font-size:var(--fpt-font-size-xs);font-weight:600;color:var(--fpt-text-muted);margin-inline-start:4px}
+.fpt-holding__st{display:inline-flex;align-items:center;gap:4px;font-family:var(--fpt-font-ui);font-size:var(--fpt-font-size-sm);font-weight:var(--fpt-font-weight-semibold);direction:inherit}
+.fpt-holding__st .fpt-icon{width:13px;height:13px}
+.fpt-holding--total{border-block-end:0;border-block-start:1px solid var(--fpt-line-strong)}
+.fpt-holding--total .fpt-holding__t{font-weight:var(--fpt-font-weight-bold)}
+
+/* ───────────────────────── 4. finance semantics ───────────────────────── */
+.fpt-gain{color:var(--fpt-finance-gain)}
+.fpt-loss{color:var(--fpt-finance-loss)}
+.fpt-neutral{color:var(--fpt-finance-neutral)}
+.fpt-pending{color:var(--fpt-finance-pending)}
+.fpt-delta{font-family:var(--fpt-font-family-mono);font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+
+/* ───────────────────────── 5. financial table ───────────────────────── */
+.fpt-table-wrap{overflow:auto;border:1px solid var(--fpt-line-ash);border-radius:var(--fpt-radius-card);background:var(--fpt-ground-panel);max-height:70vh}
+.fpt-table{width:100%;border-collapse:separate;border-spacing:0;font-size:var(--fpt-font-size-md)}
+.fpt-table th,.fpt-table td{padding:8px 14px;min-height:48px;border-block-end:1px solid var(--fpt-line-ash);text-align:start;vertical-align:middle;white-space:normal}
+.fpt-table th.fpt-td-num,.fpt-table td.fpt-td-num,.fpt-table .fpt-row-main{white-space:nowrap}
+.fpt-table--compact th,.fpt-table--compact td{min-height:40px;padding:4px 12px;font-size:var(--fpt-font-size-sm)}
+.fpt-table thead th{position:sticky;inset-block-start:0;background:var(--fpt-ground-coal);color:var(--fpt-text-label);font-family:var(--fpt-font-ui);font-size:var(--fpt-font-size-sm);font-weight:var(--fpt-font-weight-semibold);letter-spacing:0;text-transform:none;z-index:var(--fpt-z-raised)}
+.fpt-table tbody tr:last-child td{border-block-end:0}
+.fpt-table td.fpt-td-num,.fpt-table th.fpt-td-num{text-align:end;font-variant-numeric:tabular-nums}
+.fpt-table td.fpt-td-num > span:first-child,.fpt-table td.fpt-td-num > .fpt-num,.fpt-table td.fpt-td-num > .fpt-unit{font-family:var(--fpt-font-family-mono);direction:ltr;unicode-bidi:isolate;display:inline-block;white-space:nowrap}
+.fpt-table td.fpt-td-num > .fpt-word{font-family:var(--fpt-font-ui);font-size:var(--fpt-font-size-xs);font-weight:var(--fpt-font-weight-semibold)}
+[dir="rtl"] .fpt-table td.fpt-td-num,[dir="rtl"] .fpt-table th.fpt-td-num{text-align:start}
+.fpt-table tbody tr[data-selected="true"] td{background:var(--fpt-brand-red-wash)}
+@media (hover:hover){.fpt-table tbody tr:hover td{background:var(--fpt-brand-red-wash)}}
+.fpt-table .fpt-row-main{font-weight:var(--fpt-font-weight-semibold);color:var(--fpt-text-primary)}
+.fpt-table .fpt-row-sub{display:block;font-size:var(--fpt-font-size-xs);color:var(--fpt-text-muted)}
+
+/* ───────────────────────── 6. tabs & segmented ───────────────────────── */
+.fpt-tabs{display:flex;gap:4px;border-block-end:1px solid var(--fpt-line-ash);overflow-x:auto;scrollbar-width:none}
+.fpt-tabs::-webkit-scrollbar{display:none}
+.fpt-tab{flex:none;min-height:var(--fpt-size-touch-min);padding:12px 14px;background:none;border:0;border-block-end:2px solid transparent;margin-block-end:-1px;
+  color:var(--fpt-text-muted);font:inherit;font-weight:var(--fpt-font-weight-semibold);font-size:var(--fpt-font-size-base);cursor:pointer;transition:color var(--fpt-motion-duration-hover),border-color var(--fpt-motion-duration-hover)}
+.fpt-tab[aria-selected="true"]{color:var(--fpt-text-primary);border-block-end-color:var(--fpt-brand-red)}
+.fpt-tab:focus-visible{outline:2px solid var(--fpt-action-focus-ring);outline-offset:-2px;border-radius:var(--fpt-radius-sm)}
+.fpt-seg{display:inline-flex;padding:3px;background:var(--fpt-ground-coal);border:1px solid var(--fpt-line-ash);border-radius:var(--fpt-radius-pill);gap:2px}
+.fpt-seg button{min-height:36px;padding:0 16px;border:0;border-radius:var(--fpt-radius-pill);background:transparent;color:var(--fpt-text-muted);font:inherit;font-size:var(--fpt-font-size-md);font-weight:var(--fpt-font-weight-semibold);cursor:pointer;transition:background var(--fpt-motion-duration-state),color var(--fpt-motion-duration-state)}
+.fpt-seg button[aria-pressed="true"]{background:var(--fpt-ground-panel);color:var(--fpt-text-primary);box-shadow:inset 0 0 0 1px var(--fpt-line-strong)}
+.fpt-seg button:focus-visible{outline:2px solid var(--fpt-action-focus-ring);outline-offset:1px}
+.fpt-seg--block{display:flex}.fpt-seg--block button{flex:1}
+
+/* ───────────────────────── 7. badges & chips ───────────────────────── */
+.fpt-badge{display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 10px;border-radius:var(--fpt-radius-pill);font-size:var(--fpt-font-size-sm);font-weight:var(--fpt-font-weight-semibold);line-height:1;border:1px solid transparent;white-space:nowrap}
+.fpt-badge .fpt-icon{width:14px;height:14px;stroke-width:2}
+.fpt-badge--neutral{background:var(--fpt-action-disabled-bg);color:var(--fpt-text-primary)}
+.fpt-badge--brand{background:var(--fpt-brand-red);color:var(--fpt-text-on-brand);font-family:var(--fpt-font-ui);font-size:var(--fpt-font-size-xs);font-weight:var(--fpt-font-weight-bold);letter-spacing:.04em;text-transform:uppercase;height:20px;padding:0 9px}/* the site's mono .core chip is an observed marketing treatment; not applied */
+[lang="ar"] .fpt-badge--brand{letter-spacing:0;text-transform:none}
+.fpt-badge--success{background:var(--fpt-state-success-wash);color:var(--fpt-state-success);border-color:var(--fpt-state-success)}
+.fpt-badge--warning{background:var(--fpt-state-warning-wash);color:var(--fpt-state-warning);border-color:var(--fpt-state-warning)}
+.fpt-badge--danger{background:var(--fpt-state-danger-wash);color:var(--fpt-state-danger);border-color:var(--fpt-state-danger)}
+.fpt-badge--info{background:var(--fpt-state-info-wash);color:var(--fpt-state-info);border-color:var(--fpt-state-info)}
+.fpt-badge--outline{background:transparent;border-color:var(--fpt-line-strong);color:var(--fpt-text-muted)}
+/* chips (filter / choice) */
+.fpt-chip{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 14px;border-radius:var(--fpt-radius-pill);border:1px solid var(--fpt-line-ash);background:transparent;color:var(--fpt-text-primary);font:inherit;font-size:var(--fpt-font-size-md);font-weight:var(--fpt-font-weight-medium);cursor:pointer;transition:border-color var(--fpt-motion-duration-hover),background var(--fpt-motion-duration-hover)}
+.fpt-chip[aria-pressed="true"],.fpt-chip[data-selected="true"]{background:var(--fpt-brand-red-wash);border-color:var(--fpt-brand-red);color:var(--fpt-text-primary)}
+.fpt-chip:focus-visible{outline:2px solid var(--fpt-action-focus-ring);outline-offset:2px}
+@media (hover:hover){.fpt-chip:hover{border-color:var(--fpt-line-strong)}}
+
+/* ───────────────────────── 8. toasts ───────────────────────── */
+.fpt-toast-region{position:fixed;inset-inline:0;inset-block-start:calc(env(safe-area-inset-top) + 12px);display:grid;gap:8px;justify-items:center;padding-inline:var(--fpt-space-gutter);z-index:var(--fpt-z-toast);pointer-events:none}
+@media (max-width:639px){.fpt-toast-region{inset-block-start:auto;inset-block-end:calc(var(--fpt-size-tabbar-h) + env(safe-area-inset-bottom) + 12px)}}
+.fpt-toast{pointer-events:auto;display:flex;align-items:flex-start;gap:10px;width:min(100%,420px);padding:12px 14px;border-radius:var(--fpt-radius-media);background:var(--fpt-ground-coal);border:1px solid var(--fpt-line-ash);border-inline-start:3px solid var(--fpt-line-strong);color:var(--fpt-text-primary);box-shadow:var(--fpt-shadow-overlay);font-size:var(--fpt-font-size-md);
+  animation:fpt-toast-in var(--fpt-motion-duration-state) var(--fpt-motion-easing-standard)}
+.fpt-toast .fpt-icon{width:20px;height:20px;margin-block-start:0}
+.fpt-toast--success{border-inline-start-color:var(--fpt-state-success)}.fpt-toast--success .fpt-icon{color:var(--fpt-state-success)}
+.fpt-toast--warning{border-inline-start-color:var(--fpt-state-warning)}.fpt-toast--warning .fpt-icon{color:var(--fpt-state-warning)}
+.fpt-toast--danger{border-inline-start-color:var(--fpt-state-danger)}.fpt-toast--danger .fpt-icon{color:var(--fpt-state-danger)}
+.fpt-toast--info{border-inline-start-color:var(--fpt-state-info)}.fpt-toast--info .fpt-icon{color:var(--fpt-state-info)}
+.fpt-toast__title{font-weight:var(--fpt-font-weight-semibold)}
+.fpt-toast__body{color:var(--fpt-text-muted);font-size:var(--fpt-font-size-sm)}
+.fpt-toast__action{margin-inline-start:auto;position:relative;min-height:36px;background:none;border:0;color:var(--fpt-text-primary);font:inherit;font-weight:var(--fpt-font-weight-semibold);text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:28px}
+@keyframes fpt-toast-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ───────────────────────── 9. empty / skeleton / error ───────────────────────── */
+.fpt-empty{display:grid;justify-items:center;text-align:center;gap:10px;padding:40px 24px;color:var(--fpt-text-muted)}
+.fpt-empty .fpt-icon{width:24px;height:24px;stroke-width:2;color:var(--fpt-text-muted)}
+.fpt-empty__title{color:var(--fpt-text-primary);font-weight:var(--fpt-font-weight-semibold);font-size:var(--fpt-font-size-app-body)}
+.fpt-empty__body{font-size:var(--fpt-font-size-md);max-width:28ch}
+.fpt-skel{display:block;background:var(--fpt-line-ash);border-radius:var(--fpt-radius-sm);animation:fpt-pulse 1.2s ease-in-out infinite}
+.fpt-skel--text{height:12px;width:100%}
+.fpt-skel--title{height:18px;width:60%}
+.fpt-skel--num{height:26px;width:40%}
+.fpt-skel--circle{width:40px;height:40px;border-radius:50%}
+.fpt-skel--block{height:120px;border-radius:var(--fpt-radius-media)}
+@keyframes fpt-pulse{0%,100%{opacity:1}50%{opacity:.45}}
+@media (prefers-reduced-motion:reduce){.fpt-skel{animation:none}}
+.fpt-errstate{display:grid;gap:10px;padding:16px;border:1px solid var(--fpt-state-danger);background:var(--fpt-state-danger-wash);border-radius:var(--fpt-radius-card)}
+.fpt-errstate__title{display:flex;gap:8px;align-items:center;color:var(--fpt-state-danger);font-weight:var(--fpt-font-weight-semibold)}
+.fpt-errstate__body{font-size:var(--fpt-font-size-md);color:var(--fpt-text-muted)}
+/* inline banners (non-blocking) */
+.fpt-banner{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:var(--fpt-radius-media);border:1px solid var(--fpt-line-ash);background:var(--fpt-ground-coal);font-size:var(--fpt-font-size-md)}
+.fpt-banner--warning{border-color:var(--fpt-state-warning);background:var(--fpt-state-warning-wash)}.fpt-banner--warning .fpt-icon{color:var(--fpt-state-warning)}
+.fpt-banner--info{border-color:var(--fpt-state-info);background:var(--fpt-state-info-wash)}.fpt-banner--info .fpt-icon{color:var(--fpt-state-info)}
+
+/* ───────────────────────── 10. navigation ───────────────────────── */
+.fpt-header{position:sticky;inset-block-start:0;z-index:var(--fpt-z-header);display:grid;grid-template-columns:44px 1fr 44px;align-items:center;height:calc(var(--fpt-size-header-h) + env(safe-area-inset-top));padding-block-start:env(safe-area-inset-top);padding-inline:6px;background:color-mix(in srgb,var(--fpt-ground-bg) 85%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-block-end:1px solid var(--fpt-line-ash)}
+.fpt-header__title{text-align:center;font-weight:var(--fpt-font-weight-semibold);font-size:var(--fpt-font-size-app-body);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fpt-header__title--brand{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--fpt-font-ui);font-size:var(--fpt-font-size-app-body);font-weight:var(--fpt-font-weight-bold);letter-spacing:0}
+.fpt-header__title--brand img{height:32px;width:auto;display:block}/* logo v2: the white horizontal lockup (svg/fpt-lockup-horizontal-en-white.svg) at 32 px — never clipped, never the name as text */
+.fpt-header .fpt-btn--icon{color:var(--fpt-text-primary)}
+.fpt-tabbar{position:fixed;inset-inline:0;inset-block-end:0;z-index:var(--fpt-z-header);display:grid;grid-auto-flow:column;grid-auto-columns:1fr;height:calc(var(--fpt-size-tabbar-h) + env(safe-area-inset-bottom));padding-block-end:env(safe-area-inset-bottom);background:color-mix(in srgb,var(--fpt-ground-bg) 92%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-block-start:1px solid var(--fpt-line-ash)}
+.fpt-tabbar a,.fpt-tabbar button{display:grid;justify-items:center;align-content:center;gap:3px;min-height:var(--fpt-size-tabbar-h);color:var(--fpt-text-muted);text-decoration:none;font-size:11px;font-weight:var(--fpt-font-weight-semibold);background:none;border:0;cursor:pointer;transition:color var(--fpt-motion-duration-hover)}
+.fpt-tabbar .fpt-icon{width:24px;height:24px;stroke-width:1.75}
+.fpt-tabbar [aria-current="page"]{color:var(--fpt-text-primary)}
+.fpt-tabbar [aria-current="page"] .fpt-icon{color:var(--fpt-brand-red);stroke:var(--fpt-brand-red)}
+/* a11y: label stays text.primary (AA on the scrim); red carries the active state on the icon + a 2px bar */
+.fpt-tabbar [aria-current="page"]::before{content:"";position:absolute;inset-block-start:0;inset-inline:25%;height:2px;background:var(--fpt-brand-red);border-radius:1px}
+.fpt-tabbar [aria-current="page"] .fpt-icon{stroke-width:2.25}
+.fpt-tabbar a:focus-visible,.fpt-tabbar button:focus-visible{outline:2px solid var(--fpt-action-focus-ring);outline-offset:-4px;border-radius:var(--fpt-radius-sm)}
+.fpt-tabbar__dot{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--fpt-brand-red);inset-block-start:6px;inset-inline-end:calc(50% - 16px)}
+.fpt-tabbar a{position:relative}
+/* list rows */
+.fpt-list{display:grid;border:1px solid var(--fpt-line-ash);border-radius:var(--fpt-radius-card);background:var(--fpt-ground-panel);overflow:hidden}
+.fpt-listrow{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;min-height:56px;padding:10px 16px;border-block-end:1px solid var(--fpt-line-ash);color:inherit;text-decoration:none;background:none;border-inline:0;border-block-start:0;font:inherit;text-align:start;cursor:pointer;width:100%}
+.fpt-listrow:last-child{border-block-end:0}
+.fpt-listrow__ico{width:24px;height:24px;display:grid;place-items:center;color:var(--fpt-text-muted)}/* plain 20 px icon, no tile (CEO review 4) */
+.fpt-listrow__ico .fpt-icon{width:20px;height:20px}
+.fpt-listrow__ico--tile{width:36px;height:36px;border-radius:10px;background:var(--fpt-brand-red-wash);color:var(--fpt-red-as-text)}/* marketing feature grid only (.eco i on fiper.io) — not for app lists */
+.fpt-listrow__t,.fpt-listrow__s{display:block}
+.fpt-listrow__t{font-weight:var(--fpt-font-weight-semibold);font-size:var(--fpt-font-size-app-body)}
+.fpt-listrow__s{font-size:var(--fpt-font-size-sm);color:var(--fpt-text-muted)}
+.fpt-listrow__end{text-align:end;display:grid;gap:2px;justify-items:end}
+.fpt-listrow__chev{color:var(--fpt-text-muted)}
+@media (hover:hover){.fpt-listrow:hover{background:var(--fpt-brand-red-wash)}}
+.fpt-listrow:focus-visible{outline:2px solid var(--fpt-action-focus-ring);outline-offset:-2px}
+
+/* ───────────────────────── 11. modal & bottom sheet ───────────────────────── */
+.fpt-scrim{position:fixed;inset:0;background:color-mix(in srgb,var(--fpt-ground-bg) 72%,transparent);z-index:var(--fpt-z-scrim);animation:fpt-fade var(--fpt-motion-duration-state)}
+.fpt-sheet{position:fixed;inset-inline:0;inset-block-end:0;z-index:var(--fpt-z-sheet);background:var(--fpt-ground-panel);border:1px solid var(--fpt-line-ash);border-block-end:0;border-start-start-radius:var(--fpt-radius-sheet);border-start-end-radius:var(--fpt-radius-sheet);box-shadow:var(--fpt-shadow-overlay);padding:8px var(--fpt-space-4) calc(var(--fpt-space-4) + env(safe-area-inset-bottom));max-height:88vh;overflow:auto;animation:fpt-up var(--fpt-motion-duration-surface) var(--fpt-motion-easing-standard)}
+.fpt-sheet__grab{width:36px;height:4px;border-radius:2px;background:var(--fpt-line-strong);margin:4px auto 14px}
+.fpt-sheet__title{font-weight:var(--fpt-font-weight-semibold);font-size:var(--fpt-font-size-app-title);margin-block-end:8px}
+.fpt-modal{position:fixed;inset:0;z-index:var(--fpt-z-sheet);display:grid;place-items:center;padding:var(--fpt-space-4)}
+.fpt-modal__box{width:min(100%,440px);background:var(--fpt-ground-panel);border:1px solid var(--fpt-line-ash);border-radius:var(--fpt-radius-card);box-shadow:var(--fpt-shadow-overlay);padding:var(--fpt-space-6);display:grid;gap:12px;animation:fpt-up var(--fpt-motion-duration-state) var(--fpt-motion-easing-standard)}
+.fpt-modal__actions{display:flex;gap:10px;justify-content:flex-end;margin-block-start:8px;flex-wrap:wrap}
+@keyframes fpt-fade{from{opacity:0}}
+@keyframes fpt-up{from{opacity:0;transform:translateY(var(--fpt-motion-reveal-offset))}}
+/* static preview variants (no fixed positioning) */
+.fpt-demo-static .fpt-sheet,.fpt-demo-static .fpt-tabbar,.fpt-demo-static .fpt-header,.fpt-demo-static .fpt-toast-region{position:relative;inset:auto;animation:none}
+.fpt-demo-static .fpt-modal{position:relative;inset:auto;padding:0}
+.fpt-demo-static .fpt-scrim{position:absolute;border-radius:var(--fpt-radius-card)}
+
+/* ───────────────────────── 12. chart container ───────────────────────── */
+.fpt-chart{--chart-bg:var(--fpt-ground-panel);--chart-grid:var(--fpt-chart-grid);--chart-axis:var(--fpt-chart-axis);--chart-up:var(--fpt-chart-candle-up);--chart-down:var(--fpt-chart-candle-down);--chart-line:var(--fpt-chart-series-1);--chart-area:var(--fpt-chart-band);--chart-bench:var(--fpt-chart-benchmark);--chart-cross:var(--fpt-chart-crosshair);
+  background:var(--chart-bg);border:1px solid var(--fpt-line-ash);border-radius:var(--fpt-radius-card);overflow:hidden}
+.fpt-chart__head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:14px 16px 0}
+.fpt-chart__range{display:flex;gap:2px}
+.fpt-chart__range button{min-height:36px;position:relative;padding:0 10px;border:0;background:none;border-radius:var(--fpt-radius-pill);font-family:var(--fpt-font-ui);font-size:var(--fpt-font-size-sm);font-weight:var(--fpt-font-weight-semibold);color:var(--fpt-text-muted);cursor:pointer}
+.fpt-chart__range button[aria-pressed="true"]{background:var(--fpt-brand-red-wash);color:var(--fpt-text-primary)}
+.fpt-chart__canvas{display:block;width:100%;height:auto;direction:ltr}
+.fpt-chart__body{padding:8px 12px 4px}
+.fpt-chart__body svg[data-chart]{display:block;width:100%;height:auto;direction:ltr}/* generated by brand/scripts/charts.mjs — positions, axes and labels computed from one SAMPLE dataset */
+.fpt-chart__period{font-family:var(--fpt-font-ui);font-size:var(--fpt-font-size-sm);color:var(--fpt-text-muted);font-weight:var(--fpt-font-weight-medium)}
+.fpt-chart__head--stack{flex-direction:column;align-items:stretch;gap:6px}
+.fpt-chart__foot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:0 12px 10px}
+.fpt-chart__range--text button{font-family:var(--fpt-font-ui)}.fpt-chart__range--text button .fpt-unit{font-size:inherit}/* Latin range codes are wrapped in .fpt-unit; Arabic labels stay in font-ui */
+.fpt-chart__range button[aria-pressed="true"]{background:none;color:var(--fpt-text-primary);box-shadow:inset 0 -2px 0 var(--fpt-brand-red);border-radius:0}/* v2.0: active range = red underline (active state), no wash */
+.fpt-chart__axis{font-family:var(--fpt-font-family-mono);font-size:var(--fpt-font-size-xs);fill:var(--chart-axis)}
+.fpt-chart__grid{stroke:var(--chart-grid);stroke-width:1}
+.fpt-chart__line{stroke:var(--chart-line);stroke-width:2;fill:none;stroke-linejoin:round}
+.fpt-chart__area{fill:var(--chart-area)}
+.fpt-chart__bench{stroke:var(--chart-bench);stroke-width:1.5;fill:none;stroke-dasharray:4 4}
+.fpt-chart__up{fill:var(--chart-up);stroke:var(--chart-up)}
+.fpt-chart__down{fill:var(--chart-down);stroke:var(--chart-down)}
+.fpt-chart__cross{stroke:var(--chart-cross);stroke-width:1;stroke-dasharray:2 3}
+.fpt-chart__legend{display:flex;gap:14px;flex-wrap:wrap;padding:0 16px 14px;font-family:var(--fpt-font-ui);font-size:var(--fpt-font-size-sm);color:var(--fpt-text-muted)}
+.fpt-chart__title{font-family:var(--fpt-font-ui);font-size:var(--fpt-font-size-sm);font-weight:var(--fpt-font-weight-semibold);color:var(--fpt-text-label)}
+.fpt-chart__legend i{display:inline-block;width:10px;height:2px;vertical-align:middle;margin-inline-end:6px;background:currentColor}
+.fpt-chart__legend .l1{color:var(--fpt-chart-series-1)}.fpt-chart__legend .l2{color:var(--fpt-chart-series-2)}.fpt-chart__legend .l3{color:var(--fpt-chart-series-3)}.fpt-chart__legend .l4{color:var(--fpt-chart-series-4)}.fpt-chart__legend .l5{color:var(--fpt-chart-series-5)}.fpt-chart__legend .l6{color:var(--fpt-chart-series-6)}
+
+/* ───────────────────────── 13. progress & stepper ───────────────────────── */
+.fpt-progress{height:6px;border-radius:3px;background:var(--fpt-line-ash);overflow:hidden}
+.fpt-progress > span{display:block;height:100%;background:var(--fpt-text-primary);border-radius:3px;transition:width var(--fpt-motion-duration-surface) var(--fpt-motion-easing-standard)}
+.fpt-progress--success > span{background:var(--fpt-state-success)}
+.fpt-progress--warning > span{background:var(--fpt-state-warning)}
+.fpt-stepper{display:grid;gap:0;counter-reset:step}
+.fpt-step{display:grid;grid-template-columns:28px 1fr;gap:12px;position:relative;padding-block-end:20px}
+.fpt-step::before{counter-increment:step;content:counter(step,decimal-leading-zero);width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-family:var(--fpt-font-family-mono);font-size:var(--fpt-font-size-xs);font-weight:600;border:1px solid var(--fpt-line-strong);color:var(--fpt-text-muted);background:var(--fpt-ground-coal);direction:ltr}
+.fpt-step::after{content:"";position:absolute;inset-inline-start:13.5px;inset-block-start:30px;inset-block-end:2px;width:1px;background:var(--fpt-line-ash)}
+.fpt-step:last-child::after{display:none}
+.fpt-step[data-state="done"]::before{background:var(--fpt-state-success);border-color:var(--fpt-state-success);color:var(--fpt-ground-bg);content:""}
+.fpt-step__ico{position:absolute;inset-inline-start:6px;inset-block-start:6px;width:16px;height:16px;color:var(--fpt-text-on-success);stroke-width:2.5;pointer-events:none}
+.fpt-step[data-state="active"]::before{background:var(--fpt-brand-red);border-color:var(--fpt-brand-red);color:var(--fpt-text-on-brand)}
+.fpt-step[data-state="pending"]::before{border-style:dashed}
+.fpt-step__t{font-weight:var(--fpt-font-weight-semibold);font-size:var(--fpt-font-size-app-body);line-height:28px}
+.fpt-step__s{font-size:var(--fpt-font-size-sm);color:var(--fpt-text-muted)}
+
+/* ───────────────────────── 14. tooltip ───────────────────────── */
+.fpt-tip{position:relative;display:inline-flex}
+.fpt-tip__box{position:absolute;inset-block-end:calc(100% + 8px);inset-inline-start:0;z-index:var(--fpt-z-tooltip);background:var(--fpt-ground-coal);border:1px solid var(--fpt-line-strong);color:var(--fpt-text-primary);font-size:var(--fpt-font-size-sm);padding:6px 10px;border-radius:var(--fpt-radius-sm);white-space:nowrap;box-shadow:var(--fpt-shadow-overlay);opacity:0;pointer-events:none;transition:opacity var(--fpt-motion-duration-hover)}
+.fpt-tip:hover .fpt-tip__box,.fpt-tip:focus-within .fpt-tip__box,.fpt-tip[data-open="true"] .fpt-tip__box{opacity:1}
+
+/* ───────────────────────── 15. divider & misc ───────────────────────── */
+.fpt-divider{height:1px;background:var(--fpt-line-ash);border:0;margin:0}
+.fpt-kv{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-block-end:1px solid var(--fpt-line-ash);font-size:var(--fpt-font-size-md)}
+.fpt-kv:last-child{border-block-end:0}
+.fpt-kv dt{color:var(--fpt-text-muted)}
+.fpt-kv dd{margin:0;font-family:var(--fpt-font-ui);font-weight:var(--fpt-font-weight-semibold);text-align:end}
+.fpt-kv dd .fpt-num{font-weight:600}
+.fpt-avatar{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--fpt-ground-coal);border:1px solid var(--fpt-line-ash);font-family:var(--fpt-font-ui);font-weight:700;font-size:13px;color:var(--fpt-text-primary);letter-spacing:0}
+
+/* ── touch-target hit areas (fix pass 29 Oct 2026): every interactive element gets a ≥ 44×44 CSS px hit box without changing its visual size ── */
+.fpt-btn,.fpt-btn--sm,.fpt-seg button,.fpt-chip,.fpt-chart__range button,.fpt-toast__action,.fpt-check,.fpt-switch,.fpt-tabs button,.fpt-tabs a{position:relative}
+.fpt-btn--sm::after,.fpt-seg button::after,.fpt-chip::after,.fpt-chart__range button::after,.fpt-toast__action::after,.fpt-check::after,.fpt-tabs button::after,.fpt-tabs a::after{content:"";position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);width:max(100%,44px);height:max(100%,44px)}
+.fpt-btn{min-height:var(--fpt-size-touch-min)}
+.fpt-check{min-height:var(--fpt-size-touch-min);align-items:center}
+.fpt-switch{min-height:var(--fpt-size-touch-min)}
+
+/* ───────────────────────── 17. FPT — challenge card .fpt-challenge ───────────────────────── */
+/* The challenge selector: ONE selectable card per account size (a box is justified: each card is one selectable item bounding one action).
+   Number-dominant: the account size (mono 28 px) carries the card; the fee second; "most popular" is a TEXT label (never a gold badge);
+   selected = 1 px brand-red border (the active-state role of red) + a check icon — no glow, no gradient border. */
+.fpt-challenge{display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:center;padding:14px 16px;min-height:72px;background:var(--fpt-ground-panel);border:1px solid var(--fpt-line-ash);border-radius:var(--fpt-c-card-radius);color:inherit;text-decoration:none;cursor:pointer;position:relative;transition:border-color var(--fpt-motion-duration-state)}
+.fpt-challenge[aria-pressed="true"],.fpt-challenge[data-selected="true"]{border-color:var(--fpt-brand-red)}/* = --fpt-c-card-border-selected (active-state role) */
+.fpt-challenge:focus-visible{outline:2px solid var(--fpt-action-focus-ring);outline-offset:2px}
+@media (hover:hover){.fpt-challenge:hover{border-color:var(--fpt-line-strong)}.fpt-challenge[aria-pressed="true"]:hover{border-color:var(--fpt-brand-red)}}
+.fpt-challenge__size{font-family:var(--fpt-font-family-mono);font-variant-numeric:tabular-nums lining-nums;font-weight:600;font-size:var(--fpt-c-challenge-size-font);line-height:1.1;direction:ltr;unicode-bidi:isolate;white-space:nowrap;display:flex;align-items:baseline;gap:6px}
+[dir="rtl"] .fpt-challenge__size{justify-content:flex-end}
+.fpt-challenge__size i{font-style:normal;font-family:var(--fpt-font-family-body);font-size:var(--fpt-font-size-sm);font-weight:600;color:var(--fpt-text-muted)}
+.fpt-challenge__label{font-family:var(--fpt-font-ui);font-size:var(--fpt-font-size-sm);font-weight:var(--fpt-font-weight-medium);color:var(--fpt-text-label);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.fpt-challenge__popular{color:var(--fpt-text-label);font-weight:var(--fpt-font-weight-semibold)}/* = --fpt-c-challenge-popular-marker; semantic var so the paper ground re-maps it */
+.fpt-challenge[aria-pressed="true"] .fpt-challenge__popular{color:var(--fpt-text-primary)}
+.fpt-challenge__fee{grid-row:1 / span 2;text-align:end;display:grid;gap:2px;justify-items:end}
+[dir="rtl"] .fpt-challenge__fee{justify-items:start;text-align:start}
+.fpt-challenge__fee b{font-family:var(--fpt-font-family-mono);font-variant-numeric:tabular-nums;font-weight:600;font-size:var(--fpt-c-challenge-fee-font);direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+.fpt-challenge__fee b i{font-style:normal;font-family:var(--fpt-font-family-body);font-size:var(--fpt-font-size-xs);font-weight:600;color:var(--fpt-text-muted);margin-inline-start:4px}
+.fpt-challenge__fee small{font-family:var(--fpt-font-ui);font-size:var(--fpt-font-size-xs);color:var(--fpt-text-muted)}
+.fpt-challenge__check{position:absolute;inset-block-start:50%;transform:translateY(-50%);inset-inline-start:calc(50% - 9px);width:18px;height:18px;color:var(--fpt-brand-red);opacity:0}
+.fpt-challenge[aria-pressed="true"] .fpt-challenge__check{opacity:1}
+.fpt-challenge-list{display:grid;gap:10px}
+
+/* ───────────────────────── 18. FPT — rule row .fpt-rule ───────────────────────── */
+/* Challenge rules (target, drawdowns, time, days, split, platform) are rows separated by rules, never boxes: label at the start, value at the end (mono + unit). 48 px. */
+.fpt-rules{display:grid}
+.fpt-rule{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:var(--fpt-c-challenge-rule-row-height);padding:8px 0;border-block-end:1px solid var(--fpt-line-ash);font-size:var(--fpt-font-size-app-body)}
+.fpt-rule:last-child{border-block-end:0}
+.fpt-rule__l{color:var(--fpt-text-secondary);display:flex;align-items:center;gap:8px;min-width:0}
+.fpt-rule__l .fpt-icon{width:18px;height:18px;color:var(--fpt-text-muted);stroke-width:1.75}
+.fpt-rule__v{font-family:var(--fpt-font-ui);font-weight:var(--fpt-font-weight-semibold);text-align:end;white-space:nowrap}
+.fpt-rule__v .fpt-unit,.fpt-rule__v .fpt-num{font-weight:600}
+.fpt-rule--strong{border-block-start:1px solid var(--fpt-line-strong)}
+
+/* ───────────────────────── 19. FPT — drawdown / target progress .fpt-progress--* ───────────────────────── */
+/* Progress against a RULE: target progress fills in the gain colour; drawdown consumption fills in the drawdown amber and switches to the loss coral
+   when breached. Brand red is never a progress fill (red = active state, not a value). Always a word + the figure beside the bar. */
+.fpt-progress--target > span{background:var(--fpt-finance-target)}
+.fpt-progress--drawdown > span{background:var(--fpt-finance-drawdown)}
+.fpt-progress--breached > span{background:var(--fpt-finance-loss)}
+.fpt-progress--active > span{background:var(--fpt-brand-red)}/* the one case: an in-progress step indicator (active state), not a financial value */
+.fpt-rulebar{display:grid;gap:6px;padding:12px 0;border-block-end:1px solid var(--fpt-line-ash)}
+.fpt-rulebar:last-child{border-block-end:0}
+.fpt-rulebar__head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:var(--fpt-font-size-md)}
+.fpt-rulebar__head b{font-weight:var(--fpt-font-weight-semibold)}
+.fpt-rulebar__head span{color:var(--fpt-text-muted);font-size:var(--fpt-font-size-sm);white-space:nowrap}
+.fpt-rulebar__head .fpt-unit{font-weight:600}
+.fpt-rulebar__state{display:inline-flex;align-items:center;gap:5px;font-family:var(--fpt-font-ui);font-size:var(--fpt-font-size-sm);font-weight:var(--fpt-font-weight-semibold)}
+.fpt-rulebar__state .fpt-icon{width:14px;height:14px}
+.fpt-drawdown{color:var(--fpt-finance-drawdown)}
+.fpt-target{color:var(--fpt-finance-target)}
+
+/* ───────────────────────── 20. FPT — phase stepper (Evaluation → Funded) ───────────────────────── */
+/* Two real steps (a real sequence, so numbering is allowed): done = success fill + check, active = brand-red fill (active state), pending = dashed. Horizontal on phones. */
+.fpt-phases{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative}
+.fpt-phase{display:grid;gap:4px;padding-block-start:12px;border-block-start:2px solid var(--fpt-line-ash);position:relative}
+.fpt-phase[data-state="done"]{border-block-start-color:var(--fpt-state-success)}
+.fpt-phase[data-state="active"]{border-block-start-color:var(--fpt-brand-red)}
+.fpt-phase__n{display:inline-flex;align-items:center;gap:6px;font-family:var(--fpt-font-ui);font-size:var(--fpt-font-size-sm);font-weight:var(--fpt-font-weight-semibold);color:var(--fpt-text-muted)}
+.fpt-phase[data-state="done"] .fpt-phase__n{color:var(--fpt-state-success)}
+.fpt-phase[data-state="active"] .fpt-phase__n{color:var(--fpt-text-primary)}
+.fpt-phase__n .fpt-icon{width:14px;height:14px;stroke-width:2.25}
+.fpt-phase__t{font-weight:var(--fpt-font-weight-semibold);font-size:var(--fpt-font-size-app-body)}
+.fpt-phase__s{font-size:var(--fpt-font-size-sm);color:var(--fpt-text-muted)}
+
+/* ───────────────────────── 21. FPT — endorsement "Part of Fiper Global" ───────────────────────── */
+/* Text form (primary on phones): Inter 600 .75rem in the label colour, SENTENCE CASE, no tracking (CR-02, owner 31 Oct 2026); AR = IBM Plex Sans Arabic 600, ls 0 — verbatim strings only
+   (ar.json nav.partOfFiperGlobal / footer.partOf). Lockup form (wide surfaces, decision item 4 PROPOSED geometry): FPT tile H → clear .5H → 1px divider .8H → gap .4H → Fiper lockup .5H. */
+.fpt-badge--endorsement{height:auto;min-height:20px;padding:0;background:none;border:0;border-radius:0;font-family:var(--fpt-c-badge-endorsement-font);font-size:var(--fpt-font-size-sm);font-weight:var(--fpt-font-weight-semibold);letter-spacing:var(--fpt-c-badge-endorsement-letter-spacing);text-transform:none;color:var(--fpt-text-label);white-space:normal}/* = --fpt-c-badge-endorsement-color via the semantic var (paper re-maps it) */
+[lang="ar"] .fpt-badge--endorsement{font-family:var(--fpt-font-family-arabic);letter-spacing:0;text-transform:none}
+.fpt-endorse{display:inline-flex;align-items:center;gap:0;direction:ltr}/* lockup form; never mirrors */
+.fpt-endorse__tile{height:var(--fpt-size-logo-nav-h);width:var(--fpt-size-logo-nav-h);display:block}/* logo v2 tile as drawn (svg/fpt-tile.svg) */
+.fpt-endorse__div{width:1px;height:calc(var(--fpt-size-logo-nav-h) * .8);background:var(--fpt-line-ash);margin-inline:calc(var(--fpt-size-logo-nav-h) * .5) calc(var(--fpt-size-logo-nav-h) * .4)}
+.fpt-endorse__fiper{height:calc(var(--fpt-size-logo-nav-h) * .5);width:auto;display:block}
+/* brand row (header, hero): tile + name as text (no white wordmark exists — MISSING ASSET) */
+.fpt-brand{display:inline-flex;align-items:center;gap:10px;min-height:var(--fpt-size-touch-min);min-width:var(--fpt-size-touch-min);direction:ltr;color:inherit;text-decoration:none}
+.fpt-brand__tile{height:var(--fpt-size-logo-nav-h);width:var(--fpt-size-logo-nav-h);display:block;flex:none}/* logo v2 tile as drawn */
+.fpt-brand__lockup{height:var(--fpt-size-logo-nav-h);width:auto;display:block;flex:none}/* logo v2: svg/fpt-lockup-horizontal-en-white.svg (dark) / -en.svg (paper) / -ar(-white).svg (Arabic surfaces) at the nav height — replaces tile + name text */
+.fpt-brand__lockup--app{height:var(--fpt-size-logo-app-h)}
+.fpt-brand--stack{display:grid;gap:3px;align-content:center;justify-items:start}/* site header on phones: the lockup (32 px) above the endorsement line fits the 46 px slot — the horizontal lockup is wider than tile + text was */
+.fpt-brand--stack .fpt-brand__lockup{height:var(--fpt-size-logo-app-h)}
+.fpt-brand__tile--app{height:var(--fpt-size-logo-app-h);width:var(--fpt-size-logo-app-h)}
+.fpt-brand__name{display:grid;gap:3px;line-height:1}
+.fpt-brand__name b{font-family:var(--fpt-font-family-body);font-weight:var(--fpt-font-weight-semibold);font-size:var(--fpt-font-size-site-brand);letter-spacing:0;color:var(--fpt-text-primary);white-space:nowrap}
+.fpt-brand__name .fpt-badge--endorsement{font-size:var(--fpt-font-size-xs)}
+/* site header variant: 64 px, tile 46 */
+.fpt-header--site{height:calc(var(--fpt-size-header-h) + env(safe-area-inset-top));grid-template-columns:1fr auto;padding-inline:var(--fpt-space-phone-gutter)}
+/* ───────────────────────── 22. FPT — partner row (cTrader) ───────────────────────── */
+/* The only platform is cTrader. Official cTrader SVG from brand/assets/third-party/ctrader/, unmodified, optical height = the FPT tile height, divided by a 1px rule. MT5 is never shown. */
+.fpt-partner{display:inline-flex;align-items:center;gap:0;direction:ltr}
+.fpt-partner__tile{height:32px;width:32px;display:block}/* logo v2 tile as drawn */
+.fpt-partner__div{width:1px;height:32px;background:var(--fpt-line-ash);margin-inline:16px}
+.fpt-partner__logo{height:22px;width:auto;display:block}
+.fpt-partner__text{font-family:var(--fpt-font-ui);font-size:var(--fpt-font-size-sm);color:var(--fpt-text-muted);margin-inline-start:10px;direction:inherit}
+
+/* ───────────────────────── 23. FPT — equity chart legend (target / floors / band) ───────────────────────── */
+.fpt-chart__legend .lt{color:var(--fpt-chart-target)}.fpt-chart__legend .lf{color:var(--fpt-chart-floor)}.fpt-chart__legend .lb{color:var(--fpt-chart-benchmark)}
+.fpt-chart__legend .lt i,.fpt-chart__legend .lf i,.fpt-chart__legend .lb i{background:repeating-linear-gradient(90deg,currentColor 0 3px,transparent 3px 6px);height:2px;width:14px}
+.fpt-chart__legend .lband i{height:8px;width:14px;background:var(--fpt-chart-band);border:1px solid var(--fpt-chart-floor)}
+.fpt-chart__legend .lband{color:var(--fpt-text-muted)}
+.fpt-chart__legend .ld i{width:6px;height:6px;border-radius:50%;background:var(--fpt-chart-dot)}
+.fpt-chart__legend .ld{color:var(--fpt-text-muted)}
+
+/* ───────────────────────── 24. FPT — paper surfaces (documents / e-mail / print) ───────────────────────── */
+/* .fpt-paper (tokens.css) re-maps the semantic variables; components below only need the paper line colours for solid rules. Not an app theme. */
+.fpt-paper .fpt-group,.fpt-paper .fpt-card,.fpt-paper .fpt-chart{border-color:var(--fpt-paper-line-solid)}
+.fpt-paper .fpt-btn[disabled],.fpt-paper .fpt-input[disabled]{background:var(--fpt-paper-disabled-bg);color:var(--fpt-paper-disabled-fg)}
+.fpt-paper .fpt-badge--neutral{background:var(--fpt-paper-ash)}
+.fpt-paper .fpt-header,.fpt-paper .fpt-tabbar{display:none}/* paper surfaces have no app chrome */
+.fpt-paper .fpt-figure--ruled{border-block-start-color:var(--fpt-paper-text)}
+
+/* SAMPLE chip: every reference figure is sample data — never a performance claim */
+.fpt-sample{display:inline-flex;align-items:center;font-family:var(--fpt-font-ui);font-size:11px;font-weight:600;letter-spacing:0;padding:3px 9px;border-radius:var(--fpt-radius-pill);background:var(--fpt-state-warning-wash);border:1px solid var(--fpt-state-warning);color:var(--fpt-state-warning);direction:ltr}

@@ -1,49 +1,47 @@
 {
+  "common": {
+    "sampleChip": "Dados de exemplo · SAMPLE",
+    "language": "Idioma",
+    "mainNav": "Navegação principal",
+    "closeMenu": "Fechar menu",
+    "openMenu": "Abrir menu",
+    "days_one": "{{count}} dia",
+    "days_other": "{{count}} dias",
+    "evaluationSize": "Avaliação {{size}}",
+    "gain": "ganho",
+    "loss": "perda",
+    "open": "Abrir",
+    "yes": "Sim",
+    "no": "Não"
+  },
   "meta": {
     "title": "FPT — Fiper Pro Traders | Projetado para Trading Rápido e Inteligente",
-    "description": "Fiper Pro Traders (FPT) — Parte da Fiper Global. Prove suas habilidades de trading, acesse capital financiado de até $200K com divisão de lucros de 80%."
+    "description": "Fiper Pro Traders (FPT) — Parte da Fiper Global. Prove suas habilidades de trading, acesse capital financiado de até $200K com divisão de lucros de 80%.",
+    "ogImageAlt": "Fiper Pro Traders — Investing involves risk",
+    "keywords": "prop trading, conta financiada, FPT, Fiper Pro Traders, Fiper Global, avaliação de trading, cTrader"
   },
   "nav": {
     "challenges": "Desafios",
-    "pricing": "Preços",
-    "howItWorks": "Como Funciona",
-    "ecosystem": "Ecossistema",
     "about": "Sobre",
     "login": "Entrar",
     "startChallenge": "Iniciar Desafio FPT",
     "home": "Início",
     "help": "Ajuda",
-    "partners": "Parceiros"
+    "partners": "Parceiros",
+    "contact": "Contato"
   },
   "hero": {
     "eyebrow": "PROJETADO PARA TRADING RÁPIDO E INTELIGENTE",
     "title1": "Opere com Confiança.",
     "title2": "Seja Financiado.",
-    "subtitle": "Prove suas habilidades de trading, acesse capital financiado e opere em um ambiente estruturado projetado para traders sérios.",
+    "subtitle": "Passe numa avaliação de fase única em uma conta simulada e opere uma conta financiada com 80 % de participação na recompensa. Regras claras, publicadas antes de pagar.",
     "ctaPrimary": "Iniciar Desafio FPT",
     "ctaSecondary": "Ver Planos",
-    "trustpilot": "Trustpilot 4.2 · Excelente",
     "stats": {
       "maxAccount": "Conta Máx.",
       "profitSplit": "Divisão de Lucros",
       "maxAccounts": "Contas Máx.",
       "leverage": "Alavancagem"
-    }
-  },
-  "trustBar": {
-    "fundedAccounts": "Contas Financiadas",
-    "rewardedTraders": "Traders Recompensados",
-    "totalRewarded": "Total Recompensado",
-    "countries": "Países",
-    "support": "Suporte"
-  },
-  "valueProp": {
-    "title": "Um Ecossistema Completo de Trading — Não Apenas uma Prop Firm",
-    "features": {
-      "evaluation": "Modelo de avaliação estruturado",
-      "environment": "Ambiente profissional de trading",
-      "dashboard": "Painel avançado de desempenho",
-      "funding": "Processo de financiamento fluido"
     }
   },
   "keyRules": {
@@ -52,16 +50,17 @@
     "dailyDrawdown": "Drawdown Diário",
     "maxDrawdown": "Drawdown Máximo",
     "minDays": "Dias Mín. de Trading",
-    "minDaysValue": "Avaliação: 5 / Financiado: 10",
+    "minDaysValue": "Avaliação: {{evaluation}} / Financiada: {{funded}}",
     "timeLimit": "Limite de Tempo",
-    "timeLimitValue": "Aplicável",
     "leverage": "Alavancagem",
-    "leverageValue": "Até 1:100"
+    "leverageValue": "Até {{leverage}} (forex)",
+    "eyebrow": "As regras do jogo"
   },
   "profitSplit": {
     "title": "Ganhe até",
-    "highlight": "80%",
-    "subtitle": "do seu desempenho de trading"
+    "subtitle": "do seu desempenho de trading",
+    "eyebrow": "Participação na recompensa",
+    "body": "{{share}} do lucro da conta financiada, solicitado em ciclos de {{cycle}} dias."
   },
   "howItWorks": {
     "title": "Como Funciona",
@@ -70,11 +69,12 @@
     "step2Title": "Passe na Avaliação",
     "step2Desc": "Atinja a meta de lucro respeitando os parâmetros de risco.",
     "step3Title": "Seja Financiado",
-    "step3Desc": "Acesse uma conta financiada e comece a operar nas condições da firma."
+    "step3Desc": "Receba uma conta financiada e continue operando com os mesmos limites de perda.",
+    "eyebrow": "O caminho até o financiamento"
   },
   "pricingPreview": {
-    "mostPopular": "MAIS POPULAR",
-    "oneTime": "(pagamento único)",
+    "mostPopular": "Mais popular",
+    "oneTime": "(taxa única)",
     "features": {
       "accountSize": "Tamanho da Conta",
       "profitTarget": "Meta de Lucro",
@@ -83,14 +83,44 @@
       "minDays": "Dias Mín. de Trading",
       "profitSplit": "Divisão de Lucros",
       "refund": "Reembolso",
-      "refundValue": "Não disponível"
+      "refundValue": "Não reembolsável após a entrega"
     },
     "cta": "Iniciar Desafio",
-    "viewAll": "Ver Todos os Tamanhos de Conta"
+    "viewAll": "Ver Todos os Tamanhos de Conta",
+    "eyebrow": "A escolha dos traders",
+    "title": "{{product}}",
+    "subtitle": "O tamanho de referência. Uma taxa, todas as regras."
   },
   "dashboardPreview": {
-    "title": "Acompanhe seu Desempenho em Tempo Real",
-    "subtitle": "Um painel profissional projetado para traders sérios."
+    "title": "Acompanhe seu desempenho",
+    "subtitle": "Prévia do painel da área do cliente. Dados de exemplo — não estatísticas.",
+    "eyebrow": "O painel do trader",
+    "nav": {
+      "overview": "Visão geral",
+      "accounts": "Contas",
+      "trades": "Operações",
+      "payouts": "Recompensas",
+      "settings": "Configurações"
+    },
+    "activeAccount": "Conta ativa",
+    "cols": {
+      "pair": "Símbolo",
+      "side": "Lado",
+      "size": "Lotes",
+      "entry": "Entrada",
+      "exit": "Saída",
+      "pnl": "P&L"
+    },
+    "long": "Compra",
+    "short": "Venda",
+    "performance": "Desempenho",
+    "metrics": {
+      "balance": "Saldo",
+      "dailyPnl": "P&L diário",
+      "winRate": "Taxa de acerto",
+      "profitFactor": "Fator de lucro"
+    },
+    "sampleNote": "Todos os números acima são dados de exemplo; não são o desempenho de nenhum trader."
   },
   "fptCard": {
     "title": "Acesse seus Lucros com o Fiper Card",
@@ -115,11 +145,23 @@
     },
     "note1": "Saques de lucros estão sujeitos a processos internos de aprovação e condições de pagamento.",
     "note2": "A disponibilidade do cartão depende do status da conta e elegibilidade.",
-    "cta": "Obtenha seu FPT Card"
+    "cta": "Obtenha seu FPT Card",
+    "eyebrow": "Fiper Card",
+    "imageAlt": "Cartão físico Fiper"
   },
   "platforms": {
-    "title": "Opere em Plataformas Líderes do Setor",
-    "subtitle": "Acesse mercados globais através das plataformas de trading mais confiáveis do mundo."
+    "title": "Opere no cTrader",
+    "subtitle": "As contas FPT são acessadas pelo cTrader, operado por um fornecedor de tecnologia independente.",
+    "eyebrow": "Plataforma de trading",
+    "official": "Plataforma de trading oficial",
+    "headline": "cTrader — o terminal de trading.",
+    "body": "Profundidade de mercado, execução algorítmica e um app móvel completo. Disponível para cada avaliação e conta financiada da FPT.",
+    "features": {
+      "dom": "Profundidade de mercado",
+      "algo": "cBots e cAlgo",
+      "level2": "Preços de nível II",
+      "mobile": "iOS, Android e web"
+    }
   },
   "ecosystem": {
     "title": "Parte do Ecossistema Fiper Global",
@@ -127,55 +169,40 @@
     "fpt": {
       "title": "FPT",
       "desc": "Desafios de Prop Trading",
-      "badge": "Você Está Aqui"
+      "badge": "Você Está Aqui",
+      "label": "Prop trading"
     },
     "card": {
       "title": "Fiper Card",
       "desc": "Acesso Instantâneo aos Lucros",
-      "badge": "Ativo"
+      "badge": "Disponível",
+      "label": "Acesso ao capital"
     },
     "crm": {
       "title": "Fiper CRM",
       "desc": "Seu Centro de Comando",
-      "badge": "Ativo"
+      "badge": "Disponível",
+      "label": "Centro de comando"
     },
-    "footerNote": "Visite fiperglobal.com (em breve) para saber mais."
-  },
-  "traderTools": {
-    "title": "Ferramentas para Traders Inteligentes",
-    "subtitle": "Tudo que você precisa para acompanhar, analisar e otimizar seu desempenho.",
-    "ai": {
-      "title": "Análise com Assistente IA",
-      "desc": "Acompanhe seu progresso, entenda seus padrões de trading e otimize seus resultados com insights alimentados por IA."
-    },
-    "leaderboard": {
-      "title": "Ranking Real de Traders",
-      "desc": "Veja sua posição entre os melhores traders globais. Compita, aprenda e cresça com a comunidade FPT."
-    }
-  },
-  "traderStories": {
-    "title": "De Traders, para Traders",
-    "subtitle": "Resultados reais da nossa comunidade global."
+    "footerNote": "Visite fiperglobal.com (em breve) para saber mais.",
+    "eyebrow": "Com a tecnologia da Fiper Global"
   },
   "faq": {
     "title": "Perguntas Frequentes",
     "q1": "Como começar?",
     "a1": "Escolha um tamanho de desafio, complete o registro e comece a operar em nossa plataforma. A avaliação começa imediatamente após a confirmação do pagamento.",
     "q2": "As taxas são reembolsáveis?",
-    "a2": "As taxas do desafio são únicas e não reembolsáveis. No entanto, você mantém sua participação total nos lucros após ser financiado.",
+    "a2": "A taxa é única. Só é reembolsável antes da entrega da sua conta e nos casos previstos na política de reembolso e cancelamento; após a entrega não é reembolsável.",
     "q3": "Quanto tempo até ser financiado?",
-    "a3": "Após atingir a meta de lucro e completar os dias mínimos de trading, a verificação da conta geralmente leva de 1 a 3 dias úteis.",
+    "a3": "Após atingir a meta de lucro e completar os dias mínimos de trading, a conta financiada é entregue em até 2 dias úteis (horário de Dubai).",
     "q4": "Como retiro meus lucros?",
-    "a4": "Os lucros podem ser retirados via Fiper Card (instantâneo) ou transferência bancária após o período mínimo de trading financiado.",
+    "a4": "As recompensas são pagas em criptomoeda ou por transferência interna para a sua conta na Fiper, após pelo menos 10 dias de trading na conta financiada e um ciclo completo de 14 dias.",
     "q5": "Quais mercados posso operar?",
-    "a5": "Acesse forex, índices, commodities e criptomoedas selecionadas nas plataformas MT4, MT5 e cTrader.",
+    "a5": "Forex, índices, commodities e criptomoedas selecionadas no cTrader.",
     "q6": "Preciso de experiência prévia?",
     "a6": "Nenhuma experiência formal é exigida, mas entender gestão de risco e as regras de trading é essencial para o sucesso.",
-    "seeAll": "Ver todas as perguntas"
-  },
-  "finalCta": {
-    "title": "Inicie seu desafio hoje e leve seu trading ao próximo nível.",
-    "cta": "Iniciar Desafio"
+    "seeAll": "Ver todas as perguntas",
+    "eyebrow": "Antes de começar"
   },
   "footer": {
     "tagline": "Projetado para Trading Rápido e Inteligente",
@@ -185,62 +212,24 @@
     "legal": "Legal",
     "links": {
       "challenges": "Desafios FPT",
-      "pricing": "Preços",
       "fiperCard": "Fiper Card",
-      "aboutFiperGlobal": "Sobre a Fiper Global",
-      "fiperCRM": "Fiper CRM",
       "helpCenter": "Central de Ajuda",
       "fiperGlobalSite": "Fiper Global",
-      "terms": "Termos de Serviço",
-      "privacy": "Política de Privacidade",
-      "cookies": "Política de Cookies",
-      "refund": "Política de Reembolso",
-      "risk": "Divulgação de Riscos"
+      "terms": "Terms and Conditions",
+      "privacy": "Privacy Policy",
+      "refund": "Refund and Cancellation Policy",
+      "risk": "Risk Disclosure Statement",
+      "partners": "Programa de parceiros",
+      "contact": "Contato",
+      "about": "Sobre a FPT"
     },
     "copyright": "© 2026 Fiper Pro Traders — Uma Empresa Fiper Global. Todos os direitos reservados."
   },
-  "challenges": {
-    "title": "Prove suas Habilidades. Acesse Capital Financiado.",
-    "subtitle": "Escolha entre três caminhos estruturados projetados para diferentes estilos de trading.",
-    "rules": {
-      "profitTarget": "Meta de Lucro",
-      "dailyDrawdown": "Drawdown Diário",
-      "maxDrawdown": "Drawdown Máximo",
-      "minDaysPhase1": "Dias Mínimos de Trading",
-      "minDaysFunded": "Dias Mín. Financiados",
-      "timeLimit": "Limite de Tempo",
-      "timeLimitValue": "Sim",
-      "leverage": "Alavancagem",
-      "leverageValue": "Até 1:100 (dependendo do instrumento)",
-      "maxAccounts": "Contas Máx. por Usuário"
-    },
-    "note": "As condições de trading podem variar dependendo do instrumento e das condições de mercado.",
-    "cta": "Iniciar Desafio"
-  },
   "pricing": {
-    "title": "Escolha seu Desafio",
-    "subtitle": "Inicie sua jornada e prove sua disciplina de trading.",
     "badges": {
       "oneTime": "Pagamento único",
       "nonRefundable": "Não reembolsável",
       "noRetry": "Sem nova tentativa incluída"
-    },
-    "tabs": {
-      "twoStep": "Desafio de 2 Fases",
-      "oneStep": "Desafio de 1 Fase",
-      "instant": "Financiamento Instantâneo"
-    },
-    "accountSize": "Tamanho da Conta",
-    "currency": "Moeda",
-    "calculator": {
-      "title": "Estime seus Ganhos",
-      "performance": "Desempenho Mensal Estimado",
-      "output": "Ganhos Mensais Estimados",
-      "disclaimer": "Apenas estimativas. O desempenho passado não garante resultados futuros."
-    },
-    "compare": {
-      "button": "Comparar Planos Lado a Lado",
-      "title": "Comparar Planos"
     }
   },
   "whatsapp": {
@@ -251,26 +240,24 @@
     "eyebrow": "A Avaliação",
     "heroTitle1": "Prove suas habilidades.",
     "heroTitle2": "Obtenha financiamento.",
-    "heroSubtitle": "Uma fase de avaliação. Regras claras. Até 80% de divisão de lucros em conta financiada.",
-    "signIn": "Entrar",
-    "startChallenge": "Iniciar desafio",
+    "heroSubtitle": "Uma fase de avaliação. Regras claras. 80 % de participação na recompensa em uma conta financiada.",
     "howItWorksEyebrow": "Como funciona",
     "howItWorksTitle": "Uma única fase. Caminho direto para o financiamento.",
-    "howItWorksSubtitle": "Passe na avaliação, depois opere com capital real.",
+    "howItWorksSubtitle": "Passe na avaliação e depois opere em uma conta financiada.",
     "phase1Label": "Avaliação (apenas uma fase)",
-    "phase1Subtitle": "Avaliação demo — prove sua disciplina e consistência em uma única fase.",
+    "phase1Subtitle": "Avaliação simulada — prove sua disciplina e consistência em uma única fase.",
     "phase2Label": "Receba Financiamento",
-    "phase2Subtitle": "Conta financiada — opere com capital real após passar na avaliação.",
+    "phase2Subtitle": "Conta financiada — opere em uma conta financiada após passar na avaliação.",
     "pricingEyebrow": "Preços",
     "pricingTitle": "Taxa única. Sem assinatura.",
     "pricingSubtitle": "Escolha o tamanho da sua conta e comece sua avaliação hoje.",
     "accountSize": "Tamanho da conta",
-    "mostPopular": "Popular",
+    "mostPopular": "Mais popular",
     "currencyLabel": "Moeda",
     "convertedNote": "Convertido a taxas indicativas. Liquidação em USD.",
     "challengeLabel": "Desafio FPT",
     "accountLabel": "Conta",
-    "oneTime": "pagamento único",
+    "oneTime": "taxa única",
     "getStarted": "Começar",
     "accountSizeLabel": "Tamanho da conta",
     "profitTarget": "Meta de lucro",
@@ -303,15 +290,24 @@
       "swapFree": "Sem swap",
       "minPayout": "Pagamento mínimo",
       "maxPayout": "Pagamento máximo",
-      "profitShare": "Divisão de lucros"
+      "profitShare": "Divisão de lucros",
+      "payoutCycle": "Ciclo de recompensa",
+      "commission": "Comissão (forex, metais)",
+      "commissionValue": "{{amount}} por lote",
+      "inactivity": "Limite de inatividade",
+      "newsCap": "Regra de notícias",
+      "newsCapValue": "Teto de {{cap}} nos {{minutes}} minutos em torno de uma divulgação"
     },
     "leverage": {
       "forex": "Forex",
       "metals": "Metais",
       "indices": "Índices",
-      "commodities": "Commodities",
-      "crypto": "Cripto"
-    }
+      "crypto": "Cripto",
+      "energy": "Energia"
+    },
+    "chooseSize": "Escolher um tamanho de conta",
+    "metaDescription": "Regras e taxas da avaliação FPT — cinco tamanhos de conta de 10,000 USD a 200,000 USD, uma fase, limites publicados.",
+    "metaKeywords": "avaliação prop trading, taxas FPT, conta financiada"
   },
   "about": {
     "principles": {
@@ -323,12 +319,6 @@
       "p3body": "Avaliação, financiamento, pagamento, cartão. Sem truques.",
       "p4title": "Infraestrutura acima do marketing",
       "p4body": "Investimos em execução, liquidez e dashboards."
-    },
-    "stats": {
-      "countries": "Países atendidos",
-      "profitShare": "Divisão de lucros",
-      "products": "Produtos coordenados",
-      "support": "Cobertura de suporte"
     },
     "ecosystem": {
       "fptTag": "Trading Prop",
@@ -345,9 +335,6 @@
     "ecosystemEyebrow": "Parte de algo maior",
     "ecosystemTitle": "Fiper Global, do início ao fim.",
     "ecosystemSubtitle": "FPT é um dos três produtos coordenados sob a Fiper Global.",
-    "ctaEyebrow": "Comece quando estiver pronto",
-    "ctaTitle1": "A infraestrutura está construída.",
-    "ctaTitle2": "O próximo movimento é seu.",
     "getStarted": "Começar",
     "talkToTeam": "Falar com a equipe",
     "story": {
@@ -359,7 +346,8 @@
       "content": "Acreditamos que traders talentosos merecem acesso ao capital sem barreiras desnecessárias. FPT oferece um caminho transparente da avaliação ao trading financiado."
     },
     "subtitle": "FPT é a divisão de prop trading da Fiper Global — uma infraestrutura financeira integrada para traders modernos.",
-    "title": "Projetado para um Trading Rápido e Inteligente"
+    "title": "Projetado para um Trading Rápido e Inteligente",
+    "metaDescription": "A FPT é o braço de prop trading da Fiper Global. Regras transparentes, o risco antes da recompensa, infraestrutura antes de marketing."
   },
   "contact": {
     "title": "Entre em Contato",
@@ -367,64 +355,17 @@
     "address": {
       "tag": "Visite-nos",
       "title": "Nosso escritório",
-      "line1": "Meydan Grandstand, 6º andar",
-      "line2": "Meydan Road, Nad Al Sheba",
-      "line3": "Dubai, E.A.U.",
       "directions": "Como chegar"
     },
-    "pills": {
-      "support": "Suporte trader 24/7",
-      "countries": "12+ países",
-      "reply": "Resposta em 4h"
-    },
-    "channels": {
-      "c1tag": "Suporte trader",
-      "c1title": "Ajuda com conta e avaliação",
-      "c1body": "Resposta em 4 horas, 24/7.",
-      "c2tag": "Institucional",
-      "c2title": "Parcerias e mesas",
-      "c2body": "Provedores de liquidez e mesas prop.",
-      "c3tag": "Imprensa",
-      "c3title": "Imprensa e comunicações",
-      "c3body": "Solicitações editoriais e entrevistas."
-    },
-    "topics": {
-      "t1": "Regras de avaliação",
-      "t2": "Conta financiada",
-      "t3": "Pagamentos e Fiper Card",
-      "t4": "Acesso à plataforma",
-      "t5": "Parcerias",
-      "t6": "Outra coisa"
-    },
-    "infoBlocks": {
-      "sla": "SLA de resposta",
-      "slaValue": "< 4 horas",
-      "coverage": "Cobertura",
-      "coverageValue": "24 / 7",
-      "languages": "Idiomas",
-      "languagesValue": "EN · ES · FR",
-      "hq": "Sede",
-      "hqValue": "Fiper Global"
-    },
     "eyebrow": "Entre em contato",
-    "formEyebrow": "Enviar uma mensagem",
-    "formTitle": "Diga-nos o que você precisa.",
-    "whySimpleEyebrow": "Por que mantemos simples",
-    "whySimpleTitle1": "Você escreve para um humano.",
-    "whySimpleTitle2": "Um humano responde.",
-    "whySimpleBody": "Sem bots. Cada mensagem chega a um membro da equipe.",
-    "alreadyTrading": "Já está operando?",
-    "alreadyTradingBody": "Abra um ticket pelo dashboard.",
-    "openCRM": "Abrir CRM",
-    "formPrivacy": "Ao enviar, você concorda em ser contatado.",
-    "sending": "Enviando…",
-    "messageSent": "Mensagem recebida.",
-    "messageSentBody": "Resposta em 4 horas.",
-    "sendAnother": "Enviar outra mensagem",
-    "ctaEyebrow": "Prefere pular o formulário?",
-    "ctaTitle1": "Comece a avaliação.",
-    "ctaTitle2": "Nos encontraremos lá dentro.",
-    "learnAbout": "Conhecer FPT"
+    "metaDescription": "Fale com a equipe da FPT pelo WhatsApp. Escritório registrado em Meydan, Dubai.",
+    "channelsTitle": "Canais de contato",
+    "whatsapp": {
+      "title": "Suporte pelo WhatsApp",
+      "desc": "Fale com a equipe de suporte",
+      "cta": "Iniciar a conversa"
+    },
+    "clientAreaNote": "Já é cliente? Perguntas sobre uma conta são respondidas pelos canais de suporte publicados na área do cliente."
   },
   "help": {
     "popular": {
@@ -447,78 +388,57 @@
     "articles": "artigos",
     "article": "artigo",
     "stillNeedHelp": "Ainda precisa de ajuda?",
-    "stillNeedHelpBody": "Nossa equipe está disponível 24/7.",
+    "stillNeedHelpBody": "Não encontrou o que procurava? Escreva para nós no WhatsApp.",
     "contactSupport": "Contatar suporte",
     "startChallenge": "Iniciar desafio",
     "whatsappBanner": "Precisa de ajuda? Converse no WhatsApp.",
-    "searchPlaceholder": "Buscar respostas…"
+    "searchPlaceholder": "Buscar respostas…",
+    "metaDescription": "Central de ajuda da FPT — respostas sobre a avaliação, contas financiadas, recompensas, o Fiper Card, as regras de trading e a plataforma.",
+    "readMore": "Ler mais",
+    "breadcrumb": "Trilha de navegação",
+    "searchLabel": "Pesquisar na central de ajuda",
+    "clearSearch": "Limpar pesquisa",
+    "searchHint": "Digite para pesquisar ou navegue pelos tópicos abaixo.",
+    "searchNoMatch": "Nenhum resultado — tente outras palavras."
   },
   "partners": {
     "eyebrow": "Programa de Parceiros FPT",
     "hero": {
       "title": "Ganhe com a FPT",
-      "subtitle": "Junte-se ao Programa de Parceiros FPT e ganhe comissões por cada trader financiado que indicar."
+      "subtitle": "Participe do programa de parceiros da FPT e ganhe uma comissão por cada avaliação comprada pelo seu link de indicação."
     },
     "cta": {
       "eyebrow": "Pronto para começar?",
       "title": "Transforme sua audiência em renda.",
-      "subtitle": "Cadastre-se em minutos e comece a ganhar por cada trader que indicar.",
+      "subtitle": "Cadastre-se e compartilhe seu link de indicação.",
       "button": "Torne-se Parceiro"
     },
     "tiersEyebrow": "Níveis de Comissão",
     "tiersTitle": "Ganhe mais à medida que cresce.",
-    "tiersSubtitle": "Sua comissão aumenta automaticamente conforme suas vendas mensais crescem.",
+    "tiersSubtitle": "Sua taxa de comissão sobe automaticamente com suas vendas mensais.",
     "tiers": {
-      "popular": "Mais Popular",
-      "standard": {
-        "title": "Afiliado Padrão",
-        "commission": "15%",
-        "description": "Sem mínimo, comece hoje."
-      },
-      "silver": {
-        "title": "Parceiro Silver",
-        "commission": "17,5%",
-        "description": "10+ vendas por mês."
-      },
-      "gold": {
-        "title": "Parceiro Gold",
-        "commission": "20%",
-        "description": "25+ vendas por mês."
-      },
-      "vip": {
-        "title": "Parceiro VIP",
-        "commission": "Personalizada",
-        "description": "Alto volume? Fale conosco."
-      }
+      "range": "{{min}}–{{max}} vendas por mês.",
+      "from": "{{min}}+ vendas por mês."
     },
     "featuresEyebrow": "Benefícios do Programa",
-    "featuresTitle": "Tudo o que você precisa para ter sucesso.",
-    "featuresSubtitle": "Ferramentas, rastreamento e recompensas para maximizar seus ganhos.",
+    "featuresTitle": "O que você recebe",
+    "tiersNote": "A comissão é uma parte da taxa de avaliação paga pelo cliente indicado. Os níveis são contados sobre as vendas mensais, como publicado na área do cliente.",
     "features": {
-      "cookie": {
-        "title": "Cookie de Rastreamento de 90 Dias",
-        "desc": "As indicações são rastreadas por 90 dias após o primeiro clique."
+      "link": {
+        "title": "Link e código de indicação pessoais",
+        "desc": "Cada indicação carrega o seu código; vendas e comissão aparecem no seu painel de parceiro."
       },
-      "payouts": {
-        "title": "Pagamentos Semanais",
-        "desc": "Receba toda semana — sem longas esperas."
-      },
-      "coupons": {
-        "title": "Códigos de Cupom Pessoais",
-        "desc": "Compartilhe códigos de desconto que convertem e creditam você."
-      },
-      "contests": {
-        "title": "Concursos Mensais de Afiliados",
-        "desc": "Concorra a prêmios em dinheiro todo mês."
-      },
-      "leaderboard": {
-        "title": "Ranking Público",
-        "desc": "Suba no ranking e mostre seu desempenho publicamente."
-      },
-      "subAffiliate": {
-        "title": "Sistema de Subafiliados",
-        "desc": "Recrute outros afiliados e ganhe 2% de comissão sobre as vendas deles."
+      "tiers": {
+        "title": "Subida de nível automática",
+        "desc": "O nível acompanha suas vendas mensais — sem pedido, sem espera."
       }
-    }
+    },
+    "metaDescription": "O programa de parceiros da FPT: três níveis de comissão sobre as vendas mensais, um link e um código de indicação pessoais."
+  },
+  "notFound": {
+    "title": "Esta página não existe.",
+    "body": "O endereço pode estar errado ou a página foi movida.",
+    "home": "Ir para a página inicial",
+    "help": "Abrir a central de ajuda"
   }
 }

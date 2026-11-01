@@ -1,0 +1,19 @@
+// FPT Brand v1.0 — numeric-unit cohesion gate (inherited from the parent): (1) HTML/exports — every .unit/.fpt-unit/.fpt-num/bdi element renders on ONE line; (2) PDF — every reference unit is found contiguous on one text line. Needs playwright-core + pdfjs-dist (devDependencies). usage: node brand/scripts/check-units.mjs [--ref=page.html] page.html … file.pdf …
+// (2) PDF — no text line starts with a detached "%" / currency code or ends with a lone sign. usage: node scripts/check-units.mjs page.html … file.pdf …
+import fs from 'node:fs'; import path from 'node:path'; import { chromium } from 'playwright-core'; import os from 'node:os';
+const pwRoot = path.join(os.homedir(), '.cache/ms-playwright'); const pwDir = fs.existsSync(pwRoot) ? fs.readdirSync(pwRoot).filter(d => /^chromium-\d+$/.test(d)).sort().pop() : null;
+const launch = () => chromium.launch({ ...(pwDir ? { executablePath: path.join(pwRoot, pwDir, 'chrome-linux64/chrome') } : {}), args: ['--no-sandbox', '--font-render-hinting=none'] });
+const argv=process.argv.slice(2); const refArg=argv.find(a=>a.startsWith('--ref=')); const files=argv.filter(a=>!a.startsWith('--ref=')); let fail=0; const b=await launch();
+const norm=t=>t.replace(/\s+/g,' ').replace(/[\u200e\u200f\u202a-\u202e\u2066-\u2069]/g,'').trim();
+async function unitsFromHtml(f){ const p=await b.newPage(); await p.goto('file://'+path.resolve(f),{waitUntil:'networkidle'}); const u=await p.evaluate(()=>[...document.querySelectorAll('.unit,.fpt-unit,.fp-unit,bdi.num,span.num,.fpt-num,.fp-num')].map(e=>e.textContent.trim()).filter(t=>/\d/.test(t)&&t.length<=40)); await p.close(); return [...new Set(u.map(norm))]; }
+for (const f of files){
+  if (f.endsWith('.pdf')){ const pdfjs=await import('pdfjs-dist/legacy/build/pdf.mjs'); const doc=await pdfjs.getDocument({data:new Uint8Array(fs.readFileSync(f)),disableFontFace:true}).promise;
+    const units=refArg?await unitsFromHtml(refArg.slice(6)):[]; const lineTexts=[];
+    for (let i=1;i<=doc.numPages;i++){ const tc=await (await doc.getPage(i)).getTextContent(); const lines={}; for(const it of tc.items){ if(!it.str.trim()) continue; const key=Math.round(it.transform[5]); (lines[key]=lines[key]||[]).push({x:it.transform[4],s:it.str}); }
+      for (const arr of Object.values(lines)) lineTexts.push(norm(arr.sort((a,b)=>a.x-b.x).map(a=>a.s).join(''))+' || '+norm(arr.map(a=>a.s).join(' '))); }
+    const lines=lineTexts.map(l=>l.replace(/\s+/g,' ')); const tokensOf=u=>u.split(/[\s·]+/).filter(t=>/\d|%|[A-Z]{3}/.test(t)).map(t=>t.replace(/[^\d.,%A-Za-z+−-]/g,'')).filter(Boolean); const missing=units.filter(u=>{ const toks=tokensOf(u); if(!toks.length) return false; return !lines.some(l=>{const c=l.replace(/[^\d.,%A-Za-z+−-]/g,''); return toks.every(t=>c.includes(t));}); });
+    console.log((missing.length?'FAIL ':'PASS ')+f+' — '+units.length+' reference units; not found contiguous on one PDF line: '+missing.length+(missing.length?' → '+missing.slice(0,10).join(' | '):'')); if(missing.length) fail++; continue; }
+  const p=await b.newPage({viewport:{width:/portfolio|mobile|order|home/.test(f)?390:1000,height:900}}); await p.goto('file://'+path.resolve(f),{waitUntil:'networkidle'}); await p.evaluate(()=>document.fonts.ready);
+  const r=await p.evaluate(()=>{const els=[...document.querySelectorAll('.unit,.fpt-unit,.fp-unit,.fpt-num,.fp-num,bdi,.num')].filter(e=>e.textContent.trim()&&e.offsetParent!==null); const bad=[]; for(const e of els){ const rects=e.getClientRects(); if(rects.length>1){ const ys=new Set([...rects].map(r=>Math.round(r.top))); if(ys.size>1) bad.push(e.textContent.trim().slice(0,30)); } } return {n:els.length,bad}; });
+  console.log((r.bad.length?'FAIL ':'PASS ')+f+' — '+r.n+' units, broken: '+r.bad.length+(r.bad.length?' → '+r.bad.slice(0,6).join(' | '):'')); if(r.bad.length) fail++; await p.close(); }
+await b.close(); process.exit(fail?1:0);

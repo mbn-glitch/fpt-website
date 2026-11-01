@@ -1,114 +1,78 @@
-import { motion } from 'framer-motion';
-import { Cookie, Wallet, Ticket, Trophy, BarChart3, Network, ArrowRight } from 'lucide-react';
+import { Link2, Ticket } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO.jsx';
 import Section, { Eyebrow, SectionHeader } from '../components/ui/Section.jsx';
 import Button from '../components/ui/Button.jsx';
-import WaveBg from '../components/ui/WaveBg.jsx';
+import { REGISTER_URL } from '../data/legal.js';
+import { AFFILIATE_TIERS, pct } from '../data/rules.js';
 
-const REGISTER = 'https://crm.fptraders.com/register';
-
+/**
+ * Partner programme — only what the platform publishes (UXFW-005): the three commission tiers (seed TIERS, by monthly sales) and the
+ * personal referral link / code (affiliates.code, /[locale]/c/[code]). The «90-day cookie», «weekly payouts», «contests», «public
+ * leaderboard», «2 % sub-affiliate override» and «VIP custom» claims have no source in the platform and are removed.
+ */
 export default function Partners() {
-  const { t } = useTranslation();
-
-  const TIERS = [
-    { key: 'standard', highlight: false },
-    { key: 'silver',   highlight: false },
-    { key: 'gold',     highlight: true  },
-    { key: 'vip',      highlight: false },
-  ];
+  const { t, i18n } = useTranslation();
+  const l = i18n.language === 'ar' ? 'ar' : 'en';
 
   const FEATURES = [
-    { icon: Cookie,    key: 'cookie' },
-    { icon: Wallet,    key: 'payouts' },
-    { icon: Ticket,    key: 'coupons' },
-    { icon: Trophy,    key: 'contests' },
-    { icon: BarChart3, key: 'leaderboard' },
-    { icon: Network,   key: 'subAffiliate' },
+    { icon: Link2, title: t('partners.features.link.title'), desc: t('partners.features.link.desc') },
+    { icon: Ticket, title: t('partners.features.tiers.title'), desc: t('partners.features.tiers.desc') },
   ];
 
   return (
     <>
-      <SEO title={t('partners.hero.title')} path="/partners"
-        description="Join the FPT Partner Program and earn commissions on every funded trader you refer. Tiered payouts up to 20%, weekly payments, and a sub-affiliate override."
-        keywords="FPT partner program, affiliate, prop firm affiliate, trading referral commissions" />
+      <SEO title={t('partners.hero.title')} path="/partners" description={t('partners.metaDescription')} />
 
-      <section className="relative pt-36 sm:pt-44 pb-20 overflow-hidden bg-[#0A0A0A]">
-        <WaveBg opacity={0.25} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] radial-red pointer-events-none" />
-        <div className="relative max-w-5xl mx-auto px-6 sm:px-8 text-center">
-          <Eyebrow dot>{t('partners.eyebrow')}</Eyebrow>
-          <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold leading-[0.98] tracking-tight">
-            <span className="gradient-text">{t('partners.hero.title')}</span>
-          </h1>
-          <p className="mt-8 text-lg sm:text-xl text-secondary max-w-2xl mx-auto leading-relaxed">
-            {t('partners.hero.subtitle')}
-          </p>
-          <div className="mt-10 flex justify-center">
-            <Button href={REGISTER} external size="lg">
-              {t('partners.cta.button')} <ArrowRight size={18} />
-            </Button>
+      <section className="pt-12 sm:pt-20 pb-12 bg-bg">
+        <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
+          <Eyebrow>{t('partners.eyebrow')}</Eyebrow>
+          <h1 className="mt-5 text-4xl sm:text-6xl font-semibold leading-[1.1]">{t('partners.hero.title')}</h1>
+          <p className="mt-6 text-lg sm:text-xl text-secondary max-w-2xl mx-auto leading-relaxed">{t('partners.hero.subtitle')}</p>
+          <div className="mt-8 flex justify-center">
+            <Button href={REGISTER_URL} external size="lg">{t('partners.cta.button')}</Button>
           </div>
         </div>
       </section>
 
-      <Section>
-        <SectionHeader eyebrow={t('partners.tiersEyebrow')} title={t('partners.tiersTitle')}
-          subtitle={t('partners.tiersSubtitle')} center className="mx-auto" />
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {TIERS.map((tier, i) => (
-            <motion.div key={tier.key} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.5, delay: i * 0.08 }}
-              className={`relative flex flex-col bg-[#141414] rounded-2xl p-8 transition-colors ${
-                tier.highlight ? 'border border-[#F42821]/50' : 'border border-subtle hover:border-white/20'
-              }`}>
-              {tier.highlight && (
-                <span className="absolute top-5 right-5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#FCA5A5]">
-                  {t('partners.tiers.popular')}
-                </span>
-              )}
-              <h3 className="text-lg font-semibold">{t(`partners.tiers.${tier.key}.title`)}</h3>
-              <div className="mt-5 text-5xl font-semibold gradient-text leading-none">
-                {t(`partners.tiers.${tier.key}.commission`)}
-              </div>
-              <p className="mt-5 text-sm text-secondary leading-relaxed">
-                {t(`partners.tiers.${tier.key}.description`)}
+      <Section aria-labelledby="partners-tiers-title">
+        <SectionHeader eyebrow={t('partners.tiersEyebrow')} title={<span id="partners-tiers-title">{t('partners.tiersTitle')}</span>} subtitle={t('partners.tiersSubtitle')} center />
+        <ul className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-5">
+          {AFFILIATE_TIERS.map((tier) => (
+            <li key={tier.code} className="flex flex-col bg-card rounded-2xl p-7 border border-subtle">
+              <h3 className="text-lg font-semibold leading-[1.3]">{tier.name[l]}</h3>
+              <div className="mt-4 text-4xl font-semibold text-white fpt-unit">{pct(tier.bps)}</div>
+              <p className="mt-4 text-sm text-secondary leading-relaxed">
+                {tier.max ? t('partners.tiers.range', { min: tier.min, max: tier.max }) : t('partners.tiers.from', { min: tier.min })}
               </p>
-            </motion.div>
+            </li>
           ))}
-        </div>
+        </ul>
+        <p className="mt-6 text-sm text-tertiary text-center max-w-2xl mx-auto">{t('partners.tiersNote')}</p>
       </Section>
 
-      <Section className="bg-[#0A0A0A]">
-        <SectionHeader eyebrow={t('partners.featuresEyebrow')} title={t('partners.featuresTitle')}
-          subtitle={t('partners.featuresSubtitle')} center className="mx-auto" />
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {FEATURES.map((f, i) => (
-            <motion.div key={f.key} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.5, delay: i * 0.06 }}
-              className="bg-[#141414] border border-subtle rounded-2xl p-8 hover:border-white/20 transition-colors">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center gradient-red btn-red-glow">
-                <f.icon size={22} className="text-white" />
+      <Section className="bg-card border-y border-subtle" aria-labelledby="partners-features-title">
+        <SectionHeader eyebrow={t('partners.featuresEyebrow')} title={<span id="partners-features-title">{t('partners.featuresTitle')}</span>} center />
+        <ul className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
+          {FEATURES.map((f) => (
+            <li key={f.title} className="bg-bg border border-subtle rounded-2xl p-7">
+              <div className="w-11 h-11 rounded-xl bg-white/5 border border-subtle flex items-center justify-center">
+                <f.icon size={20} className="text-fg-muted" aria-hidden="true" />
               </div>
-              <h3 className="mt-6 text-lg font-semibold">{t(`partners.features.${f.key}.title`)}</h3>
-              <p className="mt-3 text-[15px] text-secondary leading-relaxed">{t(`partners.features.${f.key}.desc`)}</p>
-            </motion.div>
+              <h3 className="mt-5 text-lg font-semibold leading-[1.3]">{f.title}</h3>
+              <p className="mt-3 text-base text-secondary leading-relaxed">{f.desc}</p>
+            </li>
           ))}
-        </div>
+        </ul>
       </Section>
 
-      <Section className="relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, rgba(163,1,0,0.4) 0%, rgba(0,0,0,0) 60%)' }} />
-        <div className="relative max-w-3xl mx-auto text-center">
+      <Section aria-labelledby="partners-cta-title">
+        <div className="max-w-3xl mx-auto text-center">
           <Eyebrow>{t('partners.cta.eyebrow')}</Eyebrow>
-          <h2 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight">
-            {t('partners.cta.title')}
-          </h2>
-          <p className="mt-6 text-lg text-secondary leading-relaxed">{t('partners.cta.subtitle')}</p>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Button href={REGISTER} external size="lg">
-              {t('partners.cta.button')} <ArrowRight size={18} />
-            </Button>
+          <h2 id="partners-cta-title" className="mt-5 text-3xl sm:text-5xl font-semibold leading-[1.15]">{t('partners.cta.title')}</h2>
+          <p className="mt-5 text-lg text-secondary leading-relaxed">{t('partners.cta.subtitle')}</p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Button href={REGISTER_URL} external size="lg">{t('partners.cta.button')}</Button>
           </div>
         </div>
       </Section>

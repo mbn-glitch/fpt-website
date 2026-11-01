@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>FPT Components v1.0 — Preview</title>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="components.css">
+<style>
+  body{margin:0;padding:0 0 120px;background:var(--fpt-bg);color:var(--fpt-fg)}
+  .pv-bar{position:sticky;top:0;z-index:200;display:flex;gap:8px;align-items:center;padding:10px 16px;background:var(--fpt-ground-coal);border-bottom:1px solid var(--fpt-line-ash);font-family:var(--fpt-font-family-body);font-size:.8rem;direction:ltr}
+  .pv-bar b{margin-inline-end:auto;font-weight:600;color:var(--fpt-text-primary)}.pv-bar b i{font-style:normal;color:var(--fpt-text-label)}
+  .pv-bar button{font:inherit;background:none;border:1px solid var(--fpt-line-input);border-radius:999px;color:var(--fpt-text-primary);padding:6px 12px;cursor:pointer;min-height:44px}
+  .pv-bar button[aria-pressed="true"]{border-color:var(--fpt-brand-red);background:var(--fpt-brand-red-wash)}
+  main{max-width:720px;margin:0 auto;padding:0 var(--fpt-space-phone-gutter)}
+  section.pv{padding:28px 0;border-bottom:1px solid var(--fpt-line-ash)}
+  .pv-n{font-family:var(--fpt-font-family-mono);font-size:.75rem;color:var(--fpt-text-label);direction:ltr;display:inline-block}
+  section.pv h2{font-family:var(--fpt-font-family-body);font-size:1.25rem;font-weight:700;letter-spacing:0;margin:4px 0 14px}
+  [lang="ar"] section.pv h2{font-family:var(--fpt-font-family-arabic);text-transform:none;letter-spacing:0;font-weight:700}
+  .pv-grid{display:grid;gap:12px}
+  .pv-grid>*{min-width:0}
+  .pv-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media (max-width:360px){.pv-2{grid-template-columns:1fr}}
+  .pv-note{font-size:.72rem;color:var(--fpt-text-muted);margin-top:10px}
+  .pv-demo{position:relative;border:1px dashed var(--fpt-line-strong);border-radius:16px;padding:12px;overflow:hidden}
+  .pv-paper{background:var(--fpt-paper-bg)}
+  .en,.ar{display:none}
+  html[lang="ar"] .ar{display:revert}
+  html[lang="en"] .en{display:revert}
+  html[lang="en"] body{font-family:var(--fpt-font-family-body)}
+</style>
+<script>(function(){var l=new URLSearchParams(location.search).get('lang');if(l==='en'){document.documentElement.lang='en';document.documentElement.dir='ltr';}})();</script>
+</head>
+<body>
+<div class="pv-bar">
+  <b>FPT UI <i>v1.0 · dark only</i></b>
+  <button id="t-dir" aria-pressed="true">AR · RTL</button>
+</div>
+<!-- lucide:start — Lucide v0.468.0 (ISC) · brand/icons/lucide -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-house" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />   <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></symbol>
+  <symbol id="i-chart-line" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16" />   <path d="m19 9-5 5-4-4-3 3" /></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" />   <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /></symbol>
+  <symbol id="i-activity" viewBox="0 0 24 24"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2" /></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><line x1="4" x2="20" y1="12" y2="12" />   <line x1="4" x2="20" y1="6" y2="6" />   <line x1="4" x2="20" y1="18" y2="18" /></symbol>
+  <symbol id="i-ellipsis" viewBox="0 0 24 24"><circle cx="12" cy="12" r="1" />   <circle cx="19" cy="12" r="1" />   <circle cx="5" cy="12" r="1" /></symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6" /></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" /></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14" />   <path d="m12 5 7 7-7 7" /></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7" />   <path d="M19 12H5" /></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18" />   <path d="m6 6 12 12" /></symbol>
+  <symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" />   <path d="m9 12 2 2 4-4" /></symbol>
+  <symbol id="i-circle-x" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" />   <path d="m15 9-6 6" />   <path d="m9 9 6 6" /></symbol>
+  <symbol id="i-circle-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" />   <line x1="12" x2="12" y1="8" y2="12" />   <line x1="12" x2="12.01" y1="16" y2="16" /></symbol>
+  <symbol id="i-triangle-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />   <path d="M12 9v4" />   <path d="M12 17h.01" /></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" />   <path d="M12 16v-4" />   <path d="M12 8h.01" /></symbol>
+  <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />   <path d="m9 12 2 2 4-4" /></symbol>
+  <symbol id="i-file-text" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />   <path d="M14 2v4a2 2 0 0 0 2 2h4" />   <path d="M10 9H8" />   <path d="M16 13H8" />   <path d="M16 17H8" /></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" />   <path d="m21 21-4.3-4.3" /></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M10.268 21a2 2 0 0 0 3.464 0" />   <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" />   <polyline points="12 6 12 12 16 14" /></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" />   <path d="M7 11V7a5 5 0 0 1 10 0v4" /></symbol>
+  <symbol id="i-trending-up" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />   <polyline points="16 7 22 7 22 13" /></symbol>
+  <symbol id="i-trending-down" viewBox="0 0 24 24"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7" />   <polyline points="16 17 22 17 22 11" /></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />   <circle cx="12" cy="12" r="3" /></symbol>
+  <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49" />   <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242" />   <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143" />   <path d="m2 2 20 20" /></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M8 2v4" />   <path d="M16 2v4" />   <rect width="18" height="18" x="3" y="4" rx="2" />   <path d="M3 10h18" /></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />   <polyline points="7 10 12 15 17 10" />   <line x1="12" x2="12" y1="15" y2="3" /></symbol>
+  <symbol id="i-share-2" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3" />   <circle cx="6" cy="12" r="3" />   <circle cx="18" cy="19" r="3" />   <line x1="8.59" x2="15.42" y1="13.51" y2="17.49" />   <line x1="15.41" x2="8.59" y1="6.51" y2="10.49" /></symbol>
+  <symbol id="i-refresh-cw" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />   <path d="M21 3v5h-5" />   <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />   <path d="M8 16H3v5" /></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2" />   <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /></symbol>
+  <symbol id="i-credit-card" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2" />   <line x1="2" x2="22" y1="10" y2="10" /></symbol>
+  <symbol id="i-banknote" viewBox="0 0 24 24"><rect width="20" height="12" x="2" y="6" rx="2" />   <circle cx="12" cy="12" r="2" />   <path d="M6 12h.01M18 12h.01" /></symbol>
+  <symbol id="i-badge-check" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />   <path d="m9 12 2 2 4-4" /></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />   <circle cx="12" cy="12" r="3" /></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />   <circle cx="12" cy="7" r="4" /></symbol>
+  <symbol id="i-percent" viewBox="0 0 24 24"><line x1="19" x2="5" y1="5" y2="19" />   <circle cx="6.5" cy="6.5" r="2.5" />   <circle cx="17.5" cy="17.5" r="2.5" /></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" />   <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />   <path d="M2 12h20" /></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2" />   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></symbol>
+  <symbol id="i-external-link" viewBox="0 0 24 24"><path d="M15 3h6v6" />   <path d="M10 14 21 3" />   <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></symbol>
+  <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z" />   <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" />   <path d="M12 17.5v-11" /></symbol>
+  <symbol id="i-chart-candlestick" viewBox="0 0 24 24"><path d="M9 5v4" />   <rect width="4" height="6" x="7" y="9" rx="1" />   <path d="M9 15v2" />   <path d="M17 3v2" />   <rect width="4" height="8" x="15" y="5" rx="1" />   <path d="M17 13v3" />   <path d="M3 3v16a2 2 0 0 0 2 2h16" /></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" />   <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" />   <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" /></symbol>
+  <symbol id="i-log-out" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />   <polyline points="16 17 21 12 16 7" />   <line x1="21" x2="9" y1="12" y2="12" /></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></symbol>
+  <symbol id="i-message-circle" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></symbol>
+  <symbol id="i-loader" viewBox="0 0 24 24"><path d="M12 2v4" />   <path d="m16.2 7.8 2.9-2.9" />   <path d="M18 12h4" />   <path d="m16.2 16.2 2.9 2.9" />   <path d="M12 18v4" />   <path d="m4.9 19.1 2.9-2.9" />   <path d="M2 12h4" />   <path d="m4.9 4.9 2.9 2.9" /></symbol>
+</svg>
+<!-- lucide:end -->
+
+<main>
+
+<!-- 01 -->
+<section class="pv" id="s01">
+  <span class="pv-n">01</span>
+  <h2><span class="ar">الأزرار</span><span class="en">Buttons</span></h2>
+  <div class="pv-grid">
+    <div class="fpt-row">
+      <button class="fpt-btn fpt-btn--primary"><span class="ar">ابدأ التحدي</span><span class="en">Start Challenge</span></button>
+      <button class="fpt-btn fpt-btn--secondary"><span class="ar">حفظ</span><span class="en">Save</span></button>
+      <button class="fpt-btn fpt-btn--ghost"><span class="ar">إلغاء</span><span class="en">Cancel</span></button>
+    </div>
+    <div class="fpt-row">
+      <button class="fpt-btn fpt-btn--destructive"><svg class="fpt-icon" aria-hidden="true"><use href="#i-circle-x"/></svg><span class="ar">إغلاق الحساب</span><span class="en">Close account</span></button><!-- CR-07: destructive = outline + danger label + icon; hover = wash; never filled outside the confirmation dialog -->
+      <button class="fpt-btn fpt-btn--destructive fpt-btn--text"><svg class="fpt-icon" aria-hidden="true"><use href="#i-log-out"/></svg><span class="ar">تسجيل الخروج</span><span class="en">Sign out</span></button>
+      <button class="fpt-btn fpt-btn--primary fpt-btn--sm"><span class="ar">نسخ</span><span class="en">Copy</span></button>
+      <button class="fpt-btn fpt-btn--ghost fpt-btn--sm"><svg class="fpt-icon fpt-icon--sm fpt-icon--dir" aria-hidden="true"><use href="#i-arrow-right"/></svg><span class="ar">التالي</span><span class="en">Next</span></button>
+      <button class="fpt-btn fpt-btn--ghost fpt-btn--icon" aria-label="Search"><svg class="fpt-icon" aria-hidden="true"><use href="#i-search"/></svg></button>
+    </div>
+    <div class="fpt-row">
+      <button class="fpt-btn fpt-btn--primary" data-loading="true" aria-busy="true"><span class="ar">جارٍ التنفيذ</span><span class="en">Processing</span></button>
+      <button class="fpt-btn fpt-btn--primary" disabled><span class="ar">ابدأ التحدي</span><span class="en">Start Challenge</span></button>
+      <button class="fpt-btn fpt-btn--secondary" disabled><span class="ar">حفظ</span><span class="en">Save</span></button>
+    </div>
+    <a class="fpt-btn fpt-btn--primary fpt-btn--lg fpt-btn--block" href="https://crm.fptraders.com/register"><span class="ar">ابدأ تحدي FPT</span><span class="en">Start FPT Challenge</span></a>
+  </div>
+  <p class="pv-note"><span class="ar">زر أساسي واحد لكل شاشة. التعبئة = التدرج 135° (#F42821 ← #A30100) دائماً، لا تعبئة حمراء مسطّحة تحت نصّ بحجم الجسم (4.06:1). الضغط = scale .98. لا توهّج.</span><span class="en">One primary per screen. Fill = the 135° gradient always; never flat red under body-size text (4.06:1). Press = scale .98. No glow.</span></p>
+</section>
+
+<!-- 02 -->
+<section class="pv" id="s02">
+  <span class="pv-n">02</span>
+  <h2><span class="ar">الحقول والنماذج</span><span class="en">Inputs & forms</span></h2>
+  <div class="pv-grid">
+    <div class="fpt-field">
+      <label class="fpt-label" for="f1"><span class="ar">البريد الإلكتروني</span><span class="en">E-mail</span><span class="fpt-req" aria-hidden="true">*</span></label>
+      <input class="fpt-input" id="f1" type="email" placeholder="name@example.com" dir="ltr">
+      <div class="fpt-help"><span class="ar">نرسل بيانات cTrader إلى هذا البريد.</span><span class="en">We send your cTrader credentials here.</span></div>
+    </div>
+    <div class="fpt-field" data-invalid="true">
+      <label class="fpt-label" for="f2"><span class="ar">رقم حساب cTrader</span><span class="en">cTrader login</span></label>
+      <input class="fpt-input fpt-input--num" id="f2" inputmode="numeric" value="50188" aria-invalid="true" aria-describedby="f2e">
+      <div class="fpt-error" id="f2e"><svg class="fpt-icon" aria-hidden="true"><use href="#i-circle-alert"/></svg><span class="ar">رقم الحساب يتكوّن من 7 أرقام.</span><span class="en">The login is 7 digits.</span></div>
+    </div>
+    <div class="fpt-field">
+      <label class="fpt-label" for="f3"><span class="ar">كلمة مرور cTrader</span><span class="en">cTrader password</span></label>
+      <div class="fpt-input-wrap"><input class="fpt-input" id="f3" type="password" value="••••••••••" readonly><span class="fpt-affix"><svg class="fpt-icon fpt-icon--md" aria-hidden="true"><use href="#i-eye"/></svg></span></div>
+    </div>
+    <div class="pv-2">
+      <div class="fpt-field"><label class="fpt-label" for="f4"><span class="ar">حجم الحساب</span><span class="en">Account Size</span></label><div class="fpt-select-wrap"><select class="fpt-select" id="f4"><option>50,000 USD</option><option>100,000 USD</option></select><svg class="fpt-icon" aria-hidden="true"><use href="#i-chevron-down"/></svg></div></div>
+      <div class="fpt-field"><label class="fpt-label" for="f5"><span class="ar">معطّل</span><span class="en">Disabled</span></label><input class="fpt-input" id="f5" disabled value="—"></div>
+    </div>
+    <div class="fpt-field"><span class="fpt-label"><span class="ar">رمز التحقق</span><span class="en">Verification code</span></span><div class="fpt-otp"><input inputmode="numeric" maxlength="1" value="4" data-filled="true" aria-label="digit 1"><input inputmode="numeric" maxlength="1" value="8" data-filled="true" aria-label="digit 2"><input inputmode="numeric" maxlength="1" aria-label="digit 3"><input inputmode="numeric" maxlength="1" aria-label="digit 4"><input inputmode="numeric" maxlength="1" aria-label="digit 5"><input inputmode="numeric" maxlength="1" aria-label="digit 6"></div></div>
+    <label class="fpt-check"><input type="checkbox" checked><span><span class="ar">قرأت القواعد وأوافق على شروط التقييم.</span><span class="en">I have read the rules and accept the evaluation terms.</span></span></label>
+    <label class="fpt-switch"><input type="checkbox" checked><span><span class="ar">تنبيه عند اقتراب حدّ الخسارة اليومية</span><span class="en">Alert when the daily drawdown limit is near</span></span></label>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="pv" id="s03">
+  <span class="pv-n">03</span>
+  <h2><span class="ar">بطاقة التحدي</span><span class="en">Challenge card</span></h2>
+  <div class="pv-grid">
+    <div class="fpt-challenge-list" role="radiogroup" aria-label="Account Size">
+      <button class="fpt-challenge" role="radio" aria-checked="false" aria-pressed="false"><span class="fpt-challenge__size">25,000<i>USD</i></span><span class="fpt-challenge__label"><span class="ar">حجم الحساب</span><span class="en">Account Size</span></span><span class="fpt-challenge__fee"><b>160<i>USD</i></b><small><span class="ar">الرسوم · دفعة واحدة</span><span class="en">Fee · one-time</span></small></span><svg class="fpt-icon fpt-challenge__check" aria-hidden="true"><use href="#i-circle-check"/></svg></button>
+      <button class="fpt-challenge" role="radio" aria-checked="true" aria-pressed="true"><span class="fpt-challenge__size">50,000<i>USD</i></span><span class="fpt-challenge__label"><span class="ar">حجم الحساب</span><span class="en">Account Size</span> · <span class="fpt-challenge__popular"><span class="ar">الأكثر شعبية</span><span class="en">Popular</span></span></span><span class="fpt-challenge__fee"><b>280<i>USD</i></b><small><span class="ar">الرسوم · دفعة واحدة</span><span class="en">Fee · one-time</span></small></span><svg class="fpt-icon fpt-challenge__check" aria-hidden="true"><use href="#i-circle-check"/></svg></button>
+    </div>
+  </div>
+  <p class="pv-note"><span class="ar">البطاقة مبرَّرة: كل بطاقة خيار واحد يحدّ فعلاً واحداً. المحدَّد = إطار أحمر 1px + علامة (دور الحالة النشطة). «الأكثر شعبية» نصّ، لا شارة ذهبية.</span><span class="en">A box is justified: each card is one selectable item bounding one choice. Selected = 1 px red border + check (active-state role). "Popular" is text, never a gold badge.</span></p>
+</section>
+
+<!-- 04 -->
+<section class="pv" id="s04">
+  <span class="pv-n">04</span>
+  <h2><span class="ar">الرقم الرئيسي وصفوف القواعد</span><span class="en">Hero figure & rule rows</span></h2>
+  <div class="pv-grid">
+    <div class="fpt-figure fpt-figure--hero"><span class="fpt-figure__label"><span class="ar">رصيد الحساب · تحدي 50,000 USD</span><span class="en">Equity · 50,000 USD challenge</span></span><span class="fpt-figure__value"><span data-sample="endCents">55,312.50</span><span class="fpt-figure__unit">USD</span></span><span class="fpt-figure__delta"><span class="fpt-gain" style="display:inline-flex;align-items:center;gap:5px"><span class="ar">ربح</span><span class="en">gain</span> <svg class="fpt-icon" aria-hidden="true"><use href="#i-trending-up"/></svg> <span class="fpt-unit">+5,312.50 USD</span> · <span class="fpt-unit">+10.63 %</span></span><span class="fpt-figure__since"><span class="ar">منذ 7 سبتمبر 2026</span><span class="en">since</span> <span class="en"><span class="fpt-unit">7 Sep 2026</span></span></span></span></div>
+    <div class="pv-2">
+      <div class="fpt-figure fpt-figure--sm"><span class="fpt-figure__label"><span class="ar">خسارة اليوم</span><span class="en">Loss today</span></span><span class="fpt-figure__value" data-sample="worstDay">−405.00<span class="fpt-figure__unit">USD</span></span><span class="fpt-figure__delta fpt-loss"><span class="ar">خسارة</span><span class="en">loss</span> <svg class="fpt-icon" aria-hidden="true"><use href="#i-trending-down"/></svg> <span class="fpt-unit">−0.81 %</span></span></div>
+      <div class="fpt-figure fpt-figure--sm"><span class="fpt-figure__label"><span class="ar">قيد التسوية</span><span class="en">Pending</span></span><span class="fpt-figure__value">0.00<span class="fpt-figure__unit">USD</span></span><span class="fpt-figure__delta fpt-neutral"><span class="ar">بلا تغيّر</span><span class="en">unchanged</span> <span class="fpt-unit">0.00 %</span></span></div>
+    </div>
+    <div class="fpt-rules">
+      <div class="fpt-rule"><span class="fpt-rule__l"><span class="ar">هدف الربح</span><span class="en">Profit Target</span></span><span class="fpt-rule__v"><span class="fpt-unit">10 %</span></span></div>
+      <div class="fpt-rule"><span class="fpt-rule__l"><span class="ar">الخسارة اليومية القصوى</span><span class="en">Daily Drawdown</span></span><span class="fpt-rule__v"><span class="fpt-unit">5 %</span></span></div>
+      <div class="fpt-rule"><span class="fpt-rule__l"><span class="ar">الخسارة الإجمالية القصوى</span><span class="en">Max Drawdown</span></span><span class="fpt-rule__v"><span class="fpt-unit">9 %</span></span></div>
+      <div class="fpt-rule"><span class="fpt-rule__l"><span class="ar">الحد الزمني</span><span class="en">Time Limit</span></span><span class="fpt-rule__v"><span class="fpt-unit">31</span> <span class="ar">يوماً</span><span class="en">days</span></span></div>
+      <div class="fpt-rule"><span class="fpt-rule__l"><span class="ar">المنصة</span><span class="en">Platform</span></span><span class="fpt-rule__v">cTrader</span></div>
+    </div>
+  </div>
+  <p class="pv-note"><span class="ar">صفوف مفصولة بخطوط لا صناديق. كل رقم وحدة لا تنكسر (.fpt-unit)؛ علامة % لا تنفصل عن رقمها.</span><span class="en">Rows separated by rules, not boxes. Every number is an unbreakable unit; % never separates from its number.</span></p>
+</section>
+
+<!-- 05 -->
+<section class="pv" id="s05">
+  <span class="pv-n">05</span>
+  <h2><span class="ar">تقدّم القواعد والمراحل</span><span class="en">Rule progress & phases</span></h2>
+  <div class="pv-grid">
+    <div class="fpt-rulebar"><div class="fpt-rulebar__head"><b><span class="ar">هدف الربح</span><span class="en">Profit Target</span></b><span><span class="fpt-unit">+10.63 %</span> <span class="ar">من</span><span class="en">of</span> <span class="fpt-unit">10 %</span></span></div><div class="fpt-progress fpt-progress--target" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><span style="width:100%"></span></div><span class="fpt-rulebar__state fpt-target"><svg class="fpt-icon" aria-hidden="true"><use href="#i-circle-check"/></svg> <span class="ar">تحقق</span><span class="en">reached</span></span></div>
+    <div class="fpt-rulebar"><div class="fpt-rulebar__head"><b><span class="ar">الخسارة اليومية القصوى</span><span class="en">Daily Drawdown</span></b><span><span class="fpt-unit">−0.81 %</span> <span class="ar">· الحد</span><span class="en">· limit</span> <span class="fpt-unit">5 %</span></span></div><div class="fpt-progress fpt-progress--drawdown" role="progressbar" aria-valuenow="16" aria-valuemin="0" aria-valuemax="100"><span style="width:16%"></span></div><span class="fpt-rulebar__state fpt-drawdown"><svg class="fpt-icon" aria-hidden="true"><use href="#i-triangle-alert"/></svg> <span class="ar">مستهلك</span><span class="en">used</span> <span class="fpt-unit">16 %</span></span></div>
+    <div class="fpt-rulebar"><div class="fpt-rulebar__head"><b><span class="ar">الخسارة الإجمالية القصوى</span><span class="en">Max Drawdown</span></b><span><span class="fpt-unit">−9.40 %</span> <span class="ar">· الحد</span><span class="en">· limit</span> <span class="fpt-unit">9 %</span></span></div><div class="fpt-progress fpt-progress--breached" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><span style="width:100%"></span></div><span class="fpt-rulebar__state fpt-loss"><svg class="fpt-icon" aria-hidden="true"><use href="#i-circle-x"/></svg> <span class="ar">تجاوز الحد — لم يجتز التقييم</span><span class="en">limit breached — evaluation failed</span></span></div>
+    <div class="fpt-phases"><div class="fpt-phase" data-state="done"><span class="fpt-phase__n"><svg class="fpt-icon" aria-hidden="true"><use href="#i-check"/></svg> <span class="ar">المرحلة</span><span class="en">Phase</span> <span class="fpt-unit">1</span></span><b class="fpt-phase__t"><span class="ar">التقييم</span><span class="en">Evaluation</span></b><span class="fpt-phase__s"><span class="ar">اكتمل</span><span class="en">completed</span></span></div><div class="fpt-phase" data-state="active"><span class="fpt-phase__n"><svg class="fpt-icon" aria-hidden="true"><use href="#i-clock"/></svg> <span class="ar">المرحلة</span><span class="en">Phase</span> <span class="fpt-unit">2</span></span><b class="fpt-phase__t"><span class="ar">الحساب الممول</span><span class="en">Funded account</span></b><span class="fpt-phase__s"><span class="ar">التفعيل خلال ≈</span><span class="en">activation within ≈</span> <span class="fpt-unit">72</span> <span class="ar">ساعة</span><span class="en">h</span></span></div></div>
+  </div>
+  <p class="pv-note"><span class="ar">الهدف = أخضر، السحب = كهرماني، التجاوز = مرجاني. الأحمر لا يملأ شريطاً مالياً أبداً؛ يحمل فقط حالة «نشط» في المراحل.</span><span class="en">Target = green, drawdown = amber, breach = coral. Red never fills a financial bar; it only marks the active phase.</span></p>
+</section>
+
+<!-- 06 -->
+<section class="pv" id="s06">
+  <span class="pv-n">06</span>
+  <h2><span class="ar">الجدول المالي</span><span class="en">Financial table</span></h2>
+  <div class="pv-grid">
+    <div class="fpt-table-wrap"><table class="fpt-table"><thead><tr><th scope="col"><span class="ar">البند</span><span class="en">Item</span></th><th scope="col" class="fpt-td-num"><span class="ar">النسبة</span><span class="en">Share</span></th><th scope="col" class="fpt-td-num">USD</th></tr></thead><tbody>
+      <tr><td><span class="fpt-row-main"><span class="ar">ربح الدورة</span><span class="en">Cycle profit</span></span><span class="fpt-row-sub"><span class="ar">20 أكتوبر → 3 نوفمبر 2026</span><span class="en">20 Oct → 3 Nov 2026</span></span></td><td class="fpt-td-num"><span class="fpt-unit">100 %</span></td><td class="fpt-td-num fpt-gain"><span class="fpt-unit">+3,124.50</span> <span class="fpt-word"><span class="ar">ربح</span><span class="en">gain</span></span></td></tr>
+      <tr data-selected="true"><td><span class="fpt-row-main"><span class="ar">حصة المتداول</span><span class="en">Trader share</span></span></td><td class="fpt-td-num"><span class="fpt-unit">80 %</span></td><td class="fpt-td-num"><span class="fpt-unit">2,499.60</span></td></tr>
+      <tr><td><span class="fpt-row-main"><span class="ar">حصة الشركة</span><span class="en">Firm share</span></span></td><td class="fpt-td-num"><span class="fpt-unit">20 %</span></td><td class="fpt-td-num"><span class="fpt-unit">624.90</span></td></tr>
+      <tr><td><span class="fpt-row-main"><span class="ar">خسارة يوم 11 سبتمبر</span><span class="en">Loss on 11 Sep</span></span></td><td class="fpt-td-num">—</td><td class="fpt-td-num fpt-loss"><span class="fpt-unit">−405.00</span> <span class="fpt-word"><span class="ar">خسارة</span><span class="en">loss</span></span></td></tr>
+    </tbody></table></div>
+  </div>
+</section>
+
+<!-- 07 -->
+<section class="pv" id="s07">
+  <span class="pv-n">07</span>
+  <h2><span class="ar">التبويبات والشارات</span><span class="en">Tabs & badges</span></h2>
+  <div class="pv-grid">
+    <div class="fpt-tabs" role="tablist"><button class="fpt-tab" role="tab" aria-selected="true"><span class="ar">التحدي</span><span class="en">Challenge</span></button><button class="fpt-tab" role="tab" aria-selected="false"><span class="ar">الصفقات</span><span class="en">Trades</span></button><button class="fpt-tab" role="tab" aria-selected="false"><span class="ar">الدفعات</span><span class="en">Payouts</span></button></div>
+    <div class="fpt-seg fpt-seg--block" role="group"><button aria-pressed="true"><span class="ar">التقييم</span><span class="en">Evaluation</span></button><button aria-pressed="false"><span class="ar">الممول</span><span class="en">Funded</span></button></div>
+    <div class="fpt-row"><span class="fpt-badge fpt-badge--brand"><span class="ar">ممول</span><span class="en">FUNDED</span></span><span class="fpt-badge fpt-badge--success"><svg class="fpt-icon" aria-hidden="true"><use href="#i-circle-check"/></svg><span class="ar">اجتاز</span><span class="en">passed</span></span><span class="fpt-badge fpt-badge--warning"><svg class="fpt-icon" aria-hidden="true"><use href="#i-clock"/></svg><span class="ar">قيد التفعيل</span><span class="en">activating</span></span><span class="fpt-badge fpt-badge--danger"><svg class="fpt-icon" aria-hidden="true"><use href="#i-circle-x"/></svg><span class="ar">لم يجتز</span><span class="en">failed</span></span><span class="fpt-badge fpt-badge--info"><svg class="fpt-icon" aria-hidden="true"><use href="#i-info"/></svg><span class="ar">تجريبي</span><span class="en">demo</span></span><span class="fpt-badge fpt-badge--neutral"><span class="ar">مغلق</span><span class="en">closed</span></span><span class="fpt-sample"><span class="ar">بيانات تجريبية</span><span class="en">SAMPLE DATA</span></span></div>
+    <div class="fpt-row"><span class="fpt-badge fpt-badge--endorsement"><span class="ar">جزء من Fiper Global</span><span class="en">Part of Fiper Global</span></span><span class="fpt-badge fpt-badge--endorsement" style="text-transform:none"><span class="ar">جزء من Fiper Global</span><span class="en">Part of Fiper Global</span></span></div>
+    <div class="fpt-row"><button class="fpt-chip" aria-pressed="true"><span class="ar">الكل</span><span class="en">All</span></button><button class="fpt-chip" aria-pressed="false"><span class="ar">رابحة</span><span class="en">Winning</span></button><button class="fpt-chip" aria-pressed="false"><span class="ar">خاسرة</span><span class="en">Losing</span></button></div>
+  </div>
+  <p class="pv-note"><span class="ar">نصّا التبعية حرفيان من ar.json (nav.partOfFiperGlobal، footer.partOf). لا شارة ذهبية، لا شارة شريعة (مكوّن صناديق فايبر).</span><span class="en">Endorsement strings verbatim from ar.json. No gold badge, no Sharia badge (a Fiper Funds component).</span></p>
+</section>
+
+<!-- 08 -->
+<section class="pv" id="s08">
+  <span class="pv-n">08</span>
+  <h2><span class="ar">التنبيهات والحالات</span><span class="en">Toasts & states</span></h2>
+  <div class="pv-grid">
+    <div class="fpt-demo-static"><div class="fpt-toast-region" style="position:relative;padding:0;justify-items:stretch">
+      <div class="fpt-toast fpt-toast--success" role="status"><svg class="fpt-icon" aria-hidden="true"><use href="#i-circle-check"/></svg><div><div class="fpt-toast__title"><span class="ar">وصلت بيانات cTrader</span><span class="en">cTrader credentials sent</span></div><div class="fpt-toast__body"><span class="ar">تحقق من بريدك · الحساب</span><span class="en">Check your inbox · account</span> <span class="fpt-unit">5018842</span></div></div></div>
+      <div class="fpt-toast fpt-toast--danger" role="alert"><svg class="fpt-icon" aria-hidden="true"><use href="#i-triangle-alert"/></svg><div><div class="fpt-toast__title"><span class="ar">اقتربت من حدّ الخسارة اليومية</span><span class="en">Daily drawdown limit is near</span></div><div class="fpt-toast__body"><span class="ar">المستهلك</span><span class="en">used</span> <span class="fpt-unit">82 %</span> · <span class="ar">المتبقي</span><span class="en">remaining</span> <span class="fpt-unit">450.00 USD</span></div></div><button class="fpt-toast__action"><span class="ar">عرض</span><span class="en">View</span></button></div>
+    </div></div>
+    <div class="fpt-empty"><svg class="fpt-icon" aria-hidden="true"><use href="#i-wallet"/></svg><div class="fpt-empty__title"><span class="ar">لا توجد دفعات بعد</span><span class="en">No payouts yet</span></div><div class="fpt-empty__body"><span class="ar">أول دفعة بعد 14 يوماً من التفعيل و10 أيام تداول.</span><span class="en">First payout after 14 days from activation and 10 trading days.</span></div><button class="fpt-btn fpt-btn--primary fpt-btn--sm"><span class="ar">عرض القواعد</span><span class="en">View rules</span></button></div>
+    <div aria-busy="true" aria-label="loading" style="display:grid;gap:8px"><span class="fpt-skel fpt-skel--title" aria-hidden="true"></span><span class="fpt-skel fpt-skel--num" aria-hidden="true"></span><span class="fpt-skel fpt-skel--text" aria-hidden="true"></span><span class="fpt-skel fpt-skel--block" aria-hidden="true"></span></div>
+    <div class="fpt-errstate"><div class="fpt-errstate__title"><svg class="fpt-icon" aria-hidden="true"><use href="#i-circle-x"/></svg><span class="ar">تعذّر تحميل منحنى الرصيد</span><span class="en">Equity curve could not load</span></div><div class="fpt-errstate__body"><span class="ar">بياناتك محفوظة. تحقق من الشبكة ثم أعد المحاولة.</span><span class="en">Your data is safe. Check your network and try again.</span></div><div class="fpt-row"><button class="fpt-btn fpt-btn--secondary fpt-btn--sm"><span class="ar">إعادة المحاولة</span><span class="en">Retry</span></button><button class="fpt-btn fpt-btn--ghost fpt-btn--sm"><span class="ar">الدعم</span><span class="en">Support</span></button></div></div>
+    <div class="fpt-banner fpt-banner--info"><svg class="fpt-icon" aria-hidden="true"><use href="#i-info"/></svg><span><span class="ar">يُفعَّل الحساب الممول خلال ≈</span><span class="en">The funded account is activated within ≈</span> <span class="fpt-unit">72</span> <span class="ar">ساعة من اجتياز التقييم.</span><span class="en">h of passing the evaluation.</span></span></div>
+  </div>
+</section>
+
+<!-- 09 -->
+<section class="pv" id="s09">
+  <span class="pv-n">09</span>
+  <h2><span class="ar">التنقل</span><span class="en">Navigation</span></h2>
+  <div class="pv-grid">
+    <div class="fpt-demo-static pv-demo" style="padding:0">
+      <header class="fpt-header fpt-header--site"><a class="fpt-brand fpt-brand--stack" href="#" aria-label="Fiper Pro Traders"><img class="fpt-brand__lockup" src="../logos/svg/fpt-lockup-horizontal-en-white.svg" alt="Fiper Pro Traders"><span class="fpt-brand__name"><span class="fpt-badge fpt-badge--endorsement"><span class="ar">جزء من Fiper Global</span><span class="en">Part of Fiper Global</span></span></span></a><button class="fpt-btn fpt-btn--ghost fpt-btn--icon" style="border:0" aria-label="Menu"><svg class="fpt-icon" aria-hidden="true"><use href="#i-menu"/></svg></button></header>
+      <header class="fpt-header" style="height:56px;grid-template-columns:auto 1fr 44px;padding-inline:20px 6px;margin-top:12px"><a class="fpt-brand" href="#" aria-label="Fiper Pro Traders"><img class="fpt-brand__lockup fpt-brand__lockup--app" src="../logos/svg/fpt-lockup-horizontal-en-white.svg" alt="Fiper Pro Traders"></a><div class="fpt-header__title" style="text-align:start;padding-inline-start:10px"><span class="fpt-unit" style="font-size:var(--fpt-font-size-sm);color:var(--fpt-text-muted)">FPT-50K-104233</span></div><button class="fpt-btn fpt-btn--ghost fpt-btn--icon" style="border:0" aria-label="Notifications"><svg class="fpt-icon" aria-hidden="true"><use href="#i-bell"/></svg></button></header>
+      <nav class="fpt-tabbar" aria-label="Main" style="margin-top:12px"><a href="#"><svg class="fpt-icon" aria-hidden="true"><use href="#i-house"/></svg><span><span class="ar">الرئيسية</span><span class="en">Home</span></span></a><a href="#" aria-current="page"><svg class="fpt-icon" aria-hidden="true"><use href="#i-chart-line"/></svg><span><span class="ar">التحدي</span><span class="en">Challenge</span></span></a><a href="#"><svg class="fpt-icon" aria-hidden="true"><use href="#i-wallet"/></svg><span><span class="ar">الدفعات</span><span class="en">Payouts</span></span></a><a href="#"><svg class="fpt-icon" aria-hidden="true"><use href="#i-menu"/></svg><span><span class="ar">المزيد</span><span class="en">More</span></span></a></nav>
+    </div>
+    <div class="fpt-list"><a class="fpt-listrow" href="#"><span class="fpt-listrow__ico"><svg class="fpt-icon" aria-hidden="true"><use href="#i-file-text"/></svg></span><span><span class="fpt-listrow__t"><span class="ar">كشف الدفعة</span><span class="en">Payout statement</span></span><span class="fpt-listrow__s"><span class="ar">4 نوفمبر 2026</span><span class="en"></span><span class="en"><span class="fpt-unit">4 Nov 2026</span></span></span></span><span class="fpt-listrow__end"><span class="fpt-unit" style="font-weight:600">2,499.60 USD</span></span></a><a class="fpt-listrow" href="#"><span class="fpt-listrow__ico"><svg class="fpt-icon" aria-hidden="true"><use href="#i-credit-card"/></svg></span><span><span class="fpt-listrow__t"><span class="ar">بطاقة Fiper</span><span class="en">Fiper Card</span></span><span class="fpt-listrow__s"><span class="ar">طريقة الدفع</span><span class="en">Payout method</span></span></span><svg class="fpt-icon fpt-icon--dir fpt-listrow__chev" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></div>
+    <div class="fpt-row" style="gap:20px"><div class="fpt-partner"><img class="fpt-partner__tile" src="../logos/svg/fpt-tile.svg" alt=""><span class="fpt-partner__div"></span><img class="fpt-partner__logo" src="../assets/third-party/ctrader/ctrader-logo-light.svg" alt="cTrader"></div><div class="fpt-endorse"><img class="fpt-endorse__tile" src="../logos/svg/fpt-tile.svg" alt=""><span class="fpt-endorse__div"></span><img class="fpt-endorse__fiper" src="../assets/fiper-logo-white.OFFICIAL-stacked-720.png" alt="Fiper"></div></div>
+  </div>
+  <p class="pv-note"><span class="ar">الشعار = القفل الأفقي الأبيض الرسمي (logo v2، svg/fpt-lockup-horizontal-en-white.svg) على الداكن والبلاطة كما رُسمت — لا قصّ، لا اسم نصاً. cTrader فقط. قفل التبعية هندسة مقترحة (بند القرار 4).</span><span class="en">Logo = the official tile clipped 22 % + the name as text; no white wordmark exists. cTrader only. Endorsement lockup = PROPOSED geometry (decision item 4).</span></p>
+</section>
+
+<!-- 10 -->
+<section class="pv" id="s10">
+  <span class="pv-n">10</span>
+  <h2><span class="ar">النافذة والورقة السفلية</span><span class="en">Modal & sheet</span></h2>
+  <div class="pv-grid">
+    <div class="fpt-demo-static pv-demo" style="min-height:220px"><div class="fpt-scrim"></div><div class="fpt-sheet"><div class="fpt-sheet__grab"></div><div class="fpt-sheet__title"><span class="ar">تأكيد التحدي</span><span class="en">Confirm challenge</span></div><dl style="margin:0"><div class="fpt-kv"><dt><span class="ar">حجم الحساب</span><span class="en">Account Size</span></dt><dd><span class="fpt-unit">50,000.00 USD</span></dd></div><div class="fpt-kv"><dt><span class="ar">الرسوم</span><span class="en">Fee</span></dt><dd><span class="fpt-unit">280.00 USD</span></dd></div><div class="fpt-kv"><dt><span class="ar">المنصة</span><span class="en">Platform</span></dt><dd>cTrader</dd></div></dl><button class="fpt-btn fpt-btn--primary fpt-btn--block" style="margin-top:12px"><span class="ar">ادفع وابدأ</span><span class="en">Pay and start</span></button></div></div>
+    <div class="fpt-demo-static pv-demo" style="min-height:200px"><div class="fpt-scrim"></div><div class="fpt-modal" role="dialog" aria-modal="true" aria-labelledby="pv-close-title"><div class="fpt-modal__box"><div class="fpt-sheet__title" id="pv-close-title"><span class="ar">إغلاق الحساب؟</span><span class="en">Close this account?</span></div><p style="margin:0;color:var(--fpt-text-secondary)"><span class="ar">تُغلق كل الصفقات المفتوحة ولا يمكن التراجع.</span><span class="en">Every open position is closed; this cannot be undone.</span></p><div class="fpt-modal__actions"><button class="fpt-btn fpt-btn--ghost"><span class="ar">رجوع</span><span class="en">Back</span></button><button class="fpt-btn fpt-btn--destructive-solid"><svg class="fpt-icon" aria-hidden="true"><use href="#i-circle-x"/></svg><span class="ar">إغلاق الحساب</span><span class="en">Close account</span></button></div></div></div></div><!-- CR-07: the ONE place a filled danger button is allowed — the final confirmation dialog, which holds no other primary -->
+  </div>
+</section>
+
+<!-- 11 -->
+<section class="pv" id="s11">
+  <span class="pv-n">11</span>
+  <h2><span class="ar">الرسم البياني</span><span class="en">Chart</span></h2>
+  <div class="pv-grid">
+    <div class="fpt-chart" data-chart="sample-fpt-50k-evaluation"><div class="fpt-chart__head fpt-chart__head--stack"><div class="fpt-row" style="justify-content:space-between"><span class="fpt-chart__title" style="color:var(--fpt-text-primary)"><span class="ar">منحنى الرصيد</span><span class="en">Equity curve</span></span><span class="fpt-chart__period"><span class="ar">7 سبتمبر → 7 أكتوبر 2026 · USD · إقفال يومي</span><span class="en">7 Sep → 7 Oct 2026 · USD · daily close</span></span></div></div><div class="fpt-chart__body"><!--CHART:{"theme":"dark","width":350,"height":170,"fontSize":9.5,"padL":46,"xEvery":7,"lang":"ar"}--><svg viewBox="0 0 350 170" width="100%" font-family="IBM Plex Mono, IBM Plex Sans Arabic, Inter" font-size="9.5" direction="ltr" role="img" aria-label="sample equity curve, 7 Sep → 7 Oct 2026, USD, end 55,312.50 (+10.63 %)" data-chart="sample-fpt-50k-evaluation"><path d="M46.0 118.4 L59.2 118.4 L72.4 114.3 L85.5 116.6 L98.7 109.5 L111.9 105.1 L125.1 108.3 L138.3 102.0 L151.5 97.7 L164.6 101.1 L177.8 95.8 L191.0 90.2 L204.2 92.7 L217.4 87.4 L230.5 85.0 L243.7 88.9 L256.9 82.8 L270.1 78.3 L283.3 80.5 L296.5 75.7 L309.6 72.5 L322.8 74.5 L336.0 70.1 L336.0 138.9 L46.0 138.9 Z" fill="rgba(232,120,90,0.12)" stroke="none"/><line x1="46" y1="144.0" x2="336" y2="144.0" stroke="rgba(255,255,255,0.07)"/><line x1="46" y1="118.4" x2="336" y2="118.4" stroke="rgba(255,255,255,0.07)"/><line x1="46" y1="92.8" x2="336" y2="92.8" stroke="rgba(255,255,255,0.07)"/><line x1="46" y1="67.2" x2="336" y2="67.2" stroke="rgba(255,255,255,0.07)"/><line x1="46" y1="41.6" x2="336" y2="41.6" stroke="rgba(255,255,255,0.07)"/><line x1="46" y1="16.0" x2="336" y2="16.0" stroke="rgba(255,255,255,0.07)"/><text x="38" y="148.0" text-anchor="end" fill="rgba(255,255,255,0.55)">45.0k</text><text x="38" y="122.4" text-anchor="end" fill="rgba(255,255,255,0.55)">47.5k</text><text x="38" y="96.8" text-anchor="end" fill="rgba(255,255,255,0.55)">50.0k</text><text x="38" y="71.2" text-anchor="end" fill="rgba(255,255,255,0.55)">52.5k</text><text x="38" y="45.6" text-anchor="end" fill="rgba(255,255,255,0.55)">55.0k</text><text x="38" y="20.0" text-anchor="end" fill="rgba(255,255,255,0.55)">57.5k</text><text x="46.0" y="164" text-anchor="start" fill="rgba(255,255,255,0.55)">7 سبتمبر</text><text x="138.3" y="164" text-anchor="middle" fill="rgba(255,255,255,0.55)">16</text><text x="230.5" y="164" text-anchor="middle" fill="rgba(255,255,255,0.55)">25</text><text x="322.8" y="164" text-anchor="middle" fill="rgba(255,255,255,0.55)">6</text><text x="336.0" y="164" text-anchor="end" fill="rgba(255,255,255,0.55)">7 أكتوبر</text><line x1="46" y1="92.8" x2="336" y2="92.8" stroke="rgba(255,255,255,0.55)" stroke-width="1" stroke-dasharray="1 3"/><path d="M46.0 118.4 L59.2 118.4 L72.4 114.3 L85.5 116.6 L98.7 109.5 L111.9 105.1 L125.1 108.3 L138.3 102.0 L151.5 97.7 L164.6 101.1 L177.8 95.8 L191.0 90.2 L204.2 92.7 L217.4 87.4 L230.5 85.0 L243.7 88.9 L256.9 82.8 L270.1 78.3 L283.3 80.5 L296.5 75.7 L309.6 72.5 L322.8 74.5 L336.0 70.1" fill="none" stroke="#E8785A" stroke-width="1" stroke-dasharray="2 3"/><line x1="46" y1="138.9" x2="336" y2="138.9" stroke="#E8785A" stroke-width="1.5" stroke-dasharray="4 4"/><line x1="46" y1="41.6" x2="336" y2="41.6" stroke="#2AB37A" stroke-width="1.5" stroke-dasharray="4 4"/><text x="336" y="36.6" text-anchor="end" fill="#2AB37A" font-weight="600">55,000.00</text><path d="M46.0 92.8 L59.2 88.5 L72.4 90.9 L85.5 83.5 L98.7 78.8 L111.9 82.1 L125.1 75.5 L138.3 71.1 L151.5 74.6 L164.6 69.1 L177.8 63.2 L191.0 65.7 L204.2 60.2 L217.4 57.7 L230.5 61.8 L243.7 55.3 L256.9 50.6 L270.1 52.9 L283.3 47.9 L296.5 44.4 L309.6 46.5 L322.8 42.0 L336.0 38.4" fill="none" stroke="#FFFFFF" stroke-width="2"/><text x="52.0" y="106.8" fill="rgba(255,255,255,0.55)">50,000.00</text><circle cx="336.0" cy="38.4" r="3.5" fill="#F42821"/><text x="328.0" y="29.4" text-anchor="end" fill="#FFFFFF" font-weight="600">55,312.50</text></svg><!--/CHART--></div><div class="fpt-chart__legend"><span class="lt"><i></i><span class="ar">هدف الربح</span><span class="en">Profit target</span> <span class="fpt-unit">55,000.00</span></span><span class="lf"><i></i><span class="ar">حدود الخسارة</span><span class="en">Drawdown floors</span></span><span class="lband"><i></i><span class="ar">نطاق السحب</span><span class="en">Drawdown band</span></span><span class="ld"><i></i><span class="ar">القيمة الحالية</span><span class="en">Current value</span></span></div></div>
+  </div>
+  <p class="pv-note"><span class="ar">يُولَّد من brand/scripts/charts.mjs عند البناء (المعاينة تحمل العلامة فقط؛ المعاينات المرجعية تحمل الرسم). الأحمر = نقطة القيمة الحالية فقط.</span><span class="en">Generated by brand/scripts/charts.mjs at build time (this preview carries the marker only; the mockups carry the chart). Red = the current-value dot only.</span></p>
+</section>
+
+<!-- 12 -->
+<section class="pv" id="s12">
+  <span class="pv-n">12</span>
+  <h2><span class="ar">الورق — المستندات والبريد</span><span class="en">Paper — documents & e-mail</span></h2>
+  <div class="pv-grid">
+    <div class="fpt-paper pv-demo pv-paper" style="border-style:solid;padding:16px"><div class="fpt-figure fpt-figure--ruled"><span class="fpt-figure__label"><span class="ar">المبلغ المحوَّل إليك</span><span class="en">Amount paid to you</span></span><span class="fpt-figure__value">2,499.60<span class="fpt-figure__unit">USD</span></span><span class="fpt-figure__delta fpt-gain"><span class="ar">حصتك</span><span class="en">your share</span> <span class="fpt-unit">80 %</span></span></div><dl class="fpt-group" style="margin-top:14px"><div class="fpt-kv"><dt><span class="ar">طريقة الدفع</span><span class="en">Method</span></dt><dd><span class="ar">بطاقة Fiper</span><span class="en">Fiper Card</span></dd></div><div class="fpt-kv"><dt><span class="ar">الحالة</span><span class="en">Status</span></dt><dd class="fpt-gain"><span class="ar">منفَّذة</span><span class="en">processed</span></dd></div><div class="fpt-kv"><dt><span class="ar">خسارة يوم</span><span class="en">Loss on</span> <span class="en"><span class="fpt-unit">11 Sep</span></span></dt><dd class="fpt-loss"><span class="fpt-unit">−405.00 USD</span></dd></div></dl><div class="fpt-row" style="margin-top:12px"><span class="fpt-badge fpt-badge--endorsement"><span class="ar">جزء من Fiper Global</span><span class="en">Part of Fiper Global</span></span><button class="fpt-btn fpt-btn--primary fpt-btn--sm"><span class="ar">تحميل الكشف</span><span class="en">Download statement</span></button></div></div>
+  </div>
+  <p class="pv-note"><span class="ar">.fpt-paper يعيد ربط المتغيرات الدلالية إلى أرضية الورق (#F7F4F1) للمستندات والبريد والطباعة فقط — ليس وضعاً فاتحاً للتطبيقات.</span><span class="en">.fpt-paper re-maps the semantic variables to the paper ground for documents, e-mail and print only — not an app light mode.</span></p>
+</section>
+</main>
+<script>
+(function(){var d=document.getElementById('t-dir');var en=document.documentElement.lang==='en';d.setAttribute('aria-pressed',String(!en));d.textContent=en?'EN · LTR':'AR · RTL';d.addEventListener('click',function(){var isAr=document.documentElement.lang==='ar';document.documentElement.lang=isAr?'en':'ar';document.documentElement.dir=isAr?'ltr':'rtl';d.setAttribute('aria-pressed',String(!isAr));d.textContent=isAr?'EN · LTR':'AR · RTL';});})();
+</script>
+</body></html>

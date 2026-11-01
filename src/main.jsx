@@ -1,17 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
 import App from './App.jsx';
-import './i18n/config.js';
+import { getInitialLang, switchLanguage } from './i18n/config.js';
 import './index.css';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const container = document.getElementById('root');
+const tree = (
   <React.StrictMode>
-    <HelmetProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </HelmetProvider>
-  </React.StrictMode>,
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
 );
+
+// Every route × language is pre-rendered at build time (scripts/prerender.mjs) and hydrated here once the path's locale chunk is in;
+// 404.html is rendered fresh (its language depends on the requested path).
+switchLanguage(getInitialLang()).then(() => {
+  if (container.dataset.prerendered === 'route' && container.hasChildNodes()) hydrateRoot(container, tree);
+  else createRoot(container).render(tree);
+});

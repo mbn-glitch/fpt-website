@@ -1,0 +1,21 @@
+# Arabic typography — FPT Brand v1.0 (inherited from the parent unchanged; FPT notes marked)
+
+Family: **IBM Plex Sans Arabic** 400 / 500 / 600 / 700 for every Arabic surface (parent decision 27 Oct 2026, inherited; `fpt-website/src/index.css` line 26 already lists it first under `html[lang="ar"]` — the Cairo fallback there is DEPRECATED, the Google Fonts link must go). The complete official file carries Latin letters and digits, so `FPT`, `cTrader`, `USD`, `55,312.50` inside an Arabic sentence stay in the same font — do not add a Latin fallback in front of it.
+
+Rules
+1. `letter-spacing: 0` on every Arabic element — labels included, no exception. Never track Arabic. (The site's `.2em` tracking on «جزء من FIPER GLOBAL» in `Navbar.jsx` is a source observation the rule overrides.)
+2. Real weights only: 600 for emphasis, 700 for headings. `font-synthesis: none`. No italics (the site's `italic` on `footer.partOf` is dropped — no Arabic italic exists; use weight or colour).
+3. Line-height: body **1.9**, h1 **1.3**, h2 1.45, card titles 1.5, legal 1.7. Paragraph measure ≤ 65 characters on desktop.
+4. Headings: IBM Plex Sans Arabic 700, `text-transform: none`; sizes: h1 `clamp(2.1rem,6.2vw,4.5rem)`, h2 `clamp(1.7rem,3.9vw,2.6rem)`, card h3 1.18–1.22rem. Never Barlow Condensed or Inter for Arabic words; the site's Inter `-0.02em` headline tracking applies to Latin headlines only.
+5. Digits: Latin `0-9` (`font-variant-numeric: lining-nums`, Intl `nu-latn`). Arabic-Indic digits never, not even in print or certificates.
+6. Mixed runs: wrap Latin tokens in `<bdi>` or `<span dir="ltr" style="unicode-bidi:isolate">`: `FPT`, `cTrader`, `Fiper Global`, `USD`, logins (`5018842`), server names (`FPT-Live`), references (`PO-2026-11-00417`, `FC-2026-10-00892`), e-mails, phone numbers, URLs. Amount + code order in AR: `55,312.50 USD`.
+7. Punctuation: `،` `؛` `؟` in Arabic copy; Arabic quotation marks «…»; the dash is `—` with spaces (the site uses `—` already: «© 2026 Fiper Pro Traders — شركة تابعة لـ Fiper Global»).
+8. Alignment: `text-align: start`, never `justify`; numbers in tables `text-align: end` with `dir="ltr"` cells.
+9. Small labels in Arabic (field labels, table headers, chart period, the relationship line): IBM Plex Sans Arabic 600, `letter-spacing: 0`, no uppercase, colour `--fpt-text-label`; no slash prefix, no pulsing dot, no tinted red.
+10. Dynamic type: layouts survive 130 % font size; Arabic needs ≥ 15 px body on mobile (buttons 15 px — the site's `text-[15px]` is right; its 9 px relationship line is below the 11 px floor → 11 px).
+11. Mono: IBM Plex Mono for numbers, codes, logins and OTP boxes only — never eyebrows, labels, table headers or any element that can carry Arabic (Plex Mono has no Arabic: the browser falls back to a system serif, a defect). The site's `.font-mono-num` on rule labels / stat labels is removed (`fpt-website-application-note.md`).
+12. Inheritance: table headers, inputs, buttons, badges, chips, captions, e-mail and document text under `lang="ar"` must resolve to IBM Plex Sans Arabic with a real weight. Verify the fonts actually used: `node scripts/check-arabic-elements.mjs <html>` (build repo) / DevTools Rendered Fonts on screen; `python3 brand/scripts/check-pdf-fonts.py <pdf>` for PDFs — any non-brand font on any page is a FAIL.
+13. English parity: every Arabic string has its English twin (`lang="en"`, Inter / Barlow Condensed rules apply there); the site's six locales (EN / AR / FR / ES / PT / TR) all need the key before launch.
+14. Numeric units inside Arabic text — amount + currency (`55,312.50 USD`), sign + number + percent (`+10.63 %`), «22 من 31», «≈ 72 ساعة», date parts — are wrapped in `.fpt-unit` or `<bdi class="num">` (nowrap, ltr, isolate) so they never break or reorder; verify in HTML, PDF and exports (`brand/scripts/check-units.mjs`).
+15. Product and parent names: "Fiper Pro Traders" / "FPT" stay Latin inside Arabic (observed, applied); parent «فايبر» (never فيبر); the English hero badge is not translated (no approved Arabic exists).
+16. Register: Gulf-standard formal Arabic for finance («أثبت مهاراتك», «احصل على التمويل», «الخسارة اليومية القصوى») — the site's existing strings in `ar.json` are the reference register; new strings follow them and are labelled PROPOSED in `glossary.md`.

@@ -1,0 +1,75 @@
+{
+  "name": "FPT logo v2",
+  "approval": {
+    "date": "2026-10-30",
+    "by": "Mohammed Alboinin, CEO",
+    "statement_ar": "اعتمد وحدث هوية اف بي تي بالشعار المحسن (لاشيء آخر من معايير الهوية)",
+    "scope": "the logo only: all nine refinement items shown on the review canvas 'FPT Logo v2' (vector master, one slant, one cut width, concentric arcs, one baseline, matched ticks, 20% tile corner + optical placement, small-size cut, vector wordmark with white, Arabic and bilingual lockups). No other identity standard changes."
+  },
+  "construction": {
+    "unit": "u = one third of the stroke",
+    "slant_deg": 12.5,
+    "stroke_u": 3,
+    "cut_u": 1,
+    "f_counter_u": 1.5,
+    "cap_height_u": 11.5,
+    "descender_below_baseline_u": 9,
+    "f_shoulder_radii_u": [6, 3],
+    "P_bowl_radii_u": [5.8896, 2.8168],
+    "P_bowl_centre": "on the P stem line, halfway between the bar line (3u) and the cut line (8.5u)",
+    "T_arc_radius": "P outer radius + 1u, same centre as the P bowl",
+    "blade_radius_u": 5.25,
+    "ticks_u": {"thickness": 1, "length": 1.25},
+    "T_arm_beyond_stem_u": 2.5,
+    "mark_bounds_u": {"width": 24.975, "height": 20.5}
+  },
+  "tile": {
+    "side_u": 33,
+    "rounded_corner": "bottom-left only",
+    "corner_radius_ratio": 0.20,
+    "mark_offset_u": {"f_stem_left_at_baseline": 4.6, "cap_line": 8.0},
+    "gradient": {"from": "#F62721", "to": "#A30100", "css": "linear-gradient(135deg, #F62721 0%, #A30100 100%)", "axis": "top-left corner to bottom-right corner of the tile"}
+  },
+  "colours": {
+    "mark_on_tile": "#FFFFFF",
+    "flat_tile_one_colour": "#F42821",
+    "ink_on_paper": "#120D0E",
+    "on_dark": "#FFFFFF"
+  },
+  "small_cut": {
+    "file": "fpt-tile-small.svg",
+    "use": "every rendered size at or below 32 px (favicons, smallest app icons); never above 32 px",
+    "ticks": false,
+    "cut_u": 1.6,
+    "mark_width_share_of_tile": 0.82
+  },
+  "app_icons": {
+    "full_bleed": {"file": "fpt-appicon.svg", "mark_width_share": 0.74, "use": "iOS app icon (iOS applies its own mask), store listings, apple-touch-icon"},
+    "round": {"file": "fpt-appicon-round.svg", "mark_max_radius_share": 0.38, "use": "social avatars (circle crop), PWA maskable icon"},
+    "android_adaptive": {"files": ["fpt-android-adaptive-foreground.svg", "fpt-android-adaptive-background.svg"], "canvas_dp": 108, "mark_max_radius_dp": 30, "safe_circle_radius_dp": 33}
+  },
+  "lockups": {
+    "horizontal_en": {"files": ["fpt-lockup-horizontal-en.svg", "fpt-lockup-horizontal-en-white.svg"], "aspect_w_over_h": 4.7364, "height": "= tile side", "gap_to_wordmark_ratio_of_tile": 0.3333, "wordmark": "Fiper Pro Traders, D-DIN PRO ExtraBold, tracking -0.02 em, cap height = monogram cap height (11.5u), sitting on the monogram cap line and baseline"},
+    "horizontal_ar": {"files": ["fpt-lockup-horizontal-ar.svg", "fpt-lockup-horizontal-ar-white.svg"], "aspect_w_over_h": 3.9043, "tile_position": "right of the Arabic name (the mark itself is never mirrored)", "gap_to_wordmark_ratio_of_tile": 0.3333, "wordmark": "فايبر برو تريدرز, IBM Plex Sans Arabic Bold, cap metric 10.5u, baseline = monogram baseline"},
+    "bilingual": {"files": ["fpt-lockup-bilingual.svg", "fpt-lockup-bilingual-white.svg"], "aspect_w_over_h": 3.2272, "gap_to_wordmark_ratio_of_tile": 0.3333, "english_cap_u": 6.4, "arabic": "same width as the English line; the two-line block runs from the monogram cap line to the descender tip"},
+    "vertical_en": {"files": ["fpt-lockup-vertical-en.svg", "fpt-lockup-vertical-en-white.svg"], "aspect_w_over_h": 1.1154, "wordmark_width_ratio_of_tile": 1.48, "gap_ratio_of_tile": 0.14, "alignment": "wordmark centred exactly on the tile axis"},
+    "vertical_ar": {"files": ["fpt-lockup-vertical-ar.svg", "fpt-lockup-vertical-ar-white.svg"], "aspect_w_over_h": 0.9586, "wordmark_width_ratio_of_tile": 1.30, "gap_ratio_of_tile": 0.14, "alignment": "wordmark centred exactly on the tile axis"}
+  },
+  "lettering_sources": {
+    "latin": "D-DIN PRO ExtraBold 1.000 (Datto Inc., SIL Open Font License 1.1), npm @fontpkg/d-din-pro@1.0.0, file D-DIN-PRO-800-ExtraBold.otf sha256 a8c736883fd6ebd97ad51f38e993ef960cccc124214f5bcca339fc5f0a7bef28 — logo lettering source only, NOT a brand typeface",
+    "arabic": "IBM Plex Sans Arabic Bold (IBM, SIL Open Font License 1.1), npm @ibm/plex-sans-arabic@1.1.0, file fonts/complete/woff/IBMPlexSansArabic-Bold.woff sha256 27d56b76c0a84a9330ba84d05bab68dcd6d2321770b98a1a9d28652062ffde55 — already the brand Arabic face",
+    "outlined": "all lettering is converted to outlines in every file; no font is needed to display the logo"
+  },
+  "v1_defects_fixed": {
+    "format": "the five official v1 files are JPEG on white, no vector, no transparency",
+    "slant": "edges ranged 12.0 to 13.9 deg -> all 12.5 deg",
+    "cuts": "29 and 38 px; P/T gap 28 -> 50 px (on the 1223 px tile) -> one width, 1u",
+    "arcs": "f shoulder centres 11.7 px apart; T arc 63 px off the P bowl centre -> concentric",
+    "baseline": "f stood 22 px below P and T -> one baseline",
+    "ticks": "42x52 and 32x38 px -> both 1u x 1.25u",
+    "tile_corner": "10.6% in fpt-logo-icon-rounded.jpeg vs 20% in the other four files -> 20% everywhere",
+    "placement": "mark shifted 0.43u (1.3% of the tile) right for optical balance",
+    "vertical_lockup": "wordmark was 11.5 px off the tile axis -> exactly centred",
+    "small_sizes": "mark dissolves below 32 px -> dedicated small cut"
+  }
+}

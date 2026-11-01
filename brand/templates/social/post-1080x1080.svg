@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FPT social master — FPT Brand Identity System v1.0 (child of fiper-brand v2.0.0). Number-dominant post: one figure (IBM Plex Mono) with its currency label, headline second, CTA line. Red = logo tile + CTA arrow only.
+     Editable <text>; fonts by family name (install brand/fonts/*.woff2). Margin = 2 × tile height (72–84 px on 1080). Body text ≥ 42 px on the 1080 canvas (≥ 14 px at 360 wide).
+     Logo = the official v2 vector masters (tile / lockups), never clipped, redrawn or recoloured. No glow, no decorative red, no gold.
+     Regulatory line belongs in the caption (REQUIRED DECISION — none exists), never on the image. SAMPLE chip wherever a sample figure appears. Platform: cTrader only. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1080" viewBox="0 0 1080 1080" font-synthesis="none">
+  <rect width="1080" height="1080" fill="#0A0A0A"/>
+  <image id="logo-lockup" href="../../logos/svg/fpt-lockup-horizontal-en-white.svg" x="667" y="72" width="341" height="72" preserveAspectRatio="xMaxYMin meet"/>
+  <text id="brand-part" x="1008" y="172" direction="ltr" text-anchor="end" font-family="Inter" font-weight="600" font-size="17" fill="rgba(255,255,255,0.55)" letter-spacing="1">PART OF FIPER GLOBAL</text>
+  <text id="label" x="1008" y="330" direction="rtl" text-anchor="start" font-family="IBM Plex Sans Arabic" font-weight="500" font-size="32" letter-spacing="0" fill="rgba(255,255,255,0.55)">تداول برأس مال يصل إلى</text>
+  <text id="figure" x="1008" y="500" direction="ltr" text-anchor="end" font-family="IBM Plex Mono, IBM Plex Sans Arabic, Inter" font-weight="600" font-size="150" fill="#FFFFFF">200,000</text>
+  <text id="unit" x="1008" y="556" direction="ltr" text-anchor="end" font-family="IBM Plex Sans Arabic" font-weight="600" font-size="36" fill="rgba(255,255,255,0.55)">USD · حساب ممول</text>
+  <line x1="72" y1="620" x2="1008" y2="620" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+  <text id="h1" x="1008" y="700" direction="rtl" text-anchor="start" font-family="IBM Plex Sans Arabic" font-weight="700" font-size="46" letter-spacing="0" fill="#FFFFFF">مرحلة تقييم واحدة. قواعد واضحة.</text>
+  <text id="h2" x="1008" y="770" direction="rtl" text-anchor="start" font-family="IBM Plex Sans Arabic" font-weight="700" font-size="46" letter-spacing="0" fill="#FFFFFF">نسبة أرباح 80 / 20 ثابتة.</text>
+  <text id="body" x="1008" y="850" direction="rtl" text-anchor="start" font-family="IBM Plex Sans Arabic" font-weight="400" font-size="42" letter-spacing="0" fill="rgba(255,255,255,0.55)">هدف ربح 10 % · خسارة يومية 5 % · إجمالية 9 % · 31 يوماً</text>
+  <line x1="72" y1="910" x2="1008" y2="910" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+  <text id="cta" x="1008" y="980" direction="rtl" text-anchor="start" font-family="IBM Plex Sans Arabic" font-weight="700" font-size="34" letter-spacing="0" fill="#FFFFFF">ابدأ تحدي FPT</text>
+  <path id="cta-arrow" d="M 708 968 h-40 m12 -12 l-12 12 12 12" fill="none" stroke="#F42821" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text id="meta" x="72" y="980" direction="ltr" text-anchor="start" font-family="IBM Plex Mono, IBM Plex Sans Arabic, Inter" font-weight="500" font-size="24" fill="rgba(255,255,255,0.55)">fptraders.com · cTrader</text>
+</svg>

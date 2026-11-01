@@ -1,46 +1,19 @@
 import { useTranslation } from 'react-i18next';
 import Section, { Eyebrow } from '../ui/Section.jsx';
-import CountUp from '../ui/CountUp.jsx';
-import WaveBg from '../ui/WaveBg.jsx';
+import { RULES_V1, pct } from '../../data/rules.js';
 
+/** Number-dominant band: the reward share as a hero figure in the text colour (no gradient, no glow, no counter) — payoutShareBps / payoutCycleDays from RULES_V1. */
 export default function ProfitSplitBanner() {
   const { t } = useTranslation();
   return (
-    <Section className="relative overflow-hidden" >
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(circle at center, rgba(163,1,0,0.35) 0%, rgba(0,0,0,0) 65%)',
-        }}
-      />
-      <WaveBg opacity={0.2} />
-
-      <div className="relative text-center max-w-4xl mx-auto">
-        <Eyebrow>Performance reward</Eyebrow>
-
-        <h2 className="mt-8 text-3xl sm:text-4xl lg:text-5xl font-medium text-secondary leading-tight">
-          {t('profitSplit.title')}
-        </h2>
-
-        <div
-          dir="ltr"
-          className="my-4 leading-none font-semibold font-mono-num gradient-text"
-          style={{
-            fontSize: 'clamp(120px, 18vw, 220px)',
-            filter: 'drop-shadow(0 0 60px rgba(244,40,33,0.5))',
-            letterSpacing: '-0.04em',
-          }}
-        >
-          <CountUp end={80} suffix="%" duration={2500} />
-        </div>
-
-        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium leading-tight">
-          {t('profitSplit.subtitle')}
-        </h3>
-
-        <p className="mt-10 text-base sm:text-lg text-secondary max-w-xl mx-auto">
-          Industry-leading profit share. Paid on a structured cadence.
+    <Section className="bg-card border-y border-subtle" aria-labelledby="profit-split-title">
+      <div className="text-center max-w-3xl mx-auto">
+        <Eyebrow>{t('profitSplit.eyebrow')}</Eyebrow>
+        <h2 id="profit-split-title" className="mt-6 text-2xl sm:text-3xl font-semibold text-secondary leading-[1.5]">{t('profitSplit.title')}</h2>
+        <p className="my-3 font-semibold text-white fpt-unit leading-none text-[16vw] sm:text-[min(10rem,16vw)]">{pct(RULES_V1.payoutShareBps)}</p>
+        <p className="text-2xl sm:text-3xl font-semibold leading-[1.5]">{t('profitSplit.subtitle')}</p>
+        <p className="mt-8 text-base sm:text-lg text-secondary max-w-xl mx-auto leading-relaxed">
+          {t('profitSplit.body', { share: pct(RULES_V1.payoutShareBps), cycle: RULES_V1.payoutCycleDays })}
         </p>
       </div>
     </Section>

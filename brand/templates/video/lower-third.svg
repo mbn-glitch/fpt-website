@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FPT lower third — FPT Brand Identity System v1.0. 1920×1080, transparent except the panel. Tile (official v2 vector master, 72 px, never clipped), name (Inter 700 / Plex Arabic 700), title line muted; AR on the start side, EN secondary.
+     Panel = ground at 85 % with a 1 px rule, radius 16, no shadow/glow. Enters with the reveal (fade + 8 px), never slides across the frame. Editable <text>. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080" font-synthesis="none">
+  <g id="lower-third">
+    <rect x="192" y="840" width="880" height="120" rx="16" fill="rgba(10,10,10,0.85)" stroke="rgba(255,255,255,0.35)"/>
+    <image id="tile" href="../../logos/svg/fpt-tile.svg" x="232" y="864" width="72" height="72" preserveAspectRatio="xMidYMid meet"/>
+    <line x1="328" y1="864" x2="328" y2="936" stroke="rgba(255,255,255,0.35)"/>
+    <text id="name-ar" x="1040" y="895" direction="rtl" text-anchor="start" font-family="IBM Plex Sans Arabic" font-weight="700" font-size="34" letter-spacing="0" fill="#FFFFFF">متداول نموذجي</text>
+    <text id="title-ar" x="1040" y="936" direction="rtl" text-anchor="start" font-family="IBM Plex Sans Arabic" font-weight="400" font-size="24" letter-spacing="0" fill="rgba(255,255,255,0.55)">حساب ممول · SAMPLE</text>
+    <text id="name-en" x="352" y="895" direction="ltr" text-anchor="start" font-family="Inter" font-weight="700" font-size="30" fill="#FFFFFF">Sample Trader</text>
+    <text id="title-en" x="352" y="934" direction="ltr" text-anchor="start" font-family="Inter" font-weight="500" font-size="22" fill="rgba(255,255,255,0.55)">Funded trader · Fiper Pro Traders</text>
+  </g>
+</svg>

@@ -1,0 +1,72 @@
+/* FPT document print stylesheet — FPT Brand Identity System v1.0 (child of fiper-brand v2.0.0; parent composition: paper ground, lockup-derived margins, rules not boxes)
+   A4 210 × 297 mm; margin 17 mm (= 64 CSS px ≈ 2 × the 8 mm lockup height). Paper #F7F4F1 on every page; no dark pages.
+   Arabic in IBM Plex Sans Arabic (letter-spacing 0); every Latin / mono family carries 'IBM Plex Sans Arabic' as fallback so Arabic never falls to a system serif.
+   Figures in IBM Plex Mono (.num / .fpt-unit, unbreakable). Logical properties only; type in rem. Loads ../../tokens.css (paper vars via .fpt-paper) and ../../fonts/fonts.css. */
+@page { size: A4; margin: 0; }
+html { background: #FFFFFF; }
+body { margin: 0; color: var(--fpt-text-primary); font-family: 'IBM Plex Sans Arabic', 'Inter', sans-serif; font-size: 0.875rem; line-height: 1.8; font-synthesis: none; letter-spacing: 0; }
+[lang="en"], .en { font-family: 'Inter', 'IBM Plex Sans Arabic', sans-serif; line-height: 1.6; direction: ltr; }
+.num, td.num, .mono, .fpt-unit, .unit { font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', 'Inter', monospace; font-variant-numeric: tabular-nums lining-nums; direction: ltr; unicode-bidi: isolate; white-space: nowrap; }
+.fpt-unit, .unit { display: inline-block; }
+h1, h2, h3 { margin: 0; font-weight: 700; line-height: 1.25; letter-spacing: 0; }
+.muted { color: var(--fpt-text-muted); }
+.rule { border: 0; border-block-start: 1px solid var(--fpt-paper-line-strong); margin: 0; }
+.page { position: relative; inline-size: 210mm; block-size: 297mm; box-sizing: border-box; padding: 17mm; background: var(--fpt-ground-bg); page-break-after: always; break-after: page; -webkit-print-color-adjust: exact; print-color-adjust: exact; display: flex; flex-direction: column; overflow: hidden; }
+.page:last-child { page-break-after: auto; break-after: auto; }
+@media screen { body { background: var(--fpt-ground-frame); } .page { margin: 8mm auto; } }
+/* constant core: lockup top-start (official vector lockup fpt-lockup-horizontal-en.svg, 8 mm high), one Arabic headline, English secondary line, rules between levels, meta foot */
+.lockup { block-size: 8mm; inline-size: auto; align-self: flex-start; }
+.doc-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 8mm; padding-block-end: 4mm; border-block-end: 1px solid var(--fpt-paper-line-strong); margin-block-start: 10mm; }
+.doc-head h1 { font-size: 1.5rem; }
+.doc-head .en { font-size: 0.75rem; color: var(--fpt-text-muted); text-align: end; }
+.kind { font-size: 0.8125rem; color: var(--fpt-text-muted); font-weight: 500; }
+.lead { font-size: 1rem; margin-block-start: 5mm; max-inline-size: 150mm; }
+/* number-dominant key figures: heavy top rule, no boxes */
+.kpis { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0 9mm; margin-block-start: 9mm; }
+.kpi { padding-block: 4mm 5mm; border-block-start: 2px solid var(--fpt-text-primary); }
+.kpi .l { font-size: 0.75rem; color: var(--fpt-text-muted); font-weight: 500; }
+.kpi .v { font-size: 1.75rem; font-weight: 600; margin-block-start: 2.5mm; line-height: 1; }
+.kpi .d { font-size: 0.8125rem; margin-block-start: 3mm; font-weight: 500; line-height: 1.5; }
+h2 { font-size: 1rem; margin-block-start: 10mm; }
+table.fin { inline-size: 100%; border-collapse: collapse; margin-block-start: 3mm; font-size: 0.8125rem; }
+table.fin th { text-align: start; font-weight: 600; color: var(--fpt-text-muted); font-size: 0.75rem; padding: 0 0 2.5mm; border-block-end: 1px solid var(--fpt-paper-line-strong); }
+table.fin td { padding: 3mm 0; border-block-end: 1px solid var(--fpt-paper-line-strong); vertical-align: top; }
+table.fin td.num, table.fin th.num { text-align: end; white-space: nowrap; }
+table.fin th.num { font-family: 'IBM Plex Sans Arabic', 'Inter', sans-serif; direction: inherit; } /* headers are labels: never mono */
+table.fin tr.total td { font-weight: 700; border-block-end: 2px solid var(--fpt-text-primary); }
+.gain { color: var(--fpt-finance-gain); } .loss { color: var(--fpt-finance-loss); } .pending { color: var(--fpt-finance-pending); } .drawdown { color: var(--fpt-finance-drawdown); }
+.chart { margin-block-start: 9mm; }
+.chart .l { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--fpt-text-muted); font-weight: 500; margin-block-end: 2mm; }
+.chart svg { inline-size: 100%; block-size: auto; display: block; }
+.chart .cap { font-size: 0.75rem; color: var(--fpt-text-muted); margin-block-start: 2mm; line-height: 1.6; }
+.doc-foot { display: flex; justify-content: space-between; gap: 6mm; font-size: 0.6875rem; color: var(--fpt-text-muted); padding-block-start: 3mm; border-block-start: 1px solid var(--fpt-paper-line-strong); margin-block-start: auto; line-height: 1.6; }
+.doc-foot .pg::after { content: counter(page); font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; }
+.doc-foot .pgs::after { content: attr(data-pages); font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; }
+.page.inner { counter-increment: page; }
+/* signature block */
+.sig { display: grid; grid-template-columns: 1fr 1fr; gap: 12mm; margin-block-start: 14mm; }
+.sig div { border-block-start: 1px solid var(--fpt-text-primary); padding-block-start: 2mm; font-size: 0.8125rem; }
+.sig b { display: block; } .sig small { color: var(--fpt-text-muted); display: block; }
+/* facts card — the one justified grouping box (parties, order facts) */
+.card { background: var(--fpt-ground-panel); border: 1px solid var(--fpt-paper-line-strong); border-radius: 12px; padding: 4mm 5mm; }
+.inv-head { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin-block-start: 8mm; font-size: 0.8125rem; }
+.inv-head b { display: block; font-size: 0.75rem; color: var(--fpt-text-muted); font-weight: 600; margin-block-end: 1mm; }
+.inv-no { font-family: 'IBM Plex Mono', 'IBM Plex Sans Arabic', monospace; font-size: 1.25rem; font-weight: 600; direction: ltr; unicode-bidi: isolate; }
+.totals { inline-size: 58%; margin-inline-start: auto; }
+.chip { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: .6mm 3mm; border-radius: 999px; }
+.chip.paid { background: var(--fpt-state-success-wash); color: var(--fpt-paper-success); } .chip.pending { background: var(--fpt-state-warning-wash); color: var(--fpt-paper-warning); } .chip.due { background: var(--fpt-state-danger-wash); color: var(--fpt-paper-danger); }
+.sample { font-family: 'Inter', 'IBM Plex Sans Arabic', sans-serif; font-size: 0.6875rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--fpt-text-muted); border: 1px solid var(--fpt-paper-line-strong); padding: .4mm 2.5mm; border-radius: 999px; vertical-align: middle; }
+.brandline { font-size: 0.8125rem; color: var(--fpt-text-muted); }
+/* regulatory placeholder — visibly a placeholder (dashed), never looks like legal text */
+.reg-placeholder { margin-block-start: 4mm; padding: 2mm 4mm; border: 1px dashed var(--fpt-paper-line-strong); border-radius: 6px; font-size: 0.6875rem; color: var(--fpt-text-muted); line-height: 1.6; }
+/* layout-only banner (trader agreement) */
+.layout-banner { margin-block-start: 6mm; padding: 3mm 5mm; border: 1px dashed var(--fpt-paper-line-strong); border-radius: 8px; font-size: 0.8125rem; color: var(--fpt-text-muted); background: var(--fpt-ground-panel); }
+.clause { margin-block-start: 6mm; }
+.clause h3 { font-size: 0.9375rem; }
+.clause .slot { min-block-size: 10mm; border-block-end: 1px dotted var(--fpt-paper-line-strong); margin-block-start: 2mm; font-size: 0.75rem; color: var(--fpt-text-muted); }
+/* certificate — headline-dominant, figure second */
+.cert-title { font-size: 2.25rem; font-weight: 700; line-height: 1.2; margin-block-start: 14mm; }
+.cert-title-en { font-family: 'Inter', 'IBM Plex Sans Arabic', sans-serif; font-size: 0.9375rem; font-weight: 500; color: var(--fpt-text-muted); direction: ltr; text-align: end; margin-block-start: 3mm; }
+.cert-body { margin-block-start: 12mm; font-size: 1rem; line-height: 1.9; max-inline-size: 160mm; }
+.cert-name { font-size: 1.5rem; font-weight: 700; margin-block-start: 6mm; padding-block-end: 3mm; border-block-end: 2px solid var(--fpt-text-primary); display: inline-block; min-inline-size: 110mm; }
+.cert-figure { margin-block-start: 10mm; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0 9mm; }

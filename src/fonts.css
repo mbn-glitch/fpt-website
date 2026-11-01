@@ -1,0 +1,21 @@
+/* Derived from brand/fonts/fonts.css (fpt-brand v1.2.0, byte copy under public/brand/fonts/fonts.css): the same @font-face rules with absolute /brand/fonts/ URLs, bundled into the one stylesheet so no second render-blocking request precedes the first paint (UXFW-047 / 053). */
+/* Licences: brand/fonts/licenses/ (SIL OFL 1.1 per family, copyright + reserved font names) */
+/* FPT Brand Identity System v1.0 — fonts.css (inherited unchanged from fiper-brand v2.0.0). Official files (Google Fonts, OFL 1.1). One complete file per family and weight;
+   IBM Plex Sans Arabic carries Latin + digits so digits inside Arabic runs never fall back. Load this before tokens.css. */
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:swap;src:url(/brand/fonts/BarlowCondensed-600.woff2) format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:swap;src:url(/brand/fonts/BarlowCondensed-700.woff2) format('woff2')}
+@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:800;font-display:swap;src:url(/brand/fonts/BarlowCondensed-800.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/brand/fonts/IBMPlexMono-400.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:600;font-display:swap;src:url(/brand/fonts/IBMPlexMono-600.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:400;font-display:swap;src:url(/brand/fonts/IBMPlexSans-400.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:500;font-display:swap;src:url(/brand/fonts/IBMPlexSans-500.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:600;font-display:swap;src:url(/brand/fonts/IBMPlexSans-600.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:700;font-display:swap;src:url(/brand/fonts/IBMPlexSans-700.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans Arabic';font-style:normal;font-weight:400;font-display:swap;src:url(/brand/fonts/IBMPlexSansArabic-400.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans Arabic';font-style:normal;font-weight:500;font-display:swap;src:url(/brand/fonts/IBMPlexSansArabic-500.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans Arabic';font-style:normal;font-weight:600;font-display:swap;src:url(/brand/fonts/IBMPlexSansArabic-600.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Sans Arabic';font-style:normal;font-weight:700;font-display:swap;src:url(/brand/fonts/IBMPlexSansArabic-700.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(/brand/fonts/Inter-400.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(/brand/fonts/Inter-500.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(/brand/fonts/Inter-600.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(/brand/fonts/Inter-700.woff2) format('woff2')}

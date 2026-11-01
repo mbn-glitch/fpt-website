@@ -1,5 +1,5 @@
 /**
- * FPT logo v2 (fpt-brand v1.1.2 — CEO approval 30 Oct 2026). The files under /public/brand are BYTE COPIES of the package
+ * FPT logo v2 (fpt-brand v1.2.0, pinned 1 Nov 2026 — logo files unchanged since v1.1.2, CEO approval 30 Oct 2026). The files under /public/brand are BYTE COPIES of the package
  * files in brand/logos/{svg,png,icons,derived} (checked by `node scripts/check-logo-assets.mjs` against public/brand/SHA256SUMS).
  * The tile carries its own 20 % corner and is transparent: never clipped (no border-radius / object-fit), never recoloured,
  * never mirrored (`direction: ltr`), never retyped. Renders ≤ 32 px use the small cut; the lockup is the official SVG in the

@@ -1,17 +1,20 @@
 ﻿import { useEffect, useMemo, useRef, useState } from 'react';
-import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Search, X, ArrowRight } from 'lucide-react';
 import { searchFaqs, categories } from '../../data/helpContent.js';
+import useLocalizedPath from '../../hooks/useLocalizedPath.js';
 
+/** Help search — localized placeholder and states, opaque result list (no portal, no blur), localized target links. */
 export default function HelpSearch({ size = 'lg', className = '' }) {
+  const { t, i18n } = useTranslation();
+  const { to } = useLocalizedPath();
+  const lang = i18n.language?.split('-')[0] || 'en';
   const [q, setQ] = useState('');
   const [debounced, setDebounced] = useState('');
   const [open, setOpen] = useState(false);
-  const [pos, setPos] = useState({top:0,left:0,width:0});
   const wrapRef = useRef(null);
   const inputRef = useRef(null);
-  const portalRef = useRef(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -19,81 +22,71 @@ export default function HelpSearch({ size = 'lg', className = '' }) {
     return () => clearTimeout(id);
   }, [q]);
 
-  const updatePos = () => {
-    if (wrapRef.current) {
-      const r = wrapRef.current.getBoundingClientRect();
-      setPos({ top: r.bottom + window.scrollY + 8, left: r.left + window.scrollX, width: r.width });
-    }
-  };
-
   useEffect(() => {
-    if (!open) return;
-    const fn = (e) => {
-      if (!wrapRef.current?.contains(e.target) && !portalRef.current?.contains(e.target)) setOpen(false);
-    };
+    if (!open) return undefined;
+    const fn = (e) => { if (!wrapRef.current?.contains(e.target)) setOpen(false); };
+    const onKey = (e) => { if (e.key === 'Escape') setOpen(false); };
     document.addEventListener('click', fn);
-    return () => document.removeEventListener('click', fn);
+    document.addEventListener('keydown', onKey);
+    return () => { document.removeEventListener('click', fn); document.removeEventListener('keydown', onKey); };
   }, [open]);
 
-  const handleOpen = () => { updatePos(); setOpen(true); };
-
-  const results = useMemo(() => debounced ? searchFaqs(debounced, 8) : [], [debounced]);
+  const results = useMemo(() => (debounced ? searchFaqs(debounced, 8) : []), [debounced]);
   const categoryMap = useMemo(() => Object.fromEntries(categories.map((c) => [c.id, c])), []);
 
   const goTo = (faq) => {
     setOpen(false); setQ('');
-    navigate(`/help/${categoryMap[faq.categoryId].slug}#${faq.id}`);
+    navigate(to(`/help/${categoryMap[faq.categoryId].slug}#${faq.id}`));
   };
 
-  const heightCls = size === 'sm' ? 'h-12 text-sm' : 'h-14 sm:h-16 text-base';
-  const iconSize = size === 'sm' ? 18 : 20;
-
-  const dropdown = open ? createPortal(
-    <div ref={portalRef} style={{position:'absolute',top:pos.top,left:pos.left,width:pos.width,zIndex:999999,background:'#0A0A0A',border:'1px solid rgba(255,255,255,0.1)',borderRadius:16,boxShadow:'0 20px 60px rgba(0,0,0,0.8)',maxHeight:400,overflowY:'auto',overscrollBehavior:'contain'}}>
-      {!debounced && <div style={{padding:'20px',fontSize:13,color:'rgba(255,255,255,0.35)'}}>Type to search… or browse categories below.</div>}
-      {debounced && results.length === 0 && <div style={{padding:'20px',fontSize:13,color:'rgba(255,255,255,0.35)'}}>No matches — try different keywords.</div>}
-      {results.length > 0 && (
-        <ul style={{listStyle:'none',margin:0,padding:0}}>
-          {results.map((f) => {
-            const cat = categoryMap[f.categoryId];
-            return (
-              <li key={f.id} style={{borderBottom:'1px solid rgba(255,255,255,0.04)'}}>
-                <button onClick={() => goTo(f)} style={{width:'100%',textAlign:'left',padding:'14px 20px',background:'transparent',border:'none',cursor:'pointer',display:'flex',alignItems:'center',gap:12,color:'#fff'}}>
-                  <div style={{flex:1,minWidth:0}}>
-                    <div style={{fontSize:10,fontWeight:700,textTransform:'uppercase',letterSpacing:'0.15em',color:'#FCA5A5',marginBottom:3}}>{cat.title}</div>
-                    <div style={{fontSize:13,color:'#fff',overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{f.question}</div>
-                  </div>
-                  <ArrowRight size={13} style={{color:'rgba(255,255,255,0.3)',flexShrink:0}} />
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      )}
-    </div>,
-    document.body
-  ) : null;
+  const heightCls = size === 'sm' ? 'h-12 text-sm' : 'h-14 text-base';
 
   return (
-    <>
-      <div ref={wrapRef} className={`relative w-full ${className}`}>
-        <div className={`relative flex items-center ${heightCls} bg-[#0A0A0A] border rounded-2xl transition-colors ${open ? 'border-[#F42821] shadow-[0_0_0_4px_rgba(244,40,33,0.12)]' : 'border-subtle'}`}>
-          <Search size={iconSize} className="absolute left-5 text-tertiary pointer-events-none" />
-          <input ref={inputRef} type="text" value={q}
-            onChange={(e) => { setQ(e.target.value); handleOpen(); }}
-            onFocus={handleOpen}
-            placeholder="Search for answers…"
-            className="w-full h-full bg-transparent pl-14 pr-12 outline-none text-white placeholder:text-tertiary"
-            aria-label="Search the help center"
-          />
-          {q && (
-            <button onClick={() => { setQ(''); setOpen(false); inputRef.current?.focus(); }} className="absolute right-4 w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-secondary">
-              <X size={14} />
-            </button>
+    <div ref={wrapRef} className={`relative w-full ${className}`}>
+      <div className={`relative flex items-center ${heightCls} bg-card border rounded-2xl transition-colors ${open ? 'border-white/40' : 'border-subtle'}`}>
+        <Search size={18} className="absolute start-4 text-tertiary pointer-events-none" aria-hidden="true" />
+        <input
+          ref={inputRef}
+          type="search"
+          value={q}
+          onChange={(e) => { setQ(e.target.value); setOpen(true); }}
+          onFocus={() => setOpen(true)}
+          placeholder={t('help.searchPlaceholder')}
+          className="w-full h-full bg-transparent ps-12 pe-12 outline-none text-white placeholder:text-tertiary"
+          aria-label={t('help.searchLabel')}
+        />
+        {q && (
+          <button type="button" onClick={() => { setQ(''); setOpen(false); inputRef.current?.focus(); }} className="absolute end-2 w-11 h-11 rounded-full flex items-center justify-center text-secondary hover:text-white" aria-label={t('help.clearSearch')}>
+            <X size={14} aria-hidden="true" />
+          </button>
+        )}
+      </div>
+      {open && (
+        <div id="help-search-results" role="region" aria-live="polite" className="absolute inset-x-0 top-full mt-2 z-30 bg-card border border-subtle rounded-2xl max-h-[400px] overflow-y-auto text-start">
+          {!debounced && <p className="p-5 text-[13px] text-tertiary">{t('help.searchHint')}</p>}
+          {debounced && results.length === 0 && <p className="p-5 text-[13px] text-tertiary">{t('help.searchNoMatch')}</p>}
+          {results.length > 0 && (
+            <ul>
+              {results.map((f) => {
+                const cat = categoryMap[f.categoryId];
+                const catTitle = (lang !== 'en' && cat.titles?.[lang]) ? cat.titles[lang] : cat.title;
+                const question = (lang !== 'en' && f.questions?.[lang]) ? f.questions[lang] : f.question;
+                return (
+                  <li key={f.id} className="border-b border-subtle last:border-0">
+                    <button type="button" onClick={() => goTo(f)} className="w-full text-start px-5 min-h-12 py-3 flex items-center gap-3 text-white hover:bg-white/5">
+                      <span className="flex-1 min-w-0">
+                        <span className="block text-[13px] text-tertiary">{catTitle}</span>
+                        <span className="block text-sm truncate">{question}</span>
+                      </span>
+                      <ArrowRight size={13} className="text-tertiary shrink-0 flip-rtl" aria-hidden="true" />
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
           )}
         </div>
-      </div>
-      {dropdown}
-    </>
+      )}
+    </div>
   );
 }

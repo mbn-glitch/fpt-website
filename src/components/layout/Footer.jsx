@@ -1,108 +1,70 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Star } from 'lucide-react';
 import Logo from '../brand/Logo.jsx';
 import RiskLine from '../brand/RiskLine.jsx';
+import WhatsAppButton from '../ui/WhatsAppButton.jsx';
 import { localizedPath } from '../../hooks/useLocalizedPath.js';
+import { ENTITY_LINE, SIMULATED_STATEMENT, LEGAL_DOCS, legalUrl, localeLegal } from '../../data/legal.js';
 
-const LEGAL_URL = 'https://fiper.me/legal-documentation';
 const SOCIAL_URL = 'https://linktr.ee/fiper';
+const FIPER_CARD_URL = 'https://fiperhub.com';
 
+/**
+ * Foot: lockup 44 px, tagline, the relationship line (CR-02), three plain link columns (≥ 44 px targets, no emoji, no tracked caps),
+ * the rights line, the ONE entity line (owner decision 1, config/legal.ts), the fixed risk line (fiper-brand v2.3.4 Q4 / R12) and the
+ * simulated-accounts sentence from the approved Risk Disclosure Statement § 2.1 (owner decision 2). Legal links = the four FPT documents
+ * published in the client area (owner decision 3). The WhatsApp button lives inside this landmark.
+ */
 export default function Footer() {
   const { t, i18n } = useTranslation();
   const lang = i18n.language;
+  const l = localeLegal(lang);
 
   return (
-    <footer className="relative bg-[#0A0A0A] border-t border-subtle pt-20 pb-28">
-      {/* FPT-BRAND-ALIGN: pb-28 clears the fixed WhatsApp button (bottom-6 right-6, 56 px) so the risk line is never covered on a phone (real-iPhone capture) */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
+    <footer className="relative bg-bg border-t border-subtle pt-16 pb-24">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
+        <div className="grid grid-cols-1 grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
           <div className="col-span-2 md:col-span-1">
-            <Link to={localizedPath('/', lang)} className="inline-flex items-center" aria-label="Fiper Pro Traders home">
-              {/* logo v2: the official white lockup at the footer height (44 px, OBSERVED) — replaces tile + typed name */}
+            <Link to={localizedPath('/', lang)} className="inline-flex items-center min-h-11">
+              {/* logo v2 (fpt-brand v1.2.0): the official white lockup at the footer height (44 px, OBSERVED) */}
               <Logo variant="lockup" size={44} lang={lang} />
             </Link>
-            <p className="mt-5 text-sm text-secondary leading-relaxed">
-              {t('footer.tagline')}
-            </p>
+            <p className="mt-5 text-sm text-secondary leading-relaxed">{t('footer.tagline')}</p>
             {/* CR-02: the relationship line verbatim, sentence case, not italic, no tracking */}
-            <p className="mt-2 text-xs text-tertiary" lang={lang}>
-              {t('footer.partOf')}
-            </p>
-            <a
-              href={SOCIAL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-5 text-xs uppercase tracking-[0.18em] text-secondary hover:text-white transition-colors"
-            >
-              Follow us →
-            </a>
+            <p className="mt-2 text-xs text-tertiary" lang={lang}>{t('footer.partOf')}</p>
           </div>
 
           <FooterCol title={t('footer.products')}>
-            <FooterLink to={localizedPath('/challenges', lang)}>
-              {t('footer.links.challenges')}
-            </FooterLink>
-            <FooterLink to={localizedPath('/pricing', lang)}>{t('footer.links.pricing')}</FooterLink>
-            <FooterLink href="https://fiperhub.com" external>{t('footer.links.fiperCard')}</FooterLink>
+            <FooterLink to={localizedPath('/challenges', lang)}>{t('footer.links.challenges')}</FooterLink>
+            <FooterLink to={localizedPath('/partners', lang)}>{t('footer.links.partners')}</FooterLink>
+            <FooterLink to={localizedPath('/help', lang)}>{t('footer.links.helpCenter')}</FooterLink>
+            <FooterLink to={localizedPath('/contact', lang)}>{t('footer.links.contact')}</FooterLink>
           </FooterCol>
 
           <FooterCol title={t('footer.fiperGlobal')}>
-            <FooterLink href="https://linktr.ee/fiper" external>
-              {t('footer.links.aboutFiperGlobal')}
-            </FooterLink>
-            <FooterLink href="https://fiperhub.com" external>
-              {t('footer.links.fiperCard')}
-            </FooterLink>
-            <FooterLink href="https://fiperhub.com" external>
-              {t('footer.links.fiperCRM')}
-            </FooterLink>
-            <FooterLink to={localizedPath('/help', lang)}>
-              {t('footer.links.helpCenter')}
-            </FooterLink>
-            <FooterLink href="https://linktr.ee/fiper" external>{t('footer.links.fiperGlobalSite')}</FooterLink>
+            <FooterLink to={localizedPath('/about', lang)}>{t('footer.links.about')}</FooterLink>
+            <FooterLink href={FIPER_CARD_URL} external>{t('footer.links.fiperCard')}</FooterLink>
+            <FooterLink href={SOCIAL_URL} external>{t('footer.links.fiperGlobalSite')}</FooterLink>
           </FooterCol>
 
           <FooterCol title={t('footer.legal')}>
-            <FooterLink href={LEGAL_URL} external>{t('footer.links.terms')}</FooterLink>
-            <FooterLink href={LEGAL_URL} external>{t('footer.links.privacy')}</FooterLink>
-            <FooterLink href={LEGAL_URL} external>{t('footer.links.cookies')}</FooterLink>
-            <FooterLink href={LEGAL_URL} external>{t('footer.links.refund')}</FooterLink>
-            <FooterLink href={LEGAL_URL} external>{t('footer.links.risk')}</FooterLink>
+            {LEGAL_DOCS.map((d) => (
+              <FooterLink key={d.key} href={legalUrl(d.key, lang)} external>{t(`footer.links.${d.key}`)}</FooterLink>
+            ))}
           </FooterCol>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-subtle flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2">
-              <div className="flex items-center gap-1 text-[#00B67A]" dir="ltr">
-                {[...Array(4)].map((_, i) => (
-                  <Star key={i} size={16} fill="currentColor" strokeWidth={0} />
-                ))}
-                <Star size={16} fill="currentColor" strokeWidth={0} className="opacity-50" />
-              </div>
-              <span className="text-xs text-secondary">
-                <span className="font-mono-num text-white font-semibold" dir="ltr">4.2</span> · Excellent on Trustpilot
-              </span>
-            </div>
-            <a
-              href={SOCIAL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs uppercase tracking-[0.18em] text-secondary hover:text-white transition-colors"
-            >
-              Socials
-            </a>
-          </div>
-          <p className="text-xs text-tertiary">
-            {t('footer.copyright')}
-          </p>
+        <div className="mt-14 pt-8 border-t border-subtle flex flex-col gap-2">
+          <p className="text-xs text-tertiary leading-relaxed">{t('footer.copyright')}</p>
+          {/* Owner decision 1 (1 Nov 2026): the ONE entity line, in the page language (English for every non-Arabic locale), after the rights line */}
+          <p className="text-xs text-tertiary leading-relaxed" lang={l} dir={l === 'ar' ? 'rtl' : 'ltr'} data-entity-line="true">{ENTITY_LINE[l]}</p>
         </div>
 
-        {/* The fixed risk line (fiper-brand v2.3.4 Q4 / R12 — no visual change since v2.3.0) — the only risk wording on the site; the former `footer.riskDisclosure`
-            sentence was an unapproved legal text (fpt-brand MISSING-ASSETS #14) and is removed. Legal documents: REQUIRED DECISION. */}
-        <RiskLine lang={lang} className="mt-6 pr-20" />
+        {/* The fixed risk line (fiper-brand v2.3.4 Q4 / R12) — then the simulated-accounts sentence (Risk Disclosure Statement v1.0 § 2.1, verbatim) */}
+        <RiskLine lang={lang} className="mt-6" />
+        <p className="mt-2 text-xs text-tertiary leading-relaxed max-w-3xl" lang={l} dir={l === 'ar' ? 'rtl' : 'ltr'} data-simulated-statement="true">{SIMULATED_STATEMENT[l]}</p>
       </div>
+      <WhatsAppButton />
     </footer>
   );
 }
@@ -110,16 +72,16 @@ export default function Footer() {
 function FooterCol({ title, children }) {
   return (
     <div>
-      <h4 className="text-xs font-semibold uppercase tracking-[0.18em] text-tertiary mb-5">{title}</h4>
-      <ul className="flex flex-col gap-3">
-        {Array.isArray(children) ? children.map((c, i) => <li key={i}>{c}</li>) : <li>{children}</li>}
+      <h2 className="text-xs font-semibold text-tertiary mb-3">{title}</h2>
+      <ul className="flex flex-col">
+        {(Array.isArray(children) ? children : [children]).map((c, i) => <li key={i}>{c}</li>)}
       </ul>
     </div>
   );
 }
 
 function FooterLink({ to, href, external, children }) {
-  const cls = 'text-sm text-secondary hover:text-white transition-colors';
+  const cls = 'inline-flex items-center min-h-11 text-sm text-secondary hover:text-white transition-colors';
   if (to) return <Link to={to} className={cls}>{children}</Link>;
   return (
     <a href={href} className={cls} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>

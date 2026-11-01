@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FPT video safe areas — FPT Brand Identity System v1.0. Two canvases: 9:16 (1080×1920, stories/reels) and 16:9 (1920×1080). Action-safe 5 % (amber), title-safe 10 % (blue), platform UI zones (red wash) kept clear.
+     Logo corner: the official tile at 56 px per 1080 px of width, top-start inside the title-safe area (never mirrored). Captions ≥ 48 px Plex Arabic on 1080. Guides only — not for publishing. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3120" height="1920" viewBox="0 0 3120 1920" font-synthesis="none">
+  <rect width="3120" height="1920" fill="#141414"/>
+  <g id="9x16" transform="translate(0 0)">
+    <rect width="1080" height="1920" fill="#0A0A0A" stroke="rgba(255,255,255,0.35)"/>
+    <rect x="54" y="96" width="972" height="1728" fill="none" stroke="#D9A441" stroke-dasharray="12 10" stroke-width="2"/>
+    <rect x="108" y="192" width="864" height="1536" fill="none" stroke="#5B9BD5" stroke-dasharray="12 10" stroke-width="2"/>
+    <rect x="0" y="0" width="1080" height="250" fill="rgba(244,40,33,0.10)"/><text x="540" y="200" text-anchor="middle" font-family="Inter" font-size="26" fill="rgba(255,255,255,0.55)">platform UI zone (story / reel header) — keep clear</text><rect x="0" y="1620" width="1080" height="300" fill="rgba(244,40,33,0.10)"/><text x="540" y="1780" text-anchor="middle" font-family="Inter" font-size="26" fill="rgba(255,255,255,0.55)">platform UI zone (caption, actions) — keep clear</text>
+    <text x="956" y="1712" text-anchor="end" font-family="Inter" font-size="26" fill="#5B9BD5">title-safe 10 %</text>
+    <text x="1010" y="1808" text-anchor="end" font-family="Inter" font-size="26" fill="#D9A441">action-safe 5 %</text>
+    <image href="../../logos/svg/fpt-tile.svg" x="108" y="192" width="56" height="56" preserveAspectRatio="xMidYMid meet"/>
+    <text x="108" y="288" font-family="Inter" font-weight="700" font-size="30" fill="#FFFFFF">logo corner · 56 px</text>
+    <text x="540" y="1896" text-anchor="middle" font-family="IBM Plex Mono, IBM Plex Sans Arabic, Inter" font-size="28" fill="rgba(255,255,255,0.55)">9x16 · 1080 × 1920</text>
+  </g>
+
+  <g id="16x9" transform="translate(1200 0)">
+    <rect width="1920" height="1080" fill="#0A0A0A" stroke="rgba(255,255,255,0.35)"/>
+    <rect x="96" y="54" width="1728" height="972" fill="none" stroke="#D9A441" stroke-dasharray="12 10" stroke-width="2"/>
+    <rect x="192" y="108" width="1536" height="864" fill="none" stroke="#5B9BD5" stroke-dasharray="12 10" stroke-width="2"/>
+    <rect x="0" y="960" width="1920" height="120" fill="rgba(244,40,33,0.10)"/><text x="960" y="1030" text-anchor="middle" font-family="Inter" font-size="26" fill="rgba(255,255,255,0.55)">player controls zone — keep clear</text><rect x="112" y="840" width="760" height="100" fill="none" stroke="rgba(255,255,255,0.35)" stroke-dasharray="6 6"/><text x="856" y="900" font-family="IBM Plex Sans Arabic" font-size="26" fill="rgba(255,255,255,0.55)" direction="rtl" text-anchor="start">موضع الشريط السفلي · lower third</text>
+    <text x="1712" y="956" text-anchor="end" font-family="Inter" font-size="26" fill="#5B9BD5">title-safe 10 %</text>
+    <text x="1808" y="1010" text-anchor="end" font-family="Inter" font-size="26" fill="#D9A441">action-safe 5 %</text>
+    <image href="../../logos/svg/fpt-tile.svg" x="192" y="108" width="100" height="100" preserveAspectRatio="xMidYMid meet"/>
+    <text x="192" y="248" font-family="Inter" font-weight="700" font-size="53" fill="#FFFFFF">logo corner · 100 px</text>
+    <text x="960" y="1056" text-anchor="middle" font-family="IBM Plex Mono, IBM Plex Sans Arabic, Inter" font-size="28" fill="rgba(255,255,255,0.55)">16x9 · 1920 × 1080</text>
+  </g>
+
+</svg>

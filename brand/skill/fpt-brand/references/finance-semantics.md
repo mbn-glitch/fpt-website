@@ -1,0 +1,32 @@
+# Finance semantics — FPT Brand v1.0 (prop firm; extends the parent rules)
+
+| State | Word AR / EN | Sign / icon | Token | Example |
+|---|---|---|---|---|
+| Profit / gain (equity above the starting balance; a profitable day) | ربح / Profit | `+` (▲ optional on deltas) | `--fpt-finance-gain` (`#2AB37A` PROPOSED; paper `#146A45`) — never brand red | `<span class="fpt-delta fpt-delta--gain"><bdi class="fpt-unit">+10.63 %</bdi> ربح</span>` |
+| Loss / drawdown consumed (equity below start; a losing day; drawdown used) | خسارة / Loss | `−` U+2212 (never a hyphen) (▼ optional) | `--fpt-finance-loss` (`#E8785A` PROPOSED, decision item 3; paper `#A33D24`) — never `--fpt-brand-red` | `<span class="fpt-delta fpt-delta--loss"><bdi class="fpt-unit">−0.81 %</bdi> خسارة</span>` |
+| Drawdown warning (≥ 80 % of the daily 5 % or the overall 9 % used) | تحذير السحب / Drawdown warning | Lucide `triangle-alert` | `--fpt-finance-drawdown` (`#D9A441`) | `تحذير السحب · استُخدم 4.10 % من 5 %` |
+| Breach (limit exceeded → evaluation not passed) | تجاوز الحد / Limit breached | Lucide `circle-x` | `--fpt-state-danger` (same value as loss today, separate token) | `تجاوز الحد — الخسارة اليومية القصوى 5 %` |
+| Target reached | الهدف محقق / Target reached | Lucide `circle-check` | `--fpt-state-success` badge | `الهدف محقق · 55,312.50 USD` |
+| Funded | حساب ممول / Funded account | — | brand badge (`--fpt-brand-red` fill, white label) — the one red badge | `حساب ممول · 50,000 USD` |
+| Pending (activation ≈ 72 h; payout under review) | قيد المعالجة / Pending | Lucide `clock` | `--fpt-finance-pending` (= warning) | `قيد المعالجة · التفعيل خلال ≈ 72 ساعة` |
+| Processed (payout paid) | تم الصرف / Payout processed | Lucide `circle-check` | `--fpt-state-success` | `تم الصرف · 4 نوفمبر 2026 · بطاقة Fiper` |
+| Neutral / unchanged | بلا تغيير / Unchanged | none | `--fpt-finance-neutral` (= muted) | `0.00` |
+| Missing | لا بيانات / No data | — | muted `—` | never `0.00` |
+
+Rules
+1. Word + sign / icon + colour, always all three. Colour alone is a defect (WCAG 1.4.1 and the brand rule).
+2. **Equity and balance figures** (`.fpt-figure`): the HERO amount of the screen is IBM Plex Mono 600, tabular, in the text colour, the currency code as a small label — never red, never green: the colour belongs to the delta beside it. **CR-01 (owner approval 31 Oct 2026 04:29 Dubai):** IBM Plex Mono is reserved for that hero amount, for identifiers / codes / logins and for dense financial tables; every amount, date or percentage inside a sentence, list, chip or summary card is set in the text font (IBM Plex Sans Arabic / Inter) with `font-variant-numeric: tabular-nums`, still one unbreakable `.fpt-unit` (`<bdi>` + NBSP). The site's red stat figures (`Hero.jsx`, `.gradient-text`) are historical observations.
+3. **Limits always with their base**: «الخسارة اليومية القصوى 5 % من رصيد بداية اليوم» / "daily drawdown 5 % of the day's starting balance"; «الخسارة الإجمالية القصوى 9 % من الرصيد الابتدائي» / "overall drawdown 9 % of the initial balance"; «هدف الربح 10 % من الرصيد الابتدائي». Usage as a progress bar: used / limit, bar in `--fpt-finance-loss`, label «استُخدم 0.81 % من 5 %» as one `.fpt-unit`; ≥ 80 % → bar and word in `--fpt-finance-drawdown`; 100 % → breach.
+4. **Split** always both halves: «حصة المتداول 80 % · حصة الشركة 20 %» / "Trader share 80 % · Firm share 20 %"; a payout statement shows cycle profit → trader share → firm share, each with `USD`.
+5. Precision: USD cash 2 decimals from integer cents (`55,312.50 USD`); account sizes as whole dollars (`50,000 USD` / `$50,000`); fees whole dollars (`280 USD`); percentages 2 decimals from basis points on deltas (`+10.63 %`), whole numbers on rules (`10 %`, `5 %`, `9 %`); days as integers («22 من 31»); hours «≈ 72 ساعة». Format `,` thousands, `.` decimal, Latin digits, tabular (text font in running text; IBM Plex Mono only on the hero amount, identifiers and dense tables — CR-01); wrap in `.fpt-unit` (`dir="ltr"; unicode-bidi: isolate; white-space: nowrap`). ` %` with a space in AR copy.
+6. Currency: ISO code next to every amount on every listing (`55,312.50 USD` in AR; `USD 55,312.50` or `$55,312.50` in EN marketing only). Never assume the currency; the challenge-fee selector converts to EUR / AED at indicative rates (`pricing.js`) — show the code of the displayed currency and the note «محوَّل بأسعار استرشادية. التسوية بالدولار الأمريكي.» (`challengePricing.convertedNote`).
+7. Sign placement: before the number inside the LTR unit (`+10.63 %`, `−406.25 USD`); colour on the whole unit, not on the sign only.
+8. Charts: equity line in the text colour; target line dashed `--fpt-finance-target`; floors dashed `--fpt-chart-floor`; band `--fpt-chart-band`; the single red element is the current-value dot. Candles (live cTrader data): up = gain, down = loss; never brand red.
+9. Dates / times beside money: human with zone («7 أكتوبر 2026، 14:05 بتوقيت دبي»); payout cycles as a range («20 أكتوبر → 3 نوفمبر 2026»).
+10. Demo / estimated figures: every preview, mockup or template number is a task-file product fact or comes from `brand/scripts/sample-data.mjs` and carries the visible chip «بيانات تجريبية · SAMPLE»; no performance claims, no payout totals, no "average profit", no testimonials. The site's `pricing.calculator` «الأرباح الشهرية المتوقعة» is an estimate with its disclaimer; never present it as a result.
+
+## Zero vs missing · loss vs danger (inherited)
+- `0.00` / `0 %` is a value (neutral, no sign). Missing data is `—` + «لا بيانات», never a zero. A dashboard before the first trade shows equity = starting balance, delta `0.00 USD` neutral, drawdown used `0.00 % من 5 %`.
+- `--fpt-finance-loss` = a value went down (market fact: a losing day, drawdown consumed). `--fpt-state-danger` = something failed or a rule was breached (system / evaluation state). Same colour today, different tokens; a losing day is loss + «خسارة»; a breached limit is danger + «تجاوز الحد» + the rule.
+
+The ONE sample dataset: `brand/scripts/sample-data.mjs` — a $50,000 evaluation, 22 trading days (7 Sep → 7 Oct 2026, 30 calendar days of 31), equity 50,000.00 → 55,312.50 USD (+10.63 %, target 55,000.00 reached), max drawdown −0.81 %, worst day −0.81 %, 64 trades (37 / 27, 57.81 %); payout cycle 20 Oct → 3 Nov 2026: profit 3,124.50 USD → trader 2,499.60 USD (80 %) · firm 624.90 USD (20 %), reference PO-2026-11-00417, method Fiper Card; certificate FC-2026-10-00892; cTrader login 5018842 / server FPT-Live (SAMPLE). The module throws if a figure stops adding up.

@@ -1,0 +1,66 @@
+# Pre-launch checklist — FPT Brand v1.0 (before any FPT surface goes live or a template is sent)
+
+Answer every item yes/no. "Test" is the command or action that proves it. Fail = block. Automated part: `node brand/scripts/verify-identity.mjs src public` must print `→ PASS`. Status vocabulary: APPROVED / OBSERVED / INHERITED / PROPOSED / DEPRECATED (`tokens.json`). Items 1–38 are the parent's identity gates transposed to FPT; 39–52 are FPT-specific (product facts, platform, regulatory, statistics).
+
+## Identity gates
+| # | Check | Test |
+|---|---|---|
+| 1 | Ground is `--fpt-ground-bg` `#0A0A0A`, never `#000` / `rgba(0,0,0,…)` | `grep -rnE "#000\b\|#000000\|rgba\(0, ?0, ?0\|\bblack\b" src/ --include=*.css --include=*.jsx` → 0 outside comments (verify-identity PURE-BLACK = 0) |
+| 2 | No hex literal outside tokens; no DEPRECATED value (Cairo, JetBrains Mono, DIN Next, `#D4AF37`, `#FCA5A5`, `#25D366` WhatsApp green outside the official mark); no parent value (`#DC2626`, `#0A0708`, `#A31212`) | `node brand/scripts/verify-identity.mjs src public` → PASS |
+| 3 | Exactly one primary (red gradient) CTA per screen; secondary / ghost for the rest | open each route at 390 px; count visible `.fpt-btn--primary` → 1 |
+| 4 | No glow, halo, neon, radial wash, gradient border, glass blur on cards, floating or pulsing element | `grep -rnE "btn-red-glow\|radial-red\|gradient-border\|\.glass\|animate-float\|animate-pulse-dot\|backdrop-filter" src/` → 0 outside header/tab bar (RED-GLOW, GLASS-BLUR-CARD, FLOAT-ANIMATION = 0) |
+| 5 | Brand red only in its roles (logo tile, the one primary action, active state); never on losses, labels, numbers for emphasis, decoration, gradient text | `grep -rn "fpt-brand-red\|F42821" src/` reviewed; a `+10.63 %` gain renders `#2AB37A`, a loss `#E8785A` |
+| 6 | White text on a **flat** `#F42821` only ≥ 18.67 px bold / 24 px regular (4.06:1); buttons use the gradient `135deg #F42821 → #A30100` | inspect every red fill: flat → large text / icons only; buttons → `--fpt-c-button-primary-fill` |
+| 7 | Every text / ground pair ≥ 4.5:1 (3:1 large, 3:1 boundaries): muted text never darker than `rgba(255,255,255,.55)`; field borders `--fpt-line-input` | `node brand/scripts/contrast.mjs` → PASS; new pairs added to `PAIRS` |
+| 8 | Cards only where they group information or bound an action (challenge card, facts card, chart frame, sheet); rules elsewhere; one dominant element per surface (pole named) | list every box and name its job; name the pole (README § F) |
+| 9 | Arabic renders in IBM Plex Sans Arabic everywhere (paragraphs, table headers, inputs, buttons, badges, captions, mixed runs); no Cairo, no FreeSerif / Liberation fallback | `node scripts/check-arabic-elements.mjs <html>` → 0 offenders; PDFs: `python3 brand/scripts/check-pdf-fonts.py file.pdf` → PASS |
+| 10 | `letter-spacing: 0` on every Arabic element; Latin caps ≤ `.06em`; no `.2em` / `.15em` / `.22em` tracking | verify-identity ARABIC-LETTER-SPACING + LATIN-LETTER-SPACING = 0 |
+| 11 | IBM Plex Mono only on the hero amount (`.fpt-figure__value`), identifiers / codes / logins (`.fpt-num`, OTP, `code`) and dense financial tables (`td.fpt-td-num`) — never on labels, headings, captions, table headers, and never on an amount / date / percentage inside a sentence, list, chip or summary card (CR-01; `.fpt-unit` = text font, tabular) | verify-identity MONO-ON-LABEL = 0; `grep -rn "font-mono" src/` reviewed |
+| 12 | Real weights (`font-synthesis: none`), fonts self-hosted from `brand/fonts/` (no Google Fonts link) | `grep -rn "fonts.googleapis" index.html` → 0; DevTools Rendered Fonts |
+| 13 | Numbers: Latin digits, `,` thousands, `.` decimal, currency code on every amount, `−` U+2212 for negatives, limits with their base («5 % من رصيد بداية اليوم») | render the dashboard; grep rendered amounts for a bare number |
+| 14 | Amount + currency, sign + number + percent, `22 من 31`, date parts are unbreakable (`.fpt-unit` / `<bdi>`) at 320 / 360 / 390 px and in PDFs | `node brand/scripts/check-units.mjs --ref=page.html page.html file.pdf` → PASS |
+| 15 | Dates human with time zone, no ISO in UI, mail or documents | verify-identity ISO-TIMESTAMP-IN-DISPLAY = 0 |
+| 16 | Logo files only from `brand/logos/svg/` (logo v2) and their renders, unchanged: white lockup / tile on dark, ink lockup on paper, small cut at ≤ 32 px, never clipped, never the ink lockup on dark, never `favicon.svg`, never a retyped "FPT", never `legacy-v1/` | `sha256sum -c brand/logos/source/checksums.sha256`; verify-identity RETYPED-WORDMARK = 0, LEGACY-LOGO-REFERENCE = 0 |
+| 17 | Tile ≥ 16 px (46 px navbar), lockup ≥ 24 px, clear space 0.5 H, never mirrored in RTL | measure in DevTools; `direction: ltr` on the brand element |
+| 18 | Favicon / app icons from `brand/logos/icons/`, OG from `brand/logos/derived/og-1200x630-ar.png` / `og-1200x630-en.png` (CR-05 — dark ground, white lockup, the fixed risk line; never the superseded `og-1200x630.png`), no JPEG favicon links, no site `favicon.svg` | `curl -I` each path → 200; `grep -rn "icon-shield.jpeg\|icon-rounded.jpeg" index.html` → 0; verify-identity OLD-OG-IMAGE = 0 |
+| 19 | Finance states = word + sign / icon + colour (gain, loss, drawdown warning, breach, pending); `finance.loss` ≠ `state.danger`; zero `0.00` ≠ missing `—` | render each state; `filter: grayscale(1)` → still readable |
+| 20 | Charts generated from `brand/scripts/sample-data.mjs` via `charts.mjs` (`data-chart="sample-fpt-50k-evaluation"`); target / floors / band / current dot present; no hand-drawn path | `grep -rn "data-chart=" rendered` ; compare labelled start / end with the dataset (50,000.00 → 55,312.50) |
+| 21 | Icons: Lucide v0.468.0 only, 16 / 20 / 24 px, stroke 1.75 / 2 / 2, directional mirror in RTL; no emoji, no Unicode symbols as icons, no icon on headings or in red tiles | verify-identity EMOJI = 0; UNICODE-SYMBOL-ICON report reviewed; `package.json` has no second icon library |
+| 22 | Imagery: official cTrader media kit screens, the official Fiper Card artwork, the cTrader mark — no stock people, AI faces, abstract waves, coded fake dashboards presented as product | review every image's source path |
+| 23 | Motion: press 140 ms scale .98, settle 250–350 ms `cubic-bezier(.22,1,.36,1)`, reveal 500 ms first view only; `prefers-reduced-motion` honoured; no hover scale, no bounce | emulate reduced motion → nothing animates |
+| 24 | Touch targets ≥ 44 × 44 px (small buttons 44 not 40); focus ring visible (`--fpt-action-focus-ring` = the text colour `#FFFFFF`, 2 px, offset 2 — CR-04) on every control | Playwright bounding boxes; keyboard tab through |
+| 25 | 375 px minimum width without horizontal scroll; 320 px + 200 % reflow | `document.documentElement.scrollWidth <= innerWidth` at 375 / 320 |
+| 26 | RTL: logical properties only; chevrons / progress / stepper mirror; tile, numbers, chart time axis, logins, codes do not | screenshot ar + en side by side; `grep -rnE "margin-left\|padding-right\|left:\|right:" src/*.css` → 0 |
+| 27 | `<html lang="ar" dir="rtl">` default with English parity (`lang="en" dir="ltr"`); every string in both languages; `<bdi>` around FPT / cTrader / USD / logins | inspect; i18n keys present in `ar.json` and `en.json` |
+| 28 | Labels: Inter 600 .75rem .06em / Plex Arabic 600 ls 0 in `--fpt-text-label`; no slash prefix, no pulsing dot, no tinted red | inspect `.fpt-eyebrow`; `grep -rn "FCA5A5\|animate-pulse-dot" src/` → 0 |
+| 29 | Skeleton / empty / error states exist for every data view; skeleton after 150 ms, ≥ 400 ms, no shimmer | throttle; screenshot each |
+| 30 | E-mails: **paper in every mode** (colour scheme light only, no `prefers-color-scheme` / `[data-ogsc]` rule, no dark tile), the paper header `logos/derived/email-header-160-paper@2x.png` (base64, 160 × 56; never the superseded white-box header), one headline, facts card, one button, zero raw URLs in visible text, the foot in the message language only with nothing under 12 px (CR-03), HTML valid, 360 px light + dark-emulation screenshots showing the paper ground in both; real clients written as NOT TESTED | `node scripts/check-templates.mjs`; verify-identity RAW-URL-IN-MAIL-TEXT = 0 |
+| 31 | Documents A4: paper ground, lockup 8 mm top-start, brand fonts only in the PDF, units unbroken; office print only (press = REQUIRED DECISION) | `check-pdf-fonts.py` PASS; `PRINT-SPEC.md` |
+| 32 | Social: essential body ≥ 42 px on a 1080 canvas (≈ 14 px at 360); SAMPLE chip on figures; export inspected at 100 % | open the export at actual size |
+| 33 | Every number on a mockup / template / post is a product fact (task file) or from `sample-data.mjs` and chipped «بيانات تجريبية · SAMPLE»; no performance claim | review literals |
+| 34 | No "tested in Gmail / Outlook" or "press-ready" claim without evidence | read `TEST-MATRIX.md`, `PRINT-SPEC.md` |
+| 35 | Visual review against README § L done by a human (reviewer initials + date) | release note |
+| 36 | `node brand/skill/fpt-brand/verify-skill-wired.mjs` → PASS in the consumer repo; CLAUDE.md carries the mandate | run it |
+| 37 | Tokens regenerated cleanly: `build-tokens` → `verify-tokens` → `contrast` → `verify-identity brand` PASS; `git diff brand/tokens.css brand/tailwind.preset.js` empty | run the chain |
+| 38 | Values not traceable to `brand/value-sources.md` are listed as PROPOSED with a reason in the release note | compare against § 6 |
+
+## FPT-specific gates
+| # | Check | Test |
+|---|---|---|
+| 39 | Product facts verbatim from the task file: sizes / fees ($10,000→$90 … $200,000→$1,070), 10 % target, 5 % daily, 9 % overall, 31 days, 5 / 10 trading days, ≈ 72 h, every 14 days, 80/20 fixed | diff every figure against `glossary.md` § 3 |
+| 40 | **cTrader only** — no MT4 / MT5 / MetaTrader word, logo or screenshot anywhere (incl. `faq.a5`) | `grep -rniE "mt4\|mt5\|metatrader" src/ public/ templates/` → 0 (verify-identity MT5-REFERENCE = 0) |
+| 41 | Registration link `https://crm.fptraders.com/register` under buttons only; site URL `fptraders.com` (DNS pending — do not print the vercel URL on documents) | grep hrefs |
+| 42 | Relationship line verbatim («جزء من Fiper Global» / "Part of Fiper Global"; navbar «جزء من FIPER GLOBAL»); hero badge verbatim and English-only; no "FPT by Fiper" | grep the strings |
+| 43 | Product name: "Fiper Pro Traders" / "FPT" kept Latin inside Arabic copy; no self-made transliteration | `grep -rn "فايبر برو" src/` → 0 unless the owner approves that form |
+| 44 | Parent name spelled فايبر (never فيبر) | `grep -rn "فيبر" .` → 0 |
+| 45 | **Regulatory**: no invented entity, licence, "regulated" / "licensed" wording, risk sentence or legal link; the placeholder comment is present on every template; `regulatory-matrix.md` row for this surface resolved or the surface is marked "placeholder — pending decision" | review the row; `grep -rniE "regulated\|licensed\|licence" templates/` → only inside the placeholder comment |
+| 46 | No invented statistics or testimonials (trust bar, Trustpilot, trader stories, "125K+", "$150M+") | `grep -rnE "[0-9]+K\+\|\\$[0-9]+M\|Trustpilot" src/` → each sourced or removed |
+| 47 | "Most popular" = text label + selected red border; no gold badge | `grep -rn "D4AF37" src/` → 0 |
+| 48 | Loss / drawdown tokens used for the dashboard: daily and overall drawdown bars in `--fpt-finance-loss`, warning at ≥ 80 % in `--fpt-finance-drawdown`, breach in `--fpt-state-danger` with the rule named | render 10 %, 80 %, 100 % usage states |
+| 49 | Payout: split shown as «حصة المتداول 80 % · حصة الشركة 20 %»; amounts with `USD`; method named (Fiper Card / bank) | render the statement |
+| 50 | Credentials e-mail: login / server / platform in `.fpt-unit` mono inside a facts card; one button; no password in plain text beyond what the live system sends (align with the live template — not captured) | render at 360 px |
+| 51 | i18n: AR primary, EN parity; FR / ES / PT / TR strings exist for every new key before launch (not covered by this package — product team) | i18n key diff per locale |
+| 52 | Fiper Card references: official artwork only, `fptCard.note1/note2` kept verbatim; no card-scheme claims | review the card section |
+| 53 | **Type ladder (CR-06):** app screens use the five steps 13 · 16 · 18 · 22 · 32 only; no body text below 16 px; 13 px only on icons, badges, metric labels and the currency code; ≤ 5 distinct sizes per screen; `.fpt-unit` floor 16 px | measure every text node at 390 px (`typeScale` / `minFont` / `sizeCount`); `--fpt-font-size-app-body` = 16px |
+| 54 | **Destructive actions (CR-07):** every delete / cancel / void / reject / disable / sign-out is `.fpt-btn--destructive` (outline + icon) or `.fpt-btn--destructive.fpt-btn--text`; hover = wash; the solid `.fpt-btn--destructive-solid` only inside the final confirmation dialog | verify-identity DANGER-FILLED-OUTSIDE-DIALOG = 0; DESTRUCTIVE-WITHOUT-ICON report reviewed |
+| 55 | **Superseded rasters:** no reference to `email-header-320x112@2x.png` or `og-1200x630.png` (`brand/logos/_deprecated/derived/`) outside the changelog and reports | verify-identity OLD-EMAIL-HEADER + OLD-OG-IMAGE = 0 |

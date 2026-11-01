@@ -1,49 +1,47 @@
 {
+  "common": {
+    "sampleChip": "Sample data · SAMPLE",
+    "language": "Language",
+    "mainNav": "Main navigation",
+    "closeMenu": "Close menu",
+    "openMenu": "Open menu",
+    "days_one": "{{count}} day",
+    "days_other": "{{count}} days",
+    "evaluationSize": "Evaluation {{size}}",
+    "gain": "gain",
+    "loss": "loss",
+    "open": "Open",
+    "yes": "Yes",
+    "no": "No"
+  },
   "meta": {
     "title": "FPT — Fiper Pro Traders | Engineered for Fast, Smart Trading",
-    "description": "Fiper Pro Traders (FPT) — Part of Fiper Global. Prove your trading skills, access funded capital up to $200K with an 80% profit split."
+    "description": "Fiper Pro Traders (FPT) — Part of Fiper Global. A one-phase evaluation on a simulated account; funded accounts up to 200,000 USD with an 80 % reward share.",
+    "keywords": "prop trading, funded account, FPT, Fiper Pro Traders, Fiper Global, trading evaluation, cTrader",
+    "ogImageAlt": "Fiper Pro Traders — Investing involves risk"
   },
   "nav": {
     "challenges": "Challenges",
-    "pricing": "Pricing",
-    "howItWorks": "How It Works",
-    "ecosystem": "Ecosystem",
     "about": "About",
     "login": "Login",
     "startChallenge": "Start FPT Challenge",
     "home": "Home",
     "help": "Help",
-    "partners": "Partners"
+    "partners": "Partners",
+    "contact": "Contact"
   },
   "hero": {
     "eyebrow": "ENGINEERED FOR FAST, SMART TRADING",
     "title1": "Trade with Confidence.",
     "title2": "Get Funded.",
-    "subtitle": "Prove your trading skills, access funded capital, and trade in a structured environment designed for serious traders.",
+    "subtitle": "Pass a one-phase evaluation on a simulated account and trade a funded account with an 80 % reward share. Clear rules, published before you pay.",
     "ctaPrimary": "Start FPT Challenge",
     "ctaSecondary": "View Plans",
-    "trustpilot": "Trustpilot 4.2 · Excellent",
     "stats": {
       "maxAccount": "Max Account",
       "profitSplit": "Profit Split",
       "maxAccounts": "Max Accounts",
       "leverage": "Leverage"
-    }
-  },
-  "trustBar": {
-    "fundedAccounts": "Funded Accounts",
-    "rewardedTraders": "Rewarded Traders",
-    "totalRewarded": "Total Rewarded",
-    "countries": "Countries",
-    "support": "Support"
-  },
-  "valueProp": {
-    "title": "A Complete Trading Ecosystem — Not Just a Prop Firm",
-    "features": {
-      "evaluation": "Structured evaluation model",
-      "environment": "Professional trading environment",
-      "dashboard": "Advanced performance dashboard",
-      "funding": "Seamless funding process"
     }
   },
   "keyRules": {
@@ -52,16 +50,17 @@
     "dailyDrawdown": "Daily Drawdown",
     "maxDrawdown": "Max Drawdown",
     "minDays": "Min Trading Days",
-    "minDaysValue": "Evaluation: 5 / Funded: 10",
+    "minDaysValue": "Evaluation: {{evaluation}} / Funded: {{funded}}",
     "timeLimit": "Time Limit",
-    "timeLimitValue": "Applicable",
     "leverage": "Leverage",
-    "leverageValue": "Up to 1:100"
+    "leverageValue": "Up to {{leverage}} (forex)",
+    "eyebrow": "Rules of the game"
   },
   "profitSplit": {
     "title": "Earn up to",
-    "highlight": "80%",
-    "subtitle": "of your trading performance"
+    "subtitle": "of your trading performance",
+    "eyebrow": "Reward share",
+    "body": "{{share}} of the profit on the funded account, requested in {{cycle}}-day cycles."
   },
   "howItWorks": {
     "title": "How It Works",
@@ -70,11 +69,12 @@
     "step2Title": "Pass the Evaluation",
     "step2Desc": "Reach the profit target while respecting risk parameters.",
     "step3Title": "Get Funded",
-    "step3Desc": "Access a funded account and start trading under firm conditions."
+    "step3Desc": "Receive a funded account and keep trading under the same loss limits.",
+    "eyebrow": "The path to funded"
   },
   "pricingPreview": {
-    "mostPopular": "MOST POPULAR",
-    "oneTime": "(one-time)",
+    "mostPopular": "Most popular",
+    "oneTime": "(one-time fee)",
     "features": {
       "accountSize": "Account Size",
       "profitTarget": "Profit Target",
@@ -83,14 +83,44 @@
       "minDays": "Minimum Trading Days",
       "profitSplit": "Profit Split",
       "refund": "Refund",
-      "refundValue": "Not available"
+      "refundValue": "Non-refundable after delivery"
     },
     "cta": "Start Challenge",
-    "viewAll": "View All Account Sizes"
+    "viewAll": "View All Account Sizes",
+    "eyebrow": "Most chosen by traders",
+    "title": "{{product}}",
+    "subtitle": "The benchmark size. One fee, the full rule set."
   },
   "dashboardPreview": {
-    "title": "Track Your Performance in Real-Time",
-    "subtitle": "A professional dashboard built for serious traders."
+    "title": "Track your performance",
+    "subtitle": "A preview of the client-area dashboard. Sample data — not statistics.",
+    "eyebrow": "The trader dashboard",
+    "nav": {
+      "overview": "Overview",
+      "accounts": "Accounts",
+      "trades": "Trades",
+      "payouts": "Rewards",
+      "settings": "Settings"
+    },
+    "activeAccount": "Active account",
+    "cols": {
+      "pair": "Symbol",
+      "side": "Side",
+      "size": "Lots",
+      "entry": "Entry",
+      "exit": "Exit",
+      "pnl": "P&L"
+    },
+    "long": "Long",
+    "short": "Short",
+    "performance": "Performance",
+    "metrics": {
+      "balance": "Balance",
+      "dailyPnl": "Daily P&L",
+      "winRate": "Win rate",
+      "profitFactor": "Profit factor"
+    },
+    "sampleNote": "Every figure above is sample data; it is not the performance of any trader."
   },
   "fptCard": {
     "title": "Access Your Profits with the Fiper Card",
@@ -115,11 +145,23 @@
     },
     "note1": "Profit withdrawals are subject to internal approval processes and payout conditions.",
     "note2": "Card availability depends on account status and eligibility.",
-    "cta": "Get Your FPT Card"
+    "cta": "Get Your FPT Card",
+    "eyebrow": "Fiper Card",
+    "imageAlt": "Fiper physical card"
   },
   "platforms": {
-    "title": "Trade on Industry-Leading Platforms",
-    "subtitle": "Access global markets through the world's most trusted trading platforms."
+    "title": "Trade on cTrader",
+    "subtitle": "FPT accounts are accessed through cTrader, operated by an independent technology provider.",
+    "eyebrow": "Trading platform",
+    "official": "Official trading platform",
+    "headline": "cTrader — the trading terminal.",
+    "body": "Depth of market, algorithmic execution and a full mobile app. Available for every FPT evaluation and funded account.",
+    "features": {
+      "dom": "Depth of Market",
+      "algo": "cBots & cAlgo",
+      "level2": "Level II pricing",
+      "mobile": "iOS, Android and web"
+    }
   },
   "ecosystem": {
     "title": "Part of the Fiper Global Ecosystem",
@@ -127,55 +169,40 @@
     "fpt": {
       "title": "FPT",
       "desc": "Prop Trading Challenges",
-      "badge": "You Are Here"
+      "badge": "You Are Here",
+      "label": "Prop trading"
     },
     "card": {
       "title": "Fiper Card",
       "desc": "Instant Profit Access",
-      "badge": "Live"
+      "badge": "Available",
+      "label": "Capital access"
     },
     "crm": {
       "title": "Fiper CRM",
       "desc": "Your Command Center",
-      "badge": "Live"
+      "badge": "Available",
+      "label": "Command center"
     },
-    "footerNote": "Visit fiperglobal.com (coming soon) to learn more."
-  },
-  "traderTools": {
-    "title": "Tools Built for Smart Traders",
-    "subtitle": "Everything you need to track, analyze, and optimize your performance.",
-    "ai": {
-      "title": "AI Assistant Analysis",
-      "desc": "Track your progress, understand your trading patterns, and optimize your results with AI-powered insights."
-    },
-    "leaderboard": {
-      "title": "Real Trader Leaderboard",
-      "desc": "See how you rank against top traders globally. Compete, learn, and grow with the FPT community."
-    }
-  },
-  "traderStories": {
-    "title": "Built by Traders, for Traders",
-    "subtitle": "Real results from our global community."
+    "footerNote": "Visit fiperglobal.com (coming soon) to learn more.",
+    "eyebrow": "Powered by Fiper Global"
   },
   "faq": {
     "title": "Frequently Asked Questions",
     "q1": "How do I start?",
     "a1": "Choose a challenge size, complete registration, and begin trading on our platform. The evaluation starts immediately after payment confirmation.",
     "q2": "Are the fees refundable?",
-    "a2": "Challenge fees are one-time and non-refundable. However, you keep your full profit share once funded.",
+    "a2": "The fee is one-time. It can be refunded only before your account is delivered and in the cases listed in the Refund and Cancellation Policy; after delivery it is non-refundable.",
     "q3": "How long until I get funded?",
-    "a3": "After reaching the profit target and completing the minimum trading days, account verification typically takes 1-3 business days.",
+    "a3": "After reaching the profit target and completing the minimum trading days, the funded account is delivered within 2 business days (Dubai time).",
     "q4": "How do I withdraw my profits?",
-    "a4": "Profits can be withdrawn via Fiper Card (instant) or bank transfer after the minimum funded trading period.",
+    "a4": "Rewards are paid by crypto-currency or by internal transfer to your account with Fiper, after at least 10 trading days on the funded account and a completed 14-day cycle.",
     "q5": "What markets can I trade?",
-    "a5": "Access forex, indices, commodities, and selected cryptocurrencies across MT4, MT5, and cTrader platforms.",
+    "a5": "Forex, indices, commodities and selected crypto-currencies on cTrader.",
     "q6": "Do I need prior experience?",
     "a6": "No formal experience required, but understanding risk management and the trading rules is essential for success.",
-    "seeAll": "See all FAQs"
-  },
-  "finalCta": {
-    "title": "Start your challenge today and take your trading to the next level.",
-    "cta": "Start Challenge"
+    "seeAll": "See all FAQs",
+    "eyebrow": "Before you begin"
   },
   "footer": {
     "tagline": "Engineered for Fast, Smart Trading",
@@ -185,62 +212,24 @@
     "legal": "Legal",
     "links": {
       "challenges": "FPT Challenges",
-      "pricing": "Pricing",
       "fiperCard": "Fiper Card",
-      "aboutFiperGlobal": "About Fiper Global",
-      "fiperCRM": "Fiper CRM",
       "helpCenter": "Help Center",
       "fiperGlobalSite": "Fiper Global",
-      "terms": "Terms of Service",
+      "terms": "Terms and Conditions",
       "privacy": "Privacy Policy",
-      "cookies": "Cookie Policy",
-      "refund": "Refund Policy",
-      "risk": "Risk Disclosure"
+      "refund": "Refund and Cancellation Policy",
+      "risk": "Risk Disclosure Statement",
+      "partners": "Partner programme",
+      "contact": "Contact",
+      "about": "About FPT"
     },
     "copyright": "© 2026 Fiper Pro Traders — A Fiper Global Company. All rights reserved."
   },
-  "challenges": {
-    "title": "Prove Your Skills. Access Funded Capital.",
-    "subtitle": "Choose between three structured paths designed for different trading styles.",
-    "rules": {
-      "profitTarget": "Profit Target",
-      "dailyDrawdown": "Daily Drawdown",
-      "maxDrawdown": "Max Drawdown",
-      "minDaysPhase1": "Minimum Trading Days",
-      "minDaysFunded": "Funded Minimum Days",
-      "timeLimit": "Time Limit",
-      "timeLimitValue": "Yes",
-      "leverage": "Leverage",
-      "leverageValue": "Up to 1:100 (depending on instrument)",
-      "maxAccounts": "Maximum Accounts per User"
-    },
-    "note": "Trading conditions may vary depending on the instrument and market conditions.",
-    "cta": "Start Challenge"
-  },
   "pricing": {
-    "title": "Choose Your Challenge",
-    "subtitle": "Start your journey and prove your trading discipline.",
     "badges": {
       "oneTime": "One-time fee",
       "nonRefundable": "Non-refundable",
       "noRetry": "No retry included"
-    },
-    "tabs": {
-      "twoStep": "2-Step Challenge",
-      "oneStep": "1-Step Challenge",
-      "instant": "Instant Funding"
-    },
-    "accountSize": "Account Size",
-    "currency": "Currency",
-    "calculator": {
-      "title": "Estimate Your Earnings",
-      "performance": "Estimated Monthly Performance",
-      "output": "Estimated Monthly Earnings",
-      "disclaimer": "Estimates only. Past performance does not guarantee future results."
-    },
-    "compare": {
-      "button": "Compare Plans Side-by-Side",
-      "title": "Compare Plans"
     }
   },
   "whatsapp": {
@@ -251,26 +240,24 @@
     "eyebrow": "The Evaluation",
     "heroTitle1": "Prove Your Skills.",
     "heroTitle2": "Get Funded.",
-    "heroSubtitle": "One evaluation phase. Clear rules. Up to 80% profit share on a live funded account.",
-    "signIn": "Sign In",
-    "startChallenge": "Start Challenge",
+    "heroSubtitle": "One evaluation phase. Clear rules. An 80 % reward share on a funded account.",
     "howItWorksEyebrow": "How It Works",
     "howItWorksTitle": "One Phase. Direct Path to Funding.",
-    "howItWorksSubtitle": "Pass the evaluation, then trade with real capital.",
+    "howItWorksSubtitle": "Pass the evaluation, then trade on a funded account.",
     "phase1Label": "Evaluation (One Phase Only)",
-    "phase1Subtitle": "Demo evaluation — prove your discipline and consistency in a single phase.",
+    "phase1Subtitle": "Simulated evaluation — prove your discipline and consistency in a single phase.",
     "phase2Label": "Get Funded",
-    "phase2Subtitle": "Funded account — trade real capital after passing the evaluation.",
+    "phase2Subtitle": "Funded account — trade on a funded account after passing the evaluation.",
     "pricingEyebrow": "Pricing",
     "pricingTitle": "One-time fee. No subscription.",
     "pricingSubtitle": "Choose your account size and start your evaluation today.",
     "accountSize": "Account Size",
-    "mostPopular": "Popular",
+    "mostPopular": "Most popular",
     "currencyLabel": "Currency",
     "convertedNote": "Converted at indicative rates. Settlement in USD.",
     "challengeLabel": "FPT Challenge",
     "accountLabel": "Account",
-    "oneTime": "one-time",
+    "oneTime": "one-time fee",
     "getStarted": "Get Started",
     "accountSizeLabel": "Account Size",
     "profitTarget": "Profit Target",
@@ -303,15 +290,24 @@
       "swapFree": "Swap Free",
       "minPayout": "Min Payout",
       "maxPayout": "Max Payout",
-      "profitShare": "Profit Share"
+      "profitShare": "Profit Share",
+      "payoutCycle": "Reward cycle",
+      "commission": "Commission (forex, metals)",
+      "commissionValue": "{{amount}} per lot",
+      "inactivity": "Inactivity limit",
+      "newsCap": "News rule",
+      "newsCapValue": "{{cap}} cap within {{minutes}} minutes of a release"
     },
     "leverage": {
       "forex": "Forex",
       "metals": "Metals",
       "indices": "Indices",
-      "commodities": "Commodities",
-      "crypto": "Crypto"
-    }
+      "crypto": "Crypto",
+      "energy": "Energy"
+    },
+    "chooseSize": "Choose an account size",
+    "metaDescription": "FPT evaluation rules and fees — five account sizes from 10,000 USD to 200,000 USD, one phase, published limits.",
+    "metaKeywords": "prop trading evaluation, FPT fees, funded account"
   },
   "about": {
     "principles": {
@@ -323,12 +319,6 @@
       "p3body": "Evaluation, funded, payout, card. No gimmicks, no parallel product lines engineered to distract.",
       "p4title": "Infrastructure over marketing",
       "p4body": "We invest in execution, liquidity, and dashboards — not influencer campaigns. The platform speaks for itself."
-    },
-    "stats": {
-      "countries": "Countries served",
-      "profitShare": "Profit share to trader",
-      "products": "Coordinated products",
-      "support": "Support coverage"
     },
     "ecosystem": {
       "fptTag": "Prop Trading",
@@ -345,9 +335,6 @@
     "ecosystemEyebrow": "Part of something larger",
     "ecosystemTitle": "Fiper Global, end to end.",
     "ecosystemSubtitle": "FPT is one of three coordinated products operated under Fiper Global. You stay inside one identity.",
-    "ctaEyebrow": "Start when you're ready",
-    "ctaTitle1": "The infrastructure is built.",
-    "ctaTitle2": "The next move is yours.",
     "getStarted": "Get Started",
     "talkToTeam": "Talk to the team",
     "title": "Built for Fast, Smart Trading",
@@ -359,7 +346,8 @@
     "mission": {
       "title": "FPT Mission",
       "content": "We believe skilled traders deserve access to capital without unnecessary barriers. FPT provides a transparent, structured path from evaluation to funded trading."
-    }
+    },
+    "metaDescription": "FPT is the prop trading arm of Fiper Global. Transparent rules, risk before reward, infrastructure over marketing."
   },
   "contact": {
     "title": "Get in Touch",
@@ -367,64 +355,17 @@
     "address": {
       "tag": "Visit us",
       "title": "Our Office",
-      "line1": "Meydan Grandstand, 6th floor",
-      "line2": "Meydan Road, Nad Al Sheba",
-      "line3": "Dubai, U.A.E.",
       "directions": "Get directions"
     },
-    "pills": {
-      "support": "24/7 trader support",
-      "countries": "12+ countries",
-      "reply": "Typical reply under 4h"
-    },
-    "channels": {
-      "c1tag": "Trader support",
-      "c1title": "Account & evaluation help",
-      "c1body": "Rule interpretations, platform access, payout status. Reply within 4 hours, 24/7.",
-      "c2tag": "Institutional",
-      "c2title": "Partnerships & desks",
-      "c2body": "Liquidity providers, IBs, and prop desks exploring infrastructure integrations.",
-      "c3tag": "Press & media",
-      "c3title": "Press & communications",
-      "c3body": "Editorial requests, interviews, and commentary on market structure."
-    },
-    "topics": {
-      "t1": "Evaluation rules",
-      "t2": "Funded account",
-      "t3": "Payouts & Fiper Card",
-      "t4": "Platform access",
-      "t5": "Partnerships",
-      "t6": "Something else"
-    },
-    "infoBlocks": {
-      "sla": "Response SLA",
-      "slaValue": "< 4 hours",
-      "coverage": "Coverage",
-      "coverageValue": "24 / 7",
-      "languages": "Support languages",
-      "languagesValue": "EN · ES · FR",
-      "hq": "Headquartered",
-      "hqValue": "Fiper Global"
-    },
     "eyebrow": "Get in touch",
-    "formEyebrow": "Send a message",
-    "formTitle": "Tell us what you need.",
-    "whySimpleEyebrow": "Why we keep it simple",
-    "whySimpleTitle1": "You write to a human.",
-    "whySimpleTitle2": "A human writes back.",
-    "whySimpleBody": "No ticket deflection bots. Every message lands with a team member who can actually answer.",
-    "alreadyTrading": "Already trading?",
-    "alreadyTradingBody": "Open an in-app ticket from the dashboard — it routes faster.",
-    "openCRM": "Open CRM",
-    "formPrivacy": "By submitting, you agree to be contacted. We don't share your details.",
-    "sending": "Sending…",
-    "messageSent": "Message received.",
-    "messageSentBody": "A team member will reply within 4 hours.",
-    "sendAnother": "Send another message",
-    "ctaEyebrow": "Prefer to skip the form?",
-    "ctaTitle1": "Start the evaluation.",
-    "ctaTitle2": "We'll meet you inside.",
-    "learnAbout": "Learn about FPT"
+    "metaDescription": "Reach the FPT team on WhatsApp. Registered office in Meydan, Dubai.",
+    "channelsTitle": "Contact channels",
+    "whatsapp": {
+      "title": "WhatsApp support",
+      "desc": "Talk to the support team",
+      "cta": "Start the conversation"
+    },
+    "clientAreaNote": "Already a client? Questions about an account are answered through the support channels published in the client area."
   },
   "help": {
     "popular": {
@@ -447,78 +388,57 @@
     "articles": "articles",
     "article": "article",
     "stillNeedHelp": "Still need help?",
-    "stillNeedHelpBody": "Can't find what you're looking for? Our team is available 24/7.",
+    "stillNeedHelpBody": "Did not find what you were looking for? Write to us on WhatsApp.",
     "contactSupport": "Contact Support",
     "startChallenge": "Start Challenge",
     "whatsappBanner": "Need immediate help? Chat with us on WhatsApp.",
-    "searchPlaceholder": "Search for answers…"
+    "searchPlaceholder": "Search for answers…",
+    "metaDescription": "FPT Help Center — answers on the evaluation, funded accounts, rewards, the Fiper Card, trading rules and the platform.",
+    "readMore": "Read more",
+    "breadcrumb": "Breadcrumb",
+    "searchLabel": "Search the help center",
+    "clearSearch": "Clear search",
+    "searchHint": "Type to search, or browse the topics below.",
+    "searchNoMatch": "No matches — try different keywords."
   },
   "partners": {
     "eyebrow": "FPT Partner Program",
     "hero": {
       "title": "Earn With FPT",
-      "subtitle": "Join the FPT Partner Program and earn commissions on every funded trader you refer."
+      "subtitle": "Join the FPT partner programme and earn a commission on every evaluation bought through your referral link."
     },
     "cta": {
       "eyebrow": "Ready to start?",
       "title": "Turn your audience into income.",
-      "subtitle": "Sign up in minutes and start earning on every trader you refer.",
+      "subtitle": "Sign up and share your referral link.",
       "button": "Become a Partner"
     },
     "tiersEyebrow": "Commission Tiers",
     "tiersTitle": "Earn more as you grow.",
-    "tiersSubtitle": "Your commission rate increases automatically as your monthly sales grow.",
+    "tiersSubtitle": "Your commission rate rises automatically with your monthly sales.",
     "tiers": {
-      "popular": "Most Popular",
-      "standard": {
-        "title": "Standard Affiliate",
-        "commission": "15%",
-        "description": "No minimum, get started today."
-      },
-      "silver": {
-        "title": "Silver Partner",
-        "commission": "17.5%",
-        "description": "10+ sales per month."
-      },
-      "gold": {
-        "title": "Gold Partner",
-        "commission": "20%",
-        "description": "25+ sales per month."
-      },
-      "vip": {
-        "title": "VIP Partner",
-        "commission": "Custom",
-        "description": "High volume? Contact us."
-      }
+      "range": "{{min}}–{{max}} sales per month.",
+      "from": "{{min}}+ sales per month."
     },
     "featuresEyebrow": "Program Benefits",
-    "featuresTitle": "Everything you need to succeed.",
-    "featuresSubtitle": "Tools, tracking, and rewards built to maximize your earnings.",
+    "featuresTitle": "What you get",
+    "tiersNote": "Commission is a share of the evaluation fee paid by the referred client. Tiers are counted on monthly sales, as published in the client area.",
     "features": {
-      "cookie": {
-        "title": "90-Day Tracking Cookie",
-        "desc": "Referrals are tracked for a full 90 days after the first click."
+      "link": {
+        "title": "Personal referral link and code",
+        "desc": "Every referral carries your code; sales and commission appear in your partner dashboard."
       },
-      "payouts": {
-        "title": "Weekly Payouts",
-        "desc": "Get paid every week — no long waiting periods."
-      },
-      "coupons": {
-        "title": "Personal Coupon Codes",
-        "desc": "Share custom discount codes that convert and credit you."
-      },
-      "contests": {
-        "title": "Monthly Affiliate Contests",
-        "desc": "Compete for cash prizes and bonuses every month."
-      },
-      "leaderboard": {
-        "title": "Public Leaderboard",
-        "desc": "Climb the ranks and showcase your performance publicly."
-      },
-      "subAffiliate": {
-        "title": "Sub-Affiliate System",
-        "desc": "Recruit other affiliates and earn a 2% override on their sales."
+      "tiers": {
+        "title": "Automatic tier upgrades",
+        "desc": "The tier follows your monthly sales — no application, no waiting."
       }
-    }
+    },
+    "metaDescription": "The FPT partner programme: three commission tiers on monthly sales, a personal referral link and code."
+  },
+  "notFound": {
+    "title": "This page does not exist.",
+    "body": "The address may be mistyped or the page may have moved.",
+    "home": "Go to the home page",
+    "help": "Open the help center"
   }
 }

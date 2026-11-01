@@ -16,7 +16,7 @@ pre-rendered to static HTML at build time and hydrated on the client.
   line-height 1.05 — owner decision 8, `.fpt-display` in `src/index.css`); Arabic headlines stay IBM Plex Sans Arabic (never Barlow). Site ladder:
   label 13 · body 16 · subtitle 18 · h2 30 · h1 40 on phones (≤ 4 sizes + the label above the fold on every screen — UXFW-020).
 - **Fonts served:** unicode-range pieces cut from the package files by `scripts/build-font-subsets.mjs` (`public/fonts/*.woff2` +
-  `public/fonts/SUBSETS.json` with the source sha256; `src/fonts.generated.css`; `npm run fonts` to rebuild, `--check` runs in `npm run check`) —
+  `public/fonts/SUBSETS.json` with the source sha256; `src/fonts.generated.css`; `npm run fonts` to rebuild; `--check` in `npm run check` verifies the sha256 without any tool, `--check-fresh` re-cuts with pyftsubset) —
   PROPOSED derived performance assets, identity unchanged; no Google Fonts, no external source.
 - **fiper-brand v2.3.4** where Fiper appears: the Fiper lockup A (`public/images/third-party/fiper/fiper-lockup-horizontal-colour.svg`, sha256
   `542e2d2a…`), the fixed risk line «الاستثمار ينطوي على مخاطر» / "Investing involves risk" (`src/components/brand/RiskLine.jsx`,
@@ -56,7 +56,7 @@ npm run preview    # NOTE: vite preview rewrites every path to /index.html (SPA)
 | Gate | What it refuses |
 |---|---|
 | `scripts/check-logo-assets.mjs` | any file under `public/brand` that is not a byte copy of the v1.2.1 package, the superseded `og-1200x630.png`, any legacy v1 logo name, any Arabic / bilingual lockup served (CR-11) |
-| `scripts/build-font-subsets.mjs --check` | served font pieces that differ from a fresh cut of the package files, or a `SUBSETS.json` whose source sha256 differ from `brand/fonts` |
+| `scripts/build-font-subsets.mjs --check` | a served font piece missing, unlisted or differing from its `SUBSETS.json` sha256, a `SUBSETS.json` whose source sha256 differ from `brand/fonts`, a stale `fonts.generated.css` (no external tool; `--check-fresh` re-cuts with pyftsubset on the build server) |
 | `scripts/check-risk-line.mjs` | a missing or altered risk line, any other risk wording, any licence wording |
 | `scripts/check-i18n-keys.mjs` | a key used in `src/` that is missing in any of the six locales; key sets that differ between locales |
 | `brand/scripts/verify-identity.mjs src public index.html` | non-token colours, deprecated colours, pure black, non-brand fonts, Arabic letter-spacing, red glows, glass cards, float / pulse animations, gradients, emoji, MT4/MT5, the old OG image |

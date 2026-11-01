@@ -9,13 +9,13 @@
 | `fpt-website-dist-9e71359.zip.sha256` | بصمة sha256 للملف المضغوط — تحقّق قبل الرفع: `sha256sum -c fpt-website-dist-9e71359.zip.sha256` |
 | `HANDOVER.md` | هذا الملف |
 
-المصدر: مستودع `mbn-glitch/fpt-website` على الالتزام `e126820` (main) — اسم الملف المضغوط يحمل `9e71359`، وهو بصمة الالتزام قبل ضمّ حزمة التسليم إليه (`--amend`)؛ ملفات المصدر واحدة في الاثنين. هوية FPT: fpt-brand **v1.1.2** (الشعار v2، اعتماد الرئيس التنفيذي 30 أكتوبر 2026)؛ قفل فايبر: fiper-brand **v2.3.0** (القفل A، حرف i منقوط).
+المصدر: مستودع `mbn-glitch/fpt-website` على الالتزام `e126820` (main) — اسم الملف المضغوط يحمل `9e71359`، وهو بصمة الالتزام قبل ضمّ حزمة التسليم إليه (`--amend`)؛ ملفات المصدر واحدة في الاثنين. هوية FPT: fpt-brand **v1.1.2** (الشعار v2، اعتماد الرئيس التنفيذي 30 أكتوبر 2026)؛ قفل فايبر: fiper-brand **v2.3.4** (القفل A، حرف i منقوط — مثبَّت على v2.3.4 في 1 نوفمبر 2026، لا تغيير مرئي: ملف القفل A نفسه بايتاً ببايت منذ v2.3.0).
 
 ## 2. ما يُستبدل
 - **كل محتوى جذر الموقع** على fptraders.com يُستبدل بمحتوى `dist/` كاملاً (`index.html`، `assets/`، `brand/`، `images/`، `site.webmanifest`، `robots.txt`، `sitemap.xml`).
 - الموقع تطبيق صفحة واحدة: يجب أن يُعاد توجيه **كل مسار غير موجود كملف** إلى `/index.html` (على Vercel: `vercel.json` rewrites؛ على Apache: `.htaccess` مع `RewriteRule . /index.html [L]`؛ على Nginx: `try_files $uri /index.html;`). بدون ذلك تعطي المسارات مثل `/ar/challenges` خطأ 404.
 - ملفات الشعار **من مجلد `brand/` فقط** (نسخ بايت-بايت من حزمة fpt-brand v1.1.2 — البصمات في `brand/SHA256SUMS`): `favicon.ico`، `favicon.svg`، `favicon-16/32/48/64.png`، `apple-touch-icon-180.png`، `pwa-icon-192/512.png`، `pwa-maskable-512.png`، `fpt-tile.svg`، `fpt-tile-small.svg`، `fpt-lockup-horizontal-en-white.svg`، `fpt-lockup-horizontal-ar-white.svg`، `fpt-lockup-vertical-en-white.svg`، `fpt-tile-512.png`، `og-1200x630.png`.
-- قفل فايبر: `images/fiper/fiper-lockup-horizontal-colour.svg` (fiper-brand v2.3.0، sha256 `542e2d2ab61788d097298cee678f6896c46957684e2cae3d48a0973f5985ee9d`).
+- قفل فايبر: `images/fiper/fiper-lockup-horizontal-colour.svg` (fiper-brand v2.3.4 — الملف نفسه منذ v2.3.0، sha256 `542e2d2ab61788d097298cee678f6896c46957684e2cae3d48a0973f5985ee9d`).
 
 ## 3. ما يُحذف (ملفات الشعار القديمة — ممنوع بقاؤها)
 احذف من الخادم أي ملف من هذه الأسماء أينما وُجد (كانت تحت `/logos/` وفي الجذر):

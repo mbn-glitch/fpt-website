@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Risk-line gate (fiper-brand v2.3.0, CEO 30 Oct 2026 — Q4 / R12; FPT-BRAND-ALIGN item 3): EVERY visual output carries the ONE fixed
+ * Risk-line gate (fiper-brand v2.3.4 — pinned 1 Nov 2026, no visual change; the wording is unchanged since v2.3.0, CEO 30 Oct 2026 — Q4 / R12; FPT-BRAND-ALIGN item 3): EVERY visual output carries the ONE fixed
  * wording «الاستثمار ينطوي على مخاطر» / "Investing involves risk" — the site renders it through src/components/brand/RiskLine.jsx in the
  * footer of every route — and NO other risk wording exists in the sources (legal documents are not hosted here).
  *   node scripts/check-risk-line.mjs   → PASS / FAIL (exit 1); runs before every build (package.json "prebuild").

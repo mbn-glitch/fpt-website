@@ -99,7 +99,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* The fixed risk line (fiper-brand v2.3.0 Q4 / R12) — the only risk wording on the site; the former `footer.riskDisclosure`
+        {/* The fixed risk line (fiper-brand v2.3.4 Q4 / R12 — no visual change since v2.3.0) — the only risk wording on the site; the former `footer.riskDisclosure`
             sentence was an unapproved legal text (fpt-brand MISSING-ASSETS #14) and is removed. Legal documents: REQUIRED DECISION. */}
         <RiskLine lang={lang} className="mt-6 pr-20" />
       </div>

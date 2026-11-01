@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#F42821" />
+    <link rel="icon" href="/brand/favicon.ico" sizes="48x48" />
+    <title>Fiper Pro Traders</title>
+    <!-- Offline fallback (UXFW-052): served by /sw.js ONLY when a navigation cannot reach the network. Site identity from the package tokens
+         (ground #0A0A0A, text, label colour, brand red on the one action); fonts = the system fallbacks of the brand faces (nothing is downloaded offline).
+         The language follows the requested path (/ar/…, /fr/… …); English is the fallback. -->
+    <style>
+      :root { --fpt-ground-bg: #0A0A0A; --fpt-text-primary: #FFFFFF; --fpt-text-secondary: rgba(255,255,255,0.72); --fpt-text-label: rgba(255,255,255,0.55); --fpt-line-ash: rgba(255,255,255,0.08); --fpt-brand-red: #F42821; }
+      html, body { margin: 0; background: var(--fpt-ground-bg); color: var(--fpt-text-primary); font-family: Inter, 'IBM Plex Sans Arabic', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+      html[lang="ar"] body { font-family: 'IBM Plex Sans Arabic', Inter, system-ui, sans-serif; line-height: 1.5; }
+      main { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 24px 20px; box-sizing: border-box; max-width: 640px; margin: 0 auto; }
+      .brand { direction: ltr; display: block; width: 190px; height: 40px; }
+      h1 { font-size: 28px; line-height: 1.2; margin: 32px 0 0; font-weight: 600; }
+      p { font-size: 16px; line-height: 1.6; color: var(--fpt-text-secondary); margin: 12px 0 0; }
+      .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 28px; margin-top: 28px; border-radius: 999px; background: var(--fpt-brand-red); color: #fff; font: 600 16px/1.2 inherit; border: 0; cursor: pointer; }
+      .btn:focus-visible { outline: 2px solid var(--fpt-text-primary); outline-offset: 2px; }
+      footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--fpt-line-ash); font-size: 12px; line-height: 1.6; color: var(--fpt-text-label); }
+      footer p { font-size: 12px; margin: 0; color: var(--fpt-text-label); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img class="brand" src="/brand/fpt-lockup-horizontal-en-white.svg" alt="Fiper Pro Traders" width="190" height="40" />
+      <h1 id="h">You are offline</h1>
+      <p id="p">This page needs a connection. Check your network and try again.</p>
+      <button type="button" class="btn" id="b" onclick="location.reload()">Try again</button>
+      <footer>
+        <p id="r" data-risk-line="true">Investing involves risk</p>
+      </footer>
+    </main>
+    <script>
+      (function () {
+        var T = {
+          en: { d: 'ltr', h: 'You are offline', p: 'This page needs a connection. Check your network and try again.', b: 'Try again', r: 'Investing involves risk' },
+          ar: { d: 'rtl', h: 'أنت غير متصل بالإنترنت', p: 'تحتاج هذه الصفحة إلى اتصال. تحقق من الشبكة وحاول مرة أخرى.', b: 'حاول مرة أخرى', r: 'الاستثمار ينطوي على مخاطر' },
+          fr: { d: 'ltr', h: 'Vous êtes hors ligne', p: 'Cette page a besoin d’une connexion. Vérifiez votre réseau et réessayez.', b: 'Réessayer', r: 'Investing involves risk' },
+          es: { d: 'ltr', h: 'Sin conexión', p: 'Esta página necesita conexión. Comprueba tu red e inténtalo de nuevo.', b: 'Reintentar', r: 'Investing involves risk' },
+          pt: { d: 'ltr', h: 'Você está offline', p: 'Esta página precisa de conexão. Verifique sua rede e tente novamente.', b: 'Tentar novamente', r: 'Investing involves risk' },
+          tr: { d: 'ltr', h: 'Çevrimdışısınız', p: 'Bu sayfa bağlantı gerektirir. Ağınızı kontrol edip yeniden deneyin.', b: 'Yeniden dene', r: 'Investing involves risk' }
+        };
+        var seg = location.pathname.split('/').filter(Boolean)[0];
+        var l = T[seg] ? seg : 'en'; var t = T[l];
+        document.documentElement.lang = l; document.documentElement.dir = t.d;
+        document.getElementById('h').textContent = t.h; document.getElementById('p').textContent = t.p;
+        document.getElementById('b').textContent = t.b; document.getElementById('r').textContent = t.r;
+        document.title = t.h + ' — Fiper Pro Traders';
+      })();
+    </script>
+  </body>
+</html>

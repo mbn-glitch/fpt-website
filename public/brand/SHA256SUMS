@@ -1,4 +1,4 @@
-# fpt-brand v1.2.0 (Fiper-Global/fpt-brand tag v1.2.0, zip sha256 1f42396a14ed89dd5907c5fe51d765b9dc27a272e3d1f9ca695aef0a5c7feed9) — byte copies of brand/logos/{svg,png,icons,derived} and brand/fonts; gate: node scripts/check-logo-assets.mjs
+# fpt-brand v1.2.1 (Fiper-Global/fpt-brand tag v1.2.1, zip sha256 026f7a7f3435ae8f1aa61553c3e493f708d1fca4ddcbc4b926aca83f8408ed43) — byte copies of brand/logos/{svg,png,icons,derived} and brand/fonts; CR-11: the English lockup only (the Arabic / bilingual lockups are archival in brand/logos and are not served); gate: node scripts/check-logo-assets.mjs
 c2cfe4fdd3d345efc16a31a5f67bc4e4e3fc2f73618aa750f8dea0f2f53f8aae  apple-touch-icon-180.png
 423c2305e2d3c55772c32daa87ec30822544c12550c243db094a58be193a7732  favicon-16.png
 f38eeaabb08125d1f6cbc12dae7fef6d5e4a157a4fbbbbdaca42a20abfcc7cdb  favicon-32.png
@@ -24,7 +24,6 @@ a1caf574153150df4ffccc09ed7a4e3bb21b4e9ec3c9be5ca2e76587e3110480  fonts/Inter-40
 3c9fae32cd5dd05dd2744cd49fe6d6be02ed7717e29a01ad312a18c5231e2cea  fonts/Inter-600.woff2
 d21ab53f76ffde9f60cf52fca3b3ba2f28f9fe3d7bb335e80fcaf60041f236f8  fonts/Inter-700.woff2
 fcbefec9469fe4637695e0df0ef9dfc8b7b8e73e57226f8e312fbe0abb4ff7bb  fonts/fonts.css
-bbc14d2af3ee72914abece517722b7a816c069069c94cb1bf204ea6824661ff0  fpt-lockup-horizontal-ar-white.svg
 2c6ca5311b5dd620cd638f3b31a2eead84858fb25fbdf4be61ace6c5a6ed00ec  fpt-lockup-horizontal-en-white.svg
 cfe7f4901a8788f9afe04c9560b58ba2c56af23366d4bbd68ae466486a39b972  fpt-lockup-vertical-en-white.svg
 5795018738394231e6c9e9da8d99ffc1e7b2d05cd5a8f6f06ebb67e7885c7e12  fpt-tile-512.png

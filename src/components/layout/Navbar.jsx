@@ -45,9 +45,9 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-[80] header-chrome">
       <nav className="max-w-7xl mx-auto px-5 sm:px-8 h-16 sm:h-20 flex items-center justify-between gap-3 min-w-0" aria-label={t('common.mainNav')}>
         <Link to={localizedPath('/', lang)} className="flex flex-col items-start justify-center gap-0.5 min-w-0 min-h-11 overflow-hidden">
-          {/* logo v2 (fpt-brand v1.2.0): the official white lockup — 24 px on phones, 32 px from sm; never clipped, never mirrored */}
-          <span className="sm:hidden"><Logo variant="lockup" size={24} lang={lang} /></span>
-          <span className="hidden sm:block"><Logo variant="lockup" size={32} lang={lang} /></span>
+          {/* logo v2 (fpt-brand v1.2.1, CR-11): the official ENGLISH white lockup in every language — 24 px on phones, 32 px from sm; never clipped, never mirrored */}
+          <span className="sm:hidden"><Logo variant="lockup" size={24} /></span>
+          <span className="hidden sm:block"><Logo variant="lockup" size={32} /></span>
           {/* CR-02 (owner, 31 Oct 2026): «Part of Fiper Global» in sentence case, 12 px, label colour, no uppercase, no tracking */}
           <span className="text-xs text-tertiary leading-[1.5] truncate max-w-full" lang={lang}>{t('footer.partOf')}</span>
         </Link>

@@ -5,7 +5,7 @@ import Section, { Eyebrow, SectionHeader } from '../components/ui/Section.jsx';
 import Button from '../components/ui/Button.jsx';
 import { REGISTER_URL, ENTITY_LINE, localeLegal } from '../data/legal.js';
 
-/** About — headline-dominant: h1 + the relationship line + one primary action in the first screen (UXFW-014); principles; the three Fiper products; the entity line. No counters, no «12+ countries» (UXFW-005). */
+/** About — headline-dominant: h1 + the relationship line + one primary action in the first screen (UXFW-014); principles; the three Fiper products (the Fiper Card row carries the owner's one sentence — decision 6); the entity line. No counters, no «12+ countries» (UXFW-005). */
 export default function About() {
   const { t, i18n } = useTranslation();
   const l = localeLegal(i18n.language);
@@ -19,7 +19,7 @@ export default function About() {
 
   const ECOSYSTEM = [
     { icon: TrendingUp, name: 'FPT', tag: t('about.ecosystem.fptTag'), body: t('about.ecosystem.fptBody') },
-    { icon: CreditCard, name: 'Fiper Card', tag: t('about.ecosystem.cardTag'), body: t('about.ecosystem.cardBody') },
+    { icon: CreditCard, name: t('fptCard.title'), tag: t('about.ecosystem.cardTag'), body: t('about.ecosystem.cardBody') },
     { icon: LayoutDashboard, name: 'Fiper Global', tag: t('about.ecosystem.globalTag'), body: t('about.ecosystem.globalBody') },
   ];
 
@@ -30,9 +30,9 @@ export default function About() {
       <section className="pt-12 sm:pt-20 pb-12">
         <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
           <Eyebrow>{t('about.eyebrow')}</Eyebrow>
-          <h1 className="mt-5 text-4xl sm:text-6xl font-semibold leading-[1.1]">{t('about.title')}</h1>
-          <p className="mt-6 text-lg sm:text-xl text-secondary max-w-2xl mx-auto leading-relaxed">{t('about.subtitle')}</p>
-          <p className="mt-3 text-sm text-tertiary">{t('footer.partOf')}</p>
+          <h1 className="mt-5 text-[2.5rem] sm:text-6xl fpt-display">{t('about.title')}</h1>
+          <p className="mt-6 text-lg text-secondary max-w-2xl mx-auto leading-relaxed">{t('about.subtitle')}</p>
+          <p className="mt-3 text-[13px] text-tertiary">{t('footer.partOf')}</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button href={REGISTER_URL} external size="lg">{t('about.getStarted')}</Button>
             <Button to="/contact" variant="ghost" size="lg">{t('about.talkToTeam')}</Button>
@@ -44,7 +44,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-20 items-start">
           <div>
             <Eyebrow>{t('about.thesis')}</Eyebrow>
-            <h2 id="about-story-title" className="mt-4 text-3xl sm:text-4xl font-semibold leading-[1.2]">{t('about.story.title')}</h2>
+            <h2 id="about-story-title" className="mt-4 text-3xl sm:text-4xl fpt-display">{t('about.story.title')}</h2>
           </div>
           <div className="space-y-5 text-lg leading-relaxed text-secondary">
             <p>{t('about.story.content')}</p>
@@ -81,11 +81,11 @@ export default function About() {
               </div>
               <div className="mt-5 text-[13px] text-tertiary">{e.tag}</div>
               <h3 className="mt-1 text-xl font-semibold leading-[1.3]">{e.name}</h3>
-              <p className="mt-2 text-sm text-secondary leading-relaxed">{e.body}</p>
+              <p className="mt-2 text-base text-secondary leading-relaxed">{e.body}</p>
             </li>
           ))}
         </ul>
-        <p className="mt-10 text-center text-sm text-tertiary" lang={l} dir={l === 'ar' ? 'rtl' : 'ltr'}>{ENTITY_LINE[l]}</p>
+        <p className="mt-10 text-center text-base text-tertiary" lang={l} dir={l === 'ar' ? 'rtl' : 'ltr'}>{ENTITY_LINE[l]}</p>
       </Section>
     </>
   );

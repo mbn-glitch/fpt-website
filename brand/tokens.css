@@ -388,6 +388,11 @@
   --fpt-c-sheet-shadow: 0 22px 70px rgba(0,0,0,0.55);
   --fpt-c-sheet-handle: 36px 4px;
   --fpt-c-sheet-in-duration: 350ms;
+  --fpt-c-dialog-destructive-cancel-style: secondary-outline-filled;
+  --fpt-c-dialog-destructive-initial-focus: cancel;
+  --fpt-c-dialog-destructive-order: cancel-first-solid-last;
+  --fpt-c-dialog-destructive-enter-default: none;
+  --fpt-c-dialog-confirm-cancel-style: ghost;
   --fpt-c-skeleton-fill: rgba(255,255,255,0.08);
   --fpt-c-skeleton-pulse-duration: 1200ms;
   --fpt-c-skeleton-pulse-min-opacity: 0.45;
@@ -418,12 +423,17 @@
   --fpt-c-eyebrow-arabic-font: IBM Plex Sans Arabic,Inter,sans-serif;
   --fpt-c-eyebrow-arabic-weight: 600;
   --fpt-c-eyebrow-arabic-letter-spacing: 0;
-  --fpt-c-email-logo-file: logos/derived/email-header-160-paper@2x.png;
-  --fpt-c-email-logo-file-120: logos/derived/email-header-120-paper@2x.png;
-  --fpt-c-email-logo-width: 160px; /* PROPOSED */
-  --fpt-c-email-logo-height: 56px; /* PROPOSED */
+  --fpt-c-email-logo-file: logos/derived/email-header-160-card@2x.png;
+  --fpt-c-email-header-dark-twin: logos/derived/email-header-160-dark@2x.png;
+  --fpt-c-email-header-card-radius: 8px;
+  --fpt-c-email-header-card-padding: 12px;
+  --fpt-c-email-header-card-ground: #F7F4F1;
+  --fpt-c-email-logo-width: 160px;
+  --fpt-c-email-logo-height: 56px;
   --fpt-c-email-logo-ground: #F7F4F1;
   --fpt-c-email-scheme: paper-only;
+  --fpt-c-email-dark-rule-scope: header-only-data-ogsc;
+  --fpt-c-email-ground-attribute: bgcolor + style;
   --fpt-c-email-color-scheme: light;
   --fpt-c-email-foot-language: message-language-only;
   --fpt-c-email-min-font-size: 12px;
@@ -432,8 +442,8 @@
   --fpt-c-og-canvas: 1200 × 630;
   --fpt-c-og-ground: #0A0A0A;
   --fpt-c-og-lockup: logos/svg/fpt-lockup-horizontal-en-white.svg;
-  --fpt-c-og-lockup-height: 120px; /* PROPOSED */
-  --fpt-c-og-margin: 64px; /* PROPOSED */
+  --fpt-c-og-lockup-height: 120px;
+  --fpt-c-og-margin: 64px;
   --fpt-c-og-risk-line-text-ar: الاستثمار ينطوي على مخاطر;
   --fpt-c-og-risk-line-text-en: Investing involves risk;
   --fpt-c-og-risk-line-color: rgba(255,255,255,0.55);
@@ -441,6 +451,7 @@
   --fpt-c-og-risk-line-placement: bottom-start inside the safe margin;
   --fpt-c-og-risk-line-font: IBM Plex Sans Arabic,Inter,sans-serif;
   --fpt-c-og-risk-line-font-en: Inter,IBM Plex Sans Arabic,sans-serif;
+  --fpt-c-logo-lockup-language: en-only;
   --fpt-c-logo-nav-height: 46px;
   --fpt-c-logo-clear-space: 0.5; /* PROPOSED */
   --fpt-c-logo-min-tile-screen: 16px; /* PROPOSED */

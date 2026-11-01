@@ -60,7 +60,7 @@ export default function DashboardPreview() {
             <div className="flex items-center justify-between gap-3">
               <div>
                 <div className="text-[13px] text-tertiary">{t('dashboardPreview.activeAccount')}</div>
-                <div className="text-sm font-semibold">{t('common.evaluationSize', { size: usd(product.sizeCents) })}</div>
+                <div className="text-base font-semibold">{t('common.evaluationSize', { size: usd(product.sizeCents) })}</div>
               </div>
               <SampleChip />
             </div>

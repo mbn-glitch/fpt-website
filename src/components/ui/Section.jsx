@@ -18,12 +18,13 @@ export function SampleChip({ className = '' }) {
   );
 }
 
+/** Section headline: h2 in the display face (Latin: Barlow Condensed 700 uppercase; Arabic: Plex Arabic 600) — 30 / 36 / 48 px; subtitle 18 px. */
 export function SectionHeader({ eyebrow, title, subtitle, center = false, className = '', as: Tag = 'h2' }) {
   return (
     <div className={`${center ? 'text-center mx-auto' : ''} max-w-3xl ${className}`}>
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
       {title && (
-        <Tag className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.15]">
+        <Tag className="mt-4 text-3xl sm:text-4xl lg:text-5xl fpt-display">
           {title}
         </Tag>
       )}

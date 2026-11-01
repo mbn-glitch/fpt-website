@@ -22,7 +22,7 @@ export default function HelpHero() {
     <section className="pt-12 sm:pt-20 pb-10">
       <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
         <Eyebrow>{t('help.eyebrow')}</Eyebrow>
-        <h1 className="mt-5 text-4xl sm:text-6xl font-semibold leading-[1.1]">
+        <h1 className="mt-5 text-[2.5rem] sm:text-6xl fpt-display">
           {t('help.title1')}<br />
           {t('help.title2')}
         </h1>
@@ -33,7 +33,7 @@ export default function HelpHero() {
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Button href={WHATSAPP_URL} external size="md"><WhatsAppMark size={22} /> {t('help.contactSupport')}</Button>
         </div>
-        <div className="mt-6 flex flex-wrap justify-center items-center gap-2 text-sm">
+        <div className="mt-6 flex flex-wrap justify-center items-center gap-2 text-base">
           <span className="text-tertiary me-1">{t('help.popularSearches')}</span>
           {POPULAR_QUERIES.map((p) => (
             <button key={p.label} type="button" onClick={() => navigate(to(p.path))}

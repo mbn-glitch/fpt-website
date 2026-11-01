@@ -46,13 +46,13 @@ export const categories = [
     id: 'payouts-fiper-card', slug: 'payouts-fiper-card', icon: CreditCard,
     title: 'Payouts & Fiper Card',
     titles: { ar: 'الدفعات وبطاقة Fiper', fr: 'Paiements et Fiper Card', es: 'Pagos y Fiper Card', pt: 'Pagamentos e Fiper Card', tr: 'Ödemeler ve Fiper Kartı' },
-    description: 'From screen to spend. How you access your earnings.',
+    description: 'Rewards, how they are paid, and the Fiper Card.',
     descriptions: {
-      ar: 'من الشاشة إلى الإنفاق. كيف تصل إلى أرباحك.',
-      fr: "De l’écran à la dépense. Comment accéder à vos gains.",
-      es: 'De la pantalla al gasto. Cómo accedes a tus ganancias.',
-      pt: 'Da tela ao gasto. Como você acessa seus ganhos.',
-      tr: 'Ekrandan harcamaya. Kazançlarınıza nasıl erişirsiniz.',
+      ar: 'المكافآت وطرق دفعها وبطاقة فايبر.',
+      fr: 'Les récompenses, leur mode de paiement et la Fiper Card.',
+      es: 'Las recompensas, cómo se pagan y la Fiper Card.',
+      pt: 'As recompensas, como são pagas e o Fiper Card.',
+      tr: 'Ödüller, nasıl ödendikleri ve Fiper Kartı.',
     },
   },
   {
@@ -464,66 +464,28 @@ export const faqs = [
   {
     id: 'can-i-access-my-funds-faster', categoryId: 'payouts-fiper-card',
     question: 'Can I access my funds faster?',
-    questions: { ar: 'هل يمكنني الوصول إلى أموالي بشكل أسرع؟', fr: 'Puis-je accéder à mes fonds plus rapidement ?', es: '¿Puedo acceder a mis fondos más rápido?', pt: 'Posso acessar meus fundos mais rápido?', tr: 'Fonlarıma daha hızlı erişebilir miyim?' },
-    answer: 'Rewards paid by internal transfer land in your account with Fiper. Whether and how the Fiper Card can be used from there is governed by Fiper’s own terms.',
+    questions: { ar: 'هل يمكنني الوصول إلى أموالي بشكل أسرع؟', fr: 'Puis-je accéder à mes fonds plus rapidement ?', es: '¿Puedo acceder a mis fondos más rápido?', pt: 'Posso acessar meus fundos mais rápido?', tr: 'Fonlarıma daha hızlı erişebilir miyim?' },
+    answer: 'No. Rewards follow the 14-day cycle and are paid by crypto-currency or by internal transfer to your account with Fiper.',
     answers: {
-      ar: 'المكافآت المدفوعة بتحويل داخلي تصل إلى حسابك لدى Fiper. أما إمكانية استخدام بطاقة Fiper من هناك وكيفيته فتحكمهما شروط Fiper الخاصة.',
-      fr: 'Les récompenses payées par transfert interne arrivent sur votre compte chez Fiper. L’utilisation éventuelle de la Fiper Card depuis ce compte relève des conditions propres de Fiper.',
-      es: 'Las recompensas pagadas por transferencia interna llegan a tu cuenta en Fiper. Si la Fiper Card puede usarse desde ahí, y cómo, se rige por las condiciones propias de Fiper.',
-      pt: 'As recompensas pagas por transferência interna chegam à sua conta na Fiper. Se e como o Fiper Card pode ser usado a partir daí é regido pelos termos da própria Fiper.',
-      tr: 'Dahili transferle ödenen ödüller Fiper’daki hesabınıza ulaşır. Fiper Kartının oradan kullanılıp kullanılamayacağı ve nasıl kullanılacağı Fiper’ın kendi koşullarına tabidir.',
+      ar: 'لا. تتبع المكافآت دورة الـ14 يوماً وتُدفع بالعملات الرقمية أو بتحويل داخلي إلى حسابك لدى Fiper.',
+      fr: 'Non. Les récompenses suivent le cycle de 14 jours et sont payées en crypto-monnaie ou par transfert interne vers votre compte chez Fiper.',
+      es: 'No. Las recompensas siguen el ciclo de 14 días y se pagan en criptomoneda o por transferencia interna a tu cuenta en Fiper.',
+      pt: 'Não. As recompensas seguem o ciclo de 14 dias e são pagas em criptomoeda ou por transferência interna para a sua conta na Fiper.',
+      tr: 'Hayır. Ödüller 14 günlük döngüyü izler ve kripto para ile veya Fiper’daki hesabınıza dahili transferle ödenir.',
     },
   },
   {
-    id: 'what-is-the-fiper-card', categoryId: 'payouts-fiper-card',
-    question: 'What is the Fiper Card?',
-    questions: { ar: 'ما هي بطاقة Fiper؟', fr: "Qu’est-ce que la Fiper Card ?", es: '¿Qué es la Fiper Card?', pt: 'O que é o Fiper Card?', tr: 'Fiper Kartı nedir?' },
-    answer: 'The Fiper Card is a payment solution from the Fiper Global ecosystem. It allows you to spend your profits online or in-store through a virtual or physical card.',
+    // Owner decision 6 (1 Nov 2026 23:08): the ONE wording about the Fiper Card — the owner's sentence, nothing else
+    id: 'how-do-i-use-the-fiper-card', categoryId: 'payouts-fiper-card',
+    question: 'How do I use the Fiper Card?',
+    questions: { ar: 'كيف أستخدم بطاقة فايبر؟', fr: 'Comment utiliser la Fiper Card ?', es: '¿Cómo uso la Fiper Card?', pt: 'Como uso o Fiper Card?', tr: 'Fiper Kartını nasıl kullanırım?' },
+    answer: 'The client issues the Fiper Card from inside Fiper, then transfers their balance to their account with Fiper, and uses the card normally.',
     answers: {
-      ar: 'بطاقة Fiper هي حل دفع من منظومة Fiper Global. تتيح لك إنفاق أرباحك عبر الإنترنت أو في المتاجر.',
-      fr: "La Fiper Card est une solution de paiement permettant de dépenser vos bénéfices en ligne ou en magasin.",
-      es: 'La Fiper Card es una solución de pago que te permite gastar tus ganancias online o en tienda.',
-      pt: 'O Fiper Card é uma solução de pagamento que permite gastar seus lucros online ou em lojas.',
-      tr: 'Fiper Kartı, karlarınızı online veya mağazada harcamanızı sağlayan bir ödeme çözümüdür.',
-    },
-  },
-  {
-    id: 'how-do-i-get-the-fiper-card', categoryId: 'payouts-fiper-card',
-    question: 'How do I get the Fiper Card?',
-    questions: { ar: 'كيف أحصل على بطاقة Fiper؟', fr: 'Comment obtenir la Fiper Card ?', es: '¿Cómo obtengo la Fiper Card?', pt: 'Como obtenho o Fiper Card?', tr: 'Fiper Kartını nasıl alabilirim?' },
-    answer: 'Create a Fiper account through the Fiper Global platform, then issue your card directly from the dashboard. Virtual cards activate in minutes.',
-    answers: {
-      ar: 'أنشئ حساب Fiper عبر منصة Fiper Global، ثم أصدر بطاقتك مباشرةً من لوحة التحكم.',
-      fr: "Créez un compte Fiper via la plateforme Fiper Global, puis émettez votre carte depuis le tableau de bord.",
-      es: 'Crea una cuenta Fiper en la plataforma Fiper Global, luego emite tu tarjeta desde el dashboard.',
-      pt: 'Crie uma conta Fiper pela plataforma Fiper Global, depois emita seu cartão pelo dashboard.',
-      tr: 'Fiper Global platformu üzerinden bir Fiper hesabı oluşturun, ardından kartınızı dashboard’dan çıkarın.',
-    },
-  },
-  {
-    id: 'can-i-use-my-fpt-profits-with-the-card', categoryId: 'payouts-fiper-card',
-    question: 'Can I use my FPT profits with the card?',
-    questions: { ar: 'هل يمكنني استخدام أرباح FPT مع البطاقة؟', fr: 'Puis-je utiliser mes bénéfices FPT avec la carte ?', es: '¿Puedo usar mis ganancias FPT con la tarjeta?', pt: 'Posso usar meus lucros FPT com o cartão?', tr: 'FPT karlarımı kartla kullanabilir miyim?' },
-    answer: 'Yes. Transfer your FPT balance to your linked Fiper account, then access the funds instantly via your Fiper Card.',
-    answers: {
-      ar: 'نعم. حوِّل رصيد FPT إلى حساب Fiper المرتبط، ثم ادخل إلى الأموال فوراً عبر بطاقة Fiper.',
-      fr: "Oui. Transférez votre solde FPT vers votre compte Fiper lié, puis accédez aux fonds via la Fiper Card.",
-      es: 'Sí. Transfiere tu saldo FPT a tu cuenta Fiper vinculada y accede con la Fiper Card.',
-      pt: 'Sim. Transfira seu saldo FPT para sua conta Fiper e acesse com o Fiper Card.',
-      tr: 'Evet. FPT bakiyenizi Fiper hesabınıza aktarın ve Fiper Kartı ile erişin.',
-    },
-  },
-  {
-    id: 'is-the-card-available-worldwide', categoryId: 'payouts-fiper-card',
-    question: 'Is the card available worldwide?',
-    questions: { ar: 'هل البطاقة متاحة في جميع أنحاء العالم؟', fr: 'La carte est-elle disponible dans le monde entier ?', es: '¿La tarjeta está disponible en todo el mundo?', pt: 'O cartão está disponível mundialmente?', tr: 'Kart dünya genelinde kullanılabilir mi?' },
-    answer: 'The Fiper Card supports global usage anywhere VISA is accepted. Physical card shipping is available in select markets.',
-    answers: {
-      ar: 'تدعم بطاقة Fiper الاستخدام العالمي في أي مكان يُقبل فيه VISA.',
-      fr: "La Fiper Card est utilisable partout où VISA est accepté.",
-      es: 'La Fiper Card es utilizable donde VISA es aceptado.',
-      pt: 'O Fiper Card é utilizável onde VISA é aceito.',
-      tr: 'Fiper Kartı, VISA’nın kabul edildiği her yerde kullanılabilir.',
+      ar: 'يُصدر العميل بطاقة فايبر من داخل فايبر، ثم يحوّل رصيده إلى حسابه في فايبر، ويستخدم بطاقته بشكل طبيعي.',
+      fr: 'Le client émet la Fiper Card depuis Fiper, transfère ensuite son solde vers son compte chez Fiper, puis utilise sa carte normalement.',
+      es: 'El cliente emite la Fiper Card desde dentro de Fiper, luego transfiere su saldo a su cuenta en Fiper y usa su tarjeta con normalidad.',
+      pt: 'O cliente emite o Fiper Card de dentro da Fiper, depois transfere o seu saldo para a sua conta na Fiper e usa o cartão normalmente.',
+      tr: 'Müşteri Fiper Kartını Fiper içinden çıkarır, ardından bakiyesini Fiper’daki hesabına aktarır ve kartını normal şekilde kullanır.',
     },
   },
   {
@@ -884,18 +846,39 @@ export const getFaqsByCategory = (categoryId) => faqs.filter((f) => f.categoryId
 export const getPopularFaqs = () => faqs.filter((f) => f.popular);
 export const getArticleCount = (categoryId) => faqs.filter((f) => f.categoryId === categoryId).length;
 
-export function searchFaqs(query, limit = 8) {
-  const q = query.trim().toLowerCase();
+/** Search normalisation: case-fold (Turkish dotless i included), strip Arabic diacritics / tatweel, unify alef / ya / ta-marbuta, strip Latin accents (é → e). */
+export function normalizeQuery(str) {
+  return String(str || '')
+    .toLowerCase()
+    .replace(/[\u064B-\u065F\u0670\u0640]/g, '')
+    .replace(/[\u0622\u0623\u0625]/g, '\u0627')
+    .replace(/\u0649/g, '\u064A')
+    .replace(/\u0629/g, '\u0647')
+    .replace(/[\u0131]/g, 'i')
+    .normalize('NFD').replace(/[\u0300-\u036F]/g, '');
+}
+
+/**
+ * Help search in the page language (UXFW-043): the index is the current language's questions, answers and category titles (score ×2),
+ * with the English text as a fallback index (score ×1) so an English query still finds the article on a non-English page.
+ * Results are rendered by the caller in the page language. `lang` = the two-letter page language.
+ */
+export function searchFaqs(query, limit = 8, lang = 'en') {
+  const q = normalizeQuery(query).trim();
   if (!q) return [];
   const tokens = q.split(/\s+/).filter(Boolean);
+  const catTitle = (c, l) => ((l !== 'en' && c.titles?.[l]) ? c.titles[l] : c.title);
   const scored = faqs.map((f) => {
-    const allText = [
-      f.question, f.answer,
-      ...Object.values(f.questions || {}),
-      ...Object.values(f.answers || {}),
-    ].join(' ').toLowerCase();
+    const cat = categories.find((c) => c.id === f.categoryId);
+    const own = lang !== 'en'
+      ? normalizeQuery([f.questions?.[lang], f.answers?.[lang], cat && catTitle(cat, lang)].filter(Boolean).join(' '))
+      : normalizeQuery([f.question, f.answer, cat?.title].filter(Boolean).join(' '));
+    const fallback = lang !== 'en' ? normalizeQuery([f.question, f.answer, cat?.title].filter(Boolean).join(' ')) : '';
     let score = 0;
-    for (const t of tokens) { if (allText.includes(t)) score += 1; }
+    for (const t of tokens) {
+      if (own.includes(t)) score += 2;
+      else if (fallback.includes(t)) score += 1;
+    }
     return { faq: f, score };
   });
   return scored.filter((s) => s.score > 0).sort((a, b) => b.score - a.score).slice(0, limit).map((s) => s.faq);

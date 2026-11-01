@@ -123,31 +123,11 @@
     "sampleNote": "Yukarıdaki tüm rakamlar örnek veridir; hiçbir trader’ın performansı değildir."
   },
   "fptCard": {
-    "title": "Kârlarınıza Fiper Kartı ile Erişin",
-    "subtitle": "FPT, Fiper Kartına erişim sunar — kar çekimi ve gerçek dünya kullanımı için sanal ve fiziksel kart çözümleri sağlar.",
-    "features": {
-      "instant": {
-        "title": "Anında Erişim",
-        "desc": "Onaylanmış karlarınıza gereksiz gecikmeler olmadan kolayca erişin."
-      },
-      "global": {
-        "title": "Küresel Kullanım",
-        "desc": "Kartınızı dünya genelinde çevrimiçi veya mağazada kullanın."
-      },
-      "virtual": {
-        "title": "Sanal ve Fiziksel Kartlar",
-        "desc": "İhtiyaçlarınıza göre sanal ve fiziksel kartlar arasında seçim yapın."
-      },
-      "integrated": {
-        "title": "Fiper Ekosistemi ile Entegre",
-        "desc": "Ticaret hesabınız tam bir finansal altyapıya bağlanır."
-      }
-    },
-    "note1": "Kar çekimleri dahili onay süreçlerine ve ödeme koşullarına tabidir.",
-    "note2": "Kart kullanılabilirliği hesap durumu ve uygunluğa bağlıdır.",
-    "cta": "FPT Kartınızı Alın",
-    "eyebrow": "Fiper Kartı",
-    "imageAlt": "Fiper fiziksel kart"
+    "eyebrow": "Fiper ekosisteminin bir parçası",
+    "title": "Fiper Kartı",
+    "subtitle": "Müşteri Fiper Kartını Fiper içinden çıkarır, ardından bakiyesini Fiper’daki hesabına aktarır ve kartını normal şekilde kullanır.",
+    "cta": "Fiper’da Fiper Kartı",
+    "imageAlt": "Fiper Kartı"
   },
   "platforms": {
     "title": "cTrader’da işlem yapın",
@@ -174,9 +154,9 @@
     },
     "card": {
       "title": "Fiper Kart",
-      "desc": "Anında Kar Erişimi",
+      "desc": "Müşteri tarafından Fiper içinden çıkarılır",
       "badge": "Kullanılabilir",
-      "label": "Sermayeye erişim"
+      "label": "Bir Fiper ürünü"
     },
     "crm": {
       "title": "Fiper CRM",
@@ -316,15 +296,15 @@
       "p2title": "Ödülden önce risk",
       "p2body": "Düşüşlerden kurtulan bir trader bileşik büyür.",
       "p3title": "Bir yol, açıkça işaretlenmiş",
-      "p3body": "Değerlendirme, finansman, ödeme, kart. Numara yok.",
+      "p3body": "Değerlendirme, finanse edilmiş hesap, ödül. Numara yok, dikkat dağıtmak için tasarlanmış paralel ürün hatları yok.",
       "p4title": "Pazarlama yerine altyapı",
       "p4body": "Yürütme, likidite ve panolara yatırım yapıyoruz."
     },
     "ecosystem": {
       "fptTag": "Prop Trading",
       "fptBody": "Değerlendirme, finanse edilmiş hesap, disiplin.",
-      "cardTag": "Sermaye Erişimi",
-      "cardBody": "Ödemeler küresel harcama kartında.",
+      "cardTag": "Bir Fiper ürünü",
+      "cardBody": "Müşteri Fiper Kartını Fiper içinden çıkarır, ardından bakiyesini Fiper’daki hesabına aktarır ve kartını normal şekilde kullanır.",
       "globalTag": "Komuta Merkezi",
       "globalBody": "Hesaplar, metrikler ve ödemeler birleştirildi."
     },
@@ -342,7 +322,6 @@
       "content": "Fiper Global, dünya genelinde traderlara güç katma vizyonuyla kuruldu. FPT, kurumsal altyapı ve trader desteğinin birleşimiyle profesyonel trading ortamı sunma taahhüdümüzü temsil eder."
     },
     "mission": {
-      "title": "",
       "content": "Yetenekli traderlarin gereksiz engellerle karşılaşmadan sermayeye erişmesi gerektiğine inanıyoruz. FPT, değerlendirmeden finanse edilmiş işleme şeffaf ve yapılandırılmış bir yol sunar."
     },
     "subtitle": "FPT, Fiper Global'in prop trading kolu — modern traderlar için tasarlanmış entegre bir finansal altyapı.",

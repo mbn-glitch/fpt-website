@@ -242,6 +242,10 @@ Risk / copyright lines today (OBSERVED site strings, **not approved legal texts*
 | تسجيل الخروج | Sign out | preview.html § 1 — destructive text button (CR-07: outline / text + icon) | PROPOSED | `sources/strings/v1-2-0.json` |
 | إغلاق الحساب؟ | Close this account? | preview.html § 10 — final confirmation dialog title (the one place for the solid danger button, CR-07) | PROPOSED | `sources/strings/v1-2-0.json` |
 | تُغلق كل الصفقات المفتوحة ولا يمكن التراجع. | Every open position is closed; this cannot be undone. | preview.html § 10 — confirmation dialog body | PROPOSED | `sources/strings/v1-2-0.json` |
-| رجوع | Back | preview.html § 10 — the ghost button beside the solid danger confirmation | PROPOSED | `sources/strings/v1-2-0.json` |
+| رجوع | Back | preview.html § 10 — the ghost way back beside the PRIMARY in a non-destructive confirmation (CR-10: never beside the solid danger button) | PROPOSED | `sources/strings/v1-2-0.json` |
 | الاستثمار ينطوي على مخاطر | Investing involves risk | logos/derived/og-1200x630-ar.png / -en.png — the fixed risk line (CR-05, verbatim; tokens component.og.risk-line.text-ar / text-en) | APPROVED | `sources/strings/v1-2-0.json` |
+| تراجع | Go back | preview.html § 10 — the SECONDARY safe way back in the destructive confirmation dialog, first in source, initial focus (CR-10; platform key admin.actions.cancel) | APPROVED | `sources/strings/v1-2-1.json` |
+| إرسال الكشف؟ | Send the statement? | preview.html § 10 — non-destructive confirmation dialog title (ghost + primary) | PROPOSED | `sources/strings/v1-2-1.json` |
+| يُرسل كشف الصرف إلى بريدك المسجّل. | The payout statement is sent to your registered e-mail. | preview.html § 10 — non-destructive confirmation body | PROPOSED | `sources/strings/v1-2-1.json` |
+| إرسال | Send | preview.html § 10 — the primary of the non-destructive confirmation | PROPOSED | `sources/strings/v1-2-1.json` |
 <!--/STRINGS-->

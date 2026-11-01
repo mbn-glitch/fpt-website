@@ -1,6 +1,6 @@
 # tokens-quick — every `--fpt-*` variable (GENERATED from brand/tokens.json, DTCG 2025.10; do not edit)
 
-FPT Brand Identity System v1.2.0 — child of **fiper-brand v2.0.0**. Layers: `--fpt-p-*` primitives (never used directly in apps) · `--fpt-*` semantic roles (use these) · `--fpt-c-*` component tokens. Status: **APPROVED** (task file / official logo file / LOCKED) · **OBSERVED** (fpt-website commit a88e666, captured 2026-10-29; an observed value is not automatically a rule) · **INHERITED** (read from the parent file by path) · **PROPOSED** (no source; labelled default — decision items 1–6) · **REFERENCE** (parent value kept only for comparison, never emitted) · **DEPRECATED** (never use) · ALIAS. Dark is the only app theme; `--fpt-paper-*` values apply under `.fpt-paper` (documents, e-mail, print).
+FPT Brand Identity System v1.2.1 — child of **fiper-brand v2.0.0**. Layers: `--fpt-p-*` primitives (never used directly in apps) · `--fpt-*` semantic roles (use these) · `--fpt-c-*` component tokens. Status: **APPROVED** (task file / official logo file / LOCKED) · **OBSERVED** (fpt-website commit a88e666, captured 2026-10-29; an observed value is not automatically a rule) · **INHERITED** (read from the parent file by path) · **PROPOSED** (no source; labelled default — decision items 1–6) · **REFERENCE** (parent value kept only for comparison, never emitted) · **DEPRECATED** (never use) · ALIAS. Dark is the only app theme; `--fpt-paper-*` values apply under `.fpt-paper` (documents, e-mail, print).
 
 ## Semantic roles
 | Variable | Value | Status | Role |
@@ -316,6 +316,11 @@ FPT Brand Identity System v1.2.0 — child of **fiper-brand v2.0.0**. Layers: `-
 | `--fpt-c-sheet-shadow` | `0 22px 70px rgba(0,0,0,0.55)` | ALIAS |
 | `--fpt-c-sheet-handle` | `36px 4px` | INHERITED |
 | `--fpt-c-sheet-in-duration` | `350ms` | ALIAS |
+| `--fpt-c-dialog-destructive-cancel-style` | `secondary-outline-filled` | APPROVED |
+| `--fpt-c-dialog-destructive-initial-focus` | `cancel` | APPROVED |
+| `--fpt-c-dialog-destructive-order` | `cancel-first-solid-last` | APPROVED |
+| `--fpt-c-dialog-destructive-enter-default` | `none` | APPROVED |
+| `--fpt-c-dialog-confirm-cancel-style` | `ghost` | APPROVED |
 | `--fpt-c-skeleton-fill` | `rgba(255,255,255,0.08)` | ALIAS |
 | `--fpt-c-skeleton-pulse-duration` | `1200ms` | INHERITED |
 | `--fpt-c-skeleton-pulse-min-opacity` | `0.45` | INHERITED |
@@ -346,12 +351,18 @@ FPT Brand Identity System v1.2.0 — child of **fiper-brand v2.0.0**. Layers: `-
 | `--fpt-c-eyebrow-arabic-font` | `IBM Plex Sans Arabic,Inter,sans-serif` | ALIAS |
 | `--fpt-c-eyebrow-arabic-weight` | `600` | APPROVED |
 | `--fpt-c-eyebrow-arabic-letter-spacing` | `0` | APPROVED |
-| `--fpt-c-email-logo-file` | `logos/derived/email-header-160-paper@2x.png` | APPROVED |
-| `--fpt-c-email-logo-file-120` | `logos/derived/email-header-120-paper@2x.png` | APPROVED |
-| `--fpt-c-email-logo-width` | `160px` | PROPOSED |
-| `--fpt-c-email-logo-height` | `56px` | PROPOSED |
+| `--fpt-c-email-logo-file` | `logos/derived/email-header-160-card@2x.png` | APPROVED |
+| `— (not emitted)` | `withdrawn — use component.email.logo-file (the 160 × 56 card)` | DEPRECATED |
+| `--fpt-c-email-header-dark-twin` | `logos/derived/email-header-160-dark@2x.png` | APPROVED |
+| `--fpt-c-email-header-card-radius` | `8px` | APPROVED |
+| `--fpt-c-email-header-card-padding` | `12px` | APPROVED |
+| `--fpt-c-email-header-card-ground` | `#F7F4F1` | APPROVED |
+| `--fpt-c-email-logo-width` | `160px` | APPROVED |
+| `--fpt-c-email-logo-height` | `56px` | APPROVED |
 | `--fpt-c-email-logo-ground` | `#F7F4F1` | APPROVED |
 | `--fpt-c-email-scheme` | `paper-only` | APPROVED |
+| `--fpt-c-email-dark-rule-scope` | `header-only-data-ogsc` | APPROVED |
+| `--fpt-c-email-ground-attribute` | `bgcolor + style` | APPROVED |
 | `--fpt-c-email-color-scheme` | `light` | APPROVED |
 | `--fpt-c-email-foot-language` | `message-language-only` | APPROVED |
 | `--fpt-c-email-min-font-size` | `12px` | APPROVED |
@@ -360,8 +371,8 @@ FPT Brand Identity System v1.2.0 — child of **fiper-brand v2.0.0**. Layers: `-
 | `--fpt-c-og-canvas` | `1200 × 630` | APPROVED |
 | `--fpt-c-og-ground` | `#0A0A0A` | APPROVED |
 | `--fpt-c-og-lockup` | `logos/svg/fpt-lockup-horizontal-en-white.svg` | APPROVED |
-| `--fpt-c-og-lockup-height` | `120px` | PROPOSED |
-| `--fpt-c-og-margin` | `64px` | PROPOSED |
+| `--fpt-c-og-lockup-height` | `120px` | APPROVED |
+| `--fpt-c-og-margin` | `64px` | APPROVED |
 | `--fpt-c-og-risk-line-text-ar` | `الاستثمار ينطوي على مخاطر` | APPROVED |
 | `--fpt-c-og-risk-line-text-en` | `Investing involves risk` | APPROVED |
 | `--fpt-c-og-risk-line-color` | `rgba(255,255,255,0.55)` | APPROVED |
@@ -369,6 +380,7 @@ FPT Brand Identity System v1.2.0 — child of **fiper-brand v2.0.0**. Layers: `-
 | `--fpt-c-og-risk-line-placement` | `bottom-start inside the safe margin` | APPROVED |
 | `--fpt-c-og-risk-line-font` | `IBM Plex Sans Arabic,Inter,sans-serif` | ALIAS |
 | `--fpt-c-og-risk-line-font-en` | `Inter,IBM Plex Sans Arabic,sans-serif` | ALIAS |
+| `--fpt-c-logo-lockup-language` | `en-only` | APPROVED |
 | `--fpt-c-logo-nav-height` | `46px` | ALIAS |
 | `— (not emitted)` | `22%` | DEPRECATED |
 | `--fpt-c-logo-clear-space` | `0.5` | PROPOSED |
@@ -487,6 +499,7 @@ FPT Brand Identity System v1.2.0 — child of **fiper-brand v2.0.0**. Layers: `-
 | `semantic.radius.logo-tile` | `22%` | the 22 % CSS clip only hid the v1 JPEG white margin; the v2 tile carries its own 20 % bottom-left corner — never clip the tile (logo v2, 30 Oct 2026) |
 | `semantic.motion.float` | `floatY 4s/6s ease-in-out infinite` | fpt-website a88e666 src/index.css md5 6b112104… lines 100–106 .animate-float — floating elements DEPRECATED (parent: no floating cards) |
 | `semantic.motion.pulse-dot` | `pulseDot 2s infinite` | fpt-website a88e666 src/index.css md5 6b112104… lines 108–112 .animate-pulse-dot — glow pulses DEPRECATED |
+| `component.email.logo-file-120` | `withdrawn — use component.email.logo-file (the 160 × 56 card)` | CR-12 — e-mail header in clients that force dark mode (owner observation 1 Nov 2026: the paper mail turned dark in Outlook iOS / Apple Mail iOS / a second inbox app while the flattened paper header stayed a light box; «قم بما تراه مناسباً»): the header becomes an intentional rounded PAPER CARD (radius 8 CSS px, padding 12 CSS px, the paper token, transparent corners) around the unchanged EN lockup — it merges into the paper ground in light and reads as a tidy card on a forced-dark ground; plus a header-scoped [data-ogsc] rule swapping to the white lockup twin where Outlook exposes it. Measured in three simulated client modes (FPT-BRAND-V1-2-1-captures/cr12): candidate a (transparent ink) 1.0–1.25:1 unreadable on dark; candidate c (brand-red band) readable but the gradient tile on brand red is logo misuse and a fourth red role — rejected; the owner decision 1 Nov 2026 23:08 Qatar (task file FPT-BRAND-V1-2-1-20261101-231232.md § 0) item 4 + addition — the compact 120 × 42 CSS header is withdrawn: a 12 CSS px card padding cannot keep the lockup at the 24 px minimum inside 42 px; compact mails use the 160 × 56 card header (proxy decision, question in the v1.2.1 report) |
 | `component.logo.tile-radius` | `22%` | the 22 % CSS clip only hid the v1 JPEG white margin; the v2 tile carries its own 20 % corner — never clip (logo v2, 30 Oct 2026) |
 | `component.logo.max-lockup-print` | `20mm` | v1 JPEG limit (native 242 px); logo v2 is vector — no maximum (30 Oct 2026) |
 | `component.logo.max-tile-print` | `103mm` | v1 JPEG limit (1223 px tile); logo v2 is vector — no maximum (30 Oct 2026) |

@@ -5,7 +5,7 @@ import { Search, X, ArrowRight } from 'lucide-react';
 import { searchFaqs, categories } from '../../data/helpContent.js';
 import useLocalizedPath from '../../hooks/useLocalizedPath.js';
 
-/** Help search — localized placeholder and states, opaque result list (no portal, no blur), localized target links. */
+/** Help search — works in the page language (UXFW-043): the index is the current language's questions / answers / category titles with English as the fallback index (searchFaqs); localized placeholder, states, results and target links; opaque result list (no portal, no blur). */
 export default function HelpSearch({ size = 'lg', className = '' }) {
   const { t, i18n } = useTranslation();
   const { to } = useLocalizedPath();
@@ -31,7 +31,7 @@ export default function HelpSearch({ size = 'lg', className = '' }) {
     return () => { document.removeEventListener('click', fn); document.removeEventListener('keydown', onKey); };
   }, [open]);
 
-  const results = useMemo(() => (debounced ? searchFaqs(debounced, 8) : []), [debounced]);
+  const results = useMemo(() => (debounced ? searchFaqs(debounced, 8, lang) : []), [debounced, lang]);
   const categoryMap = useMemo(() => Object.fromEntries(categories.map((c) => [c.id, c])), []);
 
   const goTo = (faq) => {
@@ -39,7 +39,7 @@ export default function HelpSearch({ size = 'lg', className = '' }) {
     navigate(to(`/help/${categoryMap[faq.categoryId].slug}#${faq.id}`));
   };
 
-  const heightCls = size === 'sm' ? 'h-12 text-sm' : 'h-14 text-base';
+  const heightCls = size === 'sm' ? 'h-12 text-base' : 'h-14 text-base';
 
   return (
     <div ref={wrapRef} className={`relative w-full ${className}`}>
@@ -76,7 +76,7 @@ export default function HelpSearch({ size = 'lg', className = '' }) {
                     <button type="button" onClick={() => goTo(f)} className="w-full text-start px-5 min-h-12 py-3 flex items-center gap-3 text-white hover:bg-white/5">
                       <span className="flex-1 min-w-0">
                         <span className="block text-[13px] text-tertiary">{catTitle}</span>
-                        <span className="block text-sm truncate">{question}</span>
+                        <span className="block text-base truncate">{question}</span>
                       </span>
                       <ArrowRight size={13} className="text-tertiary shrink-0 flip-rtl" aria-hidden="true" />
                     </button>

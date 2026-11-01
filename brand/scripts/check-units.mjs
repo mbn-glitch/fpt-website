@@ -1,7 +1,7 @@
 // FPT Brand v1.0 — numeric-unit cohesion gate (inherited from the parent): (1) HTML/exports — every .unit/.fpt-unit/.fpt-num/bdi element renders on ONE line; (2) PDF — every reference unit is found contiguous on one text line. Needs playwright-core + pdfjs-dist (devDependencies). usage: node brand/scripts/check-units.mjs [--ref=page.html] page.html … file.pdf …
 // (2) PDF — no text line starts with a detached "%" / currency code or ends with a lone sign. usage: node scripts/check-units.mjs page.html … file.pdf …
 import fs from 'node:fs'; import path from 'node:path'; import { chromium } from 'playwright-core'; import os from 'node:os';
-const pwRoot = path.join(os.homedir(), '.cache/ms-playwright'); const pwDir = fs.existsSync(pwRoot) ? fs.readdirSync(pwRoot).filter(d => /^chromium-\d+$/.test(d)).sort().pop() : null;
+const pwRoot = process.env.FPT_BRAND_PW_ROOT || path.join(os.homedir(), '.cache/ms-playwright'); const pwDir = fs.existsSync(pwRoot) ? fs.readdirSync(pwRoot).filter(d => /^chromium-\d+$/.test(d)).sort().pop() : null;
 const launch = () => chromium.launch({ ...(pwDir ? { executablePath: path.join(pwRoot, pwDir, 'chrome-linux64/chrome') } : {}), args: ['--no-sandbox', '--font-render-hinting=none'] });
 const argv=process.argv.slice(2); const refArg=argv.find(a=>a.startsWith('--ref=')); const files=argv.filter(a=>!a.startsWith('--ref=')); let fail=0; const b=await launch();
 const norm=t=>t.replace(/\s+/g,' ').replace(/[\u200e\u200f\u202a-\u202e\u2066-\u2069]/g,'').trim();

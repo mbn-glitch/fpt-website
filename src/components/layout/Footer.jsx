@@ -26,8 +26,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
           <div className="col-span-2 md:col-span-1">
             <Link to={localizedPath('/', lang)} className="inline-flex items-center min-h-11">
-              {/* logo v2 (fpt-brand v1.2.0): the official white lockup at the footer height (44 px, OBSERVED) */}
-              <Logo variant="lockup" size={44} lang={lang} />
+              {/* logo v2 (fpt-brand v1.2.1, CR-11): the official ENGLISH white lockup in every language at the footer height (44 px, OBSERVED) */}
+              <Logo variant="lockup" size={44} />
             </Link>
             <p className="mt-5 text-sm text-secondary leading-relaxed">{t('footer.tagline')}</p>
             {/* CR-02: the relationship line verbatim, sentence case, not italic, no tracking */}

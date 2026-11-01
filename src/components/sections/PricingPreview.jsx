@@ -48,11 +48,11 @@ export default function PricingPreview() {
           <ul className="mt-8">
             {FEATURES.map(([k, v, mono]) => (
               <li key={k} className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-3 border-b border-subtle last:border-0">
-                <span className="flex items-center gap-3 text-sm text-secondary">
+                <span className="flex items-center gap-3 text-base text-secondary">
                   <Check size={16} className="text-fg-muted shrink-0" aria-hidden="true" />
                   <span>{k}</span>
                 </span>
-                <span className={`text-sm text-white font-semibold text-end ${mono ? 'fpt-unit' : ''}`}>{v}</span>
+                <span className={`text-base text-white font-semibold text-end ${mono ? 'fpt-unit' : ''}`}>{v}</span>
               </li>
             ))}
           </ul>
@@ -65,7 +65,7 @@ export default function PricingPreview() {
         </div>
 
         <div className="mt-6 text-center">
-          <Link to={to('/challenges')} className="inline-flex items-center gap-2 min-h-11 px-2 text-sm text-secondary hover:text-white transition-colors">
+          <Link to={to('/challenges')} className="inline-flex items-center gap-2 min-h-11 px-2 text-base text-secondary hover:text-white transition-colors">
             {t('pricingPreview.viewAll')} <ArrowRight size={14} className="flip-rtl" aria-hidden="true" />
           </Link>
         </div>

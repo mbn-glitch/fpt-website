@@ -73,7 +73,32 @@ Toast fill = `--fpt-ground-elevated` (#1A1A1A). FPT copy: «تم تسجيل ال
 - **Tab bar** 4 items: house «الرئيسية / Home», chart-line «التحدي / Challenge», wallet «الدفعات / Payouts», menu «المزيد / More»; active = red icon (stroke 2.25) + 2 px red bar + primary-colour label.
 - Header fill `--fpt-ground-chrome` (bg at 85 % + 14 px blur); the site's `rgba(0,0,0,.7)` glass-nav is deprecated (pure black).
 
-## 12. Modal & bottom sheet — parent § 10 unchanged (fill = elevated). The final confirmation of a destructive action is the one place for `.fpt-btn--destructive-solid` (CR-07): ghost «رجوع / Back» then the solid danger button, no other primary in that dialog (`preview.html` § 10).
+## 12. Modal & bottom sheet — parent § 10 (fill = elevated) + the destructive confirmation dialog (CR-10)
+The final confirmation of a destructive action is the one place for `.fpt-btn--destructive-solid` (CR-07); no other primary in that dialog (`preview.html` § 10).
+
+**Destructive confirmation dialog (CR-10 — APPROVED; inherits fiper-brand v2.3.5 § 10, CEO decision 1 Nov 2026; applied on the platform in fpt-platform `c278050`; adopted in the package by the owner 1 Nov 2026 23:08).** Inside that dialog:
+1. the safe way back («تراجع» / Go back / Keep) is a **secondary button with border and ground** (`.fpt-btn--secondary`) — **never a ghost**, so it reads at full weight beside the filled danger button (`component.dialog.destructive.cancel-style` = `secondary-outline-filled`);
+2. it is the **first element in source** and sits at the **start side** (logical — it mirrors in RTL); on a stacked phone sheet it is **above**, the destructive button below (`component.dialog.destructive.order` = `cancel-first-solid-last`);
+3. it carries the **initial focus** (`autofocus` / `data-initial-focus` / React `autoFocus` / `initialFocus` / Radix `onOpenAutoFocus` focusing it); in re-authentication dialogs the password field is focused first, then the safe button at the confirmation step (`component.dialog.destructive.initial-focus` = `cancel`);
+4. the filled button `.fpt-btn--destructive-solid` is **last** and **never the default activation of Enter**: Enter inside a field does not submit the destructive form; only the confirm button itself submits (`component.dialog.destructive.enter-default` = `none`);
+5. the **ghost** way back stays for **non-destructive** confirmations only — confirm purchase, send, save (`component.dialog.confirm.cancel-style` = `ghost`);
+6. the icon-only close × in the dialog head (`.fpt-btn--ghost.fpt-btn--icon`) is not a way-back button and is exempt.
+
+Markup: the action row of a destructive dialog is `.fpt-dialog__actions` (pins the solid button last with `order`; stacks in source order below 640 px — safe above). **Consumers mark the row** `data-fpt-dialog-actions="destructive"` (and a non-destructive row `="confirm"`): on literal HTML the gates judge every dialog container (`<dialog>`, `role="dialog|alertdialog"`, `.fpt-modal`, `.fpt-sheet`); on TSX / JSX / Vue, where the dialog is composed (Radix and the like) and no literal `role` exists, the mark is what the gates read — deterministically, never a guess. Gates: `verify-identity` **DESTRUCTIVE-DIALOG-CANCEL** (a container holding `.fpt-btn--destructive-solid` without a `.fpt-btn--secondary` sibling, or with a non-icon `.fpt-btn--ghost`, or with the solid button before the safe one in source) and **DESTRUCTIVE-DIALOG-FOCUS** (the safe button without an initial-focus mark, or the solid button carrying one); planted positive / negative cases in the build repo `checks/gates/`.
+
+```html
+<!-- destructive: secondary way back FIRST (start side) with the initial focus; the filled danger button LAST (end side) -->
+<div class="fpt-modal" role="dialog" aria-modal="true" aria-labelledby="d1"><div class="fpt-modal__box">
+  <div class="fpt-sheet__title" id="d1">إغلاق الحساب؟</div>
+  <div class="fpt-dialog__actions" data-fpt-dialog-actions="destructive">
+    <button class="fpt-btn fpt-btn--secondary" autofocus data-initial-focus>تراجع</button>
+    <button class="fpt-btn fpt-btn--destructive-solid"><svg class="fpt-icon" aria-hidden="true"><use href="#i-circle-x"/></svg>إغلاق الحساب</button>
+  </div>
+</div></div>
+<!-- non-destructive: ghost way back beside the primary -->
+<div class="fpt-modal__actions" data-fpt-dialog-actions="confirm"><button class="fpt-btn fpt-btn--ghost">رجوع</button><button class="fpt-btn fpt-btn--primary">إرسال</button></div>
+```
+**Don't** a ghost way back beside a filled danger button · the destructive button first or focused on open · Enter in a password field submitting the destructive form · a second primary in the dialog.
 
 ## 13. Charts `.fpt-chart` — the FPT equity chart contract
 Generated only by `../scripts/charts.mjs equityChart({theme:'dark'|'paper', lang, width, height})` from `../scripts/sample-data.mjs` (SAMPLE $50,000 evaluation, 22 daily closes). Computed, never drawn: the equity line (text colour, 2 px), the **profit-target line** (`--fpt-chart-target`, dashed 4 4, labelled `55,000.00`), the **daily floor** (5 % under the previous close, `--fpt-chart-floor`, dotted 2 3), the **overall floor** (9 % under the start, dashed), the **drawdown band** between them (`--fpt-chart-band` fill), the starting-balance baseline (muted, dotted 1 3), nice y ticks (≤ 5), x labels (Latin digits; Arabic month names in AR), the start value label and the **current-value red dot** (the only red on the chart = active state). Legend `.fpt-chart__legend` with `.lt` target, `.lf` floors, `.lband`, `.ld`. Head: title + `__period` (period · currency · sampling). Canvas always LTR. Never: a relabelled path, an area gradient, red for the equity line, a chart without its period and currency.
@@ -88,7 +113,7 @@ Tile H · clear 0.5 H · 1 px `--fpt-line-ash` divider (0.8 H) · gap 0.4 H · t
 
 ---
 
-## (a) RTL mirroring — parent table (a) unchanged. Added: the challenge card's check icon follows inline-end; the phase stepper reads right-to-left (phase 1 at the right); the tile never mirrors; the cTrader mark never mirrors.
+## (a) RTL mirroring — parent table (a) unchanged. Added: the challenge card's check icon follows inline-end; the phase stepper reads right-to-left (phase 1 at the right); the destructive dialog's safe button stays at the start side (logical order); the tile never mirrors; the cTrader mark never mirrors; the lockup is the English one in both directions (CR-11 — `direction: ltr` on the brand element).
 ## (b) Skeleton rules — parent (b) unchanged; never skeleton the equity figure as `0.00`.
 ## (c) Validation copy — parent (c) + § 2 FPT lines.
 ## (d) Icons — `../icons/ICONS.md` (Lucide v0.468.0; FPT vocabulary table).

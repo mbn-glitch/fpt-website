@@ -21,7 +21,7 @@ Used by the human reviewer on every FPT surface before release, after the automa
 | 14 | Floating / tilting cards, parallax, hover-grow buttons | nothing floats; press .98 only | `grep animate-float\|hover:scale` → 0 |
 | 15 | Futuristic / decorative / "tech" fonts, DIN Next, Cairo | IBM Plex Sans Arabic · Inter · Barlow Condensed (display, decision 1) · IBM Plex Mono (numbers) | NON-BRAND-FONT = 0 |
 | 16 | One template for everything (box around every block, equal tiles, tiny labels) | composition varies by pole; cards only where justified | compare 3+ surfaces side by side |
-| 17 | Modified logo (recoloured tile, gradient flattened outside flat / ink / white, ink lockup on dark, retyped "FPT", clipped tile, a `legacy-v1/` JPEG) | logo v2 masters only: white lockups on dark, ink lockups on paper, small cut ≤ 32 px | RETYPED-WORDMARK = 0; LEGACY-LOGO-REFERENCE = 0; `sha256sum -c logos/source/checksums.sha256` |
+| 17 | Modified logo (recoloured tile, gradient flattened outside flat / ink / white, ink lockup on dark, retyped "FPT", clipped tile, a `legacy-v1/` JPEG, an Arabic or bilingual lockup on a surface) | logo v2 masters only: the **English** white lockup on dark, the English ink lockup on paper in every language (CR-11), small cut ≤ 32 px | RETYPED-WORDMARK = 0; LEGACY-LOGO-REFERENCE = 0; ARABIC-LOCKUP-IN-USE = 0; `sha256sum -c logos/source/checksums.sha256` |
 | 18 | Financial red for emphasis; a gain in red | ▲ word green / ▼ word coral; drawdown warning amber | render a gain |
 | 19 | "Tested in Gmail / Outlook", "press-ready", "regulated" claims without evidence | NOT TESTED / NOT PROVIDED / REQUIRED DECISION written plainly | read the claim; demand the evidence path |
 | 20 | Calling a surface on-brand because the blocklist passed | this review, by a human, every time | initials + date |
@@ -37,7 +37,7 @@ Used by the human reviewer on every FPT surface before release, after the automa
 ## B. Composition questions (answer in writing for each surface)
 1. Which ground? Dark (site, apps, dashboard, dark social, video) or paper (documents, e-mail, certificates, statements, slides)? An app on paper = fail.
 2. Which pole — headline, number or image — and what is the one dominant element? Two dominant elements = fail; none = template.
-3. Where is the logo and what is the margin? Tile (dark) / lockup (paper) top-start; margin = 2 × logo height for the medium; one vertical start line.
+3. Where is the logo and what is the margin? Tile (dark) / the English lockup (paper) top-start in every language (CR-11); margin = 2 × logo height for the medium; one vertical start line.
 4. Name every box and its job (facts card, chart frame, challenge card, sheet). A box without a job = fail.
 5. Where is red? Tile, the one primary action, the active state — list the three; any fourth red = fail.
 6. Where are the finance semantics? Every gain / loss / drawdown / breach / pending state shows word + sign or icon + colour.

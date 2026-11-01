@@ -43,7 +43,7 @@ export default function FAQ() {
         </ul>
 
         <div className="mt-8">
-          <Link to={to('/help')} className="inline-flex items-center gap-2 min-h-11 text-sm text-secondary hover:text-white transition-colors">
+          <Link to={to('/help')} className="inline-flex items-center gap-2 min-h-11 text-base text-secondary hover:text-white transition-colors">
             {t('faq.seeAll')} <ArrowRight size={14} className="flip-rtl" aria-hidden="true" />
           </Link>
         </div>

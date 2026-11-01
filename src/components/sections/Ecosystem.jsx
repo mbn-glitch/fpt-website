@@ -33,9 +33,9 @@ export default function Ecosystem() {
                 </div>
                 <div className="mt-5 text-[13px] text-tertiary">{n.label}</div>
                 <h3 className="mt-1 text-xl font-semibold leading-[1.3]">{n.name}</h3>
-                <p className="mt-2 text-sm text-secondary leading-relaxed">{n.description}</p>
+                <p className="mt-2 text-base text-secondary leading-relaxed">{n.description}</p>
                 {n.href && (
-                  <span className="mt-5 inline-flex items-center gap-1.5 min-h-11 text-sm text-white/80 group-hover:text-white transition-colors">
+                  <span className="mt-5 inline-flex items-center gap-1.5 min-h-11 text-base text-white/80 group-hover:text-white transition-colors">
                     {t('common.open')} <ArrowUpRight size={14} className="flip-rtl" aria-hidden="true" />
                   </span>
                 )}
@@ -45,7 +45,7 @@ export default function Ecosystem() {
         })}
       </ul>
 
-      <p className="mt-10 text-center text-sm text-tertiary">{t('ecosystem.footerNote')}</p>
+      <p className="mt-10 text-center text-base text-tertiary">{t('ecosystem.footerNote')}</p>
     </Section>
   );
 }

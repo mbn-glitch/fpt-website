@@ -25,7 +25,7 @@ export default function CategoryCard({ category, articleCount, active = false })
         <ArrowRight size={16} className="text-tertiary group-hover:text-white transition-colors flip-rtl mt-3" aria-hidden="true" />
       </div>
       <h3 className="mt-5 text-lg font-semibold leading-[1.4]">{title}</h3>
-      <p className="mt-2 text-sm text-secondary leading-relaxed">{description}</p>
+      <p className="mt-2 text-base text-secondary leading-relaxed">{description}</p>
       <div className="mt-4 text-[13px] text-tertiary"><span className="fpt-unit">{articleCount}</span> {articleLabel}</div>
     </Link>
   );

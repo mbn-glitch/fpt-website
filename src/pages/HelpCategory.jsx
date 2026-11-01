@@ -37,7 +37,7 @@ export default function HelpCategory() {
           <HelpBreadcrumbs trail={[{ label: title }]} />
           <div className="mt-6 max-w-3xl">
             <div className="fpt-eyebrow">{title}</div>
-            <h1 className="mt-3 text-3xl sm:text-5xl font-semibold leading-[1.15]">{description}</h1>
+            <h1 className="mt-3 text-3xl sm:text-5xl fpt-display">{description}</h1>
             <p className="mt-3 text-[13px] text-tertiary"><span className="fpt-unit">{articleCount}</span> {articleLabel}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href={WHATSAPP_URL} external size="md"><WhatsAppMark size={22} /> {t('help.contactSupport')}</Button>

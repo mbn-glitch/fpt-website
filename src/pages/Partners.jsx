@@ -27,8 +27,8 @@ export default function Partners() {
       <section className="pt-12 sm:pt-20 pb-12 bg-bg">
         <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
           <Eyebrow>{t('partners.eyebrow')}</Eyebrow>
-          <h1 className="mt-5 text-4xl sm:text-6xl font-semibold leading-[1.1]">{t('partners.hero.title')}</h1>
-          <p className="mt-6 text-lg sm:text-xl text-secondary max-w-2xl mx-auto leading-relaxed">{t('partners.hero.subtitle')}</p>
+          <h1 className="mt-5 text-[2.5rem] sm:text-6xl fpt-display">{t('partners.hero.title')}</h1>
+          <p className="mt-6 text-lg text-secondary max-w-2xl mx-auto leading-relaxed">{t('partners.hero.subtitle')}</p>
           <div className="mt-8 flex justify-center">
             <Button href={REGISTER_URL} external size="lg">{t('partners.cta.button')}</Button>
           </div>
@@ -41,14 +41,14 @@ export default function Partners() {
           {AFFILIATE_TIERS.map((tier) => (
             <li key={tier.code} className="flex flex-col bg-card rounded-2xl p-7 border border-subtle">
               <h3 className="text-lg font-semibold leading-[1.3]">{tier.name[l]}</h3>
-              <div className="mt-4 text-4xl font-semibold text-white fpt-unit">{pct(tier.bps)}</div>
-              <p className="mt-4 text-sm text-secondary leading-relaxed">
+              <div className="mt-4 text-3xl font-semibold text-white fpt-unit">{pct(tier.bps)}</div>
+              <p className="mt-4 text-base text-secondary leading-relaxed">
                 {tier.max ? t('partners.tiers.range', { min: tier.min, max: tier.max }) : t('partners.tiers.from', { min: tier.min })}
               </p>
             </li>
           ))}
         </ul>
-        <p className="mt-6 text-sm text-tertiary text-center max-w-2xl mx-auto">{t('partners.tiersNote')}</p>
+        <p className="mt-6 text-base text-tertiary text-center max-w-2xl mx-auto">{t('partners.tiersNote')}</p>
       </Section>
 
       <Section className="bg-card border-y border-subtle" aria-labelledby="partners-features-title">
@@ -69,7 +69,7 @@ export default function Partners() {
       <Section aria-labelledby="partners-cta-title">
         <div className="max-w-3xl mx-auto text-center">
           <Eyebrow>{t('partners.cta.eyebrow')}</Eyebrow>
-          <h2 id="partners-cta-title" className="mt-5 text-3xl sm:text-5xl font-semibold leading-[1.15]">{t('partners.cta.title')}</h2>
+          <h2 id="partners-cta-title" className="mt-5 text-3xl sm:text-5xl fpt-display">{t('partners.cta.title')}</h2>
           <p className="mt-5 text-lg text-secondary leading-relaxed">{t('partners.cta.subtitle')}</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button href={REGISTER_URL} external size="lg">{t('partners.cta.button')}</Button>

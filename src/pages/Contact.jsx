@@ -24,8 +24,8 @@ export default function Contact() {
       <section className="pt-12 sm:pt-20 pb-10">
         <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
           <Eyebrow>{t('contact.eyebrow')}</Eyebrow>
-          <h1 className="mt-5 text-4xl sm:text-6xl font-semibold leading-[1.1]">{t('contact.title')}</h1>
-          <p className="mt-6 text-lg sm:text-xl text-secondary max-w-2xl mx-auto leading-relaxed">{t('contact.subtitle')}</p>
+          <h1 className="mt-5 text-[2.5rem] sm:text-6xl fpt-display">{t('contact.title')}</h1>
+          <p className="mt-6 text-lg text-secondary max-w-2xl mx-auto leading-relaxed">{t('contact.subtitle')}</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button href={WHATSAPP_URL} external size="lg">
               <WhatsAppMark size={24} /> {t('contact.whatsapp.cta')}
@@ -44,7 +44,7 @@ export default function Contact() {
                 <div className="fpt-eyebrow">{t('contact.whatsapp.title')}</div>
                 <h3 className="mt-2 text-2xl font-semibold leading-[1.3]">{t('contact.whatsapp.desc')}</h3>
                 <div className="mt-3 text-lg text-white fpt-unit">{WHATSAPP_PHONE}</div>
-                <span className="mt-4 inline-flex items-center gap-1.5 min-h-11 text-sm text-white/80 group-hover:text-white">
+                <span className="mt-4 inline-flex items-center gap-1.5 min-h-11 text-base text-white/80 group-hover:text-white">
                   {t('contact.whatsapp.cta')} <ArrowUpRight size={14} className="flip-rtl" aria-hidden="true" />
                 </span>
               </div>
@@ -62,14 +62,14 @@ export default function Contact() {
                 <address className="mt-3 text-base text-secondary leading-relaxed not-italic">
                   {address.map((line) => <div key={line}>{line}</div>)}
                 </address>
-                <a href={mapsHref} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-1.5 min-h-11 text-sm text-white/80 hover:text-white">
+                <a href={mapsHref} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-1.5 min-h-11 text-base text-white/80 hover:text-white">
                   {t('contact.address.directions')} <ArrowUpRight size={14} className="flip-rtl" aria-hidden="true" />
                 </a>
               </div>
             </div>
           </div>
         </div>
-        <p className="mt-6 text-sm text-tertiary max-w-2xl">{t('contact.clientAreaNote')}</p>
+        <p className="mt-6 text-base text-tertiary max-w-2xl">{t('contact.clientAreaNote')}</p>
       </Section>
     </>
   );

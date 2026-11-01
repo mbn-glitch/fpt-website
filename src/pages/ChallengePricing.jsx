@@ -82,11 +82,11 @@ export default function ChallengePricing() {
       <section className="pt-12 sm:pt-20 pb-12">
         <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
           <Eyebrow>{t('challengePricing.eyebrow')}</Eyebrow>
-          <h1 className="mt-5 text-4xl sm:text-6xl font-semibold leading-[1.1]">
+          <h1 className="mt-5 text-[2.5rem] sm:text-6xl fpt-display">
             {t('challengePricing.heroTitle1')}<br />
             {t('challengePricing.heroTitle2')}
           </h1>
-          <p className="mt-6 text-lg sm:text-xl text-secondary max-w-2xl mx-auto leading-relaxed">{t('challengePricing.heroSubtitle')}</p>
+          <p className="mt-6 text-lg text-secondary max-w-2xl mx-auto leading-relaxed">{t('challengePricing.heroSubtitle')}</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button href="#pricing" size="lg">{t('challengePricing.chooseSize')}</Button>
           </div>
@@ -101,13 +101,13 @@ export default function ChallengePricing() {
               <div className="flex items-center gap-4 mb-5">
                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-white/40 text-base font-semibold fpt-unit" aria-hidden="true">{phase.step}</span>
                 <div>
-                  <h3 className="text-xl font-semibold leading-[1.3]">{phase.label}</h3>
-                  <p className="text-sm text-secondary mt-1">{phase.subtitle}</p>
+                  <h3 className="text-lg font-semibold leading-[1.3]">{phase.label}</h3>
+                  <p className="text-base text-secondary mt-1">{phase.subtitle}</p>
                 </div>
               </div>
               <ul className="pt-5 border-t border-subtle">
                 {phase.rules.map((r) => (
-                  <li key={r.label} className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-2 text-sm">
+                  <li key={r.label} className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-2 text-base">
                     <span className="text-secondary">{r.label}</span>
                     <span className={`font-semibold text-white ${r.text ? '' : 'fpt-unit'}`}>{r.value}</span>
                   </li>
@@ -164,7 +164,7 @@ export default function ChallengePricing() {
                       type="button"
                       onClick={() => setCurrency(c)}
                       aria-pressed={currency === c}
-                      className={`flex-1 min-h-11 px-2 rounded-full text-sm fpt-unit transition-colors ${currency === c ? 'bg-white/10 text-white border border-white/40' : 'text-secondary hover:text-white'}`}
+                      className={`flex-1 min-h-11 px-2 rounded-full text-base fpt-unit transition-colors ${currency === c ? 'bg-white/10 text-white border border-white/40' : 'text-secondary hover:text-white'}`}
                     >
                       {c}
                     </button>
@@ -179,7 +179,7 @@ export default function ChallengePricing() {
               <h2 className="mt-2 text-2xl font-semibold leading-[1.3]">{t('common.evaluationSize', { size: formatSize(size) })}</h2>
               <div className="mt-5 flex items-baseline gap-3 flex-wrap">
                 <span className="text-[min(2.25rem,10vw)] sm:text-5xl font-semibold text-white fpt-unit">{formatCurrency(fee, currency)}</span>
-                <span className="text-secondary text-sm">{t('challengePricing.oneTime')}</span>
+                <span className="text-secondary text-base">{t('challengePricing.oneTime')}</span>
               </div>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {['oneTime', 'nonRefundable', 'noRetry'].map((k) => (
@@ -197,8 +197,8 @@ export default function ChallengePricing() {
                   { k: t('challengePricing.swapFree'), v: t(BASE_RULES.swapFree ? 'common.yes' : 'common.no') },
                 ].map(({ k, v, mono }) => (
                   <li key={k} className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-2.5 border-b border-subtle last:border-0">
-                    <span className="flex items-center gap-3 text-sm text-secondary"><Check size={14} className="text-fg-muted shrink-0" aria-hidden="true" /><span>{k}</span></span>
-                    <span className={`text-sm font-semibold text-white text-end ${mono ? 'fpt-unit' : ''}`}>{v}</span>
+                    <span className="flex items-center gap-3 text-base text-secondary"><Check size={14} className="text-fg-muted shrink-0" aria-hidden="true" /><span>{k}</span></span>
+                    <span className={`text-base font-semibold text-white text-end ${mono ? 'fpt-unit' : ''}`}>{v}</span>
                   </li>
                 ))}
               </ul>
@@ -249,33 +249,36 @@ export default function ChallengePricing() {
         </ul>
         <div className="mt-8 flex items-start gap-4 rounded-2xl border border-subtle bg-bg p-5 max-w-4xl">
           <AlertTriangle size={20} className="text-warning shrink-0 mt-0.5" aria-hidden="true" />
-          <p className="text-sm text-secondary leading-relaxed">{t('challengePricing.rulesWarning')}</p>
+          <p className="text-base text-secondary leading-relaxed">{t('challengePricing.rulesWarning')}</p>
         </div>
       </Section>
 
       <Section aria-labelledby="leverage-title">
         <SectionHeader eyebrow={t('challengePricing.leverageEyebrow')} title={<span id="leverage-title">{t('challengePricing.leverageTitle')}</span>} />
-        <table className="mt-10 w-full max-w-lg rounded-2xl border border-subtle overflow-hidden border-separate border-spacing-0">
+        {/* a scroll region (keyboard-reachable) so the two-column table never overflows the page at 200 % text zoom (UXFW-049) */}
+        <div className="mt-10 max-w-lg overflow-x-auto rounded-2xl border border-subtle" tabIndex={0} role="region" aria-label={t('challengePricing.maxLeverage')}>
+        <table className="w-full border-separate border-spacing-0">
           <thead>
             <tr className="text-[13px] text-tertiary bg-card">
-              <th scope="col" className="px-5 py-3 font-semibold text-start">{t('challengePricing.instrument')}</th>
-              <th scope="col" className="px-5 py-3 font-semibold text-end">{t('challengePricing.maxLeverage')}</th>
+              <th scope="col" className="px-4 py-3 font-semibold text-start">{t('challengePricing.instrument')}</th>
+              <th scope="col" className="px-4 py-3 font-semibold text-end">{t('challengePricing.maxLeverage')}</th>
             </tr>
           </thead>
           <tbody>
             {LEVERAGE_TABLE.map((row) => (
-              <tr key={row.asset} className="text-sm">
-                <td className="px-5 py-3 border-t border-subtle text-secondary">{row.asset}</td>
-                <td className="px-5 py-3 border-t border-subtle text-end font-semibold text-white fpt-unit">{row.leverage}</td>
+              <tr key={row.asset} className="text-base">
+                <td className="px-4 py-3 border-t border-subtle text-secondary">{row.asset}</td>
+                <td className="px-4 py-3 border-t border-subtle text-end font-semibold text-white fpt-unit">{row.leverage}</td>
               </tr>
             ))}
           </tbody>
         </table>
+        </div>
       </Section>
 
       <Section className="bg-card border-t border-subtle" aria-labelledby="cta-title">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 id="cta-title" className="text-3xl sm:text-4xl font-semibold leading-[1.2]">{t('challengePricing.ctaTitle')}</h2>
+          <h2 id="cta-title" className="text-3xl sm:text-4xl fpt-display">{t('challengePricing.ctaTitle')}</h2>
           <p className="mt-5 text-lg text-secondary">{t('challengePricing.ctaSubtitle')}</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button href={REGISTER_URL} external size="lg">{t('challengePricing.startYourChallenge')}</Button>

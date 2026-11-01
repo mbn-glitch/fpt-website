@@ -1,6 +1,20 @@
-# QA report — FPT Brand Identity System v1.2.0 (1 Nov 2026 — CR-05 / CR-06 / CR-07 + e-mail paper in every mode + paper header; v1.1.2 CR-01…04 31 Oct 2026; v1.1 logo v2 30 Oct 2026; v1.0 base 29 Oct 2026)
+# QA report — FPT Brand Identity System v1.2.1 (2 Nov 2026 — CR-10 destructive dialog · CR-11 lockups in English only · CR-12 e-mail header card; v1.2.0 1 Nov 2026 — CR-05 / CR-06 / CR-07 + e-mail paper in every mode; v1.1.2 CR-01…04 31 Oct 2026; v1.1 logo v2 30 Oct 2026; v1.0 base 29 Oct 2026)
 
 Evidence-based acceptance. Every row is PASS, FAIL, PARTIAL, NOT TESTED or NOT PROVIDED with its evidence path (repo-relative; `dist/`, `checks/` and `manual/` live in the GitHub repo and on the preview host, not in the zip). Gates are run from the **unzipped copy in a clean folder outside the repo** (`node brand/scripts/verify-unzipped.mjs dist/fpt-brand-v1.0.zip <clean-dir>` → `dist/unzipped-verification.md`) and repeated in the build repo where a build-repo tool is needed (Playwright, pypdf, ImageMagick).
+
+## 0a. v1.2.1 — owner decisions 1 Nov 2026 23:08 Qatar (CR-10 · CR-11 · CR-12 · the seven answers): gates re-run once
+
+Scope: the five items of the task file § 0 + the owner's CR-12 addition; logo v2 masters (24 = checksums), colours, fonts, CR-01…07, the relationship line, the foot, the parent pin unchanged; CR-08 / CR-09 not applied (PROPOSED in `identity-change-requests.md`).
+
+| Gate | Result | Evidence |
+|---|---|---|
+| Tokens: `gen-tokens` (parent file at tag v2.0.1 via `FIPER_PARENT`) → `build-tokens` → `verify-tokens` (482 leaves; approved 62 → 77, deprecated 13 → 14; new assertions: the five `component.dialog.*` tokens, `component.logo.lockup-language` = `en-only`, CR-12 e-mail tokens, APPROVED status of OG geometry / e-mail header size / app-title / app-display) | PASS | run log; `git diff v1.2.0 -- brand/tokens.css` |
+| `verify-identity.mjs brand` with the three new gates DESTRUCTIVE-DIALOG-CANCEL / DESTRUCTIVE-DIALOG-FOCUS / ARABIC-LOCKUP-IN-USE (+ OLD-EMAIL-HEADER widened to the v1.2.0 paper headers) | PASS — `summary: {} → PASS` | run log; planted cases `checks/gates/` (build repo) via `scripts/check-gates.mjs`: positive HTML + TSX + preview.html = 0 findings; negative HTML = CANCEL 3 · FOCUS 2 · ARABIC 2; negative TSX = CANCEL 1 · FOCUS 1 · ARABIC 1 (exactly as planted) |
+| `check-components.mjs` (`.fpt-dialog__actions`, preview § 10 two examples) | PASS | run log |
+| `check-mockups.mjs` — the English lockup on the Arabic mockups 01 / 03 / 07 (CR-11) | ALL PASS (50/50) | `dist/checks/mockups/` |
+| `build-logos.mjs --derived-only` — `email-header-160-card@2x.png` (card 320 × 112, radius 16, padding 24 device px, lockup 272 × 57) + `email-header-160-dark@2x.png`; OG rasters byte-identical to v1.2.0 | PASS (deterministic) | `brand/logos/derived/`, sha256 in `dist/consumers/UPGRADE-v1.2.1.md` |
+| `check-emails.mjs` (rebuilt for CR-12) — html-validate 0 ×4; card header byte-identical with transparent corners and paper edge / padding; hidden twin byte-identical, `[data-ogsc]` header-scoped only (2 rules), excluded from Outlook Windows; `bgcolor` + `style` ×3; CR-03; light + dark emulation on paper 8/8; **forced-dark simulation** (Outlook partial → twin 15.4:1 · Gmail full → card 17.6:1, no hard-edged box) 8/8 | PASS | `dist/checks/email/*-360-{light,dark,sim-outlook-partial,sim-gmail-full}.png`; candidates ×3 modes in the session captures `FPT-BRAND-V1-2-1-captures/cr12/` |
+| Real mail clients (the owner's Outlook iOS / Apple Mail iOS / second inbox observation) | NOT TESTED here — rows in `templates/email/TEST-MATRIX.md`; re-test requested with platform template 6 | — |
 
 ## 0b. v1.2.0 — owner decisions 1 Nov 2026 (CR-05 share image · CR-06 ladder · CR-07 destructive · e-mail paper in every mode · paper header): gates re-run once
 

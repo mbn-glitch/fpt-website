@@ -20,3 +20,13 @@ switchLanguage(getInitialLang()).then(() => {
   if (container.dataset.prerendered === 'route' && container.hasChildNodes()) hydrateRoot(container, tree);
   else createRoot(container).render(tree);
 });
+
+// UXFW-052 «offline»: a conservative service worker (public/sw.js — network first, nothing cached but the offline fallback page) registered
+// after `load` at idle priority so it never competes with the first paint (LCP / CLS unaffected — measured in R3).
+if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    const register = () => navigator.serviceWorker.register('/sw.js').catch(() => {});
+    if ('requestIdleCallback' in window) requestIdleCallback(register, { timeout: 5000 });
+    else setTimeout(register, 2000);
+  });
+}

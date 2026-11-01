@@ -1,0 +1,210 @@
+{
+  "generatedBy": "scripts/build-font-subsets.mjs",
+  "package": "fpt-brand v1.2.1 (brand/fonts — complete OFL files)",
+  "tool": "fonttools",
+  "status": "PROPOSED — derived performance assets (unicode-range pieces of the package files); identity unchanged",
+  "sources": {
+    "IBMPlexSansArabic-400.woff2": {
+      "sha256": "807bf7dfb655f72229ba6ab2064df2d3156be86651c953e15c209689baaa5d07",
+      "bytes": 67680
+    },
+    "IBMPlexSansArabic-600.woff2": {
+      "sha256": "f59dcb2128520e5ebd42c786f5b9aff6376d58fb782ed75430ac1281eb23fd26",
+      "bytes": 72308
+    },
+    "Inter-400.woff2": {
+      "sha256": "a1caf574153150df4ffccc09ed7a4e3bb21b4e9ec3c9be5ca2e76587e3110480",
+      "bytes": 108576
+    },
+    "Inter-600.woff2": {
+      "sha256": "3c9fae32cd5dd05dd2744cd49fe6d6be02ed7717e29a01ad312a18c5231e2cea",
+      "bytes": 111976
+    },
+    "BarlowCondensed-700.woff2": {
+      "sha256": "9469269e342416dd9b259aaaa3665879acecdfe7e98c70d78d3be7571e8a19aa",
+      "bytes": 33056
+    },
+    "BarlowCondensed-800.woff2": {
+      "sha256": "221bfa9b36b937f06d9bb0deb4c3baff01b188b3431d68bb317ca1a864458b3e",
+      "bytes": 33132
+    },
+    "IBMPlexMono-400.woff2": {
+      "sha256": "fe1e1815065933f8dff48cf53a46e4f4fd1ffdf1b97b5c148b646c61829ec626",
+      "bytes": 37220
+    },
+    "IBMPlexMono-600.woff2": {
+      "sha256": "2a278f29d8caa608c6be6ad6d462328527cbd5c96e56b80a0f363bf7cd8d2a2a",
+      "bytes": 39104
+    }
+  },
+  "files": [
+    {
+      "family": "IBM Plex Sans Arabic",
+      "weight": 400,
+      "piece": "arabic",
+      "file": "IBMPlexSansArabic-400.arabic.9b14a3f0.woff2",
+      "url": "/fonts/IBMPlexSansArabic-400.arabic.9b14a3f0.woff2",
+      "bytes": 41468,
+      "sourceBytes": 67680,
+      "source": "IBMPlexSansArabic-400.woff2",
+      "sha256": "9b14a3f012f8e62cd4915ed30185ea65acdc286a6787f62cb3df4181288bc110",
+      "unicodeRange": "U+0000-00FF,U+0600-06FF,U+0750-077F,U+08A0-08FF,U+FB50-FDFF,U+FE70-FEFF,U+2000-206F,U+20AC,U+2212,U+FEFF,U+FFFD"
+    },
+    {
+      "family": "IBM Plex Sans Arabic",
+      "weight": 600,
+      "piece": "arabic",
+      "file": "IBMPlexSansArabic-600.arabic.b4d57d6d.woff2",
+      "url": "/fonts/IBMPlexSansArabic-600.arabic.b4d57d6d.woff2",
+      "bytes": 44928,
+      "sourceBytes": 72308,
+      "source": "IBMPlexSansArabic-600.woff2",
+      "sha256": "b4d57d6dd29592bd53b31274310b6ca3d2031eabee7c0b1d3df105508bb5af5d",
+      "unicodeRange": "U+0000-00FF,U+0600-06FF,U+0750-077F,U+08A0-08FF,U+FB50-FDFF,U+FE70-FEFF,U+2000-206F,U+20AC,U+2212,U+FEFF,U+FFFD"
+    },
+    {
+      "family": "Inter",
+      "weight": 400,
+      "piece": "latin",
+      "file": "Inter-400.latin.bfa9b725.woff2",
+      "url": "/fonts/Inter-400.latin.bfa9b725.woff2",
+      "bytes": 21676,
+      "sourceBytes": 108576,
+      "source": "Inter-400.woff2",
+      "sha256": "bfa9b72502c6c4ece3e98a1e70f945ba0a87d2beeac5555334e1822347a0b60c",
+      "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+    },
+    {
+      "family": "Inter",
+      "weight": 400,
+      "piece": "latin-ext",
+      "file": "Inter-400.latin-ext.aa066cc9.woff2",
+      "url": "/fonts/Inter-400.latin-ext.aa066cc9.woff2",
+      "bytes": 30620,
+      "sourceBytes": 108576,
+      "source": "Inter-400.woff2",
+      "sha256": "aa066cc9de132fe62972c24ef5bc8d7e8ab1ee9caefbbc422ea24aeba1c92acf",
+      "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF"
+    },
+    {
+      "family": "Inter",
+      "weight": 600,
+      "piece": "latin",
+      "file": "Inter-600.latin.c3051376.woff2",
+      "url": "/fonts/Inter-600.latin.c3051376.woff2",
+      "bytes": 22388,
+      "sourceBytes": 111976,
+      "source": "Inter-600.woff2",
+      "sha256": "c30513764c7a645f142d53482b623c488789522f12d9dc8274b78f6f1a2f6a03",
+      "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+    },
+    {
+      "family": "Inter",
+      "weight": 600,
+      "piece": "latin-ext",
+      "file": "Inter-600.latin-ext.0b438ee7.woff2",
+      "url": "/fonts/Inter-600.latin-ext.0b438ee7.woff2",
+      "bytes": 31932,
+      "sourceBytes": 111976,
+      "source": "Inter-600.woff2",
+      "sha256": "0b438ee7e63e4a81659fc5b0d70afccc367e763f53f532660f96cda48d28a948",
+      "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF"
+    },
+    {
+      "family": "Barlow Condensed",
+      "weight": 700,
+      "piece": "latin",
+      "file": "BarlowCondensed-700.latin.2b86382b.woff2",
+      "url": "/fonts/BarlowCondensed-700.latin.2b86382b.woff2",
+      "bytes": 13960,
+      "sourceBytes": 33056,
+      "source": "BarlowCondensed-700.woff2",
+      "sha256": "2b86382b795a286562cb134f5195f95dd85883da7732b4873a9cec1e5643e9a5",
+      "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+    },
+    {
+      "family": "Barlow Condensed",
+      "weight": 700,
+      "piece": "latin-ext",
+      "file": "BarlowCondensed-700.latin-ext.70909874.woff2",
+      "url": "/fonts/BarlowCondensed-700.latin-ext.70909874.woff2",
+      "bytes": 8300,
+      "sourceBytes": 33056,
+      "source": "BarlowCondensed-700.woff2",
+      "sha256": "7090987486d9a2fb76908005c821be30d8d282ae79633025d95049b1f5bd3e96",
+      "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF"
+    },
+    {
+      "family": "Barlow Condensed",
+      "weight": 800,
+      "piece": "latin",
+      "file": "BarlowCondensed-800.latin.f1eef3be.woff2",
+      "url": "/fonts/BarlowCondensed-800.latin.f1eef3be.woff2",
+      "bytes": 13896,
+      "sourceBytes": 33132,
+      "source": "BarlowCondensed-800.woff2",
+      "sha256": "f1eef3be3bf5a5f94ed29daf099376b4be2e819e519cbb8641f1be85c2c5af5c",
+      "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+    },
+    {
+      "family": "Barlow Condensed",
+      "weight": 800,
+      "piece": "latin-ext",
+      "file": "BarlowCondensed-800.latin-ext.2e33ca5b.woff2",
+      "url": "/fonts/BarlowCondensed-800.latin-ext.2e33ca5b.woff2",
+      "bytes": 8200,
+      "sourceBytes": 33132,
+      "source": "BarlowCondensed-800.woff2",
+      "sha256": "2e33ca5bc90909ab136eea15fc70a6419f56e495f9215a62d319af5bc6af5804",
+      "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF"
+    },
+    {
+      "family": "IBM Plex Mono",
+      "weight": 400,
+      "piece": "latin",
+      "file": "IBMPlexMono-400.latin.06c690d6.woff2",
+      "url": "/fonts/IBMPlexMono-400.latin.06c690d6.woff2",
+      "bytes": 9260,
+      "sourceBytes": 37220,
+      "source": "IBMPlexMono-400.woff2",
+      "sha256": "06c690d65468b1ee2ce31dc1f1adc1224babf9249b5fb6a5701bb71df4ed82dd",
+      "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+    },
+    {
+      "family": "IBM Plex Mono",
+      "weight": 400,
+      "piece": "latin-ext",
+      "file": "IBMPlexMono-400.latin-ext.736b4dac.woff2",
+      "url": "/fonts/IBMPlexMono-400.latin-ext.736b4dac.woff2",
+      "bytes": 7764,
+      "sourceBytes": 37220,
+      "source": "IBMPlexMono-400.woff2",
+      "sha256": "736b4dac136d93237882e9875e083ed5090f064d7aa534125e441336d1893122",
+      "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF"
+    },
+    {
+      "family": "IBM Plex Mono",
+      "weight": 600,
+      "piece": "latin",
+      "file": "IBMPlexMono-600.latin.f1bf9d7b.woff2",
+      "url": "/fonts/IBMPlexMono-600.latin.f1bf9d7b.woff2",
+      "bytes": 9308,
+      "sourceBytes": 39104,
+      "source": "IBMPlexMono-600.woff2",
+      "sha256": "f1bf9d7bf03efe8bf62311316970b89a91060228e555d406ab23ebad6971e4fd",
+      "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+    },
+    {
+      "family": "IBM Plex Mono",
+      "weight": 600,
+      "piece": "latin-ext",
+      "file": "IBMPlexMono-600.latin-ext.5390cebe.woff2",
+      "url": "/fonts/IBMPlexMono-600.latin-ext.5390cebe.woff2",
+      "bytes": 7864,
+      "sourceBytes": 39104,
+      "source": "IBMPlexMono-600.woff2",
+      "sha256": "5390cebee10cc2f62fedc00c425ebee346a85b1bfbe90b941fc7aa75eacb071d",
+      "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF"
+    }
+  ]
+}

@@ -38,7 +38,7 @@ Every surface runs the identity gates (`pre-launch.md` 1–38) first; the tables
 ## 4. System e-mails (cTrader credentials, evaluation pass / fail, payout processed)
 | Check | Rule | Command / evidence |
 |---|---|---|
-| Ground / logo | paper `#F7F4F1`, card `#FFFFFF`, official lockup flattened on the paper token as base64 PNG @2x at 160 × 56 CSS (`logos/derived/email-header-160-paper@2x.png`); **paper in every mode** — colour scheme light only, no `prefers-color-scheme` / `[data-ogsc]` rule, no dark tile; the superseded white-box header is refused (`check-emails`, OLD-EMAIL-HEADER) | `dist/checks/email/*-360-{light,dark}.png` (the ground is `#F7F4F1` in both) |
+| Ground / logo | paper `#F7F4F1` as `bgcolor` + `style` on body / outer table / cell, card `#FFFFFF`; the header is the **paper card** `logos/derived/email-header-160-card@2x.png` (base64 @2x at 160 × 56 CSS, 8 px radius, 12 px paper around the official EN lockup, corners transparent — CR-12) + the white twin `email-header-160-dark@2x.png` hidden except under Outlook's `[data-ogsc]`; **paper in every mode** — colour scheme light only, no `prefers-color-scheme` / `[data-ogsc]` rule, no dark tile; the superseded white-box header is refused (`check-emails`, OLD-EMAIL-HEADER) | `dist/checks/email/*-360-{light,dark}.png` (the ground is `#F7F4F1` in both) |
 | Composition | one headline that says what happened → one paragraph → facts card (login · server · platform / target reached · end equity / breached rule / payout amount · share · method) → ONE button (link only under it) → relationship line → regulatory placeholder | open each template |
 | Numbers | `.fpt-unit` inline styles (mail clients ignore classes); currency code; `−` U+2212 | grep the HTML |
 | URLs | zero raw URLs in visible text; `href` only on the button | `python3` raw-URL check in `TEST-MATRIX.md`; verify-identity RAW-URL-IN-MAIL-TEXT = 0 |
@@ -68,7 +68,7 @@ Every surface runs the identity gates (`pre-launch.md` 1–38) first; the tables
 |---|---|---|
 | Readability | essential body ≥ 42 px on 1080 (≈ 14 px at 360); headline one line of Arabic; logo 6 % of frame; safe zones per `social-rules.md` | export at 100 % + 360 px wide check |
 | Content | one figure (`$50,000`, `80 %`) or one headline per post; product facts verbatim; SAMPLE chip on any non-fact figure; no payout totals, no testimonials | review |
-| Logo | tile + name on dark posts; horizontal lockup on paper posts; relationship line | review |
+| Logo | tile or the English white lockup on dark posts; the English ink lockup on paper posts — in every language (CR-11); relationship line | review |
 | Legal | caption line = REQUIRED DECISION 9; nothing on the image | matrix row |
 | Fonts at export | brand fonts loaded when the SVG is rasterised | export log |
 

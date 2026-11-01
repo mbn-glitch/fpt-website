@@ -316,6 +316,11 @@
 .fpt-modal{position:fixed;inset:0;z-index:var(--fpt-z-sheet);display:grid;place-items:center;padding:var(--fpt-space-4)}
 .fpt-modal__box{width:min(100%,440px);background:var(--fpt-ground-panel);border:1px solid var(--fpt-line-ash);border-radius:var(--fpt-radius-card);box-shadow:var(--fpt-shadow-overlay);padding:var(--fpt-space-6);display:grid;gap:12px;animation:fpt-up var(--fpt-motion-duration-state) var(--fpt-motion-easing-standard)}
 .fpt-modal__actions{display:flex;gap:10px;justify-content:flex-end;margin-block-start:8px;flex-wrap:wrap}
+/* v1.2.1 — CR-10 (fiper-brand v2.3.5 § 10, CEO 1 Nov 2026): the action row of a DESTRUCTIVE confirmation dialog. Source order = safe secondary button first, the filled danger button last;
+   the solid button is pinned to the end with `order` (logical — it mirrors in RTL) and below 640 px the row stacks in source order: the safe button above, the destructive below. Non-destructive dialogs keep .fpt-modal__actions (ghost + primary). */
+.fpt-dialog__actions{display:flex;gap:10px;justify-content:flex-end;margin-block-start:8px;flex-wrap:wrap}
+.fpt-dialog__actions>.fpt-btn--destructive-solid{order:99}
+@media (max-width:639.98px){.fpt-dialog__actions{flex-direction:column;align-items:stretch}.fpt-dialog__actions>.fpt-btn{width:100%}}
 @keyframes fpt-fade{from{opacity:0}}
 @keyframes fpt-up{from{opacity:0;transform:translateY(var(--fpt-motion-reveal-offset))}}
 /* static preview variants (no fixed positioning) */

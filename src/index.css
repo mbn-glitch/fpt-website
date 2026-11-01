@@ -1,5 +1,5 @@
-/* FPT Brand Identity System v1.0 — fpt-brand v1.2.0 (pinned 1 Nov 2026). Every colour, font and radius below is a package token
-   (brand/tokens.css, --fpt-*); fonts are self-hosted byte copies of brand/fonts under /brand/fonts (linked from index.html).
+/* FPT Brand Identity System v1.0 — fpt-brand v1.2.1 (pinned 2 Nov 2026). Every colour, font and radius below is a package token
+   (brand/tokens.css, --fpt-*); the fonts are unicode-range pieces cut from the package files (src/fonts.css → public/fonts, scripts/build-font-subsets.mjs).
    Gate: node brand/scripts/verify-identity.mjs src public index.html → PASS. */
 @import "./fonts.css";
 @import "../brand/tokens.css";
@@ -26,6 +26,7 @@
   --color-danger: var(--fpt-state-danger);
   --font-sans: var(--fpt-font-family-body);
   --font-mono: var(--fpt-font-family-mono);
+  --font-display: var(--fpt-font-family-display); /* Barlow Condensed — Latin headlines (owner decision 8, 2 Nov 2026) */
   --radius-card: var(--fpt-radius-card);
   --radius-pill: var(--fpt-radius-pill);
   --ease-standard: var(--fpt-motion-easing-standard);
@@ -54,8 +55,8 @@
   ::-webkit-scrollbar-thumb { background: var(--fpt-ground-elevated); border-radius: 4px; }
   ::-webkit-scrollbar-thumb:hover { background: var(--fpt-line-strong); }
 
-  /* Latin headlines only: the tightened tracking is scoped away from Arabic (AN-05) */
-  html:not([lang="ar"]) h1, html:not([lang="ar"]) h2, html:not([lang="ar"]) h3 { letter-spacing: -0.02em; }
+  /* Latin h3 / small headings stay Inter 600 with the tightened tracking, scoped away from Arabic (AN-05); h1 / section h2 carry .fpt-display (below) */
+  html:not([lang="ar"]) h3 { letter-spacing: -0.02em; }
   h1, h2, h3, h4, h5, h6 { font-weight: 600; overflow-wrap: anywhere; }
   .fpt-unit, p, li, span { overflow-wrap: anywhere; }
 
@@ -65,6 +66,13 @@
   /* Native range input (challenge selector): thumb and track from tokens */
   input[type="range"] { accent-color: var(--fpt-brand-red); }
 }
+
+/* Latin display (owner decision 8, 1 Nov 2026 — package README § D, tokens font.family.display / font.weight.display): h1 and section h2 in
+   Barlow Condensed, uppercase, letter-spacing .5 px, line-height 1.05 — h1 800, h2 700 (self-hosted package files, font-display: swap).
+   Arabic headlines are NEVER Barlow Condensed: the Arabic rules below keep IBM Plex Sans Arabic 600, no uppercase, no tracking, line-height 1.5.
+   Unlayered so it wins over utilities. */
+html:not([lang="ar"]) .fpt-display { font-family: var(--fpt-font-family-display); font-weight: var(--fpt-font-weight-bold); text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.05; }
+html:not([lang="ar"]) h1.fpt-display { font-weight: var(--fpt-font-weight-display); }
 
 /* Arabic typography (unlayered so it wins over utilities): letter-spacing 0 everywhere, line-height ≥ 1.5 on every text node (R-11 / R-12 / ID-04) */
 html[lang="ar"] * { letter-spacing: 0; }
@@ -87,8 +95,8 @@ html[lang="ar"] .uppercase { text-transform: none; }
   .bg-chrome { background-color: var(--fpt-ground-chrome); }
   /* The brand gradient — the primary action fill (component.button.primary.fill) */
   .gradient-red { background: var(--fpt-c-button-primary-fill); }
-  /* Eyebrow / label: Inter 600 12 px, label colour, ≤ .06em tracking; Arabic: no uppercase, no tracking (AN-08) */
-  .fpt-eyebrow { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fpt-text-label); line-height: 1.5; }
+  /* Eyebrow / label: Inter 600 13 px (the site's ONE label size — CR-06 label step; PROPOSED for the site: the package eyebrow is .75rem), label colour, ≤ .06em tracking; Arabic: no uppercase, no tracking (AN-08) */
+  .fpt-eyebrow { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fpt-text-label); line-height: 1.5; }
   /* Header: the only surface allowed a blur (ground-chrome + 14 px) */
   .header-chrome { background-color: var(--fpt-ground-chrome); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: inset 0 -1px 0 var(--fpt-line-ash); }
   .safe-bottom { padding-bottom: env(safe-area-inset-bottom, 0px); }

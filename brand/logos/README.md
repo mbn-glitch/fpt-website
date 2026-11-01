@@ -1,4 +1,6 @@
-# brand/logos — FPT logo v2 (v1.2.0, 1 Nov 2026; logo v2 since v1.1, 30 Oct 2026 — the logo itself is unchanged)
+# brand/logos — FPT logo v2 (v1.2.1, 2 Nov 2026; logo v2 since v1.1, 30 Oct 2026 — the logo itself is unchanged)
+
+**CR-11 — lockups in English only (owner decision 1 Nov 2026 23:08: «الشعارات إنجليزي فقط»).** The Latin lockup (`fpt-lockup-horizontal-en` / `-white`, `fpt-lockup-vertical-en` / `-white`) and the tile are the only logo forms used — on **every surface and in every language** (apps, site, e-mail, documents, share images, social, video). The Arabic lockups (`*-ar`, `*-ar-white`) and the bilingual lockups (`*-bilingual`, `*-bilingual-white`) stay in `svg/`, `png/`, `pdf/`, `eps/` as **archival masters — bytes unchanged, never used on any surface** (the 24 masters and their checksums are untouched; nothing is moved or deleted). Token `component.logo.lockup-language` = `en-only`; gate `verify-identity` **ARABIC-LOCKUP-IN-USE** fails any reference to them in a consumer file outside `brand/logos/`.
 
 Approved by Mohammed Alboinin (CEO) on 30 Oct 2026: «اعتمد وحدث هوية اف بي تي بالشعار المحسن (لاشيء آخر من معايير الهوية)». Status of every file and value below: **APPROVED — logo v2 — CEO approval 30 Oct 2026**. Source of truth for every value: `source/spec.json` + `source/README.md` (construction, colours, lockup ratios, small cut, app-icon placements, lettering sources). The 24 vector masters in `svg/` are authoritative and are **never edited, optimised, reformatted, recoloured, retraced or redrawn**; every other file in this folder is a render of them made by `scripts/build-logos.mjs` (deterministic). The v1 JPEGs and their downscales are in `legacy-v1/` — superseded, never use.
 
@@ -15,10 +17,10 @@ Nine refinements over v1 (all approved): vector master · one slant (12.5°) · 
 | `fpt-tile-small.svg` | **small cut**: no ticks, cut 1.6u, mark 82 % of the tile | **every rendered size ≤ 32 px only** (favicons, smallest icons); never above 32 px |
 | `fpt-mark-gradient.svg` · `-white` · `-ink` · `-red` | the monogram without the tile | watermarks, merchandise; the white one on brand red |
 | `fpt-lockup-horizontal-en.svg` · `-white` | tile + "Fiper Pro Traders" (aspect 4.7364) | paper / dark grounds — headers, documents, e-mail |
-| `fpt-lockup-horizontal-ar.svg` · `-white` | «فايبر برو تريدرز» + tile on the **right** (aspect 3.9043) | Arabic surfaces |
-| `fpt-lockup-bilingual.svg` · `-white` | tile + English line + Arabic line (aspect 3.2272) | signage, documents, events |
+| `fpt-lockup-horizontal-ar.svg` · `-white` | «فايبر برو تريدرز» + tile on the **right** (aspect 3.9043) | **archival — not used on any surface** (CR-11) |
+| `fpt-lockup-bilingual.svg` · `-white` | tile + English line + Arabic line (aspect 3.2272) | **archival — not used on any surface** (CR-11) |
 | `fpt-lockup-vertical-en.svg` · `-white` | tile above the English name (aspect 1.1154) | square formats, OG, certificates |
-| `fpt-lockup-vertical-ar.svg` · `-white` | tile above the Arabic name (aspect 0.9586) | square Arabic formats |
+| `fpt-lockup-vertical-ar.svg` · `-white` | tile above the Arabic name (aspect 0.9586) | **archival — not used on any surface** (CR-11) |
 | `fpt-appicon.svg` | full-bleed gradient, mark 74 % | iOS app icon (system mask), store listings, apple-touch-icon |
 | `fpt-appicon-round.svg` | full-bleed gradient, mark inside a 0.38 circle | social avatars (circle crop), PWA maskable |
 | `fpt-android-adaptive-foreground.svg` + `-background.svg` | 108 dp layers, mark inside the 33 dp safe circle | Android adaptive icon |
@@ -30,17 +32,18 @@ Ink versions (`fpt-tile-ink`, `fpt-mark-ink`, the non-white lockups) carry the w
 
 | Surface | File |
 |---|---|
-| Dark grounds (apps, site, dark social, video, splash) | `fpt-lockup-horizontal-en-white.svg` / `-ar-white` / `-bilingual-white`, or the gradient `fpt-tile.svg` alone where only the mark fits |
-| Paper grounds (documents, e-mail, print, light social) | `fpt-lockup-horizontal-en.svg` / `-ar` / `-bilingual` (ink wordmark), or `fpt-tile.svg` / `fpt-tile-ink.svg` |
-| Arabic surfaces | the Arabic lockup (`fpt-lockup-horizontal-ar` / `-vertical-ar`, white versions on dark) — the tile sits on the right, the mark itself is never mirrored |
-| Square formats, OG, certificates, square profiles | `fpt-lockup-vertical-en` / `-ar` (white on dark) |
-| Signage, documents, events | `fpt-lockup-bilingual` / `-white` |
+| Dark grounds (apps, site, dark social, video, splash) — every language | `fpt-lockup-horizontal-en-white.svg`, or the gradient `fpt-tile.svg` alone where only the mark fits |
+| Paper grounds (documents, e-mail, print, light social) — every language | `fpt-lockup-horizontal-en.svg` (ink wordmark), or `fpt-tile.svg` / `fpt-tile-ink.svg` |
+| Arabic surfaces | **the same English lockup** (CR-11) with `direction: ltr` on the brand element; the mark is never mirrored. The Arabic and bilingual lockups are archival |
+| Square formats, certificates, square profiles | `fpt-lockup-vertical-en` / `-white` |
+| Share image (OG) | `derived/og-1200x630-ar.png` / `-en.png` — the English white horizontal lockup on both (CR-05 + CR-11) |
+| Signage, documents, events | `fpt-lockup-horizontal-en` / `-white` (the bilingual lockup is archival) |
 | Renders ≤ 32 px (favicon 16 / 32, smallest icons) | `fpt-tile-small.svg` only |
 | App icons | `fpt-appicon.svg` (iOS, store, apple-touch-icon), `fpt-appicon-round.svg` (avatars, PWA maskable), the two Android adaptive layers |
 | One-colour print | `fpt-tile-flat.svg` (red), `fpt-tile-ink.svg` (dark), `fpt-tile-white.svg` (on dark stock) |
 | Watermark, merchandise | `fpt-mark-*` |
 
-Sizes in place (unchanged from v1.0): navbar tile 46 px (OBSERVED), footer 44 px (OBSERVED), app header 32 px, A4 document header 8 mm lockup, e-mail header 160 × 56 CSS (`derived/email-header-160-paper@2x.png`, flattened on the paper token — owner decision 1 Nov 2026) or 120 × 42 (`-120-paper@2x`), share image 1200 × 630 (`derived/og-1200x630-ar.png` / `-en.png`, CR-05), video corner 56 px per 1080 px width, splash 120–160 px (PROPOSED sizes).
+Sizes in place (unchanged from v1.0): navbar tile 46 px (OBSERVED), footer 44 px (OBSERVED), app header 32 px, A4 document header 8 mm lockup, e-mail header 160 × 56 CSS (`derived/email-header-160-card@2x.png`, the paper card — CR-12, 2 Nov 2026; size APPROVED by the owner 1 Nov 2026 23:08; the compact 120 × 42 withdrawn), share image 1200 × 630 (`derived/og-1200x630-ar.png` / `-en.png`, CR-05), video corner 56 px per 1080 px width, splash 120–160 px (PROPOSED sizes).
 
 ## 3. Renders (`png/`, transparent PNG, `<master>-<size>.png`)
 
@@ -79,13 +82,13 @@ Sizes in place (unchanged from v1.0): navbar tile 46 px (OBSERVED), footer 44 px
 
 | File | Composition | Status |
 |---|---|---|
-| `email-header-160-paper@2x.png` | `fpt-lockup-horizontal-en` 300 px wide centred in 320 × 112, **flattened on the paper token `#F7F4F1`** (`component.email.logo-ground`) — the e-mail header at 160 × 56 CSS (`component.email.logo-file`) | APPROVED (owner, 1 Nov 2026) |
-| `email-header-120-paper@2x.png` | the same lockup 225 px wide in 240 × 84 on the paper token — 120 × 42 CSS for compact mails | APPROVED |
-| `email-header-160-transparent@2x.png`, `email-header-120-transparent@2x.png` | the same boxes with an alpha channel — for a header on another light ground (a white card); **never for the paper mail** (an inverting client would hide a transparent dark wordmark) | APPROVED |
-| `og-1200x630-ar.png` / `og-1200x630-en.png` | CR-05: dark ground `#0A0A0A`, `fpt-lockup-horizontal-en-white` centred at tile height 120 px, the fixed risk line «الاستثمار ينطوي على مخاطر» / "Investing involves risk" bottom-start (margin 64 px) in the label colour at 16 px (= 14.4 px at 1080 wide, ≥ 12); the wording comes from `component.og.risk-line.*` and is asserted verbatim on the rendered DOM | APPROVED wording / ground / colour / size; placement PROPOSED |
+| `email-header-160-card@2x.png` | **CR-12 (2 Nov 2026)**: a 320 × 112 **paper card** — the paper token `#F7F4F1` (`component.email.header-card.ground`) with a 16 px radius (`header-card.radius` 8 CSS px) holding `fpt-lockup-horizontal-en` 272 px wide with 24 px of paper on every side (`header-card.padding` 12 CSS px); corners transparent — the e-mail header at 160 × 56 CSS (`component.email.logo-file`). Merges into the paper mail; reads as an intentional card where a client forces dark (wordmark 17.6:1), never a hard-edged box | APPROVED (CR-12, applied) |
+| `email-header-160-dark@2x.png` | `fpt-lockup-horizontal-en-white` 300 px wide centred in 320 × 112 on alpha — the twin shown **only** where Outlook exposes `[data-ogsc]` (`component.email.header-dark-twin`); hidden everywhere else, excluded from Outlook Windows | APPROVED (CR-12) |
+| `email-header-160-transparent@2x.png` | the ink lockup 300 px wide on alpha — for a header on another light ground (a white card); **never alone in the paper mail** (a client that forces dark hides a dark wordmark: 1.0–1.25:1 measured) | APPROVED |
+| `og-1200x630-ar.png` / `og-1200x630-en.png` | CR-05: dark ground `#0A0A0A`, the **English** `fpt-lockup-horizontal-en-white` centred at tile height 120 px on both versions (CR-11), the fixed risk line «الاستثمار ينطوي على مخاطر» / "Investing involves risk" bottom-start (margin 64 px) in the label colour at 16 px (= 14.4 px at 1080 wide, ≥ 12); the wording comes from `component.og.risk-line.*` and is asserted verbatim on the rendered DOM | APPROVED (wording / ground / colour / size 1 Nov 2026; geometry 1 Nov 2026 23:08) |
 | `email-tile-112@2x.png` | `fpt-tile` at 112 px (CSS 56) — no longer used by the reference mails (paper in every mode) | render |
 
-Superseded (`_deprecated/derived/`, never use, refused by `verify-identity` OLD-EMAIL-HEADER / OLD-OG-IMAGE and by `check-emails` by pixel): `email-header-320x112@2x.png` (opaque white box over the paper shell), `og-1200x630.png` (vertical lockup on white, no risk line). `_deprecated/README.md` records why.
+Superseded (`_deprecated/derived/`, never use, refused by `verify-identity` OLD-EMAIL-HEADER / OLD-OG-IMAGE and by `check-emails` by pixel and sha256): `email-header-320x112@2x.png` (v1.0–v1.1.2 opaque white box), `email-header-160-paper@2x.png` / `email-header-120-paper@2x.png` / `email-header-120-transparent@2x.png` (v1.2.0 flattened paper, square corners — the light box the owner saw in forced-dark clients; CR-12), `og-1200x630.png` (vertical lockup on white, no risk line). `_deprecated/README.md` records why.
 
 Render checks (`dist/logo-checks/`, build repo): small cut at 16 / 24 / 32 px and the master tile at 46 / 180 / 512 px, the horizontal lockup at heights 24 / 32 / 46 / 120 / 242 (white lockup on `#0A0A0A`, ink lockup on white).
 
@@ -94,7 +97,7 @@ Render checks (`dist/logo-checks/`, build repo): small cut at 16 / 24 / 32 px an
 - **Clear space** = 0.5 × tile height on all sides (unchanged). Nothing enters it: no text, divider or partner mark.
 - **Minimum sizes** (unchanged): tile 16 px on screen (small cut) / 4 mm in print; lockup 24 px on screen / 8 mm in print. **No maximum** — the masters are vectors (the v1 print limits of 20 mm / 103 mm no longer exist).
 - **Small cut**: `fpt-tile-small.svg` for every rendered size at or below 32 px, never above; the master tile for everything larger.
-- **Never mirrored**: the mark stays as drawn in RTL; the Arabic lockup puts the tile on the right of the name. `direction: ltr` on the brand element where the lockup is an image.
+- **Never mirrored**: the mark stays as drawn in RTL; the English lockup is used in both directions (CR-11) with `direction: ltr` on the brand element where the lockup is an image.
 - **Never clipped**: the tile carries its own single 20 % bottom-left corner; no CSS `border-radius`, `clip-path` or `object-fit` crop on any logo file (the v1 22 % clip only hid the JPEG's white margin — DEPRECATED).
 - **Colour**: the tile gradient `#F62721 → #A30100` (135°, top-left to bottom-right) equals the UI pair `#F42821 → #A30100`; the only other versions are the approved flat / ink / white files. The wordmark is `#120D0E` on paper and `#FFFFFF` on dark.
 - **Lettering source**: D-DIN PRO ExtraBold (Latin) and IBM Plex Sans Arabic Bold (Arabic), both OFL — outlined in every file. D-DIN PRO is the logo's lettering source only; it is not a brand typeface, not in `brand/fonts`, not a token.
@@ -102,4 +105,4 @@ Render checks (`dist/logo-checks/`, build repo): small cut at 16 / 24 / 32 px an
 
 ## 8. Misuse (never)
 
-1 recolour the tile or wordmark, or flatten the gradient outside the approved flat / ink / white versions · 2 glow, shadow or outline · 3 stretch, condense, rotate · 4 a retyped "FPT" or "Fiper Pro Traders" in any font used as a logo (`favicon.svg` of the site, D-DIN PRO typed live) · 5 mirror in RTL · 6 the gradient tile on brand red (use `fpt-mark-white` / `fpt-tile-white` there) · 7 the tile below 16 px / the lockup below 24 px, or the master tile at ≤ 32 px instead of the small cut · 8 edit, optimise or re-export the masters · 9 the ink lockup on a dark ground (use the `-white` lockups) · 10 the Arabic name typed as text beside the tile where the Arabic lockup should be used · 11 clip, crop or round the tile with CSS or an OS mask (the files are transparent and carry their corner) · 12 pair the tile with a second mark, a challenge badge or the Fiper lockup larger than 0.5 H.
+1 recolour the tile or wordmark, or flatten the gradient outside the approved flat / ink / white versions · 2 glow, shadow or outline · 3 stretch, condense, rotate · 4 a retyped "FPT" or "Fiper Pro Traders" in any font used as a logo (`favicon.svg` of the site, D-DIN PRO typed live) · 5 mirror in RTL · 6 the gradient tile on brand red (use `fpt-mark-white` / `fpt-tile-white` there) · 7 the tile below 16 px / the lockup below 24 px, or the master tile at ≤ 32 px instead of the small cut · 8 edit, optimise or re-export the masters · 9 the ink lockup on a dark ground (use the `-white` lockups) · 10 the Arabic or bilingual lockup on any surface (archival since CR-11), or the name typed as text beside the tile · 11 clip, crop or round the tile with CSS or an OS mask (the files are transparent and carry their corner) · 12 pair the tile with a second mark, a challenge badge or the Fiper lockup larger than 0.5 H.

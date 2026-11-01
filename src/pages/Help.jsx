@@ -46,8 +46,8 @@ export default function Help() {
                 <Link to={localizedPath(`/help/${cat.slug}#${f.id}`, i18n.language)} className="group block h-full rounded-2xl p-6 bg-bg border border-subtle hover:border-white/20 transition-colors">
                   <div className="text-[13px] text-tertiary">{catTitle}</div>
                   <h3 className="mt-2 text-lg font-semibold leading-[1.4]">{(lang !== 'en' && f.questions?.[lang]) ? f.questions[lang] : f.question}</h3>
-                  <p className="mt-2 text-sm text-secondary leading-relaxed line-clamp-2">{(lang !== 'en' && f.answers?.[lang]) ? f.answers[lang] : f.answer}</p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 min-h-11 text-sm text-secondary group-hover:text-white transition-colors">
+                  <p className="mt-2 text-base text-secondary leading-relaxed line-clamp-2">{(lang !== 'en' && f.answers?.[lang]) ? f.answers[lang] : f.answer}</p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 min-h-11 text-base text-secondary group-hover:text-white transition-colors">
                     {t('help.readMore')} <ArrowRight size={14} className="flip-rtl" aria-hidden="true" />
                   </span>
                 </Link>
@@ -69,7 +69,7 @@ function WhatsAppBanner() {
       <div className="flex items-center gap-4 min-w-0">
         <WhatsAppMark size={40} />
         <div className="min-w-0">
-          <p className="text-sm font-semibold text-white leading-[1.5]">{t('help.whatsappBanner')}</p>
+          <p className="text-base font-semibold text-white leading-[1.5]">{t('help.whatsappBanner')}</p>
           <p className="text-[13px] text-secondary mt-0.5 fpt-unit">{WHATSAPP_PHONE}</p>
         </div>
       </div>
@@ -83,7 +83,7 @@ export function StillNeedHelp() {
   return (
     <Section aria-labelledby="still-need-help-title">
       <div className="max-w-3xl mx-auto text-center">
-        <h2 id="still-need-help-title" className="text-3xl sm:text-4xl font-semibold leading-[1.2]">{t('help.stillNeedHelp')}</h2>
+        <h2 id="still-need-help-title" className="text-3xl sm:text-4xl fpt-display">{t('help.stillNeedHelp')}</h2>
         <p className="mt-4 text-secondary leading-relaxed">{t('help.stillNeedHelpBody')}</p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Button href={WHATSAPP_URL} external size="lg"><WhatsAppMark size={24} /> {t('help.contactSupport')}</Button>

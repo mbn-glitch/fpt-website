@@ -123,31 +123,11 @@
     "sampleNote": "Tous les chiffres ci-dessus sont des données d’exemple ; ce n’est la performance d’aucun trader."
   },
   "fptCard": {
-    "title": "Accédez à Vos Profits avec la Fiper Card",
-    "subtitle": "FPT offre l'accès à la Fiper Card — des solutions de cartes virtuelles et physiques pour le retrait de profits et l'utilisation dans le monde réel.",
-    "features": {
-      "instant": {
-        "title": "Accès Instantané",
-        "desc": "Accédez facilement à vos profits approuvés sans délais inutiles."
-      },
-      "global": {
-        "title": "Utilisation Globale",
-        "desc": "Utilisez votre carte en ligne ou en magasin dans le monde entier."
-      },
-      "virtual": {
-        "title": "Cartes Virtuelles et Physiques",
-        "desc": "Choisissez entre des cartes virtuelles et physiques selon vos besoins."
-      },
-      "integrated": {
-        "title": "Intégrée à l'Écosystème Fiper",
-        "desc": "Votre compte de trading se connecte à une infrastructure financière complète."
-      }
-    },
-    "note1": "Les retraits de profits sont soumis à des processus d'approbation internes et à des conditions de paiement.",
-    "note2": "La disponibilité de la carte dépend du statut du compte et de l'éligibilité.",
-    "cta": "Obtenez Votre FPT Card",
-    "eyebrow": "Fiper Card",
-    "imageAlt": "Carte physique Fiper"
+    "eyebrow": "Dans l’écosystème Fiper",
+    "title": "La Fiper Card",
+    "subtitle": "Le client émet la Fiper Card depuis Fiper, transfère ensuite son solde vers son compte chez Fiper, puis utilise sa carte normalement.",
+    "cta": "La Fiper Card chez Fiper",
+    "imageAlt": "La Fiper Card"
   },
   "platforms": {
     "title": "Tradez sur cTrader",
@@ -174,9 +154,9 @@
     },
     "card": {
       "title": "Fiper Card",
-      "desc": "Accès Instantané aux Profits",
+      "desc": "Émise par le client depuis Fiper",
       "badge": "Disponible",
-      "label": "Accès au capital"
+      "label": "Un produit Fiper"
     },
     "crm": {
       "title": "Fiper CRM",
@@ -316,15 +296,15 @@
       "p2title": "Le risque avant la récompense",
       "p2body": "Un trader qui survit aux drawdowns capitalise. Nos règles existent pour protéger le capital.",
       "p3title": "Un chemin, clairement balisé",
-      "p3body": "Évaluation, financement, paiement, carte. Pas de gadgets.",
+      "p3body": "Évaluation, compte financé, récompense. Pas de gadgets, pas de gammes parallèles conçues pour distraire.",
       "p4title": "L'infrastructure avant le marketing",
       "p4body": "Nous investissons dans l'exécution, la liquidité et les tableaux de bord."
     },
     "ecosystem": {
       "fptTag": "Trading Prop",
       "fptBody": "L'évaluation, le compte financé, la discipline.",
-      "cardTag": "Accès au Capital",
-      "cardBody": "Paiements réglés sur une carte mondiale.",
+      "cardTag": "Un produit Fiper",
+      "cardBody": "Le client émet la Fiper Card depuis Fiper, transfère ensuite son solde vers son compte chez Fiper, puis utilise sa carte normalement.",
       "globalTag": "Centre de Commande",
       "globalBody": "Comptes, métriques et paiements unifiés."
     },
@@ -342,7 +322,6 @@
       "content": "Fiper Global a été fondé avec la vision de donner du pouvoir aux traders du monde entier. FPT représente notre engagement envers une infrastructure de trading professionnelle."
     },
     "mission": {
-      "title": "",
       "content": "Nous croyons que les traders talentueux méritent un accès au capital sans obstacles inutiles. FPT offre un chemin transparent de l'évaluation au trading financé."
     },
     "subtitle": "FPT est la division prop trading de Fiper Global — une infrastructure financière intégrée pour les traders modernes.",

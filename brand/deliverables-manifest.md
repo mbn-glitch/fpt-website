@@ -1,4 +1,4 @@
-# Deliverables manifest — FPT Brand Identity System v1.0 (29 Oct 2026)
+# Deliverables manifest — FPT Brand Identity System v1.2.1 (2 Nov 2026; base v1.0 29 Oct 2026)
 
 Maps every task-file requirement (manual sections A–N, deliverables 1–3, package contents, decision items, gates) to its output file(s). Columns: file · format · editing tool · status · acceptance; a rendered preview never counts as the deliverable. Status: **DONE** · **PARTIAL** (with what is missing) · **NOT PROVIDED** (with reason) · **NOT TESTED** (with reason) · **PENDING — lead** (produced after this file was drafted; evidence in `qa-report.md`). Paths are relative to the package root (`brand/`) unless they start with `dist/`, `checks/`, `manual/`, `scripts/` or `sources/` (build repo). Gates: `node scripts/check-manifest.mjs` (every path named here exists) and `node scripts/gen-manifest.mjs` (the generated table at the end lists every file with its byte size).
 
@@ -6,7 +6,7 @@ Maps every task-file requirement (manual sections A–N, deliverables 1–3, pac
 | Req. | Output file(s) | Format | Lang | Editing tool | Status | Acceptance criterion |
 |---|---|---|---|---|---|---|
 | A Brand architecture | `README.md` § A, `glossary.md` § 1, `MISSING-ASSETS.md` § 3 (endorsement geometry), manual A pages | md / HTML→PDF | AR+EN | text editor | DONE | FPT as a child brand; "Part of Fiper Global" rule; names AR/EN with sources; out of scope stated. |
-| B Logo system | `logos/svg/*.svg` (24 vector masters, logo v2), `logos/png/` (119), `logos/pdf/` (24), `logos/eps/` (21), `logos/icons/`, `logos/derived/` (7: paper e-mail headers 160 / 120 + transparent twins, og-1200x630-ar / -en, tile), `logos/_deprecated/derived/` (2 superseded rasters), `logos/source/` (spec, checksums, generator), `logos/legacy-v1/` (superseded), `logos/README.md`, `logos/MISSING-ASSETS.md`, `skill/fpt-brand/references/logo-usage.md`, `dist/logo-checks/` | SVG / PNG / PDF / EPS + md | — | none (approved masters); `scripts/build-logos.mjs` for every render | DONE (logo v2, CEO approval 30 Oct 2026) / PARTIAL (endorsement artwork = MISSING ASSET #4) | every file carries a status; renders checked at 16 / 24 / 32 (small cut) and 46 / 180 / 512 px, lockups 24–242 px, on dark and white. |
+| B Logo system | `logos/svg/*.svg` (24 vector masters, logo v2), `logos/png/` (119), `logos/pdf/` (24), `logos/eps/` (21), `logos/icons/`, `logos/derived/` (6: the CR-12 card e-mail header + its white twin + the ink twin, og-1200x630-ar / -en, tile), `logos/_deprecated/derived/` (5 superseded rasters), `identity-change-requests.md` (CR-01…CR-12), legacy `(7: paper e-mail headers 160 / 120 + transparent twins, og-1200x630-ar / -en, tile), `logos/_deprecated/derived/` (2 superseded rasters), `logos/source/` (spec, checksums, generator), `logos/legacy-v1/` (superseded), `logos/README.md`, `logos/MISSING-ASSETS.md`, `skill/fpt-brand/references/logo-usage.md`, `dist/logo-checks/` | SVG / PNG / PDF / EPS + md | — | none (approved masters); `scripts/build-logos.mjs` for every render | DONE (logo v2, CEO approval 30 Oct 2026) / PARTIAL (endorsement artwork = MISSING ASSET #4) | every file carries a status; renders checked at 16 / 24 / 32 (small cut) and 46 / 180 / 512 px, lockups 24–242 px, on dark and white. |
 | C Colour | `tokens.json` (primitive / semantic), `tokens.css`, `checks/contrast.json`, `README.md` § C, manual C pages | DTCG JSON / CSS / JSON | — | `tokens.json` → `node brand/scripts/build-tokens.mjs` | DONE | `verify-tokens` PASS; 77 measured pairs incl. decision tables 2 / 3 / 6; white-on-flat-red restriction documented. |
 | D Typography | `fonts/*.woff2` (17), `fonts/fonts.css`, `fonts/licenses/*`, `skill/fpt-brand/references/arabic-typography.md`, `README.md` § D, `dist/checks/fonts/arabic-elements.md` | woff2 / CSS / md | AR+EN | — | DONE | Arabic + Latin digits + currency render from the Plex Arabic file; `font-synthesis: none`; Cairo / JetBrains / DIN Next deprecated. |
 | E Layout & spacing | `tokens.json` semantic.space / size / radius / elevation, `README.md` § E | JSON / md | — | text editor | DONE | 375 px minimum, 44 px targets, z scale, radii, RTL rule present. |
@@ -15,7 +15,7 @@ Maps every task-file requirement (manual sections A–N, deliverables 1–3, pac
 | H Motion | `tokens.json` semantic.motion, `README.md` § H | JSON / md | — | text editor | DONE | easing `[0.22,1,0.36,1]`, press .98, durations 140 / 200 / 300 / 350 / 500 are the only values; float / pulse deprecated. |
 | I Iconography & imagery | `icons/lucide/*.svg` (72), `icons/ICONS.md`, `assets/third-party/ctrader/*.svg`, `assets/fiper-physical-card.OFFICIAL.png`, `README.md` § I | SVG / PNG / md | — | — | DONE (Lucide vendored; `ICONS.md` by the components build) | one icon set; real cTrader screens and the official card only; no MT5. |
 | J Theme modes | `tokens.css` (dark canonical; `.fpt-paper`), `README.md` § J | CSS / md | — | build | DONE | dark only for apps; paper ground for documents — not a light mode. |
-| K1 System e-mail | `templates/email/ctrader-credentials.html`, `evaluation-pass.html`, `evaluation-fail.html`, `payout-processed.html`, `templates/email/TEST-MATRIX.md`, `templates/.htmlvalidate.json`, `logos/derived/email-header-160-paper@2x.png`, `dist/checks/email/` | HTML (table, inline CSS) | AR (+ EN body block) | code editor / ESP template editor | DONE (v1.2.0: paper in every mode, paper header, CR-03) · Gmail / Outlook / Apple Mail NOT TESTED (rows ready) · legal scope = REQUIRED DECISION | html-validate 0 errors; 0 raw URLs in visible text; no dark rule; header byte-identical + paper corners; 360 px light + dark-emulation screenshots both on paper. |
+| K1 System e-mail | `templates/email/ctrader-credentials.html`, `evaluation-pass.html`, `evaluation-fail.html`, `payout-processed.html`, `templates/email/TEST-MATRIX.md`, `templates/.htmlvalidate.json`, `logos/derived/email-header-160-card@2x.png` + `email-header-160-dark@2x.png` (CR-12), `dist/checks/email/` | HTML (table, inline CSS) | AR (+ EN body block) | code editor / ESP template editor | DONE (v1.2.0: paper in every mode, paper header, CR-03) · Gmail / Outlook / Apple Mail NOT TESTED (rows ready) · legal scope = REQUIRED DECISION | html-validate 0 errors; 0 raw URLs in visible text; no dark rule; header byte-identical + paper corners; 360 px light + dark-emulation screenshots both on paper. |
 | K2 Documents | `templates/document/certificate.html`, `payout-statement.html`, `trader-agreement.html` (layout only), `invoice.html`, `templates/document/print.css`, `templates/document/PRINT-SPEC.md`, `dist/checks/document/` | HTML / CSS + md | AR+EN | code editor | PENDING — templates build · press-ready NOT PROVIDED (CMYK, bleed = REQUIRED DECISION) · legal text REQUIRED DECISION | A4, paper ground, brand fonts only in the PDF (`check-pdf-fonts.py`), units unbroken, SAMPLE chips. |
 | K3 Presentation | `templates/presentation/fpt-brand-deck.pptx` (cover, section, content, stats, close), `dist/checks/editables/` | PPTX | AR+EN | PowerPoint / Keynote / Google Slides | PENDING — templates build · visual render NOT TESTED (no Office here) | structure verified by unzip (masters, layouts, slides); stat figures in text colour with gain semantics. |
 | K4 Social | `templates/social/post-1080x1080.svg`, `post-1080x1350.svg`, `post-1080x1920.svg`, `og-1200x630.svg`, `templates/social/exports/*.png`, `templates/social/social-rules.md` | SVG + PNG + md | AR+EN | Illustrator / Inkscape / Figma | PENDING — templates build | body ≥ 42 px on 1080; safe zones; SAMPLE only; exports inspected at 100 %. |
@@ -76,14 +76,14 @@ PowerPoint / Keynote / Google Slides render the PPTX with the named families onl
 | `brand/assets/third-party/ctrader/ctrader-logo-mono-dark.svg` | SVG | none (official asset) | present | 3,772 |
 | `brand/assets/third-party/ctrader/ctrader-logo-mono-light.svg` | SVG | none (official asset) | present | 3,772 |
 | `brand/assets/third-party/ctrader/ctrader-logo-mono-red.svg` | SVG | none (official asset) | present | 3,772 |
-| `brand/CHANGELOG.md` | Markdown | text editor | present | 22,055 |
-| `brand/checklists/brand-review.md` | Markdown | text editor | present | 7,420 |
-| `brand/checklists/per-surface.md` | Markdown | text editor | present | 9,145 |
-| `brand/checklists/pre-launch.md` | Markdown | text editor | present | 13,331 |
-| `brand/components/components.css` | CSS | code editor | present | 62,020 |
-| `brand/components/preview.html` | HTML | code editor (reference only) | present | 51,866 |
-| `brand/components/SPEC.md` | Markdown | text editor | present | 19,453 |
-| `brand/deliverables-manifest.md` | Markdown | text editor | present | 54,005 |
+| `brand/CHANGELOG.md` | Markdown | text editor | present | 30,849 |
+| `brand/checklists/brand-review.md` | Markdown | text editor | present | 7,580 |
+| `brand/checklists/per-surface.md` | Markdown | text editor | present | 9,412 |
+| `brand/checklists/pre-launch.md` | Markdown | text editor | present | 14,888 |
+| `brand/components/components.css` | CSS | code editor | present | 62,764 |
+| `brand/components/preview.html` | HTML | code editor (reference only) | present | 54,137 |
+| `brand/components/SPEC.md` | Markdown | text editor | present | 23,369 |
+| `brand/deliverables-manifest.md` | Markdown | text editor | present | 54,686 |
 | `brand/fonts/BarlowCondensed-600.woff2` | WOFF2 | none (official font file, OFL) | present | 32,968 |
 | `brand/fonts/BarlowCondensed-700.woff2` | WOFF2 | none (official font file, OFL) | present | 33,056 |
 | `brand/fonts/BarlowCondensed-800.woff2` | WOFF2 | none (official font file, OFL) | present | 33,132 |
@@ -109,7 +109,7 @@ PowerPoint / Keynote / Google Slides render the PPTX with the named families onl
 | `brand/fonts/licenses/README.md` | Markdown | text editor | present | 2,519 |
 | `brand/fonts/README.md` | Markdown | text editor | present | 755 |
 | `brand/fpt-website-application-note.md` | Markdown | text editor | present | 21,528 |
-| `brand/glossary.md` | Markdown | text editor | present | 36,179 |
+| `brand/glossary.md` | Markdown | text editor | present | 37,021 |
 | `brand/icons/ICONS.md` | Markdown | text editor | present | 5,039 |
 | `brand/icons/lucide/activity.svg` | SVG | none (Lucide v0.468.0, ISC) | present | 426 |
 | `brand/icons/lucide/arrow-down-right.svg` | SVG | none (Lucide v0.468.0, ISC) | present | 348 |
@@ -183,12 +183,15 @@ PowerPoint / Keynote / Google Slides render the PPTX with the named families onl
 | `brand/icons/lucide/user.svg` | SVG | none (Lucide v0.468.0, ISC) | present | 375 |
 | `brand/icons/lucide/wallet.svg` | SVG | none (Lucide v0.468.0, ISC) | present | 465 |
 | `brand/icons/lucide/x.svg` | SVG | none (Lucide v0.468.0, ISC) | present | 333 |
-| `brand/logos/_deprecated/derived/email-header-320x112@2x.png` | PNG | superseded (v1.2.0, 1 Nov 2026) — never use; kept for the record | present | 7,205 |
-| `brand/logos/_deprecated/derived/og-1200x630.png` | PNG | superseded (v1.2.0, 1 Nov 2026) — never use; kept for the record | present | 40,499 |
-| `brand/logos/_deprecated/README.md` | Markdown | superseded (v1.2.0, 1 Nov 2026) — never use; kept for the record | present | 1,035 |
-| `brand/logos/derived/email-header-120-paper@2x.png` | PNG | generated — scripts/build-logos.mjs (render of the vector masters; values from tokens.json) | present | 5,136 |
-| `brand/logos/derived/email-header-120-transparent@2x.png` | PNG | generated — scripts/build-logos.mjs (render of the vector masters; values from tokens.json) | present | 5,584 |
-| `brand/logos/derived/email-header-160-paper@2x.png` | PNG | generated — scripts/build-logos.mjs (render of the vector masters; values from tokens.json) | present | 7,321 |
+| `brand/identity-change-requests.md` | Markdown | text editor | present | 6,926 |
+| `brand/logos/_deprecated/derived/email-header-120-paper@2x.png` | PNG | superseded (v1.2.0 · v1.2.1 CR-12) — never use; kept for the record | present | 5,136 |
+| `brand/logos/_deprecated/derived/email-header-120-transparent@2x.png` | PNG | superseded (v1.2.0 · v1.2.1 CR-12) — never use; kept for the record | present | 5,584 |
+| `brand/logos/_deprecated/derived/email-header-160-paper@2x.png` | PNG | superseded (v1.2.0 · v1.2.1 CR-12) — never use; kept for the record | present | 7,321 |
+| `brand/logos/_deprecated/derived/email-header-320x112@2x.png` | PNG | superseded (v1.2.0 · v1.2.1 CR-12) — never use; kept for the record | present | 7,205 |
+| `brand/logos/_deprecated/derived/og-1200x630.png` | PNG | superseded (v1.2.0 · v1.2.1 CR-12) — never use; kept for the record | present | 40,499 |
+| `brand/logos/_deprecated/README.md` | Markdown | superseded (v1.2.0 · v1.2.1 CR-12) — never use; kept for the record | present | 1,899 |
+| `brand/logos/derived/email-header-160-card@2x.png` | PNG | generated — scripts/build-logos.mjs (render of the vector masters; values from tokens.json) | present | 7,394 |
+| `brand/logos/derived/email-header-160-dark@2x.png` | PNG | generated — scripts/build-logos.mjs (render of the vector masters; values from tokens.json) | present | 6,864 |
 | `brand/logos/derived/email-header-160-transparent@2x.png` | PNG | generated — scripts/build-logos.mjs (render of the vector masters; values from tokens.json) | present | 7,903 |
 | `brand/logos/derived/email-tile-112@2x.png` | PNG | generated — scripts/build-logos.mjs (render of the vector masters; values from tokens.json) | present | 6,712 |
 | `brand/logos/derived/og-1200x630-ar.png` | PNG | generated — scripts/build-logos.mjs (render of the vector masters; values from tokens.json) | present | 20,766 |
@@ -247,7 +250,7 @@ PowerPoint / Keynote / Google Slides render the PPTX with the named families onl
 | `brand/logos/legacy-v1/raster/fpt-logo-icon-shield.jpeg` | JPEG | — | present | 32,117 |
 | `brand/logos/legacy-v1/raster/fpt-logo-vertical.jpeg` | JPEG | — | present | 44,527 |
 | `brand/logos/legacy-v1/README.md` | Markdown | text editor | present | 831 |
-| `brand/logos/MISSING-ASSETS.md` | Markdown | text editor | present | 3,991 |
+| `brand/logos/MISSING-ASSETS.md` | Markdown | text editor | present | 4,107 |
 | `brand/logos/pdf/fpt-android-adaptive-background.pdf` | PDF | HTML source → scripts/render-manual.mjs | present | 1,395 |
 | `brand/logos/pdf/fpt-android-adaptive-foreground.pdf` | PDF | HTML source → scripts/render-manual.mjs | present | 1,611 |
 | `brand/logos/pdf/fpt-appicon-round.pdf` | PDF | HTML source → scripts/render-manual.mjs | present | 2,028 |
@@ -391,7 +394,7 @@ PowerPoint / Keynote / Google Slides render the PPTX with the named families onl
 | `brand/logos/png/fpt-tile-white-48.png` | PNG | — | present | 1,026 |
 | `brand/logos/png/fpt-tile-white-512.png` | PNG | — | present | 11,119 |
 | `brand/logos/png/fpt-tile-white-64.png` | PNG | — | present | 1,341 |
-| `brand/logos/README.md` | Markdown | text editor | present | 12,026 |
+| `brand/logos/README.md` | Markdown | text editor | present | 13,810 |
 | `brand/logos/source/checksums.sha256` | text | — | present | 3,097 |
 | `brand/logos/source/README.md` | Markdown | text editor | present | 2,938 |
 | `brand/logos/source/source/brand.py` | Python | node / python3 | present | 3,206 |
@@ -426,7 +429,7 @@ PowerPoint / Keynote / Google Slides render the PPTX with the named families onl
 | `brand/logos/svg/fpt-tile-small.svg` | SVG | — | present | 1,440 |
 | `brand/logos/svg/fpt-tile-white.svg` | SVG | — | present | 1,213 |
 | `brand/logos/svg/fpt-tile.svg` | SVG | — | present | 1,450 |
-| `brand/MISSING-ASSETS.md` | Markdown | text editor | present | 10,501 |
+| `brand/MISSING-ASSETS.md` | Markdown | text editor | present | 10,708 |
 | `brand/mockups/01-marketing-hero/en.html` | HTML | code editor (reference only) | present | 8,126 |
 | `brand/mockups/01-marketing-hero/index.html` | HTML | code editor (reference only) | present | 8,406 |
 | `brand/mockups/02-challenge-selector/en.html` | HTML | code editor (reference only) | present | 9,630 |
@@ -444,28 +447,28 @@ PowerPoint / Keynote / Google Slides render the PPTX with the named families onl
 | `brand/mockups/08-slide/en.html` | HTML | code editor (reference only) | present | 10,403 |
 | `brand/mockups/08-slide/index.html` | HTML | code editor (reference only) | present | 10,685 |
 | `brand/mockups/mockups.css` | CSS | code editor | present | 11,160 |
-| `brand/qa-report.md` | Markdown | text editor | present | 23,100 |
-| `brand/README.md` | Markdown | text editor | present | 43,174 |
-| `brand/references/composition-rules.md` | Markdown | text editor | present | 12,545 |
+| `brand/qa-report.md` | Markdown | text editor | present | 25,866 |
+| `brand/README.md` | Markdown | text editor | present | 45,069 |
+| `brand/references/composition-rules.md` | Markdown | text editor | present | 15,744 |
 | `brand/regulatory-matrix.md` | Markdown | text editor | present | 9,355 |
 | `brand/scripts/build-tokens.mjs` | Node ESM | node / python3 | present | 12,243 |
 | `brand/scripts/charts.mjs` | Node ESM | node / python3 | present | 5,815 |
 | `brand/scripts/check-pdf-fonts.py` | Python | node / python3 | present | 1,055 |
-| `brand/scripts/check-units.mjs` | Node ESM | node / python3 | present | 3,912 |
+| `brand/scripts/check-units.mjs` | Node ESM | node / python3 | present | 3,945 |
 | `brand/scripts/contrast.mjs` | Node ESM | node / python3 | present | 10,633 |
 | `brand/scripts/sample-data.mjs` | Node ESM | node / python3 | present | 7,430 |
-| `brand/scripts/verify-identity.mjs` | Node ESM | node / python3 | present | 19,212 |
-| `brand/scripts/verify-tokens.mjs` | Node ESM | node / python3 | present | 6,649 |
-| `brand/scripts/verify-unzipped.mjs` | Node ESM | node / python3 | present | 12,798 |
-| `brand/skill/fpt-brand/claude-md-paragraph.md` | Markdown | text editor | present | 3,382 |
+| `brand/scripts/verify-identity.mjs` | Node ESM | node / python3 | present | 25,839 |
+| `brand/scripts/verify-tokens.mjs` | Node ESM | node / python3 | present | 8,390 |
+| `brand/scripts/verify-unzipped.mjs` | Node ESM | node / python3 | present | 12,888 |
+| `brand/skill/fpt-brand/claude-md-paragraph.md` | Markdown | text editor | present | 3,571 |
 | `brand/skill/fpt-brand/references/arabic-typography.md` | Markdown | text editor | present | 4,436 |
 | `brand/skill/fpt-brand/references/composition-rules.md` | Markdown | text editor | present | 9,808 |
 | `brand/skill/fpt-brand/references/finance-semantics.md` | Markdown | text editor | present | 7,109 |
-| `brand/skill/fpt-brand/references/logo-usage.md` | Markdown | text editor | present | 4,951 |
+| `brand/skill/fpt-brand/references/logo-usage.md` | Markdown | text editor | present | 5,507 |
 | `brand/skill/fpt-brand/references/review-checklist.md` | Markdown | text editor | present | 2,392 |
-| `brand/skill/fpt-brand/references/tokens-quick.md` | Markdown | generated — scripts/gen-doc-tables.mjs | present | 35,740 |
-| `brand/skill/fpt-brand/references/value-sources.md` | Markdown | text editor | present | 108,400 |
-| `brand/skill/fpt-brand/SKILL.md` | Markdown | text editor | present | 20,190 |
+| `brand/skill/fpt-brand/references/tokens-quick.md` | Markdown | generated — scripts/gen-doc-tables.mjs | present | 37,911 |
+| `brand/skill/fpt-brand/references/value-sources.md` | Markdown | text editor | present | 121,938 |
+| `brand/skill/fpt-brand/SKILL.md` | Markdown | text editor | present | 21,499 |
 | `brand/skill/fpt-brand/verify-skill-wired.mjs` | Node ESM | node / python3 | present | 2,242 |
 | `brand/tailwind.preset.js` | JS (Tailwind preset) | generated — brand/scripts/build-tokens.mjs (never edit) | present | 8,335 |
 | `brand/templates/.htmlvalidate.json` | JSON (DTCG) | — | present | 555 |
@@ -475,11 +478,11 @@ PowerPoint / Keynote / Google Slides render the PPTX with the named families onl
 | `brand/templates/document/PRINT-SPEC.md` | Markdown | text editor | present | 2,811 |
 | `brand/templates/document/print.css` | CSS | code editor | present | 8,341 |
 | `brand/templates/document/trader-agreement.html` | HTML | — | present | 6,789 |
-| `brand/templates/email/ctrader-credentials.html` | HTML | code editor / ESP template editor | present | 20,952 |
-| `brand/templates/email/evaluation-fail.html` | HTML | code editor / ESP template editor | present | 21,396 |
-| `brand/templates/email/evaluation-pass.html` | HTML | code editor / ESP template editor | present | 20,965 |
-| `brand/templates/email/payout-processed.html` | HTML | code editor / ESP template editor | present | 22,961 |
-| `brand/templates/email/TEST-MATRIX.md` | Markdown | text editor | present | 7,048 |
+| `brand/templates/email/ctrader-credentials.html` | HTML | code editor / ESP template editor | present | 30,946 |
+| `brand/templates/email/evaluation-fail.html` | HTML | code editor / ESP template editor | present | 31,390 |
+| `brand/templates/email/evaluation-pass.html` | HTML | code editor / ESP template editor | present | 30,959 |
+| `brand/templates/email/payout-processed.html` | HTML | code editor / ESP template editor | present | 32,955 |
+| `brand/templates/email/TEST-MATRIX.md` | Markdown | text editor | present | 10,451 |
 | `brand/templates/legal/REQUIRED-DECISION.md` | Markdown | text editor | present | 4,786 |
 | `brand/templates/presentation/fpt-brand-deck.html` | HTML | — | present | 11,090 |
 | `brand/templates/presentation/fpt-brand-deck.pptx` | PPTX | PowerPoint / Keynote / Google Slides (generated by scripts/build-deck.mjs) | present | 863,073 |
@@ -498,16 +501,16 @@ PowerPoint / Keynote / Google Slides render the PPTX with the named families onl
 | `brand/templates/video/sample.mp4` | MP4 (H.264) | generated sample (scripts/build-video.mjs); any NLE rebuilds from the SVG/HTML sources | present | 96,683 |
 | `brand/templates/video/sample.webm` | WebM (VP9) | generated sample (scripts/build-video.mjs); any NLE rebuilds from the SVG/HTML sources | present | 99,034 |
 | `brand/templates/video/video-rules.md` | Markdown | text editor | present | 2,777 |
-| `brand/tokens.css` | CSS | generated — brand/scripts/build-tokens.mjs (never edit) | present | 24,215 |
-| `brand/tokens.json` | JSON (DTCG) | scripts/gen-tokens.mjs (build) · text editor (consumer: edit, then build-tokens) | present | 120,419 |
-| `brand/value-sources.md` | Markdown | text editor | present | 108,400 |
-| `dist/FPT-Brand-Manual-v1.2.pdf` | PDF | HTML source → scripts/render-manual.mjs | present | 4,483,036 |
-| `dist/fpt-brand-v1.2.0.zip` | ZIP | scripts/package.mjs | present | 23,313,612 |
-| `dist/fpt-brand-v1.2.0.zip.sha256` | text | — | present | 87 |
-| `dist/consumers/UPGRADE-v1.2.0.md` | Markdown | text editor | present | 9,827 |
+| `brand/tokens.css` | CSS | generated — brand/scripts/build-tokens.mjs (never edit) | present | 24,711 |
+| `brand/tokens.json` | JSON (DTCG) | scripts/gen-tokens.mjs (build) · text editor (consumer: edit, then build-tokens) | present | 136,379 |
+| `brand/value-sources.md` | Markdown | text editor | present | 121,938 |
+| `dist/FPT-Brand-Manual-v1.2.pdf` | PDF | HTML source → scripts/render-manual.mjs | present | 4,436,533 |
+| `dist/fpt-brand-v1.2.1.zip` | ZIP | scripts/package.mjs | present | 23,336,228 |
+| `dist/fpt-brand-v1.2.1.zip.sha256` | text | — | present | 87 |
+| `dist/consumers/UPGRADE-v1.2.1.md` | Markdown | text editor | present | 10,868 |
 | `dist/preview/index.html` | HTML | — | present | 7,240 |
-| `dist/unzipped-verification.md` | Markdown | text editor | present | 2,541 |
+| `dist/unzipped-verification.md` | Markdown | text editor | present | 2,615 |
 | `checks/contrast.json` | JSON (DTCG) | — | present | 23,309 |
 
-_436 files under `brand/` (23,272,772 bytes) + 7 dist deliverables (all present). Generated 2026-11-01 by `scripts/gen-manifest.mjs`._
+_439 files under `brand/` (23,423,646 bytes) + 7 dist deliverables (all present). Generated 2026-11-01 by `scripts/gen-manifest.mjs`._
 <!--/MANIFEST_TABLE-->

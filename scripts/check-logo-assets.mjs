@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 /**
- * Logo + share-image gate (FPT logo v2 — fpt-brand v1.2.0, pinned 1 Nov 2026) + OLD-LOGO-FILE + OLD-OG-IMAGE:
+ * Logo + share-image gate (FPT logo v2 — fpt-brand v1.2.1, pinned 2 Nov 2026) + OLD-LOGO-FILE + OLD-OG-IMAGE + ARABIC-LOCKUP-SERVED (CR-11):
  *  1. every file under public/brand (logos, icons, the two CR-05 share images og-1200x630-ar/-en.png, the self-hosted fonts) is a byte copy of
- *     the package file (sha256 in public/brand/SHA256SUMS, written from brand/logos/{svg,png,icons,derived} + brand/fonts at tag v1.2.0),
+ *     the package file (sha256 in public/brand/SHA256SUMS, written from brand/logos/{svg,png,icons,derived} + brand/fonts at tag v1.2.1),
  *     and the drop-in brand/ folder carries the same bytes;
  *  2. the superseded share image og-1200x630.png (v1.1.2) exists nowhere under public/ and no source line references it (CR-05);
  *  3. no legacy v1 file name (brand/logos/legacy-v1/) exists outside the package's own legacy-v1 / _deprecated folders and no source line references one;
- *     the retyped `favicon.svg` wordmark is gone.
+ *     the retyped `favicon.svg` wordmark is gone;
+ *  4. CR-11 (owner decision 1 Nov 2026 23:08 — the English lockup only): no Arabic or bilingual lockup file (fpt-lockup-*-ar*, fpt-lockup-bilingual*) exists under public/
+ *     (they stay archival in brand/logos and are never served; references are refused by verify-identity ARABIC-LOCKUP-IN-USE).
  *   node scripts/check-logo-assets.mjs   → PASS / FAIL (exit 1); runs before every build (package.json "prebuild").
  */
 import { createHash } from 'node:crypto';
@@ -60,6 +62,9 @@ for (const f of walk(BRAND, (e) => e === 'SHA256SUMS')) {
   if (!listed.has(rel)) failures.push(`public/brand/${rel} is not a listed package file`);
 }
 if (!listed.has('og-1200x630-ar.png') || !listed.has('og-1200x630-en.png')) failures.push('CR-05: public/brand must carry og-1200x630-ar.png and og-1200x630-en.png');
+if (!listed.has('fpt-lockup-horizontal-en-white.svg')) failures.push('CR-11: public/brand must carry fpt-lockup-horizontal-en-white.svg (the one lockup, every language)');
+const AR_LOCKUP = /fpt-lockup-[a-z-]*-ar\b|fpt-lockup-[a-z-]*-ar-|fpt-lockup-bilingual/;
+for (const name of listed) if (AR_LOCKUP.test(name)) failures.push(`ARABIC-LOCKUP-SERVED (CR-11): public/brand/${name} must not be served — the English lockup is the one lockup in every language`);
 
 // 2 + 3. OLD-OG-IMAGE / OLD-LOGO-FILE: nowhere under public/, no retyped wordmark favicon, no source reference
 // (brand/ is the package itself: its legacy-v1/ and _deprecated/ folders document the old files and are excluded; handover/ documents the names to DELETE on fptraders.com)
@@ -82,4 +87,4 @@ if (failures.length) {
   for (const f of failures) console.error(`  ${f}`);
   process.exit(1);
 }
-console.log(`check-logo-assets: PASS (${checked} files under public/brand = package bytes (fpt-brand v1.2.0); CR-05 share images present, old one absent; no legacy v1 file or reference; no retyped favicon)`);
+console.log(`check-logo-assets: PASS (${checked} files under public/brand = package bytes (fpt-brand v1.2.1); CR-05 share images present, old one absent; CR-11 English lockup only (no Arabic / bilingual lockup served); no legacy v1 file or reference; no retyped favicon)`);

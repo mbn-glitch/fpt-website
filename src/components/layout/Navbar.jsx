@@ -6,7 +6,7 @@ import Logo from '../brand/Logo.jsx';
 import Button from '../ui/Button.jsx';
 import LanguageSwitcher from '../ui/LanguageSwitcher.jsx';
 import { localizedPath } from '../../hooks/useLocalizedPath.js';
-import { REGISTER_URL, LOGIN_URL } from '../../data/legal.js';
+import useAppLinks from '../../hooks/useAppLinks.js';
 
 /**
  * Header: ground-chrome + blur 14 (the one surface allowed a blur), ≤ 64 px on phones (lockup 24 + the relationship line 12 px / 1.5),
@@ -19,6 +19,8 @@ export default function Navbar() {
   const lang = i18n.language;
   const location = useLocation();
   const closeRef = useRef(null);
+  // FPT-WEBSITE-DOMAIN: sign-up / sign-in live on app.fptraders.app in the page language (+ ?ref= when the visit carries a partner code)
+  const app = useAppLinks();
 
   const LINKS = [
     { label: t('nav.home'), to: '/' },
@@ -70,10 +72,10 @@ export default function Navbar() {
 
         <div className="hidden lg:flex items-center gap-3">
           <LanguageSwitcher />
-          <a href={LOGIN_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center min-h-11 px-2 text-sm text-secondary hover:text-white transition-colors">
+          <a href={app.signin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center min-h-11 px-2 text-sm text-secondary hover:text-white transition-colors">
             {t('nav.login')}
           </a>
-          <Button href={REGISTER_URL} external size="sm" variant="outline">
+          <Button href={app.signup} external size="sm" variant="outline">
             {t('nav.startChallenge')}
           </Button>
         </div>
@@ -109,10 +111,10 @@ export default function Navbar() {
               </NavLink>
             ))}
             <div className="mt-6 flex flex-col gap-3">
-              <Button href={REGISTER_URL} external size="md">
+              <Button href={app.signup} external size="md">
                 {t('nav.startChallenge')}
               </Button>
-              <a href={LOGIN_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center min-h-11 text-sm text-secondary hover:text-white">
+              <a href={app.signin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center min-h-11 text-sm text-secondary hover:text-white">
                 {t('nav.login')}
               </a>
             </div>

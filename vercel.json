@@ -2,18 +2,106 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "trailingSlash": false,
   "redirects": [
-    { "source": "/pricing", "destination": "/challenges", "permanent": true },
-    { "source": "/:lang(ar|fr|es|pt|tr)/pricing", "destination": "/:lang/challenges", "permanent": true },
-    { "source": "/en", "destination": "/", "permanent": true },
-    { "source": "/en/:path*", "destination": "/:path*", "permanent": true },
-    { "source": "/images/fiper/:file*", "destination": "/images/third-party/fiper/:file*", "permanent": true },
-    { "source": "/images/ctrader/:file*", "destination": "/images/third-party/ctrader/:file*", "permanent": true }
+    {
+      "source": "/pricing",
+      "destination": "/challenges",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(ar|fr|es|pt|tr)/pricing",
+      "destination": "/:lang/challenges",
+      "permanent": true
+    },
+    {
+      "source": "/favicon.ico",
+      "destination": "/brand/favicon.ico",
+      "permanent": true
+    },
+    {
+      "source": "/ar/:path((?!(?:challenges|pricing|about|contact|help|partners|404)(?:/|$)).+)",
+      "destination": "https://app.fptraders.app/ar/:path",
+      "permanent": true
+    },
+    {
+      "source": "/en/:path((?!(?:challenges|pricing|about|contact|help|partners|404)(?:/|$)).+)",
+      "destination": "https://app.fptraders.app/en/:path",
+      "permanent": true
+    },
+    {
+      "source": "/en",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/images/fiper/:file*",
+      "destination": "/images/third-party/fiper/:file*",
+      "permanent": true
+    },
+    {
+      "source": "/images/ctrader/:file*",
+      "destination": "/images/third-party/ctrader/:file*",
+      "permanent": true
+    },
+    {
+      "source": "/:path((?!(?:challenges|pricing|about|contact|help|partners|404)(?:/|$)|(?:ar|en|fr|es|pt|tr)(?:/|$)|(?:assets|brand|fonts|images)/|(?:sitemap\\.xml|robots\\.txt|site\\.webmanifest|sw\\.js|offline\\.html|favicon\\.ico|index\\.html|404\\.html)$|api/).+)",
+      "destination": "https://app.fptraders.app/:path",
+      "permanent": true
+    }
   ],
   "headers": [
-    { "source": "/brand/fonts/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
-    { "source": "/fonts/(.*).woff2", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
-    { "source": "/assets/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
-    { "source": "/sw.js", "headers": [{ "key": "Cache-Control", "value": "no-cache" }, { "key": "Service-Worker-Allowed", "value": "/" }] },
-    { "source": "/offline.html", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] }
+    {
+      "source": "/brand/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/fonts/(.*).woff2",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/sw.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        },
+        {
+          "key": "Service-Worker-Allowed",
+          "value": "/"
+        }
+      ]
+    },
+    {
+      "source": "/offline.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }
+      ]
+    }
   ]
 }

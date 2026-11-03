@@ -1,1083 +1,1083 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- fptraders.com — every route × the six languages, hreflang alternates per URL; written by hand with src/components/SEO.jsx BASE (owner decision 6) -->
+<!-- fptraders.app — every route × the six languages, hreflang alternates per URL; written by hand with src/components/SEO.jsx BASE (owner decision 6) -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://fptraders.com/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/" />
+    <loc>https://fptraders.app/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/ar</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/" />
+    <loc>https://fptraders.app/ar</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/" />
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/fr</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/" />
+    <loc>https://fptraders.app/fr</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/" />
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/es</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/" />
+    <loc>https://fptraders.app/es</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/" />
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/pt</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/" />
+    <loc>https://fptraders.app/pt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/" />
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/tr</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/" />
+    <loc>https://fptraders.app/tr</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/" />
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/challenges</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/challenges" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/challenges" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/challenges" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/challenges" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/challenges" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/challenges" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/challenges" />
+    <loc>https://fptraders.app/challenges</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/challenges" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/challenges" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/challenges" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/challenges" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/challenges" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/challenges" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/challenges" />
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/ar/challenges</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/challenges" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/challenges" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/challenges" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/challenges" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/challenges" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/challenges" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/challenges" />
+    <loc>https://fptraders.app/ar/challenges</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/challenges" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/challenges" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/challenges" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/challenges" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/challenges" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/challenges" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/challenges" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/fr/challenges</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/challenges" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/challenges" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/challenges" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/challenges" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/challenges" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/challenges" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/challenges" />
+    <loc>https://fptraders.app/fr/challenges</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/challenges" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/challenges" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/challenges" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/challenges" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/challenges" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/challenges" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/challenges" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/es/challenges</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/challenges" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/challenges" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/challenges" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/challenges" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/challenges" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/challenges" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/challenges" />
+    <loc>https://fptraders.app/es/challenges</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/challenges" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/challenges" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/challenges" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/challenges" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/challenges" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/challenges" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/challenges" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/pt/challenges</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/challenges" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/challenges" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/challenges" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/challenges" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/challenges" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/challenges" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/challenges" />
+    <loc>https://fptraders.app/pt/challenges</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/challenges" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/challenges" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/challenges" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/challenges" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/challenges" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/challenges" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/challenges" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/tr/challenges</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/challenges" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/challenges" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/challenges" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/challenges" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/challenges" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/challenges" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/challenges" />
+    <loc>https://fptraders.app/tr/challenges</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/challenges" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/challenges" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/challenges" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/challenges" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/challenges" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/challenges" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/challenges" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/about</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/about" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/about" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/about" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/about" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/about" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/about" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/about" />
+    <loc>https://fptraders.app/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/about" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/about" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/about" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/about" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/ar/about</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/about" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/about" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/about" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/about" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/about" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/about" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/about" />
+    <loc>https://fptraders.app/ar/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/about" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/about" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/about" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/about" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/fr/about</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/about" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/about" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/about" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/about" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/about" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/about" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/about" />
+    <loc>https://fptraders.app/fr/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/about" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/about" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/about" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/about" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/es/about</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/about" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/about" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/about" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/about" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/about" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/about" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/about" />
+    <loc>https://fptraders.app/es/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/about" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/about" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/about" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/about" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/pt/about</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/about" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/about" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/about" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/about" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/about" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/about" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/about" />
+    <loc>https://fptraders.app/pt/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/about" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/about" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/about" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/about" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/tr/about</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/about" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/about" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/about" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/about" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/about" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/about" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/about" />
+    <loc>https://fptraders.app/tr/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/about" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/about" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/about" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/about" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/contact" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/contact" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/contact" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/contact" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/contact" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/contact" />
+    <loc>https://fptraders.app/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/contact" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/contact" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/contact" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/contact" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/ar/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/contact" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/contact" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/contact" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/contact" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/contact" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/contact" />
+    <loc>https://fptraders.app/ar/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/contact" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/contact" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/contact" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/contact" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/fr/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/contact" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/contact" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/contact" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/contact" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/contact" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/contact" />
+    <loc>https://fptraders.app/fr/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/contact" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/contact" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/contact" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/contact" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/es/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/contact" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/contact" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/contact" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/contact" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/contact" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/contact" />
+    <loc>https://fptraders.app/es/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/contact" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/contact" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/contact" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/contact" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/pt/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/contact" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/contact" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/contact" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/contact" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/contact" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/contact" />
+    <loc>https://fptraders.app/pt/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/contact" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/contact" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/contact" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/contact" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/tr/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/contact" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/contact" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/contact" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/contact" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/contact" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/contact" />
+    <loc>https://fptraders.app/tr/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/contact" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/contact" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/contact" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/contact" />
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/help</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help" />
+    <loc>https://fptraders.app/help</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/ar/help</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help" />
+    <loc>https://fptraders.app/ar/help</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/fr/help</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help" />
+    <loc>https://fptraders.app/fr/help</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/es/help</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help" />
+    <loc>https://fptraders.app/es/help</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/pt/help</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help" />
+    <loc>https://fptraders.app/pt/help</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/tr/help</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help" />
+    <loc>https://fptraders.app/tr/help</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/partners</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/partners" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/partners" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/partners" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/partners" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/partners" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/partners" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/partners" />
+    <loc>https://fptraders.app/partners</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/partners" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/partners" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/partners" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/partners" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/partners" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/partners" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/partners" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/ar/partners</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/partners" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/partners" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/partners" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/partners" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/partners" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/partners" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/partners" />
+    <loc>https://fptraders.app/ar/partners</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/partners" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/partners" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/partners" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/partners" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/partners" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/partners" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/partners" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/fr/partners</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/partners" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/partners" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/partners" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/partners" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/partners" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/partners" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/partners" />
+    <loc>https://fptraders.app/fr/partners</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/partners" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/partners" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/partners" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/partners" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/partners" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/partners" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/partners" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/es/partners</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/partners" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/partners" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/partners" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/partners" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/partners" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/partners" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/partners" />
+    <loc>https://fptraders.app/es/partners</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/partners" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/partners" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/partners" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/partners" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/partners" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/partners" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/partners" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/pt/partners</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/partners" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/partners" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/partners" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/partners" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/partners" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/partners" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/partners" />
+    <loc>https://fptraders.app/pt/partners</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/partners" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/partners" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/partners" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/partners" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/partners" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/partners" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/partners" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/tr/partners</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/partners" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/partners" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/partners" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/partners" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/partners" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/partners" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/partners" />
+    <loc>https://fptraders.app/tr/partners</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/partners" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/partners" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/partners" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/partners" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/partners" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/partners" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/partners" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/help/getting-started</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/getting-started" />
+    <loc>https://fptraders.app/help/getting-started</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/getting-started" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/ar/help/getting-started</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/getting-started" />
+    <loc>https://fptraders.app/ar/help/getting-started</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/getting-started" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/fr/help/getting-started</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/getting-started" />
+    <loc>https://fptraders.app/fr/help/getting-started</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/getting-started" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/es/help/getting-started</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/getting-started" />
+    <loc>https://fptraders.app/es/help/getting-started</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/getting-started" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/pt/help/getting-started</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/getting-started" />
+    <loc>https://fptraders.app/pt/help/getting-started</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/getting-started" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/tr/help/getting-started</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/getting-started" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/getting-started" />
+    <loc>https://fptraders.app/tr/help/getting-started</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/getting-started" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/getting-started" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/help/challenges-rules</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/challenges-rules" />
+    <loc>https://fptraders.app/help/challenges-rules</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/challenges-rules" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/ar/help/challenges-rules</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/challenges-rules" />
+    <loc>https://fptraders.app/ar/help/challenges-rules</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/challenges-rules" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/fr/help/challenges-rules</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/challenges-rules" />
+    <loc>https://fptraders.app/fr/help/challenges-rules</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/challenges-rules" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/es/help/challenges-rules</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/challenges-rules" />
+    <loc>https://fptraders.app/es/help/challenges-rules</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/challenges-rules" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/pt/help/challenges-rules</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/challenges-rules" />
+    <loc>https://fptraders.app/pt/help/challenges-rules</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/challenges-rules" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/tr/help/challenges-rules</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/challenges-rules" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/challenges-rules" />
+    <loc>https://fptraders.app/tr/help/challenges-rules</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/challenges-rules" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/challenges-rules" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/help/funded-accounts</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/funded-accounts" />
+    <loc>https://fptraders.app/help/funded-accounts</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/funded-accounts" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/ar/help/funded-accounts</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/funded-accounts" />
+    <loc>https://fptraders.app/ar/help/funded-accounts</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/funded-accounts" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/fr/help/funded-accounts</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/funded-accounts" />
+    <loc>https://fptraders.app/fr/help/funded-accounts</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/funded-accounts" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/es/help/funded-accounts</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/funded-accounts" />
+    <loc>https://fptraders.app/es/help/funded-accounts</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/funded-accounts" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/pt/help/funded-accounts</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/funded-accounts" />
+    <loc>https://fptraders.app/pt/help/funded-accounts</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/funded-accounts" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/tr/help/funded-accounts</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/funded-accounts" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/funded-accounts" />
+    <loc>https://fptraders.app/tr/help/funded-accounts</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/funded-accounts" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/funded-accounts" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/help/payouts-fiper-card</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/payouts-fiper-card" />
+    <loc>https://fptraders.app/help/payouts-fiper-card</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/payouts-fiper-card" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/ar/help/payouts-fiper-card</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/payouts-fiper-card" />
+    <loc>https://fptraders.app/ar/help/payouts-fiper-card</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/payouts-fiper-card" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/fr/help/payouts-fiper-card</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/payouts-fiper-card" />
+    <loc>https://fptraders.app/fr/help/payouts-fiper-card</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/payouts-fiper-card" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/es/help/payouts-fiper-card</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/payouts-fiper-card" />
+    <loc>https://fptraders.app/es/help/payouts-fiper-card</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/payouts-fiper-card" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/pt/help/payouts-fiper-card</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/payouts-fiper-card" />
+    <loc>https://fptraders.app/pt/help/payouts-fiper-card</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/payouts-fiper-card" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/tr/help/payouts-fiper-card</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/payouts-fiper-card" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/payouts-fiper-card" />
+    <loc>https://fptraders.app/tr/help/payouts-fiper-card</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/payouts-fiper-card" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/payouts-fiper-card" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/help/trading-conditions</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/trading-conditions" />
+    <loc>https://fptraders.app/help/trading-conditions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/trading-conditions" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/ar/help/trading-conditions</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/trading-conditions" />
+    <loc>https://fptraders.app/ar/help/trading-conditions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/trading-conditions" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/fr/help/trading-conditions</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/trading-conditions" />
+    <loc>https://fptraders.app/fr/help/trading-conditions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/trading-conditions" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/es/help/trading-conditions</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/trading-conditions" />
+    <loc>https://fptraders.app/es/help/trading-conditions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/trading-conditions" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/pt/help/trading-conditions</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/trading-conditions" />
+    <loc>https://fptraders.app/pt/help/trading-conditions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/trading-conditions" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/tr/help/trading-conditions</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/trading-conditions" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/trading-conditions" />
+    <loc>https://fptraders.app/tr/help/trading-conditions</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/trading-conditions" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/trading-conditions" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/help/account-management</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/account-management" />
+    <loc>https://fptraders.app/help/account-management</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/account-management" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/ar/help/account-management</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/account-management" />
+    <loc>https://fptraders.app/ar/help/account-management</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/account-management" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/fr/help/account-management</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/account-management" />
+    <loc>https://fptraders.app/fr/help/account-management</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/account-management" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/es/help/account-management</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/account-management" />
+    <loc>https://fptraders.app/es/help/account-management</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/account-management" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/pt/help/account-management</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/account-management" />
+    <loc>https://fptraders.app/pt/help/account-management</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/account-management" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/tr/help/account-management</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/account-management" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/account-management" />
+    <loc>https://fptraders.app/tr/help/account-management</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/account-management" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/account-management" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/help/technical-platform</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/technical-platform" />
+    <loc>https://fptraders.app/help/technical-platform</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/technical-platform" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/ar/help/technical-platform</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/technical-platform" />
+    <loc>https://fptraders.app/ar/help/technical-platform</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/technical-platform" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/fr/help/technical-platform</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/technical-platform" />
+    <loc>https://fptraders.app/fr/help/technical-platform</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/technical-platform" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/es/help/technical-platform</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/technical-platform" />
+    <loc>https://fptraders.app/es/help/technical-platform</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/technical-platform" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/pt/help/technical-platform</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/technical-platform" />
+    <loc>https://fptraders.app/pt/help/technical-platform</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/technical-platform" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/tr/help/technical-platform</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/technical-platform" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/technical-platform" />
+    <loc>https://fptraders.app/tr/help/technical-platform</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/technical-platform" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/technical-platform" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/help/legal-general</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/legal-general" />
+    <loc>https://fptraders.app/help/legal-general</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/legal-general" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/ar/help/legal-general</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/legal-general" />
+    <loc>https://fptraders.app/ar/help/legal-general</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/legal-general" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/fr/help/legal-general</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/legal-general" />
+    <loc>https://fptraders.app/fr/help/legal-general</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/legal-general" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/es/help/legal-general</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/legal-general" />
+    <loc>https://fptraders.app/es/help/legal-general</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/legal-general" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/pt/help/legal-general</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/legal-general" />
+    <loc>https://fptraders.app/pt/help/legal-general</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/legal-general" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/tr/help/legal-general</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/legal-general" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/legal-general" />
+    <loc>https://fptraders.app/tr/help/legal-general</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/legal-general" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/legal-general" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/help/partner-program</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/partner-program" />
+    <loc>https://fptraders.app/help/partner-program</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/partner-program" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/ar/help/partner-program</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/partner-program" />
+    <loc>https://fptraders.app/ar/help/partner-program</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/partner-program" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/fr/help/partner-program</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/partner-program" />
+    <loc>https://fptraders.app/fr/help/partner-program</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/partner-program" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/es/help/partner-program</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/partner-program" />
+    <loc>https://fptraders.app/es/help/partner-program</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/partner-program" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/pt/help/partner-program</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/partner-program" />
+    <loc>https://fptraders.app/pt/help/partner-program</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/partner-program" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://fptraders.com/tr/help/partner-program</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.com/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.com/ar/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.com/fr/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.com/es/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.com/pt/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.com/tr/help/partner-program" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.com/help/partner-program" />
+    <loc>https://fptraders.app/tr/help/partner-program</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://fptraders.app/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://fptraders.app/ar/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://fptraders.app/fr/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://fptraders.app/es/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://fptraders.app/pt/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fptraders.app/tr/help/partner-program" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fptraders.app/help/partner-program" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

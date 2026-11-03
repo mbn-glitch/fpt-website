@@ -1,14 +1,14 @@
 {
   "name": "fpt-website",
   "version": "1.0.0",
-  "description": "Fiper Pro Traders — public marketing website (fptraders.com). Part of Fiper Global. Identity: fpt-brand v1.2.1 (brand/), fiper-brand v2.3.4 where Fiper appears.",
+  "description": "Fiper Pro Traders — public marketing website (fptraders.app). Part of Fiper Global. Identity: fpt-brand v1.2.1 (brand/), fiper-brand v2.3.4 where Fiper appears.",
   "author": "Fiper Pro Traders",
   "license": "UNLICENSED",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "check": "node scripts/check-logo-assets.mjs && node scripts/check-risk-line.mjs && node scripts/check-i18n-keys.mjs && node scripts/build-font-subsets.mjs --check && node brand/scripts/verify-identity.mjs src public index.html",
+    "check": "node scripts/check-logo-assets.mjs && node scripts/check-risk-line.mjs && node scripts/check-i18n-keys.mjs && node scripts/build-font-subsets.mjs --check && node scripts/check-entity-line.mjs && node scripts/check-site-origin.mjs && node brand/scripts/verify-identity.mjs src public index.html",
     "prebuild": "npm run check",
     "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs",
     "preview": "vite preview",

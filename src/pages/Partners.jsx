@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO.jsx';
 import Section, { Eyebrow, SectionHeader } from '../components/ui/Section.jsx';
 import Button from '../components/ui/Button.jsx';
-import { REGISTER_URL } from '../data/legal.js';
+import useAppLinks from '../hooks/useAppLinks.js';
 import { AFFILIATE_TIERS, pct } from '../data/rules.js';
 
 /**
@@ -13,6 +13,7 @@ import { AFFILIATE_TIERS, pct } from '../data/rules.js';
  */
 export default function Partners() {
   const { t, i18n } = useTranslation();
+  const app = useAppLinks();
   const l = i18n.language === 'ar' ? 'ar' : 'en';
 
   const FEATURES = [
@@ -30,7 +31,7 @@ export default function Partners() {
           <h1 className="mt-5 text-[2.5rem] sm:text-6xl fpt-display">{t('partners.hero.title')}</h1>
           <p className="mt-6 text-lg text-secondary max-w-2xl mx-auto leading-relaxed">{t('partners.hero.subtitle')}</p>
           <div className="mt-8 flex justify-center">
-            <Button href={REGISTER_URL} external size="lg">{t('partners.cta.button')}</Button>
+            <Button href={app.signup} external size="lg">{t('partners.cta.button')}</Button>
           </div>
         </div>
       </section>
@@ -72,7 +73,7 @@ export default function Partners() {
           <h2 id="partners-cta-title" className="mt-5 text-3xl sm:text-5xl fpt-display">{t('partners.cta.title')}</h2>
           <p className="mt-5 text-lg text-secondary leading-relaxed">{t('partners.cta.subtitle')}</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button href={REGISTER_URL} external size="lg">{t('partners.cta.button')}</Button>
+            <Button href={app.signup} external size="lg">{t('partners.cta.button')}</Button>
           </div>
         </div>
       </Section>

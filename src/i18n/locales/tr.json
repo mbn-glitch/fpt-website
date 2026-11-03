@@ -203,7 +203,8 @@
       "contact": "İletişim",
       "about": "FPT hakkında"
     },
-    "copyright": "© 2026 Fiper Pro Traders — Bir Fiper Global Şirketi. Tüm hakları saklıdır."
+    "copyright": "© 2026 Fiper Pro Traders — Bir Fiper Global Şirketi. Tüm hakları saklıdır.",
+    "support": "Destek"
   },
   "pricing": {
     "badges": {
@@ -344,7 +345,12 @@
       "desc": "Destek ekibiyle konuşun",
       "cta": "Sohbeti başlat"
     },
-    "clientAreaNote": "Zaten müşteri misiniz? Hesapla ilgili sorular, müşteri alanında yayımlanan destek kanallarından yanıtlanır."
+    "clientAreaNote": "Zaten müşteri misiniz? Hesapla ilgili sorular, müşteri alanında yayımlanan destek kanallarından yanıtlanır.",
+    "email": {
+      "title": "E-posta desteği",
+      "desc": "Destek ekibine yazın",
+      "cta": "E-posta gönder"
+    }
   },
   "help": {
     "popular": {
@@ -378,7 +384,8 @@
     "searchLabel": "Yardım merkezinde ara",
     "clearSearch": "Aramayı temizle",
     "searchHint": "Aramak için yazın veya aşağıdaki konulara göz atın.",
-    "searchNoMatch": "Sonuç yok — farklı anahtar kelimeler deneyin."
+    "searchNoMatch": "Sonuç yok — farklı anahtar kelimeler deneyin.",
+    "orEmail": "Ya da e-posta ile:"
   },
   "partners": {
     "eyebrow": "FPT Ortaklık Programı",

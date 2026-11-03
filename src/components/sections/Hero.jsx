@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import Button from '../ui/Button.jsx';
 import { Eyebrow } from '../ui/Section.jsx';
-import { REGISTER_URL } from '../../data/legal.js';
+import useAppLinks from '../../hooks/useAppLinks.js';
 import { CATALOG_V1, RULES_V1, pct, usd } from '../../data/rules.js';
 
 /**
@@ -12,6 +12,7 @@ import { CATALOG_V1, RULES_V1, pct, usd } from '../../data/rules.js';
  */
 export default function Hero() {
   const { t } = useTranslation();
+  const app = useAppLinks();
   const largest = CATALOG_V1[CATALOG_V1.length - 1];
 
   const STATS = [
@@ -44,7 +45,7 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button href={REGISTER_URL} external size="lg">
+            <Button href={app.signup} external size="lg">
               {t('hero.ctaPrimary')}
             </Button>
             <Button to="/challenges" variant="ghost" size="lg">

@@ -9,7 +9,8 @@ import HelpHero from '../components/help/HelpHero.jsx';
 import CategoryCard from '../components/help/CategoryCard.jsx';
 import { WhatsAppMark, WHATSAPP_URL, WHATSAPP_PHONE } from '../components/ui/WhatsAppButton.jsx';
 import { categories, getArticleCount, getPopularFaqs } from '../data/helpContent.js';
-import { REGISTER_URL } from '../data/legal.js';
+import useAppLinks from '../hooks/useAppLinks.js';
+import { SUPPORT_EMAIL, SUPPORT_MAILTO } from '../config/site.js';
 
 export default function Help() {
   const { t, i18n } = useTranslation();
@@ -80,14 +81,17 @@ function WhatsAppBanner() {
 
 export function StillNeedHelp() {
   const { t } = useTranslation();
+  const app = useAppLinks();
   return (
     <Section aria-labelledby="still-need-help-title">
       <div className="max-w-3xl mx-auto text-center">
         <h2 id="still-need-help-title" className="text-3xl sm:text-4xl fpt-display">{t('help.stillNeedHelp')}</h2>
         <p className="mt-4 text-secondary leading-relaxed">{t('help.stillNeedHelpBody')}</p>
+        {/* Owner decision 18 (4 Nov 2026): the support mailbox, as text (a mailto link) */}
+        <p className="mt-2 text-secondary leading-relaxed">{t('help.orEmail')} <a href={SUPPORT_MAILTO} className="text-white hover:underline fpt-unit" data-support-email="true">{SUPPORT_EMAIL}</a></p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Button href={WHATSAPP_URL} external size="lg"><WhatsAppMark size={24} /> {t('help.contactSupport')}</Button>
-          <Button href={REGISTER_URL} external variant="ghost" size="lg">{t('help.startChallenge')}</Button>
+          <Button href={app.signup} external variant="ghost" size="lg">{t('help.startChallenge')}</Button>
         </div>
       </div>
     </Section>

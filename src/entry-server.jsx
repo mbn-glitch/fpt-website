@@ -23,10 +23,13 @@ export async function render(url) {
   );
   // Warm-up pass resolves the route's lazy chunk (React.lazy caches the module); the final pass renders with an unbounded progressive
   // chunk size so Fizz never outlines a boundary (an outlined boundary = hidden segment + move script = an empty <main> at first paint, CLS 0.9).
-  const OPTS = { progressiveChunkSize: 1 << 30 };
+  // A render error (a missing variable, a throwing component) must FAIL the build: react-dom/static only logs it and leaves a client-render hole.
+  const errors = [];
+  const OPTS = { progressiveChunkSize: 1 << 30, onError: (e) => { errors.push(e); } };
   await new Response((await prerender(tree, OPTS)).prelude).text();
   const { prelude } = await prerender(tree, OPTS);
   const rendered = await new Response(prelude).text();
+  if (errors.length) throw new Error(`prerender ${url}: ${errors.length} render error(s) — ${String(errors[0]?.message || errors[0]).slice(0, 200)}`);
   if (/<template id="B:|<!--\$\?-->/.test(rendered)) throw new Error(`prerender ${url}: a Suspense boundary is still deferred in the static markup`);
   const m = rendered.match(/^((?:<title>[\s\S]*?<\/title>|<meta [^>]*>|<link [^>]*>)+)/);
   const head = m ? m[1].replace(/></g, '>\n    <') : '';

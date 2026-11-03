@@ -3,12 +3,14 @@ import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO.jsx';
 import Section, { Eyebrow, SectionHeader } from '../components/ui/Section.jsx';
 import Button from '../components/ui/Button.jsx';
-import { REGISTER_URL, ENTITY_LINE, localeLegal } from '../data/legal.js';
+import { ENTITY_LINE, localeLegal } from '../data/legal.js';
+import useAppLinks from '../hooks/useAppLinks.js';
 
 /** About — headline-dominant: h1 + the relationship line + one primary action in the first screen (UXFW-014); principles; the three Fiper products (the Fiper Card row carries the owner's one sentence — decision 6); the entity line. No counters, no «12+ countries» (UXFW-005). */
 export default function About() {
   const { t, i18n } = useTranslation();
   const l = localeLegal(i18n.language);
+  const app = useAppLinks();
 
   const PRINCIPLES = [
     { icon: Scale, title: t('about.principles.p1title'), body: t('about.principles.p1body') },
@@ -34,7 +36,7 @@ export default function About() {
           <p className="mt-6 text-lg text-secondary max-w-2xl mx-auto leading-relaxed">{t('about.subtitle')}</p>
           <p className="mt-3 text-[13px] text-tertiary">{t('footer.partOf')}</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button href={REGISTER_URL} external size="lg">{t('about.getStarted')}</Button>
+            <Button href={app.signup} external size="lg">{t('about.getStarted')}</Button>
             <Button to="/contact" variant="ghost" size="lg">{t('about.talkToTeam')}</Button>
           </div>
         </div>

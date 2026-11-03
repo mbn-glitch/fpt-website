@@ -1,9 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { LANGUAGES } from '../i18n/config.js';
 import { localizedPath } from '../hooks/useLocalizedPath.js';
+import { SITE_ORIGIN } from '../config/site.js';
 
-/** The legal host (owner decision 6, 1 Nov 2026): every absolute URL on the site — canonical, hreflang, og:url, og:image, sitemap, robots. */
-export const BASE = 'https://fptraders.com';
+/** The legal host (owner decision 6, 1 Nov 2026 → FPT-WEBSITE-DOMAIN, 4 Nov 2026: the apex `fptraders.app`): every absolute URL on the site — canonical, hreflang, og:url, og:image, sitemap, robots. */
+export const BASE = SITE_ORIGIN;
 /** CR-05 (fpt-brand v1.2.1 — unchanged bytes since v1.2.0; both carry the English lockup): the share image by locale — Arabic → -ar, every other locale → -en (byte copies of brand/logos/derived). */
 export const ogImage = (lang) => `${BASE}/brand/og-1200x630-${lang === 'ar' ? 'ar' : 'en'}.png`;
 const OG_LOCALE = { en: 'en_US', ar: 'ar_AE', fr: 'fr_FR', es: 'es_ES', pt: 'pt_BR', tr: 'tr_TR' };

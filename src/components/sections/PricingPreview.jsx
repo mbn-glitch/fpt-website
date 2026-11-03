@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Section, { SectionHeader } from '../ui/Section.jsx';
 import Button from '../ui/Button.jsx';
 import useLocalizedPath from '../../hooks/useLocalizedPath.js';
-import { REGISTER_URL } from '../../data/legal.js';
+import useAppLinks from '../../hooks/useAppLinks.js';
 import { CATALOG_V1, RULES_V1, pct, usd } from '../../data/rules.js';
 
 /**
@@ -15,6 +15,7 @@ import { CATALOG_V1, RULES_V1, pct, usd } from '../../data/rules.js';
 export default function PricingPreview() {
   const { to } = useLocalizedPath();
   const { t } = useTranslation();
+  const app = useAppLinks();
   const product = CATALOG_V1[2];
 
   const FEATURES = [
@@ -58,7 +59,7 @@ export default function PricingPreview() {
           </ul>
 
           <div className="mt-8">
-            <Button href={REGISTER_URL} external size="lg" className="w-full">
+            <Button href={app.signup} external size="lg" className="w-full">
               {t('pricingPreview.cta')}
             </Button>
           </div>

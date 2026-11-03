@@ -1,4 +1,4 @@
-# Fiper Pro Traders — public website (fptraders.com)
+# Fiper Pro Traders — public website (fptraders.app)
 
 Marketing website for **Fiper Pro Traders (FPT)** — Part of Fiper Global. Six languages (EN at the root, AR/FR/ES/PT/TR under `/<lang>/…`),
 pre-rendered to static HTML at build time and hydrated on the client.
@@ -26,8 +26,10 @@ pre-rendered to static HTML at build time and hydrated on the client.
 ## Facts come from the platform
 
 The site invents no rule, number or legal text. `src/data/rules.js` mirrors `fpt-platform` `RULES_V1` / `CATALOG_V1` / the affiliate tiers;
-`src/data/legal.js` carries the entity line, the simulated-accounts sentence (Risk Disclosure Statement § 2.1) and the four legal-document
-links (`https://fptraders.app/<ar|en>/legal/<terms|privacy|risk|refund>`), all copied verbatim from `fpt-platform/config/legal.ts` and
+`src/data/legal.js` carries the entity line (**verbatim `LEGAL.entity.line`** — the same string as the platform footer and the foot of every e-mail,
+owner decision 3-ب of 4 Nov 2026; gate `scripts/check-entity-line.mjs` compares it with `../fpt-platform/config/legal.ts` when that checkout is
+present and with its pinned sha256 always), the simulated-accounts sentence (Risk Disclosure Statement § 2.1) and the four legal-document
+links (`https://app.fptraders.app/<ar|en>/legal/<terms|privacy|risk|refund>`), all copied verbatim from `fpt-platform/config/legal.ts` and
 `config/legal-texts/`. Previews carry the chip «بيانات تجريبية · SAMPLE».
 
 ## Stack
@@ -36,16 +38,27 @@ links (`https://fptraders.app/<ar|en>/legal/<terms|privacy|risk|refund>`), all c
 - Pre-rendering: `vite build` (client) → `vite build --ssr src/entry-server.jsx` → `scripts/prerender.mjs` writes `dist/<path>/index.html` for
   every route × language (90 pages) with the head tags rendered once, `<html lang dir>`, two preloaded font pieces per language, plus `dist/404.html`.
   `src/main.jsx` hydrates a pre-rendered page and renders the 404 shell fresh.
-- Hosting: Vercel static output (`vercel.json`: `/pricing` → `/challenges`, `/en/*` → `/*`, the old image paths → `third-party/`,
-  immutable cache for `/assets` and `/brand/fonts`). Unknown paths get `404.html` with a real 404 status. The legal host in every absolute URL is
-  `https://fptraders.com` (`BASE` in `src/components/SEO.jsx`, `public/sitemap.xml`, `public/robots.txt`); the domain itself is not wired here.
+- Hosting: Vercel static output on the apex **`https://fptraders.app`** (+ `www.` → apex 308, project `fpt-website` / alias `fpt-website-rust.vercel.app`,
+  team `fiper-card`; FPT-WEBSITE-DOMAIN, owner decision 33-أ, 4 Nov 2026). `vercel.json`: `/pricing` → `/challenges`, `/en/*` → `/*`, `/favicon.ico` →
+  `/brand/favicon.ico`, the old image paths → `third-party/`, immutable cache for `/assets`, `/fonts` and `/brand/fonts`, and the **client-app
+  redirects**: every path that is not one of the site's 15 routes × 6 languages, a site asset or `/api/*` is a client-area path and goes **308 to
+  `https://app.fptraders.app{path}{query}`** (`/ar/signin?ref=CODE` → `app./ar/signin?ref=CODE`, `/c/{code}`, `/mock-gateway/*`, bare `/signin` …;
+  Vercel forwards the query). `/api/*` is never redirected: **`/api/webhooks/*` answers 404 on the apex on purpose** — the payment / KYC providers
+  are registered on `https://app.fptraders.app/api/webhooks/<provider>` (fpt-platform `docs/go-live-keys.md` § 3/4/5; a redirect would strip the
+  signed POST — `FPT-DOMAIN-HANDOFF.md` § 3). Site paths that do not exist (`/fr/nope`, `/help/x`) get `404.html` with a real 404 status;
+  unknown root paths (`/anything`) follow the simplest rule and bounce to the app. Live check: `node scripts/check-redirects-live.mjs --base <url>`.
+- Origins: `src/config/site.js` is the ONE place — `SITE_ORIGIN = https://fptraders.app` (`BASE` of `src/components/SEO.jsx`: canonical, hreflang,
+  og:url, og:image; `public/sitemap.xml`, `public/robots.txt`, the JSON-LD in `index.html`), `APP_ORIGIN = https://app.fptraders.app` (sign-up /
+  sign-in buttons via `src/hooks/useAppLinks.js` — `/ar/…` on Arabic pages, `/en/…` elsewhere, `?ref=CODE` appended when the visit carried a
+  partner code, `src/lib/referral.js`; the four legal documents), `SUPPORT_EMAIL = help@fptraders.app` (owner decision 18 — footer, contact page,
+  help centre; the platform setting `support.email`). Gate: `scripts/check-site-origin.mjs`. `fptraders.com` stays on Hostinger (owner).
 
 ## Scripts
 
 ```bash
 npm install
 npm run dev        # Vite dev server (client-only rendering)
-npm run check      # the five gates: logo assets · risk line · i18n keys · font subsets · brand verify-identity (runs before every build)
+npm run check      # the seven gates: logo assets · risk line · i18n keys · font subsets · entity line · site origin · brand verify-identity (runs before every build)
 npm run fonts      # re-cut the font pieces from brand/fonts (after a package upgrade)
 npm run build      # client build + SSR build + pre-render → dist/
 npm run preview    # NOTE: vite preview rewrites every path to /index.html (SPA); use a plain static host to test the pre-rendered pages and 404
@@ -56,6 +69,8 @@ npm run preview    # NOTE: vite preview rewrites every path to /index.html (SPA)
 | Gate | What it refuses |
 |---|---|
 | `scripts/check-logo-assets.mjs` | any file under `public/brand` that is not a byte copy of the v1.2.1 package, the superseded `og-1200x630.png`, any legacy v1 logo name, any Arabic / bilingual lockup served (CR-11) |
+| `scripts/check-entity-line.mjs` | an entity line that is not the verbatim `LEGAL.entity.line` of `fpt-platform/config/legal.ts` (platform checkout when present, pinned sha256 always) |
+| `scripts/check-site-origin.mjs` | any retired host (`fptraders.com`, `crm.fptraders.com`) in `src/`, the sitemap, robots, the manifest, the worker or `index.html`; a sitemap URL or robots line off `https://fptraders.app`; fewer than 90 sitemap URLs; legal links off `https://app.fptraders.app` |
 | `scripts/build-font-subsets.mjs --check` | a served font piece missing, unlisted or differing from its `SUBSETS.json` sha256, a `SUBSETS.json` whose source sha256 differ from `brand/fonts`, a stale `fonts.generated.css` (no external tool; `--check-fresh` re-cuts with pyftsubset on the build server) |
 | `scripts/check-risk-line.mjs` | a missing or altered risk line, any other risk wording, any licence wording |
 | `scripts/check-i18n-keys.mjs` | a key used in `src/` that is missing in any of the six locales; key sets that differ between locales |
@@ -85,6 +100,7 @@ handover/          package for the external developer of fptraders.com (HANDOVER
 
 ## External links
 
-- Client area / registration: `https://crm.fptraders.com` (register, login) · platform: `https://fptraders.app`
-- Legal documents: `https://fptraders.app/<ar|en>/legal/{terms,privacy,risk,refund}`
+- Client area: `https://app.fptraders.app/<ar|en>/signup` (register) · `/signin` (login) — `src/hooks/useAppLinks.js`; admin `https://admin.fptraders.app`
+- Legal documents: `https://app.fptraders.app/<ar|en>/legal/{terms,privacy,risk,refund}`
+- Support mailbox: `help@fptraders.app` (text / `mailto:` — footer, contact page, help centre)
 - Fiper Card: `https://fiperhub.com` (the site carries ONE wording about the card — the owner's sentence, decision 6 of 1 Nov 2026) · Fiper Global: `https://linktr.ee/fiper` · WhatsApp: `https://wa.me/971561111855`

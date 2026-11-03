@@ -5,13 +5,15 @@ import RiskLine from '../brand/RiskLine.jsx';
 import WhatsAppButton from '../ui/WhatsAppButton.jsx';
 import { localizedPath } from '../../hooks/useLocalizedPath.js';
 import { ENTITY_LINE, SIMULATED_STATEMENT, LEGAL_DOCS, legalUrl, localeLegal } from '../../data/legal.js';
+import { SUPPORT_EMAIL, SUPPORT_MAILTO } from '../../config/site.js';
 
 const SOCIAL_URL = 'https://linktr.ee/fiper';
 const FIPER_CARD_URL = 'https://fiperhub.com';
 
 /**
  * Foot: lockup 44 px, tagline, the relationship line (CR-02), three plain link columns (≥ 44 px targets, no emoji, no tracked caps),
- * the rights line, the ONE entity line (owner decision 1, config/legal.ts), the fixed risk line (fiper-brand v2.3.4 Q4 / R12) and the
+ * the support mailbox (owner decision 18, 4 Nov 2026 — `help@fptraders.app`, platform setting `support.email`, as text),
+ * the rights line, the ONE entity line (verbatim LEGAL.entity.line of config/legal.ts — decision 3-ب, 4 Nov 2026), the fixed risk line (fiper-brand v2.3.4 Q4 / R12) and the
  * simulated-accounts sentence from the approved Risk Disclosure Statement § 2.1 (owner decision 2). Legal links = the four FPT documents
  * published in the client area (owner decision 3). The WhatsApp button lives inside this landmark.
  */
@@ -32,6 +34,11 @@ export default function Footer() {
             <p className="mt-5 text-sm text-secondary leading-relaxed">{t('footer.tagline')}</p>
             {/* CR-02: the relationship line verbatim, sentence case, not italic, no tracking */}
             <p className="mt-2 text-xs text-tertiary" lang={lang}>{t('footer.partOf')}</p>
+            {/* Owner decision 18 (4 Nov 2026): the support mailbox — the same address as the platform setting `support.email` and the mail foot */}
+            <p className="mt-4 text-sm text-secondary">
+              <span className="text-tertiary">{t('footer.support')}</span>{' '}
+              <a href={SUPPORT_MAILTO} className="inline-flex items-center min-h-11 text-white hover:underline fpt-unit" data-support-email="true">{SUPPORT_EMAIL}</a>
+            </p>
           </div>
 
           <FooterCol title={t('footer.products')}>
@@ -56,7 +63,7 @@ export default function Footer() {
 
         <div className="mt-14 pt-8 border-t border-subtle flex flex-col gap-2">
           <p className="text-xs text-tertiary leading-relaxed">{t('footer.copyright')}</p>
-          {/* Owner decision 1 (1 Nov 2026): the ONE entity line, in the page language (English for every non-Arabic locale), after the rights line */}
+          {/* Owner decision 1 (1 Nov 2026) + 3-ب (4 Nov 2026): the ONE entity line VERBATIM from config/legal.ts, in the page language (English for every non-Arabic locale), after the rights line */}
           <p className="text-xs text-tertiary leading-relaxed" lang={l} dir={l === 'ar' ? 'rtl' : 'ltr'} data-entity-line="true">{ENTITY_LINE[l]}</p>
         </div>
 

@@ -5,7 +5,7 @@ import SEO from '../components/SEO.jsx';
 import Section, { Eyebrow, SectionHeader } from '../components/ui/Section.jsx';
 import Button from '../components/ui/Button.jsx';
 import { ACCOUNT_SIZES, CURRENCIES, BASE_RULES, calcFee, formatCurrency, formatSize } from '../data/pricing.js';
-import { REGISTER_URL } from '../data/legal.js';
+import useAppLinks from '../hooks/useAppLinks.js';
 import { RULES_V1, CATALOG_V1, pct, usd } from '../data/rules.js';
 
 /**
@@ -15,6 +15,7 @@ import { RULES_V1, CATALOG_V1, pct, usd } from '../data/rules.js';
  */
 export default function ChallengePricing() {
   const { t } = useTranslation();
+  const app = useAppLinks();
   const [sizeIdx, setSizeIdx] = useState(2);
   const [currency, setCurrency] = useState('USD');
   const size = ACCOUNT_SIZES[sizeIdx];
@@ -203,7 +204,7 @@ export default function ChallengePricing() {
                 ))}
               </ul>
               <div className="mt-8">
-                <Button href={REGISTER_URL} external size="lg" className="w-full">
+                <Button href={app.signup} external size="lg" className="w-full">
                   {t('challengePricing.getStarted')}
                 </Button>
               </div>
@@ -281,7 +282,7 @@ export default function ChallengePricing() {
           <h2 id="cta-title" className="text-3xl sm:text-4xl fpt-display">{t('challengePricing.ctaTitle')}</h2>
           <p className="mt-5 text-lg text-secondary">{t('challengePricing.ctaSubtitle')}</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button href={REGISTER_URL} external size="lg">{t('challengePricing.startYourChallenge')}</Button>
+            <Button href={app.signup} external size="lg">{t('challengePricing.startYourChallenge')}</Button>
           </div>
         </div>
       </Section>

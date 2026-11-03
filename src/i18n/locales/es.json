@@ -203,7 +203,8 @@
       "contact": "Contacto",
       "about": "Sobre FPT"
     },
-    "copyright": "© 2026 Fiper Pro Traders — Una Compañía de Fiper Global. Todos los derechos reservados."
+    "copyright": "© 2026 Fiper Pro Traders — Una Compañía de Fiper Global. Todos los derechos reservados.",
+    "support": "Soporte"
   },
   "pricing": {
     "badges": {
@@ -344,7 +345,12 @@
       "desc": "Habla con el equipo de soporte",
       "cta": "Iniciar la conversación"
     },
-    "clientAreaNote": "¿Ya eres cliente? Las preguntas sobre una cuenta se responden por los canales de soporte publicados en el área de cliente."
+    "clientAreaNote": "¿Ya eres cliente? Las preguntas sobre una cuenta se responden por los canales de soporte publicados en el área de cliente.",
+    "email": {
+      "title": "Soporte por correo electrónico",
+      "desc": "Escribe al equipo de soporte",
+      "cta": "Enviar un correo"
+    }
   },
   "help": {
     "popular": {
@@ -378,7 +384,8 @@
     "searchLabel": "Buscar en el centro de ayuda",
     "clearSearch": "Borrar búsqueda",
     "searchHint": "Escribe para buscar o explora los temas de abajo.",
-    "searchNoMatch": "Sin resultados — prueba con otras palabras."
+    "searchNoMatch": "Sin resultados — prueba con otras palabras.",
+    "orEmail": "O por correo electrónico:"
   },
   "partners": {
     "eyebrow": "Programa de Socios FPT",

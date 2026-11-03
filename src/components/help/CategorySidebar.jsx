@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import useLocalizedPath from '../../hooks/useLocalizedPath.js';
 import { categories } from '../../data/helpContent.js';
 import { WHATSAPP_URL } from '../ui/WhatsAppButton.jsx';
+import { SUPPORT_EMAIL, SUPPORT_MAILTO } from '../../config/site.js';
 
 export default function CategorySidebar({ activeSlug }) {
   const [open, setOpen] = useState(false);
@@ -57,6 +58,8 @@ function SidebarInner({ activeSlug, onNavigate }) {
       <div className="mt-6 rounded-2xl border border-subtle bg-card p-5">
         <div className="fpt-eyebrow">{t('help.stillNeedHelp')}</div>
         <p className="mt-2 text-base text-secondary leading-relaxed">{t('help.stillNeedHelpBody')}</p>
+        {/* Owner decision 18 (4 Nov 2026): the support mailbox as text */}
+        <p className="mt-1 text-base text-secondary leading-relaxed">{t('help.orEmail')} <a href={SUPPORT_MAILTO} className="text-white hover:underline fpt-unit" data-support-email="true">{SUPPORT_EMAIL}</a></p>
         <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-1.5 min-h-11 text-base text-white hover:underline">
           {t('help.contactSupport')} <ArrowRight size={14} className="flip-rtl" aria-hidden="true" />
         </a>

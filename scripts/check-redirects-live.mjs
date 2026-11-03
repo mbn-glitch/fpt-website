@@ -31,7 +31,8 @@ for (const p of APP_PATHS) {
 { const r = await head(`${BASE}/api/webhooks/myfatoorah`, 'POST'); check('POST /api/webhooks/myfatoorah → 404 (no redirect)', r.status === 404, String(r.status)); }
 for (const p of SITE_200) { const r = await head(`${BASE}${p}`); check(`${p} → 200`, r.status === 200, `${r.status} ${r.type.split(';')[0]}`); }
 for (const p of SITE_404) { const r = await head(`${BASE}${p}`); check(`${p} → 404`, r.status === 404, `${r.status} ${r.location}`); }
-for (const [p, want] of SITE_REDIRECTS) { const r = await head(`${BASE}${p}`); check(`${p} → 308 ${want}`, [301, 308].includes(r.status) && r.location.replace(/\/$/, '') === want.replace(/\/$/, ''), `${r.status} ${r.location}`); }
+// Vercel answers its own (same-host) redirects with a RELATIVE Location — resolve it against BASE before comparing
+for (const [p, want] of SITE_REDIRECTS) { const r = await head(`${BASE}${p}`); const got = r.location ? new URL(r.location, BASE).href : ''; check(`${p} → 308 ${want}`, [301, 308].includes(r.status) && got.replace(/\/$/, '') === want.replace(/\/$/, ''), `${r.status} ${r.location}`); }
 { const r = await head(`${BASE}/ar/signin?ref=TEST`); check('?ref= preserved on /ar/signin', r.location === `${APP}/ar/signin?ref=TEST`, r.location); }
 if (APEX) {
   const host = new URL(BASE).host;

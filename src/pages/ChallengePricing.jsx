@@ -90,7 +90,8 @@ export default function ChallengePricing() {
           </h1>
           <p className="mt-6 text-lg text-secondary max-w-2xl mx-auto leading-relaxed">{t('challengePricing.heroSubtitle')}</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button href="#pricing" size="lg">{t('challengePricing.chooseSize')}</Button>
+            {/* CR-4 / CR-14: the scroll anchor is a ghost action — the red primaries of this page are the fee card's sign-up and the closing sign-up */}
+            <Button href="#pricing" variant="ghost" size="lg">{t('challengePricing.chooseSize')}</Button>
           </div>
         </div>
       </section>

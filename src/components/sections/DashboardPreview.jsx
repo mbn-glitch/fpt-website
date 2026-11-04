@@ -68,7 +68,7 @@ export default function DashboardPreview() {
 
             <div className="mt-5 flex items-baseline gap-3 flex-wrap">
               <Unit className="text-[min(1.875rem,8vw)] font-semibold">{formatMoney(SAMPLE.balance)}</Unit>
-              <bdi className="text-[min(0.875rem,3.6vw)] text-gain fpt-unit">{formatSignedMoney(SAMPLE.delta, 'USD', 0)} · +{SAMPLE.deltaPct}</bdi>
+              <bdi className="text-[max(12px,min(0.875rem,3.6vw))] text-gain fpt-unit">{formatSignedMoney(SAMPLE.delta, 'USD', 0)} · +{SAMPLE.deltaPct}</bdi>
               <span className="text-[13px] text-gain">{t('common.gain')}</span>
             </div>
 

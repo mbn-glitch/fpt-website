@@ -43,7 +43,7 @@ Ink versions (`fpt-tile-ink`, `fpt-mark-ink`, the non-white lockups) carry the w
 | One-colour print | `fpt-tile-flat.svg` (red), `fpt-tile-ink.svg` (dark), `fpt-tile-white.svg` (on dark stock) |
 | Watermark, merchandise | `fpt-mark-*` |
 
-Sizes in place (unchanged from v1.0): navbar tile 46 px (OBSERVED), footer 44 px (OBSERVED), app header 32 px, A4 document header 8 mm lockup, e-mail header 160 × 56 CSS (`derived/email-header-160-card@2x.png`, the paper card — CR-12, 2 Nov 2026; size APPROVED by the owner 1 Nov 2026 23:08; the compact 120 × 42 withdrawn), share image 1200 × 630 (`derived/og-1200x630-ar.png` / `-en.png`, CR-05), video corner 56 px per 1080 px width, splash 120–160 px (PROPOSED sizes).
+Sizes in place (unchanged from v1.0): navbar tile 46 px (OBSERVED), footer 44 px (OBSERVED), app header 32 px, A4 document header 8 mm lockup, e-mail header 160 × 56 CSS (`derived/email-header-160-card@2x.png`, the paper card — CR-12, 2 Nov 2026; size APPROVED by the owner 1 Nov 2026 23:08; the compact 120 × 42 **withdrawn — CR-13, owner decision 21-أ, 4 Nov 2026: one header size only**), share image 1200 × 630 (`derived/og-1200x630-ar.png` / `-en.png`, CR-05), video corner 56 px per 1080 px width, splash 120–160 px (PROPOSED sizes).
 
 ## 3. Renders (`png/`, transparent PNG, `<master>-<size>.png`)
 

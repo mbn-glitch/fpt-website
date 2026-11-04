@@ -1,4 +1,4 @@
-/* FPT Brand Identity System v1.0 — fpt-brand v1.2.1 (pinned 2 Nov 2026). Every colour, font and radius below is a package token
+/* FPT Brand Identity System v1.0 — fpt-brand v1.2.2 (texts and rules only, 5 Nov 2026; assets / tokens = v1.2.1 bytes, pinned 2 Nov 2026). Every colour, font and radius below is a package token
    (brand/tokens.css, --fpt-*); the fonts are unicode-range pieces cut from the package files (src/fonts.css → public/fonts, scripts/build-font-subsets.mjs).
    Gate: node brand/scripts/verify-identity.mjs src public index.html → PASS. */
 @import "./fonts.css";
@@ -77,14 +77,30 @@ html:not([lang="ar"]) h1.fpt-display { font-weight: var(--fpt-font-weight-displa
    English and Arabic keep the R3 ladder (40 / 60 / 72 px). */
 :root { --fpt-display-scale: 1; }
 html:is([lang="fr"], [lang="es"], [lang="pt"], [lang="tr"]) { --fpt-display-scale: 0.88; }
-.fpt-h1 { font-size: calc(2.5rem * var(--fpt-display-scale)); }
-.fpt-h1--compact { font-size: calc(1.875rem * var(--fpt-display-scale)); }
+.fpt-h1 { font-size: calc(2.5rem * var(--fpt-display-scale)); }                                   /* ar (40 px) and the default */
+/* CR-15 addendum (owner decision 44 = أ, 5 Nov 2026 — package v1.2.2, application note § 6.3): the phone cap on the hero step with a 28 px floor under the
+   four long Latin languages AND English — 30.6 px @ 390 · 28.3 @ 360 · 28 (floor) @ 320; no effect from 456 px (scale .88) / 510 px (en) upward, so the
+   ≥ 640 / ≥ 1024 steps below keep overriding it. Arabic stays 40 px; `.fpt-h1--compact` keeps its own rule (already under the cap).
+   The language part sits in `:where()` so the rule keeps the specificity of `.fpt-h1` (0,1,0): written as `html:is(…) .fpt-h1` (0,1,1) it would beat the
+   `@media` steps below by specificity and pin the desktop h1 at 40 / 35.2 px (measured 5 Nov 2026 on 1440 — a note for the package's § 6.3 wording). */
+:where(html:is([lang="en"], [lang="fr"], [lang="es"], [lang="pt"], [lang="tr"])) .fpt-h1 { font-size: max(28px, min(calc(2.5rem * var(--fpt-display-scale)), 7.85vw)); }
+.fpt-h1--compact { font-size: calc(1.875rem * var(--fpt-display-scale)); }                          /* unchanged: 26.4 / 30 px */
 @media (min-width: 640px) {
   .fpt-h1 { font-size: calc(3.75rem * var(--fpt-display-scale)); }
   .fpt-h1--compact { font-size: calc(3rem * var(--fpt-display-scale)); }
 }
 @media (min-width: 1024px) {
   .fpt-h1--home { font-size: calc(4.5rem * var(--fpt-display-scale)); }
+}
+
+/* UXFW-061 (owner decision 54 = ب, 5 Nov 2026): the «first screen» on desktop is the FULL viewport, not the hero section — so on ≥ 1024 px the page hero of
+   the four marketing pages (home, evaluations, about, partners — `.fpt-hero`) owns that screen: min-height = the viewport minus the fixed 80 px header, its
+   content centred; the next section's h2 (48 px) and its figures (24 / 30 px) no longer enter the first screen (≤ 4 sizes + the 13 px label on 1440 × 900 —
+   `scripts/ux-probe.mjs` foldSizes, blocking at every width). The size ladder is untouched; phones / tablets < 1024 px unchanged; the contact, help and
+   help-category heroes lead straight into their content and keep their height. */
+@media (min-width: 1024px) {
+  .fpt-hero { min-height: calc(100vh - 5rem); display: flex; flex-direction: column; justify-content: center; }
+  .fpt-hero > * { width: 100%; }
 }
 
 /* Arabic typography (unlayered so it wins over utilities): letter-spacing 0 everywhere, line-height ≥ 1.5 on every text node (R-11 / R-12 / ID-04) */

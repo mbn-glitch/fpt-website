@@ -26,7 +26,7 @@ export default function Partners() {
     <>
       <SEO title={t('partners.hero.title')} path="/partners" description={t('partners.metaDescription')} />
 
-      <section className="pt-12 sm:pt-20 pb-12 bg-bg">
+      <section className="fpt-hero pt-12 sm:pt-20 pb-12 bg-bg">
         <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
           <Eyebrow>{t('partners.eyebrow')}</Eyebrow>
           <h1 className="mt-5 fpt-h1 fpt-display">{t('partners.hero.title')}</h1>

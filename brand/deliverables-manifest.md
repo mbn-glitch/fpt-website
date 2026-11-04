@@ -1,4 +1,4 @@
-# Deliverables manifest — FPT Brand Identity System v1.2.1 (2 Nov 2026; base v1.0 29 Oct 2026)
+# Deliverables manifest — FPT Brand Identity System v1.2.2 (5 Nov 2026 — texts and rules only; v1.2.1 2 Nov 2026; base v1.0 29 Oct 2026)
 
 Maps every task-file requirement (manual sections A–N, deliverables 1–3, package contents, decision items, gates) to its output file(s). Columns: file · format · editing tool · status · acceptance; a rendered preview never counts as the deliverable. Status: **DONE** · **PARTIAL** (with what is missing) · **NOT PROVIDED** (with reason) · **NOT TESTED** (with reason) · **PENDING — lead** (produced after this file was drafted; evidence in `qa-report.md`). Paths are relative to the package root (`brand/`) unless they start with `dist/`, `checks/`, `manual/`, `scripts/` or `sources/` (build repo). Gates: `node scripts/check-manifest.mjs` (every path named here exists) and `node scripts/gen-manifest.mjs` (the generated table at the end lists every file with its byte size).
 
@@ -76,14 +76,14 @@ PowerPoint / Keynote / Google Slides render the PPTX with the named families onl
 | `brand/assets/third-party/ctrader/ctrader-logo-mono-dark.svg` | SVG | none (official asset) | present | 3,772 |
 | `brand/assets/third-party/ctrader/ctrader-logo-mono-light.svg` | SVG | none (official asset) | present | 3,772 |
 | `brand/assets/third-party/ctrader/ctrader-logo-mono-red.svg` | SVG | none (official asset) | present | 3,772 |
-| `brand/CHANGELOG.md` | Markdown | text editor | present | 30,849 |
-| `brand/checklists/brand-review.md` | Markdown | text editor | present | 7,580 |
-| `brand/checklists/per-surface.md` | Markdown | text editor | present | 9,412 |
-| `brand/checklists/pre-launch.md` | Markdown | text editor | present | 14,888 |
+| `brand/CHANGELOG.md` | Markdown | text editor | present | 37,311 |
+| `brand/checklists/brand-review.md` | Markdown | text editor | present | 7,678 |
+| `brand/checklists/per-surface.md` | Markdown | text editor | present | 10,684 |
+| `brand/checklists/pre-launch.md` | Markdown | text editor | present | 15,967 |
 | `brand/components/components.css` | CSS | code editor | present | 62,764 |
 | `brand/components/preview.html` | HTML | code editor (reference only) | present | 54,137 |
 | `brand/components/SPEC.md` | Markdown | text editor | present | 23,369 |
-| `brand/deliverables-manifest.md` | Markdown | text editor | present | 54,686 |
+| `brand/deliverables-manifest.md` | Markdown | text editor | present | 54,730 |
 | `brand/fonts/BarlowCondensed-600.woff2` | WOFF2 | none (official font file, OFL) | present | 32,968 |
 | `brand/fonts/BarlowCondensed-700.woff2` | WOFF2 | none (official font file, OFL) | present | 33,056 |
 | `brand/fonts/BarlowCondensed-800.woff2` | WOFF2 | none (official font file, OFL) | present | 33,132 |
@@ -108,8 +108,8 @@ PowerPoint / Keynote / Google Slides render the PPTX with the named families onl
 | `brand/fonts/licenses/OFL-Inter.txt` | text | — | present | 4,380 |
 | `brand/fonts/licenses/README.md` | Markdown | text editor | present | 2,519 |
 | `brand/fonts/README.md` | Markdown | text editor | present | 755 |
-| `brand/fpt-website-application-note.md` | Markdown | text editor | present | 21,528 |
-| `brand/glossary.md` | Markdown | text editor | present | 37,021 |
+| `brand/fpt-website-application-note.md` | Markdown | text editor | present | 46,457 |
+| `brand/glossary.md` | Markdown | text editor | present | 37,361 |
 | `brand/icons/ICONS.md` | Markdown | text editor | present | 5,039 |
 | `brand/icons/lucide/activity.svg` | SVG | none (Lucide v0.468.0, ISC) | present | 426 |
 | `brand/icons/lucide/arrow-down-right.svg` | SVG | none (Lucide v0.468.0, ISC) | present | 348 |
@@ -183,13 +183,13 @@ PowerPoint / Keynote / Google Slides render the PPTX with the named families onl
 | `brand/icons/lucide/user.svg` | SVG | none (Lucide v0.468.0, ISC) | present | 375 |
 | `brand/icons/lucide/wallet.svg` | SVG | none (Lucide v0.468.0, ISC) | present | 465 |
 | `brand/icons/lucide/x.svg` | SVG | none (Lucide v0.468.0, ISC) | present | 333 |
-| `brand/identity-change-requests.md` | Markdown | text editor | present | 6,926 |
+| `brand/identity-change-requests.md` | Markdown | text editor | present | 20,255 |
 | `brand/logos/_deprecated/derived/email-header-120-paper@2x.png` | PNG | superseded (v1.2.0 · v1.2.1 CR-12) — never use; kept for the record | present | 5,136 |
 | `brand/logos/_deprecated/derived/email-header-120-transparent@2x.png` | PNG | superseded (v1.2.0 · v1.2.1 CR-12) — never use; kept for the record | present | 5,584 |
 | `brand/logos/_deprecated/derived/email-header-160-paper@2x.png` | PNG | superseded (v1.2.0 · v1.2.1 CR-12) — never use; kept for the record | present | 7,321 |
 | `brand/logos/_deprecated/derived/email-header-320x112@2x.png` | PNG | superseded (v1.2.0 · v1.2.1 CR-12) — never use; kept for the record | present | 7,205 |
 | `brand/logos/_deprecated/derived/og-1200x630.png` | PNG | superseded (v1.2.0 · v1.2.1 CR-12) — never use; kept for the record | present | 40,499 |
-| `brand/logos/_deprecated/README.md` | Markdown | superseded (v1.2.0 · v1.2.1 CR-12) — never use; kept for the record | present | 1,899 |
+| `brand/logos/_deprecated/README.md` | Markdown | superseded (v1.2.0 · v1.2.1 CR-12) — never use; kept for the record | present | 2,022 |
 | `brand/logos/derived/email-header-160-card@2x.png` | PNG | generated — scripts/build-logos.mjs (render of the vector masters; values from tokens.json) | present | 7,394 |
 | `brand/logos/derived/email-header-160-dark@2x.png` | PNG | generated — scripts/build-logos.mjs (render of the vector masters; values from tokens.json) | present | 6,864 |
 | `brand/logos/derived/email-header-160-transparent@2x.png` | PNG | generated — scripts/build-logos.mjs (render of the vector masters; values from tokens.json) | present | 7,903 |
@@ -394,7 +394,7 @@ PowerPoint / Keynote / Google Slides render the PPTX with the named families onl
 | `brand/logos/png/fpt-tile-white-48.png` | PNG | — | present | 1,026 |
 | `brand/logos/png/fpt-tile-white-512.png` | PNG | — | present | 11,119 |
 | `brand/logos/png/fpt-tile-white-64.png` | PNG | — | present | 1,341 |
-| `brand/logos/README.md` | Markdown | text editor | present | 13,810 |
+| `brand/logos/README.md` | Markdown | text editor | present | 13,880 |
 | `brand/logos/source/checksums.sha256` | text | — | present | 3,097 |
 | `brand/logos/source/README.md` | Markdown | text editor | present | 2,938 |
 | `brand/logos/source/source/brand.py` | Python | node / python3 | present | 3,206 |
@@ -447,9 +447,9 @@ PowerPoint / Keynote / Google Slides render the PPTX with the named families onl
 | `brand/mockups/08-slide/en.html` | HTML | code editor (reference only) | present | 10,403 |
 | `brand/mockups/08-slide/index.html` | HTML | code editor (reference only) | present | 10,685 |
 | `brand/mockups/mockups.css` | CSS | code editor | present | 11,160 |
-| `brand/qa-report.md` | Markdown | text editor | present | 25,866 |
-| `brand/README.md` | Markdown | text editor | present | 45,069 |
-| `brand/references/composition-rules.md` | Markdown | text editor | present | 15,744 |
+| `brand/qa-report.md` | Markdown | text editor | present | 27,069 |
+| `brand/README.md` | Markdown | text editor | present | 46,257 |
+| `brand/references/composition-rules.md` | Markdown | text editor | present | 18,148 |
 | `brand/regulatory-matrix.md` | Markdown | text editor | present | 9,355 |
 | `brand/scripts/build-tokens.mjs` | Node ESM | node / python3 | present | 12,243 |
 | `brand/scripts/charts.mjs` | Node ESM | node / python3 | present | 5,815 |
@@ -460,15 +460,15 @@ PowerPoint / Keynote / Google Slides render the PPTX with the named families onl
 | `brand/scripts/verify-identity.mjs` | Node ESM | node / python3 | present | 25,839 |
 | `brand/scripts/verify-tokens.mjs` | Node ESM | node / python3 | present | 8,390 |
 | `brand/scripts/verify-unzipped.mjs` | Node ESM | node / python3 | present | 12,888 |
-| `brand/skill/fpt-brand/claude-md-paragraph.md` | Markdown | text editor | present | 3,571 |
+| `brand/skill/fpt-brand/claude-md-paragraph.md` | Markdown | text editor | present | 3,851 |
 | `brand/skill/fpt-brand/references/arabic-typography.md` | Markdown | text editor | present | 4,436 |
 | `brand/skill/fpt-brand/references/composition-rules.md` | Markdown | text editor | present | 9,808 |
 | `brand/skill/fpt-brand/references/finance-semantics.md` | Markdown | text editor | present | 7,109 |
 | `brand/skill/fpt-brand/references/logo-usage.md` | Markdown | text editor | present | 5,507 |
 | `brand/skill/fpt-brand/references/review-checklist.md` | Markdown | text editor | present | 2,392 |
 | `brand/skill/fpt-brand/references/tokens-quick.md` | Markdown | generated — scripts/gen-doc-tables.mjs | present | 37,911 |
-| `brand/skill/fpt-brand/references/value-sources.md` | Markdown | text editor | present | 121,938 |
-| `brand/skill/fpt-brand/SKILL.md` | Markdown | text editor | present | 21,499 |
+| `brand/skill/fpt-brand/references/value-sources.md` | Markdown | text editor | present | 123,026 |
+| `brand/skill/fpt-brand/SKILL.md` | Markdown | text editor | present | 22,783 |
 | `brand/skill/fpt-brand/verify-skill-wired.mjs` | Node ESM | node / python3 | present | 2,242 |
 | `brand/tailwind.preset.js` | JS (Tailwind preset) | generated — brand/scripts/build-tokens.mjs (never edit) | present | 8,335 |
 | `brand/templates/.htmlvalidate.json` | JSON (DTCG) | — | present | 555 |
@@ -503,14 +503,14 @@ PowerPoint / Keynote / Google Slides render the PPTX with the named families onl
 | `brand/templates/video/video-rules.md` | Markdown | text editor | present | 2,777 |
 | `brand/tokens.css` | CSS | generated — brand/scripts/build-tokens.mjs (never edit) | present | 24,711 |
 | `brand/tokens.json` | JSON (DTCG) | scripts/gen-tokens.mjs (build) · text editor (consumer: edit, then build-tokens) | present | 136,379 |
-| `brand/value-sources.md` | Markdown | text editor | present | 121,938 |
-| `dist/FPT-Brand-Manual-v1.2.pdf` | PDF | HTML source → scripts/render-manual.mjs | present | 4,436,533 |
-| `dist/fpt-brand-v1.2.1.zip` | ZIP | scripts/package.mjs | present | 23,336,228 |
-| `dist/fpt-brand-v1.2.1.zip.sha256` | text | — | present | 87 |
-| `dist/consumers/UPGRADE-v1.2.1.md` | Markdown | text editor | present | 10,868 |
+| `brand/value-sources.md` | Markdown | text editor | present | 123,026 |
+| `dist/FPT-Brand-Manual-v1.2.pdf` | PDF | HTML source → scripts/render-manual.mjs | present | 4,436,487 |
+| `dist/fpt-brand-v1.2.2.zip` | ZIP | scripts/package.mjs | MISSING | — |
+| `dist/fpt-brand-v1.2.2.zip.sha256` | text | — | MISSING | — |
+| `dist/consumers/UPGRADE-v1.2.2.md` | Markdown | text editor | present | 6,338 |
 | `dist/preview/index.html` | HTML | — | present | 7,240 |
-| `dist/unzipped-verification.md` | Markdown | text editor | present | 2,615 |
+| `dist/unzipped-verification.md` | Markdown | text editor | present | 2,541 |
 | `checks/contrast.json` | JSON (DTCG) | — | present | 23,309 |
 
-_439 files under `brand/` (23,423,646 bytes) + 7 dist deliverables (all present). Generated 2026-11-01 by `scripts/gen-manifest.mjs`._
+_439 files under `brand/` (23,479,927 bytes) + 7 dist deliverables (missing: dist/fpt-brand-v1.2.2.zip, dist/fpt-brand-v1.2.2.zip.sha256). Generated 2026-11-04 by `scripts/gen-manifest.mjs`._
 <!--/MANIFEST_TABLE-->

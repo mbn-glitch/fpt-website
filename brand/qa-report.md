@@ -1,6 +1,12 @@
-# QA report — FPT Brand Identity System v1.2.1 (2 Nov 2026 — CR-10 destructive dialog · CR-11 lockups in English only · CR-12 e-mail header card; v1.2.0 1 Nov 2026 — CR-05 / CR-06 / CR-07 + e-mail paper in every mode; v1.1.2 CR-01…04 31 Oct 2026; v1.1 logo v2 30 Oct 2026; v1.0 base 29 Oct 2026)
+# QA report — FPT Brand Identity System v1.2.2 (5 Nov 2026 — texts and rules only: CR-13 compact e-mail header withdrawn · CR-14 red budget on the public site · CR-15 Latin display scale + addendum; v1.2.1 2 Nov 2026 — CR-10 destructive dialog · CR-11 lockups in English only · CR-12 e-mail header card; v1.2.0 1 Nov 2026 — CR-05 / CR-06 / CR-07 + e-mail paper in every mode; v1.1.2 CR-01…04 31 Oct 2026; v1.1 logo v2 30 Oct 2026; v1.0 base 29 Oct 2026)
 
 Evidence-based acceptance. Every row is PASS, FAIL, PARTIAL, NOT TESTED or NOT PROVIDED with its evidence path (repo-relative; `dist/`, `checks/` and `manual/` live in the GitHub repo and on the preview host, not in the zip). Gates are run from the **unzipped copy in a clean folder outside the repo** (`node brand/scripts/verify-unzipped.mjs dist/fpt-brand-v1.0.zip <clean-dir>` → `dist/unzipped-verification.md`) and repeated in the build repo where a build-repo tool is needed (Playwright, pypdf, ImageMagick).
+
+## 0. v1.2.2 — owner decisions 4–5 Nov 2026 (CR-13 · CR-14 · CR-15 + addendum 44-أ): texts and rules only — the light gates re-run once
+
+Scope: the task file FPT-BRAND-1-2-2-20261105-001047.md — register rows CR-13 / CR-14 / CR-15 (+ the addendum's evidence table), the application note §§ 3–4 corrected and §§ 6–7 added (the RD2 rules in package wording; the approved headline texts in six languages), README § C / § D / § N, composition addenda G / H, SKILL / claude-md paragraph, checklists 59 / 60 + per-surface rows, glossary § 5 pointer, value-sources rows, logos READMEs (CR-13), CHANGELOG, manifest, package. **No SVG, font, colour, token or raster changed** (`tokens.json` stays 1.2.1 — the three rule tokens are named in the register for the next token release); the manual PDF is not re-rendered (no manual page changes; footer stays v1.2.1); the heavy render gates (check-units, check-mockups, check-emails, build-logos) were not re-run — their inputs are byte-identical to v1.2.1.
+
+<!--V122_GATES-->
 
 ## 0a. v1.2.1 — owner decisions 1 Nov 2026 23:08 Qatar (CR-10 · CR-11 · CR-12 · the seven answers): gates re-run once
 

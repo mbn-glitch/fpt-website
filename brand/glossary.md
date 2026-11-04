@@ -110,6 +110,8 @@ Status: **OBSERVED** = verbatim from `fpt-website` @ `a88e666` `src/i18n/locales
 | تابع أداءك في الوقت الفعلي | Track Your Performance in Real-Time | `dashboardPreview.title` | OBSERVED |
 | تداول برأس مالنا. | Trade Our Capital. | parent glossary (`fpt.h2` on fiper.io) | INHERITED |
 
+Headline texts in the six languages (home, evaluations, «من نحن», help): **`fpt-website-application-note.md` § 7** — the seven shortened fr / es / pt headlines are APPROVED (CR-15 addendum, owner decision 44-أ, 5 Nov 2026: longest line ≤ 22 characters); English, Arabic and Turkish unchanged (OBSERVED site strings as above).
+
 Risk / copyright lines today (OBSERVED site strings, **not approved legal texts** — `regulatory-matrix.md`): `footer.riskDisclosure` «ينطوي تداول الحسابات التجريبية على مخاطر جسيمة. الأداء السابق لا يضمن النتائج المستقبلية. جميع الحسابات المقدمة هي حسابات تجريبية بأموال افتراضية.» / "Trading simulated accounts involves substantial risk. Past performance is not indicative of future results. All accounts offered are simulated accounts with virtual funds." · `footer.copyright` «© 2026 Fiper Pro Traders — شركة تابعة لـ Fiper Global. جميع الحقوق محفوظة.» / "© 2026 Fiper Pro Traders — A Fiper Global Company. All rights reserved." · `pricing.calculator.disclaimer` «هذه تقديرات فقط. الأداء السابق لا يضمن النتائج المستقبلية.» · `fptCard.note1/note2` (payout and card eligibility notes). No new tagline is approved.
 
 ## 6. Composition terms (inherited — parent glossary § 7)

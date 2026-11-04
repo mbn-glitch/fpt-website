@@ -1,5 +1,5 @@
-// verify-unzipped.mjs — test the delivery as the team receives it. FPT Brand v1.2.1 (inherited method from fiper-brand v2.0.0).
-// usage: node brand/scripts/verify-unzipped.mjs dist/fpt-brand-v1.2.1.zip <clean-dir-outside-repo>
+// verify-unzipped.mjs — test the delivery as the team receives it. FPT Brand v1.2.2 (inherited method from fiper-brand v2.0.0).
+// usage: node brand/scripts/verify-unzipped.mjs dist/fpt-brand-v1.2.2.zip <clean-dir-outside-repo>
 // Needs: unzip, node, playwright-core (+ a Chromium in ~/.cache/ms-playwright). Writes dist/unzipped-verification.md. Exit 1 on any failure.
 import fs from 'node:fs'; import path from 'node:path'; import os from 'node:os'; import { execSync, execFileSync } from 'node:child_process'; import { chromium } from 'playwright-core';
 const pwRoot = process.env.FPT_BRAND_PW_ROOT || path.join(os.homedir(), '.cache/ms-playwright'); const pwDir = fs.existsSync(pwRoot) ? fs.readdirSync(pwRoot).filter(d => /^chromium-\d+$/.test(d)).sort().pop() : null;

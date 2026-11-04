@@ -23,7 +23,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative pt-12 sm:pt-20 pb-16 sm:pb-24">
+    <section className="fpt-hero relative pt-12 sm:pt-20 pb-16 sm:pb-24">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="max-w-3xl">
           {/* Owner decision 38-ب (4 Nov 2026 — RD2 CR-1 / F-033): the English «Fiper · Part of Fiper Global» chip is gone; the relationship line

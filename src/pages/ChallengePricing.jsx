@@ -81,7 +81,7 @@ export default function ChallengePricing() {
     <>
       <SEO title={t('challengePricing.challengeLabel')} path="/challenges" description={t('challengePricing.metaDescription')} keywords={t('challengePricing.metaKeywords')} />
 
-      <section className="pt-12 sm:pt-20 pb-12">
+      <section className="fpt-hero pt-12 sm:pt-20 pb-12">
         <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
           <Eyebrow>{t('challengePricing.eyebrow')}</Eyebrow>
           <h1 className="mt-5 fpt-h1 fpt-display">

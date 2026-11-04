@@ -30,7 +30,7 @@ Used by the human reviewer on every FPT surface before release, after the automa
 | 23 | Relabelled chart | generated from `sample-data.mjs` (`data-chart`) | compare labelled values with the dataset |
 | 24 | `%` / currency / «من 31» separated from its number in Arabic | `.fpt-unit` | `check-units` PASS |
 | 25 | Social body unreadable at phone size | ≥ 42 px on 1080 | open at 360 px wide |
-| 26 | Gold "MOST POPULAR" badge, glass cards, hero glow, pulsing eyebrow dot (FPT site treatments) | label text + selected border; panel + 1 px border; nothing pulses | `grep D4AF37\|\.glass\|animate-pulse-dot` → 0 |
+| 26 | Gold "MOST POPULAR" badge, glass cards, hero glow, pulsing eyebrow dot (FPT site treatments) | label text + selected frame (apps: red 1 px; public site: the text colour with the neutral `--fpt-line-input` frame — CR-14); panel + 1 px border; nothing pulses | `grep D4AF37\|\.glass\|animate-pulse-dot` → 0 |
 | 27 | MT4 / MT5 anywhere | cTrader only | MT5-REFERENCE = 0 |
 | 28 | Parent values on an FPT surface (`#DC2626`, `#0A0708`, the Fiper lockup larger than the FPT tile, "by Fiper") | FPT tokens; "Part of Fiper Global" | PARENT-VALUE-ON-FPT-SURFACE = 0 |
 

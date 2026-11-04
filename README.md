@@ -5,7 +5,7 @@ pre-rendered to static HTML at build time and hydrated on the client.
 
 ## Identity (binding)
 
-- **fpt-brand v1.2.1** (pinned 2 Nov 2026 — owner decisions of 1 Nov 2026 23:08) — the drop-in package lives in `brand/` (tokens, fonts, logos,
+- **fpt-brand v1.2.2** (`ee94f05`, 5 Nov 2026 — texts and rules only: CR-13 / CR-14 / CR-15 + its addendum; every asset, token and colour is the v1.2.1 byte, pinned 2 Nov 2026 — owner decisions of 1 Nov 2026 23:08) — the drop-in package lives in `brand/` (tokens, fonts, logos,
   scripts, skill). Every colour, font, radius and logo on the site comes from it: `src/index.css` imports `brand/tokens.css` and maps the `--fpt-*`
   variables into Tailwind's `@theme`; `public/brand/` holds byte copies of the logo set, the icons, the two CR-05 share images
   (`og-1200x630-ar.png` / `-en.png`) and the complete font files, checked by `scripts/check-logo-assets.mjs` against `public/brand/SHA256SUMS`.
@@ -16,7 +16,16 @@ pre-rendered to static HTML at build time and hydrated on the client.
   line-height 1.05 — owner decision 8, `.fpt-display` in `src/index.css`); Arabic headlines stay IBM Plex Sans Arabic (never Barlow). Site ladder:
   label 13 · body 16 · subtitle 18 · h2 30 · h1 40 on phones (≤ 4 sizes + the label above the fold on every screen — UXFW-020). **CR-15 (owner
   decision 42-أ, 4 Nov 2026):** under `lang` fr / es / pt / tr the h1 step is 12 % smaller (`--fpt-display-scale: .88`, classes `.fpt-h1` /
-  `.fpt-h1--home` / `.fpt-h1--compact`) so the hero keeps ≤ 2 lines on 390 px. Eyebrows / labels are sentence case with no tracking (RD2 F-035 — CR-02).
+  `.fpt-h1--home` / `.fpt-h1--compact`) so the hero keeps ≤ 2 lines on 390 px. **CR-15 addendum (owner decision 44 = أ, 5 Nov 2026 — package v1.2.2
+  application note § 6.3 / § 7):** the hero step under fr / es / pt / tr **and en** is capped on phones with a 28 px floor — `max(28px, min(2.5rem × scale, 7.85vw))`
+  = 30.6 px @ 390 · 28.3 @ 360 · 28 @ 320 (Arabic 40 px; no effect ≥ 456 / 510 px) — and the seven borderline headlines of fr / es / pt are the approved texts
+  of § 7 (longest line ≤ 22 characters; source gate `scripts/check-headlines.mjs`; runtime gate: the probe's `h1Lines` ≤ 2 on 390 / 360 / 320, blocking).
+  Eyebrows / labels are sentence case with no tracking (RD2 F-035 — CR-02). **The application note is read from the package copy only** (`brand/fpt-website-application-note.md`
+  = the v1.2.2 file; the site keeps no separate wording — §§ 6–7 there are the binding RD2 rules and headline texts).
+- **Desktop first screen (owner decision 54 = ب, 5 Nov 2026 — UXFW-061):** the «first screen» is the FULL viewport, so on ≥ 1024 px the hero of the four marketing
+  pages (`.fpt-hero`: home, evaluations, about, partners) owns it — `min-height: calc(100vh − 5rem)`, content centred — and the next section's 48 px h2 never
+  shares the first screen (≤ 4 sizes + the 13 px label on 1440 × 900; probe `foldSizes` blocking at every width). Contact / help heroes lead straight into
+  their content and are unchanged.
 - **Red budget (CR-14 — owner decision 41-أ, 4 Nov 2026):** brand red = the logo tile + ONE primary button per viewport; selected / active states are
   the text colour with a neutral frame; no red chip, frame, icon or `accent-color` (gate `scripts/check-red-budget.mjs`; `brand/fpt-website-application-note.md` § 6).
 - **Relationship line once (owner decision 38-ب) · WhatsApp as a neutral card (decision 40-أ):** «Part of Fiper Global» appears once per page under
@@ -70,7 +79,7 @@ links (`https://app.fptraders.app/<ar|en>/legal/<terms|privacy|risk|refund>`), a
 ```bash
 npm install
 npm run dev        # Vite dev server (client-only rendering)
-npm run check      # the ten gates: logo assets · risk line · i18n keys · font subsets · entity line · site origin · glossary · money · red budget · brand verify-identity (runs before every build)
+npm run check      # the eleven gates: logo assets · risk line · i18n keys · font subsets · entity line · site origin · glossary · money · red budget · headlines · brand verify-identity (runs before every build)
 npm run check:dist # after a build: glossary · money (currencyOrder / doubleSpaces = 0) · red budget · routes (decisions 51 / 53) on the 96 pre-rendered pages (runs automatically as postbuild)
 npm run serve      # dist/ on http://localhost:4174 with the vercel.json routes applied (redirects, per-language 404 with a 404 status) — the host of the probes
 npm run fonts      # re-cut the font pieces from brand/fonts (after a package upgrade)
@@ -82,13 +91,14 @@ npm run preview    # NOTE: vite preview rewrites every path to /index.html (SPA)
 
 | Gate | What it refuses |
 |---|---|
-| `scripts/check-logo-assets.mjs` | any file under `public/brand` that is not a byte copy of the v1.2.1 package, the superseded `og-1200x630.png`, any legacy v1 logo name, any Arabic / bilingual lockup served (CR-11) |
+| `scripts/check-logo-assets.mjs` | any file under `public/brand` that is not a byte copy of the package (v1.2.1 bytes — unchanged in v1.2.2), the superseded `og-1200x630.png`, any legacy v1 logo name, any Arabic / bilingual lockup served (CR-11) |
 | `scripts/check-entity-line.mjs` | an entity line that is not the verbatim `LEGAL.entity.line` of `fpt-platform/config/legal.ts` (platform checkout when present, pinned sha256 always) |
 | `scripts/check-site-origin.mjs` | any retired host (`fptraders.com`, `crm.fptraders.com`) in `src/`, the sitemap, robots, the manifest, the worker or `index.html`; a sitemap URL or robots line off `https://fptraders.app`; fewer than 90 sitemap URLs; legal links off `https://app.fptraders.app` |
 | `scripts/check-glossary.mjs` (+ `--dist`) | «تحدي / Challenge / Défi / Desafío / Desafio / Zorluk / Meydan okuma» or MT4 / MT5 in any visible text — the six locales, the help content, and (after a build) the text of the 90 pages (RD2 rule 3.5: the product word is «تقييم / Evaluation») |
 | `scripts/check-money.mjs` (+ `--dist`) | an amount built by hand, the code before the number, a dollar sign, a double space before a unit; after a build: `currencyOrder` (an Arabic amount outside an LTR isolate) and `doubleSpaces` must be 0 on every page (RD2 rule 3.4: `src/lib/money.jsx` is the ONE format — number · no-break space · code, isolated) |
 | `scripts/check-routes.mjs` (after a build) | a `vercel.json` that is not the low-level `routes`; an app path of the handoff that does not 308 to `app.` with its query; an unknown path (`/anything`, `/ar/anything`, `/fr/typo`, `/xx/typo`, `/api/x`) that is not the site's 404 page of its prefix language with a 404 status; a 404 page without its title, `lang/dir`, h1, risk and entity line once, `noindex` (owner decisions 51 / 53) |
 | `scripts/check-red-budget.mjs` (+ `--dist`) | brand red on a chip, frame, text or `accent-color`; a coloured cTrader mark; after a build more primary buttons on a page than the documented cap (home 2 · evaluations 2 · partners 2 · about 1 · contact / help 0) or any red frame class in the markup (RD2 CR-4 / package CR-14: red = the tile + ONE primary button per viewport) |
+| `scripts/check-headlines.mjs` | a `hero.title*` / `challengePricing.heroTitle*` / `help.title*` line over 22 characters in fr / es / pt, or an `about.title` over 46 characters or without a word break before character 23 (CR-15 addendum, decision 44 = أ; pt `challengePricing.heroTitle1` = 23 is pinned verbatim as the decision's borderline row) |
 | `scripts/build-font-subsets.mjs --check` | a served font piece missing, unlisted or differing from its `SUBSETS.json` sha256, a `SUBSETS.json` whose source sha256 differ from `brand/fonts`, a stale `fonts.generated.css` (no external tool; `--check-fresh` re-cuts with pyftsubset on the build server) |
 | `scripts/check-risk-line.mjs` | a missing or altered risk line, any other risk wording, any licence wording |
 | `scripts/check-i18n-keys.mjs` | a key used in `src/` that is missing in any of the six locales; key sets that differ between locales |
@@ -101,13 +111,16 @@ npm run preview    # NOTE: vite preview rewrites every path to /index.html (SPA)
 a relationship line ≠ 1, more than one primary button per 390 px viewport, red beyond the primaries, a `mailto:` < 44 px, an Arabic amount painted code-first,
 a double space, a glossary hit, **an axe violation of impact serious / critical** (wcag2a / aa / 21aa / best-practice — UXFW-057 `listitem`), **more than
 4 text sizes + the 13 px label in the first screen** (CR-06 — UXFW-020 / 058), **Plex Mono on a word** (ID-05 — UXFW-060), text under 12 px, and on the 404
-screen a status ≠ 404, a wrong `<html lang>`, a missing title / h1 / risk / entity line. `h1Lines` > 2 under fr / es / pt / tr on 390 is reported, not
-blocking, while owner decision 44 (CR-15 addendum) is pending.
+screen a status ≠ 404, a wrong `<html lang>`, a missing title / h1 / risk / entity line. **UX-R3 (5 Nov 2026):** `h1Lines` is counted from the line boxes
+of the h1 (with the rendered px and the longest line) and **blocks** when the hero h1 of home / evaluations / about / help exceeds 2 lines on 390 / 360 / 320
+under fr / es / pt / tr / en (decision 44 = أ; Arabic reported; the package's borderline row pt evaluations on 320 — 3 lines at the 28 px floor — is reported, not blocking, until the owner decides); `foldSizes` is counted on the **full viewport** outside the header and blocks at every width,
+1440 × 900 included (decision 54 = ب). Viewports: 390 × 844 · 360 × 780 · 320 × 568 · ≥ 431 × 900. Rounds: `--widths 390` (16 × 6), `--widths 1440 --langs ar,en,fr`
+(16 × 3), `--widths 390,360,320 --only home,challenges,about,help --langs en,fr,es,pt,tr` (the CR-15 set).
 
 ## Structure
 
 ```
-brand/             fpt-brand v1.2.1 drop-in (read-only; replace whole on upgrade)
+brand/             fpt-brand v1.2.2 drop-in (read-only; replace whole on upgrade — text files only changed in v1.2.2)
 public/
   brand/           byte copies: logos (English lockup only), icons, share images, complete fonts (+ SHA256SUMS)
   fonts/           unicode-range font pieces cut from brand/fonts (+ SUBSETS.json) — what the pages load

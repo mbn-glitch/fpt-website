@@ -5,6 +5,7 @@ import Section, { Eyebrow, SectionHeader } from '../components/ui/Section.jsx';
 import Button from '../components/ui/Button.jsx';
 import useAppLinks from '../hooks/useAppLinks.js';
 import { AFFILIATE_TIERS, pct } from '../data/rules.js';
+import { Unit } from '../lib/money.jsx';
 
 /**
  * Partner programme — only what the platform publishes (UXFW-005): the three commission tiers (seed TIERS, by monthly sales) and the
@@ -28,7 +29,7 @@ export default function Partners() {
       <section className="pt-12 sm:pt-20 pb-12 bg-bg">
         <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
           <Eyebrow>{t('partners.eyebrow')}</Eyebrow>
-          <h1 className="mt-5 text-[2.5rem] sm:text-6xl fpt-display">{t('partners.hero.title')}</h1>
+          <h1 className="mt-5 fpt-h1 fpt-display">{t('partners.hero.title')}</h1>
           <p className="mt-6 text-lg text-secondary max-w-2xl mx-auto leading-relaxed">{t('partners.hero.subtitle')}</p>
           <div className="mt-8 flex justify-center">
             <Button href={app.signup} external size="lg">{t('partners.cta.button')}</Button>
@@ -42,7 +43,7 @@ export default function Partners() {
           {AFFILIATE_TIERS.map((tier) => (
             <li key={tier.code} className="flex flex-col bg-card rounded-2xl p-7 border border-subtle">
               <h3 className="text-lg font-semibold leading-[1.3]">{tier.name[l]}</h3>
-              <div className="mt-4 text-3xl font-semibold text-white fpt-unit">{pct(tier.bps)}</div>
+              <Unit as="div" className="mt-4 text-3xl font-semibold text-white">{pct(tier.bps)}</Unit>
               <p className="mt-4 text-base text-secondary leading-relaxed">
                 {tier.max ? t('partners.tiers.range', { min: tier.min, max: tier.max }) : t('partners.tiers.from', { min: tier.min })}
               </p>
@@ -73,7 +74,8 @@ export default function Partners() {
           <h2 id="partners-cta-title" className="mt-5 text-3xl sm:text-5xl fpt-display">{t('partners.cta.title')}</h2>
           <p className="mt-5 text-lg text-secondary leading-relaxed">{t('partners.cta.subtitle')}</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button href={app.signup} external size="lg">{t('partners.cta.button')}</Button>
+            {/* RD2 F-071: the closing action is worded differently from the hero's («sign up as a partner») */}
+            <Button href={app.signup} external size="lg">{t('partners.cta.buttonFinal')}</Button>
           </div>
         </div>
       </Section>

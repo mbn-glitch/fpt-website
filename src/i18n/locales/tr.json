@@ -21,21 +21,21 @@
     "keywords": "prop trading, finanse edilmiş hesap, FPT, Fiper Pro Traders, Fiper Global, işlem değerlendirmesi, cTrader"
   },
   "nav": {
-    "challenges": "Zorluklar",
+    "challenges": "Değerlendirmeler",
     "about": "Hakkımızda",
     "login": "Giriş",
-    "startChallenge": "FPT Zorluğuna Başla",
+    "startChallenge": "FPT Değerlendirmesine Başla",
     "home": "Ana Sayfa",
     "help": "Yardım",
     "partners": "Ortaklar",
     "contact": "İletişim"
   },
   "hero": {
-    "eyebrow": "HIZLI VE AKILLI TİCARET İÇİN TASARLANDI",
+    "eyebrow": "Hızlı ve akıllı ticaret için tasarlandı",
     "title1": "Güvenle Ticaret Yapın.",
     "title2": "Fonlanın.",
     "subtitle": "Simüle edilmiş bir hesapta tek aşamalı değerlendirmeyi geçin ve %80 ödül payıyla finanse edilmiş bir hesapta işlem yapın. Ödemeden önce yayımlanan açık kurallar.",
-    "ctaPrimary": "FPT Zorluğuna Başla",
+    "ctaPrimary": "FPT Değerlendirmesine Başla",
     "ctaSecondary": "Planları Gör",
     "stats": {
       "maxAccount": "Maks. Hesap",
@@ -54,7 +54,7 @@
     "timeLimit": "Süre Limiti",
     "leverage": "Kaldıraç",
     "leverageValue": "{{leverage}}’e kadar (forex)",
-    "eyebrow": "Oyunun kuralları"
+    "eyebrow": "Değerlendirme kuralları"
   },
   "profitSplit": {
     "title": "Şuna kadar kazanın:",
@@ -64,7 +64,7 @@
   },
   "howItWorks": {
     "title": "Nasıl Çalışır",
-    "step1Title": "Zorluğunuzu Seçin",
+    "step1Title": "Değerlendirmenizi Seçin",
     "step1Desc": "Ticaret hedeflerinize uygun hesap boyutunu seçin.",
     "step2Title": "Değerlendirmeyi Geçin",
     "step2Desc": "Risk parametrelerine uyarak kar hedefine ulaşın.",
@@ -85,7 +85,7 @@
       "refund": "İade",
       "refundValue": "Teslimattan sonra iade edilmez"
     },
-    "cta": "Zorluğa Başla",
+    "cta": "Değerlendirmeye Başla",
     "viewAll": "Tüm Hesap Boyutlarını Gör",
     "eyebrow": "Trader’ların tercihi",
     "title": "{{product}}",
@@ -148,7 +148,7 @@
     "subtitle": "FPT, Fiper Global tarafından desteklenir — modern tüccarlar için tasarlanmış tam bir finansal altyapı.",
     "fpt": {
       "title": "FPT",
-      "desc": "Prop Ticaret Zorlukları",
+      "desc": "Prop Ticaret Değerlendirmeleri",
       "badge": "Şu Andasınız",
       "label": "Prop trading"
     },
@@ -164,13 +164,12 @@
       "badge": "Kullanılabilir",
       "label": "Komuta merkezi"
     },
-    "footerNote": "Daha fazla bilgi için fiperglobal.com'u ziyaret edin (yakında).",
     "eyebrow": "Fiper Global destekli"
   },
   "faq": {
     "title": "Sıkça Sorulan Sorular",
     "q1": "Nasıl başlarım?",
-    "a1": "Bir zorluk boyutu seçin, kaydı tamamlayın ve platformumuzda ticarete başlayın. Değerlendirme, ödeme onayından hemen sonra başlar.",
+    "a1": "Bir değerlendirme boyutu seçin, kaydı tamamlayın ve platformumuzda ticarete başlayın. Değerlendirme, ödeme onayından hemen sonra başlar.",
     "q2": "Ücretler iade edilebilir mi?",
     "a2": "Ücret tek seferliktir. Yalnızca hesabınız teslim edilmeden önce ve iade ve iptal politikasında sayılan durumlarda iade edilir; teslimattan sonra iade edilmez.",
     "q3": "Ne kadar sürede fonlanırım?",
@@ -191,7 +190,7 @@
     "fiperGlobal": "Fiper Global",
     "legal": "Yasal",
     "links": {
-      "challenges": "FPT Zorlukları",
+      "challenges": "FPT Değerlendirmeleri",
       "fiperCard": "Fiper Kart",
       "helpCenter": "Yardım Merkezi",
       "fiperGlobalSite": "Fiper Global",
@@ -213,10 +212,6 @@
       "noRetry": "Yeniden deneme dahil değil"
     }
   },
-  "whatsapp": {
-    "tooltip": "WhatsApp'ta bizimle sohbet edin",
-    "ariaLabel": "WhatsApp'ta bizimle sohbet edin"
-  },
   "challengePricing": {
     "eyebrow": "Değerlendirme",
     "heroTitle1": "Becerilerini Kanıtla.",
@@ -236,7 +231,7 @@
     "mostPopular": "En popüler",
     "currencyLabel": "Para Birimi",
     "convertedNote": "Gösterge niteliğindeki kurlardan dönüştürülmüştür. USD cinsinden ödeme.",
-    "challengeLabel": "FPT Meydan Okuma",
+    "challengeLabel": "FPT Değerlendirmesi",
     "accountLabel": "Hesap",
     "oneTime": "tek seferlik ücret",
     "getStarted": "Başla",
@@ -248,7 +243,7 @@
     "profitShare": "Kar Paylaşımı",
     "swapFree": "Swap Ücretsiz",
     "feeLabel": "Ücret",
-    "rulesEyebrow": "Oyunun Kuralları",
+    "rulesEyebrow": "Değerlendirme kuralları",
     "rulesTitle": "Net hedefler. Tanımlanmış sınırlar. Sürpriz yok.",
     "rulesSubtitle": "Her FPT değerlendirmesini ve finanse edilmiş hesabı yöneten tam kural seti.",
     "rulesWarning": "İşlem koşulları, düşüş hesaplamaları ve kaldıraç seviyeleri araca ve piyasa koşullarına göre değişebilir.",
@@ -258,7 +253,7 @@
     "maxLeverage": "Maksimum Kaldıraç",
     "ctaTitle": "Kurallar her seferinde aynıdır.",
     "ctaSubtitle": "İnançla işlem yapın. Değerlendirme disiplini ödüllendirir.",
-    "startYourChallenge": "Meydan Okumana Başla",
+    "startYourChallenge": "Değerlendirmene Başla",
     "rules": {
       "profitTarget": "Kar Hedefi",
       "dailyDrawdown": "Günlük Düşüş",
@@ -375,8 +370,7 @@
     "stillNeedHelp": "Hâlâ yardıma mı ihtiyacınız var?",
     "stillNeedHelpBody": "Aradığınızı bulamadınız mı? WhatsApp’tan bize yazın.",
     "contactSupport": "Desteğe başvur",
-    "startChallenge": "Meydan okumayı başlat",
-    "whatsappBanner": "Yardıma mı ihtiyacınız var? WhatsApp'ta sohbet edin.",
+    "startChallenge": "Değerlendirmeyi başlat",
     "searchPlaceholder": "Yanıt ara…",
     "metaDescription": "FPT Yardım Merkezi — değerlendirme, finanse edilmiş hesaplar, ödüller, Fiper Kartı, işlem kuralları ve platform hakkında yanıtlar.",
     "readMore": "Devamını oku",
@@ -397,7 +391,8 @@
       "eyebrow": "Başlamaya hazır mısınız?",
       "title": "Kitlenizi gelire dönüştürün.",
       "subtitle": "Kaydolun ve yönlendirme bağlantınızı paylaşın.",
-      "button": "Ortak Olun"
+      "button": "Ortak Olun",
+      "buttonFinal": "Ortak olarak kaydol"
     },
     "tiersEyebrow": "Komisyon Seviyeleri",
     "tiersTitle": "Büyüdükçe daha fazla kazanın.",

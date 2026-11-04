@@ -14,7 +14,14 @@ pre-rendered to static HTML at build time and hydrated on the client.
   (gates: `check-logo-assets` ARABIC-LOCKUP-SERVED, `verify-identity` ARABIC-LOCKUP-IN-USE).
 - **Type:** Latin headlines (h1, section h2) in the package display face **Barlow Condensed** (800 / 700, uppercase, letter-spacing .5 px,
   line-height 1.05 — owner decision 8, `.fpt-display` in `src/index.css`); Arabic headlines stay IBM Plex Sans Arabic (never Barlow). Site ladder:
-  label 13 · body 16 · subtitle 18 · h2 30 · h1 40 on phones (≤ 4 sizes + the label above the fold on every screen — UXFW-020).
+  label 13 · body 16 · subtitle 18 · h2 30 · h1 40 on phones (≤ 4 sizes + the label above the fold on every screen — UXFW-020). **CR-15 (owner
+  decision 42-أ, 4 Nov 2026):** under `lang` fr / es / pt / tr the h1 step is 12 % smaller (`--fpt-display-scale: .88`, classes `.fpt-h1` /
+  `.fpt-h1--home` / `.fpt-h1--compact`) so the hero keeps ≤ 2 lines on 390 px. Eyebrows / labels are sentence case with no tracking (RD2 F-035 — CR-02).
+- **Red budget (CR-14 — owner decision 41-أ, 4 Nov 2026):** brand red = the logo tile + ONE primary button per viewport; selected / active states are
+  the text colour with a neutral frame; no red chip, frame, icon or `accent-color` (gate `scripts/check-red-budget.mjs`; `brand/fpt-website-application-note.md` § 6).
+- **Relationship line once (owner decision 38-ب) · WhatsApp as a neutral card (decision 40-أ):** «Part of Fiper Global» appears once per page under
+  the header lockup (no English chip in the hero, no footer line); the floating WhatsApp button is gone — `src/components/ui/WhatsAppCard.jsx`
+  (Lucide `message-circle`, the official mark small inside the card only) in the contact section and at the end of every help page.
 - **Fonts served:** unicode-range pieces cut from the package files by `scripts/build-font-subsets.mjs` (`public/fonts/*.woff2` +
   `public/fonts/SUBSETS.json` with the source sha256; `src/fonts.generated.css`; `npm run fonts` to rebuild; `--check` in `npm run check` verifies the sha256 without any tool, `--check-fresh` re-cuts with pyftsubset) —
   PROPOSED derived performance assets, identity unchanged; no Google Fonts, no external source.
@@ -25,7 +32,7 @@ pre-rendered to static HTML at build time and hydrated on the client.
 
 ## Facts come from the platform
 
-The site invents no rule, number or legal text. `src/data/rules.js` mirrors `fpt-platform` `RULES_V1` / `CATALOG_V1` / the affiliate tiers;
+The site invents no rule, number or legal text. `src/data/rules.js` mirrors `fpt-platform` `RULES_V1` / `CATALOG_V1` / the affiliate tiers (every amount through `src/lib/money.jsx` — «50,000 USD», one no-break space, isolated; the product word is «Evaluation» in the six languages — RD2 rules 3.4 / 3.5);
 `src/data/legal.js` carries the entity line (**verbatim `LEGAL.entity.line`** — the same string as the platform footer and the foot of every e-mail,
 owner decision 3-ب of 4 Nov 2026; gate `scripts/check-entity-line.mjs` compares it with `../fpt-platform/config/legal.ts` when that checkout is
 present and with its pinned sha256 always), the simulated-accounts sentence (Risk Disclosure Statement § 2.1) and the four legal-document
@@ -58,7 +65,8 @@ links (`https://app.fptraders.app/<ar|en>/legal/<terms|privacy|risk|refund>`), a
 ```bash
 npm install
 npm run dev        # Vite dev server (client-only rendering)
-npm run check      # the seven gates: logo assets · risk line · i18n keys · font subsets · entity line · site origin · brand verify-identity (runs before every build)
+npm run check      # the ten gates: logo assets · risk line · i18n keys · font subsets · entity line · site origin · glossary · money · red budget · brand verify-identity (runs before every build)
+npm run check:dist # after a build: glossary · money (currencyOrder / doubleSpaces = 0) · red budget on the 90 pre-rendered pages (runs automatically as postbuild)
 npm run fonts      # re-cut the font pieces from brand/fonts (after a package upgrade)
 npm run build      # client build + SSR build + pre-render → dist/
 npm run preview    # NOTE: vite preview rewrites every path to /index.html (SPA); use a plain static host to test the pre-rendered pages and 404
@@ -71,6 +79,9 @@ npm run preview    # NOTE: vite preview rewrites every path to /index.html (SPA)
 | `scripts/check-logo-assets.mjs` | any file under `public/brand` that is not a byte copy of the v1.2.1 package, the superseded `og-1200x630.png`, any legacy v1 logo name, any Arabic / bilingual lockup served (CR-11) |
 | `scripts/check-entity-line.mjs` | an entity line that is not the verbatim `LEGAL.entity.line` of `fpt-platform/config/legal.ts` (platform checkout when present, pinned sha256 always) |
 | `scripts/check-site-origin.mjs` | any retired host (`fptraders.com`, `crm.fptraders.com`) in `src/`, the sitemap, robots, the manifest, the worker or `index.html`; a sitemap URL or robots line off `https://fptraders.app`; fewer than 90 sitemap URLs; legal links off `https://app.fptraders.app` |
+| `scripts/check-glossary.mjs` (+ `--dist`) | «تحدي / Challenge / Défi / Desafío / Desafio / Zorluk / Meydan okuma» or MT4 / MT5 in any visible text — the six locales, the help content, and (after a build) the text of the 90 pages (RD2 rule 3.5: the product word is «تقييم / Evaluation») |
+| `scripts/check-money.mjs` (+ `--dist`) | an amount built by hand, the code before the number, a dollar sign, a double space before a unit; after a build: `currencyOrder` (an Arabic amount outside an LTR isolate) and `doubleSpaces` must be 0 on every page (RD2 rule 3.4: `src/lib/money.jsx` is the ONE format — number · no-break space · code, isolated) |
+| `scripts/check-red-budget.mjs` (+ `--dist`) | brand red on a chip, frame, text or `accent-color`; a coloured cTrader mark; after a build more primary buttons on a page than the documented cap (home 2 · evaluations 3 · partners 2 · about 1 · contact / help 0) or any red frame class in the markup (RD2 CR-4 / package CR-14: red = the tile + ONE primary button per viewport) |
 | `scripts/build-font-subsets.mjs --check` | a served font piece missing, unlisted or differing from its `SUBSETS.json` sha256, a `SUBSETS.json` whose source sha256 differ from `brand/fonts`, a stale `fonts.generated.css` (no external tool; `--check-fresh` re-cuts with pyftsubset on the build server) |
 | `scripts/check-risk-line.mjs` | a missing or altered risk line, any other risk wording, any licence wording |
 | `scripts/check-i18n-keys.mjs` | a key used in `src/` that is missing in any of the six locales; key sets that differ between locales |

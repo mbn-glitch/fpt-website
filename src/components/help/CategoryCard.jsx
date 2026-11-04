@@ -16,7 +16,7 @@ export default function CategoryCard({ category, articleCount, active = false })
   return (
     <Link
       to={to(`/help/${category.slug}`)}
-      className={`group relative block h-full rounded-2xl p-6 bg-card border transition-colors ${active ? 'border-brand-red' : 'border-subtle hover:border-white/20'}`}
+      className={`group relative block h-full rounded-2xl p-6 bg-card border transition-colors ${active ? 'border-white/40' : 'border-subtle hover:border-white/20'}`}
     >
       <div className="flex items-start justify-between gap-3">
         <div className="w-11 h-11 rounded-xl bg-white/5 border border-subtle flex items-center justify-center">

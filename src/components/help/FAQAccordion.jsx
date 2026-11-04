@@ -1,6 +1,7 @@
 ﻿import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { renderUnits } from '../../lib/money.jsx';
 
 export default function FAQAccordion({ faqs }) {
   const [open, setOpen] = useState(null);
@@ -22,7 +23,7 @@ export default function FAQAccordion({ faqs }) {
               <span className="text-base font-semibold leading-[1.4]">{getQuestion(faq)}</span>
               <ChevronDown size={18} aria-hidden="true" className={`shrink-0 text-tertiary transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
             </button>
-            <div id={`${faq.id}-a`} role="region" aria-labelledby={`${faq.id}-q`} hidden={!isOpen} className="pb-5 text-base text-secondary leading-relaxed">{getAnswer(faq)}</div>
+            <div id={`${faq.id}-a`} role="region" aria-labelledby={`${faq.id}-q`} hidden={!isOpen} className="pb-5 text-base text-secondary leading-relaxed">{renderUnits(getAnswer(faq))}</div>
           </li>
         );
       })}

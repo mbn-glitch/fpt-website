@@ -12,7 +12,7 @@ export default function NotFound() {
       <section className="pt-28 sm:pt-36 pb-20">
         <div className="max-w-3xl mx-auto px-5 sm:px-8">
           <Eyebrow>404</Eyebrow>
-          <h1 className="mt-4 text-3xl sm:text-5xl fpt-display">{t('notFound.title')}</h1>
+          <h1 className="mt-4 fpt-h1 fpt-h1--compact fpt-display">{t('notFound.title')}</h1>
           <p className="mt-5 text-lg text-secondary leading-relaxed max-w-xl">{t('notFound.body')}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button to="/" size="md">{t('notFound.home')}</Button>

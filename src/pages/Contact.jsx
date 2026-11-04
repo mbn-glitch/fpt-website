@@ -2,15 +2,15 @@ import { useTranslation } from 'react-i18next';
 import { MapPin, Mail, ArrowUpRight } from 'lucide-react';
 import SEO from '../components/SEO.jsx';
 import Section, { Eyebrow } from '../components/ui/Section.jsx';
-import Button from '../components/ui/Button.jsx';
-import { WhatsAppMark, WHATSAPP_URL, WHATSAPP_PHONE } from '../components/ui/WhatsAppButton.jsx';
+import WhatsAppCard from '../components/ui/WhatsAppCard.jsx';
 import { REGISTERED_ADDRESS, localeLegal } from '../data/legal.js';
 import { SUPPORT_EMAIL, SUPPORT_MAILTO } from '../config/site.js';
 
 /**
- * Contact — honest channels only (UXFW-037, owner decision): WhatsApp and, since owner decision 18 (4 Nov 2026), the support mailbox
- * `help@fptraders.app` (the platform setting `support.email` — the same address as the mail foot and the legal pages); the simulated form,
- * the «24/7 · 12+ countries · < 4 h» pills, the SLA blocks and the unsourced e-mail addresses are gone. The address is the registered address from config/legal.ts.
+ * Contact — honest channels only (UXFW-037): the support mailbox `help@fptraders.app` (owner decision 18 — the platform setting `support.email`,
+ * the same address as the mail foot and the legal pages) and WhatsApp as a NEUTRAL card (owner decision 40-أ, 4 Nov 2026 — no floating button,
+ * no red primary on this page: the two channels are equal cards); the simulated form, the «24/7 · 12+ countries · < 4 h» pills and the SLA blocks
+ * are gone. The address is the registered address from config/legal.ts.
  */
 export default function Contact() {
   const { t, i18n } = useTranslation();
@@ -25,13 +25,8 @@ export default function Contact() {
       <section className="pt-12 sm:pt-20 pb-10">
         <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
           <Eyebrow>{t('contact.eyebrow')}</Eyebrow>
-          <h1 className="mt-5 text-[2.5rem] sm:text-6xl fpt-display">{t('contact.title')}</h1>
+          <h1 className="mt-5 fpt-h1 fpt-display">{t('contact.title')}</h1>
           <p className="mt-6 text-lg text-secondary max-w-2xl mx-auto leading-relaxed">{t('contact.subtitle')}</p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button href={WHATSAPP_URL} external size="lg">
-              <WhatsAppMark size={24} /> {t('contact.whatsapp.cta')}
-            </Button>
-          </div>
         </div>
       </section>
 
@@ -46,7 +41,7 @@ export default function Contact() {
               <div className="min-w-0">
                 <div className="fpt-eyebrow">{t('contact.email.title')}</div>
                 <h3 className="mt-2 text-2xl font-semibold leading-[1.3]">{t('contact.email.desc')}</h3>
-                <div className="mt-3 text-lg text-white fpt-unit break-all">{SUPPORT_EMAIL}</div>
+                <div className="mt-3 text-lg text-white fpt-num-text break-all">{SUPPORT_EMAIL}</div>
                 <span className="mt-4 inline-flex items-center gap-1.5 min-h-11 text-base text-white/80 group-hover:text-white">
                   {t('contact.email.cta')} <ArrowUpRight size={14} className="flip-rtl" aria-hidden="true" />
                 </span>
@@ -54,21 +49,9 @@ export default function Contact() {
             </div>
           </a>
 
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="group block rounded-3xl p-7 sm:p-8 bg-card border border-subtle hover:border-white/20 transition-colors">
-            <div className="flex items-start gap-4">
-              <WhatsAppMark size={44} />
-              <div className="min-w-0">
-                <div className="fpt-eyebrow">{t('contact.whatsapp.title')}</div>
-                <h3 className="mt-2 text-2xl font-semibold leading-[1.3]">{t('contact.whatsapp.desc')}</h3>
-                <div className="mt-3 text-lg text-white fpt-unit">{WHATSAPP_PHONE}</div>
-                <span className="mt-4 inline-flex items-center gap-1.5 min-h-11 text-base text-white/80 group-hover:text-white">
-                  {t('contact.whatsapp.cta')} <ArrowUpRight size={14} className="flip-rtl" aria-hidden="true" />
-                </span>
-              </div>
-            </div>
-          </a>
+          <WhatsAppCard />
 
-          <div className="rounded-3xl p-7 sm:p-8 bg-card border border-subtle" lang={l} dir={l === 'ar' ? 'rtl' : 'ltr'}>
+          <div className="rounded-3xl p-7 sm:p-8 bg-card border border-subtle md:col-span-2" lang={l} dir={l === 'ar' ? 'rtl' : 'ltr'}>
             <div className="flex items-start gap-4">
               <div className="w-11 h-11 rounded-xl bg-white/5 border border-subtle flex items-center justify-center shrink-0">
                 <MapPin size={20} className="text-fg-muted" aria-hidden="true" />

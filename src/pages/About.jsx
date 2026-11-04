@@ -6,7 +6,7 @@ import Button from '../components/ui/Button.jsx';
 import { ENTITY_LINE, localeLegal } from '../data/legal.js';
 import useAppLinks from '../hooks/useAppLinks.js';
 
-/** About — headline-dominant: h1 + the relationship line + one primary action in the first screen (UXFW-014); principles; the three Fiper products (the Fiper Card row carries the owner's one sentence — decision 6); the entity line. No counters, no «12+ countries» (UXFW-005). */
+/** About — headline-dominant: h1 (the relationship line is the header's — owner decision 38-ب) + one primary action in the first screen (UXFW-014); principles; the three Fiper products (the Fiper Card row carries the owner's one sentence — decision 6); the entity line. No counters, no «12+ countries» (UXFW-005). */
 export default function About() {
   const { t, i18n } = useTranslation();
   const l = localeLegal(i18n.language);
@@ -32,9 +32,8 @@ export default function About() {
       <section className="pt-12 sm:pt-20 pb-12">
         <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
           <Eyebrow>{t('about.eyebrow')}</Eyebrow>
-          <h1 className="mt-5 text-[2.5rem] sm:text-6xl fpt-display">{t('about.title')}</h1>
+          <h1 className="mt-5 fpt-h1 fpt-display">{t('about.title')}</h1>
           <p className="mt-6 text-lg text-secondary max-w-2xl mx-auto leading-relaxed">{t('about.subtitle')}</p>
-          <p className="mt-3 text-[13px] text-tertiary">{t('footer.partOf')}</p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button href={app.signup} external size="lg">{t('about.getStarted')}</Button>
             <Button to="/contact" variant="ghost" size="lg">{t('about.talkToTeam')}</Button>

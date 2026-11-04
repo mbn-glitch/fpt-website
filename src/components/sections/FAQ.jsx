@@ -4,6 +4,7 @@ import { ChevronDown, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Section, { SectionHeader } from '../ui/Section.jsx';
 import useLocalizedPath from '../../hooks/useLocalizedPath.js';
+import { renderUnits } from '../../lib/money.jsx';
 
 /** Six list rows (.fpt-listrow, ≥ 56 px, mirrored chevron); answers verbatim from the locale (faq.a5 = cTrader only, ID-16). "See all" is a localized internal link. */
 export default function FAQ() {
@@ -35,7 +36,7 @@ export default function FAQ() {
                   <ChevronDown size={18} aria-hidden="true" className={`shrink-0 text-fg-muted transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
                 </button>
                 <div id={`faq-a-${i}`} role="region" aria-labelledby={`faq-q-${i}`} hidden={!isOpen} className="pb-5 text-base text-secondary leading-relaxed max-w-2xl">
-                  {item.a}
+                  {renderUnits(item.a)}
                 </div>
               </li>
             );

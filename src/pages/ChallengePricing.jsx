@@ -1,16 +1,18 @@
-﻿import { useId, useState } from 'react';
+﻿import { useState } from 'react';
 import { Target, TrendingDown, AlertTriangle, Calendar, Clock, Zap, Users, CalendarCheck, Check, Info, Banknote, Shield, Coins, RefreshCw } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO.jsx';
 import Section, { Eyebrow, SectionHeader } from '../components/ui/Section.jsx';
 import Button from '../components/ui/Button.jsx';
 import { ACCOUNT_SIZES, CURRENCIES, BASE_RULES, calcFee, formatCurrency, formatSize } from '../data/pricing.js';
+import { renderUnits, Unit } from '../lib/money.jsx';
 import useAppLinks from '../hooks/useAppLinks.js';
 import { RULES_V1, CATALOG_V1, pct, usd } from '../data/rules.js';
 
 /**
- * Challenges — the one route for pricing (UXFW-028): hero (headline, one action to the sizes), the one-phase sequence, the selector
- * (five sizes ≥ 44 px, labelled range, currency segmented control, fee card with the three outline badges and the one register action),
+ * Evaluations — the one route for pricing (UXFW-028): hero (headline, one action to the sizes), the one-phase sequence, the selector
+ * (ONE list of the five sizes as 48 px rows — RD2 F-031 / F-032, no slider, no second grid; currency segmented control; fee card with the three outline
+ * badges and the one register action; neutral frames — CR-4 / CR-14),
  * the full rule set verbatim from RULES_V1, the leverage table. No «5× payouts», no invented min/max, no gold, no gradient (UXFW-038 / 017 / 012).
  */
 export default function ChallengePricing() {
@@ -20,7 +22,6 @@ export default function ChallengePricing() {
   const [currency, setCurrency] = useState('USD');
   const size = ACCOUNT_SIZES[sizeIdx];
   const fee = calcFee(size, currency);
-  const rangeId = useId();
 
   const PHASES = [
     {
@@ -83,7 +84,7 @@ export default function ChallengePricing() {
       <section className="pt-12 sm:pt-20 pb-12">
         <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
           <Eyebrow>{t('challengePricing.eyebrow')}</Eyebrow>
-          <h1 className="mt-5 text-[2.5rem] sm:text-6xl fpt-display">
+          <h1 className="mt-5 fpt-h1 fpt-display">
             {t('challengePricing.heroTitle1')}<br />
             {t('challengePricing.heroTitle2')}
           </h1>
@@ -98,7 +99,7 @@ export default function ChallengePricing() {
         <SectionHeader eyebrow={t('challengePricing.howItWorksEyebrow')} title={<span id="phases-title">{t('challengePricing.howItWorksTitle')}</span>} subtitle={t('challengePricing.howItWorksSubtitle')} />
         <ol className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-5">
           {PHASES.map((phase) => (
-            <li key={phase.step} className={`rounded-2xl p-7 bg-bg border ${phase.step === '1' ? 'border-brand-red' : 'border-subtle'}`}>
+            <li key={phase.step} className={`rounded-2xl p-7 bg-bg border ${phase.step === '1' ? 'border-white/40' : 'border-subtle'}`}>
               <div className="flex items-center gap-4 mb-5">
                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-white/40 text-base font-semibold fpt-unit" aria-hidden="true">{phase.step}</span>
                 <div>
@@ -110,7 +111,7 @@ export default function ChallengePricing() {
                 {phase.rules.map((r) => (
                   <li key={r.label} className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-2 text-base">
                     <span className="text-secondary">{r.label}</span>
-                    <span className={`font-semibold text-white ${r.text ? '' : 'fpt-unit'}`}>{r.value}</span>
+                    {r.text ? <span className="font-semibold text-white">{renderUnits(r.value)}</span> : <Unit className="font-semibold text-white">{r.value}</Unit>}
                   </li>
                 ))}
               </ul>
@@ -124,38 +125,31 @@ export default function ChallengePricing() {
         <div className="mt-10 bg-card border border-subtle rounded-3xl p-5 sm:p-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 min-w-0">
             <div className="min-w-0">
-              <div className="flex items-end justify-between gap-4 flex-wrap">
-                <div>
-                  <div className="text-[13px] text-tertiary">{t('challengePricing.accountSize')}</div>
-                  <div className="mt-2 text-[min(1.875rem,9vw)] sm:text-5xl font-semibold text-white fpt-unit">{formatSize(size)}</div>
-                </div>
-                {size === 50000 && <span className="fpt-eyebrow">{t('challengePricing.mostPopular')}</span>}
-              </div>
-              <label htmlFor={rangeId} className="sr-only">{t('challengePricing.accountSize')}</label>
-              <input
-                id={rangeId}
-                type="range"
-                min={0}
-                max={ACCOUNT_SIZES.length - 1}
-                step={1}
-                value={sizeIdx}
-                onChange={(e) => setSizeIdx(Number(e.target.value))}
-                aria-valuetext={formatSize(size)}
-                className="mt-8 w-full h-11"
-              />
-              <div className="mt-2 flex flex-wrap justify-between gap-1" role="group" aria-label={t('challengePricing.accountSize')}>
-                {ACCOUNT_SIZES.map((s, i) => (
-                  <button
-                    key={s}
-                    type="button"
-                    onClick={() => setSizeIdx(i)}
-                    aria-pressed={sizeIdx === i}
-                    className={`inline-flex items-center justify-center min-h-11 min-w-11 px-2 rounded-lg text-[13px] fpt-unit transition-colors ${sizeIdx === i ? 'text-white font-semibold' : 'text-tertiary hover:text-white'}`}
-                  >
-                    {`${s / 1000}K`}
-                  </button>
-                ))}
-              </div>
+              <div className="text-[13px] text-tertiary">{t('challengePricing.accountSize')}</div>
+              {/* RD2 F-031 / F-032 (owner 4 Nov 2026): ONE list of the five sizes — 48 px rows (size · fee), the selected row in the text colour with a
+                  neutral border (CR-4: no red frame); no slider, no second grid. The fee follows the currency control below. */}
+              <ul className="mt-4 flex flex-col gap-2" role="group" aria-label={t('challengePricing.accountSize')}>
+                {CATALOG_V1.map((p, i) => {
+                  const selected = sizeIdx === i;
+                  return (
+                    <li key={p.code}>
+                      <button
+                        type="button"
+                        onClick={() => setSizeIdx(i)}
+                        aria-pressed={selected}
+                        data-size-option={p.code}
+                        className={`w-full flex items-center justify-between gap-4 min-h-12 px-4 py-2 rounded-2xl border text-start transition-colors ${selected ? 'border-white/40 bg-white/5 text-white' : 'border-subtle text-secondary hover:text-white hover:border-white/20'}`}
+                      >
+                        <span className="flex flex-wrap items-center gap-x-3 gap-y-1 min-w-0">
+                          <Unit className="text-base font-semibold">{usd(p.sizeCents)}</Unit>
+                          {p.sizeCents === 50_000_00 && <span className="fpt-eyebrow">{t('challengePricing.mostPopular')}</span>}
+                        </span>
+                        <Unit className="text-base shrink-0">{formatCurrency(calcFee(p.sizeCents / 100, currency), currency)}</Unit>
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
               <div className="mt-8">
                 <div className="text-[13px] text-tertiary mb-3">{t('challengePricing.currencyLabel')}</div>
                 <div className="flex w-full max-w-xs p-1 rounded-full bg-bg border border-subtle" role="group" aria-label={t('challengePricing.currencyLabel')}>
@@ -175,11 +169,12 @@ export default function ChallengePricing() {
               </div>
             </div>
 
-            <div className="rounded-3xl p-6 sm:p-8 bg-bg border border-brand-red min-w-0">
+            {/* The fee card of the selected size — a neutral frame (CR-4 / CR-14); the ONE primary button of this viewport */}
+            <div className="rounded-3xl p-6 sm:p-8 bg-bg border border-white/40 min-w-0" aria-live="polite">
               <div className="fpt-eyebrow">{t('challengePricing.challengeLabel')}</div>
               <h2 className="mt-2 text-2xl font-semibold leading-[1.3]">{t('common.evaluationSize', { size: formatSize(size) })}</h2>
               <div className="mt-5 flex items-baseline gap-3 flex-wrap">
-                <span className="text-[min(2.25rem,10vw)] sm:text-5xl font-semibold text-white fpt-unit">{formatCurrency(fee, currency)}</span>
+                <Unit className="text-[min(2.25rem,10vw)] sm:text-5xl font-semibold text-white">{formatCurrency(fee, currency)}</Unit>
                 <span className="text-secondary text-base">{t('challengePricing.oneTime')}</span>
               </div>
               <ul className="mt-4 flex flex-wrap gap-2">
@@ -199,7 +194,7 @@ export default function ChallengePricing() {
                 ].map(({ k, v, mono }) => (
                   <li key={k} className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-2.5 border-b border-subtle last:border-0">
                     <span className="flex items-center gap-3 text-base text-secondary"><Check size={14} className="text-fg-muted shrink-0" aria-hidden="true" /><span>{k}</span></span>
-                    <span className={`text-base font-semibold text-white text-end ${mono ? 'fpt-unit' : ''}`}>{v}</span>
+                    {mono ? <Unit className="text-base font-semibold text-white text-end">{v}</Unit> : <span className="text-base font-semibold text-white text-end">{v}</span>}
                   </li>
                 ))}
               </ul>
@@ -211,30 +206,6 @@ export default function ChallengePricing() {
             </div>
           </div>
         </div>
-
-        <ul className="mt-8 grid grid-cols-1 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-          {CATALOG_V1.map((p, i) => {
-            const selected = sizeIdx === i;
-            return (
-              <li key={p.code}>
-                <button
-                  type="button"
-                  onClick={() => setSizeIdx(i)}
-                  aria-pressed={selected}
-                  className={`w-full text-start rounded-2xl p-4 min-h-11 bg-card border transition-colors ${selected ? 'border-brand-red' : 'border-subtle hover:border-white/20'}`}
-                >
-                  <div className="text-[13px] text-tertiary">{t('challengePricing.accountLabel')}</div>
-                  <div className="mt-1 text-[min(1.125rem,5vw)] font-semibold text-white fpt-unit">{usd(p.sizeCents)}</div>
-                  {p.sizeCents === 50_000_00 && <div className="mt-1 fpt-eyebrow">{t('challengePricing.mostPopular')}</div>}
-                  <div className="mt-3 pt-3 border-t border-subtle">
-                    <div className="text-[13px] text-tertiary">{t('challengePricing.feeLabel')}</div>
-                    <div className="mt-0.5 text-base font-semibold fpt-unit">{formatCurrency(calcFee(p.sizeCents / 100, currency), currency)}</div>
-                  </div>
-                </button>
-              </li>
-            );
-          })}
-        </ul>
       </Section>
 
       <Section className="bg-card border-y border-subtle" aria-labelledby="rules-title">
@@ -244,7 +215,7 @@ export default function ChallengePricing() {
             <li key={r.key} className="bg-bg border border-subtle rounded-2xl p-5">
               <div className="w-10 h-10 rounded-lg bg-white/5 border border-subtle flex items-center justify-center"><r.icon size={18} className="text-fg-muted" aria-hidden="true" /></div>
               <span className="block mt-4 text-[13px] text-tertiary leading-[1.5]">{r.key}</span>
-              <span className={`block mt-1 text-base font-semibold text-white leading-[1.5] ${r.text ? '' : 'fpt-unit'}`}>{r.value}</span>
+              {r.text ? <span className="block mt-1 text-base font-semibold text-white leading-[1.5]">{renderUnits(r.value)}</span> : <Unit className="block mt-1 text-base font-semibold text-white leading-[1.5]">{r.value}</Unit>}
             </li>
           ))}
         </ul>
@@ -269,7 +240,7 @@ export default function ChallengePricing() {
             {LEVERAGE_TABLE.map((row) => (
               <tr key={row.asset} className="text-base">
                 <td className="px-4 py-3 border-t border-subtle text-secondary">{row.asset}</td>
-                <td className="px-4 py-3 border-t border-subtle text-end font-semibold text-white fpt-unit">{row.leverage}</td>
+                <td className="px-4 py-3 border-t border-subtle text-end font-semibold text-white"><Unit>{row.leverage}</Unit></td>
               </tr>
             ))}
           </tbody>

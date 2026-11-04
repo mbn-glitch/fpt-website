@@ -12,3 +12,4 @@ docs/
 .env*.local
 .env*
 dist-ssr
+artifacts/

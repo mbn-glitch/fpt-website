@@ -2,6 +2,7 @@ import { Target, TrendingDown, AlertTriangle, Calendar, Clock, Zap } from 'lucid
 import { useTranslation } from 'react-i18next';
 import Section, { SectionHeader } from '../ui/Section.jsx';
 import { RULES_V1, pct } from '../../data/rules.js';
+import { renderUnits, Unit } from '../../lib/money.jsx';
 
 /** Six rule rows — values verbatim from RULES_V1 (src/data/rules.js); figures in Plex Mono inside .fpt-unit, labels in the label colour. */
 export default function KeyRules() {
@@ -28,7 +29,7 @@ export default function KeyRules() {
             </div>
             <div className="min-w-0">
               <span className="block text-[13px] text-tertiary leading-[1.5]">{r.label}</span>
-              <span className={`block mt-1 text-lg font-semibold text-white leading-[1.5] ${r.text ? '' : 'fpt-unit'}`}>{r.value}</span>
+              {r.text ? <span className="block mt-1 text-lg font-semibold text-white leading-[1.5]">{renderUnits(r.value)}</span> : <Unit className="block mt-1 text-lg font-semibold text-white leading-[1.5]">{r.value}</Unit>}
             </div>
           </li>
         ))}

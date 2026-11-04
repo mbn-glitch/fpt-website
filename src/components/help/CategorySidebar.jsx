@@ -1,10 +1,10 @@
 ﻿import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import useLocalizedPath from '../../hooks/useLocalizedPath.js';
 import { categories } from '../../data/helpContent.js';
-import { WHATSAPP_URL } from '../ui/WhatsAppButton.jsx';
+import WhatsAppCard from '../ui/WhatsAppCard.jsx';
 import { SUPPORT_EMAIL, SUPPORT_MAILTO } from '../../config/site.js';
 
 export default function CategorySidebar({ activeSlug }) {
@@ -47,7 +47,7 @@ function SidebarInner({ activeSlug, onNavigate }) {
           return (
             <li key={c.id}>
               <NavLink to={to('/help/' + c.slug)} onClick={onNavigate} aria-current={active ? 'page' : undefined}
-                className={['flex items-center gap-3 px-3 min-h-11 rounded-xl border text-base transition-colors', active ? 'border-brand-red text-white' : 'border-transparent text-secondary hover:text-white hover:border-subtle'].join(' ')}>
+                className={['flex items-center gap-3 px-3 min-h-11 rounded-xl border text-base transition-colors', active ? 'border-white/40 bg-white/5 text-white' : 'border-transparent text-secondary hover:text-white hover:border-subtle'].join(' ')}>
                 <Icon size={16} className="text-fg-muted shrink-0" aria-hidden="true" />
                 <span className="flex-1 min-w-0 truncate">{title}</span>
               </NavLink>
@@ -59,10 +59,9 @@ function SidebarInner({ activeSlug, onNavigate }) {
         <div className="fpt-eyebrow">{t('help.stillNeedHelp')}</div>
         <p className="mt-2 text-base text-secondary leading-relaxed">{t('help.stillNeedHelpBody')}</p>
         {/* Owner decision 18 (4 Nov 2026): the support mailbox as text */}
-        <p className="mt-1 text-base text-secondary leading-relaxed">{t('help.orEmail')} <a href={SUPPORT_MAILTO} className="text-white hover:underline fpt-unit" data-support-email="true">{SUPPORT_EMAIL}</a></p>
-        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-1.5 min-h-11 text-base text-white hover:underline">
-          {t('help.contactSupport')} <ArrowRight size={14} className="flip-rtl" aria-hidden="true" />
-        </a>
+        <p className="mt-1 text-base text-secondary leading-relaxed">{t('help.orEmail')} <a href={SUPPORT_MAILTO} className="inline-flex items-center min-h-11 text-white hover:underline fpt-num-text" data-support-email="true">{SUPPORT_EMAIL}</a></p>
+        {/* Owner decision 40-أ: WhatsApp as a neutral card, never a floating button */}
+        <WhatsAppCard compact className="mt-3" />
       </div>
     </div>
   );

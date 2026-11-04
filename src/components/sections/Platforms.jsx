@@ -2,7 +2,7 @@ import { Check } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Section, { SectionHeader } from '../ui/Section.jsx';
 
-/** cTrader only (ID-16 / AN-12): the official cTrader mark (third-party asset, light variant on dark) + platform capability chips. No invented metrics (latency / spreads). */
+/** cTrader only (ID-16 / AN-12): the official cTrader mark in its MONO light variant from the media kit (neutral on the dark ground — CR-4 / CR-14, owner decision 41-أ; the file is the vendor's, never recoloured), loaded eagerly so a phone never shows the empty tile the review saw (RD2 F-034) + platform capability chips. */
 export default function Platforms() {
   const { t } = useTranslation();
   const FEATURES = [t('platforms.features.dom'), t('platforms.features.algo'), t('platforms.features.level2'), t('platforms.features.mobile')];
@@ -14,7 +14,7 @@ export default function Platforms() {
       <div className="mt-12 rounded-3xl border border-subtle bg-card overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-10 lg:gap-14 p-7 sm:p-12 items-center">
           <div className="rounded-2xl p-10 sm:p-12 flex items-center justify-center bg-bg border border-subtle">
-            <img src="/images/third-party/ctrader/Logo/svg/ctrader-logo-light.svg" alt="cTrader" className="w-full max-w-[280px] h-auto" width={280} height={70} draggable={false} loading="lazy" decoding="async" />
+            <img src="/images/third-party/ctrader/Logo/svg/ctrader-logo-mono-light.svg" alt="cTrader" className="w-full max-w-[280px] h-auto" width={280} height={70} draggable={false} loading="eager" decoding="async" onError={(e) => { e.currentTarget.parentElement.hidden = true; }} />
           </div>
 
           <div>

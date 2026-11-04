@@ -24,7 +24,8 @@ export default function FPTCard() {
           </div>
         </div>
 
-        <div className="flex items-center justify-center">
+        {/* RD2 F-034: the artwork box has the image's aspect; if the file fails to load the whole box is hidden */}
+        <div className="flex items-center justify-center" data-media="fiper-card">
           <img
             src="/images/third-party/fiper/fiper-physical-card.png"
             alt={t('fptCard.imageAlt')}
@@ -32,8 +33,9 @@ export default function FPTCard() {
             height={580}
             loading="lazy"
             decoding="async"
-            className="w-full max-w-[460px] h-auto"
+            className="w-full max-w-[460px] h-auto aspect-[920/580]"
             draggable={false}
+            onError={(e) => { e.currentTarget.closest('[data-media]').hidden = true; }}
           />
         </div>
       </div>

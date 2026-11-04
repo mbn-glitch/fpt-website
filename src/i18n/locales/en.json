@@ -21,21 +21,21 @@
     "ogImageAlt": "Fiper Pro Traders — Investing involves risk"
   },
   "nav": {
-    "challenges": "Challenges",
+    "challenges": "Evaluations",
     "about": "About",
     "login": "Login",
-    "startChallenge": "Start FPT Challenge",
+    "startChallenge": "Start FPT Evaluation",
     "home": "Home",
     "help": "Help",
     "partners": "Partners",
     "contact": "Contact"
   },
   "hero": {
-    "eyebrow": "ENGINEERED FOR FAST, SMART TRADING",
+    "eyebrow": "Engineered for fast, smart trading",
     "title1": "Trade with Confidence.",
     "title2": "Get Funded.",
     "subtitle": "Pass a one-phase evaluation on a simulated account and trade a funded account with an 80 % reward share. Clear rules, published before you pay.",
-    "ctaPrimary": "Start FPT Challenge",
+    "ctaPrimary": "Start FPT Evaluation",
     "ctaSecondary": "View Plans",
     "stats": {
       "maxAccount": "Max Account",
@@ -54,7 +54,7 @@
     "timeLimit": "Time Limit",
     "leverage": "Leverage",
     "leverageValue": "Up to {{leverage}} (forex)",
-    "eyebrow": "Rules of the game"
+    "eyebrow": "Evaluation rules"
   },
   "profitSplit": {
     "title": "Earn up to",
@@ -64,7 +64,7 @@
   },
   "howItWorks": {
     "title": "How It Works",
-    "step1Title": "Choose Your Challenge",
+    "step1Title": "Choose Your Evaluation",
     "step1Desc": "Select the account size that matches your trading goals.",
     "step2Title": "Pass the Evaluation",
     "step2Desc": "Reach the profit target while respecting risk parameters.",
@@ -85,7 +85,7 @@
       "refund": "Refund",
       "refundValue": "Non-refundable after delivery"
     },
-    "cta": "Start Challenge",
+    "cta": "Start Evaluation",
     "viewAll": "View All Account Sizes",
     "eyebrow": "Most chosen by traders",
     "title": "{{product}}",
@@ -148,7 +148,7 @@
     "subtitle": "FPT is powered by Fiper Global — a complete financial infrastructure built for modern traders.",
     "fpt": {
       "title": "FPT",
-      "desc": "Prop Trading Challenges",
+      "desc": "Prop Trading Evaluations",
       "badge": "You Are Here",
       "label": "Prop trading"
     },
@@ -164,13 +164,12 @@
       "badge": "Available",
       "label": "Command center"
     },
-    "footerNote": "Visit fiperglobal.com (coming soon) to learn more.",
     "eyebrow": "Powered by Fiper Global"
   },
   "faq": {
     "title": "Frequently Asked Questions",
     "q1": "How do I start?",
-    "a1": "Choose a challenge size, complete registration, and begin trading on our platform. The evaluation starts immediately after payment confirmation.",
+    "a1": "Choose an evaluation size, complete registration, and begin trading on our platform. The evaluation starts immediately after payment confirmation.",
     "q2": "Are the fees refundable?",
     "a2": "The fee is one-time. It can be refunded only before your account is delivered and in the cases listed in the Refund and Cancellation Policy; after delivery it is non-refundable.",
     "q3": "How long until I get funded?",
@@ -191,7 +190,7 @@
     "fiperGlobal": "Fiper Global",
     "legal": "Legal",
     "links": {
-      "challenges": "FPT Challenges",
+      "challenges": "FPT Evaluations",
       "fiperCard": "Fiper Card",
       "helpCenter": "Help Center",
       "fiperGlobalSite": "Fiper Global",
@@ -213,10 +212,6 @@
       "noRetry": "No retry included"
     }
   },
-  "whatsapp": {
-    "tooltip": "Chat with us on WhatsApp",
-    "ariaLabel": "Chat with us on WhatsApp"
-  },
   "challengePricing": {
     "eyebrow": "The Evaluation",
     "heroTitle1": "Prove Your Skills.",
@@ -236,7 +231,7 @@
     "mostPopular": "Most popular",
     "currencyLabel": "Currency",
     "convertedNote": "Converted at indicative rates. Settlement in USD.",
-    "challengeLabel": "FPT Challenge",
+    "challengeLabel": "FPT Evaluation",
     "accountLabel": "Account",
     "oneTime": "one-time fee",
     "getStarted": "Get Started",
@@ -248,17 +243,17 @@
     "profitShare": "Profit Share",
     "swapFree": "Swap Free",
     "feeLabel": "Fee",
-    "rulesEyebrow": "Rules of the game",
+    "rulesEyebrow": "Evaluation rules",
     "rulesTitle": "Clear targets. Defined limits. No surprises.",
     "rulesSubtitle": "The full ruleset that governs every FPT evaluation and funded account.",
-    "rulesWarning": "Trading conditions, drawdown calculations, and leverage levels may vary depending on the instrument and market conditions. Always review your challenge dashboard for the latest parameters.",
+    "rulesWarning": "Trading conditions, drawdown calculations, and leverage levels may vary depending on the instrument and market conditions. Always review your evaluation dashboard for the latest parameters.",
     "leverageEyebrow": "Leverage",
     "leverageTitle": "Instrument leverage breakdown.",
     "instrument": "Instrument",
     "maxLeverage": "Max Leverage",
     "ctaTitle": "The rules are the same every time.",
     "ctaSubtitle": "Trade with conviction. The evaluation rewards discipline.",
-    "startYourChallenge": "Start Your Challenge",
+    "startYourChallenge": "Start Your Evaluation",
     "rules": {
       "profitTarget": "Profit Target",
       "dailyDrawdown": "Daily Drawdown",
@@ -362,7 +357,7 @@
     "eyebrow": "Help Center",
     "title1": "Answers. Organized.",
     "title2": "Searchable.",
-    "subtitle": "Everything you need to navigate FPT — from your first challenge to your first payout.",
+    "subtitle": "Everything you need to navigate FPT — from your first evaluation to your first payout.",
     "popularSearches": "Popular searches:",
     "browseEyebrow": "Browse by topic",
     "browseTitle": "Every answer, sorted.",
@@ -375,8 +370,7 @@
     "stillNeedHelp": "Still need help?",
     "stillNeedHelpBody": "Did not find what you were looking for? Write to us on WhatsApp.",
     "contactSupport": "Contact Support",
-    "startChallenge": "Start Challenge",
-    "whatsappBanner": "Need immediate help? Chat with us on WhatsApp.",
+    "startChallenge": "Start Evaluation",
     "searchPlaceholder": "Search for answers…",
     "metaDescription": "FPT Help Center — answers on the evaluation, funded accounts, rewards, the Fiper Card, trading rules and the platform.",
     "readMore": "Read more",
@@ -397,7 +391,8 @@
       "eyebrow": "Ready to start?",
       "title": "Turn your audience into income.",
       "subtitle": "Sign up and share your referral link.",
-      "button": "Become a Partner"
+      "button": "Become a Partner",
+      "buttonFinal": "Sign up as a partner"
     },
     "tiersEyebrow": "Commission Tiers",
     "tiersTitle": "Earn more as you grow.",

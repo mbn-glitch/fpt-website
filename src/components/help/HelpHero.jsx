@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { Eyebrow } from '../ui/Section.jsx';
 import HelpSearch from './HelpSearch.jsx';
 import useLocalizedPath from '../../hooks/useLocalizedPath.js';
-import Button from '../ui/Button.jsx';
-import { WhatsAppMark, WHATSAPP_URL } from '../ui/WhatsAppButton.jsx';
 
 export default function HelpHero() {
   const { t } = useTranslation();
@@ -22,7 +20,7 @@ export default function HelpHero() {
     <section className="pt-12 sm:pt-20 pb-10">
       <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
         <Eyebrow>{t('help.eyebrow')}</Eyebrow>
-        <h1 className="mt-5 text-[2.5rem] sm:text-6xl fpt-display">
+        <h1 className="mt-5 fpt-h1 fpt-display">
           {t('help.title1')}<br />
           {t('help.title2')}
         </h1>
@@ -30,9 +28,7 @@ export default function HelpHero() {
         <div className="mt-8 max-w-[600px] mx-auto relative z-20">
           <HelpSearch />
         </div>
-        <div className="mt-6 flex flex-wrap justify-center gap-3">
-          <Button href={WHATSAPP_URL} external size="md"><WhatsAppMark size={22} /> {t('help.contactSupport')}</Button>
-        </div>
+        {/* RD2 F-068 / owner decision 40-أ: the search comes first; contact is the card at the end of the page (StillNeedHelp) */}
         <div className="mt-6 flex flex-wrap justify-center items-center gap-2 text-base">
           <span className="text-tertiary me-1">{t('help.popularSearches')}</span>
           {POPULAR_QUERIES.map((p) => (

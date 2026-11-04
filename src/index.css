@@ -63,8 +63,6 @@
   /* CR-04 — the focus ring is the text colour, never the browser default */
   :focus-visible { outline: 2px solid var(--fpt-text-primary); outline-offset: 2px; border-radius: 4px; }
 
-  /* Native range input (challenge selector): thumb and track from tokens */
-  input[type="range"] { accent-color: var(--fpt-brand-red); }
 }
 
 /* Latin display (owner decision 8, 1 Nov 2026 — package README § D, tokens font.family.display / font.weight.display): h1 and section h2 in
@@ -73,6 +71,21 @@
    Unlayered so it wins over utilities. */
 html:not([lang="ar"]) .fpt-display { font-family: var(--fpt-font-family-display); font-weight: var(--fpt-font-weight-bold); text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.05; }
 html:not([lang="ar"]) h1.fpt-display { font-weight: var(--fpt-font-weight-display); }
+
+/* CR-5 / CR-15 (owner decision 42-أ, 4 Nov 2026 — RD2 F-066): the page h1 (display step) is 12 % smaller under the long Latin languages
+   (fr / es / pt / tr) so the hero keeps ≤ 2 lines on a 390 px phone; the scale is ONE custom property read by the three h1 steps below.
+   English and Arabic keep the R3 ladder (40 / 60 / 72 px). */
+:root { --fpt-display-scale: 1; }
+html:is([lang="fr"], [lang="es"], [lang="pt"], [lang="tr"]) { --fpt-display-scale: 0.88; }
+.fpt-h1 { font-size: calc(2.5rem * var(--fpt-display-scale)); }
+.fpt-h1--compact { font-size: calc(1.875rem * var(--fpt-display-scale)); }
+@media (min-width: 640px) {
+  .fpt-h1 { font-size: calc(3.75rem * var(--fpt-display-scale)); }
+  .fpt-h1--compact { font-size: calc(3rem * var(--fpt-display-scale)); }
+}
+@media (min-width: 1024px) {
+  .fpt-h1--home { font-size: calc(4.5rem * var(--fpt-display-scale)); }
+}
 
 /* Arabic typography (unlayered so it wins over utilities): letter-spacing 0 everywhere, line-height ≥ 1.5 on every text node (R-11 / R-12 / ID-04) */
 html[lang="ar"] * { letter-spacing: 0; }
@@ -95,8 +108,14 @@ html[lang="ar"] .uppercase { text-transform: none; }
   .bg-chrome { background-color: var(--fpt-ground-chrome); }
   /* The brand gradient — the primary action fill (component.button.primary.fill) */
   .gradient-red { background: var(--fpt-c-button-primary-fill); }
-  /* Eyebrow / label: Inter 600 13 px (the site's ONE label size — CR-06 label step; PROPOSED for the site: the package eyebrow is .75rem), label colour, ≤ .06em tracking; Arabic: no uppercase, no tracking (AN-08) */
-  .fpt-eyebrow { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fpt-text-label); line-height: 1.5; }
+  /* Eyebrow / label: Inter 600 13 px (the site's ONE label size — CR-06 label step), label colour, SENTENCE CASE and no tracking in every language
+     (RD2 F-035 — CR-02 is binding on every surface that carries a brand name: «Fiper Global», «Fiper Pro Traders» are never spaced capitals) */
+  .fpt-eyebrow { font-size: 13px; font-weight: 600; text-transform: none; letter-spacing: 0; color: var(--fpt-text-label); line-height: 1.5; }
+  /* Figures inside prose and the phone number (RD2 F-067 / rule 3.4): the TEXT font with tabular digits, LTR, isolated — never mono */
+  .fpt-unit-text, .fpt-num-text { font-variant-numeric: tabular-nums; direction: ltr; unicode-bidi: isolate; white-space: nowrap; }
+  /* The currency code / % after a mono figure: the TEXT font at .72em (the platform's Money shape) — one no-break space, never a mono cell (RD2 F-069) */
+  .fpt-unit__code { font-family: var(--fpt-font-family-body); font-size: 0.72em; font-weight: 600; letter-spacing: 0; }
+  html[lang="ar"] .fpt-unit__code { font-family: 'IBM Plex Sans Arabic', sans-serif; }
   /* Header: the only surface allowed a blur (ground-chrome + 14 px) */
   .header-chrome { background-color: var(--fpt-ground-chrome); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: inset 0 -1px 0 var(--fpt-line-ash); }
   .safe-bottom { padding-bottom: env(safe-area-inset-bottom, 0px); }

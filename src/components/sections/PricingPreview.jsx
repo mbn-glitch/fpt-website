@@ -6,10 +6,11 @@ import Button from '../ui/Button.jsx';
 import useLocalizedPath from '../../hooks/useLocalizedPath.js';
 import useAppLinks from '../../hooks/useAppLinks.js';
 import { CATALOG_V1, RULES_V1, pct, usd } from '../../data/rules.js';
+import { Unit } from '../../lib/money.jsx';
 
 /**
  * The challenge card (.fpt-challenge-card) for the catalogue's middle product «Evaluation 50,000 USD» (seed PRODUCT_NAMES): size and fee in
- * Plex Mono with the currency code, the popular mark as a text label + the selected red border (no gold badge, no gradient border / text),
+ * Plex Mono with the currency code (the ONE money format — RD2 rule 3.4), the popular mark as a text label + a neutral selected border (CR-4 / CR-14: no red frame),
  * rule rows with muted checks, one primary action, "view all" as a text link with a mirrored chevron.
  */
 export default function PricingPreview() {
@@ -38,11 +39,11 @@ export default function PricingPreview() {
       />
 
       <div className="mt-12 max-w-2xl mx-auto">
-        <div className="rounded-3xl p-7 sm:p-10 bg-card border border-brand-red">
+        <div className="rounded-3xl p-7 sm:p-10 bg-card border border-white/40">
           <div className="fpt-eyebrow">{t('pricingPreview.mostPopular')}</div>
           <h3 className="mt-3 text-2xl font-semibold leading-[1.3]">{t('common.evaluationSize', { size: usd(product.sizeCents) })}</h3>
           <div className="mt-4 flex items-baseline gap-3 flex-wrap">
-            <span className="text-[min(2.25rem,10vw)] sm:text-5xl font-semibold text-white fpt-unit">{usd(product.priceCents)}</span>
+            <Unit className="text-[min(2.25rem,10vw)] sm:text-5xl font-semibold text-white">{usd(product.priceCents)}</Unit>
             <span className="text-secondary">{t('pricingPreview.oneTime')}</span>
           </div>
 
@@ -53,7 +54,7 @@ export default function PricingPreview() {
                   <Check size={16} className="text-fg-muted shrink-0" aria-hidden="true" />
                   <span>{k}</span>
                 </span>
-                <span className={`text-base text-white font-semibold text-end ${mono ? 'fpt-unit' : ''}`}>{v}</span>
+                {mono ? <Unit className="text-base text-white font-semibold text-end">{v}</Unit> : <span className="text-base text-white font-semibold text-end">{v}</span>}
               </li>
             ))}
           </ul>

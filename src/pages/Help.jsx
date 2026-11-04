@@ -7,7 +7,8 @@ import Section, { SectionHeader } from '../components/ui/Section.jsx';
 import Button from '../components/ui/Button.jsx';
 import HelpHero from '../components/help/HelpHero.jsx';
 import CategoryCard from '../components/help/CategoryCard.jsx';
-import { WhatsAppMark, WHATSAPP_URL, WHATSAPP_PHONE } from '../components/ui/WhatsAppButton.jsx';
+import WhatsAppCard from '../components/ui/WhatsAppCard.jsx';
+import { renderUnits } from '../lib/money.jsx';
 import { categories, getArticleCount, getPopularFaqs } from '../data/helpContent.js';
 import useAppLinks from '../hooks/useAppLinks.js';
 import { SUPPORT_EMAIL, SUPPORT_MAILTO } from '../config/site.js';
@@ -22,10 +23,6 @@ export default function Help() {
       <SEO title={t('help.eyebrow')} path="/help" description={t('help.metaDescription')} />
 
       <HelpHero />
-
-      <Section className="!pt-2 !pb-0">
-        <WhatsAppBanner />
-      </Section>
 
       <Section className="!pt-12" aria-labelledby="help-browse-title">
         <SectionHeader eyebrow={t('help.browseEyebrow')} title={<span id="help-browse-title">{t('help.browseTitle')}</span>} />
@@ -47,7 +44,7 @@ export default function Help() {
                 <Link to={localizedPath(`/help/${cat.slug}#${f.id}`, i18n.language)} className="group block h-full rounded-2xl p-6 bg-bg border border-subtle hover:border-white/20 transition-colors">
                   <div className="text-[13px] text-tertiary">{catTitle}</div>
                   <h3 className="mt-2 text-lg font-semibold leading-[1.4]">{(lang !== 'en' && f.questions?.[lang]) ? f.questions[lang] : f.question}</h3>
-                  <p className="mt-2 text-base text-secondary leading-relaxed line-clamp-2">{(lang !== 'en' && f.answers?.[lang]) ? f.answers[lang] : f.answer}</p>
+                  <p className="mt-2 text-base text-secondary leading-relaxed line-clamp-2">{renderUnits((lang !== 'en' && f.answers?.[lang]) ? f.answers[lang] : f.answer)}</p>
                   <span className="mt-4 inline-flex items-center gap-1.5 min-h-11 text-base text-secondary group-hover:text-white transition-colors">
                     {t('help.readMore')} <ArrowRight size={14} className="flip-rtl" aria-hidden="true" />
                   </span>
@@ -63,22 +60,7 @@ export default function Help() {
   );
 }
 
-function WhatsAppBanner() {
-  const { t } = useTranslation();
-  return (
-    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between gap-4 rounded-2xl border border-subtle bg-card p-4 sm:p-5 hover:border-white/20 transition-colors">
-      <div className="flex items-center gap-4 min-w-0">
-        <WhatsAppMark size={40} />
-        <div className="min-w-0">
-          <p className="text-base font-semibold text-white leading-[1.5]">{t('help.whatsappBanner')}</p>
-          <p className="text-[13px] text-secondary mt-0.5 fpt-unit">{WHATSAPP_PHONE}</p>
-        </div>
-      </div>
-      <ArrowRight size={16} className="text-secondary group-hover:text-white shrink-0 flip-rtl" aria-hidden="true" />
-    </a>
-  );
-}
-
+/** The contact block at the END of every help page (RD2 F-068): the mailbox as text, WhatsApp as a neutral card (owner decision 40-أ), the sign-up as a ghost action — no red button here (CR-4). */
 export function StillNeedHelp() {
   const { t } = useTranslation();
   const app = useAppLinks();
@@ -87,10 +69,10 @@ export function StillNeedHelp() {
       <div className="max-w-3xl mx-auto text-center">
         <h2 id="still-need-help-title" className="text-3xl sm:text-4xl fpt-display">{t('help.stillNeedHelp')}</h2>
         <p className="mt-4 text-secondary leading-relaxed">{t('help.stillNeedHelpBody')}</p>
-        {/* Owner decision 18 (4 Nov 2026): the support mailbox, as text (a mailto link) */}
-        <p className="mt-2 text-secondary leading-relaxed">{t('help.orEmail')} <a href={SUPPORT_MAILTO} className="text-white hover:underline fpt-unit" data-support-email="true">{SUPPORT_EMAIL}</a></p>
-        <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Button href={WHATSAPP_URL} external size="lg"><WhatsAppMark size={24} /> {t('help.contactSupport')}</Button>
+        {/* Owner decision 18 (4 Nov 2026): the support mailbox, as text (a mailto link ≥ 44 px — RD2 F-072) */}
+        <p className="mt-2 text-secondary leading-relaxed">{t('help.orEmail')} <a href={SUPPORT_MAILTO} className="inline-flex items-center min-h-11 text-white hover:underline fpt-num-text" data-support-email="true">{SUPPORT_EMAIL}</a></p>
+        <div className="mt-8 text-start max-w-md mx-auto"><WhatsAppCard /></div>
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Button href={app.signup} external variant="ghost" size="lg">{t('help.startChallenge')}</Button>
         </div>
       </div>

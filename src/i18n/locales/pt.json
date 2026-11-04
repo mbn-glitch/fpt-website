@@ -21,21 +21,21 @@
     "keywords": "prop trading, conta financiada, FPT, Fiper Pro Traders, Fiper Global, avaliação de trading, cTrader"
   },
   "nav": {
-    "challenges": "Desafios",
+    "challenges": "Avaliações",
     "about": "Sobre",
     "login": "Entrar",
-    "startChallenge": "Iniciar Desafio FPT",
+    "startChallenge": "Iniciar avaliação FPT",
     "home": "Início",
     "help": "Ajuda",
     "partners": "Parceiros",
     "contact": "Contato"
   },
   "hero": {
-    "eyebrow": "PROJETADO PARA TRADING RÁPIDO E INTELIGENTE",
+    "eyebrow": "Projetado para trading rápido e inteligente",
     "title1": "Opere com Confiança.",
     "title2": "Seja Financiado.",
     "subtitle": "Passe numa avaliação de fase única em uma conta simulada e opere uma conta financiada com 80 % de participação na recompensa. Regras claras, publicadas antes de pagar.",
-    "ctaPrimary": "Iniciar Desafio FPT",
+    "ctaPrimary": "Iniciar avaliação FPT",
     "ctaSecondary": "Ver Planos",
     "stats": {
       "maxAccount": "Conta Máx.",
@@ -54,7 +54,7 @@
     "timeLimit": "Limite de Tempo",
     "leverage": "Alavancagem",
     "leverageValue": "Até {{leverage}} (forex)",
-    "eyebrow": "As regras do jogo"
+    "eyebrow": "Regras da avaliação"
   },
   "profitSplit": {
     "title": "Ganhe até",
@@ -64,7 +64,7 @@
   },
   "howItWorks": {
     "title": "Como Funciona",
-    "step1Title": "Escolha seu Desafio",
+    "step1Title": "Escolha sua avaliação",
     "step1Desc": "Selecione o tamanho da conta que combina com seus objetivos de trading.",
     "step2Title": "Passe na Avaliação",
     "step2Desc": "Atinja a meta de lucro respeitando os parâmetros de risco.",
@@ -85,7 +85,7 @@
       "refund": "Reembolso",
       "refundValue": "Não reembolsável após a entrega"
     },
-    "cta": "Iniciar Desafio",
+    "cta": "Iniciar avaliação",
     "viewAll": "Ver Todos os Tamanhos de Conta",
     "eyebrow": "A escolha dos traders",
     "title": "{{product}}",
@@ -148,7 +148,7 @@
     "subtitle": "A FPT é impulsionada pela Fiper Global — uma infraestrutura financeira completa projetada para traders modernos.",
     "fpt": {
       "title": "FPT",
-      "desc": "Desafios de Prop Trading",
+      "desc": "Avaliações de Prop Trading",
       "badge": "Você Está Aqui",
       "label": "Prop trading"
     },
@@ -164,13 +164,12 @@
       "badge": "Disponível",
       "label": "Centro de comando"
     },
-    "footerNote": "Visite fiperglobal.com (em breve) para saber mais.",
     "eyebrow": "Com a tecnologia da Fiper Global"
   },
   "faq": {
     "title": "Perguntas Frequentes",
     "q1": "Como começar?",
-    "a1": "Escolha um tamanho de desafio, complete o registro e comece a operar em nossa plataforma. A avaliação começa imediatamente após a confirmação do pagamento.",
+    "a1": "Escolha um tamanho de avaliação, complete o registro e comece a operar em nossa plataforma. A avaliação começa imediatamente após a confirmação do pagamento.",
     "q2": "As taxas são reembolsáveis?",
     "a2": "A taxa é única. Só é reembolsável antes da entrega da sua conta e nos casos previstos na política de reembolso e cancelamento; após a entrega não é reembolsável.",
     "q3": "Quanto tempo até ser financiado?",
@@ -191,7 +190,7 @@
     "fiperGlobal": "Fiper Global",
     "legal": "Legal",
     "links": {
-      "challenges": "Desafios FPT",
+      "challenges": "Avaliações FPT",
       "fiperCard": "Fiper Card",
       "helpCenter": "Central de Ajuda",
       "fiperGlobalSite": "Fiper Global",
@@ -213,10 +212,6 @@
       "noRetry": "Sem nova tentativa incluída"
     }
   },
-  "whatsapp": {
-    "tooltip": "Converse conosco no WhatsApp",
-    "ariaLabel": "Converse conosco no WhatsApp"
-  },
   "challengePricing": {
     "eyebrow": "A Avaliação",
     "heroTitle1": "Prove suas habilidades.",
@@ -236,7 +231,7 @@
     "mostPopular": "Mais popular",
     "currencyLabel": "Moeda",
     "convertedNote": "Convertido a taxas indicativas. Liquidação em USD.",
-    "challengeLabel": "Desafio FPT",
+    "challengeLabel": "Avaliação FPT",
     "accountLabel": "Conta",
     "oneTime": "taxa única",
     "getStarted": "Começar",
@@ -248,7 +243,7 @@
     "profitShare": "Divisão de lucros",
     "swapFree": "Sem swap",
     "feeLabel": "Taxa",
-    "rulesEyebrow": "Regras do jogo",
+    "rulesEyebrow": "Regras da avaliação",
     "rulesTitle": "Metas claras. Limites definidos. Sem surpresas.",
     "rulesSubtitle": "O conjunto completo de regras que rege cada avaliação e conta financiada da FPT.",
     "rulesWarning": "As condições de trading, cálculos de drawdown e níveis de alavancagem podem variar de acordo com o instrumento e as condições do mercado.",
@@ -258,7 +253,7 @@
     "maxLeverage": "Alavancagem máxima",
     "ctaTitle": "As regras são as mesmas toda vez.",
     "ctaSubtitle": "Opere com convicção. A avaliação recompensa a disciplina.",
-    "startYourChallenge": "Iniciar seu desafio",
+    "startYourChallenge": "Iniciar sua avaliação",
     "rules": {
       "profitTarget": "Meta de lucro",
       "dailyDrawdown": "Drawdown diário",
@@ -375,8 +370,7 @@
     "stillNeedHelp": "Ainda precisa de ajuda?",
     "stillNeedHelpBody": "Não encontrou o que procurava? Escreva para nós no WhatsApp.",
     "contactSupport": "Contatar suporte",
-    "startChallenge": "Iniciar desafio",
-    "whatsappBanner": "Precisa de ajuda? Converse no WhatsApp.",
+    "startChallenge": "Iniciar avaliação",
     "searchPlaceholder": "Buscar respostas…",
     "metaDescription": "Central de ajuda da FPT — respostas sobre a avaliação, contas financiadas, recompensas, o Fiper Card, as regras de trading e a plataforma.",
     "readMore": "Ler mais",
@@ -397,7 +391,8 @@
       "eyebrow": "Pronto para começar?",
       "title": "Transforme sua audiência em renda.",
       "subtitle": "Cadastre-se e compartilhe seu link de indicação.",
-      "button": "Torne-se Parceiro"
+      "button": "Torne-se Parceiro",
+      "buttonFinal": "Cadastrar-se como parceiro"
     },
     "tiersEyebrow": "Níveis de Comissão",
     "tiersTitle": "Ganhe mais à medida que cresce.",

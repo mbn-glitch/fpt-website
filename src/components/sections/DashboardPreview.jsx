@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { LayoutDashboard, Activity, Wallet, Gauge, TrendingUp } from 'lucide-react';
 import Section, { SectionHeader, SampleChip } from '../ui/Section.jsx';
 import { CATALOG_V1, usd } from '../../data/rules.js';
+import { formatMoney, formatSignedMoney, formatPercent, Unit } from '../../lib/money.jsx';
 
 /**
  * Preview of the trader dashboard — SAMPLE data only (owner decision 5): the chip «بيانات تجريبية · SAMPLE» is always visible, figures are
@@ -11,11 +12,11 @@ import { CATALOG_V1, usd } from '../../data/rules.js';
 const SAMPLE = {
   balance: 53_077,
   delta: 3_077,
-  deltaPct: '6.15 %',
+  deltaPct: '6.15\u00a0%',
   metrics: [
-    { key: 'balance', value: '53,077 USD', sub: '+3,077 USD', gain: true, icon: Wallet },
-    { key: 'dailyPnl', value: '+842 USD', sub: '+1.59 %', gain: true, icon: Activity },
-    { key: 'winRate', value: '68 %', sub: null, gain: null, icon: Gauge },
+    { key: 'balance', value: formatMoney(53_077), sub: formatSignedMoney(3_077, 'USD', 0), gain: true, icon: Wallet },
+    { key: 'dailyPnl', value: formatSignedMoney(842, 'USD', 0), sub: `+1.59\u00a0%`, gain: true, icon: Activity },
+    { key: 'winRate', value: formatPercent(6800), sub: null, gain: null, icon: Gauge },
     { key: 'profitFactor', value: '2.14', sub: null, gain: null, icon: TrendingUp },
   ],
   trades: [
@@ -27,7 +28,7 @@ const SAMPLE = {
   ],
 };
 
-const money = (n) => `${n < 0 ? '−' : '+'}${Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} USD`;
+const money = (n) => formatSignedMoney(n, 'USD', 2);
 
 export default function DashboardPreview() {
   const { t } = useTranslation();
@@ -51,7 +52,7 @@ export default function DashboardPreview() {
             </div>
             <ul className="hidden md:flex flex-col gap-0.5 text-[13px]">
               {['overview', 'accounts', 'trades', 'payouts', 'settings'].map((k, i) => (
-                <li key={k} className={`px-3 py-2 rounded-md ${i === 0 ? 'text-white border-s-2 border-brand-red bg-white/5' : 'text-secondary'}`}>{t(`dashboardPreview.nav.${k}`)}</li>
+                <li key={k} className={`px-3 py-2 rounded-md ${i === 0 ? 'text-white border-s-2 border-white/60 bg-white/5' : 'text-secondary'}`}>{t(`dashboardPreview.nav.${k}`)}</li>
               ))}
             </ul>
           </aside>
@@ -62,12 +63,12 @@ export default function DashboardPreview() {
                 <div className="text-[13px] text-tertiary">{t('dashboardPreview.activeAccount')}</div>
                 <div className="text-base font-semibold">{t('common.evaluationSize', { size: usd(product.sizeCents) })}</div>
               </div>
-              <SampleChip />
+              {/* RD2 F-070: the SAMPLE chip appears once — in the window chrome above */}
             </div>
 
             <div className="mt-5 flex items-baseline gap-3 flex-wrap">
-              <span className="text-[min(1.875rem,8vw)] font-semibold fpt-unit">{SAMPLE.balance.toLocaleString('en-US')} USD</span>
-              <span className="text-[min(0.875rem,3.6vw)] text-gain fpt-unit">+{SAMPLE.delta.toLocaleString('en-US')} USD · +{SAMPLE.deltaPct}</span>
+              <Unit className="text-[min(1.875rem,8vw)] font-semibold">{formatMoney(SAMPLE.balance)}</Unit>
+              <bdi className="text-[min(0.875rem,3.6vw)] text-gain fpt-unit">{formatSignedMoney(SAMPLE.delta, 'USD', 0)} · +{SAMPLE.deltaPct}</bdi>
               <span className="text-[13px] text-gain">{t('common.gain')}</span>
             </div>
 
@@ -109,10 +110,10 @@ export default function DashboardPreview() {
                     <span>{t(`dashboardPreview.metrics.${m.key}`)}</span>
                     <m.icon size={12} aria-hidden="true" />
                   </span>
-                  <span className="block mt-1.5 text-lg font-semibold fpt-unit">{m.value}</span>
+                  <Unit className="block mt-1.5 text-lg font-semibold">{m.value}</Unit>
                   {m.sub && (
                     <span className={`block text-[13px] ${m.gain ? 'text-gain' : 'text-loss'}`}>
-                      <span className="fpt-unit">{m.sub}</span> <span>{t(m.gain ? 'common.gain' : 'common.loss')}</span>
+                      <Unit>{m.sub}</Unit> <span>{t(m.gain ? 'common.gain' : 'common.loss')}</span>
                     </span>
                   )}
                 </li>

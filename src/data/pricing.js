@@ -3,6 +3,7 @@
  * EUR / AED are shown as indicative conversions only (challengePricing.convertedNote); settlement is in USD.
  */
 import { CATALOG_V1, RULES_V1, pct } from './rules.js';
+import { formatMoney } from '../lib/money.jsx';
 
 export const ACCOUNT_SIZES = CATALOG_V1.map((p) => p.sizeCents / 100);
 export const FEES_USD = Object.fromEntries(CATALOG_V1.map((p) => [p.sizeCents / 100, p.priceCents / 100]));
@@ -35,14 +36,14 @@ export function calcFee(size, currency) {
   return FEES_USD[size] * cur.rate;
 }
 
-/** «280 USD» / «258 EUR» — amount then the currency code, Latin digits (ID-05). */
+/** «280 USD» / «258 EUR» — the ONE money format (RD2 rule 3.4): amount, no-break space, code, isolated. */
 export function formatCurrency(amount, currencyCode) {
   const cur = CURRENCIES[currencyCode] || CURRENCIES.USD;
   const rounded = amount >= 100 ? Math.round(amount) : Math.round(amount * 100) / 100;
-  return `${rounded.toLocaleString('en-US')} ${cur.code}`;
+  return formatMoney(rounded, cur.code, Number.isInteger(rounded) ? 0 : 2);
 }
 
 /** «50,000 USD» — the account size with its code (GLOSSARY § 6). */
 export function formatSize(size) {
-  return `${size.toLocaleString('en-US')} USD`;
+  return formatMoney(size, 'USD', 0);
 }

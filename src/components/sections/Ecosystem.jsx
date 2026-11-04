@@ -2,7 +2,7 @@
 import { useTranslation } from 'react-i18next';
 import Section, { SectionHeader } from '../ui/Section.jsx';
 
-/** Three ruled cards: FPT («أنت هنا» = active state, brand-red 1 px border), Fiper Card and Fiper CRM with the «متاحة» success badge (.fpt-badge--success); footer note verbatim. */
+/** Three ruled cards: FPT («أنت هنا» = the active state in the TEXT colour — CR-4 / CR-14, owner decision 41-أ: brand red is the one primary action per viewport, never a chip or a frame), Fiper Card and Fiper CRM with the «متاحة» success badge. The «fiperglobal.com (coming soon)» dead end is hidden until it works (RD2 F-070). */
 export default function Ecosystem() {
   const { t } = useTranslation();
 
@@ -22,12 +22,12 @@ export default function Ecosystem() {
           const wrapperProps = n.href ? { href: n.href, target: '_blank', rel: 'noopener noreferrer' } : {};
           return (
             <li key={n.name}>
-              <Wrapper {...wrapperProps} className={`group block h-full rounded-2xl p-7 bg-bg border transition-colors ${n.featured ? 'border-brand-red' : 'border-subtle hover:border-white/20'}`}>
+              <Wrapper {...wrapperProps} className={`group block h-full rounded-2xl p-7 bg-bg border transition-colors ${n.featured ? 'border-white/40' : 'border-subtle hover:border-white/20'}`}>
                 <div className="flex items-start justify-between gap-3">
                   <div className="w-11 h-11 rounded-xl bg-white/5 border border-subtle flex items-center justify-center">
                     <n.icon size={20} className="text-fg-muted" aria-hidden="true" />
                   </div>
-                  <span className={`inline-flex items-center h-7 px-2.5 rounded-full border text-[13px] font-semibold ${n.featured ? 'border-brand-red text-white' : 'border-success/40 text-success bg-[var(--fpt-state-success-wash)]'}`}>
+                  <span className={`inline-flex items-center h-7 px-2.5 rounded-full border text-[13px] font-semibold ${n.featured ? 'border-white/40 text-white' : 'border-success/40 text-success bg-[var(--fpt-state-success-wash)]'}`}>
                     {n.badge}
                   </span>
                 </div>
@@ -45,7 +45,6 @@ export default function Ecosystem() {
         })}
       </ul>
 
-      <p className="mt-10 text-center text-base text-tertiary">{t('ecosystem.footerNote')}</p>
     </Section>
   );
 }

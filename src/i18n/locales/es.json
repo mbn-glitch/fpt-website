@@ -21,21 +21,21 @@
     "keywords": "prop trading, cuenta financiada, FPT, Fiper Pro Traders, Fiper Global, evaluación de trading, cTrader"
   },
   "nav": {
-    "challenges": "Desafíos",
+    "challenges": "Evaluaciones",
     "about": "Nosotros",
     "login": "Iniciar Sesión",
-    "startChallenge": "Iniciar Desafío FPT",
+    "startChallenge": "Iniciar evaluación FPT",
     "home": "Inicio",
     "help": "Ayuda",
     "partners": "Socios",
     "contact": "Contacto"
   },
   "hero": {
-    "eyebrow": "DISEÑADO PARA UN TRADING RÁPIDO E INTELIGENTE",
+    "eyebrow": "Diseñado para un trading rápido e inteligente",
     "title1": "Opera con Confianza.",
     "title2": "Obtén Financiación.",
     "subtitle": "Supera una evaluación de una sola fase en una cuenta simulada y opera una cuenta financiada con una participación del 80 % en la recompensa. Reglas claras, publicadas antes de pagar.",
-    "ctaPrimary": "Iniciar Desafío FPT",
+    "ctaPrimary": "Iniciar evaluación FPT",
     "ctaSecondary": "Ver Planes",
     "stats": {
       "maxAccount": "Cuenta Máx.",
@@ -54,7 +54,7 @@
     "timeLimit": "Límite de Tiempo",
     "leverage": "Apalancamiento",
     "leverageValue": "Hasta {{leverage}} (forex)",
-    "eyebrow": "Las reglas del juego"
+    "eyebrow": "Reglas de la evaluación"
   },
   "profitSplit": {
     "title": "Gana hasta",
@@ -64,7 +64,7 @@
   },
   "howItWorks": {
     "title": "Cómo Funciona",
-    "step1Title": "Elige tu Desafío",
+    "step1Title": "Elige tu evaluación",
     "step1Desc": "Selecciona el tamaño de cuenta que se ajusta a tus objetivos de trading.",
     "step2Title": "Supera la Evaluación",
     "step2Desc": "Alcanza el objetivo de beneficio respetando los parámetros de riesgo.",
@@ -85,7 +85,7 @@
       "refund": "Reembolso",
       "refundValue": "No reembolsable tras la entrega"
     },
-    "cta": "Iniciar Desafío",
+    "cta": "Iniciar evaluación",
     "viewAll": "Ver Todos los Tamaños de Cuenta",
     "eyebrow": "La elección de los traders",
     "title": "{{product}}",
@@ -148,7 +148,7 @@
     "subtitle": "FPT está impulsado por Fiper Global — una infraestructura financiera completa diseñada para traders modernos.",
     "fpt": {
       "title": "FPT",
-      "desc": "Desafíos de Prop Trading",
+      "desc": "Evaluaciones de Prop Trading",
       "badge": "Estás Aquí",
       "label": "Prop trading"
     },
@@ -164,13 +164,12 @@
       "badge": "Disponible",
       "label": "Centro de mando"
     },
-    "footerNote": "Visita fiperglobal.com (próximamente) para saber más.",
     "eyebrow": "Impulsado por Fiper Global"
   },
   "faq": {
     "title": "Preguntas Frecuentes",
     "q1": "¿Cómo empiezo?",
-    "a1": "Elige el tamaño de desafío, completa el registro y comienza a operar en nuestra plataforma. La evaluación comienza inmediatamente después de la confirmación del pago.",
+    "a1": "Elige el tamaño de evaluación, completa el registro y comienza a operar en nuestra plataforma. La evaluación comienza inmediatamente después de la confirmación del pago.",
     "q2": "¿Las tarifas son reembolsables?",
     "a2": "La tarifa es única. Solo se reembolsa antes de la entrega de tu cuenta y en los casos previstos en la política de reembolso y cancelación; tras la entrega no es reembolsable.",
     "q3": "¿Cuánto tiempo hasta obtener financiación?",
@@ -191,7 +190,7 @@
     "fiperGlobal": "Fiper Global",
     "legal": "Legal",
     "links": {
-      "challenges": "Desafíos FPT",
+      "challenges": "Evaluaciones FPT",
       "fiperCard": "Fiper Card",
       "helpCenter": "Centro de Ayuda",
       "fiperGlobalSite": "Fiper Global",
@@ -213,10 +212,6 @@
       "noRetry": "Sin reintento incluido"
     }
   },
-  "whatsapp": {
-    "tooltip": "Chatea con nosotros en WhatsApp",
-    "ariaLabel": "Chatea con nosotros en WhatsApp"
-  },
   "challengePricing": {
     "eyebrow": "La Evaluación",
     "heroTitle1": "Demuestra tus habilidades.",
@@ -236,7 +231,7 @@
     "mostPopular": "Más popular",
     "currencyLabel": "Divisa",
     "convertedNote": "Convertido a tasas indicativas. Liquidación en USD.",
-    "challengeLabel": "Desafío FPT",
+    "challengeLabel": "Evaluación FPT",
     "accountLabel": "Cuenta",
     "oneTime": "tarifa única",
     "getStarted": "Comenzar",
@@ -248,7 +243,7 @@
     "profitShare": "Reparto de ganancias",
     "swapFree": "Sin swap",
     "feeLabel": "Tarifa",
-    "rulesEyebrow": "Reglas del juego",
+    "rulesEyebrow": "Reglas de la evaluación",
     "rulesTitle": "Objetivos claros. Límites definidos. Sin sorpresas.",
     "rulesSubtitle": "El conjunto completo de reglas que rige cada evaluación y cuenta financiada de FPT.",
     "rulesWarning": "Las condiciones de trading, cálculos de drawdown y niveles de apalancamiento pueden variar según el instrumento y las condiciones del mercado.",
@@ -258,7 +253,7 @@
     "maxLeverage": "Apalancamiento máximo",
     "ctaTitle": "Las reglas son las mismas cada vez.",
     "ctaSubtitle": "Opera con convicción. La evaluación recompensa la disciplina.",
-    "startYourChallenge": "Comenzar tu desafío",
+    "startYourChallenge": "Comenzar tu evaluación",
     "rules": {
       "profitTarget": "Objetivo de ganancia",
       "dailyDrawdown": "Drawdown diario",
@@ -375,8 +370,7 @@
     "stillNeedHelp": "¿Aún necesitas ayuda?",
     "stillNeedHelpBody": "¿No encontraste lo que buscabas? Escríbenos por WhatsApp.",
     "contactSupport": "Contactar soporte",
-    "startChallenge": "Iniciar desafío",
-    "whatsappBanner": "¿Necesitas ayuda? Chatea en WhatsApp.",
+    "startChallenge": "Iniciar evaluación",
     "searchPlaceholder": "Buscar respuestas…",
     "metaDescription": "Centro de ayuda de FPT — respuestas sobre la evaluación, las cuentas financiadas, las recompensas, la Fiper Card, las reglas de trading y la plataforma.",
     "readMore": "Leer más",
@@ -397,7 +391,8 @@
       "eyebrow": "¿Listo para empezar?",
       "title": "Convierte tu audiencia en ingresos.",
       "subtitle": "Regístrate y comparte tu enlace de referido.",
-      "button": "Hazte Socio"
+      "button": "Hazte Socio",
+      "buttonFinal": "Registrarse como socio"
     },
     "tiersEyebrow": "Niveles de Comisión",
     "tiersTitle": "Gana más a medida que creces.",

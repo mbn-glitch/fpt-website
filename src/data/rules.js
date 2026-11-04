@@ -44,7 +44,10 @@ export const AFFILIATE_TIERS = [
   { code: 't3', min: 30, max: null, bps: 2000, name: { ar: 'المستوى الثالث (30+ مبيعات)', en: 'Tier 3 (30+ sales)' } },
 ];
 
-export const pct = (bps) => `${(bps / 100).toLocaleString('en-US', { maximumFractionDigits: 2 })} %`;
-/** «50,000 USD» — the product word + size once with its code (GLOSSARY § 6 / § 11), Latin digits, unbreakable. */
-export const usd = (cents) => `${(cents / 100).toLocaleString('en-US', { maximumFractionDigits: 0 })} USD`;
+import { formatMoney, formatPercent } from '../lib/money.jsx';
+
+/** «80 %» — one no-break space (RD2 rule 3.4). */
+export const pct = formatPercent;
+/** «50,000 USD» — the ONE money format (src/lib/money.jsx): number, no-break space, code, isolated (GLOSSARY § 6 / § 11, RD2 F-007). */
+export const usd = (cents) => formatMoney(cents / 100, 'USD', 0);
 export const sizeLabel = (cents) => `${Math.round(cents / 100 / 1000)}K`;

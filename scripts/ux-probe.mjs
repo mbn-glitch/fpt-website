@@ -1,21 +1,28 @@
 #!/usr/bin/env node
 /**
- * Runtime guards of the RD2 round (FPT-WEBSITE-UX-R1, 4 Nov 2026) on a running host — Chromium headless (the real copy under ~/.cache/pw-cr10,
- * never ms-playwright; Playwright is loaded from FPT_PLAYWRIGHT or the design-office tools folder). Per screen × language × width it measures:
- *   consoleErrors · fixedElements (no floating button — decision 40-أ) · relationshipLines (= 1 per page — decision 38-ب) · brandRedOver per
- *   390 px viewport (red elements beyond ONE primary button — CR-4 / CR-14) · h1Lines (≤ 2 under fr / es / pt / tr on 390 — CR-5 / CR-15) ·
- *   smallMailto (mailto targets < 44 px — F-072) · currencyOrder (an Arabic amount whose code paints before its digits — rule 3.4) ·
- *   doubleSpaces · glossary hits in the visible text (rule 3.5).
- *   node scripts/ux-probe.mjs --base http://localhost:4174 --out artifacts/ux-r1/probe-local.json [--shots artifacts/ux-r1/after] [--langs ar,en,fr] [--widths 390,1440]
+ * Runtime guards of the RD2 rounds (FPT-WEBSITE-UX-R1 / UX-R2, 4 Nov 2026) on a running host — Chromium headless (the real copy under ~/.cache/pw-cr10,
+ * never ms-playwright; Playwright and @axe-core/playwright are loaded from FPT_PLAYWRIGHT_TOOLS or the R1R2 tools folder). Per screen × language × width:
+ *   consoleErrors (on the 404 screen the request of the page itself is expected) · fixedElements (no floating button — decision 40-أ) · relationshipLines
+ *   (= 1 per page — decision 38-ب) · brandRedOver per 390 px viewport (red beyond ONE primary button — CR-4 / CR-14) · smallMailto (< 44 px — F-072) ·
+ *   currencyOrder (an Arabic amount whose code paints before its digits — rule 3.4) · doubleSpaces · glossary hits (rule 3.5) ·
+ *   axe (wcag2a / wcag2aa / wcag21aa / best-practice: serious + critical violations BLOCK — UXFW-057 `listitem`) · foldSizes (text sizes in the first screen
+ *   outside the header: ≤ 4 + the 13 px label — CR-06 / UXFW-020 / 058) · monoOnLabels (Plex Mono on a word that is not a figure — ID-05 / UXFW-060) ·
+ *   on the 404 screen: a 404 status, <html lang>, a title, an h1 (decision 53 / UXFW-059).
+ *   h1Lines on 390 under fr / es / pt / tr is REPORTED, not blocking, while owner decision 44 (CR-15 addendum) is pending.
+ *   node scripts/ux-probe.mjs --base http://localhost:4174 --out artifacts/ux-r2/probe-local-390.json [--shots dir] [--langs ar,en,fr,es,pt,tr] [--widths 390] [--only home,notfound]
  * Exit 1 when any guard is violated.
  */
 import { mkdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
-const { chromium } = await import(process.env.FPT_PLAYWRIGHT ?? '/home/builder/Projects/FPT-WEBSITE-R1R2-captures/_tools/node_modules/playwright/index.mjs');
+const TOOLS = process.env.FPT_PLAYWRIGHT_TOOLS ?? '/home/builder/Projects/FPT-WEBSITE-R1R2-captures/_tools/node_modules';
+const { chromium } = await import(process.env.FPT_PLAYWRIGHT ?? `${TOOLS}/playwright/index.mjs`);
+const { default: AxeBuilder } = await import(`${TOOLS}/@axe-core/playwright/dist/index.mjs`);
 const a = process.argv.slice(2); const opt = (n, d) => (a.includes(`--${n}`) ? a[a.indexOf(`--${n}`) + 1] : d);
 const BASE = (opt('base', '') || '').replace(/\/$/, ''); if (!BASE) { console.error('usage: --base <url>'); process.exit(2); }
 const OUT = opt('out', ''); const SHOTS = opt('shots', ''); const LANGS = opt('langs', 'ar,en,fr').split(','); const WIDTHS = opt('widths', '390,1440').split(',').map(Number);
-const SCREENS = [['home', '/'], ['challenges', '/challenges'], ['about', '/about'], ['contact', '/contact'], ['help', '/help'], ['help-challenges-rules', '/help/challenges-rules'], ['partners', '/partners']];
+const HELP = ['getting-started', 'challenges-rules', 'funded-accounts', 'payouts-fiper-card', 'trading-conditions', 'account-management', 'technical-platform', 'legal-general', 'partner-program'];
+const ALL_SCREENS = [['home', '/'], ['challenges', '/challenges'], ['about', '/about'], ['contact', '/contact'], ['help', '/help'], ['partners', '/partners'], ...HELP.map((h) => [`help-${h}`, `/help/${h}`]), ['notfound', '/this-page-does-not-exist']];
+const ONLY = opt('only', '') ? new Set(opt('only').split(',')) : null; const SCREENS = ONLY ? ALL_SCREENS.filter(([k]) => ONLY.has(k)) : ALL_SCREENS;
 const localized = (r, l) => (l === 'en' ? r : r === '/' ? `/${l}` : `/${l}${r}`);
 const CHROME = process.env.CHROME_PATH || `${process.env.HOME}/.cache/pw-cr10/chromium-1248/chrome-linux64/chrome`;
 const browser = await chromium.launch({ executablePath: CHROME, headless: true, args: ['--no-sandbox'] });
@@ -27,7 +34,8 @@ for (const W of WIDTHS) for (const lang of LANGS) {
     const page = await ctx.newPage(); const errors = [];
     page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text().slice(0, 160)); }); page.on('pageerror', (e) => errors.push(String(e).slice(0, 160)));
     const url = `${BASE}${localized(route, lang)}`;
-    await page.goto(url, { waitUntil: 'networkidle', timeout: 60_000 }); await page.evaluate(() => document.fonts?.ready); await page.waitForTimeout(500);
+    const resp = await page.goto(url, { waitUntil: 'networkidle', timeout: 60_000 }); await page.evaluate(() => document.fonts?.ready); await page.waitForTimeout(500);
+    const status = resp?.status() ?? null;
     const m = await page.evaluate(({ W, H }) => {
       const RED = 'rgb(244, 40, 33)'; const vis = (el) => { const r = el.getBoundingClientRect(); return r.width > 0 && r.height > 0; };
       const all = [...document.querySelectorAll('body *')];
@@ -43,28 +51,45 @@ for (const W of WIDTHS) for (const lang of LANGS) {
       const h1 = document.querySelector('main h1'); const h1cs = h1 && getComputedStyle(h1); const h1Lines = h1 ? Math.round(h1.getBoundingClientRect().height / parseFloat(h1cs.lineHeight)) : null;
       const fixed = all.filter((el) => getComputedStyle(el).position === 'fixed' && vis(el) && !el.closest('header') && el.tagName !== 'HEADER').map((el) => `${el.tagName.toLowerCase()}${el.id ? '#' + el.id : ''}.${[...el.classList].slice(0, 3).join('.')}`);
       const mail = [...document.querySelectorAll('a[href^="mailto:"]')].map((el) => Math.round(el.getBoundingClientRect().height)); const smallMailto = mail.filter((h) => h > 0 && h < 44);
+      // text nodes (visible, non-empty) with their element, computed style and rect — the base of the type counters
+      const nodes = []; const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT); let n;
+      while ((n = walker.nextNode())) { const txt = n.nodeValue.trim(); if (!txt) continue; const el = n.parentElement; if (!el || el.closest('script, style, noscript')) continue; const r = (() => { const rg = document.createRange(); rg.selectNodeContents(n); return rg.getBoundingClientRect(); })(); if (!r.width || !r.height) continue; const cs = getComputedStyle(el); if (cs.visibility === 'hidden' || cs.opacity === '0') continue; nodes.push({ n, el, txt, cs, r, fs: Math.round(parseFloat(cs.fontSize) * 10) / 10 }); }
       // currencyOrder: for every text node with «digits code», compare the x of the digit run and the code run
-      const bad = []; const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT); let n; const re = /(\d[\d,]*(?:\.\d+)?)[  ]+(USD|EUR|AED)/g;
-      while ((n = walker.nextNode())) { const t = n.nodeValue; if (!/\d/.test(t)) continue; let mm; while ((mm = re.exec(t))) { const r1 = document.createRange(); r1.setStart(n, mm.index); r1.setEnd(n, mm.index + mm[1].length); const r2 = document.createRange(); r2.setStart(n, mm.index + mm[0].length - 3); r2.setEnd(n, mm.index + mm[0].length); const b1 = r1.getBoundingClientRect(), b2 = r2.getBoundingClientRect(); if (b1.width && b2.width && Math.abs(b2.top - b1.top) < b1.height / 2 && b2.left < b1.left) bad.push(mm[0]); } }
-      const text = document.body.innerText; const doubleSpaces = (text.match(/\d[\d,.]*[  ]{2,}(USD|EUR|AED|%)/g) || []).length;
+      const bad = []; const re = /(\d[\d,]*(?:\.\d+)?)[  ]+(USD|EUR|AED)/g;
+      for (const x of nodes) { const t = x.n.nodeValue; if (!/\d/.test(t)) continue; let mm; re.lastIndex = 0; while ((mm = re.exec(t))) { const r1 = document.createRange(); r1.setStart(x.n, mm.index); r1.setEnd(x.n, mm.index + mm[1].length); const r2 = document.createRange(); r2.setStart(x.n, mm.index + mm[0].length - 3); r2.setEnd(x.n, mm.index + mm[0].length); const b1 = r1.getBoundingClientRect(), b2 = r2.getBoundingClientRect(); if (b1.width && b2.width && Math.abs(b2.top - b1.top) < b1.height / 2 && b2.left < b1.left) bad.push(mm[0]); } }
+      const text = document.body.innerText; const doubleSpaces = (text.match(/\d[\d,.]*[  ]{2,}(USD|EUR|AED|%)/g) || []).length;
       const gloss = (text.match(/(?<![\p{L}\p{N}])(challenges?|d[ée]fis?|desaf[ií]os?|zorlu[kğg]\p{L}*|meydan okuma\p{L}*|MT[45])(?![\p{L}\p{N}])/giu) || []).concat(text.match(/(?<![؀-ۿ])(?:ال)?تحدي(?:ات|ك|اً|ا)?(?![؀-ۿ])/g) || []);
       const smallTargets = [...document.querySelectorAll('a, button')].filter((el) => vis(el)).map((el) => el.getBoundingClientRect()).filter((r) => r.height < 44 || r.width < 44).length;
-      return { docH, primaries: primaries.length, primariesPerViewportMax: Math.max(0, ...perView), brandRedOver: redBeyond.length, redBeyondSample: redBeyond.slice(0, 5).map((el) => `${el.tagName.toLowerCase()}.${[...el.classList].slice(0, 3).join('.')}`), relationshipLines: relCount, h1Lines, h1Text: h1?.textContent?.trim().slice(0, 60), fixedElements: fixed, smallMailto, currencyOrder: bad, doubleSpaces, glossary: gloss.slice(0, 10), smallTargets };
+      // UXFW-020 / 058: the type sizes of the first screen outside the header (the design office's `fold.sizes`); the 13 px label does not count
+      const foldNodes = nodes.filter((x) => x.r.bottom > 0 && x.r.top < H && !x.el.closest('header')); const foldSizes = [...new Set(foldNodes.map((x) => x.fs))].sort((p, q) => p - q);
+      // UXFW-060 / 021: a mono font on a word (≥ 4 letters, not a currency code) — ID-05: mono for figures only
+      const monoOnLabels = nodes.filter((x) => /Plex Mono|JetBrains|mono/i.test(x.cs.fontFamily) && (x.txt.match(/[A-Za-z؀-ۿ]/g) || []).length >= 4 && !/^[A-Z]{3}$|USD|EUR|AED/.test(x.txt)).map((x) => `${x.el.tagName.toLowerCase()} «${x.txt.slice(0, 24)}»`);
+      const minFont = nodes.length ? Math.min(...nodes.map((x) => x.fs)) : null;
+      return { docH, primaries: primaries.length, primariesPerViewportMax: Math.max(0, ...perView), brandRedOver: redBeyond.length, redBeyondSample: redBeyond.slice(0, 5).map((el) => `${el.tagName.toLowerCase()}.${[...el.classList].slice(0, 3).join('.')}`), relationshipLines: relCount, h1Lines, h1Text: h1?.textContent?.trim().slice(0, 60), fixedElements: fixed, smallMailto, currencyOrder: bad, doubleSpaces, glossary: gloss.slice(0, 10), smallTargets, foldSizes, foldSizesWithoutLabel: foldSizes.filter((s) => s !== 13).length, monoOnLabels, minFont, pageLang: document.documentElement.lang, title: document.title, h1Count: document.querySelectorAll('h1').length, riskLines: document.querySelectorAll('[data-risk-line]').length, entityLines: document.querySelectorAll('[data-entity-line]').length };
     }, { W, H });
-    const r = { key, lang, width: W, url, consoleErrors: errors, ...m };
+    let axe = null; try { const r = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'best-practice']).analyze(); axe = r.violations.map((v) => ({ id: v.id, impact: v.impact, nodes: v.nodes.length, targets: v.nodes.slice(0, 3).map((x) => x.target.join(' ')) })); } catch (e) { axe = [{ id: 'axe-error', impact: 'critical', nodes: 0, targets: [String(e).slice(0, 120)] }]; }
+    const axeBlocking = axe.filter((v) => ['serious', 'critical'].includes(v.impact));
+    const consoleReal = key === 'notfound' ? errors.filter((e) => !/status of 404/.test(e)) : errors;
+    const r = { key, lang, width: W, url, status, consoleErrors: consoleReal, consoleAll: errors, axe, ...m };
     const bad = [];
-    if (errors.length) bad.push(`console ${errors.length}`);
+    if (consoleReal.length) bad.push(`console ${consoleReal.length}: ${consoleReal[0]}`);
+    if (key === 'notfound') { if (status !== 404) bad.push(`status ${status} (404 expected)`); if (m.pageLang !== lang) bad.push(`lang ${m.pageLang}`); if (!m.title) bad.push('no title'); if (m.h1Count !== 1) bad.push(`h1 ${m.h1Count}`); if (m.riskLines !== 1 || m.entityLines !== 1) bad.push(`risk/entity ${m.riskLines}/${m.entityLines}`); }
+    else if (status !== 200) bad.push(`status ${status}`);
     if (m.fixedElements.length) bad.push(`fixed ${m.fixedElements.join(',')}`);
     if (m.relationshipLines !== 1) bad.push(`relationshipLines ${m.relationshipLines}`);
     if (W <= 430 && m.primariesPerViewportMax > 1) bad.push(`primaries/viewport ${m.primariesPerViewportMax}`);
     if (m.brandRedOver) bad.push(`brandRedOver ${m.brandRedOver} ${m.redBeyondSample.join(' ')}`);
-    if (W <= 430 && ['fr', 'es', 'pt', 'tr'].includes(lang) && m.h1Lines > 2) bad.push(`h1Lines ${m.h1Lines}`);
     if (m.smallMailto.length) bad.push(`smallMailto ${m.smallMailto.join(',')}`);
     if (m.currencyOrder.length) bad.push(`currencyOrder ${m.currencyOrder.join(' | ')}`);
     if (m.doubleSpaces) bad.push(`doubleSpaces ${m.doubleSpaces}`);
     if (m.glossary.length) bad.push(`glossary ${m.glossary.join(',')}`);
+    if (axeBlocking.length) bad.push(`axe ${axeBlocking.map((v) => `${v.id}×${v.nodes}`).join(' ')}`);
+    if (W <= 430 && m.foldSizesWithoutLabel > 4) bad.push(`foldSizes ${JSON.stringify(m.foldSizes)}`);
+    if (m.monoOnLabels.length) bad.push(`monoOnLabels ${m.monoOnLabels.length}: ${m.monoOnLabels.slice(0, 3).join(' · ')}`);
+    if (m.minFont !== null && m.minFont < 12) bad.push(`minFont ${m.minFont}`);
+    r.h1Over2 = W <= 430 && ['fr', 'es', 'pt', 'tr'].includes(lang) && m.h1Lines > 2; // reported only — owner decision 44 pending
     r.verdict = bad.length ? `FAIL ${bad.join(' · ')}` : 'PASS'; if (bad.length) violations++;
-    console.log(`${r.verdict.padEnd(8)} ${key} ${lang} ${W} · primaries ${m.primaries} (max/view ${m.primariesPerViewportMax}) · red+ ${m.brandRedOver} · rel ${m.relationshipLines} · h1 ${m.h1Lines} lines · mailto<44 ${m.smallMailto.length} · cur ${m.currencyOrder.length} · dbl ${m.doubleSpaces} · targets<44 ${m.smallTargets}`);
+    console.log(`${r.verdict.padEnd(8)} ${key} ${lang} ${W} · ${status} · prim ${m.primaries} (max/view ${m.primariesPerViewportMax}) · red+ ${m.brandRedOver} · rel ${m.relationshipLines} · h1 ${m.h1Lines}L${r.h1Over2 ? ' (>2, decision 44)' : ''} · mailto<44 ${m.smallMailto.length} · cur ${m.currencyOrder.length} · dbl ${m.doubleSpaces} · axe ${axe.length}/${axeBlocking.length} · fold ${JSON.stringify(m.foldSizes)} · mono ${m.monoOnLabels.length} · min ${m.minFont} · targets<44 ${m.smallTargets}`);
     if (SHOTS) { const dir = path.join(SHOTS); mkdirSync(dir, { recursive: true }); await page.screenshot({ path: path.join(dir, `${key}__${lang}__${W}__viewport.png`) }); await page.screenshot({ path: path.join(dir, `${key}__${lang}__${W}__full.png`), fullPage: true }); }
     results.push(r); await page.close();
   }
@@ -72,5 +97,6 @@ for (const W of WIDTHS) for (const lang of LANGS) {
 }
 await browser.close();
 if (OUT) { mkdirSync(path.dirname(OUT), { recursive: true }); writeFileSync(OUT, JSON.stringify({ at: new Date().toISOString(), base: BASE, results }, null, 1)); }
-console.log(`ux-probe: ${violations ? `FAIL (${violations} screens)` : 'PASS'} — ${results.length} screens on ${BASE}`);
+const over2 = results.filter((r) => r.h1Over2).map((r) => `${r.key}/${r.lang}:${r.h1Lines}`);
+console.log(`ux-probe: ${violations ? `FAIL (${violations} screens)` : 'PASS'} — ${results.length} screens on ${BASE}${over2.length ? ` · h1 > 2 lines on 390 (reported, decision 44 pending): ${over2.join(' ')}` : ''}`);
 process.exit(violations ? 1 : 0);

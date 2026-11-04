@@ -14,8 +14,9 @@ import path from 'node:path';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const DIST = process.argv.includes('--dist');
-/** Documented cap: primary (red) buttons per pre-rendered page — each sits in its own viewport on a 390 px phone (hero · pricing card / fee card · closing CTA). */
-export const RED_CAP = { '': 2, challenges: 2, about: 1, contact: 0, help: 0, 'help/*': 0, partners: 2, '404': 0, 'offline.html': 0 };
+/** Documented cap: primary (red) buttons per pre-rendered page — each sits in its own viewport on a 390 px phone (hero · pricing card / fee card · closing CTA);
+ *  the 404 page (pre-rendered in six languages since UX-R2 / decision 53) carries its ONE action «Go to the home page». */
+export const RED_CAP = { '': 2, challenges: 2, about: 1, contact: 0, help: 0, 'help/*': 0, partners: 2, '404': 1, 'offline.html': 0 };
 const failures = [];
 const walk = (d, test, out = []) => { for (const e of readdirSync(d)) { const p = path.join(d, e); if (statSync(p).isDirectory()) walk(p, test, out); else if (test(e)) out.push(p); } return out; };
 for (const f of walk(path.join(ROOT, 'src'), (e) => /\.(jsx?|css)$/.test(e))) {

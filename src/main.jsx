@@ -14,8 +14,8 @@ const tree = (
   </React.StrictMode>
 );
 
-// Every route × language is pre-rendered at build time (scripts/prerender.mjs) and hydrated here once the path's locale chunk is in;
-// 404.html is rendered fresh (its language depends on the requested path).
+// Every route × language is pre-rendered at build time (scripts/prerender.mjs) and hydrated here once the path's locale chunk is in —
+// the six 404 pages too (decision 53): Vercel serves the 404 file of the path's language prefix, which is the language getInitialLang() reads.
 switchLanguage(getInitialLang()).then(() => {
   if (container.dataset.prerendered === 'route' && container.hasChildNodes()) hydrateRoot(container, tree);
   else createRoot(container).render(tree);

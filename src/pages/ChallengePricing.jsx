@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { Target, TrendingDown, AlertTriangle, Calendar, Clock, Zap, Users, CalendarCheck, Check, Info, Banknote, Shield, Coins, RefreshCw } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO.jsx';
@@ -128,8 +128,10 @@ export default function ChallengePricing() {
             <div className="min-w-0">
               <div className="text-[13px] text-tertiary">{t('challengePricing.accountSize')}</div>
               {/* RD2 F-031 / F-032 (owner 4 Nov 2026): ONE list of the five sizes — 48 px rows (size · fee), the selected row in the text colour with a
-                  neutral border (CR-4: no red frame); no slider, no second grid. The fee follows the currency control below. */}
-              <ul className="mt-4 flex flex-col gap-2" role="group" aria-label={t('challengePricing.accountSize')}>
+                  neutral border (CR-4: no red frame); no slider, no second grid. The fee follows the currency control below.
+                  UXFW-057 (UX-R2): the <ul> keeps its LIST role (explicit — Safari drops the list semantics of a `list-style: none` list; `role="group"` orphaned
+                  the five <li> for screen readers — axe `listitem`); the accessible name stays on the list. */}
+              <ul className="mt-4 flex flex-col gap-2" role="list" aria-label={t('challengePricing.accountSize')}>
                 {CATALOG_V1.map((p, i) => {
                   const selected = sizeIdx === i;
                   return (

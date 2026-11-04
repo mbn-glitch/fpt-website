@@ -43,17 +43,22 @@ links (`https://app.fptraders.app/<ar|en>/legal/<terms|privacy|risk|refund>`), a
 
 - React 19 + React Router 6 · Vite 6 · Tailwind CSS 4 · react-i18next · lucide-react
 - Pre-rendering: `vite build` (client) → `vite build --ssr src/entry-server.jsx` → `scripts/prerender.mjs` writes `dist/<path>/index.html` for
-  every route × language (90 pages) with the head tags rendered once, `<html lang dir>`, two preloaded font pieces per language, plus `dist/404.html`.
-  `src/main.jsx` hydrates a pre-rendered page and renders the 404 shell fresh.
+  every route × language (90 pages) with the head tags rendered once, `<html lang dir>`, two preloaded font pieces per language, plus the **404 page in
+  the six languages** (`dist/404.html` English, `dist/<lang>/404.html` — owner decision 53, 4 Nov 2026: title, `<html lang dir>`, h1, the risk and entity
+  lines once, `noindex`). `src/main.jsx` hydrates every pre-rendered page, the 404 pages included.
 - Hosting: Vercel static output on the apex **`https://fptraders.app`** (+ `www.` → apex 308, project `fpt-website` / alias `fpt-website-rust.vercel.app`,
-  team `fiper-card`; FPT-WEBSITE-DOMAIN, owner decision 33-أ, 4 Nov 2026). `vercel.json`: `/pricing` → `/challenges`, `/en/*` → `/*`, `/favicon.ico` →
-  `/brand/favicon.ico`, the old image paths → `third-party/`, immutable cache for `/assets`, `/fonts` and `/brand/fonts`, and the **client-app
-  redirects**: every path that is not one of the site's 15 routes × 6 languages, a site asset or `/api/*` is a client-area path and goes **308 to
-  `https://app.fptraders.app{path}{query}`** (`/ar/signin?ref=CODE` → `app./ar/signin?ref=CODE`, `/c/{code}`, `/mock-gateway/*`, bare `/signin` …;
-  Vercel forwards the query). `/api/*` is never redirected: **`/api/webhooks/*` answers 404 on the apex on purpose** — the payment / KYC providers
-  are registered on `https://app.fptraders.app/api/webhooks/<provider>` (fpt-platform `docs/go-live-keys.md` § 3/4/5; a redirect would strip the
-  signed POST — `FPT-DOMAIN-HANDOFF.md` § 3). Site paths that do not exist (`/fr/nope`, `/help/x`) get `404.html` with a real 404 status;
-  unknown root paths (`/anything`) follow the simplest rule and bounce to the app. Live check: `node scripts/check-redirects-live.mjs --base <url>`.
+  team `fiper-card`; FPT-WEBSITE-DOMAIN, owner decision 33-أ, 4 Nov 2026). `vercel.json` is written as low-level **`routes`** (the form the earlier
+  `redirects` / `headers` / `trailingSlash` compiled to — a `status` per route is what makes the per-language 404 possible): trailing slash → 308,
+  `/pricing` → `/challenges`, `/en/*` → `/*`, `/favicon.ico` → `/brand/favicon.ico`, the old image paths → `third-party/`, immutable cache for `/assets`,
+  `/fonts` and `/brand/fonts`, and the **client-app redirects as a POSITIVE list (owner decision 51, 4 Nov 2026)**: only the known app paths of
+  `FPT-DOMAIN-HANDOFF.md` § 2 — `/{ar|en}/(signin|signup|reset|verify|2fa|home|accounts|account|shop|checkout|orders|payouts|certificates|notifications|profile|more|legal|manifest.webmanifest)(/…)?`,
+  bare `/signin`, `/signup`, `/c/{code}`, `/mock-gateway/*` — go **308 to `https://app.fptraders.app{path}{query}`** (Vercel forwards the query:
+  `/ar/signin?ref=CODE` → `app./ar/signin?ref=CODE`). **Every other unknown or mistyped path stays on the site's 404 page in the language of its prefix**
+  (`/ar/anything` → the Arabic page, `/fr/typo` → the French one, `/anything` and `/xx/typo` → English) with a real 404 status — the `{ "handle": "error" }`
+  routes map `/<lang>/…` to `/<lang>/404.html`. `/api/*` is never redirected and answers 404: **`/api/webhooks/*` is 404 on the apex on purpose** — the
+  payment / KYC providers are registered on `https://app.fptraders.app/api/webhooks/<provider>` (fpt-platform `docs/go-live-keys.md` § 3/4/5; a redirect
+  would strip the signed POST — `FPT-DOMAIN-HANDOFF.md` § 3). Offline proof: `scripts/check-routes.mjs` (in `check:dist`) resolves 36 app paths × 2,
+  25 unknown paths, the site's pages and aliases through `scripts/lib/vercel-routes.mjs`; live: `node scripts/check-redirects-live.mjs --base <url>`.
 - Origins: `src/config/site.js` is the ONE place — `SITE_ORIGIN = https://fptraders.app` (`BASE` of `src/components/SEO.jsx`: canonical, hreflang,
   og:url, og:image; `public/sitemap.xml`, `public/robots.txt`, the JSON-LD in `index.html`), `APP_ORIGIN = https://app.fptraders.app` (sign-up /
   sign-in buttons via `src/hooks/useAppLinks.js` — `/ar/…` on Arabic pages, `/en/…` elsewhere, `?ref=CODE` appended when the visit carried a
@@ -66,10 +71,11 @@ links (`https://app.fptraders.app/<ar|en>/legal/<terms|privacy|risk|refund>`), a
 npm install
 npm run dev        # Vite dev server (client-only rendering)
 npm run check      # the ten gates: logo assets · risk line · i18n keys · font subsets · entity line · site origin · glossary · money · red budget · brand verify-identity (runs before every build)
-npm run check:dist # after a build: glossary · money (currencyOrder / doubleSpaces = 0) · red budget on the 90 pre-rendered pages (runs automatically as postbuild)
+npm run check:dist # after a build: glossary · money (currencyOrder / doubleSpaces = 0) · red budget · routes (decisions 51 / 53) on the 96 pre-rendered pages (runs automatically as postbuild)
+npm run serve      # dist/ on http://localhost:4174 with the vercel.json routes applied (redirects, per-language 404 with a 404 status) — the host of the probes
 npm run fonts      # re-cut the font pieces from brand/fonts (after a package upgrade)
 npm run build      # client build + SSR build + pre-render → dist/
-npm run preview    # NOTE: vite preview rewrites every path to /index.html (SPA); use a plain static host to test the pre-rendered pages and 404
+npm run preview    # NOTE: vite preview rewrites every path to /index.html (SPA); use `npm run serve` to test the pre-rendered pages, the redirects and the 404s
 ```
 
 ## Gates (all must PASS before a commit)
@@ -81,11 +87,22 @@ npm run preview    # NOTE: vite preview rewrites every path to /index.html (SPA)
 | `scripts/check-site-origin.mjs` | any retired host (`fptraders.com`, `crm.fptraders.com`) in `src/`, the sitemap, robots, the manifest, the worker or `index.html`; a sitemap URL or robots line off `https://fptraders.app`; fewer than 90 sitemap URLs; legal links off `https://app.fptraders.app` |
 | `scripts/check-glossary.mjs` (+ `--dist`) | «تحدي / Challenge / Défi / Desafío / Desafio / Zorluk / Meydan okuma» or MT4 / MT5 in any visible text — the six locales, the help content, and (after a build) the text of the 90 pages (RD2 rule 3.5: the product word is «تقييم / Evaluation») |
 | `scripts/check-money.mjs` (+ `--dist`) | an amount built by hand, the code before the number, a dollar sign, a double space before a unit; after a build: `currencyOrder` (an Arabic amount outside an LTR isolate) and `doubleSpaces` must be 0 on every page (RD2 rule 3.4: `src/lib/money.jsx` is the ONE format — number · no-break space · code, isolated) |
+| `scripts/check-routes.mjs` (after a build) | a `vercel.json` that is not the low-level `routes`; an app path of the handoff that does not 308 to `app.` with its query; an unknown path (`/anything`, `/ar/anything`, `/fr/typo`, `/xx/typo`, `/api/x`) that is not the site's 404 page of its prefix language with a 404 status; a 404 page without its title, `lang/dir`, h1, risk and entity line once, `noindex` (owner decisions 51 / 53) |
 | `scripts/check-red-budget.mjs` (+ `--dist`) | brand red on a chip, frame, text or `accent-color`; a coloured cTrader mark; after a build more primary buttons on a page than the documented cap (home 2 · evaluations 2 · partners 2 · about 1 · contact / help 0) or any red frame class in the markup (RD2 CR-4 / package CR-14: red = the tile + ONE primary button per viewport) |
 | `scripts/build-font-subsets.mjs --check` | a served font piece missing, unlisted or differing from its `SUBSETS.json` sha256, a `SUBSETS.json` whose source sha256 differ from `brand/fonts`, a stale `fonts.generated.css` (no external tool; `--check-fresh` re-cuts with pyftsubset on the build server) |
 | `scripts/check-risk-line.mjs` | a missing or altered risk line, any other risk wording, any licence wording |
 | `scripts/check-i18n-keys.mjs` | a key used in `src/` that is missing in any of the six locales; key sets that differ between locales |
 | `brand/scripts/verify-identity.mjs src public index.html` | non-token colours, deprecated colours, pure black, non-brand fonts, Arabic letter-spacing, red glows, glass cards, float / pulse animations, gradients, emoji, MT4/MT5, the old OG image |
+
+## Runtime probe (`scripts/ux-probe.mjs`)
+
+`node scripts/ux-probe.mjs --base http://localhost:4174 --langs ar,en,fr,es,pt,tr --widths 390` walks the 16 screens (15 routes + the 404 page) in Chromium
+(the real copy under `~/.cache/pw-cr10`; Playwright and `@axe-core/playwright` from `FPT_PLAYWRIGHT_TOOLS`) and refuses: console errors, a fixed element,
+a relationship line ≠ 1, more than one primary button per 390 px viewport, red beyond the primaries, a `mailto:` < 44 px, an Arabic amount painted code-first,
+a double space, a glossary hit, **an axe violation of impact serious / critical** (wcag2a / aa / 21aa / best-practice — UXFW-057 `listitem`), **more than
+4 text sizes + the 13 px label in the first screen** (CR-06 — UXFW-020 / 058), **Plex Mono on a word** (ID-05 — UXFW-060), text under 12 px, and on the 404
+screen a status ≠ 404, a wrong `<html lang>`, a missing title / h1 / risk / entity line. `h1Lines` > 2 under fr / es / pt / tr on 390 is reported, not
+blocking, while owner decision 44 (CR-15 addendum) is pending.
 
 ## Structure
 
@@ -97,7 +114,8 @@ public/
   sw.js offline.html   conservative service worker (network first, nothing cached) + the offline fallback page (UXFW-052)
   images/third-party/{ctrader,fiper,whatsapp}
   robots.txt sitemap.xml site.webmanifest
-scripts/           gates + prerender.mjs
+docs/              decisions.md (owner decisions recorded in the repo) · status-56.md (the site's copy of the design office's STATUS-56 rows touched by the rounds)
+scripts/           gates + prerender.mjs + check-routes / serve-dist (lib/vercel-routes.mjs) + ux-probe + the live checks (smoke-live, check-redirects-live)
 src/
   components/      brand/ (Logo, RiskLine) · layout/ (Navbar, Footer) · sections/ (home) · help/ · ui/ · SEO.jsx
   data/            rules.js (platform mirror) · pricing.js · legal.js · helpContent.js

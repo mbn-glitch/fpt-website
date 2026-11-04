@@ -9,11 +9,12 @@
   "scripts": {
     "dev": "vite",
     "check": "node scripts/check-logo-assets.mjs && node scripts/check-risk-line.mjs && node scripts/check-i18n-keys.mjs && node scripts/build-font-subsets.mjs --check && node scripts/check-entity-line.mjs && node scripts/check-site-origin.mjs && node scripts/check-glossary.mjs && node scripts/check-money.mjs && node scripts/check-red-budget.mjs && node brand/scripts/verify-identity.mjs src public index.html",
-    "check:dist": "node scripts/check-glossary.mjs --dist && node scripts/check-money.mjs --dist && node scripts/check-red-budget.mjs --dist",
+    "check:dist": "node scripts/check-glossary.mjs --dist && node scripts/check-money.mjs --dist && node scripts/check-red-budget.mjs --dist && node scripts/check-routes.mjs",
     "prebuild": "npm run check",
     "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs",
     "postbuild": "npm run check:dist",
     "preview": "vite preview",
+    "serve": "node scripts/serve-dist.mjs --port 4174",
     "fonts": "node scripts/build-font-subsets.mjs"
   },
   "dependencies": {

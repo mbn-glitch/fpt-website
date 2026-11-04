@@ -39,6 +39,19 @@ for (const l of LANGS) for (const r of ROUTES) {
   if (/>(common|nav|hero|fptCard|help|about|footer|challengePricing|partners|contact|notFound)\.[a-zA-Z.]+</.test(h)) probs.push('raw key');
   check(name, probs.length === 0, probs.join(', '));
 }
+// UX-R2 (decision 53): the 404 page of every language — a complete page served with a 404 status for an unknown path under that prefix
+for (const l of LANGS) {
+  const p = localized('/this-page-does-not-exist', l); const res = await fetch(`${BASE}${p}`, { redirect: 'manual' }); const h = await res.text(); const el = l === 'ar' ? 'ar' : 'en'; const probs = [];
+  if (res.status !== 404) probs.push(`status ${res.status}`);
+  if ((h.match(/<title/g) || []).length !== 1) probs.push('title≠1');
+  if (!new RegExp(`<html lang="${l}" dir="${l === 'ar' ? 'rtl' : 'ltr'}">`).test(h)) probs.push('html lang/dir');
+  if ((h.match(/<h1/g) || []).length !== 1) probs.push('h1≠1');
+  if ((h.match(/data-risk-line/g) || []).length !== 1 || !h.includes(l === 'ar' ? 'الاستثمار ينطوي على مخاطر' : 'Investing involves risk')) probs.push('risk line≠1');
+  if ((h.match(/data-entity-line/g) || []).length !== 1 || !(h.includes(esc(ENTITY[el])) || h.includes(ENTITY[el]))) probs.push('entity line≠1');
+  if (!/name="robots" content="noindex"/.test(h)) probs.push('noindex');
+  if (/rel="canonical"/.test(h)) probs.push('canonical on a 404');
+  check(`${p} (404 page ${l})`, probs.length === 0, probs.join(', '));
+}
 for (const f of ['fpt-lockup-horizontal-en-white.svg', 'fpt-tile.svg', 'favicon.svg', 'favicon.ico', 'og-1200x630-ar.png', 'og-1200x630-en.png', 'fonts/Inter-400.woff2', 'fonts/IBMPlexSansArabic-400.woff2', 'fonts/BarlowCondensed-800.woff2']) {
   const exp = (readFileSync(path.join(ROOT, 'public/brand/SHA256SUMS'), 'utf8').split('\n').find((x) => x.endsWith(` ${f}`)) || '').split(' ')[0];
   check(`brand/${f} = package bytes`, (await sha(`${BASE}/brand/${f}`)) === exp);

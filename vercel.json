@@ -1,107 +1,23 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/pricing",
-      "destination": "/challenges",
-      "permanent": true
-    },
-    {
-      "source": "/:lang(ar|fr|es|pt|tr)/pricing",
-      "destination": "/:lang/challenges",
-      "permanent": true
-    },
-    {
-      "source": "/favicon.ico",
-      "destination": "/brand/favicon.ico",
-      "permanent": true
-    },
-    {
-      "source": "/ar/:path((?!(?:challenges|pricing|about|contact|help|partners|404)(?:/|$)).+)",
-      "destination": "https://app.fptraders.app/ar/:path",
-      "permanent": true
-    },
-    {
-      "source": "/en/:path((?!(?:challenges|pricing|about|contact|help|partners|404)(?:/|$)).+)",
-      "destination": "https://app.fptraders.app/en/:path",
-      "permanent": true
-    },
-    {
-      "source": "/en",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/en/:path*",
-      "destination": "/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/images/fiper/:file*",
-      "destination": "/images/third-party/fiper/:file*",
-      "permanent": true
-    },
-    {
-      "source": "/images/ctrader/:file*",
-      "destination": "/images/third-party/ctrader/:file*",
-      "permanent": true
-    },
-    {
-      "source": "/:path((?!(?:challenges|pricing|about|contact|help|partners|404)(?:/|$)|(?:ar|en|fr|es|pt|tr)(?:/|$)|(?:assets|brand|fonts|images)/|(?:sitemap\\.xml|robots\\.txt|site\\.webmanifest|sw\\.js|offline\\.html|favicon\\.ico|index\\.html|404\\.html)$|api/).+)",
-      "destination": "https://app.fptraders.app/:path",
-      "permanent": true
-    }
-  ],
-  "headers": [
-    {
-      "source": "/brand/fonts/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/fonts/(.*).woff2",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/sw.js",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-cache"
-        },
-        {
-          "key": "Service-Worker-Allowed",
-          "value": "/"
-        }
-      ]
-    },
-    {
-      "source": "/offline.html",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-cache"
-        }
-      ]
-    }
+  "routes": [
+    { "src": "^/(.*)/$", "headers": { "Location": "/$1" }, "status": 308 },
+    { "src": "^/pricing$", "headers": { "Location": "/challenges" }, "status": 308 },
+    { "src": "^/(ar|fr|es|pt|tr)/pricing$", "headers": { "Location": "/$1/challenges" }, "status": 308 },
+    { "src": "^/favicon\\.ico$", "headers": { "Location": "/brand/favicon.ico" }, "status": 308 },
+    { "src": "^/((?:ar|en)/(?:signin|signup|reset|verify|2fa|home|accounts|account|shop|checkout|orders|payouts|certificates|notifications|profile|more|legal|manifest\\.webmanifest)(?:/.*)?)$", "headers": { "Location": "https://app.fptraders.app/$1" }, "status": 308 },
+    { "src": "^/(signin|signup|c/[^/]+|mock-gateway(?:/.*)?)$", "headers": { "Location": "https://app.fptraders.app/$1" }, "status": 308 },
+    { "src": "^/en$", "headers": { "Location": "/" }, "status": 308 },
+    { "src": "^/en/(.+)$", "headers": { "Location": "/$1" }, "status": 308 },
+    { "src": "^/images/fiper/(.*)$", "headers": { "Location": "/images/third-party/fiper/$1" }, "status": 308 },
+    { "src": "^/images/ctrader/(.*)$", "headers": { "Location": "/images/third-party/ctrader/$1" }, "status": 308 },
+    { "src": "^/brand/fonts/(.*)$", "headers": { "Cache-Control": "public, max-age=31536000, immutable" }, "continue": true },
+    { "src": "^/fonts/(.*)\\.woff2$", "headers": { "Cache-Control": "public, max-age=31536000, immutable" }, "continue": true },
+    { "src": "^/assets/(.*)$", "headers": { "Cache-Control": "public, max-age=31536000, immutable" }, "continue": true },
+    { "src": "^/sw\\.js$", "headers": { "Cache-Control": "no-cache", "Service-Worker-Allowed": "/" }, "continue": true },
+    { "src": "^/offline\\.html$", "headers": { "Cache-Control": "no-cache" }, "continue": true },
+    { "handle": "error" },
+    { "src": "^/(ar|fr|es|pt|tr)(?:/.*)?$", "dest": "/$1/404.html", "status": 404 },
+    { "src": "^/.*$", "dest": "/404.html", "status": 404 }
   ]
 }

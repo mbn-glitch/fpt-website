@@ -40,7 +40,7 @@ export default function DashboardPreview() {
       <div className="mt-12 relative rounded-2xl overflow-hidden border border-subtle bg-bg" aria-label={t('common.sampleChip')}>
         {/* Window chrome + the SAMPLE chip (always visible) */}
         <div className="flex items-center justify-between gap-3 px-4 h-12 border-b border-subtle bg-card">
-          <span className="text-[13px] text-tertiary fpt-unit">fptraders.app</span>
+          <span className="text-[13px] text-tertiary fpt-num-text">fptraders.app</span>
           <SampleChip />
         </div>
 
@@ -76,8 +76,10 @@ export default function DashboardPreview() {
               <EquityChart />
             </div>
 
+            {/* UXFW-060 / 021 (UX-R2): Plex Mono on the FIGURES only (ID-05) — the column headings, the side words and the window title are in the text font;
+                the instrument symbols are data in the text font with tabular digits (.fpt-num-text), the numbers in <Unit> */}
             <div className="mt-5 rounded-lg border border-subtle overflow-x-auto" tabIndex={0} role="region" aria-label={t('dashboardPreview.nav.trades')}>
-              <table className="w-full text-[13px] fpt-unit min-w-[460px]">
+              <table className="w-full text-[13px] min-w-[460px]">
                 <thead>
                   <tr className="text-tertiary bg-card border-b border-subtle">
                     {['pair', 'side', 'size', 'entry', 'exit', 'pnl'].map((k) => (
@@ -88,12 +90,12 @@ export default function DashboardPreview() {
                 <tbody>
                   {SAMPLE.trades.map((row) => (
                     <tr key={row.pair} className="border-b border-subtle last:border-0 text-secondary">
-                      <td className="px-3 py-2 text-white">{row.pair}</td>
+                      <td className="px-3 py-2 text-white"><span className="fpt-num-text">{row.pair}</span></td>
                       <td className="px-3 py-2">{t(`dashboardPreview.${row.side}`)}</td>
-                      <td className="px-3 py-2">{row.size}</td>
-                      <td className="px-3 py-2">{row.entry}</td>
-                      <td className="px-3 py-2">{row.exit}</td>
-                      <td className={`px-3 py-2 text-end ${row.pnl < 0 ? 'text-loss' : 'text-gain'}`}>{money(row.pnl)}</td>
+                      <td className="px-3 py-2"><Unit>{row.size}</Unit></td>
+                      <td className="px-3 py-2"><Unit>{row.entry}</Unit></td>
+                      <td className="px-3 py-2"><Unit>{row.exit}</Unit></td>
+                      <td className={`px-3 py-2 text-end ${row.pnl < 0 ? 'text-loss' : 'text-gain'}`}><Unit>{money(row.pnl)}</Unit></td>
                     </tr>
                   ))}
                 </tbody>

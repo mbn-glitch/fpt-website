@@ -119,3 +119,19 @@ how it shows WhatsApp and the relationship line, and the display step under four
 | **Size selector (RD2 F-031 / F-032)** — one list of five 48 px rows, no slider, no second grid | `ChallengePricing` | probe (targets ≥ 44) |
 | **Images (RD2 F-034)** — the cTrader mark loads eagerly; the Fiper Card artwork box hides itself on load failure | `Platforms`, `FPTCard` | — |
 | **Dead ends / duplicates (RD2 F-070 / F-071 / F-072)** — no «coming soon» note; «Evaluation rules» as the section label; one SAMPLE chip per preview; the partner page's closing button worded differently; every `mailto:` ≥ 44 px | `Ecosystem`, `DashboardPreview`, `Partners`, footer / help | probe (`smallTargets` 0) |
+
+## 7. RD2 — UX review round 2 (owner decisions 49–53, 4 Nov 2026) — `FPT-WEBSITE-UX-R2`, after the design office's recapture at `78d8960`
+
+No identity change. Four P2/P3 rows of `DEFECTS-78D8960` and two decisions on routing; the gates below hold them.
+
+| Rule | Site application | Gate |
+|---|---|---|
+| **Currency code / % = the label step (CR-06)** — the code after a mono figure is a label: 13 px in the text font, never a derived `.72em` (17.3 / 21.6 px were a fifth size in the first screen of the home and partner pages — UXFW-058 / 011 / 020) | `.fpt-unit__code` in `src/index.css` | `scripts/ux-probe.mjs` (`foldSizes` ≤ 4 + the label on 390) |
+| **Mono for figures only (ID-05 — UXFW-060 / 021)** — the dashboard preview's column headings, side words and window title are in the text font; the instrument symbols in the text font with tabular digits (`.fpt-num-text`); the numbers in `<Unit>` | `DashboardPreview` | `scripts/ux-probe.mjs` (`monoOnLabels` = 0) |
+| **The size list keeps its list role (UXFW-057)** — `<ul role="list" aria-label>` with five `<li>` rows (Safari drops the semantics of a `list-style: none` list; `role="group"` orphaned the items — axe `listitem`) | `ChallengePricing` | `scripts/ux-probe.mjs` (axe serious / critical = 0) |
+| **Footer type on the ladder (UXFW-020)** — tagline, support line and link columns at the body step 16 px (14 px was off the ladder and a fifth size in the first screen of the 404 page); the 12 px legal lines and column headings stay the decided exception (≥ 12) | `Footer` | probe `foldSizes` on the 404 screen |
+| **The 404 page in six languages (decision 53 — UXFW-059)** — pre-rendered like every route (title, `<html lang dir>`, h1, the risk and entity lines once, `noindex`, ONE primary action), served with a 404 status by the language of the path prefix | `scripts/prerender.mjs`, `vercel.json` (`handle: error` routes), `NotFound` | `scripts/check-routes.mjs`, `scripts/smoke-live.mjs`, probe (`notfound` screen) |
+| **App redirect = a positive list (decision 51)** — only the handoff's app paths go 308 to `app.`; a typo stays on the site's 404 of its language; `/api/*` 404 | `vercel.json` (`routes`) | `scripts/check-routes.mjs` (offline) · `scripts/check-redirects-live.mjs` (live) |
+| **Partner commission figures (decision 49)** — 15 % · 17.5 % · 20 % and the «30+ sales» threshold are the owner's official figures (`src/data/rules.js` AFFILIATE_TIERS, 4 Nov 2026); no SAMPLE chip, no source line needed | `Partners` | — |
+| **The risk line stays English on fr / es / pt / tr (decision 50)** — no translations are requested from Fiper; the fixed line is the brand's | `RiskLine` | `scripts/check-risk-line.mjs` |
+

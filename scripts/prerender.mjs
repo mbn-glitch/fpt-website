@@ -4,7 +4,9 @@
  * (dist/<path>/index.html) with the page's head tags rendered once, the <html lang dir> of the page and the complete app markup ready for
  * hydration (src/main.jsx). Font preloads (R3 — the unicode-range pieces of public/fonts/SUBSETS.json): Arabic pages preload the Arabic
  * text face 400 and the headline face 600 (the h1 is the LCP element; the fallback may not exist on the device); every other language preloads
- * the Latin display face Barlow Condensed 800 (the h1) and Inter 400 (the text). 404.html is the English NotFound shell rendered fresh on the client.
+ * the Latin display face Barlow Condensed 800 (the h1) and Inter 400 (the text). The 404 page is pre-rendered in the six languages too (owner decision 53,
+ * 4 Nov 2026 — UXFW-059): dist/404.html (English) and dist/<lang>/404.html, complete pages (title, <html lang dir>, h1, the risk and entity lines once) that
+ * vercel.json serves with a 404 status for any unknown path under that language prefix; the client hydrates them like every other route.
  *   npm run build  →  vite build (client) → vite build --ssr src/entry-server.jsx (dist-ssr/) → this script → dist-ssr/ removed.
  * No browser is involved: react-dom/server + react-router StaticRouter; head tags are React 19 hoistables lifted into <head>.
  */
@@ -48,14 +50,19 @@ for (const route of ROUTES) {
     n++;
   }
 }
-// 404.html — Vercel serves it with a 404 status for any path that is not a static file; the client renders the NotFound page in the path's language.
-{
-  const r = await render('/404');
-  write(path.join(DIST, '404.html'), inject(template, { ...r, html: '', head: '' }, 'shell'));
+// The 404 page × six languages (decision 53): /404 (English) and /<lang>/404 render NotFound; vercel.json maps every unknown path to the file of its
+// language prefix (English when the first segment is not a language) with a 404 status — a complete page for the crawler and the reader without JavaScript.
+let n404 = 0;
+for (const lang of LANGS) {
+  const url = localized('/404', lang);
+  const r = await render(url);
+  if (!/<h1/.test(r.html) || !/<title>/.test(r.head)) { console.error(`prerender ${url}: the 404 page must carry an h1 and a title`); process.exit(1); }
+  write(lang === 'en' ? path.join(DIST, '404.html') : path.join(DIST, lang, '404.html'), inject(template, r, 'route'));
+  n404++;
 }
 if (existsSync(SSR)) rmSync(SSR, { recursive: true, force: true });
 const sample = readFileSync(path.join(DIST, 'ar', 'index.html'), 'utf8');
 const count = (re) => (sample.match(re) || []).length;
-console.log(`prerender: ${n} pages (${ROUTES.length} routes × ${LANGS.length} languages) + 404.html → dist/`);
+console.log(`prerender: ${n} pages (${ROUTES.length} routes × ${LANGS.length} languages) + ${n404} × 404.html → dist/`);
 console.log(`prerender check (dist/ar/index.html): <title> ×${count(/<title/g)} · canonical ×${count(/rel="canonical"/g)} · og:url ×${count(/property="og:url"/g)} · hreflang ×${count(/hreflang=/gi)} · lang="ar" ${/<html lang="ar" dir="rtl">/.test(sample)} · h1 ${/<h1/.test(sample)}`);
 if (count(/<title/g) !== 1 || count(/rel="canonical"/g) !== 1 || count(/property="og:url"/g) !== 1) { console.error('prerender: head tags must appear exactly once'); process.exit(1); }

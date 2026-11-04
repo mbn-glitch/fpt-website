@@ -15,6 +15,8 @@ const FIPER_CARD_URL = 'https://fiperhub.com';
  * the rights line, the ONE entity line (verbatim LEGAL.entity.line of config/legal.ts — decision 3-ب, 4 Nov 2026), the fixed risk line (fiper-brand v2.3.4 Q4 / R12) and the
  * simulated-accounts sentence from the approved Risk Disclosure Statement § 2.1 (owner decision 2). Legal links = the four FPT documents
  * published in the client area (owner decision 3). No floating WhatsApp button (owner decision 40-أ, 4 Nov 2026 — RD2 CR-3).
+ * Type (UXFW-020, UX-R2): the tagline, the support line and the link columns sit on the site ladder's body step (16 px) — 14 px was a fifth size above the
+ * fold of the 404 page, whose foot is in the first screen; the 12 px legal lines and column headings are the decided exception (≥ 12).
  */
 export default function Footer() {
   const { t, i18n } = useTranslation();
@@ -30,9 +32,9 @@ export default function Footer() {
               {/* logo v2 (fpt-brand v1.2.1, CR-11): the official ENGLISH white lockup in every language at the footer height (44 px, OBSERVED) */}
               <Logo variant="lockup" size={44} />
             </Link>
-            <p className="mt-5 text-sm text-secondary leading-relaxed">{t('footer.tagline')}</p>
+            <p className="mt-5 text-base text-secondary leading-relaxed">{t('footer.tagline')}</p>
             {/* Owner decision 18 (4 Nov 2026): the support mailbox — the same address as the platform setting `support.email` and the mail foot */}
-            <p className="mt-4 text-sm text-secondary">
+            <p className="mt-4 text-base text-secondary">
               <span className="text-tertiary">{t('footer.support')}</span>{' '}
               <a href={SUPPORT_MAILTO} className="inline-flex items-center min-h-11 py-2 text-white hover:underline fpt-num-text" data-support-email="true">{SUPPORT_EMAIL}</a>
             </p>
@@ -84,7 +86,7 @@ function FooterCol({ title, children }) {
 }
 
 function FooterLink({ to, href, external, children }) {
-  const cls = 'inline-flex items-center min-h-11 text-sm text-secondary hover:text-white transition-colors';
+  const cls = 'inline-flex items-center min-h-11 text-base text-secondary hover:text-white transition-colors';
   if (to) return <Link to={to} className={cls}>{children}</Link>;
   return (
     <a href={href} className={cls} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>

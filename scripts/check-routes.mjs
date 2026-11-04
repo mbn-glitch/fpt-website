@@ -25,7 +25,9 @@ export const APP_PATHS = ['/ar/signin', '/en/signin', '/ar/signup', '/en/signup'
 /** Unknown / mistyped paths → the SITE's 404 page of the prefix language (decision 51): [path, language of the served 404 file]. */
 export const UNKNOWN_404 = [['/anything', 'en'], ['/this-page-does-not-exist', 'en'], ['/ar/anything', 'ar'], ['/ar/this-page-does-not-exist', 'ar'], ['/fr/typo', 'fr'], ['/es/nope', 'es'], ['/pt/nope', 'pt'], ['/tr/nope', 'tr'],
   ['/xx/typo', 'en'], ['/de/signin', 'en'], ['/fr/signin', 'fr'], ['/help/does-not-exist', 'en'], ['/ar/help/does-not-exist', 'ar'], ['/404', 'en'], ['/ar/404', 'ar'], ['/ar/challenges/extra', 'ar'], ['/challenges/extra', 'en'],
-  ['/signinx', 'en'], ['/ar/signinx', 'ar'], ['/ar/legalx', 'ar'], ['/c', 'en'], ['/mock-gatewayx', 'en'], ['/api/x', 'en'], ['/api/webhooks/myfatoorah', 'en'], ['/api/signout', 'en']];
+  ['/signinx', 'en'], ['/ar/signinx', 'ar'], ['/ar/legalx', 'ar'], ['/c', 'en'], ['/mock-gatewayx', 'en'], ['/api/x', 'en'], ['/api/webhooks/myfatoorah', 'en'], ['/api/signout', 'en'],
+  // never an off-site redirect: a capture that starts with a slash / backslash is not a trailing-slash or /en alias case (the proxy also collapses «//»)
+  ['//evil.com/', 'en'], ['/\\evil.com/', 'en'], ['/en//evil.com', 'en'], ['/en/\\evil.com', 'en']];
 const SITE_200 = ['/', '/ar', '/fr', '/es', '/pt', '/tr', '/challenges', '/ar/challenges', '/about', '/ar/help/challenges-rules', '/partners', '/tr/contact', '/sitemap.xml', '/robots.txt', '/sw.js', '/offline.html', '/site.webmanifest', '/brand/og-1200x630-ar.png', '/fonts/SUBSETS.json', '/404.html', '/ar/404.html'];
 const SITE_REDIRECTS = [['/pricing', '/challenges'], ['/ar/pricing', '/ar/challenges'], ['/en', '/'], ['/en/about', '/about'], ['/en/typo', '/typo'], ['/favicon.ico', '/brand/favicon.ico'], ['/images/fiper/x.svg', '/images/third-party/fiper/x.svg'], ['/ar/challenges/', '/ar/challenges'], ['/ar/signin/', '/ar/signin'], ['/en/signin', `${APP}/en/signin`]];
 const LANGS = ['en', 'ar', 'fr', 'es', 'pt', 'tr'];

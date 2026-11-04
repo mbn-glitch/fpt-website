@@ -1,14 +1,14 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "routes": [
-    { "src": "^/(.*)/$", "headers": { "Location": "/$1" }, "status": 308 },
+    { "src": "^/([^/\\\\].*)/$", "headers": { "Location": "/$1" }, "status": 308 },
     { "src": "^/pricing$", "headers": { "Location": "/challenges" }, "status": 308 },
     { "src": "^/(ar|fr|es|pt|tr)/pricing$", "headers": { "Location": "/$1/challenges" }, "status": 308 },
     { "src": "^/favicon\\.ico$", "headers": { "Location": "/brand/favicon.ico" }, "status": 308 },
     { "src": "^/((?:ar|en)/(?:signin|signup|reset|verify|2fa|home|accounts|account|shop|checkout|orders|payouts|certificates|notifications|profile|more|legal|manifest\\.webmanifest)(?:/.*)?)$", "headers": { "Location": "https://app.fptraders.app/$1" }, "status": 308 },
     { "src": "^/(signin|signup|c/[^/]+|mock-gateway(?:/.*)?)$", "headers": { "Location": "https://app.fptraders.app/$1" }, "status": 308 },
     { "src": "^/en$", "headers": { "Location": "/" }, "status": 308 },
-    { "src": "^/en/(.+)$", "headers": { "Location": "/$1" }, "status": 308 },
+    { "src": "^/en/([^/\\\\].*)$", "headers": { "Location": "/$1" }, "status": 308 },
     { "src": "^/images/fiper/(.*)$", "headers": { "Location": "/images/third-party/fiper/$1" }, "status": 308 },
     { "src": "^/images/ctrader/(.*)$", "headers": { "Location": "/images/third-party/ctrader/$1" }, "status": 308 },
     { "src": "^/brand/fonts/(.*)$", "headers": { "Cache-Control": "public, max-age=31536000, immutable" }, "continue": true },

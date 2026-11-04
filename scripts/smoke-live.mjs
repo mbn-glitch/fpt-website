@@ -62,5 +62,5 @@ check('sw.js 200 + no-cache', await (async () => { const r = await fetch(`${BASE
 check('offline.html risk line', (await (await fetch(`${BASE}/offline.html`)).text()).includes('Investing involves risk'));
 check('sitemap 90 <loc> on SITE_ORIGIN', ((await (await fetch(`${BASE}/sitemap.xml`)).text()).match(new RegExp(`<loc>${SITE}`, 'g')) || []).length === 90);
 check('fonts immutable', /immutable/.test((await fetch(`${BASE}/brand/fonts/Inter-400.woff2`)).headers.get('cache-control') || ''));
-check('/fr/nope → real 404 page', await (async () => { const r = await fetch(`${BASE}/fr/nope`, { redirect: 'manual' }); return r.status === 404 && (await r.text()).includes('data-prerendered="shell"'); })());
+check('/fr/nope → the pre-rendered French 404 page (decision 53)', await (async () => { const r = await fetch(`${BASE}/fr/nope`, { redirect: 'manual' }); const h = await r.text(); return r.status === 404 && h.includes('data-prerendered="route"') && h.includes('<html lang="fr" dir="ltr">'); })());
 console.log(out.join('\n')); console.log(`TOTAL PASS ${pass} FAIL ${fail} (${BASE})`); process.exit(fail ? 1 : 0);

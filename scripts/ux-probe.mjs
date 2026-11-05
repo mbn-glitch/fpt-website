@@ -10,11 +10,16 @@
  *   on the 404 screen: a 404 status, <html lang>, a title, an h1 (decision 53 / UXFW-059).
  *   UX-R3 (5 Nov 2026): h1Lines is counted from the LINE BOXES of the h1 text (Range.getClientRects, grouped by top — the design office's counter) with the
  *   rendered font size and the longest line in px; owner decision 44 = أ (CR-15 addendum) makes it BLOCKING: the hero h1 of home / challenges / about / help
- *   keeps ≤ 2 lines on 390 / 360 / 320 under fr / es / pt / tr and en (Arabic reported only; the package's borderline row pt challenges on 320 is reported, not
- *   blocking, until the owner decides — H1_BORDERLINE). foldSizes is counted on the FULL viewport outside the header
+ *   keeps ≤ 2 lines on 390 / 360 / 320 under fr / es / pt / tr and en (Arabic reported only). foldSizes is counted on the FULL viewport outside the header
  *   (the office's definition — owner decision 54 = ب / UXFW-061) and BLOCKS at every width, 1440 × 900 included (≤ 4 sizes + the 13 px label).
+ *   UX-R4 (5 Nov 2026): (1) owner decision 57 = أ shortened the pt evaluations headline, so the H1_BORDERLINE allowance is gone; (2) owner decision 64 = أ keeps
+ *   the English home headline «Trade with Confidence.» and ACCEPTS its third line on 320 px alone — pinned verbatim in H1_DECIDED (reported, never blocking;
+ *   every other gated row blocks); (3) owner decision 65 (proposed package CR-16): the header relationship line is «Part of Fiper Global» in ENGLISH in the six
+ *   languages, one text line, lang="en", never clipped at any width (its own full-width row on ≤ 320) — headerRel BLOCKS when the text, the lang, the count
+ *   (= 1 in the header), a clip / ellipsis / second line or an overlap with the header controls is wrong; (4) UXFW-064: every first-screen size must sit on the
+ *   site ladder (LADDER below, the h1's own capped size allowed) — foldOffLadder BLOCKS (the hero figures were 6.5vw = 23.4 px on 360).
  *   Viewport heights: 390 × 844 · 360 × 780 · 320 × 568 · ≥ 431 × 900.
- *   node scripts/ux-probe.mjs --base http://localhost:4174 --out artifacts/ux-r3/probe-local-390.json [--shots dir] [--langs ar,en,fr,es,pt,tr] [--widths 390,360,320] [--only home,challenges,about,help]
+ *   node scripts/ux-probe.mjs --base http://localhost:4174 --out artifacts/ux-r4/probe-local-390.json [--shots dir] [--langs ar,en,fr,es,pt,tr] [--widths 390,360,320] [--only home,challenges,about,help]
  * Exit 1 when any guard is violated.
  */
 import { mkdirSync, writeFileSync } from 'node:fs';
@@ -28,10 +33,16 @@ const OUT = opt('out', ''); const SHOTS = opt('shots', ''); const LANGS = opt('l
 const HELP = ['getting-started', 'challenges-rules', 'funded-accounts', 'payouts-fiper-card', 'trading-conditions', 'account-management', 'technical-platform', 'legal-general', 'partner-program'];
 const ALL_SCREENS = [['home', '/'], ['challenges', '/challenges'], ['about', '/about'], ['contact', '/contact'], ['help', '/help'], ['partners', '/partners'], ...HELP.map((h) => [`help-${h}`, `/help/${h}`]), ['notfound', '/this-page-does-not-exist']];
 const H1_SCREENS = new Set(['home', 'challenges', 'about', 'help']); const H1_LANGS = new Set(['fr', 'es', 'pt', 'tr', 'en']);
-// The one borderline row the package note § 7 left OUTSIDE decision 44 («measure, report, do not change without a decision»): pt challenges («Prove suas
-// habilidades.» 23 chars / «Obtenha financiamento.» 22) — at the 28 px floor on 320 it measures 3 lines (longest line 279.9 / 280 px). Reported, not blocking,
-// until the owner decides; every other gated screen blocks.
-const H1_BORDERLINE = new Set(['challenges/pt/320']);
+// Owner decision 64 = أ (5 Nov 2026 — UXFW-063): the English home headline stays «Trade with Confidence. / Get Funded.» and its third line on 320 px ALONE is
+// accepted — the one decided exception of decision 44 (reported, never blocking; 360 / 390 stay gated). The pt evaluations row of R3 (H1_BORDERLINE) is gone:
+// decision 57 = أ shortened the text («Prove seu talento. / Seja financiado.»), so it is gated like every other row.
+const H1_DECIDED = new Map([['home/en/320', 'owner decision 64 = أ (5 Nov 2026): the third line of the English home h1 on 320 px is accepted — reported, not blocking']]);
+// Owner decision 65 (5 Nov 2026 — UXFW-062; proposed package CR-16): the header relationship line in English in every language, one text line, never clipped.
+const HEADER_REL = 'Part of Fiper Global';
+// UXFW-064 (UX-R4): the site's type ladder — label 13 · body 16 · subtitle 18 · figures 24 · h2 30 · h1 40 (phones) · 36 / 48 / 60 / 72 (desktop display steps),
+// 12 (the risk line / footer labels), 14 (text-sm) and the ×0.88 display steps under fr / es / pt / tr (26.4 · 31.7 · 35.2 · 42.2 · 52.8 · 63.4); the capped
+// h1 (30.6 / 28.3 / 28) is allowed by its own measured size. A first-screen size off this ladder blocks (a vw-derived step — UXFW-058 / 064 pattern).
+const LADDER = [12, 13, 14, 16, 18, 24, 30, 36, 40, 48, 60, 72, 26.4, 31.7, 35.2, 42.2, 52.8, 63.4];
 const ONLY = opt('only', '') ? new Set(opt('only').split(',')) : null; const SCREENS = ONLY ? ALL_SCREENS.filter(([k]) => ONLY.has(k)) : ALL_SCREENS;
 const localized = (r, l) => (l === 'en' ? r : r === '/' ? `/${l}` : `/${l}${r}`);
 const CHROME = process.env.CHROME_PATH || `${process.env.HOME}/.cache/pw-cr10/chromium-1248/chrome-linux64/chrome`;
@@ -46,7 +57,7 @@ for (const W of WIDTHS) for (const lang of LANGS) {
     const url = `${BASE}${localized(route, lang)}`;
     const resp = await page.goto(url, { waitUntil: 'networkidle', timeout: 60_000 }); await page.evaluate(() => document.fonts?.ready); await page.waitForTimeout(500);
     const status = resp?.status() ?? null;
-    const m = await page.evaluate(({ W, H }) => {
+    const m = await page.evaluate(({ W, H, LADDER }) => {
       const RED = 'rgb(244, 40, 33)'; const vis = (el) => { const r = el.getBoundingClientRect(); return r.width > 0 && r.height > 0; };
       const all = [...document.querySelectorAll('body *')];
       const isRed = (el) => { const cs = getComputedStyle(el); return [cs.color, cs.borderTopColor, cs.borderBottomColor, cs.borderLeftColor, cs.borderRightColor, cs.backgroundColor, cs.outlineColor].includes(RED) || /rgb\(244, 40, 33\)/.test(cs.backgroundImage); };
@@ -77,11 +88,23 @@ for (const W of WIDTHS) for (const lang of LANGS) {
       const smallTargets = [...document.querySelectorAll('a, button')].filter((el) => vis(el)).map((el) => el.getBoundingClientRect()).filter((r) => r.height < 44 || r.width < 44).length;
       // UXFW-020 / 058: the type sizes of the first screen outside the header (the design office's `fold.sizes`); the 13 px label does not count
       const foldNodes = nodes.filter((x) => x.r.bottom > 0 && x.r.top < H && !x.el.closest('header')); const foldSizes = [...new Set(foldNodes.map((x) => x.fs))].sort((p, q) => p - q);
+      // UXFW-064: first-screen sizes off the site ladder (the h1's own capped size is allowed)
+      const foldOffLadder = foldSizes.filter((s) => !LADDER.some((l) => Math.abs(l - s) <= 0.15) && !(h1Px !== null && Math.abs(s - h1Px) <= 0.15));
+      // Decision 65 / UXFW-062: the header relationship line — text, lang, count, natural width vs box, line boxes, overlap with the header controls
+      const hdr = document.querySelector('header'); let headerRel = null;
+      if (hdr) { const cands = [...hdr.querySelectorAll('*')].filter((e) => e.children.length === 0 && /Fiper Global/.test(e.textContent || '') && vis(e)); const e = cands[0];
+        if (e) { const cs = getComputedStyle(e); const pr = document.createElement('span'); pr.style.cssText = `position:absolute;visibility:hidden;white-space:nowrap;left:-99999px;top:0;font:${cs.font};letter-spacing:${cs.letterSpacing}`; pr.textContent = e.textContent; document.body.appendChild(pr); const nat = Math.round(pr.getBoundingClientRect().width * 10) / 10; pr.remove();
+          const r = e.getBoundingClientRect(); const rg = document.createRange(); rg.selectNodeContents(e); const rects = [...rg.getClientRects()].filter((x) => x.width > 0); const tops = [...new Set(rects.map((x) => Math.round(x.top)))];
+          const textRight = Math.max(...rects.map((x) => x.right)), textLeft = Math.min(...rects.map((x) => x.left)), textTop = Math.min(...rects.map((x) => x.top)), textBottom = Math.max(...rects.map((x) => x.bottom));
+          const link = e.closest('a'); const controls = [...hdr.querySelectorAll('nav > *')].filter((c) => c !== link && vis(c) && !c.contains(e)).map((c) => c.getBoundingClientRect());
+          const overlapsControls = controls.some((c) => textLeft < c.right - 0.5 && textRight > c.left + 0.5 && textTop < c.bottom - 0.5 && textBottom > c.top + 0.5);
+          const clipAncestor = (() => { let p = e; while (p && p !== hdr) { const pcs = getComputedStyle(p); if (pcs.overflow === 'hidden' || pcs.overflowX === 'hidden' || pcs.textOverflow === 'ellipsis') { const pr2 = p.getBoundingClientRect(); if (textRight > pr2.right + 0.5 || textLeft < pr2.left - 0.5) return `${p.tagName.toLowerCase()}.${[...p.classList].slice(0, 2).join('.')}`; } p = p.parentElement; } return null; })();
+          headerRel = { text: (e.textContent || '').trim(), lang: e.getAttribute('lang') ?? e.closest('[lang]')?.getAttribute('lang') ?? null, fs: Math.round(parseFloat(cs.fontSize) * 10) / 10, w: Math.round(r.width * 10) / 10, nat, lines: tops.length, ellipsis: cs.textOverflow === 'ellipsis' && e.scrollWidth > e.clientWidth + 1, clipped: nat > r.width + 1 || Boolean(clipAncestor), clipAncestor, overlapsControls, inViewport: textLeft >= -0.5 && textRight <= W + 0.5, count: cands.length, headerW: Math.round(hdr.getBoundingClientRect().width), headerH: Math.round(hdr.getBoundingClientRect().height) }; } }
       // UXFW-060 / 021: a mono font on a word (≥ 4 letters, not a currency code) — ID-05: mono for figures only
       const monoOnLabels = nodes.filter((x) => /Plex Mono|JetBrains|mono/i.test(x.cs.fontFamily) && (x.txt.match(/[A-Za-z؀-ۿ]/g) || []).length >= 4 && !/^[A-Z]{3}$|USD|EUR|AED/.test(x.txt)).map((x) => `${x.el.tagName.toLowerCase()} «${x.txt.slice(0, 24)}»`);
       const minFont = nodes.length ? Math.min(...nodes.map((x) => x.fs)) : null;
-      return { docH, primaries: primaries.length, primariesPerViewportMax: Math.max(0, ...perView), brandRedOver: redBeyond.length, redBeyondSample: redBeyond.slice(0, 5).map((el) => `${el.tagName.toLowerCase()}.${[...el.classList].slice(0, 3).join('.')}`), relationshipLines: relCount, h1Lines, h1Px, h1MaxLine, h1Avail, h1Text: h1?.textContent?.trim().slice(0, 60), fixedElements: fixed, smallMailto, currencyOrder: bad, doubleSpaces, glossary: gloss.slice(0, 10), smallTargets, foldSizes, foldSizesWithoutLabel: foldSizes.filter((s) => s !== 13).length, monoOnLabels, minFont, pageLang: document.documentElement.lang, title: document.title, h1Count: document.querySelectorAll('h1').length, riskLines: document.querySelectorAll('[data-risk-line]').length, entityLines: document.querySelectorAll('[data-entity-line]').length };
-    }, { W, H });
+      return { docH, primaries: primaries.length, primariesPerViewportMax: Math.max(0, ...perView), brandRedOver: redBeyond.length, redBeyondSample: redBeyond.slice(0, 5).map((el) => `${el.tagName.toLowerCase()}.${[...el.classList].slice(0, 3).join('.')}`), relationshipLines: relCount, h1Lines, h1Px, h1MaxLine, h1Avail, h1Text: h1?.textContent?.trim().slice(0, 60), fixedElements: fixed, smallMailto, currencyOrder: bad, doubleSpaces, glossary: gloss.slice(0, 10), smallTargets, foldSizes, foldSizesWithoutLabel: foldSizes.filter((s) => s !== 13).length, foldOffLadder, headerRel, monoOnLabels, minFont, pageLang: document.documentElement.lang, title: document.title, h1Count: document.querySelectorAll('h1').length, riskLines: document.querySelectorAll('[data-risk-line]').length, entityLines: document.querySelectorAll('[data-entity-line]').length };
+    }, { W, H, LADDER });
     let axe = null; try { const r = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'best-practice']).analyze(); axe = r.violations.map((v) => ({ id: v.id, impact: v.impact, nodes: v.nodes.length, targets: v.nodes.slice(0, 3).map((x) => x.target.join(' ')) })); } catch (e) { axe = [{ id: 'axe-error', impact: 'critical', nodes: 0, targets: [String(e).slice(0, 120)] }]; }
     const axeBlocking = axe.filter((v) => ['serious', 'critical'].includes(v.impact));
     const consoleReal = key === 'notfound' ? errors.filter((e) => !/status of 404/.test(e)) : errors;
@@ -100,13 +123,16 @@ for (const W of WIDTHS) for (const lang of LANGS) {
     if (m.glossary.length) bad.push(`glossary ${m.glossary.join(',')}`);
     if (axeBlocking.length) bad.push(`axe ${axeBlocking.map((v) => `${v.id}×${v.nodes}`).join(' ')}`);
     if (m.foldSizesWithoutLabel > 4) bad.push(`foldSizes ${JSON.stringify(m.foldSizes)}`); // every width — the full viewport (decision 54 = ب / UXFW-061)
+    if (m.foldOffLadder.length) bad.push(`foldOffLadder ${JSON.stringify(m.foldOffLadder)}`); // UXFW-064: a first-screen size off the site ladder
+    // Decision 65 (UXFW-062): the header relationship line — English, lang="en", once in the header, one line, never clipped, never under the controls
+    if (!m.headerRel) bad.push('headerRel missing'); else { const h = m.headerRel; if (h.count !== 1) bad.push(`headerRel count ${h.count}`); if (h.text !== HEADER_REL) bad.push(`headerRel text «${h.text}»`); if (h.lang !== 'en') bad.push(`headerRel lang ${h.lang}`); if (h.clipped || h.ellipsis) bad.push(`headerRel clipped ${h.nat}/${h.w}${h.clipAncestor ? ' by ' + h.clipAncestor : ''}`); if (h.lines !== 1) bad.push(`headerRel lines ${h.lines}`); if (h.overlapsControls) bad.push('headerRel overlaps controls'); if (!h.inViewport) bad.push('headerRel outside the viewport'); }
     if (m.monoOnLabels.length) bad.push(`monoOnLabels ${m.monoOnLabels.length}: ${m.monoOnLabels.slice(0, 3).join(' · ')}`);
     if (m.minFont !== null && m.minFont < 12) bad.push(`minFont ${m.minFont}`);
     // CR-15 addendum (owner decision 44 = أ, 5 Nov 2026): the hero h1 of the four screens ≤ 2 lines on phones (390 / 360 / 320) under fr / es / pt / tr and en — BLOCKING; other screens / Arabic reported
-    r.h1Borderline = H1_BORDERLINE.has(`${key}/${lang}/${W}`); r.h1Gated = W <= 430 && H1_SCREENS.has(key) && H1_LANGS.has(lang) && !r.h1Borderline; r.h1Over2 = W <= 430 && m.h1Lines > 2;
+    r.h1Decided = H1_DECIDED.get(`${key}/${lang}/${W}`) ?? null; r.h1Gated = W <= 430 && H1_SCREENS.has(key) && H1_LANGS.has(lang) && !r.h1Decided; r.h1Over2 = W <= 430 && m.h1Lines > 2;
     if (r.h1Gated && m.h1Lines > 2) bad.push(`h1Lines ${m.h1Lines} @ ${m.h1Px}px (longest ${m.h1MaxLine}/${m.h1Avail})`);
     r.verdict = bad.length ? `FAIL ${bad.join(' · ')}` : 'PASS'; if (bad.length) violations++;
-    console.log(`${r.verdict.padEnd(8)} ${key} ${lang} ${W} · ${status} · prim ${m.primaries} (max/view ${m.primariesPerViewportMax}) · red+ ${m.brandRedOver} · rel ${m.relationshipLines} · h1 ${m.h1Lines}L@${m.h1Px}px ${m.h1MaxLine}/${m.h1Avail}${r.h1Over2 ? (r.h1Gated ? ' (>2 GATE)' : r.h1Borderline ? ' (>2 BORDERLINE outside decision 44 — owner)' : ' (>2 reported)') : ''} · mailto<44 ${m.smallMailto.length} · cur ${m.currencyOrder.length} · dbl ${m.doubleSpaces} · axe ${axe.length}/${axeBlocking.length} · fold ${JSON.stringify(m.foldSizes)} · mono ${m.monoOnLabels.length} · min ${m.minFont} · targets<44 ${m.smallTargets}`);
+    console.log(`${r.verdict.padEnd(8)} ${key} ${lang} ${W} · ${status} · prim ${m.primaries} (max/view ${m.primariesPerViewportMax}) · red+ ${m.brandRedOver} · rel ${m.relationshipLines} · h1 ${m.h1Lines}L@${m.h1Px}px ${m.h1MaxLine}/${m.h1Avail}${r.h1Over2 ? (r.h1Gated ? ' (>2 GATE)' : r.h1Decided ? ' (>2 ACCEPTED — owner decision 64 = أ)' : ' (>2 reported)') : ''} · mailto<44 ${m.smallMailto.length} · cur ${m.currencyOrder.length} · dbl ${m.doubleSpaces} · axe ${axe.length}/${axeBlocking.length} · fold ${JSON.stringify(m.foldSizes)}${m.foldOffLadder.length ? ' OFF-LADDER ' + JSON.stringify(m.foldOffLadder) : ''} · hdr ${m.headerRel ? `«${m.headerRel.text}» ${m.headerRel.lang} ${m.headerRel.lines}L ${m.headerRel.nat}/${m.headerRel.w}${m.headerRel.clipped || m.headerRel.ellipsis ? ' CLIPPED' : ''}${m.headerRel.overlapsControls ? ' OVERLAP' : ''}` : '—'} · mono ${m.monoOnLabels.length} · min ${m.minFont} · targets<44 ${m.smallTargets}`);
     if (SHOTS) { const dir = path.join(SHOTS); mkdirSync(dir, { recursive: true }); await page.screenshot({ path: path.join(dir, `${key}__${lang}__${W}__viewport.png`) }); await page.screenshot({ path: path.join(dir, `${key}__${lang}__${W}__full.png`), fullPage: true }); }
     results.push(r); await page.close();
   }
@@ -114,7 +140,10 @@ for (const W of WIDTHS) for (const lang of LANGS) {
 }
 await browser.close();
 if (OUT) { mkdirSync(path.dirname(OUT), { recursive: true }); writeFileSync(OUT, JSON.stringify({ at: new Date().toISOString(), base: BASE, results }, null, 1)); }
-const over2 = results.filter((r) => r.h1Over2 && !r.h1Gated).map((r) => `${r.key}/${r.lang}/${r.width}:${r.h1Lines}${r.h1Borderline ? ' (BORDERLINE — owner decision)' : ''}`);
+const over2 = results.filter((r) => r.h1Over2 && !r.h1Gated).map((r) => `${r.key}/${r.lang}/${r.width}:${r.h1Lines}${r.h1Decided ? ' (ACCEPTED — decision 64 = أ)' : ''}`);
+const hdrBad = results.filter((r) => r.headerRel && (r.headerRel.clipped || r.headerRel.ellipsis || r.headerRel.text !== HEADER_REL || r.headerRel.lang !== 'en' || r.headerRel.lines !== 1 || r.headerRel.overlapsControls));
+console.log(`header relationship line: ${results.filter((r) => r.headerRel).length} measured · wrong (text / lang / clip / lines / overlap): ${hdrBad.length}${hdrBad.length ? ' — ' + hdrBad.slice(0, 12).map((r) => `${r.key}/${r.lang}/${r.width} «${r.headerRel.text}» ${r.headerRel.lang} ${r.headerRel.nat}/${r.headerRel.w}${r.headerRel.clipped ? ' CLIPPED' : ''}`).join(' · ') : ''}`);
+const offL = results.filter((r) => r.foldOffLadder.length).map((r) => `${r.key}/${r.lang}/${r.width}:${JSON.stringify(r.foldOffLadder)}`); console.log(`first-screen sizes off the ladder: ${offL.length ? offL.join(' · ') : 'none'}`);
 const h1Table = results.filter((r) => r.width <= 430 && H1_SCREENS.has(r.key)).map((r) => `${r.key}/${r.lang}/${r.width}: ${r.h1Lines}L @ ${r.h1Px}px ${r.h1MaxLine}/${r.h1Avail}`);
 if (h1Table.length) console.log(`h1 (lines @ px, longest line / box): ${h1Table.join(' · ')}`);
 console.log(`ux-probe: ${violations ? `FAIL (${violations} screens)` : 'PASS'} — ${results.length} screens on ${BASE}${over2.length ? ` · h1 > 2 lines outside the gate (reported): ${over2.join(' ')}` : ''}`);

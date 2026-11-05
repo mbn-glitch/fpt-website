@@ -8,9 +8,15 @@ import LanguageSwitcher from '../ui/LanguageSwitcher.jsx';
 import { localizedPath } from '../../hooks/useLocalizedPath.js';
 import useAppLinks from '../../hooks/useAppLinks.js';
 
+/** The header relationship line — English in every language (owner decision 65, 5 Nov 2026; CR-02 form: sentence case, no tracking). */
+export const RELATIONSHIP_LINE = 'Part of Fiper Global';
+
 /**
  * Header: ground-chrome + blur 14 (the one surface allowed a blur), ≤ 64 px on phones (lockup 24 + the relationship line 12 px / 1.5),
  * one secondary button (the hero carries the page's primary), language switcher with its name visible.
+ * Owner decision 65 (5 Nov 2026 — UXFW-062; proposed package CR-16): the relationship line under the lockup is «Part of Fiper Global» in ENGLISH in the six
+ * languages (the English-lockup rule, CR-11), one text line, never a chip, never clipped — on ≤ 320 px it takes its own row across the full header width
+ * (`.fpt-header-rel` in index.css); from 360 px it fits beside the controls (113 px at 12 px). The footer entity line is a different line and is untouched.
  * Mobile menu = an opaque sheet (ground-bg) under the header that covers the page, locks the scroll and closes on Escape (R-19 / R-20).
  */
 export default function Navbar() {
@@ -45,13 +51,14 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-[80] header-chrome">
-      <nav className="max-w-7xl mx-auto px-5 sm:px-8 h-16 sm:h-20 flex items-center justify-between gap-3 min-w-0" aria-label={t('common.mainNav')}>
-        <Link to={localizedPath('/', lang)} className="flex flex-col items-start justify-center gap-0.5 min-w-0 min-h-11 overflow-hidden">
+      <nav className="fpt-header-nav max-w-7xl mx-auto px-5 sm:px-8 h-16 sm:h-20 flex items-center justify-between gap-3 min-w-0" aria-label={t('common.mainNav')}>
+        <Link to={localizedPath('/', lang)} className="fpt-header-home flex flex-col items-start justify-center gap-0.5 min-w-0 min-h-11">
           {/* logo v2 (fpt-brand v1.2.1, CR-11): the official ENGLISH white lockup in every language — 24 px on phones, 32 px from sm; never clipped, never mirrored */}
           <span className="sm:hidden"><Logo variant="lockup" size={24} /></span>
           <span className="hidden sm:block"><Logo variant="lockup" size={32} /></span>
-          {/* CR-02 (owner, 31 Oct 2026): «Part of Fiper Global» in sentence case, 12 px, label colour, no uppercase, no tracking */}
-          <span className="text-xs text-tertiary leading-[1.5] truncate max-w-full" lang={lang}>{t('footer.partOf')}</span>
+          {/* CR-02 (owner, 31 Oct 2026): «Part of Fiper Global» in sentence case, 12 px, label colour, no uppercase, no tracking.
+              Owner decision 65 (5 Nov 2026): ENGLISH in every language (lang="en"), one text line, never truncated — its own full-width row on ≤ 320 px. */}
+          <span className="fpt-header-rel text-xs text-tertiary leading-[1.5] whitespace-nowrap" lang="en">{RELATIONSHIP_LINE}</span>
         </Link>
 
         <ul className="hidden lg:flex items-center gap-1">

@@ -20,6 +20,10 @@ pre-rendered to static HTML at build time and hydrated on the client.
   application note § 6.3 / § 7):** the hero step under fr / es / pt / tr **and en** is capped on phones with a 28 px floor — `max(28px, min(2.5rem × scale, 7.85vw))`
   = 30.6 px @ 390 · 28.3 @ 360 · 28 @ 320 (Arabic 40 px; no effect ≥ 456 / 510 px) — and the seven borderline headlines of fr / es / pt are the approved texts
   of § 7 (longest line ≤ 22 characters; source gate `scripts/check-headlines.mjs`; runtime gate: the probe's `h1Lines` ≤ 2 on 390 / 360 / 320, blocking).
+  **UX-R4 (owner decisions 57 = أ and 64 = أ, 5 Nov 2026):** pt evaluations «Prove seu talento. / Seja financiado.» (18 / 15 — no allowance left in the gate),
+  es help «Respuestas. En orden.» (21 — the § 7 alternative); the English home «Trade with Confidence.» stays and its third line on **320 px alone** is accepted
+  by decision (probe `H1_DECIDED`, reported, not blocking). **Hero figures (UXFW-064):** on the ladder — 24 px from 360 px, 18 px below (`.fpt-hero-figure`), never
+  a vw-derived size; probe `foldOffLadder` blocks any first-screen size off the ladder (12 · 13 · 14 · 16 · 18 · 24 · 30 · 36 · 40 · 48 · 60 · 72 + the ×0.88 steps + the capped h1).
   Eyebrows / labels are sentence case with no tracking (RD2 F-035 — CR-02). **The application note is read from the package copy only** (`brand/fpt-website-application-note.md`
   = the v1.2.2 file; the site keeps no separate wording — §§ 6–7 there are the binding RD2 rules and headline texts).
 - **Desktop first screen (owner decision 54 = ب, 5 Nov 2026 — UXFW-061):** the «first screen» is the FULL viewport, so on ≥ 1024 px the hero of the four marketing
@@ -28,8 +32,11 @@ pre-rendered to static HTML at build time and hydrated on the client.
   their content and are unchanged.
 - **Red budget (CR-14 — owner decision 41-أ, 4 Nov 2026):** brand red = the logo tile + ONE primary button per viewport; selected / active states are
   the text colour with a neutral frame; no red chip, frame, icon or `accent-color` (gate `scripts/check-red-budget.mjs`; `brand/fpt-website-application-note.md` § 6).
-- **Relationship line once (owner decision 38-ب) · WhatsApp as a neutral card (decision 40-أ):** «Part of Fiper Global» appears once per page under
-  the header lockup (no English chip in the hero, no footer line); the floating WhatsApp button is gone — `src/components/ui/WhatsAppCard.jsx`
+- **Relationship line once (owner decision 38-ب) · in English in every language (owner decision 65, 5 Nov 2026 — proposed package CR-16, `docs/change-requests.md`)
+  · WhatsApp as a neutral card (decision 40-أ):** «Part of Fiper Global» appears once per page under the header lockup — the English text with `lang="en"` in the
+  six languages (the English-lockup rule), one text line, never a chip, never clipped: on ≤ 320 px it takes its own row across the full header width
+  (`.fpt-header-rel`, `src/index.css` — the header is 72 px there, 64 px from 321 px), from 360 px it fits beside the controls (`RELATIONSHIP_LINE` in `src/components/layout/Navbar.jsx`; probe `headerRel`
+  blocking; the footer's legal entity line is a different line and unchanged); no English chip in the hero, no footer line; the floating WhatsApp button is gone — `src/components/ui/WhatsAppCard.jsx`
   (Lucide `message-circle`, the official mark small inside the card only) in the contact section and at the end of every help page.
 - **Fonts served:** unicode-range pieces cut from the package files by `scripts/build-font-subsets.mjs` (`public/fonts/*.woff2` +
   `public/fonts/SUBSETS.json` with the source sha256; `src/fonts.generated.css`; `npm run fonts` to rebuild; `--check` in `npm run check` verifies the sha256 without any tool, `--check-fresh` re-cuts with pyftsubset) —
@@ -98,7 +105,7 @@ npm run preview    # NOTE: vite preview rewrites every path to /index.html (SPA)
 | `scripts/check-money.mjs` (+ `--dist`) | an amount built by hand, the code before the number, a dollar sign, a double space before a unit; after a build: `currencyOrder` (an Arabic amount outside an LTR isolate) and `doubleSpaces` must be 0 on every page (RD2 rule 3.4: `src/lib/money.jsx` is the ONE format — number · no-break space · code, isolated) |
 | `scripts/check-routes.mjs` (after a build) | a `vercel.json` that is not the low-level `routes`; an app path of the handoff that does not 308 to `app.` with its query; an unknown path (`/anything`, `/ar/anything`, `/fr/typo`, `/xx/typo`, `/api/x`) that is not the site's 404 page of its prefix language with a 404 status; a 404 page without its title, `lang/dir`, h1, risk and entity line once, `noindex` (owner decisions 51 / 53) |
 | `scripts/check-red-budget.mjs` (+ `--dist`) | brand red on a chip, frame, text or `accent-color`; a coloured cTrader mark; after a build more primary buttons on a page than the documented cap (home 2 · evaluations 2 · partners 2 · about 1 · contact / help 0) or any red frame class in the markup (RD2 CR-4 / package CR-14: red = the tile + ONE primary button per viewport) |
-| `scripts/check-headlines.mjs` | a `hero.title*` / `challengePricing.heroTitle*` / `help.title*` line over 22 characters in fr / es / pt, or an `about.title` over 46 characters or without a word break before character 23 (CR-15 addendum, decision 44 = أ; pt `challengePricing.heroTitle1` = 23 is pinned verbatim as the decision's borderline row) |
+| `scripts/check-headlines.mjs` | a `hero.title*` / `challengePricing.heroTitle*` / `help.title*` line over 22 characters in fr / es / pt, or an `about.title` over 46 characters or without a word break before character 23 (CR-15 addendum, decision 44 = أ; since decision 57 = أ there is no allowance — the pt evaluations line is 18 / 15) |
 | `scripts/build-font-subsets.mjs --check` | a served font piece missing, unlisted or differing from its `SUBSETS.json` sha256, a `SUBSETS.json` whose source sha256 differ from `brand/fonts`, a stale `fonts.generated.css` (no external tool; `--check-fresh` re-cuts with pyftsubset on the build server) |
 | `scripts/check-risk-line.mjs` | a missing or altered risk line, any other risk wording, any licence wording |
 | `scripts/check-i18n-keys.mjs` | a key used in `src/` that is missing in any of the six locales; key sets that differ between locales |
@@ -113,9 +120,12 @@ a double space, a glossary hit, **an axe violation of impact serious / critical*
 4 text sizes + the 13 px label in the first screen** (CR-06 — UXFW-020 / 058), **Plex Mono on a word** (ID-05 — UXFW-060), text under 12 px, and on the 404
 screen a status ≠ 404, a wrong `<html lang>`, a missing title / h1 / risk / entity line. **UX-R3 (5 Nov 2026):** `h1Lines` is counted from the line boxes
 of the h1 (with the rendered px and the longest line) and **blocks** when the hero h1 of home / evaluations / about / help exceeds 2 lines on 390 / 360 / 320
-under fr / es / pt / tr / en (decision 44 = أ; Arabic reported; the package's borderline row pt evaluations on 320 — 3 lines at the 28 px floor — is reported, not blocking, until the owner decides); `foldSizes` is counted on the **full viewport** outside the header and blocks at every width,
-1440 × 900 included (decision 54 = ب). Viewports: 390 × 844 · 360 × 780 · 320 × 568 · ≥ 431 × 900. Rounds: `--widths 390` (16 × 6), `--widths 1440 --langs ar,en,fr`
-(16 × 3), `--widths 390,360,320 --only home,challenges,about,help --langs en,fr,es,pt,tr` (the CR-15 set).
+under fr / es / pt / tr / en (decision 44 = أ; Arabic reported; **the one decided exception is `H1_DECIDED` = `home/en/320` — owner decision 64 = أ accepts the
+third line of the English home headline on 320 px alone, reported, never blocking**); `foldSizes` is counted on the **full viewport** outside the header and blocks at every width,
+1440 × 900 included (decision 54 = ب). **UX-R4 (5 Nov 2026):** `headerRel` blocks when the header relationship line is not «Part of Fiper Global» with `lang="en"`,
+is not exactly once in the header, wraps, is clipped / truncated (natural width > its box, or an overflow-hidden ancestor) or overlaps the header controls — at every
+width (decision 65); `foldOffLadder` blocks a first-screen size off the site ladder (UXFW-064 — the hero figures were 6.5vw = 23.4 px on 360). Viewports: 390 × 844 · 360 × 780 · 320 × 568 · ≥ 431 × 900. Rounds: `--widths 390` (16 × 6), `--widths 1440 --langs ar,en,fr`
+(16 × 3), `--widths 390,360,320 --only home,challenges,about,help --langs en,fr,es,pt,tr,ar` (the CR-15 set + the header on 320 / 360 in the six languages + the home figures on 360).
 
 ## Structure
 

@@ -185,7 +185,6 @@
   },
   "footer": {
     "tagline": "Projetado para Trading Rápido e Inteligente",
-    "partOf": "Parte da Fiper Global",
     "products": "Produtos",
     "fiperGlobal": "Fiper Global",
     "legal": "Legal",
@@ -214,8 +213,8 @@
   },
   "challengePricing": {
     "eyebrow": "A Avaliação",
-    "heroTitle1": "Prove suas habilidades.",
-    "heroTitle2": "Obtenha financiamento.",
+    "heroTitle1": "Prove seu talento.",
+    "heroTitle2": "Seja financiado.",
     "heroSubtitle": "Uma fase de avaliação. Regras claras. 80 % de participação na recompensa em uma conta financiada.",
     "howItWorksEyebrow": "Como funciona",
     "howItWorksTitle": "Uma única fase. Caminho direto para o financiamento.",

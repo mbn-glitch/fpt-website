@@ -103,6 +103,27 @@ html:is([lang="fr"], [lang="es"], [lang="pt"], [lang="tr"]) { --fpt-display-scal
   .fpt-hero > * { width: 100%; }
 }
 
+/* UXFW-064 (UX-R4, 5 Nov 2026): the hero figures sit on the site ladder — 24 px (the figure step, as on 390 and from sm) from 360 px and the 18 px subtitle step
+   below it — instead of the derived `min(1.5rem, 6.5vw)` (= 23.4 px on 360, 20.8 on 320: a size off the ladder inside the first screen). «200,000 USD» (mono
+   digits + the 13 px code) needs ≈ 141 px at 24 px: the two-column cell is 152 px on 360 and 132 px on 320, hence the ladder step down below 360.
+   `scripts/ux-probe.mjs` foldOffLadder blocks any first-screen size off the ladder. */
+.fpt-hero-figure { font-size: 1.125rem; }
+@media (min-width: 360px) { .fpt-hero-figure { font-size: 1.5rem; } }
+
+/* Owner decision 65 (5 Nov 2026 — UXFW-062; proposed package CR-16): the header relationship line «Part of Fiper Global» (English in the six languages, one
+   text line, 12 px, lang="en") is never clipped at any width. From 360 px it fits under the lockup beside the controls (110 px at 12 px; the Galaxy S23 at 360
+   leaves ≥ 116 px). On ≤ 320 px it takes its OWN row across the full header width, under the control row: the header grows from 64 to 72 px (4.5rem) there —
+   row 1 (4–48 px) = the lockup at the top start + the 44 px controls, row 2 (50–68 px) = the line, start-aligned in both directions, no overlap with the controls
+   (measured 5 Nov 2026: beside the controls the English line, 109.8 px, met the switcher's edge by 1.5 px on en / fr / es / pt). The menu sheet and the page
+   padding follow the 72 px header on ≤ 320. The footer entity line is untouched. */
+@media (max-width: 320px) {
+  .fpt-header-nav { position: relative; height: 4.5rem; align-items: flex-start; padding-top: 4px; }
+  .fpt-header-home { justify-content: flex-start; }
+  .fpt-header-rel { position: absolute; inset-inline: 1.25rem; top: 50px; }
+  #site-menu { top: 4.5rem; }
+  main#main { padding-top: 4.5rem; }
+}
+
 /* Arabic typography (unlayered so it wins over utilities): letter-spacing 0 everywhere, line-height ≥ 1.5 on every text node (R-11 / R-12 / ID-04) */
 html[lang="ar"] * { letter-spacing: 0; }
 html[lang="ar"] :is(h1, h2, h3, h4, h5, h6, p, li, a, span, div, button, label, td, th, dd, dt, blockquote, summary, address) { line-height: 1.5; }

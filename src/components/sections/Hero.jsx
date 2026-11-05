@@ -52,7 +52,8 @@ export default function Hero() {
           <ul className="mt-12 grid grid-cols-1 grid-cols-2 sm:grid-cols-4 gap-y-6 border-t border-subtle pt-8">
             {STATS.map((s, i) => (
               <li key={s.label} className={`px-1 sm:px-3 ${i !== 0 ? 'sm:border-s border-subtle' : ''}`}>
-                <Unit className="block text-[min(1.5rem,6.5vw)] sm:text-2xl font-semibold text-white break-words">{s.value}</Unit>
+                {/* UXFW-064 (UX-R4, 5 Nov 2026): the figure sits on the site ladder — 24 px from 360 px, the 18 px step below — never a vw-derived size (`.fpt-hero-figure`) */}
+                <Unit className="block fpt-hero-figure font-semibold text-white break-words">{s.value}</Unit>
                 <span className="block mt-1 text-[13px] text-tertiary leading-[1.5]">{s.label}</span>
               </li>
             ))}

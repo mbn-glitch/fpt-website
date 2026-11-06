@@ -23,12 +23,17 @@
   "nav": {
     "challenges": "Evaluations",
     "about": "About",
-    "login": "Login",
-    "startChallenge": "Start FPT Evaluation",
+    "login": "Log in",
+    "startChallenge": "Start the evaluation",
     "home": "Home",
     "help": "Help",
     "partners": "Partners",
-    "contact": "Contact"
+    "contact": "Contact",
+    "how": "How it works",
+    "sizes": "Sizes and fees",
+    "rules": "Rules",
+    "certificates": "Certificates",
+    "faq": "FAQ"
   },
   "hero": {
     "eyebrow": "Engineered for fast, smart trading",
@@ -420,5 +425,86 @@
     "body": "The address may be mistyped or the page may have moved.",
     "home": "Go to the home page",
     "help": "Open the help center"
+  },
+  "web": {
+    "hero": {
+      "lead": "A one-phase evaluation on cTrader with rules stated in dollars, then a funded account with an {{share}} share and a payout every {{cycle}} days — and a verifiable certificate at every station.",
+      "ctaPrimary": "Start the evaluation · from {{fee}}",
+      "ctaSecondary": "See how it works",
+      "proof": {
+        "target": "Profit target",
+        "split": "Trader share",
+        "cycle": "days between payouts",
+        "platform": "Platform"
+      },
+      "phoneAlt": "The evaluation account home screen inside the FPT app"
+    },
+    "path": {
+      "eyebrow": "The path to funding",
+      "title": "Three stations — you see each screen before you start",
+      "sub": "No metaphors: what you see here is what you see inside your account.",
+      "step1Title": "Choose your evaluation",
+      "step1Body": "Five sizes from {{min}} to {{max}} for a one-time fee. Your rules appear in dollars before you pay.",
+      "step1Alt": "The shop screen: choosing the evaluation size",
+      "step2Title": "Pass the evaluation",
+      "step2Body": "A {{target}} target within a {{daily}} daily and {{total}} overall limit, inside {{days}} days with at least five trading days. The home screen shows what is left before the limit, live.",
+      "step2Alt": "The home screen: what is left before the daily limit",
+      "step3Title": "Get funded",
+      "step3Body": "A funded account with an {{share}} share, a payout every {{cycle}} days, and an «Evaluation passed» certificate in your name, publicly verifiable.",
+      "step3Alt": "The evaluation-pass certificate with a public verification code"
+    },
+    "sizes": {
+      "eyebrow": "Sizes and fees",
+      "title": "One fee. One rule set. The difference is the size.",
+      "account": "Evaluation account",
+      "popular": "Most chosen",
+      "oneTime": "· one-time",
+      "target": "Target {{amount}}",
+      "daily": "Daily limit {{amount}}",
+      "total": "Overall limit {{amount}}",
+      "start": "Start {{size}}",
+      "startSize": "Start the {{size}} evaluation",
+      "after": "After funding: {{share}} share · a payout every {{cycle}} days after {{days}} trading days · {{range}} per request · fees are not refunded after the account is delivered."
+    },
+    "trust": {
+      "eyebrow": "Verified certificates",
+      "title": "A certificate for every station — with a public verification code",
+      "sub": "Passing the evaluation and every payout paid after the funded account is delivered: a certificate in your name with a unique code anyone can verify here, without signing in.",
+      "placeholder": "FPT-XXXXXXXXXX",
+      "label": "Certificate code",
+      "verify": "Verify",
+      "invalid": "Enter a code in the form FPT followed by ten letters or digits.",
+      "certAlt": "A paid-payout certificate in the trader’s name"
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "What traders ask before they start",
+      "q1": "How is the daily loss limit calculated?",
+      "a1": "{{daily}} of the equity at the start of the day, measured at 00:00 Dubai time and reset every day at that hour. Floating losses of open positions count, and what is left before the limit is shown on the home screen in dollars.",
+      "q2": "When can I request my first payout?",
+      "a2": "After {{days}} trading days on the funded account, then every {{cycle}} days. Your share is {{share}} of the cycle’s profit, {{range}} per request; review within two business days and execution within one.",
+      "q3": "What happens when a rule is breached?",
+      "a3": "The account is closed on the trade that crossed the limit and trading on it stops; you receive the breach report with the figures. The fee is not refunded after the account is delivered, and you can start a new evaluation.",
+      "q4": "Are the fees refundable?",
+      "a4": "The fee is paid once and is refunded only before your account is delivered, and in the cases listed in the Refund and Cancellation Policy. After delivery it is not refunded.",
+      "q5": "Which instruments can I trade, and with what leverage?",
+      "a5": "Forex, metals, indices, energy and selected crypto-currencies on cTrader. Leverage up to 1:{{forex}} for forex, 1:{{metals}} for metals, 1:{{indices}} for indices, 1:{{energy}} for energy and 1:{{crypto}} for crypto — swap-free.",
+      "q6": "How do I verify a certificate?",
+      "a6": "Every certificate carries a code in the form FPT-XXXXXXXXXX. Enter it in the verification field above or open the public verification page in the app: it shows the certificate’s status, the holder’s name, its kind and the account size, without signing in."
+    },
+    "footer": {
+      "product": "Product",
+      "help": "Help",
+      "legal": "Legal",
+      "how": "How it works",
+      "sizes": "Sizes and fees",
+      "rules": "Rules",
+      "certificates": "Certificates",
+      "partners": "Partner programme",
+      "faq": "FAQ",
+      "helpCenter": "Help centre",
+      "contact": "Contact",
+      "about": "About"
+    }
   }
 }

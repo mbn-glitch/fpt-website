@@ -4,6 +4,7 @@
 @import "./fonts.css";
 @import "../brand/tokens.css";
 @import "tailwindcss";
+@import "./web.css";
 
 @theme {
   --color-bg: var(--fpt-ground-bg);            /* #0A0A0A — the ground (never #000) */

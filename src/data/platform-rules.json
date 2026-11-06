@@ -1,0 +1,76 @@
+{
+  "generatedBy": "scripts/sync-platform-rules.mjs",
+  "generatedAt": "2026-11-06 20:35 UTC",
+  "note": "Read-only mirror of @fpt/rulebook RULES_V1 + CATALOG_V1 — regenerate with the sync script; never edit by hand (gate: --check).",
+  "fingerprint": {
+    "source": "fpt-platform/packages/rulebook/src/rules.ts",
+    "sourceSha256": "52baff88f518891618557bc2cc7fa14ba59ff4363ba42110025a43dea9a6d05e",
+    "sourceCommit": "5ac05cb6cb03a5285fe25f58a5d57e0db0e523f5",
+    "sourceCommitDate": "2026-10-29 05:32 +0300",
+    "platformHead": "b84d8bef76ac2d63d3896a690d2aceb482dd96f6",
+    "dataSha256": "6092ff313b50e3c9f60810358f62c951dc912f1a1d32e6796d3f41350196bd94"
+  },
+  "data": {
+    "rules": {
+      "id": "fpt-rules-v1",
+      "name": "FPT one-phase evaluation → funded (2026-10)",
+      "profitTargetBps": 1000,
+      "dailyLossBps": 500,
+      "maxLossBps": 900,
+      "minTradingDaysEvaluation": 5,
+      "minTradingDaysFunded": 10,
+      "evaluationDays": 31,
+      "maxAccountsPerClient": 10,
+      "inactivityDays": 30,
+      "inactivityWarningDay": 23,
+      "payoutShareBps": 8000,
+      "payoutCycleDays": 14,
+      "payoutMinCents": 10000,
+      "payoutMaxPerTransactionCents": 1000000,
+      "payoutReviewBusinessDays": 2,
+      "payoutExecutionDays": 1,
+      "commissionPerLotCents": {
+        "forex": 500,
+        "metals": 500
+      },
+      "leverage": {
+        "forex": 100,
+        "metals": 20,
+        "indices": 30,
+        "energy": 10,
+        "crypto": 2
+      },
+      "newsWindowMinutes": 5,
+      "newsProfitCapBps": 100,
+      "swapFree": true,
+      "scalingEnabled": false
+    },
+    "catalog": [
+      {
+        "code": "fpt-10k",
+        "sizeCents": 1000000,
+        "priceCents": 9000
+      },
+      {
+        "code": "fpt-25k",
+        "sizeCents": 2500000,
+        "priceCents": 16000
+      },
+      {
+        "code": "fpt-50k",
+        "sizeCents": 5000000,
+        "priceCents": 28000
+      },
+      {
+        "code": "fpt-100k",
+        "sizeCents": 10000000,
+        "priceCents": 54000
+      },
+      {
+        "code": "fpt-200k",
+        "sizeCents": 20000000,
+        "priceCents": 107000
+      }
+    ]
+  }
+}

@@ -23,12 +23,17 @@
   "nav": {
     "challenges": "Evaluaciones",
     "about": "Nosotros",
-    "login": "Iniciar Sesión",
-    "startChallenge": "Iniciar evaluación FPT",
+    "login": "Entrar",
+    "startChallenge": "Iniciar la evaluación",
     "home": "Inicio",
     "help": "Ayuda",
     "partners": "Socios",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "how": "Cómo funciona",
+    "sizes": "Tamaños y tarifas",
+    "rules": "Reglas",
+    "certificates": "Certificados",
+    "faq": "Preguntas"
   },
   "hero": {
     "eyebrow": "Diseñado para un trading rápido e inteligente",
@@ -420,5 +425,86 @@
     "body": "La dirección puede estar mal escrita o la página se ha movido.",
     "home": "Ir a la página de inicio",
     "help": "Abrir el centro de ayuda"
+  },
+  "web": {
+    "hero": {
+      "lead": "Una evaluación de una fase en cTrader con reglas expresadas en dólares, luego una cuenta financiada con una participación del {{share}} y un pago cada {{cycle}} días — y un certificado verificable en cada etapa.",
+      "ctaPrimary": "Iniciar la evaluación · desde {{fee}}",
+      "ctaSecondary": "Ver cómo funciona",
+      "proof": {
+        "target": "Objetivo de beneficio",
+        "split": "Participación del trader",
+        "cycle": "días entre pagos",
+        "platform": "Plataforma"
+      },
+      "phoneAlt": "La pantalla de inicio de la cuenta de evaluación en la aplicación FPT"
+    },
+    "path": {
+      "eyebrow": "El camino a la financiación",
+      "title": "Tres etapas — ves cada pantalla antes de empezar",
+      "sub": "Sin metáforas: lo que ves aquí es lo que ves dentro de tu cuenta.",
+      "step1Title": "Elige tu evaluación",
+      "step1Body": "Cinco tamaños de {{min}} a {{max}} por una tarifa única. Tus reglas aparecen en dólares antes de pagar.",
+      "step1Alt": "La pantalla de la tienda: elegir el tamaño de la evaluación",
+      "step2Title": "Supera la evaluación",
+      "step2Body": "Un objetivo del {{target}} dentro de un límite diario del {{daily}} y total del {{total}}, en {{days}} días y con al menos cinco días de trading. El inicio muestra en vivo lo que queda antes del límite.",
+      "step2Alt": "La pantalla de inicio: lo que queda antes del límite diario",
+      "step3Title": "Obtén la financiación",
+      "step3Body": "Una cuenta financiada con una participación del {{share}}, un pago cada {{cycle}} días y un certificado «Evaluación superada» a tu nombre, verificable públicamente.",
+      "step3Alt": "El certificado de evaluación superada con un código de verificación público"
+    },
+    "sizes": {
+      "eyebrow": "Tamaños y tarifas",
+      "title": "Una tarifa. Unas reglas. La diferencia es el tamaño.",
+      "account": "Cuenta de evaluación",
+      "popular": "La más elegida",
+      "oneTime": "· pago único",
+      "target": "Objetivo {{amount}}",
+      "daily": "Límite diario {{amount}}",
+      "total": "Límite total {{amount}}",
+      "start": "Empezar {{size}}",
+      "startSize": "Empezar la evaluación {{size}}",
+      "after": "Tras la financiación: participación del {{share}} · un pago cada {{cycle}} días tras {{days}} días de trading · {{range}} por solicitud · las tarifas no se reembolsan tras la entrega de la cuenta."
+    },
+    "trust": {
+      "eyebrow": "Certificados verificados",
+      "title": "Un certificado por cada etapa — con un código de verificación público",
+      "sub": "Superar la evaluación y cada pago abonado tras la entrega de la cuenta financiada: un certificado a tu nombre con un código único que cualquiera puede verificar aquí, sin registrarse.",
+      "placeholder": "FPT-XXXXXXXXXX",
+      "label": "Código del certificado",
+      "verify": "Verificar",
+      "invalid": "Introduce un código con la forma FPT seguido de diez letras o cifras.",
+      "certAlt": "Un certificado de pago abonado a nombre del trader"
+    },
+    "faq": {
+      "eyebrow": "Preguntas frecuentes",
+      "title": "Lo que preguntan los traders antes de empezar",
+      "q1": "¿Cómo se calcula el límite de pérdida diaria?",
+      "a1": "{{daily}} del equity al inicio del día, medido a las 00:00 hora de Dubái y reiniciado cada día a esa hora. Las pérdidas flotantes de las posiciones abiertas cuentan, y lo que queda antes del límite se muestra en dólares en la pantalla de inicio.",
+      "q2": "¿Cuándo puedo solicitar mi primer pago?",
+      "a2": "Tras {{days}} días de trading en la cuenta financiada, y luego cada {{cycle}} días. Tu participación es el {{share}} del beneficio del ciclo, {{range}} por solicitud; revisión en dos días hábiles y ejecución en uno.",
+      "q3": "¿Qué ocurre al incumplir una regla?",
+      "a3": "La cuenta se cierra en la operación que cruzó el límite y el trading en ella se detiene; recibes el informe del incumplimiento con las cifras. La tarifa no se reembolsa tras la entrega de la cuenta, y puedes iniciar una nueva evaluación.",
+      "q4": "¿Las tarifas son reembolsables?",
+      "a4": "La tarifa se paga una vez y se reembolsa solo antes de la entrega de tu cuenta, y en los casos previstos en la política de reembolso y cancelación. Tras la entrega no se reembolsa.",
+      "q5": "¿Qué instrumentos puedo operar y con qué apalancamiento?",
+      "a5": "Forex, metales, índices, energía y criptomonedas seleccionadas en cTrader. Apalancamiento hasta 1:{{forex}} en forex, 1:{{metals}} en metales, 1:{{indices}} en índices, 1:{{energy}} en energía y 1:{{crypto}} en cripto — sin swap.",
+      "q6": "¿Cómo verifico un certificado?",
+      "a6": "Cada certificado lleva un código con la forma FPT-XXXXXXXXXX. Introdúcelo en el campo de verificación de arriba o abre la página pública de verificación de la aplicación: muestra el estado del certificado, el nombre del titular, su tipo y el tamaño de la cuenta, sin registrarse."
+    },
+    "footer": {
+      "product": "Producto",
+      "help": "Ayuda",
+      "legal": "Legal",
+      "how": "Cómo funciona",
+      "sizes": "Tamaños y tarifas",
+      "rules": "Reglas",
+      "certificates": "Certificados",
+      "partners": "Programa de socios",
+      "faq": "Preguntas frecuentes",
+      "helpCenter": "Centro de ayuda",
+      "contact": "Contacto",
+      "about": "Nosotros"
+    }
   }
 }

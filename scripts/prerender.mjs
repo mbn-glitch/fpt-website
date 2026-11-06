@@ -30,9 +30,11 @@ const SUBSETS = JSON.parse(readFileSync(path.join(ROOT, 'public', 'fonts', 'SUBS
 const fontUrl = (file, weight, piece) => { const f = SUBSETS.find((x) => x.file.startsWith(`${file}-${weight}.${piece}.`)); if (!f) throw new Error(`prerender: subset ${file}-${weight}.${piece} missing — run node scripts/build-font-subsets.mjs`); return f.url; };
 const PRELOAD = { ar: [fontUrl('IBMPlexSansArabic', 400, 'arabic'), fontUrl('IBMPlexSansArabic', 600, 'arabic')], latin: [fontUrl('BarlowCondensed', 800, 'latin'), fontUrl('Inter', 400, 'latin')] };
 const preload = (lang) => (lang === 'ar' ? PRELOAD.ar : PRELOAD.latin).map((u) => `    <link rel="preload" as="font" type="font/woff2" href="${u}" crossorigin data-font-preload="${lang === 'ar' ? 'ar' : 'latin'}" />\n`).join('');
-const inject = (tpl, { html, head, lang, dir }, mode) => tpl
+// WEB-VIS-1: the home hero's product screen (the LCP element on phones) is preloaded with the first-scene fonts — AVIF, high priority
+const HERO_PRELOAD = '    <link rel="preload" as="image" type="image/avif" href="/shots/home-s1.avif" fetchpriority="high" data-hero-preload="home" />\n';
+const inject = (tpl, { html, head, lang, dir }, mode, route = '') => tpl
   .replace(/<html lang="en" dir="ltr">/, `<html lang="${lang}" dir="${dir}">`)
-  .replace('<meta name="author" content="Fiper Pro Traders" />', `<meta name="author" content="Fiper Pro Traders" />\n${preload(lang)}`)
+  .replace('<meta name="author" content="Fiper Pro Traders" />', `<meta name="author" content="Fiper Pro Traders" />\n${preload(lang)}${route === '/' ? HERO_PRELOAD : ''}`)
   // the app script hydrates an already-painted page: fetch it at low priority so the stylesheet and the first-scene fonts win the link
   .replace(/<script type="module" crossorigin src=/, '<script type="module" crossorigin fetchpriority="low" src=')
   .replace('</head>', `${head}\n  </head>`)
@@ -44,7 +46,7 @@ for (const route of ROUTES) {
     const url = localized(route, lang);
     const r = await render(url);
     if (/<template id="B:|<div hidden id="S:|\$RC\(/.test(r.html)) { console.error(`prerender ${url}: deferred Suspense segment in the markup`); process.exit(1); }
-    const out = inject(template, r, 'route');
+    const out = inject(template, r, 'route', route);
     const file = url === '/' ? path.join(DIST, 'index.html') : path.join(DIST, url.replace(/^\//, ''), 'index.html');
     write(file, out);
     n++;

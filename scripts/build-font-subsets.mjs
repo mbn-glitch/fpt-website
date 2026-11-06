@@ -32,8 +32,8 @@ const LATIN_EXT = 'U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U
 const ARABIC = 'U+0000-00FF,U+0600-06FF,U+0750-077F,U+08A0-08FF,U+FB50-FDFF,U+FE70-FEFF,U+2000-206F,U+20AC,U+2212,U+FEFF,U+FFFD';
 /** family → file stem, the weights the site uses, the pieces to cut. */
 export const FONTS = [
-  { family: 'IBM Plex Sans Arabic', file: 'IBMPlexSansArabic', weights: [400, 600], pieces: { arabic: ARABIC } },
-  { family: 'Inter', file: 'Inter', weights: [400, 600], pieces: { latin: LATIN, 'latin-ext': LATIN_EXT } },
+  { family: 'IBM Plex Sans Arabic', file: 'IBMPlexSansArabic', weights: [400, 500, 600], pieces: { arabic: ARABIC } },
+  { family: 'Inter', file: 'Inter', weights: [400, 500, 600], pieces: { latin: LATIN, 'latin-ext': LATIN_EXT } },
   { family: 'Barlow Condensed', file: 'BarlowCondensed', weights: [700, 800], pieces: { latin: LATIN, 'latin-ext': LATIN_EXT } },
   { family: 'IBM Plex Mono', file: 'IBMPlexMono', weights: [400, 600], pieces: { latin: LATIN, 'latin-ext': LATIN_EXT } },
 ];
@@ -64,7 +64,9 @@ for (const f of FONTS) for (const w of f.weights) {
   manifest.sources[`${f.file}-${w}.woff2`] = { sha256: sha(input), bytes: readFileSync(input).byteLength };
   for (const [piece, range] of Object.entries(f.pieces)) {
     const built = path.join(tmp, `${f.file}-${w}.${piece}.woff2`);
-    execFileSync('pyftsubset', [input, `--unicodes=${range}`, '--flavor=woff2', '--layout-features=*', '--no-hinting', '--desubroutinize', '--name-IDs=*', '--notdef-outline', `--output-file=${built}`], { stdio: 'pipe' });
+    // WEB-VIS-1 (7 Nov 2026): the TrueType hinting tables (fpgm / prep / cvt) of the package files are KEPT — the design office's reference frames are rasterised with hinted
+    // files (fontsource) and the unhinted pieces cost 3–4 % SSIM on every text row (measured on the office's own HTML: 0.972 / 0.962 with the unhinted pieces).
+    execFileSync('pyftsubset', [input, `--unicodes=${range}`, '--flavor=woff2', '--layout-features=*', '--hinting', '--desubroutinize', '--name-IDs=*', '--notdef-outline', `--output-file=${built}`], { stdio: 'pipe' });
     const h = sha(built); const served = `${f.file}-${w}.${piece}.${h.slice(0, 8)}.woff2`;
     const target = path.join(OUT, served);
     if (CHECK) { if (!existsSync(target) || sha(target) !== h) { console.error(`[subsets] DRIFT ${served}`); drift++; } }

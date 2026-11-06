@@ -1,35 +1,27 @@
 import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO.jsx';
-import Hero from '../components/sections/Hero.jsx';
-import KeyRules from '../components/sections/KeyRules.jsx';
-import ProfitSplitBanner from '../components/sections/ProfitSplitBanner.jsx';
-import HowItWorks from '../components/sections/HowItWorks.jsx';
-import PricingPreview from '../components/sections/PricingPreview.jsx';
-import DashboardPreview from '../components/sections/DashboardPreview.jsx';
-import FPTCard from '../components/sections/FPTCard.jsx';
-import Platforms from '../components/sections/Platforms.jsx';
-import Ecosystem from '../components/sections/Ecosystem.jsx';
-import FAQ from '../components/sections/FAQ.jsx';
+import WebHero from '../components/web/WebHero.jsx';
+import PathSection from '../components/web/PathSection.jsx';
+import SizesSection from '../components/web/SizesSection.jsx';
+import TrustSection from '../components/web/TrustSection.jsx';
+import WebFaq from '../components/web/WebFaq.jsx';
 
 /**
- * Home — nine sections (UXFW-013): the invented trust bar, trader stories, leaderboard / AI card, the duplicate final CTA and the
- * generic value-proposition claims are gone (owner decision 4, AN-11); every figure left comes from the platform rules (src/data/rules.js).
+ * Home — the design office's visual standard (WEB-VIS-1, frames w1 + w2, 7 Nov 2026): hero with the real client home screen → the path to funding (three
+ * stations, each with its real screen) → sizes and fees (five cards) → verified certificates (public verification) → FAQ → the footer. The earlier nine
+ * sections (rules grid, reward banner, dashboard preview, Fiper Card, platforms, ecosystem, old FAQ) are replaced by this composition; every figure is read
+ * from the platform rulebook (src/data/platform-rules.json), every screen from the VIS references (public/shots).
  */
 export default function Home() {
   const { t } = useTranslation();
   return (
-    <>
+    <div className="fpt-web">
       <SEO path="/" description={t('meta.description')} keywords={t('meta.keywords')} />
-      <Hero />
-      <KeyRules />
-      <ProfitSplitBanner />
-      <HowItWorks />
-      <PricingPreview />
-      <DashboardPreview />
-      <FPTCard />
-      <Platforms />
-      <Ecosystem />
-      <FAQ />
-    </>
+      <WebHero />
+      <PathSection />
+      <SizesSection />
+      <TrustSection />
+      <WebFaq />
+    </div>
   );
 }

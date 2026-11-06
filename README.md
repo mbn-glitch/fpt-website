@@ -3,6 +3,14 @@
 Marketing website for **Fiper Pro Traders (FPT)** — Part of Fiper Global. Six languages (EN at the root, AR/FR/ES/PT/TR under `/<lang>/…`),
 pre-rendered to static HTML at build time and hydrated on the client.
 
+## Visual standard — WEB-VIS-1 (design office, 7 Nov 2026)
+The home page is built on the office's VIS-5 kit (frames `w1` / `w2`, 1440 px, Arabic): hero with the REAL client home screen in a 390×844 phone, three stations
+with real product screens, five size cards, the public certificate verification field, six FAQ rows and the four-column foot — `src/web.css` (the kit's `.web`
+rules under `.fpt-web`) + `src/components/web/*`. Every figure is read from the platform rulebook at sync time (`npm run sync:rules` → `src/data/platform-rules.json`
+with the source sha256 / commit; `--check` in `npm run check`), every screen from the VIS references (`npm run sync:shots` → `public/shots/` + `SHOTS.json`).
+Proof: `~/Projects/WEB-VIS-1-captures/` (SSIM w1 0.9730 / w2 0.9471 after masking the embedded shots — the w2 gap is the owner's money order, legal block and the
+language switcher; see `docs/web-vis-1.md`). The desktop header is 76 px with the kit's five links; the font pieces now keep their hinting and include the 500 weights.
+
 ## Identity (binding)
 
 - **fpt-brand v1.2.2** (`ee94f05`, 5 Nov 2026 — texts and rules only: CR-13 / CR-14 / CR-15 + its addendum; every asset, token and colour is the v1.2.1 byte, pinned 2 Nov 2026 — owner decisions of 1 Nov 2026 23:08) — the drop-in package lives in `brand/` (tokens, fonts, logos,

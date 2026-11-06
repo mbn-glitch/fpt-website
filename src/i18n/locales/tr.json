@@ -24,11 +24,16 @@
     "challenges": "Değerlendirmeler",
     "about": "Hakkımızda",
     "login": "Giriş",
-    "startChallenge": "FPT Değerlendirmesine Başla",
+    "startChallenge": "Değerlendirmeye başla",
     "home": "Ana Sayfa",
     "help": "Yardım",
     "partners": "Ortaklar",
-    "contact": "İletişim"
+    "contact": "İletişim",
+    "how": "Nasıl çalışır",
+    "sizes": "Boyutlar ve ücretler",
+    "rules": "Kurallar",
+    "certificates": "Sertifikalar",
+    "faq": "SSS"
   },
   "hero": {
     "eyebrow": "Hızlı ve akıllı ticaret için tasarlandı",
@@ -420,5 +425,86 @@
     "body": "Adres yanlış yazılmış ya da sayfa taşınmış olabilir.",
     "home": "Ana sayfaya git",
     "help": "Yardım merkezini aç"
+  },
+  "web": {
+    "hero": {
+      "lead": "cTrader üzerinde dolar cinsinden açıklanan kurallarla tek aşamalı bir değerlendirme, ardından {{share}} payı ve her {{cycle}} günde bir ödemeyle fonlanmış bir hesap — ve her durakta doğrulanabilir bir sertifika.",
+      "ctaPrimary": "Değerlendirmeye başla · {{fee}}’dan itibaren",
+      "ctaSecondary": "Nasıl çalıştığını görün",
+      "proof": {
+        "target": "Kâr hedefi",
+        "split": "Trader payı",
+        "cycle": "ödemeler arası gün",
+        "platform": "Platform"
+      },
+      "phoneAlt": "FPT uygulamasında değerlendirme hesabının ana ekranı"
+    },
+    "path": {
+      "eyebrow": "Fonlanmaya giden yol",
+      "title": "Üç durak — başlamadan önce her ekranı görürsünüz",
+      "sub": "Mecaz yok: burada gördüğünüz, hesabınızın içinde gördüğünüzdür.",
+      "step1Title": "Değerlendirmenizi seçin",
+      "step1Body": "{{min}} ile {{max}} arasında beş boyut, tek seferlik ücretle. Kurallarınız ödemeden önce dolar olarak görünür.",
+      "step1Alt": "Mağaza ekranı: değerlendirme boyutunu seçme",
+      "step2Title": "Değerlendirmeyi geçin",
+      "step2Body": "{{days}} gün içinde ve en az beş işlem gününde, {{daily}} günlük ve {{total}} toplam sınır içinde {{target}} hedef. Ana ekran sınıra kalanı anlık gösterir.",
+      "step2Alt": "Ana ekran: günlük sınıra kalan",
+      "step3Title": "Fonlanın",
+      "step3Body": "{{share}} paylı fonlanmış bir hesap, her {{cycle}} günde bir ödeme ve adınıza herkesçe doğrulanabilir bir «Değerlendirme geçildi» sertifikası.",
+      "step3Alt": "Herkese açık doğrulama kodlu değerlendirme sertifikası"
+    },
+    "sizes": {
+      "eyebrow": "Boyutlar ve ücretler",
+      "title": "Tek ücret. Tek kural seti. Fark boyutta.",
+      "account": "Değerlendirme hesabı",
+      "popular": "En çok seçilen",
+      "oneTime": "· tek seferlik",
+      "target": "Hedef {{amount}}",
+      "daily": "Günlük sınır {{amount}}",
+      "total": "Toplam sınır {{amount}}",
+      "start": "{{size}} ile başla",
+      "startSize": "{{size}} değerlendirmesine başla",
+      "after": "Fonlandıktan sonra: {{share}} pay · {{days}} işlem gününden sonra her {{cycle}} günde bir ödeme · talep başına {{range}} · hesap teslim edildikten sonra ücretler iade edilmez."
+    },
+    "trust": {
+      "eyebrow": "Doğrulanmış sertifikalar",
+      "title": "Her durak için bir sertifika — herkese açık doğrulama koduyla",
+      "sub": "Değerlendirmeyi geçmek ve fonlanmış hesap teslim edildikten sonra ödenen her ödeme: adınıza, herkesin burada kayıt olmadan doğrulayabileceği benzersiz kodlu bir sertifika.",
+      "placeholder": "FPT-XXXXXXXXXX",
+      "label": "Sertifika kodu",
+      "verify": "Doğrula",
+      "invalid": "FPT ve ardından on harf veya rakam biçiminde bir kod girin.",
+      "certAlt": "Trader adına ödenmiş ödeme sertifikası"
+    },
+    "faq": {
+      "eyebrow": "Sık sorulan sorular",
+      "title": "Traderların başlamadan önce sordukları",
+      "q1": "Günlük zarar sınırı nasıl hesaplanır?",
+      "a1": "Gün başındaki özkaynağın {{daily}}’i; Dubai saatiyle 00:00’da ölçülür ve her gün aynı saatte sıfırlanır. Açık pozisyonların dalgalı zararları sayılır ve sınıra kalan, ana ekranda dolar olarak gösterilir.",
+      "q2": "İlk ödememi ne zaman talep edebilirim?",
+      "a2": "Fonlanmış hesapta {{days}} işlem gününden sonra, ardından her {{cycle}} günde bir. Payınız döngü kârının {{share}}’i, talep başına {{range}}; inceleme iki iş günü, ödeme bir iş günü içinde.",
+      "q3": "Bir kural ihlal edildiğinde ne olur?",
+      "a3": "Hesap, sınırı aşan işlemde kapatılır ve üzerindeki işlem durur; rakamlarla ihlal raporu size ulaşır. Hesap teslim edildikten sonra ücret iade edilmez ve yeni bir değerlendirmeye başlayabilirsiniz.",
+      "q4": "Ücretler iade edilebilir mi?",
+      "a4": "Ücret bir kez ödenir ve yalnızca hesabınız teslim edilmeden önce ve İade ve İptal Politikası’ndaki hallerde iade edilir. Teslimden sonra iade edilmez.",
+      "q5": "Hangi enstrümanları hangi kaldıraçla işleyebilirim?",
+      "a5": "cTrader’da forex, metaller, endeksler, enerji ve seçili kripto paralar. Kaldıraç forexte 1:{{forex}}, metallerde 1:{{metals}}, endekslerde 1:{{indices}}, enerjide 1:{{energy}} ve kriptoda 1:{{crypto}}’ye kadar — swapsız.",
+      "q6": "Bir sertifikayı nasıl doğrularım?",
+      "a6": "Her sertifika FPT-XXXXXXXXXX biçiminde bir kod taşır. Yukarıdaki doğrulama alanına girin veya uygulamadaki herkese açık doğrulama sayfasını açın: sertifikanın durumu, sahibinin adı, türü ve hesap boyutu kayıt olmadan görünür."
+    },
+    "footer": {
+      "product": "Ürün",
+      "help": "Yardım",
+      "legal": "Yasal",
+      "how": "Nasıl çalışır",
+      "sizes": "Boyutlar ve ücretler",
+      "rules": "Kurallar",
+      "certificates": "Sertifikalar",
+      "partners": "Ortaklık programı",
+      "faq": "Sık sorulan sorular",
+      "helpCenter": "Yardım merkezi",
+      "contact": "İletişim",
+      "about": "Hakkımızda"
+    }
   }
 }

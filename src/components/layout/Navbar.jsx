@@ -14,6 +14,10 @@ export const RELATIONSHIP_LINE = 'Part of Fiper Global';
 /**
  * Header: ground-chrome + blur 14 (the one surface allowed a blur), ≤ 64 px on phones (lockup 24 + the relationship line 12 px / 1.5),
  * one secondary button (the hero carries the page's primary), language switcher with its name visible.
+ * WEB-VIS-1 (design office frame w1, 7 Nov 2026): on desktop the bar is 76 px (src/web.css), the lockup 28 px, FIVE links 15 px / 28 px apart
+ * (how it works · sizes and fees · rules · certificates · FAQ — the first three and the certificates are home / evaluations anchors), and two 40 px pill
+ * actions «Log in» (ghost) + «Start the evaluation» (outline — the kit paints it red, but the red budget of the home page is two primaries: the hero and
+ * the popular size card — owner decision 41-أ / CR-14; recorded as a question). The language switcher stays beside them (six languages).
  * Owner decision 65 (5 Nov 2026 — UXFW-062; proposed package CR-16): the relationship line under the lockup is «Part of Fiper Global» in ENGLISH in the six
  * languages (the English-lockup rule, CR-11), one text line, never a chip, never clipped — on ≤ 320 px it takes its own row across the full header width
  * (`.fpt-header-rel` in index.css); from 360 px it fits beside the controls (113 px at 12 px). The footer entity line is a different line and is untouched.
@@ -29,7 +33,14 @@ export default function Navbar() {
   const app = useAppLinks();
 
   const LINKS = [
-    { label: t('nav.home'), to: '/' },
+    { label: t('nav.how'), to: '/#how-it-works' },
+    { label: t('nav.sizes'), to: '/#sizes' },
+    { label: t('nav.rules'), to: '/challenges#rules' },
+    { label: t('nav.certificates'), to: '/#certificates' },
+    { label: t('nav.faq'), to: '/#faq' },
+  ];
+  /** Secondary pages (about · partners · contact · help) keep their menu rows on phones; the desktop bar carries the five kit links. */
+  const MORE = [
     { label: t('nav.challenges'), to: '/challenges' },
     { label: t('nav.partners'), to: '/partners' },
     { label: t('nav.about'), to: '/about' },
@@ -37,7 +48,7 @@ export default function Navbar() {
     { label: t('nav.contact'), to: '/contact' },
   ];
 
-  useEffect(() => { setOpen(false); }, [location.pathname]);
+  useEffect(() => { setOpen(false); }, [location.pathname, location.hash]);
 
   useEffect(() => {
     if (!open) return undefined;
@@ -49,42 +60,35 @@ export default function Navbar() {
     return () => { document.body.style.overflow = prev; document.removeEventListener('keydown', onKey); };
   }, [open]);
 
+  const linkCls = ({ isActive }) => `inline-flex items-center min-h-11 text-[15px] whitespace-nowrap transition-colors ${isActive ? 'text-white' : 'text-secondary hover:text-white'}`;
+  const isHash = (to) => to.includes('#');
+
   return (
     <header className="fixed inset-x-0 top-0 z-[80] header-chrome">
-      <nav className="fpt-header-nav max-w-7xl mx-auto px-5 sm:px-8 h-16 sm:h-20 flex items-center justify-between gap-3 min-w-0" aria-label={t('common.mainNav')}>
+      <nav className="fpt-header-nav max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[72px] h-16 sm:h-20 flex items-center justify-between gap-3 min-w-0" aria-label={t('common.mainNav')}>
         <Link to={localizedPath('/', lang)} className="fpt-header-home flex flex-col items-start justify-center gap-0.5 min-w-0 min-h-11">
-          {/* logo v2 (fpt-brand v1.2.1, CR-11): the official ENGLISH white lockup in every language — 24 px on phones, 32 px from sm; never clipped, never mirrored */}
+          {/* logo v2 (fpt-brand v1.2.1, CR-11): the official ENGLISH white lockup in every language — 24 px on phones, 28 px from sm (the kit's bar); never clipped, never mirrored */}
           <span className="sm:hidden"><Logo variant="lockup" size={24} /></span>
-          <span className="hidden sm:block"><Logo variant="lockup" size={32} /></span>
+          <span className="hidden sm:block"><Logo variant="lockup" size={28} /></span>
           {/* CR-02 (owner, 31 Oct 2026): «Part of Fiper Global» in sentence case, 12 px, label colour, no uppercase, no tracking.
               Owner decision 65 (5 Nov 2026): ENGLISH in every language (lang="en"), one text line, never truncated — its own full-width row on ≤ 320 px. */}
           <span className="fpt-header-rel text-xs text-tertiary leading-[1.5] whitespace-nowrap" lang="en">{RELATIONSHIP_LINE}</span>
         </Link>
 
-        <ul className="hidden lg:flex items-center gap-1">
+        <ul className="fpt-header-links hidden lg:flex items-center gap-7">
           {LINKS.map((l) => (
             <li key={l.to}>
-              <NavLink
-                to={localizedPath(l.to, lang)}
-                end={l.to === '/'}
-                className={({ isActive }) =>
-                  `inline-flex items-center min-h-11 px-3 text-sm whitespace-nowrap transition-colors ${isActive ? 'text-white' : 'text-secondary hover:text-white'}`
-                }
-              >
-                {l.label}
-              </NavLink>
+              {isHash(l.to)
+                ? <Link to={localizedPath(l.to, lang)} className={linkCls({ isActive: false })}>{l.label}</Link>
+                : <NavLink to={localizedPath(l.to, lang)} className={linkCls}>{l.label}</NavLink>}
             </li>
           ))}
         </ul>
 
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-2.5">
           <LanguageSwitcher />
-          <a href={app.signin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center min-h-11 px-2 text-sm text-secondary hover:text-white transition-colors">
-            {t('nav.login')}
-          </a>
-          <Button href={app.signup} external size="sm" variant="outline">
-            {t('nav.startChallenge')}
-          </Button>
+          <a href={app.signin} target="_blank" rel="noopener noreferrer" className="fpt-nav-pill">{t('nav.login')}</a>
+          <a href={app.signup} target="_blank" rel="noopener noreferrer" className="fpt-nav-pill fpt-nav-pill--cta">{t('nav.startChallenge')}</a>
         </div>
 
         <div className="flex lg:hidden items-center gap-2 shrink-0">
@@ -106,16 +110,10 @@ export default function Navbar() {
       {open && (
         <div id="site-menu" className="lg:hidden fixed inset-x-0 top-16 bottom-0 z-[100] bg-bg overflow-y-auto border-t border-subtle" role="dialog" aria-modal="true" aria-label={t('common.mainNav')}>
           <div className="px-5 py-4 flex flex-col">
-            {LINKS.map((l) => (
-              <NavLink
-                key={l.to}
-                to={localizedPath(l.to, lang)}
-                end={l.to === '/'}
-                onClick={() => setOpen(false)}
-                className={({ isActive }) => `flex items-center min-h-12 py-3 text-base border-b border-subtle ${isActive ? 'text-white' : 'text-secondary'}`}
-              >
-                {l.label}
-              </NavLink>
+            {[...LINKS, ...MORE].map((l) => (
+              isHash(l.to)
+                ? <Link key={l.to} to={localizedPath(l.to, lang)} onClick={() => setOpen(false)} className="flex items-center min-h-12 py-3 text-base border-b border-subtle text-secondary">{l.label}</Link>
+                : <NavLink key={l.to} to={localizedPath(l.to, lang)} onClick={() => setOpen(false)} className={({ isActive }) => `flex items-center min-h-12 py-3 text-base border-b border-subtle ${isActive ? 'text-white' : 'text-secondary'}`}>{l.label}</NavLink>
             ))}
             <div className="mt-6 flex flex-col gap-3">
               <Button href={app.signup} external size="md">

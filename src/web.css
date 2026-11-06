@@ -1,0 +1,140 @@
+/* WEB-VIS-1 — the public pages at the FPT visual standard (design office, 7 Nov 2026): the `.web` rules of the office kit (FPT-VIS-5 kit5.css, with kit.css
+   tokens --fg2 .72 / --muted .46 / --line .08 / --panel #121212 / --gain #2AB37A / --en Inter) ported value for value under `.fpt-web`, so the 1440 px Arabic
+   render matches the reference frames w1 / w2 (SSIM ≥ 0.97 after masking the embedded product shots). Responsive rules below 1024 px are the site's own
+   (one column, the phone centred under the text, the station cards and the price cards as horizontal snap rows) — the reference is desktop only.
+   Figures in these sections follow the kit: Inter 500 (`.fpt-web-num`), not the mono unit of the older sections. Nothing here invents an identity value:
+   every colour, size, radius and shadow is the kit's. */
+.fpt-web { --web-fg2: rgba(255,255,255,.72); --web-muted: rgba(255,255,255,.46); --web-line: rgba(255,255,255,.08); --web-panel: #121212; --web-gain: #2AB37A; --web-en: Inter, 'IBM Plex Sans Arabic', sans-serif; --web-red: linear-gradient(135deg, #F42821, #A30100); }
+.fpt-web-wrap { max-width: 1440px; margin: 0 auto; }
+.fpt-web-num { font-family: var(--web-en); font-variant-numeric: tabular-nums lining-nums; direction: ltr; unicode-bidi: isolate; }
+
+/* hero (kit .hero2) */
+.fpt-web-hero { display: grid; grid-template-columns: 1fr 520px; gap: 40px; padding: 72px 72px 0; align-items: center; position: relative; }
+.fpt-web-hero .fpt-web-glow { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(45% 55% at 25% 20%, color-mix(in srgb, var(--fpt-finance-gain) 18%, transparent), transparent 70%); /* the kit's rgba(42,179,122,.18) glow written on the gain token */ }
+.fpt-web-hero > div { position: relative; }
+.fpt-web .fpt-web-h1 { font-weight: 600; }
+@media (min-width: 1024px) { .fpt-web .fpt-web-h1 { font-size: 60px; } }   /* below 1024 the site's own h1 steps apply (.fpt-h1: the decision-44 phone cap) */
+.fpt-web-lead { font-size: 19px; color: var(--web-fg2); line-height: 1.7; margin-top: 22px; max-width: 620px; }
+.fpt-web-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.fpt-web-btn-red { height: 54px; padding: 0 26px; border-radius: 999px; background: var(--web-red); color: #fff; display: inline-flex; align-items: center; font-size: 16px; font-weight: 600; white-space: nowrap; }
+.fpt-web-btn-ghost { height: 54px; padding: 0 22px; border-radius: 999px; border: 1px solid rgba(255,255,255,.22); color: #fff; display: inline-flex; align-items: center; font-size: 16px; white-space: nowrap; }
+.fpt-web-proof { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 34px; font-size: 13px; color: var(--web-muted); list-style: none; padding: 0; }
+.fpt-web-proof b { display: block; font-family: var(--web-en); font-size: 22px; font-weight: 500; color: #fff; direction: ltr; text-align: start; }
+.fpt-web-phone { width: 390px; height: 844px; border-radius: 44px; background: var(--fpt-ground-bg); border: 1px solid rgba(255,255,255,.14); overflow: hidden; position: relative; box-shadow: 0 40px 100px rgba(0,0,0,.7); transform: rotate(-4deg) translateY(60px); margin-inline-start: 60px; }
+.fpt-web-phone img { display: block; width: 390px; height: 844px; }
+
+/* sections (kit .sec) */
+.fpt-web-sec { padding: 96px 72px 0; }
+.fpt-web-sec--first { padding-top: 80px; }
+.fpt-web-eyebrow { font-size: 13px; color: var(--web-gain); font-weight: 500; letter-spacing: .02em; margin-bottom: 12px; }
+.fpt-web .fpt-web-h2 { font-size: 38px; font-weight: 600; line-height: 1.3; letter-spacing: -.01em; }
+.fpt-web-sub { font-size: 17px; color: var(--web-fg2); line-height: 1.7; margin-top: 12px; max-width: 640px; }
+.fpt-web-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; list-style: none; padding: 0; }
+.fpt-web-step { border-radius: 24px; background: var(--web-panel); padding: 24px; display: flex; flex-direction: column; gap: 14px; }
+.fpt-web-step .fpt-web-n { font-family: var(--web-en); font-size: 13px; color: var(--web-muted); }
+.fpt-web .fpt-web-step h3 { font-size: 22px; font-weight: 600; }
+.fpt-web-step p { font-size: 15px; color: var(--web-fg2); line-height: 1.65; }
+.fpt-web-shot { margin-top: 6px; border-radius: 16px; overflow: hidden; height: 300px; background: #0A0A0A; border: 1px solid rgba(255,255,255,.08); position: relative; }
+.fpt-web-shot img { display: block; width: 100%; height: auto; position: relative; }
+.fpt-web-shot--up img { transform: translateY(-60px); }
+.fpt-web-shot--down img { transform: translateY(28px); }
+
+/* sizes and fees (kit .price / .pc) */
+.fpt-web-price { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 40px; list-style: none; padding: 0; }
+.fpt-web-pc { border-radius: 24px; background: var(--web-panel); padding: 24px 22px; display: flex; flex-direction: column; gap: 10px; border: 1px solid transparent; }
+.fpt-web-pc--on { border-color: rgba(255,255,255,.5); }
+.fpt-web-pc .fpt-web-s { font-family: var(--web-en); font-size: 36px; font-weight: 500; direction: ltr; text-align: right; }
+.fpt-web-pc .fpt-web-f { font-size: 13px; color: var(--web-muted); }
+.fpt-web-pc .fpt-web-p { font-size: 20px; margin-top: 8px; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.fpt-web-pc .fpt-web-p .fpt-web-num { font-weight: 500; }
+.fpt-web-pc .fpt-web-p small { font-size: 12px; color: var(--web-muted); }
+.fpt-web-pc ul { list-style: none; padding: 0; margin: 10px 0 0; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--web-fg2); }
+.fpt-web-pc ul li::before { content: "·"; margin-inline-end: 8px; color: var(--web-gain); }
+.fpt-web-pc .fpt-web-btn { margin-top: auto; height: 44px; border-radius: 999px; border: 1px solid rgba(255,255,255,.22); display: flex; align-items: center; justify-content: center; font-size: 14px; color: #fff; }
+.fpt-web-pc--on .fpt-web-btn { background: var(--web-red); border: 0; font-weight: 600; }
+.fpt-web-after { margin-top: 18px; font-size: 14px; color: var(--web-muted); line-height: 1.7; max-width: 640px; }
+
+/* certificates (kit .trust) */
+.fpt-web-trust { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; align-items: center; }
+.fpt-web-cert { border-radius: 16px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,.6); background: var(--web-panel); }
+.fpt-web-cert img { display: block; width: 100%; aspect-ratio: 1404 / 790; object-fit: cover; object-position: center; border-radius: 16px; }
+.fpt-web-vfield { display: flex; gap: 10px; margin-top: 20px; max-width: 520px; position: relative; }
+.fpt-web-input { flex: 1; min-width: 0; min-height: 56px; border-radius: 14px; background: var(--web-panel); border: 1px solid rgba(255,255,255,.12); padding: 0 14px 0 16px; font-family: var(--fpt-font-family-mono); font-size: 13px; direction: ltr; text-align: left; color: #fff; letter-spacing: .01em; }
+.fpt-web-input::placeholder { color: var(--web-muted); opacity: 1; }
+.fpt-web-go { height: 56px; padding: 0 20px; border-radius: 14px; background: #fff; color: var(--fpt-p-wordmark-ink); display: inline-flex; align-items: center; font-size: 14px; font-weight: 600; white-space: nowrap; }
+.fpt-web-vmsg { position: absolute; top: 100%; inset-inline-start: 0; margin: 8px 0 0; font-size: 13px; color: var(--web-fg2); }
+/* figures inside the kit's prose are the text face with PROPORTIONAL digits (the kit sets tabular-nums on .num only); the older sections keep tabular (RD2 F-067) */
+.fpt-web .fpt-unit-text { font-variant-numeric: normal; }
+
+/* FAQ (kit .faq2) */
+.fpt-web-faq { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; margin-top: 36px; list-style: none; padding: 0; }
+.fpt-web-q { width: 100%; padding: 18px 0; border-top: 1px solid rgba(255,255,255,.1); display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; font-size: 17px; font-weight: 500; text-align: start; color: #fff; background: none; }
+.fpt-web-q svg { width: 20px; height: 20px; color: var(--web-muted); flex: none; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s; }
+.fpt-web-q[aria-expanded="true"] svg { transform: rotate(180deg); }
+.fpt-web-a { padding: 0 0 18px; font-size: 15px; color: var(--web-fg2); line-height: 1.65; }
+
+/* footer (kit .foot2) */
+.fpt-web-foot { margin-top: 96px; border-top: 1px solid rgba(255,255,255,.08); }
+.fpt-web-foot-grid { padding: 40px 72px 48px; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 24px; font-size: 13px; color: var(--web-muted); line-height: 1.8; }
+.fpt-web-foot h2 { display: block; color: #fff; font-weight: 500; font-size: 13px; margin-bottom: 6px; }
+.fpt-web-foot ul { list-style: none; padding: 0; margin: 0; }
+.fpt-web-foot a { color: var(--web-muted); display: inline-block; padding: 1px 0; margin: -1px 0; }   /* ≥ 24 px target (WCAG 2.5.8) inside the kit's 23.4 px rows */
+.fpt-web-foot a:hover { color: #fff; }
+.fpt-web-foot-legal { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,.08); padding-top: 18px; margin-top: 10px; font-size: 12px; line-height: 1.7; display: flex; flex-direction: column; gap: 4px; }
+.fpt-web-foot-legal p { margin: 0; }
+
+/* Line boxes exactly as the kit: `line-height: normal` on every node inside the web sections (the site-wide Arabic 1.5 / Tailwind 1.5 would shift every
+   text row by 0.5 – 18 px against the reference), then the kit's explicit steps. Letter-spacing as the kit (h1 / h2 −.01em, the eyebrow .02em) — the
+   site-wide Arabic «0» rule yields inside these sections (recorded as a question for the owner: kit vs ID-04). */
+.fpt-web, .fpt-web * { line-height: normal; }
+html[lang="ar"] .fpt-web * { line-height: normal; letter-spacing: 0; }
+html .fpt-web .fpt-web-h1 { line-height: 1.2; letter-spacing: -.01em; }
+html .fpt-web .fpt-web-h2 { line-height: 1.3; letter-spacing: -.01em; }
+html .fpt-web .fpt-web-eyebrow { letter-spacing: .02em; }
+html .fpt-web .fpt-web-lead, html .fpt-web .fpt-web-sub, html .fpt-web .fpt-web-after { line-height: 1.7; }
+html .fpt-web .fpt-web-step p, html .fpt-web .fpt-web-a { line-height: 1.65; }
+html .fpt-web .fpt-web-input { letter-spacing: .01em; }
+html .fpt-web-foot .fpt-web-foot-grid, html .fpt-web-foot .fpt-web-foot-grid * { line-height: 1.8; }
+html .fpt-web-foot .fpt-web-foot-legal, html .fpt-web-foot .fpt-web-foot-legal * { line-height: 1.7; }
+.fpt-web-foot-legal { display: block; }
+.fpt-web-foot-legal p { display: inline; margin: 0; font-size: 12px; color: var(--web-muted); }
+.fpt-web-foot-legal p + p::before { content: " — "; }
+.fpt-web-foot-col1 { display: flex; flex-direction: column; }
+.fpt-web-foot-col1 a + a::before { content: " · "; color: var(--web-muted); }
+
+/* header at the kit's desktop metrics (76 px bar, 15 px links 28 px apart, 40 px pill actions) */
+@media (min-width: 1024px) {
+  .fpt-header-nav { height: 4.75rem; }
+  main#main { padding-top: 4.75rem; }
+  .fpt-hero { min-height: calc(100vh - 4.75rem); }
+}
+@media (min-width: 1024px) { .fpt-header-nav { position: relative; } .fpt-header-links { position: absolute; left: calc(50% + 19px); transform: translateX(-50%); } }
+.fpt-nav-pill { position: relative; height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); display: inline-flex; align-items: center; font-size: 14px; color: #fff; white-space: nowrap; }
+.fpt-nav-pill::before { content: ""; position: absolute; inset: -2px; border-radius: inherit; }
+.fpt-nav-pill--cta { padding: 0 18px; font-weight: 600; border-color: rgba(255,255,255,.4); background: var(--fpt-ground-panel); }
+
+/* below the desktop reference: one column, centred phone, snap rows */
+@media (max-width: 1023px) {
+  .fpt-web-hero { grid-template-columns: 1fr; gap: 0; padding: 48px 20px 0; }
+  .fpt-web-phone { transform: none; margin: 40px auto 0; width: min(390px, 100%); height: auto; }
+  .fpt-web-phone img { width: 100%; height: auto; }
+  .fpt-web-sec { padding: 64px 20px 0; }
+  .fpt-web .fpt-web-h2 { font-size: 30px; }
+  .fpt-web-price, .fpt-web-steps { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; padding: 0 0 12px; margin-inline: -20px; padding-inline: 20px; scrollbar-width: thin; }
+  .fpt-web-price > li, .fpt-web-steps > li { flex: 0 0 min(300px, 82%); scroll-snap-align: start; }
+  .fpt-web-trust { grid-template-columns: 1fr; gap: 28px; }
+  .fpt-web-faq { grid-template-columns: 1fr; }
+  .fpt-web-foot-grid { padding: 40px 20px 48px; grid-template-columns: 1fr 1fr; }
+  .fpt-web-foot a { display: inline-flex; align-items: center; min-height: 44px; }
+  .fpt-web-foot-legal { grid-column: 1 / -1; }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .fpt-web-hero { padding: 64px 32px 0; }
+  .fpt-web-sec { padding: 80px 32px 0; }
+  .fpt-web-steps { display: grid; grid-template-columns: repeat(3, 1fr); overflow: visible; margin-inline: 0; padding-inline: 0; }
+  .fpt-web-foot-grid { padding: 40px 32px 48px; }
+}
+@media (max-width: 639px) {
+  .fpt-web-ctas > * { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) { .fpt-web-q svg { transition: none; } }

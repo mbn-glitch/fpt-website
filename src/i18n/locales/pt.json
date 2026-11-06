@@ -24,11 +24,16 @@
     "challenges": "Avaliações",
     "about": "Sobre",
     "login": "Entrar",
-    "startChallenge": "Iniciar avaliação FPT",
+    "startChallenge": "Iniciar a avaliação",
     "home": "Início",
     "help": "Ajuda",
     "partners": "Parceiros",
-    "contact": "Contato"
+    "contact": "Contato",
+    "how": "Como funciona",
+    "sizes": "Tamanhos e taxas",
+    "rules": "Regras",
+    "certificates": "Certificados",
+    "faq": "Perguntas"
   },
   "hero": {
     "eyebrow": "Projetado para trading rápido e inteligente",
@@ -420,5 +425,86 @@
     "body": "O endereço pode estar errado ou a página foi movida.",
     "home": "Ir para a página inicial",
     "help": "Abrir a central de ajuda"
+  },
+  "web": {
+    "hero": {
+      "lead": "Uma avaliação de fase única no cTrader com regras expressas em dólares, depois uma conta financiada com participação de {{share}} e um pagamento a cada {{cycle}} dias — e um certificado verificável em cada etapa.",
+      "ctaPrimary": "Iniciar a avaliação · a partir de {{fee}}",
+      "ctaSecondary": "Veja como funciona",
+      "proof": {
+        "target": "Meta de lucro",
+        "split": "Participação do trader",
+        "cycle": "dias entre pagamentos",
+        "platform": "Plataforma"
+      },
+      "phoneAlt": "A tela inicial da conta de avaliação no aplicativo FPT"
+    },
+    "path": {
+      "eyebrow": "O caminho para o financiamento",
+      "title": "Três etapas — você vê cada tela antes de começar",
+      "sub": "Sem metáforas: o que você vê aqui é o que vê dentro da sua conta.",
+      "step1Title": "Escolha sua avaliação",
+      "step1Body": "Cinco tamanhos de {{min}} a {{max}} por uma taxa única. Suas regras aparecem em dólares antes de pagar.",
+      "step1Alt": "A tela da loja: escolher o tamanho da avaliação",
+      "step2Title": "Passe na avaliação",
+      "step2Body": "Uma meta de {{target}} dentro de um limite diário de {{daily}} e total de {{total}}, em {{days}} dias e com pelo menos cinco dias de trading. A tela inicial mostra ao vivo o que resta antes do limite.",
+      "step2Alt": "A tela inicial: o que resta antes do limite diário",
+      "step3Title": "Seja financiado",
+      "step3Body": "Uma conta financiada com participação de {{share}}, um pagamento a cada {{cycle}} dias e um certificado «Avaliação aprovada» em seu nome, verificável publicamente.",
+      "step3Alt": "O certificado de aprovação com um código de verificação público"
+    },
+    "sizes": {
+      "eyebrow": "Tamanhos e taxas",
+      "title": "Uma taxa. Um conjunto de regras. A diferença é o tamanho.",
+      "account": "Conta de avaliação",
+      "popular": "A mais escolhida",
+      "oneTime": "· taxa única",
+      "target": "Meta {{amount}}",
+      "daily": "Limite do dia {{amount}}",
+      "total": "Limite total {{amount}}",
+      "start": "Começar {{size}}",
+      "startSize": "Começar a avaliação {{size}}",
+      "after": "Após o financiamento: participação de {{share}} · um pagamento a cada {{cycle}} dias após {{days}} dias de trading · {{range}} por pedido · as taxas não são reembolsadas após a entrega da conta."
+    },
+    "trust": {
+      "eyebrow": "Certificados verificados",
+      "title": "Um certificado para cada etapa — com código de verificação público",
+      "sub": "A aprovação na avaliação e cada pagamento efetuado após a entrega da conta financiada: um certificado em seu nome com um código único que qualquer pessoa pode verificar aqui, sem cadastro.",
+      "placeholder": "FPT-XXXXXXXXXX",
+      "label": "Código do certificado",
+      "verify": "Verificar",
+      "invalid": "Insira um código no formato FPT seguido de dez letras ou dígitos.",
+      "certAlt": "Um certificado de pagamento efetuado em nome do trader"
+    },
+    "faq": {
+      "eyebrow": "Perguntas frequentes",
+      "title": "O que os traders perguntam antes de começar",
+      "q1": "Como é calculado o limite de perda diária?",
+      "a1": "{{daily}} do patrimônio no início do dia, medido às 00:00 no horário de Dubai e reiniciado todos os dias nessa hora. As perdas flutuantes das posições abertas contam, e o que resta antes do limite aparece em dólares na tela inicial.",
+      "q2": "Quando posso pedir meu primeiro pagamento?",
+      "a2": "Após {{days}} dias de trading na conta financiada, e depois a cada {{cycle}} dias. Sua participação é {{share}} do lucro do ciclo, {{range}} por pedido; análise em dois dias úteis e execução em um.",
+      "q3": "O que acontece ao violar uma regra?",
+      "a3": "A conta é encerrada na operação que cruzou o limite e o trading nela para; você recebe o relatório da violação com os números. A taxa não é reembolsada após a entrega da conta, e você pode iniciar uma nova avaliação.",
+      "q4": "As taxas são reembolsáveis?",
+      "a4": "A taxa é paga uma vez e reembolsada apenas antes da entrega da sua conta, e nos casos previstos na política de reembolso e cancelamento. Após a entrega não é reembolsada.",
+      "q5": "Quais instrumentos posso operar e com qual alavancagem?",
+      "a5": "Forex, metais, índices, energia e criptomoedas selecionadas no cTrader. Alavancagem até 1:{{forex}} em forex, 1:{{metals}} em metais, 1:{{indices}} em índices, 1:{{energy}} em energia e 1:{{crypto}} em cripto — sem swap.",
+      "q6": "Como verifico um certificado?",
+      "a6": "Cada certificado traz um código no formato FPT-XXXXXXXXXX. Insira-o no campo de verificação acima ou abra a página pública de verificação no aplicativo: ela mostra o estado do certificado, o nome do titular, o tipo e o tamanho da conta, sem cadastro."
+    },
+    "footer": {
+      "product": "Produto",
+      "help": "Ajuda",
+      "legal": "Legal",
+      "how": "Como funciona",
+      "sizes": "Tamanhos e taxas",
+      "rules": "Regras",
+      "certificates": "Certificados",
+      "partners": "Programa de parceiros",
+      "faq": "Perguntas frequentes",
+      "helpCenter": "Central de ajuda",
+      "contact": "Contato",
+      "about": "Sobre"
+    }
   }
 }

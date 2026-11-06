@@ -20,7 +20,7 @@ export default function SizesSection() {
       <div className="fpt-web-sec fpt-web-sec--first">
         <div className="fpt-web-eyebrow">{t('web.sizes.eyebrow')}</div>
         <h2 id="sizes-title" className="fpt-web-h2 fpt-display">{t('web.sizes.title')}</h2>
-        <ul className="fpt-web-price">
+        <ul className="fpt-web-price" tabIndex={0} aria-label={t('web.sizes.eyebrow')}>
           {CATALOG_V1.map((p, i) => {
             const on = i === POPULAR;
             return (

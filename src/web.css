@@ -79,6 +79,8 @@
 .fpt-web-foot h2 { display: block; color: #fff; font-weight: 500; font-size: 13px; margin-bottom: 6px; }
 .fpt-web-foot ul { list-style: none; padding: 0; margin: 0; }
 .fpt-web-foot a { color: var(--web-muted); display: inline-block; padding: 1px 0; margin: -1px 0; }   /* ≥ 24 px target (WCAG 2.5.8) inside the kit's 23.4 px rows */
+.fpt-web-foot a[href^="mailto:"] { padding: 11px 0; margin: -11px 0; }   /* the support mailbox keeps its 44 px target (RD2 F-072) without moving the kit's rows */
+.fpt-web-steps:focus-visible, .fpt-web-price:focus-visible { outline: 2px solid #fff; outline-offset: 4px; border-radius: 24px; }   /* the snap rows are keyboard-scrollable regions (axe scrollable-region-focusable) */
 .fpt-web-foot a:hover { color: #fff; }
 .fpt-web-foot-legal { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,.08); padding-top: 18px; margin-top: 10px; font-size: 12px; line-height: 1.7; display: flex; flex-direction: column; gap: 4px; }
 .fpt-web-foot-legal p { margin: 0; }

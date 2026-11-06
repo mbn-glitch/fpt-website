@@ -26,7 +26,7 @@ export default function PathSection() {
         <div className="fpt-web-eyebrow">{t('web.path.eyebrow')}</div>
         <h2 id="path-title" className="fpt-web-h2 fpt-display">{t('web.path.title')}</h2>
         <p className="fpt-web-sub">{t('web.path.sub')}</p>
-        <ol className="fpt-web-steps">
+        <ol className="fpt-web-steps" tabIndex={0} aria-label={t('web.path.eyebrow')}>
           {STEPS.map((s, i) => (
             <li key={s.n} className="fpt-web-step">
               <span className="fpt-web-n" aria-hidden="true">{s.n}</span>

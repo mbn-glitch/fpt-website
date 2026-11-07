@@ -26,7 +26,7 @@ export default function Footer() {
       <div className="fpt-web-wrap">
         <div className="fpt-web-foot-grid">
           <div className="fpt-web-foot-col1">
-            <Link to={to('/')} className="inline-flex items-center self-start" style={{ marginBottom: 12 }}>
+            <Link to={to('/')} className="fpt-web-foot-lockup self-start">
               {/* logo v2 (fpt-brand v1.2.1, CR-11): the official ENGLISH white lockup in every language — the kit's 26 px foot lockup */}
               <Logo variant="lockup" size={26} />
             </Link>

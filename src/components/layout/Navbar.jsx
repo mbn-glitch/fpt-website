@@ -69,7 +69,7 @@ export default function Navbar() {
         <Link to={localizedPath('/', lang)} className="fpt-header-home flex flex-col items-start justify-center gap-0.5 min-w-0 min-h-11">
           {/* logo v2 (fpt-brand v1.2.1, CR-11): the official ENGLISH white lockup in every language — 24 px on phones, 28 px from sm (the kit's bar); never clipped, never mirrored */}
           <span className="sm:hidden"><Logo variant="lockup" size={24} /></span>
-          <span className="hidden sm:block"><Logo variant="lockup" size={28} /></span>
+          <span className="fpt-header-lockup hidden sm:block"><Logo variant="lockup" size={28} /></span>
           {/* CR-02 (owner, 31 Oct 2026): «Part of Fiper Global» in sentence case, 12 px, label colour, no uppercase, no tracking.
               Owner decision 65 (5 Nov 2026): ENGLISH in every language (lang="en"), one text line, never truncated — its own full-width row on ≤ 320 px. */}
           <span className="fpt-header-rel text-xs text-tertiary leading-[1.5] whitespace-nowrap" lang="en">{RELATIONSHIP_LINE}</span>
@@ -86,7 +86,7 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden lg:flex items-center gap-2.5">
-          <LanguageSwitcher />
+          <LanguageSwitcher className="fpt-header-lang" />
           <a href={app.signin} target="_blank" rel="noopener noreferrer" className="fpt-nav-pill">{t('nav.login')}</a>
           <a href={app.signup} target="_blank" rel="noopener noreferrer" className="fpt-nav-pill fpt-nav-pill--cta">{t('nav.startChallenge')}</a>
         </div>

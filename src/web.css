@@ -20,6 +20,7 @@
 .fpt-web-btn-ghost { height: 54px; padding: 0 22px; border-radius: 999px; border: 1px solid rgba(255,255,255,.22); color: #fff; display: inline-flex; align-items: center; font-size: 16px; white-space: nowrap; }
 .fpt-web-proof { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 34px; font-size: 13px; color: var(--web-muted); list-style: none; padding: 0; }
 .fpt-web-proof b { display: block; font-family: var(--web-en); font-size: 22px; font-weight: 500; color: #fff; direction: ltr; text-align: start; }
+.fpt-web-proof .fpt-web-num { font-variant-numeric: normal; }   /* WEB1-D08: the proof figures are proportional as the kit's .proof b (tabular stays on .num elsewhere) */
 .fpt-web-phone { width: 390px; height: 844px; border-radius: 44px; background: var(--fpt-ground-bg); border: 1px solid rgba(255,255,255,.14); overflow: hidden; position: relative; box-shadow: 0 40px 100px rgba(0,0,0,.7); transform: rotate(-4deg) translateY(60px); margin-inline-start: 60px; }
 .fpt-web-phone img { display: block; width: 390px; height: 844px; }
 
@@ -82,6 +83,7 @@
 .fpt-web-foot a { color: var(--web-muted); display: inline-block; padding: 1px 0; margin: -1px 0; }   /* ≥ 24 px target (WCAG 2.5.8) inside the kit's 23.4 px rows */
 .fpt-web-foot .fpt-web-foot-lockup { display: flex; line-height: 0; padding: 0; margin: 0 0 12px; height: 26px; }   /* WEB1-D01: the lockup link is the 26 px image, no line box under it */
 .fpt-web-foot a[href^="mailto:"] { padding: 11px 0; margin: -11px 0; }   /* the support mailbox keeps its 44 px target (RD2 F-072) without moving the kit's rows */
+.fpt-web-foot .fpt-web-foot-col1 a[href^="mailto:"] { color: #fff; font-family: var(--web-en); font-variant-numeric: normal; direction: ltr; unicode-bidi: isolate; }   /* WEB1-D09: the support mailbox as the kit's .sup — Inter, white, proportional digits, LTR isolate (the 45.4 px target stays) */
 .fpt-web-steps:focus-visible, .fpt-web-price:focus-visible { outline: 2px solid #fff; outline-offset: 4px; border-radius: 24px; }   /* the snap rows are keyboard-scrollable regions (axe scrollable-region-focusable) */
 .fpt-web-foot a:hover { color: #fff; }
 .fpt-web-foot-legal { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,.08); padding-top: 18px; margin-top: 10px; font-size: 12px; line-height: 1.7; display: flex; flex-direction: column; gap: 4px; }

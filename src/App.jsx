@@ -31,15 +31,23 @@ function ScrollToTop() {
   const { pathname, hash, key } = useLocation();
   useEffect(() => {
     if (!hash) { window.scrollTo(0, 0); return undefined; }
-    let frame = 0; let tries = 0;
+    let frame = 0; let tries = 0; let settle = null; let timer = 0;
     const id = decodeURIComponent(hash.slice(1));
+    // The page may still be growing ABOVE the section when it is first reached (a lazy chunk, pictures, prices on a cold load): for three seconds
+    // every change of the page's height brings the section back under the header — unless the visitor has started to move the page themselves.
+    const release = () => { settle?.disconnect(); settle = null; clearTimeout(timer); for (const e of ['wheel', 'touchstart', 'keydown']) window.removeEventListener(e, release); };
     const seek = () => {
       const el = document.getElementById(id);
-      if (el) { el.scrollIntoView({ block: 'start' }); return; }
-      if (tries++ < 180) frame = requestAnimationFrame(seek); // ≈ 3 s at 60 Hz
+      if (!el) { if (tries++ < 180) frame = requestAnimationFrame(seek); return; } // ≈ 3 s at 60 Hz
+      el.scrollIntoView({ block: 'start' });
+      if (typeof ResizeObserver === 'undefined') return;
+      settle = new ResizeObserver(() => { if (document.getElementById(id)) document.getElementById(id).scrollIntoView({ block: 'start', behavior: 'auto' }); });
+      settle.observe(document.body);
+      for (const e of ['wheel', 'touchstart', 'keydown']) window.addEventListener(e, release, { passive: true, once: true });
+      timer = setTimeout(release, 3000);
     };
     seek();
-    return () => cancelAnimationFrame(frame);
+    return () => { cancelAnimationFrame(frame); release(); };
   }, [pathname, hash, key]);
   return null;
 }

@@ -50,6 +50,7 @@ export default function SEO({ title, description, path = '/', keywords, noindex 
       <meta name="twitter:title" content={resolvedTitle} />
       <meta name="twitter:description" content={resolvedDescription} />
       <meta name="twitter:image" content={image} />
+      <meta name="twitter:image:alt" content={t('meta.ogImageAlt')} />
     </>
   );
 }

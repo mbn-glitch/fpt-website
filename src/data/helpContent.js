@@ -192,13 +192,13 @@ export const faqs = [
     id: 'what-trading-styles-work-best', categoryId: 'getting-started',
     question: 'What trading styles work best with FPT?',
     questions: { ar: 'ما أساليب التداول الأنسب مع FPT؟', fr: 'Quels styles de trading fonctionnent le mieux ?', es: '¿Qué estilos de trading funcionan mejor?', pt: 'Quais estilos de trading funcionam melhor?', tr: 'Hangi trading stilleri en iyi çalışır?' },
-    answer: 'FPT accommodates scalping, day trading, swing trading, and algorithmic execution via EAs. High-frequency trading and arbitrage strategies are not permitted.',
+    answer: 'FPT accommodates scalping, day trading, swing trading, and algorithmic execution via Expert Advisors (EAs). High-frequency trading and arbitrage strategies are not permitted.',
     answers: {
-      ar: 'يستوعب FPT التداول السريع والتداول اليومي وتداول التأرجح والتنفيذ الخوارزمي. استراتيجيات التداول عالي التردد والمراجحة غير مسموح بها.',
-      fr: "FPT accepte le scalping, le day trading, le swing trading et l’exécution algorithmique. Le HFT et l’arbitrage ne sont pas permis.",
-      es: 'FPT admite scalping, day trading, swing trading y ejecución algorítmica mediante EAs. Las estrategias de trading de alta frecuencia y de arbitraje no están permitidas.',
-      pt: 'FPT acomoda scalping, day trading, swing trading e execução algorítmica via EAs. Estratégias de trading de alta frequência e de arbitragem não são permitidas.',
-      tr: 'FPT scalping, day trading, swing trading ve EA’lar aracılığıyla algoritmik yürütmeyi destekler. Yüksek frekanslı trading ve arbitraj stratejilerine izin verilmez.',
+      ar: 'يستوعب FPT التداول السريع والتداول اليومي وتداول التأرجح والتنفيذ الخوارزمي الذي ينفّذه المستشارون الخبراء (EAs). استراتيجيات التداول عالي التردد والمراجحة غير مسموح بها.',
+      fr: "FPT accepte le scalping, le day trading, le swing trading et l’exécution algorithmique via des Expert Advisors (EAs). Le HFT et l’arbitrage ne sont pas permis.",
+      es: 'FPT admite scalping, day trading, swing trading y ejecución algorítmica mediante Expert Advisors (EAs). Las estrategias de trading de alta frecuencia y de arbitraje no están permitidas.',
+      pt: 'FPT acomoda scalping, day trading, swing trading e execução algorítmica via Expert Advisors (EAs). Estratégias de trading de alta frequência e de arbitragem não são permitidas.',
+      tr: 'FPT scalping, day trading, swing trading ve Expert Advisors (EAs) aracılığıyla algoritmik yürütmeyi destekler. Yüksek frekanslı trading ve arbitraj stratejilerine izin verilmez.',
     },
   },
   {
@@ -230,7 +230,7 @@ export const faqs = [
   {
     id: 'what-is-the-maximum-daily-loss', categoryId: 'challenges-rules',
     question: 'What is the maximum daily loss?',
-    questions: { ar: 'ما الحد الأقصى للخسارة اليومية؟', fr: 'Quelle est la perte quotidienne maximale ?', es: '¿Cuál es la pérdida diaria máxima?', pt: 'Qual é a perda diária máxima?', tr: 'Maksimum günlük kayıp nedir?' },
+    questions: { ar: 'ما الخسارة اليومية القصوى؟', fr: 'Quelle est la perte quotidienne maximale ?', es: '¿Cuál es la pérdida diaria máxima?', pt: 'Qual é a perda diária máxima?', tr: 'Maksimum günlük kayıp nedir?' },
     answer: '5 %: equity must not fall below 95 % of the day-start equity, measured at 00:00 Dubai time and reset daily at that hour. Floating losses of open positions count.',
     answers: {
       ar: '5 %: يجب ألا تنخفض حقوق الحساب دون 95 % من حقوق الحساب في بداية اليوم، المقيسة في الساعة 00:00 بتوقيت دبي والمعاد ضبطها يومياً في تلك الساعة. الخسائر العائمة للمراكز المفتوحة تُحتسب.',
@@ -243,7 +243,7 @@ export const faqs = [
   {
     id: 'what-is-the-maximum-total-drawdown', categoryId: 'challenges-rules',
     question: 'What is the maximum total drawdown?',
-    questions: { ar: 'ما الحد الأقصى للسحب الإجمالي؟', fr: 'Quel est le drawdown total maximum ?', es: '¿Cuál es el drawdown total máximo?', pt: 'Qual é o drawdown total máximo?', tr: 'Maksimum toplam drawdown nedir?' },
+    questions: { ar: 'ما الخسارة الإجمالية القصوى؟', fr: 'Quel est le drawdown total maximum ?', es: '¿Cuál es el drawdown total máximo?', pt: 'Qual é o drawdown total máximo?', tr: 'Maksimum toplam drawdown nedir?' },
     answer: '9% of the initial account balance, measured from the starting equity.',
     answers: {
       ar: '9% من رصيد الحساب الابتدائي، مقاساً من حقوق الملكية الأولية.',
@@ -254,12 +254,26 @@ export const faqs = [
     },
   },
   {
+    // Glossary entry (design office WEBL-D13, L10N-2): the three rule names, one name per rule; in Arabic «السحب» is the payout word only.
+    id: 'what-do-the-rule-names-mean', categoryId: 'challenges-rules',
+    question: 'What do Profit Target, Max Daily Loss and Max Loss mean?',
+    questions: { ar: 'ماذا تعني «هدف الربح» و«الخسارة اليومية القصوى» و«الخسارة الإجمالية القصوى»؟', fr: 'Que signifient Objectif de profit, Perte quotidienne max et Perte maximale ?', es: '¿Qué significan Objetivo de ganancia, Pérdida diaria máx y Pérdida máxima?', pt: 'O que significam Meta de lucro, Perda diária máx e Perda máxima?', tr: 'Kar Hedefi, Maks Günlük Kayıp ve Maksimum Kayıp ne anlama gelir?' },
+    answer: 'Profit Target: 10 % of the starting account balance, to be reached during the evaluation. Max Daily Loss: 5 % — equity must not fall below 95 % of the day-start equity, measured at 00:00 Dubai time. Max Loss: 9 % of the initial balance — equity must stay above 91 %; these two loss limits are what the other answers call “drawdown”.',
+    answers: {
+      ar: 'هدف الربح (Profit Target): 10 % من رصيد الحساب الابتدائي، يُحقَّق خلال التقييم. الخسارة اليومية القصوى (Max Daily Loss): 5 % — يجب ألا تنخفض حقوق الحساب دون 95 % من حقوق الحساب في بداية اليوم، المقيسة في الساعة 00:00 بتوقيت دبي. الخسارة الإجمالية القصوى (Max Loss): 9 % من الرصيد الابتدائي — يجب أن تبقى حقوق الحساب فوق 91 %؛ وكلمة «السحب» في هذا الموقع تعني صرف الأرباح فقط، ولا تُستعمل لحدود الخسارة.',
+      fr: 'Objectif de profit (Profit Target) : 10 % du solde initial du compte, à atteindre pendant l’évaluation. Perte quotidienne max (Max Daily Loss) : 5 % — l’equity ne doit pas descendre sous 95 % de l’equity de début de journée, mesurée à 00:00 heure de Dubaï. Perte maximale (Max Loss) : 9 % du solde initial — l’equity doit rester au-dessus de 91 % ; ces deux limites de perte sont ce que les autres réponses appellent « drawdown ».',
+      es: 'Objetivo de ganancia (Profit Target): 10 % del saldo inicial de la cuenta, que debe alcanzarse durante la evaluación. Pérdida diaria máx (Max Daily Loss): 5 % — el equity no debe caer por debajo del 95 % del equity de inicio del día, medido a las 00:00 hora de Dubái. Pérdida máxima (Max Loss): 9 % del saldo inicial — el equity debe mantenerse por encima del 91 %; estos dos límites de pérdida son lo que las demás respuestas llaman «drawdown».',
+      pt: 'Meta de lucro (Profit Target): 10 % do saldo inicial da conta, a ser atingida durante a avaliação. Perda diária máx (Max Daily Loss): 5 % — o patrimônio não pode cair abaixo de 95 % do patrimônio de início do dia, medido às 00:00 no horário de Dubai. Perda máxima (Max Loss): 9 % do saldo inicial — o patrimônio deve permanecer acima de 91 %; esses dois limites de perda são o que as outras respostas chamam de “drawdown”.',
+      tr: 'Kar Hedefi (Profit Target): değerlendirme sırasında ulaşılması gereken, başlangıç hesap bakiyesinin %10’u. Maks Günlük Kayıp (Max Daily Loss): %5 — özkaynak, Dubai saatiyle 00:00’da ölçülen gün başı özkaynağının %95’inin altına düşmemelidir. Maksimum Kayıp (Max Loss): başlangıç bakiyesinin %9’u — özkaynak %91’in üzerinde kalmalıdır; diğer yanıtlarda “drawdown” denen şey bu iki kayıp limitidir.',
+    },
+  },
+  {
     id: 'how-is-drawdown-calculated', categoryId: 'challenges-rules',
     question: 'How is drawdown calculated — based on equity or balance?',
     questions: { ar: 'كيف يُحسب حدّ الخسارة؟', fr: 'Comment le drawdown est-il calculé ?', es: '¿Cómo se calcula el drawdown?', pt: 'Como o drawdown é calculado?', tr: 'Drawdown nasıl hesaplanır?' },
     answer: 'The daily limit is measured against the day-start equity (00:00 Dubai time); the maximum loss limit against the initial balance (equity must stay above 91 %). Both include the floating P&L of open positions; rewards paid are deducted from the balance.',
     answers: {
-      ar: 'يُقاس الحد اليومي على حقوق الحساب في بداية اليوم (00:00 بتوقيت دبي)؛ ويُقاس حد الخسارة القصوى على الرصيد الابتدائي (يجب أن تبقى حقوق الحساب فوق 91 %). كلاهما يشمل الربح/الخسارة العائمة للمراكز المفتوحة؛ وتُخصم المكافآت المدفوعة من الرصيد.',
+      ar: 'يُقاس الحد اليومي على حقوق الحساب في بداية اليوم (00:00 بتوقيت دبي)؛ وتُقاس الخسارة الإجمالية القصوى على الرصيد الابتدائي (يجب أن تبقى حقوق الحساب فوق 91 %). كلاهما يشمل الربح/الخسارة العائمة للمراكز المفتوحة؛ وتُخصم المكافآت المدفوعة من الرصيد.',
       fr: 'La limite quotidienne se mesure sur l’equity de début de journée (00:00 heure de Dubaï) ; la limite de perte maximale sur le solde initial (l’equity doit rester au-dessus de 91 %). Les deux incluent le P&L flottant des positions ouvertes ; les récompenses payées sont déduites du solde.',
       es: 'El límite diario se mide sobre el equity de inicio del día (00:00 hora de Dubái); el límite de pérdida máxima sobre el saldo inicial (el equity debe mantenerse por encima del 91 %). Ambos incluyen el P&L flotante de las posiciones abiertas; las recompensas pagadas se deducen del saldo.',
       pt: 'O limite diário é medido sobre o patrimônio de início do dia (00:00 horário de Dubai); o limite de perda máxima sobre o saldo inicial (o patrimônio deve ficar acima de 91 %). Ambos incluem o P&L flutuante das posições abertas; as recompensas pagas são deduzidas do saldo.',
@@ -415,7 +429,7 @@ export const faqs = [
     questions: { ar: 'هل تتبع الحسابات الممولة نفس قواعد التقييم؟', fr: 'Les comptes financés suivent-ils les mêmes règles ?', es: '¿Las cuentas financiadas siguen las mismas reglas?', pt: 'As contas financiadas seguem as mesmas regras?', tr: 'Finanse edilmiş hesaplar aynı kuralları takip ediyor mu?' },
     answer: 'The core risk parameters remain — daily drawdown, maximum drawdown, and minimum trading days. The profit target no longer applies.',
     answers: {
-      ar: 'تبقى معاملات المخاطر الأساسية — حدّ الخسارة اليومي وحدّ الخسارة الأقصى والحد الأدنى لأيام التداول. لا ينطبق هدف الربح بعد الآن.',
+      ar: 'تبقى معاملات المخاطر الأساسية — الخسارة اليومية القصوى والخسارة الإجمالية القصوى والحد الأدنى لأيام التداول. لا ينطبق هدف الربح بعد الآن.',
       fr: 'Les paramètres de risque principaux restent — drawdown quotidien, drawdown maximal et nombre minimal de jours de trading. L’objectif de profit ne s’applique plus.',
       es: 'Los parámetros de riesgo principales permanecen — drawdown diario, drawdown máximo y días mínimos de trading. El objetivo de ganancia ya no aplica.',
       pt: 'Os parâmetros de risco principais permanecem — drawdown diário, drawdown máximo e dias mínimos de trading. A meta de lucro não se aplica mais.',
@@ -530,14 +544,14 @@ export const faqs = [
   {
     id: 'can-i-use-expert-advisors', categoryId: 'trading-conditions',
     question: 'Can I use Expert Advisors (EAs)?',
-    questions: { ar: 'هل يمكنني استخدام الـ EAs؟', fr: 'Puis-je utiliser des Expert Advisors ?', es: '¿Puedo usar Expert Advisors (EAs)?', pt: 'Posso usar Expert Advisors (EAs)?', tr: 'Expert Advisors kullanabilir miyim?' },
+    questions: { ar: 'هل المستشارون الخبراء (EAs) مسموح بهم؟', fr: 'Puis-je utiliser des Expert Advisors (EAs) ?', es: '¿Puedo usar Expert Advisors (EAs)?', pt: 'Posso usar Expert Advisors (EAs)?', tr: 'Expert Advisors (EAs) kullanabilir miyim?' },
     answer: 'Yes. Automated trading via EAs is permitted under standard trading conditions.',
     answers: {
       ar: 'نعم. التداول الآلي عبر الـ EAs مسموح به في ظل شروط التداول القياسية.',
       fr: 'Oui. Le trading automatisé via EAs est autorisé dans les conditions de trading standard.',
       es: 'Sí. El trading automatizado mediante EAs está permitido bajo las condiciones de trading estándar.',
       pt: 'Sim. O trading automatizado via EAs é permitido sob as condições de trading padrão.',
-      tr: 'Evet. EA’lar aracılığıyla otomatik trading, standart işlem koşulları altında izinlidir.',
+      tr: 'Evet. EAs aracılığıyla otomatik trading, standart işlem koşulları altında izinlidir.',
     },
   },
   {
@@ -572,7 +586,7 @@ export const faqs = [
     questions: { ar: 'هل المارتينجيل أو التداول الشبكي مسموح به؟', fr: 'Le martingale ou grid trading est-il autorisé ?', es: '¿Está permitido el martingala o grid?', pt: 'Martingale ou grid são permitidos?', tr: 'Martingale veya grid izinli mi?' },
     answer: 'These strategies are permitted, but they must respect the maximum drawdown and daily loss limits.',
     answers: {
-      ar: 'هذه الاستراتيجيات مسموح بها، لكن يجب أن تحترم حدّ الخسارة الأقصى وحدّ الخسارة اليومي.',
+      ar: 'هذه الاستراتيجيات مسموح بها، لكن يجب أن تحترم الخسارة الإجمالية القصوى والخسارة اليومية القصوى.',
       fr: 'Ces stratégies sont autorisées mais doivent respecter les limites de drawdown.',
       es: 'Estas estrategias están permitidas pero deben respetar los límites de drawdown.',
       pt: 'Essas estratégias são permitidas mas devem respeitar os limites de drawdown.',

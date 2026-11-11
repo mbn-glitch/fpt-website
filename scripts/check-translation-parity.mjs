@@ -8,6 +8,8 @@
  *   · carry the same number of sentences as the English text.
  * Exceptions are NAMED below with their reason; a new shortfall fails until the sentence is translated or the exception is written down.
  *   node scripts/check-translation-parity.mjs [--list]   → PASS / FAIL (exit 1); --list prints every exception that is still needed
+ *   node scripts/check-translation-parity.mjs --edges[=0.05]   → read-only report (JSON on stdout, exit 0, no gate): every pair whose length ratio lies within the
+ *       margin of its language threshold, just above or just below — the office's review list for re-calibrating the thresholds (m-000938). The thresholds are not changed.
  */
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
@@ -32,7 +34,7 @@ const help = await import(path.join(ROOT, 'src', 'data', 'helpContent.js'));
 for (const c of help.categories) rows.push({ where: `help category ${c.id} description`, en: c.description, tr: c.descriptions || {} });
 for (const f of help.faqs) { rows.push({ where: `help ${f.id} question`, en: f.question, tr: f.questions || {} }); rows.push({ where: `help ${f.id} answer`, en: f.answer, tr: f.answers || {} }); }
 
-const fails = []; const used = new Set(); let checked = 0;
+const fails = []; const used = new Set(); let checked = 0; const measured = [];
 for (const r of rows) {
   if (typeof r.en !== 'string' || clean(r.en).length < MIN_SOURCE) continue;
   const enLen = clean(r.en).length; const enS = sentences(r.en);
@@ -41,12 +43,25 @@ for (const r of rows) {
     if (typeof t !== 'string' || !t.trim()) { if (r.where.startsWith('help ')) fails.push(`${id}: no translation (the page falls back to English)`); continue; }
     checked += 1;
     const ratio = clean(t).length / enLen; const s = sentences(t); const problems = [];
+    measured.push({ where: r.where, lang: l, ratio, enLen, len: clean(t).length, enSentences: enS, sentences: s, en: clean(r.en), text: clean(t) });
     if (ratio < RATIO[l]) problems.push(`length ${ratio.toFixed(2)} of the English (< ${RATIO[l]})`);
     if (s !== enS) problems.push(`${s} sentence(s), the English has ${enS}`);
     if (!problems.length) continue;
     if (EXCEPTIONS[id]) { used.add(id); continue; }
     fails.push(`${id}: ${problems.join(' · ')}\n      en: ${clean(r.en)}\n      ${l}: ${clean(t)}`);
   }
+}
+const edgeArg = process.argv.find((a) => a === '--edges' || a.startsWith('--edges='));
+if (edgeArg) {
+  const margin = edgeArg.includes('=') ? Number(edgeArg.split('=')[1]) : 0.05;
+  if (!(margin > 0)) { console.error('check-translation-parity: --edges=<margin> must be a positive number'); process.exit(2); }
+  const row = (m) => ({ where: m.where, lang: m.lang, ratio: +m.ratio.toFixed(4), threshold: RATIO[m.lang], distance: +(m.ratio - RATIO[m.lang]).toFixed(4), lengthPasses: m.ratio >= RATIO[m.lang],
+    sentences: m.sentences, enSentences: m.enSentences, namedException: EXCEPTIONS[`${m.where} ${m.lang}`] || null, enLength: m.enLen, length: m.len, en: m.en, translation: m.text });
+  const near = measured.filter((m) => Math.abs(m.ratio - RATIO[m.lang]) <= margin).sort((a, b) => Math.abs(a.ratio - RATIO[a.lang]) - Math.abs(b.ratio - RATIO[b.lang]));
+  const byLang = Object.fromEntries(LANGS.map((l) => { const mine = near.filter((m) => m.lang === l); return [l, { threshold: RATIO[l], justBelow: mine.filter((m) => m.ratio < RATIO[l]).map(row), justAbove: mine.filter((m) => m.ratio >= RATIO[l]).map(row) }]; }));
+  console.log(JSON.stringify({ tool: 'scripts/check-translation-parity.mjs --edges', note: 'Length ratio = translation length / English length (placeholders, bidi marks and runs of white space normalised) for every text whose English source is at least minSource characters. Listed: every pair within the margin of its language threshold. justBelow = fails the length rule unless a named exception covers it; justAbove = passes it. Whether a pair reads well is NOT judged here — that is the native-speaker review.',
+    minSource: MIN_SOURCE, thresholds: RATIO, margin, measuredPairs: measured.length, listedPairs: near.length, languages: byLang }, null, 1));
+  process.exit(0);
 }
 const stale = Object.keys(EXCEPTIONS).filter((k) => !used.has(k));
 if (process.argv.includes('--list')) for (const k of [...used].sort()) console.log(`  exception  ${k} — ${EXCEPTIONS[k]}`);

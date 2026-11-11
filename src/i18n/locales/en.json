@@ -52,8 +52,8 @@
   "keyRules": {
     "title": "Clear Rules. Full Transparency.",
     "profitTarget": "Profit Target",
-    "dailyDrawdown": "Daily Drawdown",
-    "maxDrawdown": "Max Drawdown",
+    "dailyDrawdown": "Max Daily Loss",
+    "maxDrawdown": "Max Loss",
     "minDays": "Min Trading Days",
     "minDaysValue": "Evaluation: {{evaluation}} / Funded: {{funded}}",
     "timeLimit": "Time Limit",
@@ -260,8 +260,8 @@
     "startYourChallenge": "Start Your Evaluation",
     "rules": {
       "profitTarget": "Profit Target",
-      "dailyDrawdown": "Daily Drawdown",
-      "maxDrawdown": "Max Drawdown",
+      "dailyDrawdown": "Max Daily Loss",
+      "maxDrawdown": "Max Loss",
       "minDaysPhase1": "Minimum Trading Days",
       "minDaysFunded": "Min Days (Funded)",
       "timeLimit": "Time Limit",

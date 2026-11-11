@@ -58,7 +58,8 @@ const localized = (r, l) => (l === 'en' ? r : r === '/' ? `/${l}` : `/${l}${r}`)
 const ALLOW_LATIN = [
   'Fiper Pro Traders', 'Fiper Global L.L.C-FZ', 'Fiper Global', 'Fiper Card', 'Fiper CRM', 'Fiper', 'FPT',   // the brand and its family (Latin in every language)
   'cTrader', 'cBots', 'cAlgo', 'cBot', 'iOS', 'Android', 'WhatsApp',                                        // third-party product names
-  'EAs', 'EA',                                                                                              // «Expert Advisors» — the help centre keeps the trade's own abbreviation in every language (wording question recorded in the round's notes)
+  'EAs', 'EA',                                                                                              // «Expert Advisors» — office ruling m-000938 (L10N-2): the first mention on a page reads «المستشارون الخبراء (EAs)», later ones «EAs»; the abbreviation is never arabised
+  'Profit Target', 'Max Daily Loss', 'Max Loss',                                                            // WEBL-D13 glossary entry (help «what-do-the-rule-names-mean»): the English rule names in brackets beside the Arabic names
   'USD', 'USDT', 'EUR', 'AED', 'SAMPLE',                                                                    // currency codes · the «بيانات تجريبية · SAMPLE» chip
 ];
 /** Findings that are understood and accepted — each with its reason; reported in the summary, never blocking. Keep it short: a waiver is a decision. */
@@ -226,7 +227,7 @@ function measure({ lang, ALLOW_LATIN }) {
     for (const at of ['alt', 'aria-label', 'placeholder', 'title']) { const v = el.getAttribute(at); if (v) checkText(v, `${sel(el)} @${at}`, false); }
   }
   checkText(document.title, 'head > title', false);
-  for (const m of document.head.querySelectorAll('meta[name="description"],meta[property="og:title"],meta[property="og:description"],meta[property="og:image:alt"]')) checkText(m.getAttribute('content') || '', `head > meta[${m.getAttribute('name') || m.getAttribute('property')}]`, false);
+  for (const m of document.head.querySelectorAll('meta[name="description"],meta[property="og:title"],meta[property="og:description"],meta[property="og:image:alt"],meta[name="twitter:image:alt"]')) checkText(m.getAttribute('content') || '', `head > meta[${m.getAttribute('name') || m.getAttribute('property')}]`, false);
   if (lang === 'ar' && !AR.test(document.title)) out.untranslated.push({ kind: 'title-not-arabic', where: 'head > title', text: short(document.title, 120) });
 
   // ── pictures

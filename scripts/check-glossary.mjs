@@ -14,9 +14,12 @@ const DIST = process.argv.includes('--dist');
 const LATIN = /(?<![\p{L}\p{N}])(challenges?|d[ée]fis?|desaf[ií]os?|zorlu[kğg]\p{L}*|meydan okuma\p{L}*|MT[45])(?![\p{L}\p{N}])/giu;
 // the indefinite form «تحدٍّ» (the word with its diacritics) is the same banned word — it slipped past the first pattern until LAUNCH-I18N-1 (help.subtitle, two help answers)
 const ARABIC = /(?<![؀-ۿ])(?:ال)?تحد(?:ي(?:ات|ك|اً|ا|ه|ها|نا|كم)?|[\u064B-\u0652]+)(?![؀-ۿ])/g;
+/** WEBL-D13 (design office, L10N-2): the loss limits are «الخسارة اليومية القصوى» (Max Daily Loss) and «الخسارة الإجمالية القصوى» (Max Loss) — «السحب» is the payout word only,
+ *  so «drawdown» is never «السحب …», and the overall limit is never the bare «الخسارة القصوى». «الحد الأدنى / الأقصى للسحب» (min / max payout) stay legitimate. */
+const ARABIC_RULES = /(?:حسابات|قواعد|حدّ?|حدود) السحب|السحب (?:اليومي|الإجمالي|الأقصى)|للسحب (?:اليومي|الإجمالي)|يُ?حسب السحب|الخسارة القصوى|(?:ال)?تراجع (?:ال)?(?:يومي|أقصى|إجمالي)/g;
 const failures = [];
 const scan = (where, text) => {
-  for (const re of [LATIN, ARABIC]) { re.lastIndex = 0; let m; while ((m = re.exec(text))) failures.push(`${where}: «${m[0]}» — …${text.slice(Math.max(0, m.index - 30), m.index + m[0].length + 30).replace(/\s+/g, ' ')}…`); }
+  for (const re of [LATIN, ARABIC, ARABIC_RULES]) { re.lastIndex = 0; let m; while ((m = re.exec(text))) failures.push(`${where}: «${m[0]}» — …${text.slice(Math.max(0, m.index - 30), m.index + m[0].length + 30).replace(/\s+/g, ' ')}…`); }
 };
 // 1. locale values
 for (const l of ['en', 'ar', 'fr', 'es', 'pt', 'tr']) {
@@ -43,4 +46,4 @@ if (DIST) {
   if (!failures.length) console.log(`check-glossary: ${pages} rendered pages scanned`);
 }
 if (failures.length) { console.error(`check-glossary: FAIL (${failures.length})`); for (const x of failures.slice(0, 80)) console.error(`  ${x}`); process.exit(1); }
-console.log(`check-glossary: PASS (six locales + help content${DIST ? ' + dist/ text' : ''}: no challenge / défi / desafío / desafio / zorluk / meydan okuma / تحدي / MT4 / MT5)`);
+console.log(`check-glossary: PASS (six locales + help content${DIST ? ' + dist/ text' : ''}: no challenge / défi / desafío / desafio / zorluk / meydan okuma / تحدي / MT4 / MT5; Arabic rule names per WEBL-D13 — no «السحب» for a loss limit, no bare «الخسارة القصوى»)`);

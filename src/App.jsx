@@ -21,12 +21,26 @@ const Contact = lazy(() => import('./pages/Contact.jsx'));
 const Help = lazy(() => import('./pages/Help.jsx'));
 const HelpCategory = lazy(() => import('./pages/HelpCategory.jsx'));
 
+/**
+ * A new page starts at its top; a link to a SECTION («/#sizes», «/challenges#rules» — five rows of the menu, the five links of the bar, five of
+ * the footer) lands on that section. The router changes the address and nothing else: without this the anchor rows «did nothing» on an in-site
+ * press (owner's report, 12 Nov 2026 — found by `npm run check:nav`). The section may not be in the page yet (the pages are lazy chunks), so it
+ * is looked for on a few frames; pressing the same row again scrolls again (the location key changes even when the address does not).
+ */
 function ScrollToTop() {
-  const { pathname, hash } = useLocation();
+  const { pathname, hash, key } = useLocation();
   useEffect(() => {
-    if (hash) return;
-    window.scrollTo(0, 0);
-  }, [pathname, hash]);
+    if (!hash) { window.scrollTo(0, 0); return undefined; }
+    let frame = 0; let tries = 0;
+    const id = decodeURIComponent(hash.slice(1));
+    const seek = () => {
+      const el = document.getElementById(id);
+      if (el) { el.scrollIntoView({ block: 'start' }); return; }
+      if (tries++ < 180) frame = requestAnimationFrame(seek); // ≈ 3 s at 60 Hz
+    };
+    seek();
+    return () => cancelAnimationFrame(frame);
+  }, [pathname, hash, key]);
   return null;
 }
 

@@ -216,7 +216,7 @@ export default function ChallengePricing() {
         </div>
       </Section>
 
-      <Section className="bg-card border-y border-subtle" aria-labelledby="rules-title">
+      <Section id="rules" className="bg-card border-y border-subtle" aria-labelledby="rules-title">
         <SectionHeader eyebrow={t('challengePricing.rulesEyebrow')} title={<span id="rules-title">{t('challengePricing.rulesTitle')}</span>} subtitle={t('challengePricing.rulesSubtitle')} />
         <ul className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {RULES_GRID.map((r) => (

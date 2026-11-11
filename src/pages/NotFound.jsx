@@ -9,7 +9,7 @@ export default function NotFound() {
   return (
     <>
       <SEO title={t('notFound.title')} description={t('notFound.body')} path="/404" noindex />
-      <section className="pt-28 sm:pt-36 pb-20">
+      <section className="pt-28 sm:pt-36 pb-20" data-page="not-found">
         <div className="max-w-3xl mx-auto px-5 sm:px-8">
           <Eyebrow>404</Eyebrow>
           <h1 className="mt-4 fpt-h1 fpt-h1--compact fpt-display">{t('notFound.title')}</h1>

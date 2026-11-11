@@ -66,6 +66,7 @@ export default function Navbar() {
   const isHash = (to) => to.includes('#');
 
   return (
+    <>
     <header className="fixed inset-x-0 top-0 z-[80] header-chrome">
       <nav className="fpt-header-nav max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[72px] h-16 sm:h-20 flex items-center justify-between gap-3 min-w-0" aria-label={t('common.mainNav')}>
         <Link to={localizedPath('/', lang)} className="fpt-header-home flex flex-col items-start justify-center gap-0.5 min-w-0 min-h-11">
@@ -108,9 +109,13 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
+    </header>
 
+      {/* The menu sheet is a SIBLING of the header, never its child (owner's report, 12 Nov 2026): the header carries `backdrop-filter`, and a
+          blurred ancestor is the containing block of every `position: fixed` descendant — inside it «top 64 · bottom 0» resolved against the
+          64 px bar and the sheet was ONE pixel tall: the menu «opened» and no row could be pressed. Gate: `npm run check:nav` (real presses). */}
       {open && (
-        <div id="site-menu" className="xl:hidden fixed inset-x-0 top-16 sm:top-20 bottom-0 z-[100] bg-bg overflow-y-auto border-t border-subtle" role="dialog" aria-modal="true" aria-label={t('common.mainNav')}>
+        <div id="site-menu" data-site-menu className="xl:hidden fixed inset-x-0 top-16 sm:top-20 bottom-0 z-[70] bg-bg overflow-y-auto border-t border-subtle" role="dialog" aria-modal="true" aria-label={t('common.mainNav')}>
           <div className="px-5 py-4 flex flex-col">
             {[...LINKS, ...MORE].map((l) => (
               isHash(l.to)
@@ -128,6 +133,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 }

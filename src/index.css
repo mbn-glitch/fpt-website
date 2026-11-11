@@ -43,6 +43,8 @@
     font-weight: 400;
   }
   html { scroll-behavior: smooth; }
+  /* a section reached by its anchor starts BELOW the fixed header (64 px on phones, 80 from sm, 76 on the desktop bar), never under it */
+  section[id] { scroll-margin-top: 5.5rem; }
 
   /* Arabic pages: Plex Arabic alone (the token's Inter fallback would download the Latin face for a stray glyph) — PROPOSED */
   html[lang="ar"], html[lang="ar"] body {

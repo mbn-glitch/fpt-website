@@ -122,6 +122,17 @@ npm run preview    # NOTE: vite preview rewrites every path to /index.html (SPA)
 | `scripts/check-i18n-keys.mjs` | a key used in `src/` that is missing in any of the six locales; key sets that differ between locales |
 | `brand/scripts/verify-identity.mjs src public index.html` | non-token colours, deprecated colours, pure black, non-brand fonts, Arabic letter-spacing, red glows, glass cards, float / pulse animations, gradients, emoji, MT4/MT5, the old OG image |
 
+## Navigation gate (`npm run check:nav` — owner's report, 12 Nov 2026)
+
+`npm run build && npm run check:nav` serves `dist/` on 127.0.0.1:4179 (its own child, stopped by the script) and walks the site by REAL PRESSES,
+never by address, in the six languages: on a phone (WebKit · iPhone and Chromium · Pixel) the menu must open as a sheet that covers the page, close by
+its button and by Escape, and every row is pressed — the address, a visible main heading, not the 404 page, the anchored section on screen, a clean
+console; the language control must work from the open menu; every footer link is pressed; on 1440 every link of the bar and of the footer. Exit 1 on
+any failure (`artifacts/nav-gate/report.json`). **Run before every push** — it needs a browser, so the Vercel build cannot run it.
+Why it exists: from release `7cbaa47` (11 Nov 2026) the menu sheet was one pixel tall — it sat inside the header, whose `backdrop-filter` makes it the
+containing block of `position: fixed` children — and the anchor rows never scrolled to their section; every gate passed because pages were opened by
+address and the menu was only checked to exist.
+
 ## Language sweep (`npm run check:lang` — FPT-LANG-SWEEP, 11 Nov 2026)
 
 `npm run build && npm run check:lang` serves `dist/` on a free port (from 4610; its own pid, stopped by the script) and walks the 16 screens (+ the open phone menu) in ONE Chromium:

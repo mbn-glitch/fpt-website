@@ -129,9 +129,11 @@ never by address, in the six languages: on a phone (WebKit · iPhone and Chromiu
 its button and by Escape, and every row is pressed — the address, a visible main heading, not the 404 page, the anchored section on screen, a clean
 console; the language control must work from the open menu; every footer link is pressed; on 1440 every link of the bar and of the footer. Exit 1 on
 any failure (`artifacts/nav-gate/report.json`). **Run before every push** — it needs a browser, so the Vercel build cannot run it.
-Why it exists: from release `7cbaa47` (11 Nov 2026) the menu sheet was one pixel tall — it sat inside the header, whose `backdrop-filter` makes it the
-containing block of `position: fixed` children — and the anchor rows never scrolled to their section; every gate passed because pages were opened by
-address and the menu was only checked to exist.
+Why it exists: the menu sheet was one pixel tall — it sat inside the header, whose `backdrop-filter` makes it the containing block of `position: fixed`
+children. In WebKit (iPhone Safari) this was already so BEFORE release `7cbaa47`: the header blur with the `-webkit-` prefix is older, and the sheet
+structure dates from release `415233d` (1 Nov 2026); `7cbaa47` (11 Nov 2026) only extended the break to Chrome / Android by making the unprefixed blur
+apply. The anchor rows never scrolled to their section either; every gate passed because pages were opened by address and the menu was only checked to
+exist.
 
 ## Language sweep (`npm run check:lang` — FPT-LANG-SWEEP, 11 Nov 2026)
 

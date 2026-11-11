@@ -19,20 +19,20 @@ export const categories = [
   {
     id: 'challenges-rules', slug: 'challenges-rules', icon: Target,
     title: 'Evaluations & Rules',
-    titles: { ar: 'التقييمات والقواعد', fr: 'Évaluations et Règles', es: 'Evaluaciones y Reglas', pt: 'Avaliações e Regras', tr: 'Değerlendirmeler ve Kurallar' },
+    titles: { ar: 'التقييمات والقواعد', fr: 'Évaluations et règles', es: 'Evaluaciones y reglas', pt: 'Avaliações e regras', tr: 'Değerlendirmeler ve Kurallar' },
     description: 'Clear targets. Defined limits. No surprises.',
     descriptions: {
       ar: 'أهداف واضحة. حدود محددة. بدون مفاجآت.',
       fr: 'Objectifs clairs. Limites définies. Pas de surprises.',
       es: 'Objetivos claros. Límites definidos. Sin sorpresas.',
       pt: 'Metas claras. Limites definidos. Sem surpresas.',
-      tr: 'Net hedefler. Tanımlanmış sınırlar. Sürpriz yok.',
+      tr: 'Net hedefler. Tanımlanmış limitler. Sürpriz yok.',
     },
   },
   {
     id: 'funded-accounts', slug: 'funded-accounts', icon: TrendingUp,
     title: 'Funded Accounts',
-    titles: { ar: 'الحسابات الممولة', fr: 'Comptes Financés', es: 'Cuentas Financiadas', pt: 'Contas Financiadas', tr: 'Finanse Edilmiş Hesaplar' },
+    titles: { ar: 'الحسابات الممولة', fr: 'Comptes financés', es: 'Cuentas financiadas', pt: 'Contas financiadas', tr: 'Fonlu Hesaplar' },
     description: 'What happens after you pass the evaluation.',
     descriptions: {
       ar: 'ما يحدث بعد اجتياز التقييم.',
@@ -45,20 +45,20 @@ export const categories = [
   {
     id: 'payouts-fiper-card', slug: 'payouts-fiper-card', icon: CreditCard,
     title: 'Payouts & Fiper Card',
-    titles: { ar: 'الدفعات وبطاقة Fiper', fr: 'Paiements et Fiper Card', es: 'Pagos y Fiper Card', pt: 'Pagamentos e Fiper Card', tr: 'Ödemeler ve Fiper Kartı' },
+    titles: { ar: 'الدفعات وبطاقة Fiper', fr: 'Paiements et Fiper Card', es: 'Pagos y Fiper Card', pt: 'Pagamentos e Fiper Card', tr: 'Ödemeler ve Fiper Card' },
     description: 'Rewards, how they are paid, and the Fiper Card.',
     descriptions: {
       ar: 'المكافآت وطرق دفعها وبطاقة فايبر.',
       fr: 'Les récompenses, leur mode de paiement et la Fiper Card.',
       es: 'Las recompensas, cómo se pagan y la Fiper Card.',
       pt: 'As recompensas, como são pagas e o Fiper Card.',
-      tr: 'Ödüller, nasıl ödendikleri ve Fiper Kartı.',
+      tr: 'Ödüller, nasıl ödendikleri ve Fiper Card.',
     },
   },
   {
     id: 'trading-conditions', slug: 'trading-conditions', icon: LineChart,
     title: 'Trading Conditions',
-    titles: { ar: 'شروط التداول', fr: 'Conditions de Trading', es: 'Condiciones de Trading', pt: 'Condições de Trading', tr: 'Trading Koşulları' },
+    titles: { ar: 'شروط التداول', fr: 'Conditions de trading', es: 'Condiciones de trading', pt: 'Condições de trading', tr: 'Trading Koşulları' },
     description: 'The environment you trade in.',
     descriptions: {
       ar: 'البيئة التي تتداول فيها.',
@@ -71,7 +71,7 @@ export const categories = [
   {
     id: 'account-management', slug: 'account-management', icon: Settings,
     title: 'Account Management',
-    titles: { ar: 'إدارة الحساب', fr: 'Gestion du Compte', es: 'Gestión de Cuenta', pt: 'Gestão de Conta', tr: 'Hesap Yönetimi' },
+    titles: { ar: 'إدارة الحساب', fr: 'Gestion du compte', es: 'Gestión de cuenta', pt: 'Gestão de conta', tr: 'Hesap Yönetimi' },
     description: 'Managing your accounts, resets, and activity.',
     descriptions: {
       ar: 'إدارة حساباتك وإعادة التعيين والنشاط.',
@@ -84,7 +84,7 @@ export const categories = [
   {
     id: 'technical-platform', slug: 'technical-platform', icon: Monitor,
     title: 'Technical & Platform',
-    titles: { ar: 'التقني والمنصة', fr: 'Technique et Plateforme', es: 'Técnico y Plataforma', pt: 'Técnico e Plataforma', tr: 'Teknik ve Platform' },
+    titles: { ar: 'التقني والمنصة', fr: 'Technique et plateforme', es: 'Técnico y plataforma', pt: 'Técnico e plataforma', tr: 'Teknik ve Platform' },
     description: 'Platforms, logins, and support for technical issues.',
     descriptions: {
       ar: 'المنصات وتسجيل الدخول والدعم للمشكلات التقنية.',
@@ -97,7 +97,7 @@ export const categories = [
   {
     id: 'legal-general', slug: 'legal-general', icon: Scale,
     title: 'Legal & General',
-    titles: { ar: 'القانوني والعام', fr: 'Légal et Général', es: 'Legal y General', pt: 'Legal e Geral', tr: 'Hukuki ve Genel' },
+    titles: { ar: 'القانوني والعام', fr: 'Légal et général', es: 'Legal y general', pt: 'Legal e geral', tr: 'Hukuki ve Genel' },
     description: 'Regulatory, legal, and structural information.',
     descriptions: {
       ar: 'معلومات تنظيمية وقانونية وهيكلية.',
@@ -110,14 +110,14 @@ export const categories = [
   {
     id: 'partner-program', slug: 'partner-program', icon: Handshake,
     title: 'Partner Program',
-    titles: { ar: 'برنامج الشركاء', fr: 'Programme Partenaires', es: 'Programa de Socios', pt: 'Programa de Parceiros', tr: 'Ortaklık Programı' },
+    titles: { ar: 'برنامج الشركاء', fr: 'Programme partenaires', es: 'Programa de socios', pt: 'Programa de parceiros', tr: 'Ortaklık Programı' },
     description: 'Earn commissions by referring traders to FPT.',
     descriptions: {
       ar: 'اربح عمولات بإحالة المتداولين إلى FPT.',
       fr: 'Gagnez des commissions en parrainant des traders chez FPT.',
       es: 'Gana comisiones refiriendo traders a FPT.',
       pt: 'Ganhe comissões indicando traders para a FPT.',
-      tr: "FPT'ye trader yönlendirerek komisyon kazanın.",
+      tr: "FPT’ye trader yönlendirerek komisyon kazanın.",
     },
   },
 ];
@@ -133,7 +133,7 @@ export const faqs = [
       fr: "FPT (Fiper Pro Traders) est un programme de trading qui donne accès à des comptes financés via un processus d’évaluation structuré. C’est la division prop trading de Fiper Global.",
       es: 'FPT (Fiper Pro Traders) es un programa de trading propietario que proporciona acceso a cuentas financiadas mediante un proceso de evaluación estructurado. Es la división de prop trading de Fiper Global.',
       pt: 'FPT (Fiper Pro Traders) é um programa de trading proprietário que fornece acesso a contas financiadas por meio de um processo de avaliação estruturado. É a divisão de prop trading da Fiper Global.',
-      tr: "FPT (Fiper Pro Traders), yapılandırılmış bir değerlendirme süreci aracılığıyla trader'lara finanse edilmiş hesaplara erişim sağlayan bir prop trading programıdır. Fiper Global’in prop trading bölümüdür.",
+      tr: "FPT (Fiper Pro Traders), yapılandırılmış bir değerlendirme süreci aracılığıyla trader’lara fonlu hesaplara erişim sağlayan bir prop trading programıdır. Fiper Global’in prop trading bölümüdür.",
     },
   },
   {
@@ -158,8 +158,8 @@ export const faqs = [
       ar: 'نعم. FPT مصمم للمتداولين الذين يفهمون بالفعل مفاهيم السوق الأساسية وتنفيذ الأوامر وإدارة المخاطر. إنه ليس برنامجاً تدريبياً للمبتدئين.',
       fr: 'Oui. FPT est conçu pour les traders qui comprennent déjà les concepts fondamentaux, l’exécution des ordres et la gestion des risques. Ce n’est pas un programme de formation pour débutants.',
       es: 'Sí. FPT está diseñado para traders que ya comprenden los conceptos básicos del mercado, la ejecución de órdenes y la gestión de riesgos. No es un programa de formación para principiantes.',
-      pt: 'Sim. FPT é desenvolvido para traders que já entendem conceitos básicos de mercado, execução de ordens e gestão de risco. Não é um programa de treinamento para iniciantes.',
-      tr: 'Evet. FPT, temel piyasa kavramlarını, emir yürütmeyi ve risk yönetimini zaten anlayan traderlar için tasarlanmıştır. Yeni başlayanlar için bir eğitim programı değildir.',
+      pt: 'Sim. A FPT é desenvolvida para traders que já entendem conceitos básicos de mercado, execução de ordens e gestão de risco. Não é um programa de treinamento para iniciantes.',
+      tr: 'Evet. FPT, temel piyasa kavramlarını, emir yürütmeyi ve risk yönetimini zaten anlayan trader’lar için tasarlanmıştır. Yeni başlayanlar için bir eğitim programı değildir.',
     },
   },
   {
@@ -217,7 +217,7 @@ export const faqs = [
   {
     id: 'what-is-the-profit-target', categoryId: 'challenges-rules', popular: true,
     question: 'What is the profit target?',
-    questions: { ar: 'ما هو هدف الربح؟', fr: "Quel est l’objectif de profit ?", es: '¿Cuál es el objetivo de ganancia?', pt: 'Qual é a meta de lucro?', tr: 'Kâr hedefi nedir?' },
+    questions: { ar: 'ما هو هدف الربح؟', fr: "Quel est l’objectif de profit ?", es: '¿Cuál es el objetivo de beneficio?', pt: 'Qual é a meta de lucro?', tr: 'Kâr hedefi nedir?' },
     answer: '10 % of the starting account balance during the evaluation phase.',
     answers: {
       ar: '10 % من رصيد الحساب الابتدائي خلال مرحلة التقييم.',
@@ -230,20 +230,20 @@ export const faqs = [
   {
     id: 'what-is-the-maximum-daily-loss', categoryId: 'challenges-rules',
     question: 'What is the maximum daily loss?',
-    questions: { ar: 'ما الخسارة اليومية القصوى؟', fr: 'Quelle est la perte quotidienne maximale ?', es: '¿Cuál es la pérdida diaria máxima?', pt: 'Qual é a perda diária máxima?', tr: 'Maksimum günlük kayıp nedir?' },
+    questions: { ar: 'ما الخسارة اليومية القصوى؟', fr: 'Quelle est la perte quotidienne maximale ?', es: '¿Cuál es la pérdida diaria máxima?', pt: 'Qual é a perda diária máxima?', tr: 'Maksimum günlük zarar nedir?' },
     answer: '5 %: equity must not fall below 95 % of the day-start equity, measured at 00:00 Dubai time and reset daily at that hour. Floating losses of open positions count.',
     answers: {
       ar: '5 %: يجب ألا تنخفض حقوق الحساب دون 95 % من حقوق الحساب في بداية اليوم، المقيسة في الساعة 00:00 بتوقيت دبي والمعاد ضبطها يومياً في تلك الساعة. الخسائر العائمة للمراكز المفتوحة تُحتسب.',
       fr: '5 % : l’equity ne doit pas descendre sous 95 % de l’equity de début de journée, mesurée à 00:00 heure de Dubaï et réinitialisée chaque jour à cette heure. Les pertes flottantes des positions ouvertes comptent.',
       es: '5 %: el equity no debe caer por debajo del 95 % del equity de inicio del día, medido a las 00:00 hora de Dubái y reiniciado cada día a esa hora. Las pérdidas flotantes de las posiciones abiertas cuentan.',
       pt: '5 %: o patrimônio não pode cair abaixo de 95 % do patrimônio de início do dia, medido às 00:00 no horário de Dubai e reiniciado diariamente nessa hora. Perdas flutuantes de posições abertas contam.',
-      tr: '%5: özkaynak, Dubai saatiyle 00:00’da ölçülen ve her gün o saatte sıfırlanan gün başı özkaynağının %95’inin altına düşmemelidir. Açık pozisyonların dalgalı zararları sayılır.',
+      tr: '%5: özkaynak, Dubai saatiyle 00:00’da ölçülen ve her gün o saatte sıfırlanan gün başı özkaynağının %95’inin altına düşmemelidir. Açık pozisyonların gerçekleşmemiş zararları sayılır.',
     },
   },
   {
     id: 'what-is-the-maximum-total-drawdown', categoryId: 'challenges-rules',
     question: 'What is the maximum total drawdown?',
-    questions: { ar: 'ما الخسارة الإجمالية القصوى؟', fr: 'Quelle est la perte totale maximale ?', es: '¿Cuál es la pérdida total máxima?', pt: 'Qual é a perda total máxima?', tr: 'Maksimum toplam kayıp nedir?' },
+    questions: { ar: 'ما الخسارة الإجمالية القصوى؟', fr: 'Quelle est la perte totale maximale ?', es: '¿Cuál es la pérdida total máxima?', pt: 'Qual é a perda total máxima?', tr: 'Maksimum toplam zarar nedir?' },
     answer: '9 % of the initial account balance, measured from the starting equity.',
     answers: {
       ar: '9 % من رصيد الحساب الابتدائي، مقاساً من حقوق الملكية الأولية.',
@@ -257,14 +257,14 @@ export const faqs = [
     // Glossary entry (design office WEBL-D13, L10N-2): the three rule names, one name per rule; in Arabic «السحب» is the payout word only.
     id: 'what-do-the-rule-names-mean', categoryId: 'challenges-rules',
     question: 'What do Profit Target, Max Daily Loss and Max Loss mean?',
-    questions: { ar: 'ماذا تعني «هدف الربح» و«الخسارة اليومية القصوى» و«الخسارة الإجمالية القصوى»؟', fr: 'Que signifient Objectif de profit, Perte quotidienne max et Perte maximale ?', es: '¿Qué significan Objetivo de ganancia, Pérdida diaria máx y Pérdida máxima?', pt: 'O que significam Meta de lucro, Perda diária máx e Perda máxima?', tr: 'Kâr Hedefi, Maks Günlük Kayıp ve Maksimum Kayıp ne anlama gelir?' },
+    questions: { ar: 'ماذا تعني «هدف الربح» و«الخسارة اليومية القصوى» و«الخسارة الإجمالية القصوى»؟', fr: 'Que signifient Objectif de profit, Perte quotidienne max et Perte maximale ?', es: '¿Qué significan Objetivo de beneficio, Pérdida diaria máx. y Pérdida máxima?', pt: 'O que significam Meta de lucro, Perda diária máx. e Perda máxima?', tr: 'Kâr hedefi, Maks. günlük zarar ve Maksimum zarar ne anlama gelir?' },
     answer: 'Profit Target: 10 % of the starting account balance, to be reached during the evaluation. Max Daily Loss: 5 % — equity must not fall below 95 % of the day-start equity, measured at 00:00 Dubai time. Max Loss: 9 % of the initial balance — equity must stay above 91 %; these two loss limits are what the other answers call “drawdown”.',
     answers: {
       ar: 'هدف الربح (Profit Target): 10 % من رصيد الحساب الابتدائي، يُحقَّق خلال التقييم. الخسارة اليومية القصوى (Max Daily Loss): 5 % — يجب ألا تنخفض حقوق الحساب دون 95 % من حقوق الحساب في بداية اليوم، المقيسة في الساعة 00:00 بتوقيت دبي. الخسارة الإجمالية القصوى (Max Loss): 9 % من الرصيد الابتدائي — يجب أن تبقى حقوق الحساب فوق 91 %؛ وكلمة «السحب» في هذا الموقع تعني صرف الأرباح فقط، ولا تُستعمل لحدود الخسارة.',
       fr: 'Objectif de profit (Profit Target) : 10 % du solde initial du compte, à atteindre pendant l’évaluation. Perte quotidienne max (Max Daily Loss) : 5 % — l’equity ne doit pas descendre sous 95 % de l’equity de début de journée, mesurée à 00:00 heure de Dubaï. Perte maximale (Max Loss) : 9 % du solde initial — l’equity doit rester au-dessus de 91 % ; ces deux limites de perte sont ce que les autres réponses appellent « drawdown ».',
-      es: 'Objetivo de ganancia (Profit Target): 10 % del saldo inicial de la cuenta, que debe alcanzarse durante la evaluación. Pérdida diaria máx (Max Daily Loss): 5 % — el equity no debe caer por debajo del 95 % del equity de inicio del día, medido a las 00:00 hora de Dubái. Pérdida máxima (Max Loss): 9 % del saldo inicial — el equity debe mantenerse por encima del 91 %; estos dos límites de pérdida son lo que las demás respuestas llaman «drawdown».',
-      pt: 'Meta de lucro (Profit Target): 10 % do saldo inicial da conta, a ser atingida durante a avaliação. Perda diária máx (Max Daily Loss): 5 % — o patrimônio não pode cair abaixo de 95 % do patrimônio de início do dia, medido às 00:00 no horário de Dubai. Perda máxima (Max Loss): 9 % do saldo inicial — o patrimônio deve permanecer acima de 91 %; esses dois limites de perda são o que as outras respostas chamam de “drawdown”.',
-      tr: 'Kâr Hedefi (Profit Target): değerlendirme sırasında ulaşılması gereken, başlangıç hesap bakiyesinin %10’u. Maks Günlük Kayıp (Max Daily Loss): %5 — özkaynak, Dubai saatiyle 00:00’da ölçülen gün başı özkaynağının %95’inin altına düşmemelidir. Maksimum Kayıp (Max Loss): başlangıç bakiyesinin %9’u — özkaynak %91’in üzerinde kalmalıdır; diğer yanıtlarda “drawdown” denen şey bu iki kayıp limitidir.',
+      es: 'Objetivo de beneficio (Profit Target): 10 % del saldo inicial de la cuenta, que debe alcanzarse durante la evaluación. Pérdida diaria máx. (Max Daily Loss): 5 % — el equity no debe caer por debajo del 95 % del equity de inicio del día, medido a las 00:00 hora de Dubái. Pérdida máxima (Max Loss): 9 % del saldo inicial — el equity debe mantenerse por encima del 91 %; estos dos límites de pérdida son lo que las demás respuestas llaman «drawdown».',
+      pt: 'Meta de lucro (Profit Target): 10 % do saldo inicial da conta, a ser atingida durante a avaliação. Perda diária máx. (Max Daily Loss): 5 % — o patrimônio não pode cair abaixo de 95 % do patrimônio de início do dia, medido às 00:00 no horário de Dubai. Perda máxima (Max Loss): 9 % do saldo inicial — o patrimônio deve permanecer acima de 91 %; esses dois limites de perda são o que as outras respostas chamam de “drawdown”.',
+      tr: 'Kâr hedefi (Profit Target): değerlendirme sırasında ulaşılması gereken, başlangıç hesap bakiyesinin %10’u. Maks. günlük zarar (Max Daily Loss): %5 — özkaynak, Dubai saatiyle 00:00’da ölçülen gün başı özkaynağının %95’inin altına düşmemelidir. Maksimum zarar (Max Loss): başlangıç bakiyesinin %9’u — özkaynak %91’in üzerinde kalmalıdır; diğer yanıtlarda “drawdown” denen şey bu iki zarar limitidir.',
     },
   },
   {
@@ -313,23 +313,23 @@ export const faqs = [
     answer: 'The single evaluation phase requires a minimum of 5 trading days. Funded accounts require a minimum of 10 trading days before a payout request is eligible.',
     answers: {
       ar: 'تتطلب مرحلة التقييم الوحيدة 5 أيام تداول كحد أدنى. تتطلب الحسابات الممولة 10 أيام قبل أن يكون طلب الدفع مؤهلاً.',
-      fr: "L'unique phase d'évaluation nécessite au minimum 5 jours de trading. Les comptes financés nécessitent 10 jours avant d'être éligibles.",
+      fr: "L’unique phase d’évaluation nécessite au minimum 5 jours de trading. Les comptes financés nécessitent 10 jours avant d’être éligibles.",
       es: 'La única fase de evaluación requiere un mínimo de 5 días de trading. Las cuentas financiadas requieren un mínimo de 10 días de trading antes de poder solicitar un pago.',
       pt: 'A única fase de avaliação requer um mínimo de 5 dias de trading. As contas financiadas requerem um mínimo de 10 dias de trading antes de um pedido de pagamento ser elegível.',
-      tr: 'Tek değerlendirme aşaması en az 5 trading günü gerektirir. Finanse edilmiş hesaplar, ödeme talebi yapılabilmesi için en az 10 trading günü gerektirir.',
+      tr: 'Tek değerlendirme aşaması en az 5 trading günü gerektirir. Fonlu hesaplar, ödeme talebi yapılabilmesi için en az 10 trading günü gerektirir.',
     },
   },
   {
     id: 'is-there-a-time-limit', categoryId: 'challenges-rules',
     question: 'Is there a time limit?',
-    questions: { ar: 'هل هناك حد زمني؟', fr: 'Y a-t-il une limite de temps ?', es: '¿Hay un límite de tiempo?', pt: 'Existe limite de tempo?', tr: 'Zaman sınırı var mı?' },
+    questions: { ar: 'هل هناك حد زمني؟', fr: 'Y a-t-il une limite de temps ?', es: '¿Hay un límite de tiempo?', pt: 'Existe limite de tempo?', tr: 'Süre limiti var mı?' },
     answer: 'Yes. The evaluation phase has a 31-day time limit.',
     answers: {
       ar: 'نعم. مرحلة التقييم لها حد زمني مدته 31 يوماً.',
       fr: "Oui. La phase d’évaluation a une limite de 31 jours.",
       es: 'Sí. La fase de evaluación tiene un límite de 31 días.',
       pt: 'Sim. A fase de avaliação tem limite de 31 dias.',
-      tr: 'Evet. Değerlendirme aşamasının 31 günlük zaman sınırı vardır.',
+      tr: 'Evet. Değerlendirme aşamasının 31 günlük süre limiti vardır.',
     },
   },
   {
@@ -381,7 +381,7 @@ export const faqs = [
       fr: 'Après vérification de la réussite et de l’absence de pratiques interdites, un compte financé avec le même solde initial est livré sous 2 jours ouvrés (heure de Dubaï).',
       es: 'Tras verificar el aprobado y la ausencia de prácticas prohibidas, se entrega una cuenta financiada con el mismo saldo inicial en 2 días hábiles (hora de Dubái).',
       pt: 'Após a verificação da aprovação e da ausência de práticas proibidas, uma conta financiada com o mesmo saldo inicial é entregue em até 2 dias úteis (horário de Dubai).',
-      tr: 'Geçişin doğrulanması ve yasaklı uygulama bulunmadığının teyidinden sonra, aynı başlangıç bakiyesine sahip finanse edilmiş bir hesap 2 iş günü içinde (Dubai saati) teslim edilir.',
+      tr: 'Geçişin doğrulanması ve yasaklı uygulama bulunmadığının teyidinden sonra, aynı başlangıç bakiyesine sahip fonlu bir hesap 2 iş günü içinde (Dubai saati) teslim edilir.',
     },
   },
   {
@@ -407,32 +407,32 @@ export const faqs = [
       fr: 'Vous recevez jusqu’à 80 % du bénéfice net généré sur votre compte financé. FPT conserve les 20 % restants.',
       es: 'Recibes hasta el 80 % del beneficio neto generado en tu cuenta financiada. FPT retiene el 20 % restante.',
       pt: 'Você recebe até 80 % do lucro líquido gerado na sua conta financiada. FPT retém os 20 % restantes.',
-      tr: 'Finanse edilmiş hesabınızda elde edilen net kârın %80’ine kadarını alırsınız. Kalan %20 FPT’de kalır.',
+      tr: 'Fonlu hesabınızda elde edilen net kârın %80’ine kadarını alırsınız. Kalan %20 FPT’de kalır.',
     },
   },
   {
     id: 'can-i-have-multiple-funded-accounts', categoryId: 'funded-accounts',
     question: 'Can I have multiple funded accounts?',
-    questions: { ar: 'هل يمكنني الحصول على حسابات ممولة متعددة؟', fr: 'Puis-je avoir plusieurs comptes financés ?', es: '¿Puedo tener varias cuentas financiadas?', pt: 'Posso ter várias contas financiadas?', tr: 'Birden fazla finanse edilmiş hesabım olabilir mi?' },
+    questions: { ar: 'هل يمكنني الحصول على حسابات ممولة متعددة؟', fr: 'Puis-je avoir plusieurs comptes financés ?', es: '¿Puedo tener varias cuentas financiadas?', pt: 'Posso ter várias contas financiadas?', tr: 'Birden fazla fonlu hesabım olabilir mi?' },
     answer: 'Yes. Each trader can operate up to 10 active funded accounts simultaneously.',
     answers: {
       ar: 'نعم. يمكن لكل متداول تشغيل ما يصل إلى 10 حسابات ممولة نشطة في وقت واحد.',
       fr: "Oui. Chaque trader peut opérer jusqu’à 10 comptes financés actifs simultanément.",
       es: 'Sí. Cada trader puede operar hasta 10 cuentas financiadas activas simultáneamente.',
       pt: 'Sim. Cada trader pode operar até 10 contas financiadas ativas simultaneamente.',
-      tr: 'Evet. Her trader aynı anda 10 aktif finanse edilmiş hesap işletebilir.',
+      tr: 'Evet. Her trader aynı anda 10 aktif fonlu hesap işletebilir.',
     },
   },
   {
     id: 'do-funded-accounts-follow-same-rules', categoryId: 'funded-accounts',
     question: 'Do funded accounts follow the same rules as the evaluation?',
-    questions: { ar: 'هل تتبع الحسابات الممولة نفس قواعد التقييم؟', fr: 'Les comptes financés suivent-ils les mêmes règles ?', es: '¿Las cuentas financiadas siguen las mismas reglas?', pt: 'As contas financiadas seguem as mesmas regras?', tr: 'Finanse edilmiş hesaplar aynı kuralları takip ediyor mu?' },
+    questions: { ar: 'هل تتبع الحسابات الممولة نفس قواعد التقييم؟', fr: 'Les comptes financés suivent-ils les mêmes règles ?', es: '¿Las cuentas financiadas siguen las mismas reglas?', pt: 'As contas financiadas seguem as mesmas regras?', tr: 'Fonlu hesaplar aynı kuralları takip ediyor mu?' },
     answer: 'The core risk parameters remain — daily drawdown, maximum drawdown, and minimum trading days. The profit target no longer applies.',
     answers: {
       ar: 'تبقى معاملات المخاطر الأساسية — الخسارة اليومية القصوى والخسارة الإجمالية القصوى والحد الأدنى لأيام التداول. لا ينطبق هدف الربح بعد الآن.',
       fr: 'Les paramètres de risque principaux restent — perte quotidienne max, perte maximale et nombre minimal de jours de trading. L’objectif de profit ne s’applique plus.',
-      es: 'Los parámetros de riesgo principales permanecen — pérdida diaria máx, pérdida máxima y días mínimos de trading. El objetivo de ganancia ya no aplica.',
-      pt: 'Os parâmetros de risco principais permanecem — perda diária máx, perda máxima e dias mínimos de trading. A meta de lucro não se aplica mais.',
+      es: 'Los parámetros de riesgo principales permanecen — pérdida diaria máx., pérdida máxima y días mínimos de trading. El objetivo de beneficio ya no aplica.',
+      pt: 'Os parâmetros de risco principais permanecem — perda diária máx., perda máxima e dias mínimos de trading. A meta de lucro não se aplica mais.',
       tr: 'Temel risk parametreleri kalır — günlük zarar limiti, azami zarar limiti ve asgari işlem günü sayısı. Kâr hedefi artık geçerli değildir.',
     },
   },
@@ -459,7 +459,7 @@ export const faqs = [
       fr: 'Une récompense exige au moins 10 jours de trading sur le compte financé, un cycle complet de 14 jours, un solde clôturé supérieur au solde initial et une part client d’au moins 100 USD ; chaque demande est plafonnée à 10,000 USD. La vérification d’identité précède la première récompense.',
       es: 'Una recompensa requiere al menos 10 días de trading en la cuenta financiada, un ciclo completo de 14 días, un saldo cerrado superior al saldo inicial y una parte del cliente de al menos 100 USD; cada solicitud tiene un tope de 10,000 USD. La verificación de identidad precede a la primera recompensa.',
       pt: 'Uma recompensa exige pelo menos 10 dias de trading na conta financiada, um ciclo completo de 14 dias, um saldo fechado acima do saldo inicial e uma parte do cliente de pelo menos 100 USD; cada pedido tem teto de 10,000 USD. A verificação de identidade precede a primeira recompensa.',
-      tr: 'Bir ödül için finanse edilmiş hesapta en az 10 işlem günü, tamamlanmış 14 günlük bir döngü, başlangıç bakiyesinin üzerinde kapalı bir bakiye ve en az 100 USD müşteri payı gerekir; her talep 10,000 USD ile sınırlıdır. İlk ödülden önce kimlik doğrulaması yapılır.',
+      tr: 'Bir ödül için fonlu hesapta en az 10 işlem günü, tamamlanmış 14 günlük bir döngü, başlangıç bakiyesinin üzerinde kapalı bir bakiye ve en az 100 USD müşteri payı gerekir; her talep 10,000 USD ile sınırlıdır. İlk ödülden önce kimlik doğrulaması yapılır.',
     },
   },
   {
@@ -472,7 +472,7 @@ export const faqs = [
       fr: 'Les récompenses sont payées en crypto-monnaie ou par transfert interne vers votre compte chez Fiper.',
       es: 'Las recompensas se pagan en criptomoneda o por transferencia interna a tu cuenta en Fiper.',
       pt: 'As recompensas são pagas em criptomoeda ou por transferência interna para a sua conta na Fiper.',
-      tr: 'Ödüller kripto para ile veya Fiper’daki hesabınıza dahili transferle ödenir.',
+      tr: 'Ödüller kripto para ile veya Fiper’deki hesabınıza dahili transferle ödenir.',
     },
   },
   {
@@ -485,21 +485,21 @@ export const faqs = [
       fr: 'Non. Les récompenses suivent le cycle de 14 jours et sont payées en crypto-monnaie ou par transfert interne vers votre compte chez Fiper.',
       es: 'No. Las recompensas siguen el ciclo de 14 días y se pagan en criptomoneda o por transferencia interna a tu cuenta en Fiper.',
       pt: 'Não. As recompensas seguem o ciclo de 14 dias e são pagas em criptomoeda ou por transferência interna para a sua conta na Fiper.',
-      tr: 'Hayır. Ödüller 14 günlük döngüyü izler ve kripto para ile veya Fiper’daki hesabınıza dahili transferle ödenir.',
+      tr: 'Hayır. Ödüller 14 günlük döngüyü izler ve kripto para ile veya Fiper’deki hesabınıza dahili transferle ödenir.',
     },
   },
   {
     // Owner decision 6 (1 Nov 2026 23:08): the ONE wording about the Fiper Card — the owner's sentence, nothing else
     id: 'how-do-i-use-the-fiper-card', categoryId: 'payouts-fiper-card',
     question: 'How do I use the Fiper Card?',
-    questions: { ar: 'كيف أستخدم بطاقة فايبر؟', fr: 'Comment utiliser la Fiper Card ?', es: '¿Cómo uso la Fiper Card?', pt: 'Como uso o Fiper Card?', tr: 'Fiper Kartını nasıl kullanırım?' },
+    questions: { ar: 'كيف أستخدم بطاقة فايبر؟', fr: 'Comment utiliser la Fiper Card ?', es: '¿Cómo uso la Fiper Card?', pt: 'Como uso o Fiper Card?', tr: 'Fiper Card’ı nasıl kullanırım?' },
     answer: 'The client issues the Fiper Card from inside Fiper, then transfers their balance to their account with Fiper, and uses the card normally.',
     answers: {
       ar: 'يُصدر العميل بطاقة فايبر من داخل فايبر، ثم يحوّل رصيده إلى حسابه في فايبر، ويستخدم بطاقته بشكل طبيعي.',
       fr: 'Le client émet la Fiper Card depuis Fiper, transfère ensuite son solde vers son compte chez Fiper, puis utilise sa carte normalement.',
       es: 'El cliente emite la Fiper Card desde dentro de Fiper, luego transfiere su saldo a su cuenta en Fiper y usa su tarjeta con normalidad.',
       pt: 'O cliente emite o Fiper Card de dentro da Fiper, depois transfere o seu saldo para a sua conta na Fiper e usa o cartão normalmente.',
-      tr: 'Müşteri Fiper Kartını Fiper içinden çıkarır, ardından bakiyesini Fiper’daki hesabına aktarır ve kartını normal şekilde kullanır.',
+      tr: 'Müşteri Fiper Card’ı Fiper içinden çıkarır, ardından bakiyesini Fiper’deki hesabına aktarır ve kartını normal şekilde kullanır.',
     },
   },
   {
@@ -741,13 +741,13 @@ export const faqs = [
   {
     id: 'is-fpt-a-broker', categoryId: 'legal-general',
     question: 'Is FPT a broker?',
-    questions: { ar: 'هل FPT وسيط؟', fr: 'FPT est-il un courtier ?', es: '¿FPT es un bróker?', pt: 'FPT é uma corretora?', tr: 'FPT bir broker mıdır?' },
+    questions: { ar: 'هل FPT وسيط؟', fr: 'FPT est-il un courtier ?', es: '¿FPT es un bróker?', pt: 'A FPT é uma corretora?', tr: 'FPT bir broker mıdır?' },
     answer: 'No. FPT is a proprietary trading evaluation program, not a regulated broker.',
     answers: {
       ar: 'لا. FPT برنامج تقييم للتداول الاحترافي وليس وسيطاً منظماً.',
       fr: "Non. FPT est un programme d’évaluation de trading propriétaire, pas un courtier réglementé.",
       es: 'No. FPT es un programa de evaluación de trading propietario, no un bróker regulado.',
-      pt: 'Não. FPT é um programa de avaliação de trading proprietário, não uma corretora.',
+      pt: 'Não. A FPT é um programa de avaliação de trading proprietário, não uma corretora.',
       tr: 'Hayır. FPT düzenlenmiş bir broker değil, tescilli bir trading değerlendirme programıdır.',
     },
   },
@@ -821,7 +821,7 @@ export const faqs = [
   {
     id: 'what-is-the-partner-program', categoryId: 'partner-program', popular: true,
     question: 'What is the FPT Partner Program?',
-    questions: { ar: 'ما هو برنامج شركاء FPT؟', fr: "Qu’est-ce que le Programme Partenaires FPT ?", es: '¿Qué es el Programa de Socios FPT?', pt: 'O que é o Programa de Parceiros FPT?', tr: 'FPT Ortaklık Programı nedir?' },
+    questions: { ar: 'ما هو برنامج شركاء FPT؟', fr: "Qu’est-ce que le programme partenaires FPT ?", es: '¿Qué es el programa de socios FPT?', pt: 'O que é o programa de parceiros FPT?', tr: 'FPT Ortaklık Programı nedir?' },
     answer: 'Earn a commission on every evaluation bought through your referral link: 15 % with 1–9 sales a month, 17.5 % with 10–29, 20 % with 30 or more.',
     answers: {
       ar: 'اربح عمولة على كل تقييم يُشترى عبر رابط إحالتك: 15 % مع 1–9 مبيعات شهرياً، و17.5 % مع 10–29، و20 % مع 30 فأكثر.',

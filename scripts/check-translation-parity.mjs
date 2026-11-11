@@ -22,8 +22,8 @@ const RATIO = { ar: 0.55, fr: 0.75, es: 0.75, pt: 0.75, tr: 0.75 };
 const EXCEPTIONS = JSON.parse(readFileSync(path.join(ROOT, 'scripts', 'translation-parity-exceptions.json'), 'utf8')).exceptions;
 
 const clean = (s) => String(s).replace(/\{\{[^}]+\}\}/g, 'X').replace(/[⁦-⁩‎‏]/g, '').replace(/\s+/g, ' ').trim();
-/** Sentences = runs closed by . ! ? ؟ (or the end) — abbreviations with inner dots («U.A.E.», «L.L.C-FZ», «e.g.»), decimals and «1:100» do not close a sentence. */
-const sentences = (s) => clean(s).replace(/\b(?:[A-Za-z]\.){2,}/g, 'A').replace(/\b(e\.g|i\.e|vs|etc|approx|p\.ex|n\.º|örn|vb)\./gi, '$1').replace(/(\d)\.(\d)/g, '$1,$2')
+/** Sentences = runs closed by . ! ? ؟ (or the end) — abbreviations with inner dots («U.A.E.», «L.L.C-FZ», «e.g.»), the label abbreviations «máx.» / «mín.» / «min.» / «max.» / «Maks.» (L10N-NATIVE-REVIEW), decimals and «1:100» do not close a sentence. */
+const sentences = (s) => clean(s).replace(/\b(?:[A-Za-z]\.){2,}/g, 'A').replace(/\b(e\.g|i\.e|vs|etc|approx|p\.ex|n\.º|örn|vb|m[aá]x|m[ií]n|maks)\./gi, '$1').replace(/(\d)\.(\d)/g, '$1,$2')
   .split(/[.!?؟…]+(?=\s|$|["'»”)])/).filter((x) => /[\p{L}\p{N}]/u.test(x)).length;
 
 const rows = [];   // { where, en, tr: { lang: text } }

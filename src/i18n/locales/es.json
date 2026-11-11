@@ -16,7 +16,7 @@
   },
   "meta": {
     "title": "FPT — Fiper Pro Traders | Diseñado para un Trading Rápido e Inteligente",
-    "description": "Fiper Pro Traders (FPT) — Parte de Fiper Global. Demuestra tus habilidades de trading, accede a capital financiado hasta $200K con un reparto de beneficios del 80%.",
+    "description": "Fiper Pro Traders (FPT) — Parte de Fiper Global. Una evaluación de una fase en una cuenta simulada; cuentas financiadas de hasta 200,000 USD con una participación de recompensa del 80 %.",
     "ogImageAlt": "Fiper Pro Traders — Investing involves risk",
     "keywords": "prop trading, cuenta financiada, FPT, Fiper Pro Traders, Fiper Global, evaluación de trading, cTrader"
   },
@@ -198,10 +198,10 @@
       "fiperCard": "Fiper Card",
       "helpCenter": "Centro de Ayuda",
       "fiperGlobalSite": "Fiper Global",
-      "terms": "Terms and Conditions",
-      "privacy": "Privacy Policy",
-      "refund": "Refund and Cancellation Policy",
-      "risk": "Risk Disclosure Statement",
+      "terms": "Términos y condiciones (en inglés)",
+      "privacy": "Política de privacidad (en inglés)",
+      "refund": "Política de reembolso y cancelación (en inglés)",
+      "risk": "Declaración de divulgación de riesgos (en inglés)",
       "partners": "Programa de socios",
       "contact": "Contacto",
       "about": "Sobre FPT"
@@ -250,7 +250,7 @@
     "rulesEyebrow": "Reglas de la evaluación",
     "rulesTitle": "Objetivos claros. Límites definidos. Sin sorpresas.",
     "rulesSubtitle": "El conjunto completo de reglas que rige cada evaluación y cuenta financiada de FPT.",
-    "rulesWarning": "Las condiciones de trading, cálculos de drawdown y niveles de apalancamiento pueden variar según el instrumento y las condiciones del mercado.",
+    "rulesWarning": "Las condiciones de trading, cálculos de drawdown y niveles de apalancamiento pueden variar según el instrumento y las condiciones del mercado. Revisa siempre tu panel de evaluación para ver los parámetros más recientes.",
     "leverageEyebrow": "Apalancamiento",
     "leverageTitle": "Desglose de apalancamiento por instrumento.",
     "instrument": "Instrumento",
@@ -292,16 +292,16 @@
   "about": {
     "principles": {
       "p1title": "Términos transparentes",
-      "p1body": "Cada regla, cada tarifa, cada pago se publica antes de que pagues.",
+      "p1body": "Cada regla, cada tarifa, cada pago se publica antes de que pagues. Sin cambios retroactivos. Sin cláusulas ocultas.",
       "p2title": "Riesgo antes que recompensa",
-      "p2body": "Un trader que sobrevive los drawdowns capitaliza.",
+      "p2body": "Un trader que sobrevive los drawdowns capitaliza. Nuestras reglas existen para proteger el capital, no para atraparte.",
       "p3title": "Un camino, claramente marcado",
       "p3body": "Evaluación, cuenta financiada, recompensa. Sin trucos ni líneas de producto paralelas diseñadas para distraer.",
       "p4title": "Infraestructura sobre marketing",
-      "p4body": "Invertimos en ejecución, liquidez y dashboards."
+      "p4body": "Invertimos en ejecución, liquidez y dashboards, no en campañas de influencers. La plataforma habla por sí misma."
     },
     "ecosystem": {
-      "fptTag": "Trading Prop",
+      "fptTag": "Prop trading",
       "fptBody": "La evaluación, la cuenta financiada, la disciplina.",
       "cardTag": "Un producto Fiper",
       "cardBody": "El cliente emite la Fiper Card desde dentro de Fiper, luego transfiere su saldo a su cuenta en Fiper y usa su tarjeta con normalidad.",
@@ -314,7 +314,7 @@
     "principlesTitle": "Cuatro principios. Sin excepciones.",
     "ecosystemEyebrow": "Parte de algo más grande",
     "ecosystemTitle": "Fiper Global, de principio a fin.",
-    "ecosystemSubtitle": "FPT es uno de tres productos coordinados bajo Fiper Global.",
+    "ecosystemSubtitle": "FPT es uno de tres productos coordinados bajo Fiper Global. Te mantienes dentro de una sola identidad.",
     "getStarted": "Comenzar",
     "talkToTeam": "Hablar con el equipo",
     "story": {
@@ -361,7 +361,7 @@
     "eyebrow": "Centro de Ayuda",
     "title1": "Respuestas. En orden.",
     "title2": "Buscables.",
-    "subtitle": "Todo lo que necesitas para navegar FPT.",
+    "subtitle": "Todo lo que necesitas para navegar FPT — desde tu primera evaluación hasta tu primer pago.",
     "popularSearches": "Búsquedas populares:",
     "browseEyebrow": "Explorar por tema",
     "browseTitle": "Cada respuesta, ordenada.",
@@ -418,7 +418,13 @@
         "desc": "El nivel sigue tus ventas mensuales — sin solicitud, sin espera."
       }
     },
-    "metaDescription": "El programa de socios de FPT: tres niveles de comisión sobre las ventas mensuales, un enlace y un código de referido personales."
+    "metaDescription": "El programa de socios de FPT: tres niveles de comisión sobre las ventas mensuales, un enlace y un código de referido personales.",
+    "tier": {
+      "title": "Nivel {{n}} ({{range}} ventas)",
+      "n1": "1",
+      "n2": "2",
+      "n3": "3"
+    }
   },
   "notFound": {
     "title": "Esta página no existe.",

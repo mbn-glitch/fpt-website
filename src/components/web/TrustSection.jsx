@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { appUrl } from '../../config/site.js';
+import Shot from './Shot.jsx';
 
 /** The platform's public code shape (packages/core/src/ids.ts publicCode: 10 symbols of ABCDEFGHJKLMNPQRSTUVWXYZ23456789, prefix FPT). */
 export const CERT_CODE_RE = /^FPT-[A-HJ-NP-Z2-9]{10}$/;
 
 /**
  * «Verified certificates» (frame w2): the headline, the lead, the verification field «FPT-XXXXXXXXXX» + «Verify», and a paid-payout certificate rendered by the
- * platform's own certificate page (public/shots/cert-payout). The field sends to the platform's PUBLIC verification route /{ar|en}/verify/{code} on
+ * platform's own certificate page (public/shots/cert-payout, in the language of the page — src/lib/shots.js). The field sends to the platform's PUBLIC verification route /{ar|en}/verify/{code} on
  * app.fptraders.app (apps/client (public)/verify/[code] — valid / revoked / unknown, no sign-in); the code is normalised to upper case and checked against the
  * platform's code shape before the hop.
  */
@@ -38,11 +39,7 @@ export default function TrustSection() {
             </form>
           </div>
           <div className="fpt-web-cert">
-            <picture>
-              <source type="image/avif" srcSet="/shots/cert-payout.avif" />
-              <source type="image/webp" srcSet="/shots/cert-payout.webp" />
-              <img src="/shots/cert-payout.png" width="1404" height="790" alt={t('web.trust.certAlt')} loading="lazy" decoding="async" />
-            </picture>
+            <Shot id="cert-payout" width="1404" height="790" alt={t('web.trust.certAlt')} loading="lazy" />
           </div>
         </div>
       </div>

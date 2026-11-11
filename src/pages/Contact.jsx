@@ -51,7 +51,7 @@ export default function Contact() {
 
           <WhatsAppCard />
 
-          <div className="rounded-3xl p-7 sm:p-8 bg-card border border-subtle md:col-span-2" lang={l} dir={l === 'ar' ? 'rtl' : 'ltr'}>
+          <div className="rounded-3xl p-7 sm:p-8 bg-card border border-subtle md:col-span-2">
             <div className="flex items-start gap-4">
               <div className="w-11 h-11 rounded-xl bg-white/5 border border-subtle flex items-center justify-center shrink-0">
                 <MapPin size={20} className="text-fg-muted" aria-hidden="true" />
@@ -59,7 +59,8 @@ export default function Contact() {
               <div className="min-w-0">
                 <div className="fpt-eyebrow">{t('contact.address.tag')}</div>
                 <h3 className="mt-2 text-2xl font-semibold leading-[1.3]">{t('contact.address.title')}</h3>
-                <address className="mt-3 text-base text-secondary leading-relaxed not-italic">
+                {/* the registered address exists in Arabic and English only (config/legal.ts): ITS language is declared, the translated card around it keeps the page's */}
+                <address className="mt-3 text-base text-secondary leading-relaxed not-italic" lang={l} dir={l === 'ar' ? 'rtl' : 'ltr'}>
                   {address.map((line) => <div key={line}>{line}</div>)}
                 </address>
                 <a href={mapsHref} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-1.5 min-h-11 text-base text-white/80 hover:text-white">

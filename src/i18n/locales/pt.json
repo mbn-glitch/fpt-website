@@ -16,7 +16,7 @@
   },
   "meta": {
     "title": "FPT — Fiper Pro Traders | Projetado para Trading Rápido e Inteligente",
-    "description": "Fiper Pro Traders (FPT) — Parte da Fiper Global. Prove suas habilidades de trading, acesse capital financiado de até $200K com divisão de lucros de 80%.",
+    "description": "Fiper Pro Traders (FPT) — Parte da Fiper Global. Uma avaliação de uma fase em uma conta simulada; contas financiadas de até 200,000 USD com participação de recompensa de 80 %.",
     "ogImageAlt": "Fiper Pro Traders — Investing involves risk",
     "keywords": "prop trading, conta financiada, FPT, Fiper Pro Traders, Fiper Global, avaliação de trading, cTrader"
   },
@@ -198,10 +198,10 @@
       "fiperCard": "Fiper Card",
       "helpCenter": "Central de Ajuda",
       "fiperGlobalSite": "Fiper Global",
-      "terms": "Terms and Conditions",
-      "privacy": "Privacy Policy",
-      "refund": "Refund and Cancellation Policy",
-      "risk": "Risk Disclosure Statement",
+      "terms": "Termos e condições (em inglês)",
+      "privacy": "Política de privacidade (em inglês)",
+      "refund": "Política de reembolso e cancelamento (em inglês)",
+      "risk": "Declaração de divulgação de riscos (em inglês)",
       "partners": "Programa de parceiros",
       "contact": "Contato",
       "about": "Sobre a FPT"
@@ -250,7 +250,7 @@
     "rulesEyebrow": "Regras da avaliação",
     "rulesTitle": "Metas claras. Limites definidos. Sem surpresas.",
     "rulesSubtitle": "O conjunto completo de regras que rege cada avaliação e conta financiada da FPT.",
-    "rulesWarning": "As condições de trading, cálculos de drawdown e níveis de alavancagem podem variar de acordo com o instrumento e as condições do mercado.",
+    "rulesWarning": "As condições de trading, cálculos de drawdown e níveis de alavancagem podem variar de acordo com o instrumento e as condições do mercado. Consulte sempre o seu painel de avaliação para ver os parâmetros mais recentes.",
     "leverageEyebrow": "Alavancagem",
     "leverageTitle": "Detalhamento da alavancagem por instrumento.",
     "instrument": "Instrumento",
@@ -292,16 +292,16 @@
   "about": {
     "principles": {
       "p1title": "Termos transparentes",
-      "p1body": "Cada regra, taxa e pagamento é publicado antes de você pagar.",
+      "p1body": "Cada regra, taxa e pagamento é publicado antes de você pagar. Sem alterações retroativas. Sem cláusulas ocultas.",
       "p2title": "Risco antes da recompensa",
-      "p2body": "Um trader que sobrevive aos drawdowns capitaliza.",
+      "p2body": "Um trader que sobrevive aos drawdowns capitaliza. Nossas regras existem para proteger o capital — não para prender você.",
       "p3title": "Um caminho, claramente marcado",
       "p3body": "Avaliação, conta financiada, recompensa. Sem truques nem linhas de produto paralelas feitas para distrair.",
       "p4title": "Infraestrutura acima do marketing",
-      "p4body": "Investimos em execução, liquidez e dashboards."
+      "p4body": "Investimos em execução, liquidez e dashboards — não em campanhas de influenciadores. A plataforma fala por si."
     },
     "ecosystem": {
-      "fptTag": "Trading Prop",
+      "fptTag": "Prop trading",
       "fptBody": "A avaliação, a conta financiada, a disciplina.",
       "cardTag": "Um produto Fiper",
       "cardBody": "O cliente emite o Fiper Card de dentro da Fiper, depois transfere o seu saldo para a sua conta na Fiper e usa o cartão normalmente.",
@@ -314,12 +314,12 @@
     "principlesTitle": "Quatro princípios. Sem exceções.",
     "ecosystemEyebrow": "Parte de algo maior",
     "ecosystemTitle": "Fiper Global, do início ao fim.",
-    "ecosystemSubtitle": "FPT é um dos três produtos coordenados sob a Fiper Global.",
+    "ecosystemSubtitle": "FPT é um dos três produtos coordenados sob a Fiper Global. Você permanece dentro de uma única identidade.",
     "getStarted": "Começar",
     "talkToTeam": "Falar com a equipe",
     "story": {
       "title": "Nossa história",
-      "content": "A Fiper Global foi fundada com a visão de capacitar traders em todo o mundo. FPT representa nosso compromisso com uma infraestrutura de trading profissional."
+      "content": "A Fiper Global foi fundada com a visão de capacitar traders em todo o mundo. FPT representa nosso compromisso com uma infraestrutura de trading profissional, combinando padrões institucionais com um suporte excepcional ao trader."
     },
     "mission": {
       "content": "Acreditamos que traders talentosos merecem acesso ao capital sem barreiras desnecessárias. FPT oferece um caminho transparente da avaliação ao trading financiado."
@@ -361,7 +361,7 @@
     "eyebrow": "Central de Ajuda",
     "title1": "Respostas. Ordenadas.",
     "title2": "Pesquisáveis.",
-    "subtitle": "Tudo que você precisa para navegar no FPT.",
+    "subtitle": "Tudo que você precisa para navegar no FPT — da sua primeira avaliação ao seu primeiro pagamento.",
     "popularSearches": "Buscas populares:",
     "browseEyebrow": "Explorar por tópico",
     "browseTitle": "Cada resposta, ordenada.",
@@ -418,7 +418,13 @@
         "desc": "O nível acompanha suas vendas mensais — sem pedido, sem espera."
       }
     },
-    "metaDescription": "O programa de parceiros da FPT: três níveis de comissão sobre as vendas mensais, um link e um código de indicação pessoais."
+    "metaDescription": "O programa de parceiros da FPT: três níveis de comissão sobre as vendas mensais, um link e um código de indicação pessoais.",
+    "tier": {
+      "title": "Nível {{n}} ({{range}} vendas)",
+      "n1": "1",
+      "n2": "2",
+      "n3": "3"
+    }
   },
   "notFound": {
     "title": "Esta página não existe.",

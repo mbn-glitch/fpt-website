@@ -15,8 +15,8 @@
     "no": "Hayır"
   },
   "meta": {
-    "title": "FPT — Fiper Pro Traders | Hızlı ve Akıllı Ticaret için Tasarlandı",
-    "description": "Fiper Pro Traders (FPT) — Fiper Global'in bir parçası. Ticaret becerilerinizi kanıtlayın, 200.000 dolara kadar sermaye erişimi ve %80 kar payı kazanın.",
+    "title": "FPT — Fiper Pro Traders | Hızlı ve Akıllı İşlem için Tasarlandı",
+    "description": "Fiper Pro Traders (FPT) — Fiper Global'in bir parçası. Simüle edilmiş bir hesapta tek aşamalı bir değerlendirme; 80 % ödül payıyla 200,000 USD tutarına kadar finanse edilmiş hesaplar.",
     "ogImageAlt": "Fiper Pro Traders — Investing involves risk",
     "keywords": "prop trading, finanse edilmiş hesap, FPT, Fiper Pro Traders, Fiper Global, işlem değerlendirmesi, cTrader"
   },
@@ -36,10 +36,10 @@
     "faq": "SSS"
   },
   "hero": {
-    "eyebrow": "Hızlı ve akıllı ticaret için tasarlandı",
-    "title1": "Güvenle Ticaret Yapın.",
+    "eyebrow": "Hızlı ve akıllı işlem için tasarlandı",
+    "title1": "Güvenle İşlem Yapın.",
     "title2": "Fonlanın.",
-    "subtitle": "Simüle edilmiş bir hesapta tek aşamalı değerlendirmeyi geçin ve %80 ödül payıyla finanse edilmiş bir hesapta işlem yapın. Ödemeden önce yayımlanan açık kurallar.",
+    "subtitle": "Simüle edilmiş bir hesapta tek aşamalı değerlendirmeyi geçin ve 80 % ödül payıyla finanse edilmiş bir hesapta işlem yapın. Ödemeden önce yayımlanan açık kurallar.",
     "ctaPrimary": "FPT Değerlendirmesine Başla",
     "ctaSecondary": "Planları Gör",
     "stats": {
@@ -63,14 +63,14 @@
   },
   "profitSplit": {
     "title": "Şuna kadar kazanın:",
-    "subtitle": "ticaret performansınızdan",
+    "subtitle": "işlem performansınızdan",
     "eyebrow": "Ödül payı",
     "body": "Finanse edilmiş hesaptaki kârın {{share}}’i, {{cycle}} günlük döngülerle talep edilir."
   },
   "howItWorks": {
     "title": "Nasıl Çalışır",
     "step1Title": "Değerlendirmenizi Seçin",
-    "step1Desc": "Ticaret hedeflerinize uygun hesap boyutunu seçin.",
+    "step1Desc": "İşlem hedeflerinize uygun hesap boyutunu seçin.",
     "step2Title": "Değerlendirmeyi Geçin",
     "step2Desc": "Risk parametrelerine uyarak kar hedefine ulaşın.",
     "step3Title": "Fonlanın",
@@ -153,7 +153,7 @@
     "subtitle": "FPT, Fiper Global tarafından desteklenir — modern tüccarlar için tasarlanmış tam bir finansal altyapı.",
     "fpt": {
       "title": "FPT",
-      "desc": "Prop Ticaret Değerlendirmeleri",
+      "desc": "Prop Trading Değerlendirmeleri",
       "badge": "Şu Andasınız",
       "label": "Prop trading"
     },
@@ -174,7 +174,7 @@
   "faq": {
     "title": "Sıkça Sorulan Sorular",
     "q1": "Nasıl başlarım?",
-    "a1": "Bir değerlendirme boyutu seçin, kaydı tamamlayın ve platformumuzda ticarete başlayın. Değerlendirme, ödeme onayından hemen sonra başlar.",
+    "a1": "Bir değerlendirme boyutu seçin, kaydı tamamlayın ve platformumuzda işleme başlayın. Değerlendirme, ödeme onayından hemen sonra başlar.",
     "q2": "Ücretler iade edilebilir mi?",
     "a2": "Ücret tek seferliktir. Yalnızca hesabınız teslim edilmeden önce ve iade ve iptal politikasında sayılan durumlarda iade edilir; teslimattan sonra iade edilmez.",
     "q3": "Ne kadar sürede fonlanırım?",
@@ -184,12 +184,12 @@
     "q5": "Hangi pazarlarda işlem yapabilirim?",
     "a5": "cTrader’da forex, endeksler, emtialar ve seçili kripto paralar.",
     "q6": "Önceden deneyime ihtiyacım var mı?",
-    "a6": "Resmi bir deneyim gerekmez, ancak risk yönetimini ve ticaret kurallarını anlamak başarı için esastır.",
+    "a6": "Resmi bir deneyim gerekmez, ancak risk yönetimini ve işlem kurallarını anlamak başarı için esastır.",
     "seeAll": "Tüm SSS'leri Gör",
     "eyebrow": "Başlamadan önce"
   },
   "footer": {
-    "tagline": "Hızlı ve Akıllı Ticaret için Tasarlandı",
+    "tagline": "Hızlı ve akıllı işlem için tasarlandı",
     "products": "Ürünler",
     "fiperGlobal": "Fiper Global",
     "legal": "Yasal",
@@ -198,10 +198,10 @@
       "fiperCard": "Fiper Kart",
       "helpCenter": "Yardım Merkezi",
       "fiperGlobalSite": "Fiper Global",
-      "terms": "Terms and Conditions",
-      "privacy": "Privacy Policy",
-      "refund": "Refund and Cancellation Policy",
-      "risk": "Risk Disclosure Statement",
+      "terms": "Şartlar ve Koşullar (İngilizce)",
+      "privacy": "Gizlilik Politikası (İngilizce)",
+      "refund": "İade ve İptal Politikası (İngilizce)",
+      "risk": "Risk Açıklama Beyanı (İngilizce)",
       "partners": "Ortaklık programı",
       "contact": "İletişim",
       "about": "FPT hakkında"
@@ -220,7 +220,7 @@
     "eyebrow": "Değerlendirme",
     "heroTitle1": "Becerilerini Kanıtla.",
     "heroTitle2": "Finansman Al.",
-    "heroSubtitle": "Tek değerlendirme aşaması. Açık kurallar. Finanse edilmiş hesapta %80 ödül payı.",
+    "heroSubtitle": "Tek değerlendirme aşaması. Açık kurallar. Finanse edilmiş hesapta 80 % ödül payı.",
     "howItWorksEyebrow": "Nasıl Çalışır",
     "howItWorksTitle": "Tek aşama. Finansmana doğrudan yol.",
     "howItWorksSubtitle": "Değerlendirmeyi geçin, sonra finanse edilmiş bir hesapta işlem yapın.",
@@ -250,7 +250,7 @@
     "rulesEyebrow": "Değerlendirme kuralları",
     "rulesTitle": "Net hedefler. Tanımlanmış sınırlar. Sürpriz yok.",
     "rulesSubtitle": "Her FPT değerlendirmesini ve finanse edilmiş hesabı yöneten tam kural seti.",
-    "rulesWarning": "İşlem koşulları, düşüş hesaplamaları ve kaldıraç seviyeleri araca ve piyasa koşullarına göre değişebilir.",
+    "rulesWarning": "İşlem koşulları, düşüş hesaplamaları ve kaldıraç seviyeleri araca ve piyasa koşullarına göre değişebilir. En güncel parametreler için değerlendirme panelinizi her zaman kontrol edin.",
     "leverageEyebrow": "Kaldıraç",
     "leverageTitle": "Araca göre kaldıraç dağılımı.",
     "instrument": "Araç",
@@ -292,13 +292,13 @@
   "about": {
     "principles": {
       "p1title": "Şeffaf koşullar",
-      "p1body": "Her kural, her ücret, her ödeme siz ödemeden önce yayınlanır.",
+      "p1body": "Her kural, her ücret, her ödeme siz ödemeden önce yayınlanır. Geriye dönük değişiklik yok. Gizli madde yok.",
       "p2title": "Ödülden önce risk",
-      "p2body": "Düşüşlerden kurtulan bir trader bileşik büyür.",
+      "p2body": "Düşüşlerden kurtulan bir trader bileşik büyür. Kurallarımız sermayeyi korumak için vardır — sizi tuzağa düşürmek için değil.",
       "p3title": "Bir yol, açıkça işaretlenmiş",
       "p3body": "Değerlendirme, finanse edilmiş hesap, ödül. Numara yok, dikkat dağıtmak için tasarlanmış paralel ürün hatları yok.",
       "p4title": "Pazarlama yerine altyapı",
-      "p4body": "Yürütme, likidite ve panolara yatırım yapıyoruz."
+      "p4body": "Yürütme, likidite ve panolara yatırım yapıyoruz — influencer kampanyalarına değil. Platform kendi adına konuşur."
     },
     "ecosystem": {
       "fptTag": "Prop Trading",
@@ -314,7 +314,7 @@
     "principlesTitle": "Dört ilke. İstisna yok.",
     "ecosystemEyebrow": "Daha büyük bir şeyin parçası",
     "ecosystemTitle": "Fiper Global, baştan sona.",
-    "ecosystemSubtitle": "FPT, Fiper Global bünyesinde üç koordineli üründen biridir.",
+    "ecosystemSubtitle": "FPT, Fiper Global bünyesinde üç koordineli üründen biridir. Tek bir kimliğin içinde kalırsınız.",
     "getStarted": "Başla",
     "talkToTeam": "Ekiple konuş",
     "story": {
@@ -361,7 +361,7 @@
     "eyebrow": "Yardım Merkezi",
     "title1": "Yanıtlar. Düzenlenmiş.",
     "title2": "Aranabilir.",
-    "subtitle": "FPT'de gezinmek için ihtiyacınız olan her şey.",
+    "subtitle": "FPT'de gezinmek için ihtiyacınız olan her şey — ilk değerlendirmenizden ilk ödemenize kadar.",
     "popularSearches": "Popüler aramalar:",
     "browseEyebrow": "Konuya göre gözat",
     "browseTitle": "Her yanıt, sıralanmış.",
@@ -418,7 +418,13 @@
         "desc": "Kademe aylık satışlarınızı izler — başvuru yok, bekleme yok."
       }
     },
-    "metaDescription": "FPT ortaklık programı: aylık satışlar üzerinden üç komisyon kademesi, kişisel yönlendirme bağlantısı ve kodu."
+    "metaDescription": "FPT ortaklık programı: aylık satışlar üzerinden üç komisyon kademesi, kişisel yönlendirme bağlantısı ve kodu.",
+    "tier": {
+      "title": "Seviye {{n}} ({{range}} satış)",
+      "n1": "1",
+      "n2": "2",
+      "n3": "3"
+    }
   },
   "notFound": {
     "title": "Bu sayfa mevcut değil.",
@@ -463,7 +469,7 @@
       "daily": "Günlük sınır {{amount}}",
       "total": "Toplam sınır {{amount}}",
       "start": "{{size}} ile başla",
-      "startSize": "{{size}} değerlendirmesine başla",
+      "startSize": "{{size}}’yı başlat",
       "after": "Fonlandıktan sonra: {{share}} pay · {{days}} işlem gününden sonra her {{cycle}} günde bir ödeme · talep başına {{range}} · hesap teslim edildikten sonra ücretler iade edilmez."
     },
     "trust": {

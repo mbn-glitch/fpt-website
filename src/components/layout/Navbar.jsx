@@ -21,6 +21,8 @@ export const RELATIONSHIP_LINE = 'Part of Fiper Global';
  * Owner decision 65 (5 Nov 2026 — UXFW-062; proposed package CR-16): the relationship line under the lockup is «Part of Fiper Global» in ENGLISH in the six
  * languages (the English-lockup rule, CR-11), one text line, never a chip, never clipped — on ≤ 320 px it takes its own row across the full header width
  * (`.fpt-header-rel` in index.css); from 360 px it fits beside the controls (113 px at 12 px). The footer entity line is a different line and is untouched.
+ * Design office WEBL-D08 (LAUNCH-I18N-1, 11 Nov 2026): the desktop bar is a three-column grid in the flow (src/web.css) and starts at 1280 px (`xl:`) — below it
+ * the phone header with the menu sheet serves, so the five links can never run over the switcher and the actions.
  * Mobile menu = an opaque sheet (ground-bg) under the header that covers the page, locks the scroll and closes on Escape (R-19 / R-20).
  */
 export default function Navbar() {
@@ -75,7 +77,7 @@ export default function Navbar() {
           <span className="fpt-header-rel text-xs text-tertiary leading-[1.5] whitespace-nowrap" lang="en">{RELATIONSHIP_LINE}</span>
         </Link>
 
-        <ul className="fpt-header-links hidden lg:flex items-center gap-7">
+        <ul className="fpt-header-links hidden xl:flex items-center gap-7">
           {LINKS.map((l) => (
             <li key={l.to}>
               {isHash(l.to)
@@ -85,13 +87,13 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden lg:flex items-center gap-2.5">
+        <div className="hidden xl:flex items-center gap-2.5">
           <LanguageSwitcher className="fpt-header-lang" />
           <a href={app.signin} target="_blank" rel="noopener noreferrer" className="fpt-nav-pill">{t('nav.login')}</a>
           <a href={app.signup} target="_blank" rel="noopener noreferrer" className="fpt-nav-pill fpt-nav-pill--cta">{t('nav.startChallenge')}</a>
         </div>
 
-        <div className="flex lg:hidden items-center gap-2 shrink-0">
+        <div className="flex xl:hidden items-center gap-2 shrink-0">
           <LanguageSwitcher />
           <button
             type="button"
@@ -108,7 +110,7 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div id="site-menu" className="lg:hidden fixed inset-x-0 top-16 bottom-0 z-[100] bg-bg overflow-y-auto border-t border-subtle" role="dialog" aria-modal="true" aria-label={t('common.mainNav')}>
+        <div id="site-menu" className="xl:hidden fixed inset-x-0 top-16 sm:top-20 bottom-0 z-[100] bg-bg overflow-y-auto border-t border-subtle" role="dialog" aria-modal="true" aria-label={t('common.mainNav')}>
           <div className="px-5 py-4 flex flex-col">
             {[...LINKS, ...MORE].map((l) => (
               isHash(l.to)

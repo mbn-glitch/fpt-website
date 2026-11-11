@@ -31,10 +31,12 @@ const fontUrl = (file, weight, piece) => { const f = SUBSETS.find((x) => x.file.
 const PRELOAD = { ar: [fontUrl('IBMPlexSansArabic', 400, 'arabic'), fontUrl('IBMPlexSansArabic', 600, 'arabic')], latin: [fontUrl('BarlowCondensed', 800, 'latin'), fontUrl('Inter', 400, 'latin')] };
 const preload = (lang) => (lang === 'ar' ? PRELOAD.ar : PRELOAD.latin).map((u) => `    <link rel="preload" as="font" type="font/woff2" href="${u}" crossorigin data-font-preload="${lang === 'ar' ? 'ar' : 'latin'}" />\n`).join('');
 // WEB-VIS-1: the home hero's product screen (the LCP element on phones) is preloaded with the first-scene fonts — AVIF, high priority
-const HERO_PRELOAD = '    <link rel="preload" as="image" type="image/avif" href="/shots/home-s1.avif" fetchpriority="high" data-hero-preload="home" />\n';
+// FPT-LANG-SWEEP (11 Nov 2026): the screen of the PAGE language (src/lib/shots.js: Arabic pages the Arabic capture, every other locale the English one) — never a fixed file
+const { shotFiles } = await import(path.join(ROOT, 'src', 'lib', 'shots.js'));
+const heroPreload = (lang) => `    <link rel="preload" as="image" type="image/avif" href="${shotFiles('home-s1', lang).avif}" fetchpriority="high" data-hero-preload="home" />\n`;
 const inject = (tpl, { html, head, lang, dir }, mode, route = '') => tpl
   .replace(/<html lang="en" dir="ltr">/, `<html lang="${lang}" dir="${dir}">`)
-  .replace('<meta name="author" content="Fiper Pro Traders" />', `<meta name="author" content="Fiper Pro Traders" />\n${preload(lang)}${route === '/' ? HERO_PRELOAD : ''}`)
+  .replace('<meta name="author" content="Fiper Pro Traders" />', `<meta name="author" content="Fiper Pro Traders" />\n${preload(lang)}${route === '/' ? heroPreload(lang) : ''}`)
   // the app script hydrates an already-painted page: fetch it at low priority so the stylesheet and the first-scene fonts win the link
   .replace(/<script type="module" crossorigin src=/, '<script type="module" crossorigin fetchpriority="low" src=')
   .replace('</head>', `${head}\n  </head>`)

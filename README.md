@@ -7,9 +7,9 @@ pre-rendered to static HTML at build time and hydrated on the client.
 The home page is built on the office's VIS-5 kit (frames `w1` / `w2`, 1440 px, Arabic): hero with the REAL client home screen in a 390×844 phone, three stations
 with real product screens, five size cards, the public certificate verification field, six FAQ rows and the four-column foot — `src/web.css` (the kit's `.web`
 rules under `.fpt-web`) + `src/components/web/*`. Every figure is read from the platform rulebook at sync time (`npm run sync:rules` → `src/data/platform-rules.json`
-with the source sha256 / commit; `--check` in `npm run check`), every screen from the VIS references (`npm run sync:shots` → `public/shots/` + `SHOTS.json`).
+with the source sha256 / commit; `--check` in `npm run check`), every screen from the VIS references (`npm run sync:shots` → `public/shots/` + `SHOTS.json`) **in the language of the page** — each screen exists as an Arabic and an English capture (`src/lib/shots.js`; Arabic pages the Arabic one, every other locale the English one).
 Proof: `~/Projects/WEB-VIS-1-captures/` (SSIM w1 0.9730 / w2 0.9471 after masking the embedded shots — the w2 gap is the owner's money order, legal block and the
-language switcher; see `docs/web-vis-1.md`). The desktop header is 76 px with the kit's five links; the font pieces now keep their hinting and include the 500 weights.
+language switcher; see `docs/web-vis-1.md`). The desktop header is 76 px with the kit's five links — a three-column grid from 1280 px (design office WEBL-D08, 11 Nov 2026; below 1280 the phone header with the menu sheet, and the hero is one column — WEBL-D19); the font pieces now keep their hinting and include the 500 weights.
 
 ## Identity (binding)
 
@@ -94,7 +94,8 @@ links (`https://app.fptraders.app/<ar|en>/legal/<terms|privacy|risk|refund>`), a
 ```bash
 npm install
 npm run dev        # Vite dev server (client-only rendering)
-npm run check      # the eleven gates: logo assets · risk line · i18n keys · font subsets · entity line · site origin · glossary · money · red budget · headlines · brand verify-identity (runs before every build)
+npm run check      # the static gates: logo assets · risk line · i18n keys · font subsets · entity line · site origin · glossary · money · red budget · headlines · platform rules · product shots · language assets · translation parity · brand verify-identity (runs before every build)
+npm run check:lang # after a build: the LANGUAGE SWEEP in a real browser — every route × ar / en × 320 / 360 / 390 / 430 / 1440 px, loaded directly and switched both ways with the site's own control, fr / es / pt / tr at 360 / 390, the header in the six languages at 1024 / 1280 / 1366 / 1440 / 1920, the Turkish hero at 360 / 393 (exit 1 on any finding)
 npm run check:dist # after a build: glossary · money (currencyOrder / doubleSpaces = 0) · red budget · routes (decisions 51 / 53) on the 96 pre-rendered pages (runs automatically as postbuild)
 npm run serve      # dist/ on http://localhost:4174 with the vercel.json routes applied (redirects, per-language 404 with a 404 status) — the host of the probes
 npm run fonts      # re-cut the font pieces from brand/fonts (after a package upgrade)
@@ -110,14 +111,29 @@ npm run preview    # NOTE: vite preview rewrites every path to /index.html (SPA)
 | `scripts/check-entity-line.mjs` | an entity line that is not the verbatim `LEGAL.entity.line` of `fpt-platform/config/legal.ts` (platform checkout when present, pinned sha256 always) |
 | `scripts/check-site-origin.mjs` | any retired host (`fptraders.com`, `crm.fptraders.com`) in `src/`, the sitemap, robots, the manifest, the worker or `index.html`; a sitemap URL or robots line off `https://fptraders.app`; fewer than 90 sitemap URLs; legal links off `https://app.fptraders.app` |
 | `scripts/check-glossary.mjs` (+ `--dist`) | «تحدي / Challenge / Défi / Desafío / Desafio / Zorluk / Meydan okuma» or MT4 / MT5 in any visible text — the six locales, the help content, and (after a build) the text of the 90 pages (RD2 rule 3.5: the product word is «تقييم / Evaluation») |
-| `scripts/check-money.mjs` (+ `--dist`) | an amount built by hand, the code before the number, a dollar sign, a double space before a unit; after a build: `currencyOrder` (an Arabic amount outside an LTR isolate) and `doubleSpaces` must be 0 on every page (RD2 rule 3.4: `src/lib/money.jsx` is the ONE format — number · no-break space · code, isolated) |
+| `scripts/check-money.mjs` (+ `--dist`) | a currency sign, a «200K» short form, a spelled-out currency or «%80» in the head texts (`meta.*`, `*.metaTitle / metaDescription`) of any locale (WEBL-D10); an amount built by hand, the code before the number, a dollar sign, a double space before a unit; after a build: `currencyOrder` (an Arabic amount outside an LTR isolate) and `doubleSpaces` must be 0 on every page (RD2 rule 3.4: `src/lib/money.jsx` is the ONE format — number · no-break space · code, isolated) |
 | `scripts/check-routes.mjs` (after a build) | a `vercel.json` that is not the low-level `routes`; an app path of the handoff that does not 308 to `app.` with its query; an unknown path (`/anything`, `/ar/anything`, `/fr/typo`, `/xx/typo`, `/api/x`) that is not the site's 404 page of its prefix language with a 404 status; a 404 page without its title, `lang/dir`, h1, risk and entity line once, `noindex` (owner decisions 51 / 53) |
 | `scripts/check-red-budget.mjs` (+ `--dist`) | brand red on a chip, frame, text or `accent-color`; a coloured cTrader mark; after a build more primary buttons on a page than the documented cap (home 2 · evaluations 2 · partners 2 · about 1 · contact / help 0) or any red frame class in the markup (RD2 CR-4 / package CR-14: red = the tile + ONE primary button per viewport) |
 | `scripts/check-headlines.mjs` | a `hero.title*` / `challengePricing.heroTitle*` / `help.title*` line over 22 characters in fr / es / pt, or an `about.title` over 46 characters or without a word break before character 23 (CR-15 addendum, decision 44 = أ; since decision 57 = أ there is no allowance — the pt evaluations line is 18 / 15) |
 | `scripts/build-font-subsets.mjs --check` | a served font piece missing, unlisted or differing from its `SUBSETS.json` sha256, a `SUBSETS.json` whose source sha256 differ from `brand/fonts`, a stale `fonts.generated.css` (no external tool; `--check-fresh` re-cuts with pyftsubset on the build server) |
 | `scripts/check-risk-line.mjs` | a missing or altered risk line, any other risk wording, any licence wording |
+| `scripts/check-lang-assets.mjs` | a product screen (`public/shots`) that does not exist in BOTH asset languages (ar · en), a literal `/shots/…` path outside `src/lib/shots.js`, a one-language picture referenced without a language choice, a served picture the register (`scripts/lib/lang-assets.mjs`) does not know, an SVG with `<text>` |
+| `scripts/check-translation-parity.mjs` | a translation (six locale files + the help centre) of an English text ≥ 60 characters that is shorter than 0.75 of it (0.55 for Arabic) or has a different number of sentences — a sentence that fell out of a translation (WEBL-D04 / D14); exceptions are named in `scripts/translation-parity-exceptions.json` |
 | `scripts/check-i18n-keys.mjs` | a key used in `src/` that is missing in any of the six locales; key sets that differ between locales |
 | `brand/scripts/verify-identity.mjs src public index.html` | non-token colours, deprecated colours, pure black, non-brand fonts, Arabic letter-spacing, red glows, glass cards, float / pulse animations, gradients, emoji, MT4/MT5, the old OG image |
+
+## Language sweep (`npm run check:lang` — FPT-LANG-SWEEP, 11 Nov 2026)
+
+`npm run build && npm run check:lang` serves `dist/` on a free port (from 4610; its own pid, stopped by the script) and walks the 16 screens (+ the open phone menu) in ONE Chromium:
+Arabic and English at 320 / 360 / 390 / 430 / 1440 px, each loaded directly AND reached through the site's language control (ar → en, en → ar), plus fr / es / pt / tr at 360 / 390 px.
+**Design office guards (LAUNCH-I18N-1, 11 Nov 2026):** the header on the home page in the SIX languages at 1024 / 1280 / 1366 / 1440 / 1920 px — no two controls may intersect (WEBL-D08:
+the bar is a three-column grid, the desktop bar starts at 1280 px); the Turkish hero at 360 / 393 px (WEBL-D02); the 404 page switched to English from fr / pt (WEBL-D11).
+`node scripts/lang-sweep.mjs --selftest` plants one defect of each kind and fails unless every detector reports it.
+It refuses horizontal overflow, clipped text, overlapping text, intersecting header controls, untranslated text (Arabic on a non-Arabic page; Latin words on the Arabic page outside `ALLOW_LATIN`; closed FAQ
+answers, `alt` / `aria-label` / `placeholder`, the title and description included), a wrong `<html lang dir>` or text direction, a failed switch, and **a picture of one language
+shown in another** (the home-page product screens exist per language — `public/shots/<id>.ar.*` / `<id>.en.*`, Arabic pages the Arabic capture, every other locale the English one: `src/lib/shots.js` + `<Shot id>`; register `scripts/lib/lang-assets.mjs`). Must print `lang-sweep: PASS`
+before every commit that touches a page, a locale file or a picture; `--shots <dir> --out <file.json>` keep the screenshots and the findings (JSON + Markdown).
+Playwright is not a dependency of the site (`FPT_PLAYWRIGHT`, else the fpt-platform checkout); Chromium is the copy under `~/.cache/pw-cr10`.
 
 ## Runtime probe (`scripts/ux-probe.mjs`)
 
@@ -146,7 +162,7 @@ public/
   images/third-party/{ctrader,fiper,whatsapp}
   robots.txt sitemap.xml site.webmanifest
 docs/              decisions.md (owner decisions recorded in the repo) · status-56.md (the site's copy of the design office's STATUS-56 rows touched by the rounds)
-scripts/           gates + prerender.mjs + check-routes / serve-dist (lib/vercel-routes.mjs) + ux-probe + the live checks (smoke-live, check-redirects-live)
+scripts/           gates + prerender.mjs + check-routes / serve-dist (lib/vercel-routes.mjs) + ux-probe + lang-sweep / check-lang-assets (lib/lang-assets.mjs) + the live checks (smoke-live, check-redirects-live)
 src/
   components/      brand/ (Logo, RiskLine) · layout/ (Navbar, Footer) · sections/ (home) · help/ · ui/ · SEO.jsx
   data/            rules.js (platform mirror) · pricing.js · legal.js · helpContent.js

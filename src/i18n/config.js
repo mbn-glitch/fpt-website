@@ -28,11 +28,13 @@ export async function loadLanguage(code) {
 
 /** The path is the only authority on the language (the root is English, /<lang>/… the others) — the static HTML of every route is
  *  pre-rendered in that language and hydrated with the same one; the stored preference only feeds the switcher. */
+export function langOfPath(pathname) {
+  const seg = String(pathname || '').split('/').filter(Boolean)[0];
+  return seg && LANG_CODES.includes(seg) && seg !== 'en' ? seg : 'en';
+}
 export function getInitialLang() {
   if (typeof window === 'undefined') return 'en';
-  const seg = window.location.pathname.split('/').filter(Boolean)[0];
-  if (seg && LANG_CODES.includes(seg) && seg !== 'en') return seg;
-  return 'en';
+  return langOfPath(window.location.pathname);
 }
 
 i18n.use(initReactI18next).init({

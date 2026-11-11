@@ -1,12 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import useAppLinks from '../../hooks/useAppLinks.js';
 import { CATALOG_V1, RULES_V1, pct, usd } from '../../data/rules.js';
+import Shot from './Shot.jsx';
 
 /**
  * WEB-VIS-1 hero (design office frame w1, 7 Nov 2026): two columns 1fr / 520 px — the headline (60 px / 600), the 19 px lead, the red 54 px action
  * «Start the evaluation · from 90 USD» + the ghost «See how it works», four proof figures (target · share · payout cycle · platform) — and the phone
- * 390×844 (−4°, 60 px down) carrying the REAL client home screen (public/shots/home-s1 = the VIS-1 reference capture): «what you see here is what you
- * see inside your account». Every figure is read from the platform rulebook (src/data/platform-rules.json). The h1 keeps the site's decided classes
+ * 390×844 (−4°, 60 px down) carrying the REAL client home screen (public/shots/home-s1 = the VIS-1 reference capture, in the language of the page —
+ * Arabic on Arabic pages, the English frame elsewhere; src/lib/shots.js): «what you see here is what you see inside your account». Every figure is read from the platform rulebook (src/data/platform-rules.json). The h1 keeps the site's decided classes
  * (fpt-h1 / fpt-display: the phone cap of decision 44, the Latin display face of decision 8); on ≥ 1024 the kit's 60 px step applies.
  * Below 1024 px: one column, the phone centred under the text (no rotation).
  */
@@ -46,11 +47,7 @@ export default function WebHero() {
             </ul>
           </div>
           <div className="fpt-web-phone">
-            <picture>
-              <source type="image/avif" srcSet="/shots/home-s1.avif" />
-              <source type="image/webp" srcSet="/shots/home-s1.webp" />
-              <img src="/shots/home-s1.png" width="390" height="844" alt={t('web.hero.phoneAlt')} fetchPriority="high" decoding="async" />
-            </picture>
+            <Shot id="home-s1" width="390" height="844" alt={t('web.hero.phoneAlt')} fetchPriority="high" />
           </div>
         </div>
       </div>

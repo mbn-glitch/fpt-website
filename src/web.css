@@ -105,17 +105,29 @@ html .fpt-web-foot .fpt-web-foot-legal, html .fpt-web-foot .fpt-web-foot-legal *
 .fpt-web-foot-legal p { display: inline; margin: 0; font-size: 12px; color: var(--web-muted); }
 .fpt-web-foot-legal p + p::before { content: " — "; }
 .fpt-web-foot-col1 { display: flex; flex-direction: column; }
-.fpt-web-foot-col1 a + a::before { content: " · "; color: var(--web-muted); }
+/* WEBL-D16: the «·» between the two links belongs to the FIRST link (it can no longer fall to the start of the next line) */
+.fpt-web-foot-col1 a + a::before { content: none; }
+.fpt-web-foot-pair a:first-child { white-space: nowrap; }
+.fpt-web-foot-pair a:first-child::after { content: "·"; margin-inline: .35em; color: var(--web-muted); }
+/* WEBL-D05: where the page language is neither Arabic nor English the verbatim legal lines (entity · risk · simulated accounts — English, owner decision 3-ب) are
+   their own paragraphs, never the tail of a sentence in another language */
+html:not([lang="ar"]):not([lang="en"]) .fpt-web-foot-legal p { display: block; }
+html:not([lang="ar"]):not([lang="en"]) .fpt-web-foot-legal p + p { margin-top: 6px; }
+html:not([lang="ar"]):not([lang="en"]) .fpt-web-foot-legal p + p::before { content: none; }
 
 /* header at the kit's desktop metrics (76 px bar, 15 px links 28 px apart, 40 px pill actions) */
-@media (min-width: 1024px) {
+/* WEBL-D08 (design office, LAUNCH-I18N-1 — P1): the five links were `position: absolute` in the middle of the bar — out of the flow, so they knew nothing of the
+   width of the language switcher and the two actions and ran over them (all six languages on 1024, English on 1280 / 1366, tr / fr / es / pt up to 1920). The bar is
+   now a three-column grid IN the flow (brand · links · actions) and the desktop bar starts at 1280 px; below it the phone header and its menu sheet serve
+   (Navbar.jsx: `xl:` instead of `lg:`). Guard: scripts/lang-sweep.mjs `header` — no two controls of the header intersect on 1024 / 1280 / 1366 / 1440 / 1920 × six languages. */
+@media (min-width: 1280px) {
   .fpt-header-nav { height: 4.75rem; }
   main#main { padding-top: 4.75rem; }
   .fpt-hero { min-height: calc(100vh - 4.75rem); }
 }
-@media (min-width: 1024px) {
-  .fpt-header-nav { position: relative; }
-  .fpt-header-links { position: absolute; left: calc(50% + 19px); transform: translateX(-50%); }
+@media (min-width: 1280px) {
+  .fpt-header-nav { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; column-gap: 24px; }
+  .fpt-header-links { position: static; transform: none; justify-self: center; gap: clamp(12px, 1.6vw, 28px); white-space: nowrap; }
   /* WEB1-D02: the brand column is exactly 48 px (lockup 28 + gap 2 + line 18) centred in the 76 px bar */
   .fpt-header-home { min-height: 0; height: 48px; gap: 2px; justify-content: flex-start; }
   .fpt-header-lockup { height: 28px; line-height: 0; }
@@ -132,7 +144,11 @@ html .fpt-web-foot .fpt-web-foot-legal, html .fpt-web-foot .fpt-web-foot-legal *
 
 /* below the desktop reference: one column, centred phone, snap rows */
 @media (max-width: 1023px) {
-  .fpt-web-hero { grid-template-columns: 1fr; gap: 0; padding: 48px 20px 0; }
+  /* WEBL-D02 (design office, LAUNCH-I18N-1 — P1): the one-line action of the Arabic frame is longer in other languages (Turkish «Değerlendirmeye başla · 90 USD’dan
+     itibaren» = 342 px; English on 320 the same) — the nowrap button widened the `1fr` track and pushed the whole hero past the screen. The track can no longer grow
+     with its content, and the label may take a second line (the amount stays one unbreakable unit; the button keeps its 54 px minimum). */
+  .fpt-web-hero { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 48px 20px 0; }
+  .fpt-web-btn-red, .fpt-web-btn-ghost { white-space: normal; height: auto; min-height: 54px; padding-block: 10px; text-align: center; }
   .fpt-web-phone { transform: none; margin: 40px auto 0; width: min(390px, 100%); height: auto; }
   .fpt-web-phone img { width: 100%; height: auto; }
   .fpt-web-sec { padding: 64px 20px 0; }
@@ -145,6 +161,14 @@ html .fpt-web-foot .fpt-web-foot-legal, html .fpt-web-foot .fpt-web-foot-legal *
   .fpt-web-foot a { display: inline-flex; align-items: center; min-height: 44px; }
   .fpt-web-foot-legal { grid-column: 1 / -1; }
 }
+/* WEBL-D19 (batch 3): two hero columns only from 1280 px — between 1024 and 1279 the text column was 320 px beside the 520 px phone (the Spanish headline took five
+   lines, its full stop alone on the last) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .fpt-web-hero { grid-template-columns: minmax(0, 1fr); }
+  .fpt-web-phone { transform: none; margin: 40px auto 0; }
+}
+/* WEBL-D18 (batch 3): a station title breaks between syllables, never in the middle of a word (the page carries its `lang`) */
+.fpt-web-step h3 { hyphens: auto; }
 @media (min-width: 640px) and (max-width: 1023px) {
   .fpt-web-hero { padding: 64px 32px 0; }
   .fpt-web-sec { padding: 80px 32px 0; }

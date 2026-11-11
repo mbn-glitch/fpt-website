@@ -418,7 +418,13 @@
         "desc": "The tier follows your monthly sales — no application, no waiting."
       }
     },
-    "metaDescription": "The FPT partner programme: three commission tiers on monthly sales, a personal referral link and code."
+    "metaDescription": "The FPT partner programme: three commission tiers on monthly sales, a personal referral link and code.",
+    "tier": {
+      "title": "Tier {{n}} ({{range}} sales)",
+      "n1": "1",
+      "n2": "2",
+      "n3": "3"
+    }
   },
   "notFound": {
     "title": "This page does not exist.",

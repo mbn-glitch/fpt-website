@@ -131,9 +131,9 @@ export const faqs = [
     answers: {
       ar: 'FPT (Fiper Pro Traders) هو برنامج تداول احترافي يتيح للمتداولين الوصول إلى حسابات ممولة من خلال عملية تقييم منظمة. وهو قسم التداول الاحترافي في Fiper Global.',
       fr: "FPT (Fiper Pro Traders) est un programme de trading qui donne accès à des comptes financés via un processus d’évaluation structuré. C’est la division prop trading de Fiper Global.",
-      es: 'FPT (Fiper Pro Traders) es un programa de trading propietario que proporciona acceso a cuentas financiadas mediante un proceso de evaluación estructurado.',
-      pt: 'FPT (Fiper Pro Traders) é um programa de trading proprietário que fornece acesso a contas financiadas por meio de um processo de avaliação estruturado.',
-      tr: "FPT (Fiper Pro Traders), yapılandırılmış bir değerlendirme süreci aracılığıyla trader'lara finanse edilmiş hesaplara erişim sağlayan bir prop trading programıdır.",
+      es: 'FPT (Fiper Pro Traders) es un programa de trading propietario que proporciona acceso a cuentas financiadas mediante un proceso de evaluación estructurado. Es la división de prop trading de Fiper Global.',
+      pt: 'FPT (Fiper Pro Traders) é um programa de trading proprietário que fornece acesso a contas financiadas por meio de um processo de avaliação estruturado. É a divisão de prop trading da Fiper Global.',
+      tr: "FPT (Fiper Pro Traders), yapılandırılmış bir değerlendirme süreci aracılığıyla trader'lara finanse edilmiş hesaplara erişim sağlayan bir prop trading programıdır. Fiper Global’in prop trading bölümüdür.",
     },
   },
   {
@@ -156,10 +156,10 @@ export const faqs = [
     answer: 'Yes. FPT is built for traders who already understand core market concepts, order execution, and risk management. It is not a beginner training program.',
     answers: {
       ar: 'نعم. FPT مصمم للمتداولين الذين يفهمون بالفعل مفاهيم السوق الأساسية وتنفيذ الأوامر وإدارة المخاطر. إنه ليس برنامجاً تدريبياً للمبتدئين.',
-      fr: "Oui. FPT est conçu pour les traders qui comprennent déjà les concepts fondamentaux, l’exécution des ordres et la gestion des risques.",
-      es: 'Sí. FPT está diseñado para traders que ya comprenden los conceptos básicos del mercado, la ejecución de órdenes y la gestión de riesgos.',
-      pt: 'Sim. FPT é desenvolvido para traders que já entendem conceitos básicos de mercado, execução de ordens e gestão de risco.',
-      tr: 'Evet. FPT, temel piyasa kavramlarını, emir yürütmeyi ve risk yönetimini anlayan traderlar için tasarlanmıştır.',
+      fr: 'Oui. FPT est conçu pour les traders qui comprennent déjà les concepts fondamentaux, l’exécution des ordres et la gestion des risques. Ce n’est pas un programme de formation pour débutants.',
+      es: 'Sí. FPT está diseñado para traders que ya comprenden los conceptos básicos del mercado, la ejecución de órdenes y la gestión de riesgos. No es un programa de formación para principiantes.',
+      pt: 'Sim. FPT é desenvolvido para traders que já entendem conceitos básicos de mercado, execução de ordens e gestão de risco. Não é um programa de treinamento para iniciantes.',
+      tr: 'Evet. FPT, temel piyasa kavramlarını, emir yürütmeyi ve risk yönetimini zaten anlayan traderlar için tasarlanmıştır. Yeni başlayanlar için bir eğitim programı değildir.',
     },
   },
   {
@@ -194,11 +194,11 @@ export const faqs = [
     questions: { ar: 'ما أساليب التداول الأنسب مع FPT؟', fr: 'Quels styles de trading fonctionnent le mieux ?', es: '¿Qué estilos de trading funcionan mejor?', pt: 'Quais estilos de trading funcionam melhor?', tr: 'Hangi trading stilleri en iyi çalışır?' },
     answer: 'FPT accommodates scalping, day trading, swing trading, and algorithmic execution via EAs. High-frequency trading and arbitrage strategies are not permitted.',
     answers: {
-      ar: 'يستوعب FPT التداول السريع والتداول اليومي وتداول التأرجح والتنفيذ الخوارزمي. استراتيجيات HFT والمراجحة غير مسموح بها.',
+      ar: 'يستوعب FPT التداول السريع والتداول اليومي وتداول التأرجح والتنفيذ الخوارزمي. استراتيجيات التداول عالي التردد والمراجحة غير مسموح بها.',
       fr: "FPT accepte le scalping, le day trading, le swing trading et l’exécution algorithmique. Le HFT et l’arbitrage ne sont pas permis.",
-      es: 'FPT admite scalping, day trading, swing trading y EAs. El HFT y el arbitraje no están permitidos.',
-      pt: 'FPT acomoda scalping, day trading, swing trading e EAs. HFT e arbitragem não são permitidos.',
-      tr: 'FPT scalping, day trading, swing trading ve EA destekler. HFT ve arbitraja izin verilmez.',
+      es: 'FPT admite scalping, day trading, swing trading y ejecución algorítmica mediante EAs. Las estrategias de trading de alta frecuencia y de arbitraje no están permitidas.',
+      pt: 'FPT acomoda scalping, day trading, swing trading e execução algorítmica via EAs. Estratégias de trading de alta frequência e de arbitragem não são permitidas.',
+      tr: 'FPT scalping, day trading, swing trading ve EA’lar aracılığıyla algoritmik yürütmeyi destekler. Yüksek frekanslı trading ve arbitraj stratejilerine izin verilmez.',
     },
   },
   {
@@ -207,11 +207,11 @@ export const faqs = [
     questions: { ar: 'هل يمكنني تجربة حساب تجريبي قبل الشراء؟', fr: "Puis-je tester un compte démo avant d’acheter ?", es: '¿Puedo probar una cuenta demo antes de comprar?', pt: 'Posso testar uma conta demo antes de comprar?', tr: 'Satın almadan önce demo hesabı test edebilir miyim?' },
     answer: 'FPT does not offer a free demo. However, all evaluation accounts operate in a simulated environment — purchasing an evaluation is the equivalent of starting a monitored demo with the opportunity to earn.',
     answers: {
-      ar: 'لا يقدم FPT تجربة مجانية. ومع ذلك، تعمل جميع حسابات التقييم في بيئة محاكاة.',
-      fr: "FPT n’offre pas de démo gratuite. Les comptes d’évaluation fonctionnent dans un environnement simulé.",
-      es: 'FPT no ofrece una demo gratuita. Las cuentas de evaluación operan en entorno simulado.',
-      pt: 'FPT não oferece demo gratuita. As contas de avaliação operam em ambiente simulado.',
-      tr: 'FPT ücretsiz demo sunmaz. Değerlendirme hesapları simüle ortamda çalışır.',
+      ar: 'لا يقدم FPT تجربة مجانية. ومع ذلك، تعمل جميع حسابات التقييم في بيئة محاكاة — شراء تقييم يعادل البدء بحساب تجريبي مراقَب مع فرصة للكسب.',
+      fr: "FPT n’offre pas de démo gratuite. Toutefois, tous les comptes d’évaluation fonctionnent dans un environnement simulé — acheter une évaluation revient à démarrer une démo surveillée avec la possibilité de gagner.",
+      es: 'FPT no ofrece una demo gratuita. Sin embargo, todas las cuentas de evaluación operan en un entorno simulado — comprar una evaluación equivale a iniciar una demo supervisada con la oportunidad de ganar.',
+      pt: 'FPT não oferece demo gratuita. No entanto, todas as contas de avaliação operam em ambiente simulado — comprar uma avaliação equivale a iniciar uma demo monitorada com a oportunidade de ganhar.',
+      tr: 'FPT ücretsiz demo sunmaz. Ancak tüm değerlendirme hesapları simüle ortamda çalışır — bir değerlendirme satın almak, kazanma fırsatı olan izlenen bir demoya başlamakla eşdeğerdir.',
     },
   },
   {
@@ -256,7 +256,7 @@ export const faqs = [
   {
     id: 'how-is-drawdown-calculated', categoryId: 'challenges-rules',
     question: 'How is drawdown calculated — based on equity or balance?',
-    questions: { ar: 'كيف يُحسب السحب؟', fr: 'Comment le drawdown est-il calculé ?', es: '¿Cómo se calcula el drawdown?', pt: 'Como o drawdown é calculado?', tr: 'Drawdown nasıl hesaplanır?' },
+    questions: { ar: 'كيف يُحسب حدّ الخسارة؟', fr: 'Comment le drawdown est-il calculé ?', es: '¿Cómo se calcula el drawdown?', pt: 'Como o drawdown é calculado?', tr: 'Drawdown nasıl hesaplanır?' },
     answer: 'The daily limit is measured against the day-start equity (00:00 Dubai time); the maximum loss limit against the initial balance (equity must stay above 91 %). Both include the floating P&L of open positions; rewards paid are deducted from the balance.',
     answers: {
       ar: 'يُقاس الحد اليومي على حقوق الحساب في بداية اليوم (00:00 بتوقيت دبي)؛ ويُقاس حد الخسارة القصوى على الرصيد الابتدائي (يجب أن تبقى حقوق الحساب فوق 91 %). كلاهما يشمل الربح/الخسارة العائمة للمراكز المفتوحة؛ وتُخصم المكافآت المدفوعة من الرصيد.',
@@ -269,7 +269,7 @@ export const faqs = [
   {
     id: 'does-daily-drawdown-reset', categoryId: 'challenges-rules',
     question: 'Does the daily drawdown reset each day?',
-    questions: { ar: 'هل يُعاد تعيين السحب اليومي كل يوم؟', fr: 'Le drawdown quotidien se réinitialise-t-il ?', es: '¿Se reinicia el drawdown diario?', pt: 'O drawdown diário é reiniciado?', tr: 'Günlük drawdown her gün sıfırlanır mı?' },
+    questions: { ar: 'هل يُعاد تعيين حدّ الخسارة اليومي كل يوم؟', fr: 'Le drawdown quotidien se réinitialise-t-il ?', es: '¿Se reinicia el drawdown diario?', pt: 'O drawdown diário é reiniciado?', tr: 'Günlük drawdown her gün sıfırlanır mı?' },
     answer: 'Yes. The day-start equity is measured at 00:00 Dubai time every day.',
     answers: {
       ar: 'نعم. تُقاس حقوق الحساب في بداية اليوم في الساعة 00:00 بتوقيت دبي كل يوم.',
@@ -300,9 +300,9 @@ export const faqs = [
     answers: {
       ar: 'تتطلب مرحلة التقييم الوحيدة 5 أيام تداول كحد أدنى. تتطلب الحسابات الممولة 10 أيام قبل أن يكون طلب الدفع مؤهلاً.',
       fr: "L'unique phase d'évaluation nécessite au minimum 5 jours de trading. Les comptes financés nécessitent 10 jours avant d'être éligibles.",
-      es: 'La única fase de evaluación requiere un mínimo de 5 días de trading. Las cuentas financiadas requieren 10 días.',
-      pt: 'A única fase de avaliação requer um mínimo de 5 dias de trading. Contas financiadas requerem 10 dias.',
-      tr: 'Tek değerlendirme aşaması minimum 5 trading günü gerektirir. Finanse edilmiş hesaplar 10 gün gerektirir.',
+      es: 'La única fase de evaluación requiere un mínimo de 5 días de trading. Las cuentas financiadas requieren un mínimo de 10 días de trading antes de poder solicitar un pago.',
+      pt: 'A única fase de avaliação requer um mínimo de 5 dias de trading. As contas financiadas requerem um mínimo de 10 dias de trading antes de um pedido de pagamento ser elegível.',
+      tr: 'Tek değerlendirme aşaması en az 5 trading günü gerektirir. Finanse edilmiş hesaplar, ödeme talebi yapılabilmesi için en az 10 trading günü gerektirir.',
     },
   },
   {
@@ -337,11 +337,11 @@ export const faqs = [
     questions: { ar: 'هل يمكنني المحاولة مجدداً إذا فشلت؟', fr: "Puis-je réessayer si j’échoue ?", es: '¿Puedo intentarlo de nuevo si fallo?', pt: 'Posso tentar de novo se falhar?', tr: 'Başarısız olursam tekrar deneyebilir miyim?' },
     answer: 'Yes. You can purchase a new evaluation at any time. There is no waiting period between attempts.',
     answers: {
-      ar: 'نعم. يمكنك شراء تحدٍّ جديد في أي وقت. لا توجد فترة انتظار بين المحاولات.',
+      ar: 'نعم. يمكنك شراء تقييم جديد في أي وقت. لا توجد فترة انتظار بين المحاولات.',
       fr: "Oui. Vous pouvez acheter une nouvelle évaluation à tout moment. Il n’y a pas de période d’attente.",
       es: 'Sí. Puedes comprar una nueva evaluación en cualquier momento. No hay período de espera.',
       pt: 'Sim. Você pode comprar uma nova avaliação a qualquer momento. Não há período de espera.',
-      tr: 'Evet. İstediğiniz zaman yeni bir değerlendirme satın alabilirsiniz.',
+      tr: 'Evet. İstediğiniz zaman yeni bir değerlendirme satın alabilirsiniz. Denemeler arasında bekleme süresi yoktur.',
     },
   },
   {
@@ -389,11 +389,11 @@ export const faqs = [
     questions: { ar: 'كم يمكنني الاحتفاظ من الأرباح؟', fr: 'Combien de profit puis-je garder ?', es: '¿Cuánto beneficio puedo conservar?', pt: 'Quanto lucro posso guardar?', tr: 'Ne kadar kar tutabilirim?' },
     answer: 'You receive up to 80% of the net profit generated on your funded account. FPT retains the remaining 20%.',
     answers: {
-      ar: 'تحصل على ما يصل إلى 80% من صافي الربح المحقق على حسابك الممول.',
-      fr: "Vous recevez jusqu’à 80 % du bénéfice net. FPT conserve les 20 % restants.",
-      es: 'Recibes hasta el 80% del beneficio neto. FPT retiene el 20% restante.',
-      pt: 'Você recebe até 80% do lucro líquido. FPT retém os 20% restantes.',
-      tr: "Finanse edilmiş hesabınızda elde edilen net kârın %80'ine kadarını alırsınız.",
+      ar: 'تحصل على ما يصل إلى 80% من صافي الربح المحقق على حسابك الممول. ويحتفظ FPT بنسبة 20% المتبقية.',
+      fr: 'Vous recevez jusqu’à 80 % du bénéfice net généré sur votre compte financé. FPT conserve les 20 % restants.',
+      es: 'Recibes hasta el 80% del beneficio neto generado en tu cuenta financiada. FPT retiene el 20% restante.',
+      pt: 'Você recebe até 80% do lucro líquido gerado na sua conta financiada. FPT retém os 20% restantes.',
+      tr: "Finanse edilmiş hesabınızda elde edilen net kârın %80'ine kadarını alırsınız. Kalan %20 FPT’de kalır.",
     },
   },
   {
@@ -415,11 +415,11 @@ export const faqs = [
     questions: { ar: 'هل تتبع الحسابات الممولة نفس قواعد التقييم؟', fr: 'Les comptes financés suivent-ils les mêmes règles ?', es: '¿Las cuentas financiadas siguen las mismas reglas?', pt: 'As contas financiadas seguem as mesmas regras?', tr: 'Finanse edilmiş hesaplar aynı kuralları takip ediyor mu?' },
     answer: 'The core risk parameters remain — daily drawdown, maximum drawdown, and minimum trading days. The profit target no longer applies.',
     answers: {
-      ar: 'تبقى معاملات المخاطر الأساسية — السحب اليومي والسحب الأقصى والحد الأدنى لأيام التداول. لا ينطبق هدف الربح بعد الآن.',
-      fr: "Les paramètres de risque principaux restent. L’objectif de profit ne s’applique plus.",
-      es: 'Los parámetros de riesgo principales permanecen. El objetivo de ganancia ya no aplica.',
-      pt: 'Os parâmetros de risco principais permanecem. A meta de lucro não se aplica mais.',
-      tr: 'Temel risk parametreleri kalır. Kar hedefi artık geçerli değildir.',
+      ar: 'تبقى معاملات المخاطر الأساسية — حدّ الخسارة اليومي وحدّ الخسارة الأقصى والحد الأدنى لأيام التداول. لا ينطبق هدف الربح بعد الآن.',
+      fr: 'Les paramètres de risque principaux restent — drawdown quotidien, drawdown maximal et nombre minimal de jours de trading. L’objectif de profit ne s’applique plus.',
+      es: 'Los parámetros de riesgo principales permanecen — drawdown diario, drawdown máximo y días mínimos de trading. El objetivo de ganancia ya no aplica.',
+      pt: 'Os parâmetros de risco principais permanecem — drawdown diário, drawdown máximo e dias mínimos de trading. A meta de lucro não se aplica mais.',
+      tr: 'Temel risk parametreleri kalır — günlük zarar limiti, azami zarar limiti ve asgari işlem günü sayısı. Kar hedefi artık geçerli değildir.',
     },
   },
   {
@@ -534,10 +534,10 @@ export const faqs = [
     answer: 'Yes. Automated trading via EAs is permitted under standard trading conditions.',
     answers: {
       ar: 'نعم. التداول الآلي عبر الـ EAs مسموح به في ظل شروط التداول القياسية.',
-      fr: "Oui. Le trading automatisé via EAs est autorisé.",
-      es: 'Sí. El trading automatizado mediante EAs está permitido.',
-      pt: 'Sim. O trading automatizado via EAs é permitido.',
-      tr: 'Evet. EA’lar aracılığıyla otomatik trading izinlidir.',
+      fr: 'Oui. Le trading automatisé via EAs est autorisé dans les conditions de trading standard.',
+      es: 'Sí. El trading automatizado mediante EAs está permitido bajo las condiciones de trading estándar.',
+      pt: 'Sim. O trading automatizado via EAs é permitido sob as condições de trading padrão.',
+      tr: 'Evet. EA’lar aracılığıyla otomatik trading, standart işlem koşulları altında izinlidir.',
     },
   },
   {
@@ -546,11 +546,11 @@ export const faqs = [
     questions: { ar: 'هل التداول عالي التردد مسموح به؟', fr: 'Le trading haute fréquence est-il autorisé ?', es: '¿Está permitido el trading de alta frecuencia?', pt: 'O trading de alta frequência é permitido?', tr: 'Yüksek frekanslı trading izinli mi?' },
     answer: 'No. HFT strategies, arbitrage, tick scalping, and latency-based strategies are not permitted.',
     answers: {
-      ar: 'لا. استراتيجيات HFT والمراجحة والتداول السريع على التدوينات غير مسموح بها.',
-      fr: "Non. Les stratégies HFT, l’arbitrage et le tick scalping ne sont pas autorisés.",
-      es: 'No. HFT, arbitraje y tick scalping no están permitidos.',
-      pt: 'Não. HFT, arbitragem e tick scalping não são permitidos.',
-      tr: 'Hayır. HFT, arbitraj ve tick scalping izinli değildir.',
+      ar: 'لا. استراتيجيات التداول عالي التردد والمراجحة والتداول السريع على التدوينات والاستراتيجيات المعتمدة على زمن التأخير غير مسموح بها.',
+      fr: "Non. Les stratégies HFT, l’arbitrage, le tick scalping et les stratégies fondées sur la latence ne sont pas autorisés.",
+      es: 'No. Las estrategias HFT, el arbitraje, el tick scalping y las estrategias basadas en latencia no están permitidos.',
+      pt: 'Não. Estratégias de HFT, arbitragem, tick scalping e estratégias baseadas em latência não são permitidos.',
+      tr: 'Hayır. HFT stratejilerine, arbitraja, tick scalping’e ve gecikmeye dayalı stratejilere izin verilmez.',
     },
   },
   {
@@ -572,7 +572,7 @@ export const faqs = [
     questions: { ar: 'هل المارتينجيل أو التداول الشبكي مسموح به؟', fr: 'Le martingale ou grid trading est-il autorisé ?', es: '¿Está permitido el martingala o grid?', pt: 'Martingale ou grid são permitidos?', tr: 'Martingale veya grid izinli mi?' },
     answer: 'These strategies are permitted, but they must respect the maximum drawdown and daily loss limits.',
     answers: {
-      ar: 'هذه الاستراتيجيات مسموح بها، لكن يجب أن تحترم حدود السحب الأقصى والخسارة اليومية.',
+      ar: 'هذه الاستراتيجيات مسموح بها، لكن يجب أن تحترم حدّ الخسارة الأقصى وحدّ الخسارة اليومي.',
       fr: 'Ces stratégies sont autorisées mais doivent respecter les limites de drawdown.',
       es: 'Estas estrategias están permitidas pero deben respetar los límites de drawdown.',
       pt: 'Essas estratégias são permitidas mas devem respeitar os limites de drawdown.',
@@ -587,9 +587,9 @@ export const faqs = [
     answers: {
       ar: 'نعم، مع قيد واحد: الصفقات المفتوحة أو المغلقة خلال 5 دقائق قبل أو بعد الأخبار محدودة بـ 1% ربح.',
       fr: "Oui, avec une restriction : les trades dans les 5 minutes autour d’une publication d’impact élevé sont plafonnés à 1 %.",
-      es: 'Sí, con una limitación: operaciones en 5 min antes/después de noticias están limitadas al 1%.',
-      pt: 'Sim, com uma limitação: operações em 5 min antes/depois de notícias são limitadas a 1%.',
-      tr: 'Evet, bir kısıtlamayla: yüksek etkili haberlerden 5 dakika önce/sonraki işlemler %1 ile sınırlıdır.',
+      es: 'Sí, con una limitación: las operaciones abiertas o cerradas en los 5 minutos anteriores o posteriores a una noticia de alto impacto están limitadas a un 1% de beneficio.',
+      pt: 'Sim, com uma limitação: operações abertas ou fechadas nos 5 minutos antes ou depois de uma notícia de alto impacto são limitadas a 1% de lucro.',
+      tr: 'Evet, bir kısıtlamayla: yüksek etkili bir haberden 5 dakika önce veya sonra açılan ya da kapatılan işlemler %1 kâr ile sınırlıdır.',
     },
   },
   {
@@ -598,11 +598,11 @@ export const faqs = [
     questions: { ar: 'ماذا يحدث إذا تجاوزت حد تداول الأخبار؟', fr: 'Que se passe-t-il si je dépasse cette limite ?', es: '¿Qué pasa si supero este límite?', pt: 'O que acontece se eu exceder esse limite?', tr: 'Bu limiti aşarsam ne olur?' },
     answer: 'The excess profit is removed from your account without any additional penalty. Your account status remains unchanged.',
     answers: {
-      ar: 'يُزال الربح الزائد من حسابك دون أي عقوبة إضافية.',
-      fr: 'Le bénéfice excédentaire est retiré sans pénalité supplémentaire.',
-      es: 'El beneficio excedente se elimina sin penalización adicional.',
-      pt: 'O lucro excedente é removido sem penalidade adicional.',
-      tr: 'Fazla kar ek ceza olmaksızın kaldırılır.',
+      ar: 'يُزال الربح الزائد من حسابك دون أي عقوبة إضافية. حالة حسابك لا تتغيّر.',
+      fr: 'Le bénéfice excédentaire est retiré de votre compte sans pénalité supplémentaire. Le statut de votre compte reste inchangé.',
+      es: 'El beneficio excedente se elimina de tu cuenta sin penalización adicional. El estado de tu cuenta no cambia.',
+      pt: 'O lucro excedente é removido da sua conta sem penalidade adicional. O status da sua conta permanece inalterado.',
+      tr: 'Fazla kar, herhangi bir ek ceza olmaksızın hesabınızdan kaldırılır. Hesabınızın durumu değişmeden kalır.',
     },
   },
   {
@@ -615,7 +615,7 @@ export const faqs = [
       fr: 'Oui. Les positions du jour au lendemain et du week-end sont autorisées.',
       es: 'Sí. Las posiciones overnight y de fin de semana están permitidas.',
       pt: 'Sim. Posições overnight e de fim de semana são permitidas.',
-      tr: 'Evet. Gecelik ve hafta sonu pozisyonlarına izin verilir.',
+      tr: 'Evet. Gecelik ve hafta sonu pozisyonlarına tüm hesap türlerinde izin verilir.',
     },
   },
   {
@@ -650,11 +650,11 @@ export const faqs = [
     questions: { ar: 'هل يمكنني إعادة تعيين حسابي؟', fr: 'Puis-je réinitialiser mon compte ?', es: '¿Puedo restablecer mi cuenta?', pt: 'Posso redefinir minha conta?', tr: 'Hesabımı sıfırlayabilir miyim?' },
     answer: 'No reset option is included with any evaluation. If your account fails, you must purchase a new evaluation.',
     answers: {
-      ar: 'لا يوجد خيار إعادة تعيين مع أي تحدٍّ. إذا فشل حسابك، يجب عليك شراء تحدٍّ جديد.',
+      ar: 'لا يوجد خيار إعادة تعيين مع أي تقييم. إذا فشل حسابك، يجب عليك شراء تقييم جديد.',
       fr: "Aucune option de réinitialisation n’est incluse. En cas d’échec, vous devez acheter une nouvelle évaluation.",
       es: 'Ninguna evaluación incluye opción de restablecimiento. Debes comprar una nueva si fallas.',
-      pt: 'Nenhuma avaliação inclui redefinição. Você deve comprar uma nova se falhar.',
-      tr: 'Hiçbir değerlendirmede sıfırlama seçeneği yoktur.',
+      pt: 'Nenhuma avaliação inclui opção de redefinição. Se a sua conta falhar, você deve comprar uma nova avaliação.',
+      tr: 'Hiçbir değerlendirmede sıfırlama seçeneği yoktur. Hesabınız başarısız olursa yeni bir değerlendirme satın almanız gerekir.',
     },
   },
   {
@@ -667,7 +667,7 @@ export const faqs = [
       fr: "Non. Les comptes sont liés à l’identité vérifiée du trader et ne sont pas transférables.",
       es: 'No. Las cuentas están vinculadas al trader registrado y no son transferibles.',
       pt: 'Não. As contas estão vinculadas ao trader registrado e não são transferíveis.',
-      tr: 'Hayır. Hesaplar kayıtlı trader kimliğine bağlıdır ve devredilemez.',
+      tr: 'Hayır. Hesaplar, kayıtlı trader’ın doğrulanmış kimliğine bağlıdır ve devredilemez.',
     },
   },
   {
@@ -676,11 +676,11 @@ export const faqs = [
     questions: { ar: 'ما المنصة التي تستخدمونها؟', fr: 'Quelle plateforme utilisez-vous ?', es: '¿Qué plataforma usan?', pt: 'Qual plataforma vocês usam?', tr: 'Hangi platformu kullanıyorsunuz?' },
     answer: 'FPT operates on cTrader — chosen for its institutional-grade execution, native depth-of-market, and advanced algorithmic capabilities.',
     answers: {
-      ar: 'يعمل FPT على cTrader — المختار لتنفيذه المؤسسي الممتاز وعمق السوق الأصلي.',
-      fr: "FPT opère sur cTrader, choisi pour son exécution institutionnelle et ses capacités algorithmiques.",
-      es: 'FPT opera en cTrader, elegido por su ejecución institucional y capacidades algorítmicas.',
-      pt: 'FPT opera no cTrader, escolhido por execução institucional e capacidades algorítmicas.',
-      tr: 'FPT, kurumsal yürütme için tercih edilen cTrader üzerinde çalışır.',
+      ar: 'يعمل FPT على cTrader — المختار لتنفيذه بمستوى مؤسسي وعمق السوق الأصلي وقدراته الخوارزمية المتقدمة.',
+      fr: 'FPT opère sur cTrader — choisi pour son exécution de niveau institutionnel, sa profondeur de marché native et ses capacités algorithmiques avancées.',
+      es: 'FPT opera en cTrader — elegido por su ejecución de nivel institucional, su profundidad de mercado nativa y sus capacidades algorítmicas avanzadas.',
+      pt: 'FPT opera no cTrader — escolhido por sua execução de nível institucional, profundidade de mercado nativa e capacidades algorítmicas avançadas.',
+      tr: 'FPT, cTrader üzerinde çalışır — kurumsal düzeyde yürütmesi, yerleşik piyasa derinliği ve gelişmiş algoritmik yetenekleri nedeniyle seçilmiştir.',
     },
   },
   {
@@ -691,8 +691,8 @@ export const faqs = [
     answers: {
       ar: 'تحقق من صندوق الوارد ومجلد البريد المزعج. إذا لم تُستلم خلال 30 دقيقة، تواصل مع دعم FPT.',
       fr: "Vérifiez votre boîte de réception et le dossier spam. Si rien dans les 30 minutes, contactez le support.",
-      es: 'Revisa bandeja de entrada y spam. Si no llegan en 30 minutos, contacta soporte.',
-      pt: 'Verifique caixa de entrada e spam. Se não chegar em 30 minutos, contate o suporte.',
+      es: 'Revisa tu bandeja de entrada y la carpeta de spam. Si las credenciales no llegan en 30 minutos, contacta con el soporte de FPT.',
+      pt: 'Verifique sua caixa de entrada e a pasta de spam. Se as credenciais não chegarem em 30 minutos, entre em contato com o suporte da FPT.',
       tr: 'Gelen kutusu ve spam klasörünüzü kontrol edin. 30 dakika içinde gelmezse destek ile iletişime geçin.',
     },
   },
@@ -758,7 +758,7 @@ export const faqs = [
       fr: "Non. FPT ne fournit pas de conseils en investissement ni de signaux de trading.",
       es: 'No. FPT no proporciona asesoría de inversión ni señales de trading.',
       pt: 'Não. FPT não fornece consultoria de investimento nem sinais de trading.',
-      tr: 'Hayır. FPT yatırım tavsiyesi veya trading sinyalleri sağlamaz.',
+      tr: 'Hayır. FPT yatırım tavsiyesi, trading sinyalleri veya portföy yönetimi sağlamaz.',
     },
   },
   {
@@ -768,10 +768,10 @@ export const faqs = [
     answer: 'No. Investing involves risk. Past performance is not indicative of future results.',
     answers: {
       ar: 'لا. الاستثمار ينطوي على مخاطر. الأداء السابق لا يُشير إلى النتائج المستقبلية.',
-      fr: 'Non. Le trading implique des risques substantiels. Les performances passées ne garantissent pas les résultats futurs.',
-      es: 'No. El trading implica riesgos sustanciales. El rendimiento pasado no garantiza resultados futuros.',
-      pt: 'Não. O trading envolve risco substancial. Desempenho passado não garante resultados futuros.',
-      tr: 'Hayır. Trading önemli risk içerir. Geçmiş performans gelecekteki sonuçların göstergesi değildir.',
+      fr: 'Non. Investing involves risk. Les performances passées ne préjugent pas des résultats futurs.',
+      es: 'No. Investing involves risk. El rendimiento pasado no es indicativo de resultados futuros.',
+      pt: 'Não. Investing involves risk. O desempenho passado não é indicativo de resultados futuros.',
+      tr: 'Hayır. Investing involves risk. Geçmiş performans gelecekteki sonuçların göstergesi değildir.',
     },
   },
   {
@@ -793,10 +793,10 @@ export const faqs = [
     questions: { ar: 'كيف تُحمى بياناتي الشخصية؟', fr: 'Comment mes données personnelles sont-elles protégées ?', es: '¿Cómo se protegen mis datos personales?', pt: 'Como meus dados pessoais são protegidos?', tr: 'Kişisel verilerim nasıl korunur?' },
     answer: 'FPT follows industry-standard data protection practices including encryption at rest and in transit.',
     answers: {
-      ar: 'يتبع FPT ممارسات حماية البيانات القياسية بما في ذلك التشفير.',
+      ar: 'يتبع FPT ممارسات حماية البيانات القياسية في القطاع، بما في ذلك التشفير أثناء التخزين وأثناء النقل.',
       fr: 'FPT suit les pratiques standard de protection des données incluant le chiffrement.',
-      es: 'FPT sigue prácticas estándar de protección de datos incluyendo cifrado.',
-      pt: 'FPT segue práticas padrão de proteção de dados incluindo criptografia.',
+      es: 'FPT sigue prácticas de protección de datos estándar del sector, incluido el cifrado en reposo y en tránsito.',
+      pt: 'FPT segue práticas de proteção de dados padrão do setor, incluindo criptografia em repouso e em trânsito.',
       tr: 'FPT, şifreleme dahil endüstri standardı veri koruma uygulamalarını takip eder.',
     },
   },

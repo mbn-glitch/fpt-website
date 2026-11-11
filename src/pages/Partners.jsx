@@ -13,9 +13,8 @@ import { Unit } from '../lib/money.jsx';
  * leaderboard», «2 % sub-affiliate override» and «VIP custom» claims have no source in the platform and are removed.
  */
 export default function Partners() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const app = useAppLinks();
-  const l = i18n.language === 'ar' ? 'ar' : 'en';
 
   const FEATURES = [
     { icon: Link2, title: t('partners.features.link.title'), desc: t('partners.features.link.desc') },
@@ -40,9 +39,10 @@ export default function Partners() {
       <Section aria-labelledby="partners-tiers-title">
         <SectionHeader eyebrow={t('partners.tiersEyebrow')} title={<span id="partners-tiers-title">{t('partners.tiersTitle')}</span>} subtitle={t('partners.tiersSubtitle')} center />
         <ul className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-5">
-          {AFFILIATE_TIERS.map((tier) => (
+          {AFFILIATE_TIERS.map((tier, i) => (
             <li key={tier.code} className="flex flex-col bg-card rounded-2xl p-7 border border-subtle">
-              <h3 className="text-lg font-semibold leading-[1.3]">{tier.name[l]}</h3>
+              {/* WEBL-D07: the heading in the page language (six locales), the figures from the tier itself */}
+              <h3 className="text-lg font-semibold leading-[1.3]">{t('partners.tier.title', { n: t(`partners.tier.n${i + 1}`), range: tier.max ? `${tier.min}–${tier.max}` : `${tier.min}+` })}</h3>
               <Unit as="div" className="mt-4 text-3xl font-semibold text-white">{pct(tier.bps)}</Unit>
               <p className="mt-4 text-base text-secondary leading-relaxed">
                 {tier.max ? t('partners.tiers.range', { min: tier.min, max: tier.max }) : t('partners.tiers.from', { min: tier.min })}

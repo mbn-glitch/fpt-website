@@ -14,6 +14,16 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..')
 const DIST = process.argv.includes('--dist');
 const CODES = '(?:USD|EUR|AED)';
 const failures = [];
+// 0. the head texts of the six locales (design office WEBL-D10, LAUNCH-I18N-1): the page title / description reach the search snippet and the share card, so they
+//    obey the ONE format too — «200,000 USD», «80 %»; never a currency sign, a «200K» short form, a spelled-out currency or the percent sign before the number.
+for (const l of ['en', 'ar', 'fr', 'es', 'pt', 'tr']) {
+  const flat = (o, p = '') => Object.entries(o).flatMap(([k, v]) => (v && typeof v === 'object' ? flat(v, `${p}${k}.`) : [[`${p}${k}`, v]]));
+  for (const [k, v] of flat(JSON.parse(readFileSync(path.join(ROOT, 'src/i18n/locales', `${l}.json`), 'utf8')))) {
+    if (typeof v !== 'string' || !(/^meta\./.test(k) || /(^|\.)meta(Title|Description)$/.test(k))) continue;
+    const bad = [[/[$€£]/, 'a currency sign'], [/\b\d+\s?[Kk]\b/, 'a «200K» short form'], [/\d[\d.,\u00a0 ]*\s(dollars?|d[oó]lar(es)?|dolara?|dolar\p{L}*|euros?)/iu, 'a spelled-out currency'], [/%\s?\d/, 'the percent sign before the number'], [/\d%/, 'no space before the percent sign'], [/\d{1,3}([.\u00a0 ]\d{3})+\s?(USD|EUR|AED)/, 'a thousands separator other than the comma'], [new RegExp(`\\b${CODES}\\s?\\d`), 'the currency code before the number']];
+    for (const [re, what] of bad) if (re.test(v)) failures.push(`${l}.json ${k}: ${what} — ${v.slice(0, 110)}`);
+  }
+}
 // 1. source — hand-built amounts (the money module and the help prose, which is rendered through renderUnits, are the exceptions)
 const walk = (d, test, out = []) => { for (const e of readdirSync(d)) { const p = path.join(d, e); if (statSync(p).isDirectory()) walk(p, test, out); else if (test(e)) out.push(p); } return out; };
 for (const f of walk(path.join(ROOT, 'src'), (e) => /\.(jsx?)$/.test(e))) {

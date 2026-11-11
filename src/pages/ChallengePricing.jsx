@@ -182,7 +182,7 @@ export default function ChallengePricing() {
               </div>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {['oneTime', 'nonRefundable', 'noRetry'].map((k) => (
-                  <li key={k} className="inline-flex items-center h-8 px-3 rounded-full border border-white/40 text-[13px] text-white">{t(`pricing.badges.${k}`)}</li>
+                  <li key={k} className="inline-flex items-center min-h-8 h-auto py-1 px-3 rounded-full border border-white/40 text-[13px] text-white">{t(`pricing.badges.${k}`)}</li>
                 ))}
               </ul>
               <ul className="mt-6">

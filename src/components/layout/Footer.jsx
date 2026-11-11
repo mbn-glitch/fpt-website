@@ -36,7 +36,7 @@ export default function Footer() {
               <span>{t('footer.support')}</span>{' '}
               <a href={SUPPORT_MAILTO} className="text-white fpt-num-text" data-support-email="true">{SUPPORT_EMAIL}</a>
             </div>
-            <div>
+            <div className="fpt-web-foot-pair">
               <Link to={to('/about')}>{t('web.footer.about')}</Link>
               <Link to={to('/partners')}>{t('web.footer.partners')}</Link>
             </div>

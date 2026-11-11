@@ -47,9 +47,10 @@ function SidebarInner({ activeSlug, onNavigate }) {
           return (
             <li key={c.id}>
               <NavLink to={to('/help/' + c.slug)} onClick={onNavigate} aria-current={active ? 'page' : undefined}
-                className={['flex items-center gap-3 px-3 min-h-11 rounded-xl border text-base transition-colors', active ? 'border-white/40 bg-white/5 text-white' : 'border-transparent text-secondary hover:text-white hover:border-subtle'].join(' ')}>
+                className={['flex items-center gap-3 px-3 py-2 min-h-11 rounded-xl border text-base transition-colors', active ? 'border-white/40 bg-white/5 text-white' : 'border-transparent text-secondary hover:text-white hover:border-subtle'].join(' ')}>
                 <Icon size={16} className="text-fg-muted shrink-0" aria-hidden="true" />
-                <span className="flex-1 min-w-0 truncate">{title}</span>
+                {/* the title wraps — never an ellipsis: the Turkish «Değerlendirmeler ve Kurallar» was cut on 360 px (lang-sweep `clipped`) */}
+                <span className="flex-1 min-w-0 leading-[1.35]">{title}</span>
               </NavLink>
             </li>
           );

@@ -12,7 +12,8 @@ import path from 'node:path';
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const DIST = process.argv.includes('--dist');
 const LATIN = /(?<![\p{L}\p{N}])(challenges?|d[ée]fis?|desaf[ií]os?|zorlu[kğg]\p{L}*|meydan okuma\p{L}*|MT[45])(?![\p{L}\p{N}])/giu;
-const ARABIC = /(?<![؀-ۿ])(?:ال)?تحدي(?:ات|ك|اً|ا|ه|ها|نا|كم)?(?![؀-ۿ])/g;
+// the indefinite form «تحدٍّ» (the word with its diacritics) is the same banned word — it slipped past the first pattern until LAUNCH-I18N-1 (help.subtitle, two help answers)
+const ARABIC = /(?<![؀-ۿ])(?:ال)?تحد(?:ي(?:ات|ك|اً|ا|ه|ها|نا|كم)?|[\u064B-\u0652]+)(?![؀-ۿ])/g;
 const failures = [];
 const scan = (where, text) => {
   for (const re of [LATIN, ARABIC]) { re.lastIndex = 0; let m; while ((m = re.exec(text))) failures.push(`${where}: «${m[0]}» — …${text.slice(Math.max(0, m.index - 30), m.index + m[0].length + 30).replace(/\s+/g, ' ')}…`); }

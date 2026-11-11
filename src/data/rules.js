@@ -14,9 +14,9 @@ export const CATALOG_V1 = platform.data.catalog;
 
 /** Affiliate tiers — packages/db/scripts/seed.ts TIERS (commission on monthly sales; owner decision 49, 4 Nov 2026). */
 export const AFFILIATE_TIERS = [
-  { code: 't1', min: 1, max: 9, bps: 1500, name: { ar: 'المستوى الأول (1–9 مبيعات)', en: 'Tier 1 (1–9 sales)' } },
-  { code: 't2', min: 10, max: 29, bps: 1750, name: { ar: 'المستوى الثاني (10–29 مبيعات)', en: 'Tier 2 (10–29 sales)' } },
-  { code: 't3', min: 30, max: null, bps: 2000, name: { ar: 'المستوى الثالث (30+ مبيعات)', en: 'Tier 3 (30+ sales)' } },
+  { code: 't1', min: 1, max: 9, bps: 1500 },
+  { code: 't2', min: 10, max: 29, bps: 1750 },
+  { code: 't3', min: 30, max: null, bps: 2000 },   // the heading is `partners.tier.title` in the six locales (WEBL-D07) — figures from min / max
 ];
 
 import { formatMoney, formatPercent } from '../lib/money.jsx';

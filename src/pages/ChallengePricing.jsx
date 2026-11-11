@@ -110,9 +110,12 @@ export default function ChallengePricing() {
               </div>
               <ul className="pt-5 border-t border-subtle">
                 {phase.rules.map((r) => (
-                  <li key={r.label} className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-2 text-base">
-                    <span className="text-secondary">{r.label}</span>
-                    {r.text ? <span className="font-semibold text-white">{renderUnits(r.value)}</span> : <Unit className="font-semibold text-white">{r.value}</Unit>}
+                  /* WEBL-D28 (re-check R2): the row form of WEBL-D24 for the two phase lists — on 320 the value of «Jours de Trading Minimum» / «Cycle de
+                     récompense» dropped under its label; the row no longer wraps, the label (min-width 0) takes the second line and the value stays one
+                     unbreakable unit at the row's end */
+                  <li key={r.label} className="flex items-center justify-between gap-x-4 py-2 text-base">
+                    <span className="min-w-0 text-secondary">{r.label}</span>
+                    {r.text ? <span className="shrink-0 whitespace-nowrap font-semibold text-white text-end">{renderUnits(r.value)}</span> : <Unit className="shrink-0 whitespace-nowrap font-semibold text-white text-end">{r.value}</Unit>}
                   </li>
                 ))}
               </ul>

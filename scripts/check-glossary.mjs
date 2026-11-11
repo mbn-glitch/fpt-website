@@ -2,7 +2,8 @@
 /**
  * Glossary gate (RD2 rule 3.5 / F-006 — owner 4 Nov 2026; platform decision 6): the product word is «تقييم / Evaluation» in every language —
  * «تحدي / Challenge / Défi / Desafío / Desafio / Zorluk / Meydan okuma» never appear in a visible text, nor MT4 / MT5 (cTrader only).
- * Also: the Arabic loss-limit names (WEBL-D13 — «السحب» is the payout word, refused only in a drawdown context) and the robots term «cBots» (office decision ق-103).
+ * Also: the Arabic loss-limit names (WEBL-D13 — «السحب» is the payout word, refused only in a drawdown context), the robots term «cBots» (office decision ق-103)
+ * and «Drawdown» as a rule NAME in fr / es / pt / tr (office decision ق-114 — one name per rule: the platform glossary's «Perte quotidienne max / Perte maximale» …).
  *   node scripts/check-glossary.mjs            → the six locale files + the help content string literals (ids / slugs / routes without spaces are not text)
  *   node scripts/check-glossary.mjs --dist     → + the visible text of every pre-rendered page in dist/ (tags, scripts, styles and attributes stripped)
  * PASS / FAIL (exit 1).
@@ -59,24 +60,50 @@ const bare = (s) => s.replace(/[ً-ْٰـ]/g, '');
  *  first mention on a page, then «cBots»). The MetaTrader term «Expert Advisors / EAs / المستشارون الخبراء» is refused in every language — except inside a sentence that
  *  says MetaTrader advisors are not supported (the word «MetaTrader» within 160 characters). */
 const EA_TERM = /(?<![\p{L}\p{N}])(?:Expert Advisors?|EAs?)(?![\p{L}\p{N}])|(?:ال)?مستشار(?:ون|ين|ي)? (?:ال)?خبرا?ء|(?:ال)?مستشار (?:ال)?خبير/gu;
+/** Office decision ق-114 (re-check R2, WEBL-D13): in fr / es / pt / tr each loss limit has ONE name, the platform glossary's — «Perte quotidienne max / Perte maximale»,
+ *  «Pérdida diaria máx / Pérdida máxima», «Perda diária máx / Perda máxima», «Maks Günlük Kayıp / Maksimum Kayıp» (the values of `challengePricing.maxDailyLoss|maxLoss`,
+ *  as en / ar already do) — so «Drawdown» is refused as a rule NAME: the word with a daily / maximum / total qualifier on either side («Drawdown quotidien»,
+ *  «Drawdown máximo», «drawdown total maximum», «Günlük Drawdown», «Maksimum Drawdown»). Like the Arabic rule it is CONTEXTUAL: the bare common noun stays
+ *  («Règles de drawdown», «limites de drawdown», «survit aux drawdowns» — the wording of those sentences is the native reviewer's item) and the glossary entry
+ *  `what-do-the-rule-names-mean` keeps its sentence «… ce que les autres réponses appellent « drawdown »». English is not scanned (its keys already read
+ *  «Max Daily Loss / Max Loss»). */
+const DRAWDOWN_LANGS = ['fr', 'es', 'pt', 'tr'];
+const DD_Q = '(?:quotidien(?:ne)?s?|journali[eè]re?s?|maxim(?:um|al|ale|aux|o|a|os|as)|máxim[oa]s?|max\\.?|maks\\.?|maksimum|azami|total(?:e|es)?|toplam|diari[oa]s?|diári[oa]s?|günlük)';
+const DRAWDOWN_RULE = new RegExp(`(?<![\\p{L}\\p{N}])(?:drawdowns?(?:\\s+${DD_Q}){1,2}|(?:${DD_Q}\\s+){1,2}drawdowns?)(?![\\p{L}\\p{N}])`, 'giu');
+{ // the rule proves itself on every run: the names the office measured on /challenges (7cbaa47) and in the help questions are refused, the glossary names and the bare noun pass
+  const REFUSED = [
+    'Drawdown quotidien', 'Drawdown Maximum', 'Drawdown diario', 'Drawdown Máximo', 'Drawdown diário', 'Drawdown máximo', 'Günlük Drawdown', 'Maksimum Drawdown',
+    'Quel est le drawdown total maximum ?', '¿Se reinicia el drawdown diario?', 'drawdown quotidien, drawdown maximal et nombre minimal de jours de trading', 'Maksimum toplam drawdown nedir?',
+  ];
+  const ALLOWED = [
+    'Perte quotidienne max', 'Perte maximale', 'Pérdida diaria máx', 'Pérdida máxima', 'Perda diária máx', 'Perda máxima', 'Maks Günlük Kayıp', 'Maksimum Kayıp',
+    'ces deux limites de perte sont ce que les autres réponses appellent « drawdown ».', 'diğer yanıtlarda “drawdown” denen şey bu iki kayıp limitidir.',
+    'Règles de drawdown', 'Ces stratégies sont autorisées mais doivent respecter les limites de drawdown.', 'Un trader que sobrevive a los drawdowns capitaliza.', 'Drawdown nasıl hesaplanır?',
+  ];
+  const hit = (t) => { DRAWDOWN_RULE.lastIndex = 0; return DRAWDOWN_RULE.test(t); };
+  const broken = [...REFUSED.filter((t) => !hit(t)).map((t) => `not refused: «${t}»`), ...ALLOWED.filter(hit).map((t) => `glossary / common wording refused: «${t}»`)];
+  if (broken.length) { console.error('check-glossary: FAIL — the «Drawdown» rule-name rule (ق-114) no longer holds on its own samples'); for (const x of broken) console.error(`  ${x}`); process.exit(1); }
+}
 const failures = [];
 const report = (where, text, m) => failures.push(`${where}: «${m[0]}» — …${text.slice(Math.max(0, m.index - 30), m.index + m[0].length + 30).replace(/\s+/g, ' ')}…`);
-const scan = (where, text) => {
+const scan = (where, text, lang) => {
   for (const re of [LATIN, ARABIC]) { re.lastIndex = 0; let m; while ((m = re.exec(text))) report(where, text, m); }
   const plain = bare(text);
   for (const re of ARABIC_RULES) { re.lastIndex = 0; let m; while ((m = re.exec(plain))) report(where, plain, m); }
   EA_TERM.lastIndex = 0; let m;
   while ((m = EA_TERM.exec(text))) if (!/MetaTrader/i.test(text.slice(Math.max(0, m.index - 160), m.index + m[0].length + 160))) report(where, text, m);
+  if (DRAWDOWN_LANGS.includes(lang)) { DRAWDOWN_RULE.lastIndex = 0; while ((m = DRAWDOWN_RULE.exec(text))) report(`${where} [${lang}: «Drawdown» is not a rule name — ق-114]`, text, m); }
 };
 // 1. locale values
 for (const l of ['en', 'ar', 'fr', 'es', 'pt', 'tr']) {
   const flat = (o, p = '') => Object.entries(o).flatMap(([k, v]) => (v && typeof v === 'object' ? flat(v, `${p}${k}.`) : [[`${p}${k}`, v]]));
-  for (const [k, v] of flat(JSON.parse(readFileSync(path.join(ROOT, 'src/i18n/locales', `${l}.json`), 'utf8')))) if (typeof v === 'string') scan(`${l}.json ${k}`, v);
+  for (const [k, v] of flat(JSON.parse(readFileSync(path.join(ROOT, 'src/i18n/locales', `${l}.json`), 'utf8')))) if (typeof v === 'string') scan(`${l}.json ${k}`, v, l);
 }
 // 2. help content: every quoted literal that contains whitespace (a sentence), not ids / slugs / anchors
 {
   const src = readFileSync(path.join(ROOT, 'src/data/helpContent.js'), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '');
-  for (const m of src.matchAll(/(['"])((?:(?!\1)[^\\]|\\.)*)\1/g)) if (/\s/.test(m[2])) scan(`helpContent.js:${src.slice(0, m.index).split('\n').length}`, m[2]);
+  // the language of a literal is the object key in front of it (`fr: '…'` inside questions / answers / names) — the English literals carry none
+  for (const m of src.matchAll(/(['"])((?:(?!\1)[^\\]|\\.)*)\1/g)) if (/\s/.test(m[2])) scan(`helpContent.js:${src.slice(0, m.index).split('\n').length}`, m[2], (/(?<![\w$])(ar|fr|es|pt|tr)\s*:\s*$/.exec(src.slice(Math.max(0, m.index - 12), m.index)) || [])[1]);
 }
 // 3. the rendered pages
 if (DIST) {
@@ -88,9 +115,9 @@ if (DIST) {
   for (const f of walk(dist)) {
     const html = readFileSync(f, 'utf8');
     const text = decode(html.replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<style[\s\S]*?<\/style>/gi, ' ').replace(/<title>[\s\S]*?<\/title>/i, (m) => m).replace(/<[^>]+>/g, ' '));
-    scan(path.relative(ROOT, f), text); pages++;
+    scan(path.relative(ROOT, f), text, (/<html[^>]*\slang="([a-z]{2})/i.exec(html) || [])[1]); pages++;
   }
   if (!failures.length) console.log(`check-glossary: ${pages} rendered pages scanned`);
 }
 if (failures.length) { console.error(`check-glossary: FAIL (${failures.length})`); for (const x of failures.slice(0, 80)) console.error(`  ${x}`); process.exit(1); }
-console.log(`check-glossary: PASS (six locales + help content${DIST ? ' + dist/ text' : ''}: no challenge / défi / desafío / desafio / zorluk / meydan okuma / تحدي / MT4 / MT5; Arabic rule names per WEBL-D13 — «السحب» refused in a loss-limit context only (8 refused + 11 payout samples self-checked), no bare «الخسارة القصوى»; ق-103 — «cBots», no «Expert Advisors / EAs» outside a MetaTrader sentence)`);
+console.log(`check-glossary: PASS (six locales + help content${DIST ? ' + dist/ text' : ''}: no challenge / défi / desafío / desafio / zorluk / meydan okuma / تحدي / MT4 / MT5; Arabic rule names per WEBL-D13 — «السحب» refused in a loss-limit context only (8 refused + 11 payout samples self-checked), no bare «الخسارة القصوى»; ق-103 — «cBots», no «Expert Advisors / EAs» outside a MetaTrader sentence; ق-114 — fr / es / pt / tr: «Drawdown» refused as a rule name (12 refused + 14 allowed samples self-checked))`);

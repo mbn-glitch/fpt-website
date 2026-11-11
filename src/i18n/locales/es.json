@@ -51,9 +51,9 @@
   },
   "keyRules": {
     "title": "Reglas Claras. Transparencia Total.",
-    "profitTarget": "Objetivo de Beneficio",
-    "dailyDrawdown": "Drawdown Diario",
-    "maxDrawdown": "Drawdown Máximo",
+    "profitTarget": "Objetivo de ganancia",
+    "dailyDrawdown": "Pérdida diaria máx",
+    "maxDrawdown": "Pérdida máxima",
     "minDays": "Días Mín. de Trading",
     "minDaysValue": "Evaluación: {{evaluation}} / Financiada: {{funded}}",
     "timeLimit": "Límite de Tiempo",
@@ -82,7 +82,7 @@
     "oneTime": "(tarifa única)",
     "features": {
       "accountSize": "Tamaño de Cuenta",
-      "profitTarget": "Objetivo de Beneficio",
+      "profitTarget": "Objetivo de ganancia",
       "maxDailyLoss": "Pérdida Diaria Máx.",
       "maxLoss": "Pérdida Máx.",
       "minDays": "Días Mín. de Trading",
@@ -260,8 +260,8 @@
     "startYourChallenge": "Comenzar tu evaluación",
     "rules": {
       "profitTarget": "Objetivo de ganancia",
-      "dailyDrawdown": "Drawdown diario",
-      "maxDrawdown": "Drawdown máximo",
+      "dailyDrawdown": "Pérdida diaria máx",
+      "maxDrawdown": "Pérdida máxima",
       "minDaysPhase1": "Días Mínimos de Trading",
       "minDaysFunded": "Días mín (Financiado)",
       "timeLimit": "Límite de tiempo",
@@ -438,7 +438,7 @@
       "ctaPrimary": "Iniciar la evaluación · desde {{fee}}",
       "ctaSecondary": "Ver cómo funciona",
       "proof": {
-        "target": "Objetivo de beneficio",
+        "target": "Objetivo de ganancia",
         "split": "Participación del trader",
         "cycle": "días entre pagos",
         "platform": "Plataforma"
@@ -469,7 +469,7 @@
       "daily": "Límite diario {{amount}}",
       "total": "Límite total {{amount}}",
       "start": "Empezar {{size}}",
-      "startSize": "Empezar la evaluación {{size}}",
+      "startSize": "Empezar {{size}}",
       "after": "Tras la financiación: participación del {{share}} · un pago cada {{cycle}} días tras {{days}} días de trading · {{range}} por solicitud · las tarifas no se reembolsan tras la entrega de la cuenta."
     },
     "trust": {

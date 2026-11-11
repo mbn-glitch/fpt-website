@@ -52,8 +52,8 @@
   "keyRules": {
     "title": "Regras Claras. Transparência Total.",
     "profitTarget": "Meta de Lucro",
-    "dailyDrawdown": "Drawdown Diário",
-    "maxDrawdown": "Drawdown Máximo",
+    "dailyDrawdown": "Perda diária máx",
+    "maxDrawdown": "Perda máxima",
     "minDays": "Dias Mín. de Trading",
     "minDaysValue": "Avaliação: {{evaluation}} / Financiada: {{funded}}",
     "timeLimit": "Limite de Tempo",
@@ -260,8 +260,8 @@
     "startYourChallenge": "Iniciar sua avaliação",
     "rules": {
       "profitTarget": "Meta de lucro",
-      "dailyDrawdown": "Drawdown diário",
-      "maxDrawdown": "Drawdown máximo",
+      "dailyDrawdown": "Perda diária máx",
+      "maxDrawdown": "Perda máxima",
       "minDaysPhase1": "Dias Mínimos de Trading",
       "minDaysFunded": "Dias mín (Financiado)",
       "timeLimit": "Limite de tempo",
@@ -469,7 +469,7 @@
       "daily": "Limite do dia {{amount}}",
       "total": "Limite total {{amount}}",
       "start": "Começar {{size}}",
-      "startSize": "Começar a avaliação {{size}}",
+      "startSize": "Começar {{size}}",
       "after": "Após o financiamento: participação de {{share}} · um pagamento a cada {{cycle}} dias após {{days}} dias de trading · {{range}} por pedido · as taxas não são reembolsadas após a entrega da conta."
     },
     "trust": {

@@ -21,7 +21,7 @@ export const AFFILIATE_TIERS = [
 
 import { formatMoney, formatPercent } from '../lib/money.jsx';
 
-/** «80 %» — one no-break space (RD2 rule 3.4). */
+/** «80 %» — one no-break space (RD2 rule 3.4); «%80» on a Turkish page (ق-112 — the form is read from the language being rendered, src/lib/money.jsx). */
 export const pct = formatPercent;
 /** «50,000 USD» — the ONE money format (src/lib/money.jsx): number, no-break space, code, isolated (GLOSSARY § 6 / § 11, RD2 F-007). */
 export const usd = (cents) => formatMoney(cents / 100, 'USD', 0);

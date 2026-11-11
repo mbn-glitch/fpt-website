@@ -27,8 +27,10 @@ export default function FAQAccordion({ faqs }) {
             <div id={`${faq.id}-a`} role="region" aria-labelledby={`${faq.id}-q`} hidden={!isOpen} className="pb-5 text-base text-secondary leading-relaxed">
               {renderUnits(getAnswer(faq))}
               {/* WEBL-D22: the fixed risk line has an Arabic and an English wording only — on fr / es / pt / tr it is never inside the translated sentence:
-                  its own line after the answer, marked lang="en" (the Arabic and English answers carry the line in their own language) */}
-              {faq.fixedRiskLine && lang !== 'en' && lang !== 'ar' && <span lang="en" dir="ltr" className="block mt-2" data-fixed-line="risk">{RISK_LINE.en}</span>}
+                  its own line after the answer, marked lang="en" (the Arabic and English answers carry the line in their own language).
+                  Re-check R2 (office decision ق-113): it reads as a secondary NOTE, not as a second untranslated sentence — the label step (13 px), the label
+                  colour (text-tertiary), 12 px above a hairline + 12 px under it, and a closing full stop (the wording itself stays RISK_LINE.en). */}
+              {faq.fixedRiskLine && lang !== 'en' && lang !== 'ar' && <span lang="en" dir="ltr" className="block mt-3 pt-3 border-t border-subtle text-[13px] text-tertiary leading-[1.5]" data-fixed-line="risk">{RISK_LINE.en}.</span>}
             </div>
           </li>
         );

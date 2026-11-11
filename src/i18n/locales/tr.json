@@ -16,7 +16,7 @@
   },
   "meta": {
     "title": "FPT — Fiper Pro Traders | Hızlı ve Akıllı İşlem için Tasarlandı",
-    "description": "Fiper Pro Traders (FPT) — Fiper Global'in bir parçası. Simüle edilmiş bir hesapta tek aşamalı bir değerlendirme; 80 % ödül payıyla 200,000 USD tutarına kadar finanse edilmiş hesaplar.",
+    "description": "Fiper Pro Traders (FPT) — Fiper Global’in bir parçası. Simüle edilmiş bir hesapta tek aşamalı bir değerlendirme; %80 ödül payıyla 200,000 USD tutarına kadar finanse edilmiş hesaplar.",
     "ogImageAlt": "Koyu zemin üzerinde Fiper Pro Traders logosu; İngilizce “Investing involves risk” ibaresiyle",
     "keywords": "prop trading, finanse edilmiş hesap, FPT, Fiper Pro Traders, Fiper Global, işlem değerlendirmesi, cTrader"
   },
@@ -39,7 +39,7 @@
     "eyebrow": "Hızlı ve akıllı işlem için tasarlandı",
     "title1": "Güvenle İşlem Yapın.",
     "title2": "Fonlanın.",
-    "subtitle": "Simüle edilmiş bir hesapta tek aşamalı değerlendirmeyi geçin ve 80 % ödül payıyla finanse edilmiş bir hesapta işlem yapın. Ödemeden önce yayımlanan açık kurallar.",
+    "subtitle": "Simüle edilmiş bir hesapta tek aşamalı değerlendirmeyi geçin ve %80 ödül payıyla finanse edilmiş bir hesapta işlem yapın. Ödemeden önce yayımlanan açık kurallar.",
     "ctaPrimary": "FPT Değerlendirmesine Başla",
     "ctaSecondary": "Planları Gör",
     "stats": {
@@ -52,8 +52,8 @@
   "keyRules": {
     "title": "Net Kurallar. Tam Şeffaflık.",
     "profitTarget": "Kâr Hedefi",
-    "dailyDrawdown": "Günlük Maks. Kayıp",
-    "maxDrawdown": "Toplam Maks. Kayıp",
+    "dailyDrawdown": "Maks Günlük Kayıp",
+    "maxDrawdown": "Maksimum Kayıp",
     "minDays": "Min. İşlem Günü",
     "minDaysValue": "Değerlendirme: {{evaluation}} / Finanse edilmiş: {{funded}}",
     "timeLimit": "Süre Limiti",
@@ -150,7 +150,7 @@
   },
   "ecosystem": {
     "title": "Fiper Global Ekosisteminin Parçası",
-    "subtitle": "FPT, Fiper Global tarafından desteklenir — modern tüccarlar için tasarlanmış tam bir finansal altyapı.",
+    "subtitle": "FPT, Fiper Global tarafından desteklenir — modern trader’lar için tasarlanmış tam bir finansal altyapı.",
     "fpt": {
       "title": "FPT",
       "desc": "Prop Trading Değerlendirmeleri",
@@ -179,7 +179,7 @@
     "a2": "Ücret tek seferliktir. Yalnızca hesabınız teslim edilmeden önce ve iade ve iptal politikasında sayılan durumlarda iade edilir; teslimattan sonra iade edilmez.",
     "q3": "Ne kadar sürede fonlanırım?",
     "a3": "Kâr hedefine ulaşıp asgari işlem günlerini tamamladıktan sonra finanse edilmiş hesap 2 iş günü içinde (Dubai saati) teslim edilir.",
-    "q4": "Karlarımı nasıl çekerim?",
+    "q4": "Kârlarımı nasıl çekerim?",
     "a4": "Ödüller, finanse edilmiş hesapta en az 10 işlem günü ve tamamlanmış 14 günlük bir döngüden sonra kripto para ile veya Fiper’daki hesabınıza dahili transferle ödenir.",
     "q5": "Hangi pazarlarda işlem yapabilirim?",
     "a5": "cTrader’da forex, endeksler, emtialar ve seçili kripto paralar.",
@@ -220,7 +220,7 @@
     "eyebrow": "Değerlendirme",
     "heroTitle1": "Becerilerini Kanıtla.",
     "heroTitle2": "Finansman Al.",
-    "heroSubtitle": "Tek değerlendirme aşaması. Açık kurallar. Finanse edilmiş hesapta 80 % ödül payı.",
+    "heroSubtitle": "Tek değerlendirme aşaması. Açık kurallar. Finanse edilmiş hesapta %80 ödül payı.",
     "howItWorksEyebrow": "Nasıl Çalışır",
     "howItWorksTitle": "Tek aşama. Finansmana doğrudan yol.",
     "howItWorksSubtitle": "Değerlendirmeyi geçin, sonra finanse edilmiş bir hesapta işlem yapın.",
@@ -260,8 +260,8 @@
     "startYourChallenge": "Değerlendirmene Başla",
     "rules": {
       "profitTarget": "Kâr Hedefi",
-      "dailyDrawdown": "Günlük Drawdown",
-      "maxDrawdown": "Maksimum Drawdown",
+      "dailyDrawdown": "Maks Günlük Kayıp",
+      "maxDrawdown": "Maksimum Kayıp",
       "minDaysPhase1": "Min. İşlem Günü",
       "minDaysFunded": "Min Günler (Finanse)",
       "timeLimit": "Zaman Limiti",
@@ -324,7 +324,7 @@
     "mission": {
       "content": "Yetenekli traderlarin gereksiz engellerle karşılaşmadan sermayeye erişmesi gerektiğine inanıyoruz. FPT, değerlendirmeden finanse edilmiş işleme şeffaf ve yapılandırılmış bir yol sunar."
     },
-    "subtitle": "FPT, Fiper Global'in prop trading kolu — modern traderlar için tasarlanmış entegre bir finansal altyapı.",
+    "subtitle": "FPT, Fiper Global’in prop trading kolu — modern traderlar için tasarlanmış entegre bir finansal altyapı.",
     "title": "Akıllı, Hızlı Trading için Tasarlandı",
     "metaDescription": "FPT, Fiper Global’in prop trading koludur. Şeffaf kurallar, ödülden önce risk, pazarlamadan önce altyapı."
   },
@@ -469,7 +469,7 @@
       "daily": "Günlük sınır {{amount}}",
       "total": "Toplam sınır {{amount}}",
       "start": "{{size}} ile başla",
-      "startSize": "{{size}} değerlendirmesine başla",
+      "startSize": "{{size}} ile başla",
       "after": "Fonlandıktan sonra: {{share}} pay · {{days}} işlem gününden sonra her {{cycle}} günde bir ödeme · talep başına {{range}} · hesap teslim edildikten sonra ücretler iade edilmez."
     },
     "trust": {

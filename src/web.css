@@ -103,7 +103,10 @@ html .fpt-web-foot .fpt-web-foot-grid, html .fpt-web-foot .fpt-web-foot-grid * {
 html .fpt-web-foot .fpt-web-foot-legal, html .fpt-web-foot .fpt-web-foot-legal * { line-height: 1.7; }
 .fpt-web-foot-legal { display: block; }
 .fpt-web-foot-legal p { display: inline; margin: 0; font-size: 12px; color: var(--web-muted); }
-.fpt-web-foot-legal p + p::before { content: " — "; }
+/* WEBL-D16 (re-check R2, office decision ق-115): no text separator at a line edge — from 640 px the dash is glued to both neighbours with U+00A0 (it can
+   neither start nor end a line: «… L.L.C-FZ — registered …» breaks before «L.L.C-FZ» or after «registered»); below 640 px Arabic and English take the
+   treatment of the other four languages (each sentence its own paragraph, no separator) — see the phone block at the end of this file. */
+.fpt-web-foot-legal p + p::before { content: "\00a0—\00a0"; }
 .fpt-web-foot-col1 { display: flex; flex-direction: column; }
 /* WEBL-D16: the «·» between the two links belongs to the FIRST link (it can no longer fall to the start of the next line) — on the desktop reference only;
    below 1024 px the pair is a wrapping flex row with a gap and NO separator character (re-check R1, see the block «below the desktop reference») */
@@ -158,7 +161,7 @@ html:not([lang="ar"]):not([lang="en"]) .fpt-web-foot-legal p + p::before { conte
   .fpt-web .fpt-web-h2 { font-size: 30px; }
   .fpt-web-price, .fpt-web-steps { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; padding: 0 0 12px; margin-inline: -20px; padding-inline: 20px; scrollbar-width: thin; }
   .fpt-web-price > li, .fpt-web-steps > li { flex: 0 0 min(300px, 82%); scroll-snap-align: start; }
-  .fpt-web-trust { grid-template-columns: 1fr; gap: 28px; }
+  .fpt-web-trust { grid-template-columns: minmax(0, 1fr); gap: 28px; }   /* WEBL-D27: the track never grows with its content (see the end of this file) */
   .fpt-web-faq { grid-template-columns: 1fr; }
   .fpt-web-foot-grid { padding: 40px 20px 48px; grid-template-columns: 1fr 1fr; }
   .fpt-web-foot a { display: inline-flex; align-items: center; min-height: 44px; }
@@ -187,5 +190,23 @@ html:not([lang="ar"]):not([lang="en"]) .fpt-web-foot-legal p + p::before { conte
   .fpt-web-ctas > * { width: 100%; justify-content: center; }
   /* WEBL-D20 (re-check R1): the legal titles take two and three lines in a phone column and sat 0 px apart (four links read as one paragraph) */
   .fpt-web-foot-legal-col li + li { margin-top: 10px; }
+  /* WEBL-D16 (re-check R2, ق-115): the legal strip in EVERY language — each sentence its own paragraph, no « — » (it ended a line on 360 in en / ar) */
+  .fpt-web-foot-legal p { display: block; }
+  .fpt-web-foot-legal p + p { margin-top: 6px; }
+  .fpt-web-foot-legal p + p::before { content: none; }
+}
+/* WEBL-D15 (re-check R2, office decision ق-116): from 1280 px the card action is ONE line with ≥ 16 px inline padding in the six languages. The label of the
+   selected card follows its sisters («50K ile başla», «Commencer 50K», «Empezar 50K», «Start 50K», «Começar 50K» — locales `web.sizes.startSize`): the longest
+   («Commencer 200K», 124 px at 14 px / 600) fits the 136 px left in the 214 px card of a 1280 px viewport. Between 1024 and 1279 the five cards are narrower
+   than that, so the label may still wrap there as before. */
+@media (min-width: 1280px) {
+  .fpt-web-pc .fpt-web-btn { padding-inline: 16px; white-space: nowrap; }
+}
+/* WEBL-D27 (re-check R2): on 320 (es / pt / tr) the certificates heading and paragraph ran 2–8 px past the screen — the single `1fr` track took the
+   min-content width of the verification field (input + «Verificar» / «Doğrula» button) and every row of the column with it. The track can no longer grow with
+   its content (as the hero's since WEBL-D02), and under 340 px a long word of the heading / paragraph may break anywhere as the last resort. */
+@media (max-width: 1023px) { .fpt-web-trust > * { min-width: 0; } }   /* the track itself: `minmax(0, 1fr)` in the block «below the desktop reference» */
+@media (max-width: 339px) {
+  .fpt-web-trust .fpt-web-h2, .fpt-web-trust .fpt-web-sub { overflow-wrap: anywhere; }
 }
 @media (prefers-reduced-motion: reduce) { .fpt-web-q svg { transition: none; } }

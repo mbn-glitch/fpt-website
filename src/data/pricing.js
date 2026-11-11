@@ -14,13 +14,14 @@ export const CURRENCIES = {
   AED: { code: 'AED', rate: 3.67 },
 };
 
+/** The percentages are GETTERS: their form follows the language being rendered («10 %», Turkish «%10» — WEBL-D12 / ق-112), so they are never frozen at import time. */
 export const BASE_RULES = {
-  profitTarget: pct(RULES_V1.profitTargetBps),
-  maxDailyLoss: pct(RULES_V1.dailyLossBps),
-  maxLoss: pct(RULES_V1.maxLossBps),
+  get profitTarget() { return pct(RULES_V1.profitTargetBps); },
+  get maxDailyLoss() { return pct(RULES_V1.dailyLossBps); },
+  get maxLoss() { return pct(RULES_V1.maxLossBps); },
   minTradingDays: RULES_V1.minTradingDaysEvaluation,
   minTradingDaysFunded: RULES_V1.minTradingDaysFunded,
-  profitShare: pct(RULES_V1.payoutShareBps),
+  get profitShare() { return pct(RULES_V1.payoutShareBps); },
   leverageForex: `1:${RULES_V1.leverage.forex}`,
   swapFree: RULES_V1.swapFree,
   timeLimitDays: RULES_V1.evaluationDays,

@@ -42,7 +42,9 @@ export default function Partners() {
           {AFFILIATE_TIERS.map((tier, i) => (
             <li key={tier.code} className="flex flex-col bg-card rounded-2xl p-7 border border-subtle">
               {/* WEBL-D07: the heading in the page language (six locales), the figures from the tier itself */}
-              <h3 className="text-lg font-semibold leading-[1.3]">{t('partners.tier.title', { n: t(`partners.tier.n${i + 1}`), range: tier.max ? `${tier.min}–${tier.max}` : `${tier.min}+` })}</h3>
+              {/* WEBL-D29 (re-check R2): the range is ONE unbreakable unit — a word joiner (U+2060) on both sides of the en dash, so the Arabic heading on 768
+                  can no longer break inside «(10–29» (an en dash is a break opportunity) */}
+              <h3 className="text-lg font-semibold leading-[1.3]">{t('partners.tier.title', { n: t(`partners.tier.n${i + 1}`), range: tier.max ? `${tier.min}\u2060–\u2060${tier.max}` : `${tier.min}+` })}</h3>
               <Unit as="div" className="mt-4 text-3xl font-semibold text-white">{pct(tier.bps)}</Unit>
               <p className="mt-4 text-base text-secondary leading-relaxed">
                 {tier.max ? t('partners.tiers.range', { min: tier.min, max: tier.max }) : t('partners.tiers.from', { min: tier.min })}

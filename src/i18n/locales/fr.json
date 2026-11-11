@@ -52,8 +52,8 @@
   "keyRules": {
     "title": "Règles Claires. Transparence Totale.",
     "profitTarget": "Objectif de Profit",
-    "dailyDrawdown": "Drawdown Quotidien",
-    "maxDrawdown": "Drawdown Maximum",
+    "dailyDrawdown": "Perte quotidienne max",
+    "maxDrawdown": "Perte maximale",
     "minDays": "Jours de Trading Min.",
     "minDaysValue": "Évaluation : {{evaluation}} / Financé : {{funded}}",
     "timeLimit": "Limite de Temps",
@@ -260,8 +260,8 @@
     "startYourChallenge": "Commencer votre évaluation",
     "rules": {
       "profitTarget": "Objectif de profit",
-      "dailyDrawdown": "Drawdown quotidien",
-      "maxDrawdown": "Drawdown maximum",
+      "dailyDrawdown": "Perte quotidienne max",
+      "maxDrawdown": "Perte maximale",
       "minDaysPhase1": "Jours de Trading Minimum",
       "minDaysFunded": "Jours min (Financé)",
       "timeLimit": "Limite de temps",
@@ -469,7 +469,7 @@
       "daily": "Limite du jour {{amount}}",
       "total": "Limite globale {{amount}}",
       "start": "Commencer {{size}}",
-      "startSize": "Commencer l’évaluation {{size}}",
+      "startSize": "Commencer {{size}}",
       "after": "Après le financement : part de {{share}} · un paiement tous les {{cycle}} jours après {{days}} jours de trading · {{range}} par demande · les frais ne sont pas remboursés après la livraison du compte."
     },
     "trust": {

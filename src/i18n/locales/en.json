@@ -469,7 +469,7 @@
       "daily": "Daily limit {{amount}}",
       "total": "Overall limit {{amount}}",
       "start": "Start {{size}}",
-      "startSize": "Start the {{size}} evaluation",
+      "startSize": "Start {{size}}",
       "after": "After funding: {{share}} share · a payout every {{cycle}} days after {{days}} trading days · {{range}} per request · fees are not refunded after the account is delivered."
     },
     "trust": {

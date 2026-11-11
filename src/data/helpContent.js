@@ -192,13 +192,13 @@ export const faqs = [
     id: 'what-trading-styles-work-best', categoryId: 'getting-started',
     question: 'What trading styles work best with FPT?',
     questions: { ar: 'ما أساليب التداول الأنسب مع FPT؟', fr: 'Quels styles de trading fonctionnent le mieux ?', es: '¿Qué estilos de trading funcionan mejor?', pt: 'Quais estilos de trading funcionam melhor?', tr: 'Hangi trading stilleri en iyi çalışır?' },
-    answer: 'FPT accommodates scalping, day trading, swing trading, and algorithmic execution via Expert Advisors (EAs). High-frequency trading and arbitrage strategies are not permitted.',
+    answer: 'FPT accommodates scalping, day trading, swing trading, and algorithmic execution via trading robots (cBots). High-frequency trading and arbitrage strategies are not permitted.',
     answers: {
-      ar: 'يستوعب FPT التداول السريع والتداول اليومي وتداول التأرجح والتنفيذ الخوارزمي الذي ينفّذه المستشارون الخبراء (EAs). استراتيجيات التداول عالي التردد والمراجحة غير مسموح بها.',
-      fr: "FPT accepte le scalping, le day trading, le swing trading et l’exécution algorithmique via des Expert Advisors (EAs). Le HFT et l’arbitrage ne sont pas permis.",
-      es: 'FPT admite scalping, day trading, swing trading y ejecución algorítmica mediante Expert Advisors (EAs). Las estrategias de trading de alta frecuencia y de arbitraje no están permitidas.',
-      pt: 'FPT acomoda scalping, day trading, swing trading e execução algorítmica via Expert Advisors (EAs). Estratégias de trading de alta frequência e de arbitragem não são permitidas.',
-      tr: 'FPT scalping, day trading, swing trading ve Expert Advisors (EAs) aracılığıyla algoritmik yürütmeyi destekler. Yüksek frekanslı trading ve arbitraj stratejilerine izin verilmez.',
+      ar: 'يستوعب FPT التداول السريع والتداول اليومي وتداول التأرجح والتنفيذ الخوارزمي عبر الروبوتات (cBots). استراتيجيات التداول عالي التردد والمراجحة غير مسموح بها.',
+      fr: "FPT accepte le scalping, le day trading, le swing trading et l’exécution algorithmique via des robots de trading (cBots). Le HFT et l’arbitrage ne sont pas permis.",
+      es: 'FPT admite scalping, day trading, swing trading y ejecución algorítmica mediante robots de trading (cBots). Las estrategias de trading de alta frecuencia y de arbitraje no están permitidas.',
+      pt: 'FPT acomoda scalping, day trading, swing trading e execução algorítmica via robôs de trading (cBots). Estratégias de trading de alta frequência e de arbitragem não são permitidas.',
+      tr: 'FPT scalping, day trading, swing trading ve işlem robotları (cBots) aracılığıyla algoritmik yürütmeyi destekler. Yüksek frekanslı trading ve arbitraj stratejilerine izin verilmez.',
     },
   },
   {
@@ -217,14 +217,14 @@ export const faqs = [
   {
     id: 'what-is-the-profit-target', categoryId: 'challenges-rules', popular: true,
     question: 'What is the profit target?',
-    questions: { ar: 'ما هو هدف الربح؟', fr: "Quel est l’objectif de profit ?", es: '¿Cuál es el objetivo de ganancia?', pt: 'Qual é a meta de lucro?', tr: 'Kar hedefi nedir?' },
+    questions: { ar: 'ما هو هدف الربح؟', fr: "Quel est l’objectif de profit ?", es: '¿Cuál es el objetivo de ganancia?', pt: 'Qual é a meta de lucro?', tr: 'Kâr hedefi nedir?' },
     answer: '10% of the starting account balance during the evaluation phase.',
     answers: {
       ar: '10% من رصيد الحساب الابتدائي خلال مرحلة التقييم.',
       fr: "10 % du solde initial du compte pendant la phase d’évaluation.",
       es: '10% del saldo inicial de la cuenta durante la fase de evaluación.',
       pt: '10% do saldo inicial da conta durante a fase de avaliação.',
-      tr: "Değerlendirme aşamasında başlangıç hesap bakiyesinin %10'u.",
+      tr: 'Değerlendirme aşamasında başlangıç hesap bakiyesi üzerinden 10 %.',
     },
   },
   {
@@ -237,7 +237,7 @@ export const faqs = [
       fr: '5 % : l’equity ne doit pas descendre sous 95 % de l’equity de début de journée, mesurée à 00:00 heure de Dubaï et réinitialisée chaque jour à cette heure. Les pertes flottantes des positions ouvertes comptent.',
       es: '5 %: el equity no debe caer por debajo del 95 % del equity de inicio del día, medido a las 00:00 hora de Dubái y reiniciado cada día a esa hora. Las pérdidas flotantes de las posiciones abiertas cuentan.',
       pt: '5 %: o patrimônio não pode cair abaixo de 95 % do patrimônio de início do dia, medido às 00:00 no horário de Dubai e reiniciado diariamente nessa hora. Perdas flutuantes de posições abertas contam.',
-      tr: '%5: özkaynak, Dubai saatiyle 00:00’da ölçülen ve her gün o saatte sıfırlanan gün başı özkaynağının %95’inin altına düşmemelidir. Açık pozisyonların dalgalı zararları sayılır.',
+      tr: '5 %: özkaynak, Dubai saatiyle 00:00’da ölçülen ve her gün o saatte sıfırlanan gün başı özkaynağının 95 % seviyesinin altına düşmemelidir. Açık pozisyonların dalgalı zararları sayılır.',
     },
   },
   {
@@ -250,21 +250,21 @@ export const faqs = [
       fr: "9 % du solde initial, mesuré depuis l’équité de départ.",
       es: '9% del saldo inicial de la cuenta, medido desde el capital inicial.',
       pt: '9% do saldo inicial da conta, medido a partir do patrimônio inicial.',
-      tr: "Başlangıç öz sermayesinden ölçülen hesap bakiyesinin %9'u.",
+      tr: 'Başlangıç öz sermayesinden ölçülen hesap bakiyesi üzerinden 9 %.',
     },
   },
   {
     // Glossary entry (design office WEBL-D13, L10N-2): the three rule names, one name per rule; in Arabic «السحب» is the payout word only.
     id: 'what-do-the-rule-names-mean', categoryId: 'challenges-rules',
     question: 'What do Profit Target, Max Daily Loss and Max Loss mean?',
-    questions: { ar: 'ماذا تعني «هدف الربح» و«الخسارة اليومية القصوى» و«الخسارة الإجمالية القصوى»؟', fr: 'Que signifient Objectif de profit, Perte quotidienne max et Perte maximale ?', es: '¿Qué significan Objetivo de ganancia, Pérdida diaria máx y Pérdida máxima?', pt: 'O que significam Meta de lucro, Perda diária máx e Perda máxima?', tr: 'Kar Hedefi, Maks Günlük Kayıp ve Maksimum Kayıp ne anlama gelir?' },
+    questions: { ar: 'ماذا تعني «هدف الربح» و«الخسارة اليومية القصوى» و«الخسارة الإجمالية القصوى»؟', fr: 'Que signifient Objectif de profit, Perte quotidienne max et Perte maximale ?', es: '¿Qué significan Objetivo de ganancia, Pérdida diaria máx y Pérdida máxima?', pt: 'O que significam Meta de lucro, Perda diária máx e Perda máxima?', tr: 'Kâr Hedefi, Maks Günlük Kayıp ve Maksimum Kayıp ne anlama gelir?' },
     answer: 'Profit Target: 10 % of the starting account balance, to be reached during the evaluation. Max Daily Loss: 5 % — equity must not fall below 95 % of the day-start equity, measured at 00:00 Dubai time. Max Loss: 9 % of the initial balance — equity must stay above 91 %; these two loss limits are what the other answers call “drawdown”.',
     answers: {
       ar: 'هدف الربح (Profit Target): 10 % من رصيد الحساب الابتدائي، يُحقَّق خلال التقييم. الخسارة اليومية القصوى (Max Daily Loss): 5 % — يجب ألا تنخفض حقوق الحساب دون 95 % من حقوق الحساب في بداية اليوم، المقيسة في الساعة 00:00 بتوقيت دبي. الخسارة الإجمالية القصوى (Max Loss): 9 % من الرصيد الابتدائي — يجب أن تبقى حقوق الحساب فوق 91 %؛ وكلمة «السحب» في هذا الموقع تعني صرف الأرباح فقط، ولا تُستعمل لحدود الخسارة.',
       fr: 'Objectif de profit (Profit Target) : 10 % du solde initial du compte, à atteindre pendant l’évaluation. Perte quotidienne max (Max Daily Loss) : 5 % — l’equity ne doit pas descendre sous 95 % de l’equity de début de journée, mesurée à 00:00 heure de Dubaï. Perte maximale (Max Loss) : 9 % du solde initial — l’equity doit rester au-dessus de 91 % ; ces deux limites de perte sont ce que les autres réponses appellent « drawdown ».',
       es: 'Objetivo de ganancia (Profit Target): 10 % del saldo inicial de la cuenta, que debe alcanzarse durante la evaluación. Pérdida diaria máx (Max Daily Loss): 5 % — el equity no debe caer por debajo del 95 % del equity de inicio del día, medido a las 00:00 hora de Dubái. Pérdida máxima (Max Loss): 9 % del saldo inicial — el equity debe mantenerse por encima del 91 %; estos dos límites de pérdida son lo que las demás respuestas llaman «drawdown».',
       pt: 'Meta de lucro (Profit Target): 10 % do saldo inicial da conta, a ser atingida durante a avaliação. Perda diária máx (Max Daily Loss): 5 % — o patrimônio não pode cair abaixo de 95 % do patrimônio de início do dia, medido às 00:00 no horário de Dubai. Perda máxima (Max Loss): 9 % do saldo inicial — o patrimônio deve permanecer acima de 91 %; esses dois limites de perda são o que as outras respostas chamam de “drawdown”.',
-      tr: 'Kar Hedefi (Profit Target): değerlendirme sırasında ulaşılması gereken, başlangıç hesap bakiyesinin %10’u. Maks Günlük Kayıp (Max Daily Loss): %5 — özkaynak, Dubai saatiyle 00:00’da ölçülen gün başı özkaynağının %95’inin altına düşmemelidir. Maksimum Kayıp (Max Loss): başlangıç bakiyesinin %9’u — özkaynak %91’in üzerinde kalmalıdır; diğer yanıtlarda “drawdown” denen şey bu iki kayıp limitidir.',
+      tr: 'Kâr Hedefi (Profit Target): başlangıç hesap bakiyesi üzerinden 10 %; değerlendirme sırasında ulaşılmalıdır. Maks Günlük Kayıp (Max Daily Loss): 5 % — özkaynak, Dubai saatiyle 00:00’da ölçülen gün başı özkaynağının 95 % seviyesinin altına düşmemelidir. Maksimum Kayıp (Max Loss): başlangıç bakiyesi üzerinden 9 % — özkaynak 91 % seviyesinin üzerinde kalmalıdır; diğer yanıtlarda “drawdown” denen şey bu iki kayıp limitidir.',
     },
   },
   {
@@ -277,7 +277,7 @@ export const faqs = [
       fr: 'La limite quotidienne se mesure sur l’equity de début de journée (00:00 heure de Dubaï) ; la limite de perte maximale sur le solde initial (l’equity doit rester au-dessus de 91 %). Les deux incluent le P&L flottant des positions ouvertes ; les récompenses payées sont déduites du solde.',
       es: 'El límite diario se mide sobre el equity de inicio del día (00:00 hora de Dubái); el límite de pérdida máxima sobre el saldo inicial (el equity debe mantenerse por encima del 91 %). Ambos incluyen el P&L flotante de las posiciones abiertas; las recompensas pagadas se deducen del saldo.',
       pt: 'O limite diário é medido sobre o patrimônio de início do dia (00:00 horário de Dubai); o limite de perda máxima sobre o saldo inicial (o patrimônio deve ficar acima de 91 %). Ambos incluem o P&L flutuante das posições abertas; as recompensas pagas são deduzidas do saldo.',
-      tr: 'Günlük limit gün başı özkaynağına (Dubai saatiyle 00:00) göre, azami zarar limiti başlangıç bakiyesine göre ölçülür (özkaynak %91’in üzerinde kalmalıdır). İkisi de açık pozisyonların dalgalı K/Z’sini içerir; ödenen ödüller bakiyeden düşülür.',
+      tr: 'Günlük limit gün başı özkaynağına (Dubai saatiyle 00:00) göre, azami zarar limiti başlangıç bakiyesine göre ölçülür (özkaynak 91 % seviyesinin üzerinde kalmalıdır). İkisi de açık pozisyonların dalgalı K/Z’sini içerir; ödenen ödüller bakiyeden düşülür.',
     },
   },
   {
@@ -400,14 +400,14 @@ export const faqs = [
   {
     id: 'how-much-profit-can-i-keep', categoryId: 'funded-accounts', popular: true,
     question: 'How much profit can I keep?',
-    questions: { ar: 'كم يمكنني الاحتفاظ من الأرباح؟', fr: 'Combien de profit puis-je garder ?', es: '¿Cuánto beneficio puedo conservar?', pt: 'Quanto lucro posso guardar?', tr: 'Ne kadar kar tutabilirim?' },
+    questions: { ar: 'كم يمكنني الاحتفاظ من الأرباح؟', fr: 'Combien de profit puis-je garder ?', es: '¿Cuánto beneficio puedo conservar?', pt: 'Quanto lucro posso guardar?', tr: 'Ne kadar kâr tutabilirim?' },
     answer: 'You receive up to 80% of the net profit generated on your funded account. FPT retains the remaining 20%.',
     answers: {
       ar: 'تحصل على ما يصل إلى 80% من صافي الربح المحقق على حسابك الممول. ويحتفظ FPT بنسبة 20% المتبقية.',
       fr: 'Vous recevez jusqu’à 80 % du bénéfice net généré sur votre compte financé. FPT conserve les 20 % restants.',
       es: 'Recibes hasta el 80% del beneficio neto generado en tu cuenta financiada. FPT retiene el 20% restante.',
       pt: 'Você recebe até 80% do lucro líquido gerado na sua conta financiada. FPT retém os 20% restantes.',
-      tr: "Finanse edilmiş hesabınızda elde edilen net kârın %80'ine kadarını alırsınız. Kalan %20 FPT’de kalır.",
+      tr: 'Finanse edilmiş hesabınızda elde edilen net kârdan 80 % oranına kadar pay alırsınız. Kalan 20 % FPT’de kalır.',
     },
   },
   {
@@ -433,7 +433,7 @@ export const faqs = [
       fr: 'Les paramètres de risque principaux restent — drawdown quotidien, drawdown maximal et nombre minimal de jours de trading. L’objectif de profit ne s’applique plus.',
       es: 'Los parámetros de riesgo principales permanecen — drawdown diario, drawdown máximo y días mínimos de trading. El objetivo de ganancia ya no aplica.',
       pt: 'Os parâmetros de risco principais permanecem — drawdown diário, drawdown máximo e dias mínimos de trading. A meta de lucro não se aplica mais.',
-      tr: 'Temel risk parametreleri kalır — günlük zarar limiti, azami zarar limiti ve asgari işlem günü sayısı. Kar hedefi artık geçerli değildir.',
+      tr: 'Temel risk parametreleri kalır — günlük zarar limiti, azami zarar limiti ve asgari işlem günü sayısı. Kâr hedefi artık geçerli değildir.',
     },
   },
   {
@@ -452,7 +452,7 @@ export const faqs = [
   {
     id: 'when-can-i-withdraw-profits', categoryId: 'payouts-fiper-card', popular: true,
     question: 'When can I withdraw profits?',
-    questions: { ar: 'متى يمكنني سحب الأرباح؟', fr: 'Quand puis-je retirer mes bénéfices ?', es: '¿Cuándo puedo retirar ganancias?', pt: 'Quando posso sacar lucros?', tr: 'Karları ne zaman çekebilirim?' },
+    questions: { ar: 'متى يمكنني سحب الأرباح؟', fr: 'Quand puis-je retirer mes bénéfices ?', es: '¿Cuándo puedo retirar ganancias?', pt: 'Quando posso sacar lucros?', tr: 'Kârları ne zaman çekebilirim?' },
     answer: 'A reward requires at least 10 trading days on the funded account, a completed 14-day cycle, a closed balance above the initial balance and a client share of at least 100 USD; each request is capped at 10,000 USD. Identity verification precedes the first reward.',
     answers: {
       ar: 'تتطلب المكافأة 10 أيام تداول على الأقل على الحساب الممول، واكتمال دورة مدتها 14 يوماً، ورصيداً مغلقاً يتجاوز الرصيد الابتدائي، وحصة للعميل لا تقل عن 100 USD؛ وسقف كل طلب 10,000 USD. ويسبق التحقق من الهوية المكافأة الأولى.',
@@ -542,16 +542,18 @@ export const faqs = [
     },
   },
   {
-    id: 'can-i-use-expert-advisors', categoryId: 'trading-conditions',
-    question: 'Can I use Expert Advisors (EAs)?',
-    questions: { ar: 'هل المستشارون الخبراء (EAs) مسموح بهم؟', fr: 'Puis-je utiliser des Expert Advisors (EAs) ?', es: '¿Puedo usar Expert Advisors (EAs)?', pt: 'Posso usar Expert Advisors (EAs)?', tr: 'Expert Advisors (EAs) kullanabilir miyim?' },
-    answer: 'Yes. Automated trading via EAs is permitted under standard trading conditions.',
+    // Office decision ق-103 (11 Nov 2026): on this cTrader-only site the general term is «cBots» — the local word for robots + «(cBots)» at the first mention on a page
+    // (the question), then «cBots»; the MetaTrader term would belong only to a sentence saying MetaTrader advisors are not supported — none exists here.
+    id: 'can-i-use-cbots', categoryId: 'trading-conditions',
+    question: 'Can I use trading robots (cBots)?',
+    questions: { ar: 'هل الروبوتات (cBots) مسموح بها؟', fr: 'Puis-je utiliser des robots de trading (cBots) ?', es: '¿Puedo usar robots de trading (cBots)?', pt: 'Posso usar robôs de trading (cBots)?', tr: 'İşlem robotları (cBots) kullanabilir miyim?' },
+    answer: 'Yes. Automated trading via cBots is permitted under standard trading conditions.',
     answers: {
-      ar: 'نعم. التداول الآلي عبر الـ EAs مسموح به في ظل شروط التداول القياسية.',
-      fr: 'Oui. Le trading automatisé via EAs est autorisé dans les conditions de trading standard.',
-      es: 'Sí. El trading automatizado mediante EAs está permitido bajo las condiciones de trading estándar.',
-      pt: 'Sim. O trading automatizado via EAs é permitido sob as condições de trading padrão.',
-      tr: 'Evet. EAs aracılığıyla otomatik trading, standart işlem koşulları altında izinlidir.',
+      ar: 'نعم. التداول الآلي عبر cBots مسموح به في ظل شروط التداول القياسية.',
+      fr: 'Oui. Le trading automatisé via cBots est autorisé dans les conditions de trading standard.',
+      es: 'Sí. El trading automatizado mediante cBots está permitido bajo las condiciones de trading estándar.',
+      pt: 'Sim. O trading automatizado via cBots é permitido sob as condições de trading padrão.',
+      tr: 'Evet. cBots aracılığıyla otomatik trading, standart işlem koşulları altında izinlidir.',
     },
   },
   {
@@ -603,7 +605,7 @@ export const faqs = [
       fr: "Oui, avec une restriction : les trades dans les 5 minutes autour d’une publication d’impact élevé sont plafonnés à 1 %.",
       es: 'Sí, con una limitación: las operaciones abiertas o cerradas en los 5 minutos anteriores o posteriores a una noticia de alto impacto están limitadas a un 1% de beneficio.',
       pt: 'Sim, com uma limitação: operações abertas ou fechadas nos 5 minutos antes ou depois de uma notícia de alto impacto são limitadas a 1% de lucro.',
-      tr: 'Evet, bir kısıtlamayla: yüksek etkili bir haberden 5 dakika önce veya sonra açılan ya da kapatılan işlemler %1 kâr ile sınırlıdır.',
+      tr: 'Evet, bir kısıtlamayla: yüksek etkili bir haberden 5 dakika önce veya sonra açılan ya da kapatılan işlemler 1 % kâr ile sınırlıdır.',
     },
   },
   {
@@ -616,7 +618,7 @@ export const faqs = [
       fr: 'Le bénéfice excédentaire est retiré de votre compte sans pénalité supplémentaire. Le statut de votre compte reste inchangé.',
       es: 'El beneficio excedente se elimina de tu cuenta sin penalización adicional. El estado de tu cuenta no cambia.',
       pt: 'O lucro excedente é removido da sua conta sem penalidade adicional. O status da sua conta permanece inalterado.',
-      tr: 'Fazla kar, herhangi bir ek ceza olmaksızın hesabınızdan kaldırılır. Hesabınızın durumu değişmeden kalır.',
+      tr: 'Fazla kâr, herhangi bir ek ceza olmaksızın hesabınızdan kaldırılır. Hesabınızın durumu değişmeden kalır.',
     },
   },
   {
@@ -776,16 +778,18 @@ export const faqs = [
     },
   },
   {
-    id: 'can-you-guarantee-profits', categoryId: 'legal-general',
+    // WEBL-D22 (design office, decided): the fixed risk line exists in Arabic and English only — in fr / es / pt / tr it is NOT part of the translated sentence;
+    // the accordion renders it after the answer as its own line with lang="en" (`fixedRiskLine`, FAQAccordion.jsx). en / ar keep it inside the answer in their language.
+    id: 'can-you-guarantee-profits', categoryId: 'legal-general', fixedRiskLine: true,
     question: 'Can you guarantee profits?',
-    questions: { ar: 'هل تضمنون الأرباح؟', fr: 'Pouvez-vous garantir des profits ?', es: '¿Pueden garantizar ganancias?', pt: 'Vocês garantem lucros?', tr: 'Kar garanti edebilir misiniz?' },
+    questions: { ar: 'هل تضمنون الأرباح؟', fr: 'Pouvez-vous garantir des profits ?', es: '¿Pueden garantizar ganancias?', pt: 'Vocês garantem lucros?', tr: 'Kâr garanti edebilir misiniz?' },
     answer: 'No. Investing involves risk. Past performance is not indicative of future results.',
     answers: {
       ar: 'لا. الاستثمار ينطوي على مخاطر. الأداء السابق لا يُشير إلى النتائج المستقبلية.',
-      fr: 'Non. Investing involves risk. Les performances passées ne préjugent pas des résultats futurs.',
-      es: 'No. Investing involves risk. El rendimiento pasado no es indicativo de resultados futuros.',
-      pt: 'Não. Investing involves risk. O desempenho passado não é indicativo de resultados futuros.',
-      tr: 'Hayır. Investing involves risk. Geçmiş performans gelecekteki sonuçların göstergesi değildir.',
+      fr: 'Non. Les performances passées ne préjugent pas des résultats futurs.',
+      es: 'No. El rendimiento pasado no es indicativo de resultados futuros.',
+      pt: 'Não. O desempenho passado não é indicativo de resultados futuros.',
+      tr: 'Hayır. Geçmiş performans, gelecekteki sonuçların göstergesi değildir.',
     },
   },
   {
@@ -824,20 +828,20 @@ export const faqs = [
       fr: 'Gagnez une commission sur chaque évaluation achetée via votre lien de parrainage : 15 % avec 1–9 ventes par mois, 17.5 % avec 10–29, 20 % à partir de 30.',
       es: 'Gana una comisión por cada evaluación comprada a través de tu enlace de referido: 15 % con 1–9 ventas al mes, 17.5 % con 10–29, 20 % con 30 o más.',
       pt: 'Ganhe uma comissão por cada avaliação comprada pelo seu link de indicação: 15 % com 1–9 vendas por mês, 17.5 % com 10–29, 20 % com 30 ou mais.',
-      tr: 'Yönlendirme bağlantınızla satın alınan her değerlendirmeden komisyon kazanın: ayda 1–9 satışta %15, 10–29 satışta %17.5, 30 ve üzerinde %20.',
+      tr: 'Yönlendirme bağlantınızla satın alınan her değerlendirmeden komisyon kazanın: ayda 1–9 satışta 15 %, 10–29 satışta 17.5 %, 30 ve üzerinde 20 %.',
     },
   },
   {
     id: 'what-are-the-commission-tiers', categoryId: 'partner-program', popular: true,
     question: 'What are the commission tiers?',
-    questions: { ar: 'ما هي مستويات العمولة؟', fr: 'Quels sont les paliers de commission ?', es: '¿Cuáles son los niveles de comisión?', pt: 'Quais são os níveis de comissão?', tr: 'Komisyon seviyeleri nelerdir?' },
+    questions: { ar: 'ما هي مستويات العمولة؟', fr: 'Quels sont les paliers de commission ?', es: '¿Cuáles son los niveles de comisión?', pt: 'Quais são os níveis de comissão?', tr: 'Komisyon kademeleri nelerdir?' },
     answer: 'Tier 1: 15 % (1–9 sales a month) · Tier 2: 17.5 % (10–29) · Tier 3: 20 % (30+). The tier follows your monthly sales automatically.',
     answers: {
       ar: 'المستوى الأول: 15 % (1–9 مبيعات شهرياً) · المستوى الثاني: 17.5 % (10–29) · المستوى الثالث: 20 % (30+). يتبع المستوى مبيعاتك الشهرية تلقائياً.',
       fr: 'Palier 1 : 15 % (1–9 ventes par mois) · Palier 2 : 17.5 % (10–29) · Palier 3 : 20 % (30+). Le palier suit automatiquement vos ventes mensuelles.',
       es: 'Nivel 1: 15 % (1–9 ventas al mes) · Nivel 2: 17.5 % (10–29) · Nivel 3: 20 % (30+). El nivel sigue tus ventas mensuales automáticamente.',
       pt: 'Nível 1: 15 % (1–9 vendas por mês) · Nível 2: 17.5 % (10–29) · Nível 3: 20 % (30+). O nível acompanha suas vendas mensais automaticamente.',
-      tr: 'Kademe 1: %15 (ayda 1–9 satış) · Kademe 2: %17.5 (10–29) · Kademe 3: %20 (30+). Kademe aylık satışlarınızı otomatik izler.',
+      tr: 'Kademe 1: 15 % (ayda 1–9 satış) · Kademe 2: 17.5 % (10–29) · Kademe 3: 20 % (30+). Kademe aylık satışlarınızı otomatik izler.',
     },
   },
   {

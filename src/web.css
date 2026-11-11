@@ -105,10 +105,13 @@ html .fpt-web-foot .fpt-web-foot-legal, html .fpt-web-foot .fpt-web-foot-legal *
 .fpt-web-foot-legal p { display: inline; margin: 0; font-size: 12px; color: var(--web-muted); }
 .fpt-web-foot-legal p + p::before { content: " — "; }
 .fpt-web-foot-col1 { display: flex; flex-direction: column; }
-/* WEBL-D16: the «·» between the two links belongs to the FIRST link (it can no longer fall to the start of the next line) */
+/* WEBL-D16: the «·» between the two links belongs to the FIRST link (it can no longer fall to the start of the next line) — on the desktop reference only;
+   below 1024 px the pair is a wrapping flex row with a gap and NO separator character (re-check R1, see the block «below the desktop reference») */
 .fpt-web-foot-col1 a + a::before { content: none; }
 .fpt-web-foot-pair a:first-child { white-space: nowrap; }
-.fpt-web-foot-pair a:first-child::after { content: "·"; margin-inline: .35em; color: var(--web-muted); }
+@media (min-width: 1024px) {
+  .fpt-web-foot-pair a:first-child::after { content: "·"; margin-inline: .35em; color: var(--web-muted); }
+}
 /* WEBL-D05: where the page language is neither Arabic nor English the verbatim legal lines (entity · risk · simulated accounts — English, owner decision 3-ب) are
    their own paragraphs, never the tail of a sentence in another language */
 html:not([lang="ar"]):not([lang="en"]) .fpt-web-foot-legal p { display: block; }
@@ -159,6 +162,8 @@ html:not([lang="ar"]):not([lang="en"]) .fpt-web-foot-legal p + p::before { conte
   .fpt-web-faq { grid-template-columns: 1fr; }
   .fpt-web-foot-grid { padding: 40px 20px 48px; grid-template-columns: 1fr 1fr; }
   .fpt-web-foot a { display: inline-flex; align-items: center; min-height: 44px; }
+  /* WEBL-D16 (re-check R1): no separator character can hang at a line edge («À propos ·» on 393 / 360) — the two links wrap as flex items 16 px apart */
+  .fpt-web-foot-pair { display: flex; flex-wrap: wrap; column-gap: 16px; }
   .fpt-web-foot-legal { grid-column: 1 / -1; }
 }
 /* WEBL-D19 (batch 3): two hero columns only from 1280 px — between 1024 and 1279 the text column was 320 px beside the 520 px phone (the Spanish headline took five
@@ -169,6 +174,9 @@ html:not([lang="ar"]):not([lang="en"]) .fpt-web-foot-legal p + p::before { conte
 }
 /* WEBL-D18 (batch 3): a station title breaks between syllables, never in the middle of a word (the page carries its `lang`) */
 .fpt-web-step h3 { hyphens: auto; }
+/* WEBL-D21 (re-check R1): on phones the 22 px title in a 239 px card was cut «éva-/luation» — below 640 px only author-placed break points apply and a word
+   moves to the next line whole (`overflow-wrap: break-word` from the base rule on h1–h6 stays the last resort) */
+@media (max-width: 639px) { .fpt-web-step h3 { hyphens: manual; overflow-wrap: break-word; } }
 @media (min-width: 640px) and (max-width: 1023px) {
   .fpt-web-hero { padding: 64px 32px 0; }
   .fpt-web-sec { padding: 80px 32px 0; }
@@ -177,5 +185,7 @@ html:not([lang="ar"]):not([lang="en"]) .fpt-web-foot-legal p + p::before { conte
 }
 @media (max-width: 639px) {
   .fpt-web-ctas > * { width: 100%; justify-content: center; }
+  /* WEBL-D20 (re-check R1): the legal titles take two and three lines in a phone column and sat 0 px apart (four links read as one paragraph) */
+  .fpt-web-foot-legal-col li + li { margin-top: 10px; }
 }
 @media (prefers-reduced-motion: reduce) { .fpt-web-q svg { transition: none; } }

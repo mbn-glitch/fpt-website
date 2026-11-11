@@ -2,6 +2,7 @@
 /**
  * Glossary gate (RD2 rule 3.5 / F-006 — owner 4 Nov 2026; platform decision 6): the product word is «تقييم / Evaluation» in every language —
  * «تحدي / Challenge / Défi / Desafío / Desafio / Zorluk / Meydan okuma» never appear in a visible text, nor MT4 / MT5 (cTrader only).
+ * Also: the Arabic loss-limit names (WEBL-D13 — «السحب» is the payout word, refused only in a drawdown context) and the robots term «cBots» (office decision ق-103).
  *   node scripts/check-glossary.mjs            → the six locale files + the help content string literals (ids / slugs / routes without spaces are not text)
  *   node scripts/check-glossary.mjs --dist     → + the visible text of every pre-rendered page in dist/ (tags, scripts, styles and attributes stripped)
  * PASS / FAIL (exit 1).
@@ -14,12 +15,58 @@ const DIST = process.argv.includes('--dist');
 const LATIN = /(?<![\p{L}\p{N}])(challenges?|d[ée]fis?|desaf[ií]os?|zorlu[kğg]\p{L}*|meydan okuma\p{L}*|MT[45])(?![\p{L}\p{N}])/giu;
 // the indefinite form «تحدٍّ» (the word with its diacritics) is the same banned word — it slipped past the first pattern until LAUNCH-I18N-1 (help.subtitle, two help answers)
 const ARABIC = /(?<![؀-ۿ])(?:ال)?تحد(?:ي(?:ات|ك|اً|ا|ه|ها|نا|كم)?|[\u064B-\u0652]+)(?![؀-ۿ])/g;
-/** WEBL-D13 (design office, L10N-2): the loss limits are «الخسارة اليومية القصوى» (Max Daily Loss) and «الخسارة الإجمالية القصوى» (Max Loss) — «السحب» is the payout word only,
- *  so «drawdown» is never «السحب …», and the overall limit is never the bare «الخسارة القصوى». «الحد الأدنى / الأقصى للسحب» (min / max payout) stay legitimate. */
-const ARABIC_RULES = /(?:حسابات|قواعد|حدّ?|حدود) السحب|السحب (?:اليومي|الإجمالي|الأقصى)|للسحب (?:اليومي|الإجمالي)|يُ?حسب السحب|الخسارة القصوى|(?:ال)?تراجع (?:ال)?(?:يومي|أقصى|إجمالي)/g;
+/** WEBL-D13 (design office, L10N-2 — re-check R1): the loss limits are «الخسارة اليومية القصوى» (Max Daily Loss) and «الخسارة الإجمالية القصوى» (Max Loss).
+ *  «السحب» is the PAYOUT word only («سحب كل 14 يوماً», «الحد الأدنى / الأقصى للسحب», «متى يمكنني طلب أول سحب؟» stay legitimate), so the rule is CONTEXTUAL — the word
+ *  is refused only where its neighbours make it a loss limit («drawdown»): a calculation / rule / limit / level word before it, a daily / overall / maximum /
+ *  trailing word after it, «يُحسب السحب», or «السحوبات» as something a trader survives. The overall limit is never the bare «الخسارة القصوى», and «التراجع» is not a
+ *  rule name either. Matched on the text without diacritics / tatweel («يُحسب» = «يحسب», «حدّ» = «حد»). */
+const AR_L = '\u0621-\u064A\u0671-\u06D3';   // Arabic LETTERS only — «؟ ، ؛» close a word like any punctuation
+const ARABIC_RULES = [
+  // a calculation / rule / limit word + the payout word: «حسابات السحب», «قواعد السحب», «حدود السحب», «حدّ السحب اليومي», «نسبة السحب» … («حدّ السحب الأدنى» is a payout minimum)
+  new RegExp(`(?<![${AR_L}])[وفبلك]?(?:ال)?(?:حسابات|حساب|احتساب|قواعد|قاعدة|حد|حدود|نسبة|نسب|مستوى|مستويات|تعيين|ضبط)\\s+(?:ال)?سحب(?:وبات)?(?![${AR_L}])(?!\\s+الأدنى)`, 'g'),
+  // the payout word + a loss-limit qualifier: «السحب اليومي», «السحب الإجمالي», «السحب الأقصى», «سحب يومي», «للسحب الإجمالي» …
+  new RegExp(`(?<![${AR_L}])[وفبلك]?(?:ال|لل)?سحب(?:وبات)?\\s+(?:ال)?(?:يومي|يومية|إجمالي|اجمالي|إجمالية|كلي|أقصى|اقصى|قصوى|تراكمي|متحرك|متتبع|عائم)(?![${AR_L}])`, 'g'),
+  // «كيف يُحسب السحب؟», «يُحتسب السحب»
+  new RegExp(`(?<![${AR_L}])[يت]ح(?:ت)?سب\\s+(?:ال)?سحب(?:وبات)?(?![${AR_L}])`, 'g'),
+  // drawdowns as something survived / exceeded: «يتجاوز السحوبات», «ينجو من السحوبات», «يصمد أمام السحوبات»
+  new RegExp(`(?<![${AR_L}])(?:[يت]تجاوز|تجاوز|[يت]تخطى|تخطي|[يت]نجو من|[يت]صمد أمام|[يت]تحمل|تحمل)\\s+(?:ال)?سحوبات(?![${AR_L}])`, 'g'),
+  // the overall limit without «الإجمالية», and «التراجع» as a rule name
+  /الخسارة القصوى|(?:ال)?تراجع (?:ال)?(?:يومي|أقصى|إجمالي)/g,
+];
+const bare = (s) => s.replace(/[ً-ْٰـ]/g, '');
+{ // the rule proves itself on every run: the seven sentences the office listed (LAUNCH-I18N-1 batch 3, production a00735c) + the old overall-limit question must be
+  // refused, and the payout sentences of the site must pass — a rule that stops being contextual fails the gate before it scans anything
+  const REFUSED = [
+    'قد تختلف شروط التداول وحسابات السحب ومستويات الرافعة المالية حسب الأداة وظروف السوق.',          // challengePricing.rulesWarning
+    'المتداول الذي يتجاوز السحوبات يتراكم نجاحه.',                                                    // about.principles.p2body
+    'قواعد السحب',                                                                                    // help.popular.q3
+    'كيف يُحسب السحب؟',                                                                               // how-is-drawdown-calculated
+    'هل يُعاد تعيين السحب اليومي كل يوم؟',                                                            // does-daily-drawdown-reset
+    'تبقى معاملات المخاطر الأساسية — السحب اليومي والسحب الأقصى والحد الأدنى لأيام التداول.',          // do-funded-accounts-follow-same-rules
+    'هذه الاستراتيجيات مسموح بها، لكن يجب أن تحترم حدود السحب الأقصى والخسارة اليومية.',              // is-martingale-or-grid-allowed
+    'ما الحد الأقصى للسحب الإجمالي؟',                                                                 // what-is-the-maximum-total-drawdown (the eighth place)
+  ];
+  const ALLOWED = [
+    'متى يمكنني سحب الأرباح؟', 'كيف أسحب أرباحي؟', 'الحد الأدنى للسحب', 'الحد الأقصى للسحب', 'متى يمكنني طلب أول سحب؟',
+    'حساب ممول بحصة 80 % وسحب كل 14 يوماً', 'اجتياز التقييم وكل سحب مدفوع بعد تسليم الحساب الممول', 'شهادة سحب مدفوع باسم المتداول',
+    'يُصنَّف الحساب على أنه فاشل وتُسحب صلاحية التداول.', 'الخسارة اليومية القصوى', 'الخسارة الإجمالية القصوى',
+  ];
+  const hit = (t) => ARABIC_RULES.some((re) => { re.lastIndex = 0; return re.test(bare(t)); });
+  const broken = [...REFUSED.filter((t) => !hit(t)).map((t) => `not refused: «${t}»`), ...ALLOWED.filter(hit).map((t) => `payout wording refused: «${t}»`)];
+  if (broken.length) { console.error('check-glossary: FAIL — the contextual «السحب» rule (WEBL-D13) no longer holds on its own samples'); for (const x of broken) console.error(`  ${x}`); process.exit(1); }
+}
+/** Office decision ق-103 (11 Nov 2026): the platform is cTrader only, so the general term for trading robots is «cBots» (the local word for robots + «(cBots)» at the
+ *  first mention on a page, then «cBots»). The MetaTrader term «Expert Advisors / EAs / المستشارون الخبراء» is refused in every language — except inside a sentence that
+ *  says MetaTrader advisors are not supported (the word «MetaTrader» within 160 characters). */
+const EA_TERM = /(?<![\p{L}\p{N}])(?:Expert Advisors?|EAs?)(?![\p{L}\p{N}])|(?:ال)?مستشار(?:ون|ين|ي)? (?:ال)?خبرا?ء|(?:ال)?مستشار (?:ال)?خبير/gu;
 const failures = [];
+const report = (where, text, m) => failures.push(`${where}: «${m[0]}» — …${text.slice(Math.max(0, m.index - 30), m.index + m[0].length + 30).replace(/\s+/g, ' ')}…`);
 const scan = (where, text) => {
-  for (const re of [LATIN, ARABIC, ARABIC_RULES]) { re.lastIndex = 0; let m; while ((m = re.exec(text))) failures.push(`${where}: «${m[0]}» — …${text.slice(Math.max(0, m.index - 30), m.index + m[0].length + 30).replace(/\s+/g, ' ')}…`); }
+  for (const re of [LATIN, ARABIC]) { re.lastIndex = 0; let m; while ((m = re.exec(text))) report(where, text, m); }
+  const plain = bare(text);
+  for (const re of ARABIC_RULES) { re.lastIndex = 0; let m; while ((m = re.exec(plain))) report(where, plain, m); }
+  EA_TERM.lastIndex = 0; let m;
+  while ((m = EA_TERM.exec(text))) if (!/MetaTrader/i.test(text.slice(Math.max(0, m.index - 160), m.index + m[0].length + 160))) report(where, text, m);
 };
 // 1. locale values
 for (const l of ['en', 'ar', 'fr', 'es', 'pt', 'tr']) {
@@ -46,4 +93,4 @@ if (DIST) {
   if (!failures.length) console.log(`check-glossary: ${pages} rendered pages scanned`);
 }
 if (failures.length) { console.error(`check-glossary: FAIL (${failures.length})`); for (const x of failures.slice(0, 80)) console.error(`  ${x}`); process.exit(1); }
-console.log(`check-glossary: PASS (six locales + help content${DIST ? ' + dist/ text' : ''}: no challenge / défi / desafío / desafio / zorluk / meydan okuma / تحدي / MT4 / MT5; Arabic rule names per WEBL-D13 — no «السحب» for a loss limit, no bare «الخسارة القصوى»)`);
+console.log(`check-glossary: PASS (six locales + help content${DIST ? ' + dist/ text' : ''}: no challenge / défi / desafío / desafio / zorluk / meydan okuma / تحدي / MT4 / MT5; Arabic rule names per WEBL-D13 — «السحب» refused in a loss-limit context only (8 refused + 11 payout samples self-checked), no bare «الخسارة القصوى»; ق-103 — «cBots», no «Expert Advisors / EAs» outside a MetaTrader sentence)`);

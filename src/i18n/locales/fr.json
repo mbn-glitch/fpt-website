@@ -292,7 +292,7 @@
   "about": {
     "principles": {
       "p1title": "Termes transparents",
-      "p1body": "Chaque règle, chaque frais, chaque paiement est publié avant que vous payiez. Aucun changement rétroactif. Aucune clause cachée.",
+      "p1body": "Chaque règle, tous les frais, chaque paiement : tout est publié avant que vous payiez. Aucun changement rétroactif. Aucune clause cachée.",
       "p2title": "Le risque avant la récompense",
       "p2body": "Un trader qui survit aux drawdowns capitalise. Nos règles existent pour protéger le capital — pas pour vous piéger.",
       "p3title": "Un chemin, clairement balisé",
@@ -420,7 +420,7 @@
     },
     "metaDescription": "Le programme partenaires FPT : trois paliers de commission sur les ventes mensuelles, un lien et un code de parrainage personnels.",
     "tier": {
-      "title": "Niveau {{n}} ({{range}} ventes)",
+      "title": "Palier {{n}} ({{range}} ventes)",
       "n1": "1",
       "n2": "2",
       "n3": "3"
@@ -461,7 +461,7 @@
     },
     "sizes": {
       "eyebrow": "Tailles et frais",
-      "title": "Des frais uniques. Des règles uniques. La différence, c’est la taille.",
+      "title": "Un seul tarif. Un seul règlement. La différence, c’est la taille.",
       "account": "Compte d’évaluation",
       "popular": "Le plus choisi",
       "oneTime": "· frais uniques",

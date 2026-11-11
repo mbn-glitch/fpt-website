@@ -195,9 +195,11 @@ export default function ChallengePricing() {
                   { k: t('challengePricing.profitShare'), v: BASE_RULES.profitShare, mono: true },
                   { k: t('challengePricing.swapFree'), v: t(BASE_RULES.swapFree ? 'common.yes' : 'common.no') },
                 ].map(({ k, v, mono }) => (
-                  <li key={k} className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 py-2.5 border-b border-subtle last:border-0">
-                    <span className="flex items-center gap-3 text-base text-secondary"><Check size={14} className="text-fg-muted shrink-0" aria-hidden="true" /><span>{k}</span></span>
-                    {mono ? <Unit className="text-base font-semibold text-white text-end">{v}</Unit> : <span className="text-base font-semibold text-white text-end">{v}</span>}
+                  /* WEBL-D24: the value never drops under its label — the row does not wrap, the value is one unbreakable unit at the row's end and the label
+                     (min-width 0) takes the second line when the two do not fit («Taille du compte», «Perte quotidienne max» on 360) */
+                  <li key={k} className="flex items-center justify-between gap-x-4 py-2.5 border-b border-subtle last:border-0">
+                    <span className="flex items-center gap-3 min-w-0 text-base text-secondary"><Check size={14} className="text-fg-muted shrink-0" aria-hidden="true" /><span className="min-w-0">{k}</span></span>
+                    {mono ? <Unit className="shrink-0 whitespace-nowrap text-base font-semibold text-white text-end">{v}</Unit> : <span className="shrink-0 whitespace-nowrap text-base font-semibold text-white text-end">{v}</span>}
                   </li>
                 ))}
               </ul>

@@ -44,14 +44,14 @@
     "ctaSecondary": "Planları Gör",
     "stats": {
       "maxAccount": "Maks. Hesap",
-      "profitSplit": "Kar Payı",
+      "profitSplit": "Kâr Payı",
       "maxAccounts": "Maks. Hesap Sayısı",
       "leverage": "Kaldıraç"
     }
   },
   "keyRules": {
     "title": "Net Kurallar. Tam Şeffaflık.",
-    "profitTarget": "Kar Hedefi",
+    "profitTarget": "Kâr Hedefi",
     "dailyDrawdown": "Günlük Maks. Kayıp",
     "maxDrawdown": "Toplam Maks. Kayıp",
     "minDays": "Min. İşlem Günü",
@@ -72,7 +72,7 @@
     "step1Title": "Değerlendirmenizi Seçin",
     "step1Desc": "İşlem hedeflerinize uygun hesap boyutunu seçin.",
     "step2Title": "Değerlendirmeyi Geçin",
-    "step2Desc": "Risk parametrelerine uyarak kar hedefine ulaşın.",
+    "step2Desc": "Risk parametrelerine uyarak kâr hedefine ulaşın.",
     "step3Title": "Fonlanın",
     "step3Desc": "Finanse edilmiş bir hesap alın ve aynı kayıp limitleriyle işlem yapmaya devam edin.",
     "eyebrow": "Finansmana giden yol"
@@ -82,11 +82,11 @@
     "oneTime": "(tek seferlik ücret)",
     "features": {
       "accountSize": "Hesap Boyutu",
-      "profitTarget": "Kar Hedefi",
+      "profitTarget": "Kâr Hedefi",
       "maxDailyLoss": "Günlük Maks. Kayıp",
       "maxLoss": "Maks. Kayıp",
       "minDays": "Min. İşlem Günü",
-      "profitSplit": "Kar Payı",
+      "profitSplit": "Kâr Payı",
       "refund": "İade",
       "refundValue": "Teslimattan sonra iade edilmez"
     },
@@ -240,17 +240,17 @@
     "oneTime": "tek seferlik ücret",
     "getStarted": "Başla",
     "accountSizeLabel": "Hesap Boyutu",
-    "profitTarget": "Kar Hedefi",
+    "profitTarget": "Kâr Hedefi",
     "maxDailyLoss": "Maks Günlük Kayıp",
     "maxLoss": "Maksimum Kayıp",
     "timeLimit": "Zaman Limiti",
-    "profitShare": "Kar Paylaşımı",
+    "profitShare": "Kâr Paylaşımı",
     "swapFree": "Swap Ücretsiz",
     "feeLabel": "Ücret",
     "rulesEyebrow": "Değerlendirme kuralları",
     "rulesTitle": "Net hedefler. Tanımlanmış sınırlar. Sürpriz yok.",
     "rulesSubtitle": "Her FPT değerlendirmesini ve finanse edilmiş hesabı yöneten tam kural seti.",
-    "rulesWarning": "İşlem koşulları, düşüş hesaplamaları ve kaldıraç seviyeleri araca ve piyasa koşullarına göre değişebilir. En güncel parametreler için değerlendirme panelinizi her zaman kontrol edin.",
+    "rulesWarning": "İşlem koşulları, drawdown hesaplamaları ve kaldıraç seviyeleri araca ve piyasa koşullarına göre değişebilir. En güncel parametreler için değerlendirme panelinizi her zaman kontrol edin.",
     "leverageEyebrow": "Kaldıraç",
     "leverageTitle": "Araca göre kaldıraç dağılımı.",
     "instrument": "Araç",
@@ -259,9 +259,9 @@
     "ctaSubtitle": "İnançla işlem yapın. Değerlendirme disiplini ödüllendirir.",
     "startYourChallenge": "Değerlendirmene Başla",
     "rules": {
-      "profitTarget": "Kar Hedefi",
-      "dailyDrawdown": "Günlük Düşüş",
-      "maxDrawdown": "Maksimum Düşüş",
+      "profitTarget": "Kâr Hedefi",
+      "dailyDrawdown": "Günlük Drawdown",
+      "maxDrawdown": "Maksimum Drawdown",
       "minDaysPhase1": "Min. İşlem Günü",
       "minDaysFunded": "Min Günler (Finanse)",
       "timeLimit": "Zaman Limiti",
@@ -270,7 +270,7 @@
       "swapFree": "Swap Ücretsiz",
       "minPayout": "Min Ödeme",
       "maxPayout": "Maks Ödeme",
-      "profitShare": "Kar Paylaşımı",
+      "profitShare": "Kâr Paylaşımı",
       "payoutCycle": "Ödül döngüsü",
       "commission": "Komisyon (forex, metaller)",
       "commissionValue": "Lot başına {{amount}}",
@@ -294,7 +294,7 @@
       "p1title": "Şeffaf koşullar",
       "p1body": "Her kural, her ücret, her ödeme siz ödemeden önce yayınlanır. Geriye dönük değişiklik yok. Gizli madde yok.",
       "p2title": "Ödülden önce risk",
-      "p2body": "Düşüşlerden kurtulan bir trader bileşik büyür. Kurallarımız sermayeyi korumak için vardır — sizi tuzağa düşürmek için değil.",
+      "p2body": "Drawdown’lardan kurtulan bir trader bileşik büyür. Kurallarımız sermayeyi korumak için vardır — sizi tuzağa düşürmek için değil.",
       "p3title": "Bir yol, açıkça işaretlenmiş",
       "p3body": "Değerlendirme, finanse edilmiş hesap, ödül. Numara yok, dikkat dağıtmak için tasarlanmış paralel ürün hatları yok.",
       "p4title": "Pazarlama yerine altyapı",
@@ -356,7 +356,7 @@
       "q1": "Nasıl başlanır",
       "q2": "Ödemeler",
       "q3": "Drawdown kuralları",
-      "q4": "Kar hedefi"
+      "q4": "Kâr hedefi"
     },
     "eyebrow": "Yardım Merkezi",
     "title1": "Yanıtlar. Düzenlenmiş.",
@@ -374,7 +374,7 @@
     "stillNeedHelp": "Hâlâ yardıma mı ihtiyacınız var?",
     "stillNeedHelpBody": "Aradığınızı bulamadınız mı? WhatsApp’tan bize yazın.",
     "contactSupport": "Desteğe başvur",
-    "startChallenge": "Değerlendirmeyi başlat",
+    "startChallenge": "Değerlendirmeye başla",
     "searchPlaceholder": "Yanıt ara…",
     "metaDescription": "FPT Yardım Merkezi — değerlendirme, finanse edilmiş hesaplar, ödüller, Fiper Kartı, işlem kuralları ve platform hakkında yanıtlar.",
     "readMore": "Devamını oku",
@@ -398,7 +398,7 @@
       "button": "Ortak Olun",
       "buttonFinal": "Ortak olarak kaydol"
     },
-    "tiersEyebrow": "Komisyon Seviyeleri",
+    "tiersEyebrow": "Komisyon Kademeleri",
     "tiersTitle": "Büyüdükçe daha fazla kazanın.",
     "tiersSubtitle": "Komisyon oranınız aylık satışlarınızla otomatik olarak yükselir.",
     "tiers": {
@@ -420,7 +420,7 @@
     },
     "metaDescription": "FPT ortaklık programı: aylık satışlar üzerinden üç komisyon kademesi, kişisel yönlendirme bağlantısı ve kodu.",
     "tier": {
-      "title": "Seviye {{n}} ({{range}} satış)",
+      "title": "Kademe {{n}} ({{range}} satış)",
       "n1": "1",
       "n2": "2",
       "n3": "3"
@@ -469,7 +469,7 @@
       "daily": "Günlük sınır {{amount}}",
       "total": "Toplam sınır {{amount}}",
       "start": "{{size}} ile başla",
-      "startSize": "{{size}}’yı başlat",
+      "startSize": "{{size}} değerlendirmesine başla",
       "after": "Fonlandıktan sonra: {{share}} pay · {{days}} işlem gününden sonra her {{cycle}} günde bir ödeme · talep başına {{range}} · hesap teslim edildikten sonra ücretler iade edilmez."
     },
     "trust": {

@@ -2,6 +2,7 @@
 import { ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { renderUnits } from '../../lib/money.jsx';
+import { RISK_LINE } from '../brand/RiskLine.jsx';
 
 export default function FAQAccordion({ faqs }) {
   const [open, setOpen] = useState(null);
@@ -23,7 +24,12 @@ export default function FAQAccordion({ faqs }) {
               <span className="text-base font-semibold leading-[1.4]">{getQuestion(faq)}</span>
               <ChevronDown size={18} aria-hidden="true" className={`shrink-0 text-tertiary transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
             </button>
-            <div id={`${faq.id}-a`} role="region" aria-labelledby={`${faq.id}-q`} hidden={!isOpen} className="pb-5 text-base text-secondary leading-relaxed">{renderUnits(getAnswer(faq))}</div>
+            <div id={`${faq.id}-a`} role="region" aria-labelledby={`${faq.id}-q`} hidden={!isOpen} className="pb-5 text-base text-secondary leading-relaxed">
+              {renderUnits(getAnswer(faq))}
+              {/* WEBL-D22: the fixed risk line has an Arabic and an English wording only — on fr / es / pt / tr it is never inside the translated sentence:
+                  its own line after the answer, marked lang="en" (the Arabic and English answers carry the line in their own language) */}
+              {faq.fixedRiskLine && lang !== 'en' && lang !== 'ar' && <span lang="en" dir="ltr" className="block mt-2" data-fixed-line="risk">{RISK_LINE.en}</span>}
+            </div>
           </li>
         );
       })}

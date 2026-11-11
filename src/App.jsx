@@ -41,7 +41,9 @@ function PathLanguage() {
   const { pathname } = useLocation();
   const lang = langOfPath(pathname);
   useEffect(() => {
-    if (i18next.language !== lang) switchLanguage(lang).then(() => persistLang(lang));
+    // a failed locale chunk (back / forward to another language) falls back to the pre-rendered document of this very path — no loop: a full load that
+    // fails again never hydrates (main.jsx), so this effect does not run a second time
+    if (i18next.language !== lang) switchLanguage(lang).then(() => persistLang(lang)).catch(() => window.location.assign(window.location.href));
   }, [lang]);
   return null;
 }

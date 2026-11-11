@@ -1,6 +1,10 @@
 {
  "note": "Named exceptions of scripts/check-translation-parity.mjs — `<where> <lang>`: why the shortfall is accepted. A complete translation only; a missing sentence is translated, never excepted.",
  "exceptions": {
+  "help can-you-guarantee-profits answer fr": "complete — WEBL-D22: the fixed risk line (the second English sentence) is not translated; the page renders it after the answer as its own lang=en line",
+  "help can-you-guarantee-profits answer es": "complete — WEBL-D22: the fixed risk line (the second English sentence) is not translated; the page renders it after the answer as its own lang=en line",
+  "help can-you-guarantee-profits answer pt": "complete — WEBL-D22: the fixed risk line (the second English sentence) is not translated; the page renders it after the answer as its own lang=en line",
+  "help can-you-guarantee-profits answer tr": "complete — WEBL-D22: the fixed risk line (the second English sentence) is not translated; the page renders it after the answer as its own lang=en line",
   "help what-happens-if-i-dont-trade answer tr": "complete — the Turkish ordinal «23.» carries a dot that the sentence counter reads as a full stop",
   "locales web.path.step3Alt ar": "complete — the Arabic wording is simply shorter (0.54)",
   "locales web.trust.title ar": "complete — the Arabic headline of the office frame w2 is shorter (0.46)"

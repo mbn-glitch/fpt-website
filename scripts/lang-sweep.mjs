@@ -57,8 +57,7 @@ const localized = (r, l) => (l === 'en' ? r : r === '/' ? `/${l}` : `/${l}${r}`)
  */
 const ALLOW_LATIN = [
   'Fiper Pro Traders', 'Fiper Global L.L.C-FZ', 'Fiper Global', 'Fiper Card', 'Fiper CRM', 'Fiper', 'FPT',   // the brand and its family (Latin in every language)
-  'cTrader', 'cBots', 'cAlgo', 'cBot', 'iOS', 'Android', 'WhatsApp',                                        // third-party product names
-  'EAs', 'EA',                                                                                              // «Expert Advisors» — office ruling m-000938 (L10N-2): the first mention on a page reads «المستشارون الخبراء (EAs)», later ones «EAs»; the abbreviation is never arabised
+  'cTrader', 'cBots', 'cAlgo', 'cBot', 'iOS', 'Android', 'WhatsApp',                                        // third-party product names — «cBots» is the site's general term for trading robots (office decision ق-103, superseding m-000938): the first mention on a page reads «الروبوتات (cBots)», later ones «cBots»; the MetaTrader abbreviation is no longer allowed here
   'Profit Target', 'Max Daily Loss', 'Max Loss',                                                            // WEBL-D13 glossary entry (help «what-do-the-rule-names-mean»): the English rule names in brackets beside the Arabic names
   'USD', 'USDT', 'EUR', 'AED', 'SAMPLE',                                                                    // currency codes · the «بيانات تجريبية · SAMPLE» chip
 ];

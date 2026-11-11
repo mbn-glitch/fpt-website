@@ -32,9 +32,15 @@ export default function LanguageSwitcher({ className = '' }) {
     setOpen(false);
     if (code === i18n.language) return;
     const basePath = stripLangPrefix(location.pathname);
+    const target = localizedPath(basePath, code) + location.search + location.hash;
     switchLanguage(code).then(() => {
       persistLang(code);
-      navigate(localizedPath(basePath, code) + location.search + location.hash);
+      navigate(target);
+    }).catch(() => {
+      // re-check R1 (iPhone 15, one session): the locale chunk failed to load and the tap was dropped silently — the pre-rendered page of the target
+      // language is a full document, so a plain navigation to it always serves the choice
+      persistLang(code);
+      window.location.assign(target);
     });
   };
 

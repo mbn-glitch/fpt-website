@@ -55,7 +55,7 @@ export default function Footer() {
             <Link to={to('/contact')}>{t('web.footer.contact')}</Link>
           </FooterCol>
 
-          <FooterCol title={t('web.footer.legal')}>
+          <FooterCol title={t('web.footer.legal')} className="fpt-web-foot-legal-col">
             {/* the kit's order of the four documents: terms · risk · refund · privacy (the labels are the documents' official titles — decision 3) */}
             {['terms', 'risk', 'refund', 'privacy'].map((k) => LEGAL_DOCS.find((d) => d.key === k)).map((d) => (
               <a key={d.key} href={legalUrl(d.key, lang)} target="_blank" rel="noopener noreferrer">{t(`footer.links.${d.key}`)}</a>
@@ -76,9 +76,9 @@ export default function Footer() {
   );
 }
 
-function FooterCol({ title, children }) {
+function FooterCol({ title, children, className }) {
   return (
-    <div>
+    <div className={className}>
       <h2>{title}</h2>
       <ul>
         {(Array.isArray(children) ? children : [children]).map((c, i) => <li key={i}>{c}</li>)}

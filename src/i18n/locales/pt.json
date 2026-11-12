@@ -432,6 +432,11 @@
     "home": "Ir para a página inicial",
     "help": "Abrir a central de ajuda"
   },
+  "loadFailed": {
+    "title": "Não foi possível carregar esta página.",
+    "body": "O site foi atualizado enquanto esta página estava aberta, ou a conexão caiu.",
+    "reload": "Recarregar a página"
+  },
   "web": {
     "hero": {
       "lead": "Uma avaliação de fase única no cTrader com regras expressas em dólares, depois uma conta financiada com participação de {{share}} e um pagamento a cada {{cycle}} dias\u00a0— e um certificado verificável em cada etapa.",

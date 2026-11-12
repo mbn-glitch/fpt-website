@@ -1,4 +1,5 @@
-﻿import { useState } from 'react';
+﻿import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { renderUnits } from '../../lib/money.jsx';
@@ -10,6 +11,14 @@ export default function FAQAccordion({ faqs }) {
   const lang = i18n.language?.split('-')[0] || 'en';
   const [prevLang, setPrevLang] = useState(lang);
   if (lang !== prevLang) { setPrevLang(lang); setOpen(null); }
+  // WEBL-D37 (design office, 12 Nov 2026): a link to ONE question («/help/challenges-rules#what-is-the-profit-target») arrives with that
+  // question OPEN — it landed folded under the header and the first thing read was the next question. The scroll itself is App's ScrollToTop
+  // (the `li[id]` carries the same scroll margin as a section).
+  const { hash, key } = useLocation();
+  useEffect(() => {
+    const id = hash ? decodeURIComponent(hash.slice(1)) : '';
+    if (id && faqs.some((f) => f.id === id)) setOpen(id);
+  }, [hash, key, faqs]);
 
   const getQuestion = (faq) => ((lang !== 'en' && faq.questions?.[lang]) ? faq.questions[lang] : faq.question);
   const getAnswer = (faq) => ((lang !== 'en' && faq.answers?.[lang]) ? faq.answers[lang] : faq.answer);

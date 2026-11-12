@@ -432,6 +432,11 @@
     "home": "Aller à l’accueil",
     "help": "Ouvrir le centre d’aide"
   },
+  "loadFailed": {
+    "title": "Cette page n’a pas pu être chargée.",
+    "body": "Le site a été mis à jour pendant que cette page était ouverte, ou la connexion a été interrompue.",
+    "reload": "Recharger la page"
+  },
   "web": {
     "hero": {
       "lead": "Une évaluation en une phase sur cTrader avec des règles exprimées en dollars, puis un compte financé avec une part de {{share}} et un paiement tous les {{cycle}} jours\u00a0— et un certificat vérifiable à chaque étape.",

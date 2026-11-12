@@ -173,6 +173,44 @@ for (const project of PROJECTS) {
         if (problems.length) fail(`footer link «${l.text}» → ${l.href}: ${problems.join('; ')}`);
       }
     }
+    // WEBL-D36 — a page left open across a release: the chunk of a page not visited yet is gone (404). The press must still open its page.
+    if (project.phone && (lang === 'en' || lang === 'ar')) {
+      // a fresh context (no cached chunk), the refusal installed BEFORE the page loads: every request of the chunk fails until the first full reload
+      // Chromium only: this simulation refuses a file name once and serves it on the next request; WebKit answers a second request of the SAME
+      // module address from its memory cache (the failure), which no real release produces — the new document asks for a NEW file name.
+      if (project.engine === 'chromium') {
+        const ctx2 = await browser.newContext({ ...project.context, serviceWorkers: 'block' }); // its own context: nothing cached
+        const page2 = await ctx2.newPage();
+        let refused = 0; // the FIRST request of the chunk is refused (the old name is gone); the full reload that follows gets the new one
+        await page2.route('**/assets/About-*.js', (route) => (refused++ === 0 ? route.fulfill({ status: 404, contentType: 'text/html', body: 'not found' }) : route.continue()));
+        await page2.goto(home, { waitUntil: 'load' }); await page2.waitForSelector('h1');
+        try {
+          await openMenu(page2);
+          await page2.locator(`#site-menu a[href$="/about"]`).first().click({ timeout: 5000 }); presses++;
+          const problems = await landed(page2, (lang === 'en' ? '' : `/${lang}`) + '/about', []);
+          if (refused === 0) problems.push('the gate did not refuse the chunk');
+          if (await page2.locator('[data-page="load-failed"]').count()) problems.push('the «could not be loaded» state is shown instead of the page');
+          if (problems.length) fail(`a page chunk that fails to load (WEBL-D36): ${problems.join('; ')}`);
+        } catch (e) { fail(`WEBL-D36: «About» cannot be pressed (${String(e).split('\n')[0].slice(0, 90)})`); }
+        await ctx2.close();
+      }
+      // WEBL-D37 — a link to ONE help question arrives on that question, open and clear of the header
+      await page.goto(BASE + (lang === 'en' ? '' : `/${lang}`) + '/help', { waitUntil: 'load' }); await page.waitForSelector('h1'); errors.length = 0;
+      const q = page.locator('main a[href*="/help/"][href*="#"]').first();
+      if (await q.count()) {
+        const href = await q.getAttribute('href');
+        try {
+          await q.scrollIntoViewIfNeeded({ timeout: 5000 }); await q.click({ timeout: 5000 }); presses++;
+          const problems = await landed(page, href, errors);
+          const id = decodeURIComponent(new URL(href, BASE).hash.slice(1));
+          await page.evaluate((qid) => new Promise((done) => { let last = null; let same = 0; const tick = () => { const t = document.getElementById(qid)?.getBoundingClientRect().top ?? null; same = t === last ? same + 1 : 0; last = t; if (same >= 12) done(); else requestAnimationFrame(tick); }; tick(); setTimeout(done, 4000); }), id);
+          const st = await page.evaluate((qid) => { const li = document.getElementById(qid); const b = li?.querySelector('button[aria-expanded]'); return { open: b?.getAttribute('aria-expanded'), top: li ? Math.round(li.getBoundingClientRect().top) : null, header: Math.round(document.querySelector('header').getBoundingClientRect().bottom) }; }, id);
+          if (st.open !== 'true') problems.push('the question is folded');
+          if (st.top === null || st.top < st.header - 1) problems.push(`the question starts at ${st.top} under the header (${st.header})`);
+          if (problems.length) fail(`help question link → ${href} (WEBL-D37): ${problems.join('; ')}`);
+        } catch (e) { fail(`WEBL-D37: the question link cannot be pressed (${String(e).split('\n')[0].slice(0, 90)})`); }
+      } else fail('WEBL-D37: no question link found on /help');
+    }
     report.cells.push({ project: project.name, lang, presses });
     report.presses += presses;
     console.log(`check-nav: ${tag} — ${presses} presses`);

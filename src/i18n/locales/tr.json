@@ -432,6 +432,11 @@
     "home": "Ana sayfaya git",
     "help": "Yardım merkezini aç"
   },
+  "loadFailed": {
+    "title": "Bu sayfa yüklenemedi.",
+    "body": "Bu sayfa açıkken site güncellendi veya bağlantı kesildi.",
+    "reload": "Sayfayı yeniden yükleyin"
+  },
   "web": {
     "hero": {
       "lead": "cTrader üzerinde dolar cinsinden açıklanan kurallarla tek aşamalı bir değerlendirme, ardından {{share}} payı ve her {{cycle}} günde bir ödemeyle fonlu bir hesap\u00a0— ve her durakta doğrulanabilir bir sertifika.",

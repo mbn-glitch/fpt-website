@@ -432,6 +432,11 @@
     "home": "Go to the home page",
     "help": "Open the help center"
   },
+  "loadFailed": {
+    "title": "This page could not be loaded.",
+    "body": "The site was updated while this page was open, or the connection dropped.",
+    "reload": "Reload the page"
+  },
   "web": {
     "hero": {
       "lead": "A one-phase evaluation on cTrader with rules stated in dollars, then a funded account with an {{share}} share and a payout every {{cycle}} days\u00a0— and a verifiable certificate at every station.",

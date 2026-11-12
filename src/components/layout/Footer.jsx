@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import Logo from '../brand/Logo.jsx';
 import RiskLine from '../brand/RiskLine.jsx';
 import { localizedPath } from '../../hooks/useLocalizedPath.js';
-import { ENTITY_LINE, SIMULATED_STATEMENT, LEGAL_DOCS, legalUrl, localeLegal } from '../../data/legal.js';
+import { entityLineNodes, SIMULATED_STATEMENT, LEGAL_DOCS, legalUrl, localeLegal } from '../../data/legal.js';
 import { SUPPORT_EMAIL, SUPPORT_MAILTO } from '../../config/site.js';
 
 /**
@@ -64,8 +64,8 @@ export default function Footer() {
 
           <div className="fpt-web-foot-legal">
             <p>{t('footer.copyright')}</p>
-            {/* Owner decision 1 (1 Nov 2026) + 3-ب (4 Nov 2026): the ONE entity line VERBATIM from config/legal.ts, in the page language (English for every non-Arabic locale), after the rights line */}
-            <p lang={l} dir={l === 'ar' ? 'rtl' : 'ltr'} data-entity-line="true">{ENTITY_LINE[l]}</p>
+            {/* Owner decision 1 (1 Nov 2026) + 3-ب (4 Nov 2026): the ONE entity line VERBATIM from config/legal.ts, in the page language (English for every non-Arabic locale), after the rights line; WEBL-D16: a dash inside it never starts a line (entityLineNodes) */}
+            <p lang={l} dir={l === 'ar' ? 'rtl' : 'ltr'} data-entity-line="true">{entityLineNodes(l)}</p>
             {/* The fixed risk line (fiper-brand v2.3.4 Q4 / R12) — then the simulated-accounts sentence (Risk Disclosure Statement v1.0 § 2.1, verbatim) */}
             <RiskLine lang={lang} className="text-xs" />
             <p lang={l} dir={l === 'ar' ? 'rtl' : 'ltr'} data-simulated-statement="true">{SIMULATED_STATEMENT[l]}</p>

@@ -1,6 +1,6 @@
 {
   "common": {
-    "sampleChip": "Sample data · SAMPLE",
+    "sampleChip": "Sample data\u00a0·\u00a0SAMPLE",
     "language": "Language",
     "mainNav": "Main navigation",
     "closeMenu": "Close menu",
@@ -15,10 +15,10 @@
     "no": "No"
   },
   "meta": {
-    "title": "FPT — Fiper Pro Traders | Engineered for Fast, Smart Trading",
-    "description": "Fiper Pro Traders (FPT) — Part of Fiper Global. A one-phase evaluation on a simulated account; funded accounts up to 200,000 USD with an 80 % reward share.",
+    "title": "FPT\u00a0— Fiper Pro Traders | Engineered for Fast, Smart Trading",
+    "description": "Fiper Pro Traders (FPT)\u00a0— Part of Fiper Global. A one-phase evaluation on a simulated account; funded accounts up to 200,000 USD with an 80 % reward share.",
     "keywords": "prop trading, funded account, FPT, Fiper Pro Traders, Fiper Global, trading evaluation, cTrader",
-    "ogImageAlt": "Fiper Pro Traders — Investing involves risk"
+    "ogImageAlt": "Fiper Pro Traders\u00a0— Investing involves risk"
   },
   "nav": {
     "challenges": "Evaluations",
@@ -98,7 +98,7 @@
   },
   "dashboardPreview": {
     "title": "Track your performance",
-    "subtitle": "A preview of the client-area dashboard. Sample data — not statistics.",
+    "subtitle": "A preview of the client-area dashboard. Sample data\u00a0— not statistics.",
     "eyebrow": "The trader dashboard",
     "nav": {
       "overview": "Overview",
@@ -139,7 +139,7 @@
     "subtitle": "FPT accounts are accessed through cTrader, operated by an independent technology provider.",
     "eyebrow": "Trading platform",
     "official": "Official trading platform",
-    "headline": "cTrader — the trading terminal.",
+    "headline": "cTrader\u00a0— the trading terminal.",
     "body": "Depth of market, algorithmic execution and a full mobile app. Available for every FPT evaluation and funded account.",
     "features": {
       "dom": "Depth of Market",
@@ -150,7 +150,7 @@
   },
   "ecosystem": {
     "title": "Part of the Fiper Global Ecosystem",
-    "subtitle": "FPT is powered by Fiper Global — a complete financial infrastructure built for modern traders.",
+    "subtitle": "FPT is powered by Fiper Global\u00a0— a complete financial infrastructure built for modern traders.",
     "fpt": {
       "title": "FPT",
       "desc": "Prop Trading Evaluations",
@@ -206,7 +206,7 @@
       "contact": "Contact",
       "about": "About FPT"
     },
-    "copyright": "© 2026 Fiper Pro Traders — A Fiper Global Company. All rights reserved.",
+    "copyright": "© 2026 Fiper Pro Traders\u00a0— A Fiper Global Company. All rights reserved.",
     "support": "Support"
   },
   "pricing": {
@@ -225,9 +225,9 @@
     "howItWorksTitle": "One Phase. Direct Path to Funding.",
     "howItWorksSubtitle": "Pass the evaluation, then trade on a funded account.",
     "phase1Label": "Evaluation (One Phase Only)",
-    "phase1Subtitle": "Simulated evaluation — prove your discipline and consistency in a single phase.",
+    "phase1Subtitle": "Simulated evaluation\u00a0— prove your discipline and consistency in a single phase.",
     "phase2Label": "Get Funded",
-    "phase2Subtitle": "Funded account — trade on a funded account after passing the evaluation.",
+    "phase2Subtitle": "Funded account\u00a0— trade on a funded account after passing the evaluation.",
     "pricingEyebrow": "Pricing",
     "pricingTitle": "One-time fee. No subscription.",
     "pricingSubtitle": "Choose your account size and start your evaluation today.",
@@ -286,7 +286,7 @@
       "energy": "Energy"
     },
     "chooseSize": "Choose an account size",
-    "metaDescription": "FPT evaluation rules and fees — five account sizes from 10,000 USD to 200,000 USD, one phase, published limits.",
+    "metaDescription": "FPT evaluation rules and fees\u00a0— five account sizes from 10,000 USD to 200,000 USD, one phase, published limits.",
     "metaKeywords": "prop trading evaluation, FPT fees, funded account"
   },
   "about": {
@@ -294,11 +294,11 @@
       "p1title": "Transparent terms",
       "p1body": "Every rule, every fee, every payout is published before you pay. No retroactive changes. No hidden clauses.",
       "p2title": "Risk before reward",
-      "p2body": "A trader who survives drawdowns compounds. Our rules exist to protect capital — not to trap you.",
+      "p2body": "A trader who survives drawdowns compounds. Our rules exist to protect capital\u00a0— not to trap you.",
       "p3title": "One path, clearly marked",
       "p3body": "Evaluation, funded account, reward. No gimmicks, no parallel product lines engineered to distract.",
       "p4title": "Infrastructure over marketing",
-      "p4body": "We invest in execution, liquidity, and dashboards — not influencer campaigns. The platform speaks for itself."
+      "p4body": "We invest in execution, liquidity, and dashboards\u00a0— not influencer campaigns. The platform speaks for itself."
     },
     "ecosystem": {
       "fptTag": "Prop Trading",
@@ -318,7 +318,7 @@
     "getStarted": "Get Started",
     "talkToTeam": "Talk to the team",
     "title": "Built for Fast, Smart Trading",
-    "subtitle": "FPT is the prop trading arm of Fiper Global — an integrated financial infrastructure built for modern traders.",
+    "subtitle": "FPT is the prop trading arm of Fiper Global\u00a0— an integrated financial infrastructure built for modern traders.",
     "story": {
       "title": "Our story",
       "content": "Fiper Global was founded with a vision to empower traders around the world. FPT represents our commitment to professional trading infrastructure, combining institutional standards with exceptional trader support."
@@ -361,7 +361,7 @@
     "eyebrow": "Help Center",
     "title1": "Answers. Organized.",
     "title2": "Searchable.",
-    "subtitle": "Everything you need to navigate FPT — from your first evaluation to your first payout.",
+    "subtitle": "Everything you need to navigate FPT\u00a0— from your first evaluation to your first payout.",
     "popularSearches": "Popular searches:",
     "browseEyebrow": "Browse by topic",
     "browseTitle": "Every answer, sorted.",
@@ -376,13 +376,13 @@
     "contactSupport": "Contact Support",
     "startChallenge": "Start Evaluation",
     "searchPlaceholder": "Search for answers…",
-    "metaDescription": "FPT Help Center — answers on the evaluation, funded accounts, rewards, the Fiper Card, trading rules and the platform.",
+    "metaDescription": "FPT Help Center\u00a0— answers on the evaluation, funded accounts, rewards, the Fiper Card, trading rules and the platform.",
     "readMore": "Read more",
     "breadcrumb": "Breadcrumb",
     "searchLabel": "Search the help center",
     "clearSearch": "Clear search",
     "searchHint": "Type to search, or browse the topics below.",
-    "searchNoMatch": "No matches — try different keywords.",
+    "searchNoMatch": "No matches\u00a0— try different keywords.",
     "orEmail": "Or by e-mail:"
   },
   "partners": {
@@ -415,7 +415,7 @@
       },
       "tiers": {
         "title": "Automatic tier upgrades",
-        "desc": "The tier follows your monthly sales — no application, no waiting."
+        "desc": "The tier follows your monthly sales\u00a0— no application, no waiting."
       }
     },
     "metaDescription": "The FPT partner programme: three commission tiers on monthly sales, a personal referral link and code.",
@@ -434,8 +434,8 @@
   },
   "web": {
     "hero": {
-      "lead": "A one-phase evaluation on cTrader with rules stated in dollars, then a funded account with an {{share}} share and a payout every {{cycle}} days — and a verifiable certificate at every station.",
-      "ctaPrimary": "Start the evaluation · from {{fee}}",
+      "lead": "A one-phase evaluation on cTrader with rules stated in dollars, then a funded account with an {{share}} share and a payout every {{cycle}} days\u00a0— and a verifiable certificate at every station.",
+      "ctaPrimary": "Start the evaluation\u00a0·\u00a0from {{fee}}",
       "ctaSecondary": "See how it works",
       "proof": {
         "target": "Profit target",
@@ -447,7 +447,7 @@
     },
     "path": {
       "eyebrow": "The path to funding",
-      "title": "Three stations — you see each screen before you start",
+      "title": "Three stations\u00a0— you see each screen before you start",
       "sub": "No metaphors: what you see here is what you see inside your account.",
       "step1Title": "Choose your evaluation",
       "step1Body": "Five sizes from {{min}} to {{max}} for a one-time fee. Your rules appear in dollars before you pay.",
@@ -464,17 +464,17 @@
       "title": "One fee. One rule set. The difference is the size.",
       "account": "Evaluation account",
       "popular": "Most chosen",
-      "oneTime": "· one-time",
+      "oneTime": "one-time",
       "target": "Target {{amount}}",
       "daily": "Daily limit {{amount}}",
       "total": "Overall limit {{amount}}",
       "start": "Start {{size}}",
       "startSize": "Start {{size}}",
-      "after": "After funding: {{share}} share · a payout every {{cycle}} days after {{days}} trading days · {{range}} per request · fees are not refunded after the account is delivered."
+      "after": "After funding: {{share}} share\u00a0·\u00a0a payout every {{cycle}} days after {{days}} trading days\u00a0·\u00a0{{range}} per request\u00a0·\u00a0fees are not refunded after the account is delivered."
     },
     "trust": {
       "eyebrow": "Verified certificates",
-      "title": "A certificate for every station — with a public verification code",
+      "title": "A certificate for every station\u00a0— with a public verification code",
       "sub": "Passing the evaluation and every payout paid after the funded account is delivered: a certificate in your name with a unique code anyone can verify here, without signing in.",
       "placeholder": "FPT-XXXXXXXXXX",
       "label": "Certificate code",
@@ -494,7 +494,7 @@
       "q4": "Are the fees refundable?",
       "a4": "The fee is paid once and is refunded only before your account is delivered, and in the cases listed in the Refund and Cancellation Policy. After delivery it is not refunded.",
       "q5": "Which instruments can I trade, and with what leverage?",
-      "a5": "Forex, metals, indices, energy and selected crypto-currencies on cTrader. Leverage up to 1:{{forex}} for forex, 1:{{metals}} for metals, 1:{{indices}} for indices, 1:{{energy}} for energy and 1:{{crypto}} for crypto — swap-free.",
+      "a5": "Forex, metals, indices, energy and selected crypto-currencies on cTrader. Leverage up to 1:{{forex}} for forex, 1:{{metals}} for metals, 1:{{indices}} for indices, 1:{{energy}} for energy and 1:{{crypto}} for crypto\u00a0— swap-free.",
       "q6": "How do I verify a certificate?",
       "a6": "Every certificate carries a code in the form FPT-XXXXXXXXXX. Enter it in the verification field above or open the public verification page in the app: it shows the certificate’s status, the holder’s name, its kind and the account size, without signing in."
     },

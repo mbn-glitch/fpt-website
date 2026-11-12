@@ -22,7 +22,9 @@ export default function WhatsAppCard({ compact = false, className = '' }) {
   }
   return (
     <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" data-whatsapp-card="true" className={`group block rounded-3xl p-7 sm:p-8 bg-card border border-subtle hover:border-white/20 transition-colors ${className}`}>
-      <div className="flex items-start gap-4">
+      {/* Below 360 px the icon tile sits ABOVE the text: beside it the text column is 162 px and the unbreakable number row (mark + «+971 56 111 1855» at 18 px,
+          ≈ 199 px in the Latin face) ran 9 px past the card (lead's probe, 12 Nov 2026 — /contact and /help on 320, non-Arabic). No size is reduced. */}
+      <div className="flex items-start gap-4 max-[359px]:flex-col">
         <div className="w-11 h-11 rounded-xl bg-white/5 border border-subtle flex items-center justify-center shrink-0">
           <MessageCircle size={20} className="text-fg-muted" aria-hidden="true" />
         </div>

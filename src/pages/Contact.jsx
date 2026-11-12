@@ -34,7 +34,7 @@ export default function Contact() {
         <h2 id="contact-channels-title" className="sr-only">{t('contact.channelsTitle')}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <a href={SUPPORT_MAILTO} className="group block rounded-3xl p-7 sm:p-8 bg-card border border-subtle hover:border-white/20 transition-colors" data-support-email="true">
-            <div className="flex items-start gap-4">
+            <div className="flex items-start gap-4 max-[359px]:flex-col">{/* as WhatsAppCard: below 360 px the icon tile sits above the text (the three cards keep one shape) */}
               <div className="w-11 h-11 rounded-xl bg-white/5 border border-subtle flex items-center justify-center shrink-0">
                 <Mail size={20} className="text-fg-muted" aria-hidden="true" />
               </div>
@@ -52,7 +52,7 @@ export default function Contact() {
           <WhatsAppCard />
 
           <div className="rounded-3xl p-7 sm:p-8 bg-card border border-subtle md:col-span-2">
-            <div className="flex items-start gap-4">
+            <div className="flex items-start gap-4 max-[359px]:flex-col">{/* as WhatsAppCard: below 360 px the icon tile sits above the text (the three cards keep one shape) */}
               <div className="w-11 h-11 rounded-xl bg-white/5 border border-subtle flex items-center justify-center shrink-0">
                 <MapPin size={20} className="text-fg-muted" aria-hidden="true" />
               </div>

@@ -7,7 +7,7 @@ import { renderUnits } from '../../lib/money.jsx';
 const POPULAR = Math.floor(CATALOG_V1.length / 2);
 
 /**
- * «Sizes and fees» (frame w2): five cards — the size (36 px Inter 500), the fee + «one-time», the three dollar rules (target / daily limit / overall limit,
+ * «Sizes and fees» (frame w2): five cards — the size (36 px Inter 500), the fee + «one-time» (its own line, no separator — WEBL-D30), the three dollar rules (target / daily limit / overall limit,
  * computed from the rulebook's basis points on the size), «Start» (the Latin locales name the size — «Start 10K» — so no link text is generic; Arabic keeps the kit's «ابدأ»). The popular card carries the page's second primary action (red budget: hero + this one = 2,
  * owner decision 41-أ). Then the after-funding line. Every number is read from src/data/platform-rules.json.
  */
@@ -15,6 +15,9 @@ export default function SizesSection() {
   const { t } = useTranslation();
   const app = useAppLinks();
   const money = (cents, bps) => usd(Math.round((cents * bps) / 10000));
+  // WEBL-D30: the amount never leaves its label — the space in front of the isolated amount is a no-break space, so a line that does not fit breaks INSIDE the
+  // label («Limite / quotidienne 10,000 USD»), never between the label and its figure (the 200K card: «Limite du jour / 10,000 USD»)
+  const rule = (key, cents, bps) => renderUnits(t(key, { amount: money(cents, bps) }).replace(/ (?=\u2066)/, '\u00a0'));
   return (
     <section id="sizes" className="fpt-web-wrap" aria-labelledby="sizes-title">
       <div className="fpt-web-sec fpt-web-sec--first">
@@ -29,9 +32,9 @@ export default function SizesSection() {
                 <span className="fpt-web-f">{on ? t('web.sizes.popular') : t('web.sizes.account')}</span>
                 <span className="fpt-web-p"><bdi className="fpt-web-num">{usd(p.priceCents)}</bdi><small>{t('web.sizes.oneTime')}</small></span>
                 <ul>
-                  <li>{renderUnits(t('web.sizes.target', { amount: money(p.sizeCents, RULES_V1.profitTargetBps) }))}</li>
-                  <li>{renderUnits(t('web.sizes.daily', { amount: money(p.sizeCents, RULES_V1.dailyLossBps) }))}</li>
-                  <li>{renderUnits(t('web.sizes.total', { amount: money(p.sizeCents, RULES_V1.maxLossBps) }))}</li>
+                  <li>{rule('web.sizes.target', p.sizeCents, RULES_V1.profitTargetBps)}</li>
+                  <li>{rule('web.sizes.daily', p.sizeCents, RULES_V1.dailyLossBps)}</li>
+                  <li>{rule('web.sizes.total', p.sizeCents, RULES_V1.maxLossBps)}</li>
                 </ul>
                 <a href={app.signup} target="_blank" rel="noopener noreferrer" className={`fpt-web-btn ${on ? 'gradient-red' : ''}`}>
                   {t(on ? 'web.sizes.startSize' : 'web.sizes.start', { size: sizeLabel(p.sizeCents) })}

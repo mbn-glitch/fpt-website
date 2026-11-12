@@ -13,6 +13,8 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..')
 const cfg = readFileSync(path.join(ROOT, 'src/config/site.js'), 'utf8'); const SITE = cfg.match(/SITE_ORIGIN = '([^']+)'/)[1]; const APP = cfg.match(/APP_ORIGIN = '([^']+)'/)[1]; const MAIL = cfg.match(/SUPPORT_EMAIL = '([^']+)'/)[1];
 const legal = readFileSync(path.join(ROOT, 'src/data/legal.js'), 'utf8'); const eb = legal.slice(legal.indexOf('ENTITY_LINE = {')); const ENTITY = { en: eb.match(/^\s*en: '([^']*)'/m)[1], ar: eb.match(/^\s*ar: '([^']*)'/m)[1] };
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
+// WEBL-D16 (R3): the entity line is rendered with the word before each dash and the dash in one unbreakable span — its TEXT must still be the verbatim line
+const unglue = (h) => h.replace(/<span class="whitespace-nowrap">([^<]*)<\/span>/g, '$1');
 const LANGS = ['en', 'ar', 'fr', 'es', 'pt', 'tr']; const HELP = ['getting-started', 'challenges-rules', 'funded-accounts', 'payouts-fiper-card', 'trading-conditions', 'account-management', 'technical-platform', 'legal-general', 'partner-program'];
 const ROUTES = ['/', '/challenges', '/about', '/contact', '/help', '/partners', ...HELP.map((s) => `/help/${s}`)]; const localized = (r, l) => (l === 'en' ? r : r === '/' ? `/${l}` : `/${l}${r}`);
 let pass = 0, fail = 0; const out = []; const check = (n, ok, d = '') => { out.push(`${ok ? 'PASS' : 'FAIL'} ${n}${d ? ` — ${d}` : ''}`); ok ? pass++ : fail++; };
@@ -28,7 +30,7 @@ for (const l of LANGS) for (const r of ROUTES) {
   if ((h.match(/fpt-lockup-horizontal-en-white\.svg/g) || []).length < 2) probs.push('lockup');
   if (/lockup-horizontal-ar/.test(h)) probs.push('arabic lockup');
   if (!h.includes(l === 'ar' ? 'الاستثمار ينطوي على مخاطر' : 'Investing involves risk')) probs.push('risk line');
-  if (!h.includes(esc(ENTITY[el])) && !h.includes(ENTITY[el])) probs.push('entity line verbatim');
+  if (!unglue(h).includes(esc(ENTITY[el])) && !unglue(h).includes(ENTITY[el])) probs.push('entity line verbatim');
   if (!/data-simulated-statement/.test(h)) probs.push('simulated statement');
   if (!h.includes(`mailto:${MAIL}`) || !h.includes(`>${MAIL}<`)) probs.push('support e-mail');
   if (!h.includes(`href="${APP}/${el}/signup"`) || !h.includes(`href="${APP}/${el}/signin"`)) probs.push(`app links /${el}/`);
@@ -47,7 +49,7 @@ for (const l of LANGS) {
   if (!new RegExp(`<html lang="${l}" dir="${l === 'ar' ? 'rtl' : 'ltr'}">`).test(h)) probs.push('html lang/dir');
   if ((h.match(/<h1/g) || []).length !== 1) probs.push('h1≠1');
   if ((h.match(/data-risk-line/g) || []).length !== 1 || !h.includes(l === 'ar' ? 'الاستثمار ينطوي على مخاطر' : 'Investing involves risk')) probs.push('risk line≠1');
-  if ((h.match(/data-entity-line/g) || []).length !== 1 || !(h.includes(esc(ENTITY[el])) || h.includes(ENTITY[el]))) probs.push('entity line≠1');
+  if ((h.match(/data-entity-line/g) || []).length !== 1 || !(unglue(h).includes(esc(ENTITY[el])) || unglue(h).includes(ENTITY[el]))) probs.push('entity line≠1');
   if (!/name="robots" content="noindex"/.test(h)) probs.push('noindex');
   if (/rel="canonical"/.test(h)) probs.push('canonical on a 404');
   check(`${p} (404 page ${l})`, probs.length === 0, probs.join(', '));

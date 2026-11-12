@@ -1,6 +1,6 @@
 {
   "common": {
-    "sampleChip": "Dados de exemplo · SAMPLE",
+    "sampleChip": "Dados de exemplo\u00a0·\u00a0SAMPLE",
     "language": "Idioma",
     "mainNav": "Navegação principal",
     "closeMenu": "Fechar menu",
@@ -15,8 +15,8 @@
     "no": "Não"
   },
   "meta": {
-    "title": "FPT — Fiper Pro Traders | Projetado para trading rápido e inteligente",
-    "description": "Fiper Pro Traders (FPT) — Parte da Fiper Global. Uma avaliação de uma fase em uma conta simulada; contas financiadas de até 200,000 USD com participação de recompensa de 80 %.",
+    "title": "FPT\u00a0— Fiper Pro Traders | Projetado para trading rápido e inteligente",
+    "description": "Fiper Pro Traders (FPT)\u00a0— Parte da Fiper Global. Uma avaliação de uma fase em uma conta simulada; contas financiadas de até 200,000 USD com participação de recompensa de 80 %.",
     "ogImageAlt": "Logotipo da Fiper Pro Traders sobre fundo escuro, com a menção em inglês “Investing involves risk”",
     "keywords": "prop trading, conta financiada, FPT, Fiper Pro Traders, Fiper Global, avaliação de trading, cTrader"
   },
@@ -98,7 +98,7 @@
   },
   "dashboardPreview": {
     "title": "Acompanhe seu desempenho",
-    "subtitle": "Prévia do painel da área do cliente. Dados de exemplo — não estatísticas.",
+    "subtitle": "Prévia do painel da área do cliente. Dados de exemplo\u00a0— não estatísticas.",
     "eyebrow": "O painel do trader",
     "nav": {
       "overview": "Visão geral",
@@ -139,7 +139,7 @@
     "subtitle": "As contas FPT são acessadas pelo cTrader, operado por um fornecedor de tecnologia independente.",
     "eyebrow": "Plataforma de trading",
     "official": "Plataforma de trading oficial",
-    "headline": "cTrader — o terminal de trading.",
+    "headline": "cTrader\u00a0— o terminal de trading.",
     "body": "Profundidade de mercado, execução algorítmica e um app móvel completo. Disponível para cada avaliação e conta financiada da FPT.",
     "features": {
       "dom": "Profundidade de mercado",
@@ -150,7 +150,7 @@
   },
   "ecosystem": {
     "title": "Parte do ecossistema Fiper Global",
-    "subtitle": "A FPT conta com a tecnologia da Fiper Global — uma infraestrutura financeira completa projetada para traders modernos.",
+    "subtitle": "A FPT conta com a tecnologia da Fiper Global\u00a0— uma infraestrutura financeira completa projetada para traders modernos.",
     "fpt": {
       "title": "FPT",
       "desc": "Avaliações de prop trading",
@@ -206,7 +206,7 @@
       "contact": "Contato",
       "about": "Sobre a FPT"
     },
-    "copyright": "© 2026 Fiper Pro Traders — Uma empresa da Fiper Global. Todos os direitos reservados.",
+    "copyright": "© 2026 Fiper Pro Traders\u00a0— Uma empresa da Fiper Global. Todos os direitos reservados.",
     "support": "Suporte"
   },
   "pricing": {
@@ -225,9 +225,9 @@
     "howItWorksTitle": "Uma única fase. Caminho direto para o financiamento.",
     "howItWorksSubtitle": "Passe na avaliação e depois opere em uma conta financiada.",
     "phase1Label": "Avaliação (apenas uma fase)",
-    "phase1Subtitle": "Avaliação simulada — prove sua disciplina e consistência em uma única fase.",
+    "phase1Subtitle": "Avaliação simulada\u00a0— prove sua disciplina e consistência em uma única fase.",
     "phase2Label": "Seja financiado",
-    "phase2Subtitle": "Conta financiada — opere em uma conta financiada após passar na avaliação.",
+    "phase2Subtitle": "Conta financiada\u00a0— opere em uma conta financiada após passar na avaliação.",
     "pricingEyebrow": "Preços",
     "pricingTitle": "Taxa única. Sem assinatura.",
     "pricingSubtitle": "Escolha o tamanho da sua conta e comece sua avaliação hoje.",
@@ -250,7 +250,7 @@
     "rulesEyebrow": "Regras da avaliação",
     "rulesTitle": "Metas claras. Limites definidos. Sem surpresas.",
     "rulesSubtitle": "O conjunto completo de regras que rege cada avaliação e conta financiada da FPT.",
-    "rulesWarning": "As condições de trading, cálculos de drawdown e níveis de alavancagem podem variar de acordo com o instrumento e as condições do mercado. Consulte sempre o seu painel de avaliação para ver os parâmetros mais recentes.",
+    "rulesWarning": "As condições de trading, cálculos dos limites de perda e níveis de alavancagem podem variar de acordo com o instrumento e as condições do mercado. Consulte sempre o seu painel de avaliação para ver os parâmetros mais recentes.",
     "leverageEyebrow": "Alavancagem",
     "leverageTitle": "Detalhamento da alavancagem por instrumento.",
     "instrument": "Instrumento",
@@ -286,7 +286,7 @@
       "energy": "Energia"
     },
     "chooseSize": "Escolher um tamanho de conta",
-    "metaDescription": "Regras e taxas da avaliação FPT — cinco tamanhos de conta de 10,000 USD a 200,000 USD, uma fase, limites publicados.",
+    "metaDescription": "Regras e taxas da avaliação FPT\u00a0— cinco tamanhos de conta de 10,000 USD a 200,000 USD, uma fase, limites publicados.",
     "metaKeywords": "avaliação prop trading, taxas FPT, conta financiada"
   },
   "about": {
@@ -294,11 +294,11 @@
       "p1title": "Termos transparentes",
       "p1body": "Cada regra, taxa e pagamento é publicado antes de você pagar. Sem alterações retroativas. Sem cláusulas ocultas.",
       "p2title": "Risco antes da recompensa",
-      "p2body": "O trader que sobrevive aos drawdowns faz o capital crescer. Nossas regras existem para proteger o capital — não para prender você.",
+      "p2body": "O trader que sobrevive aos drawdowns faz o capital crescer. Nossas regras existem para proteger o capital\u00a0— não para prender você.",
       "p3title": "Um caminho, claramente marcado",
       "p3body": "Avaliação, conta financiada, recompensa. Sem truques nem linhas de produto paralelas feitas para distrair.",
       "p4title": "Infraestrutura acima do marketing",
-      "p4body": "Investimos em execução, liquidez e painéis — não em campanhas de influenciadores. A plataforma fala por si."
+      "p4body": "Investimos em execução, liquidez e painéis\u00a0— não em campanhas de influenciadores. A plataforma fala por si."
     },
     "ecosystem": {
       "fptTag": "Prop trading",
@@ -324,7 +324,7 @@
     "mission": {
       "content": "Acreditamos que traders talentosos merecem acesso ao capital sem barreiras desnecessárias. A FPT oferece um caminho transparente da avaliação ao trading financiado."
     },
-    "subtitle": "A FPT é a divisão de prop trading da Fiper Global — uma infraestrutura financeira integrada para traders modernos.",
+    "subtitle": "A FPT é a divisão de prop trading da Fiper Global\u00a0— uma infraestrutura financeira integrada para traders modernos.",
     "title": "Feito para um trading rápido e inteligente.",
     "metaDescription": "A FPT é o braço de prop trading da Fiper Global. Regras transparentes, o risco antes da recompensa, infraestrutura antes de marketing."
   },
@@ -355,13 +355,13 @@
     "popular": {
       "q1": "Como começar",
       "q2": "Pagamentos",
-      "q3": "Regras de drawdown",
+      "q3": "Limites de perda",
       "q4": "Meta de lucro"
     },
     "eyebrow": "Central de ajuda",
     "title1": "Respostas. Ordenadas.",
     "title2": "Fáceis de encontrar.",
-    "subtitle": "Tudo que você precisa para navegar pela FPT — da sua primeira avaliação ao seu primeiro pagamento.",
+    "subtitle": "Tudo que você precisa para navegar pela FPT\u00a0— da sua primeira avaliação ao seu primeiro pagamento.",
     "popularSearches": "Buscas populares:",
     "browseEyebrow": "Explorar por tópico",
     "browseTitle": "Cada resposta, ordenada.",
@@ -376,13 +376,13 @@
     "contactSupport": "Falar com o suporte",
     "startChallenge": "Iniciar avaliação",
     "searchPlaceholder": "Buscar respostas…",
-    "metaDescription": "Central de ajuda da FPT — respostas sobre a avaliação, contas financiadas, recompensas, o Fiper Card, as regras de trading e a plataforma.",
+    "metaDescription": "Central de ajuda da FPT\u00a0— respostas sobre a avaliação, contas financiadas, recompensas, o Fiper Card, as regras de trading e a plataforma.",
     "readMore": "Ler mais",
     "breadcrumb": "Trilha de navegação",
     "searchLabel": "Pesquisar na central de ajuda",
     "clearSearch": "Limpar pesquisa",
     "searchHint": "Digite para pesquisar ou navegue pelos tópicos abaixo.",
-    "searchNoMatch": "Nenhum resultado — tente outras palavras.",
+    "searchNoMatch": "Nenhum resultado\u00a0— tente outras palavras.",
     "orEmail": "Ou por e-mail:"
   },
   "partners": {
@@ -415,7 +415,7 @@
       },
       "tiers": {
         "title": "Subida de nível automática",
-        "desc": "O nível acompanha suas vendas mensais — sem pedido, sem espera."
+        "desc": "O nível acompanha suas vendas mensais\u00a0— sem pedido, sem espera."
       }
     },
     "metaDescription": "O programa de parceiros da FPT: três níveis de comissão sobre as vendas mensais, um link e um código de indicação pessoais.",
@@ -434,8 +434,8 @@
   },
   "web": {
     "hero": {
-      "lead": "Uma avaliação de fase única no cTrader com regras expressas em dólares, depois uma conta financiada com participação de {{share}} e um pagamento a cada {{cycle}} dias — e um certificado verificável em cada etapa.",
-      "ctaPrimary": "Iniciar a avaliação · a partir de {{fee}}",
+      "lead": "Uma avaliação de fase única no cTrader com regras expressas em dólares, depois uma conta financiada com participação de {{share}} e um pagamento a cada {{cycle}} dias\u00a0— e um certificado verificável em cada etapa.",
+      "ctaPrimary": "Iniciar a avaliação\u00a0·\u00a0a partir de {{fee}}",
       "ctaSecondary": "Veja como funciona",
       "proof": {
         "target": "Meta de lucro",
@@ -447,7 +447,7 @@
     },
     "path": {
       "eyebrow": "O caminho para o financiamento",
-      "title": "Três etapas — você vê cada tela antes de começar",
+      "title": "Três etapas\u00a0— você vê cada tela antes de começar",
       "sub": "Sem metáforas: o que você vê aqui é o que vê dentro da sua conta.",
       "step1Title": "Escolha sua avaliação",
       "step1Body": "Cinco tamanhos de {{min}} a {{max}} por uma taxa única. Suas regras aparecem em dólares antes de pagar.",
@@ -464,17 +464,17 @@
       "title": "Uma taxa. Um conjunto de regras. A diferença é o tamanho.",
       "account": "Conta de avaliação",
       "popular": "A mais escolhida",
-      "oneTime": "· taxa única",
+      "oneTime": "taxa única",
       "target": "Meta {{amount}}",
       "daily": "Limite diário {{amount}}",
       "total": "Limite total {{amount}}",
       "start": "Começar com {{size}}",
       "startSize": "Começar com {{size}}",
-      "after": "Após o financiamento: participação de {{share}} · um pagamento a cada {{cycle}} dias após {{days}} dias de trading · {{range}} por pedido · as taxas não são reembolsadas após a entrega da conta."
+      "after": "Após o financiamento: participação de {{share}}\u00a0·\u00a0um pagamento a cada {{cycle}} dias após {{days}} dias de trading\u00a0·\u00a0{{range}} por pedido\u00a0·\u00a0as taxas não são reembolsadas após a entrega da conta."
     },
     "trust": {
       "eyebrow": "Certificados verificados",
-      "title": "Um certificado para cada etapa — com código de verificação público",
+      "title": "Um certificado para cada etapa\u00a0— com código de verificação público",
       "sub": "A aprovação na avaliação e cada pagamento efetuado após a entrega da conta financiada: um certificado em seu nome com um código único que qualquer pessoa pode verificar aqui, sem cadastro.",
       "placeholder": "FPT-XXXXXXXXXX",
       "label": "Código do certificado",
@@ -494,7 +494,7 @@
       "q4": "As taxas são reembolsáveis?",
       "a4": "A taxa é paga uma vez e reembolsada apenas antes da entrega da sua conta, e nos casos previstos na política de reembolso e cancelamento. Após a entrega não é reembolsada.",
       "q5": "Quais instrumentos posso operar e com qual alavancagem?",
-      "a5": "Forex, metais, índices, energia e criptomoedas selecionadas no cTrader. Alavancagem até 1:{{forex}} em forex, 1:{{metals}} em metais, 1:{{indices}} em índices, 1:{{energy}} em energia e 1:{{crypto}} em cripto — sem swap.",
+      "a5": "Forex, metais, índices, energia e criptomoedas selecionadas no cTrader. Alavancagem até 1:{{forex}} em forex, 1:{{metals}} em metais, 1:{{indices}} em índices, 1:{{energy}} em energia e 1:{{crypto}} em cripto\u00a0— sem swap.",
       "q6": "Como verifico um certificado?",
       "a6": "Cada certificado traz um código no formato FPT-XXXXXXXXXX. Insira-o no campo de verificação acima ou abra a página pública de verificação no aplicativo: ela mostra o estado do certificado, o nome do titular, o tipo e o tamanho da conta, sem cadastro."
     },

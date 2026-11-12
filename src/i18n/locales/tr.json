@@ -1,6 +1,6 @@
 {
   "common": {
-    "sampleChip": "Örnek veri · SAMPLE",
+    "sampleChip": "Örnek veri\u00a0·\u00a0SAMPLE",
     "language": "Dil",
     "mainNav": "Ana gezinme",
     "closeMenu": "Menüyü kapat",
@@ -15,8 +15,8 @@
     "no": "Hayır"
   },
   "meta": {
-    "title": "FPT — Fiper Pro Traders | Hızlı ve akıllı işlem için tasarlandı",
-    "description": "Fiper Pro Traders (FPT) — Fiper Global’in bir parçası. Simüle edilmiş bir hesapta tek aşamalı bir değerlendirme; %80 ödül payıyla 200,000 USD tutarına kadar fonlu hesaplar.",
+    "title": "FPT\u00a0— Fiper Pro Traders | Hızlı ve akıllı işlem için tasarlandı",
+    "description": "Fiper Pro Traders (FPT)\u00a0— Fiper Global’in bir parçası. Simüle edilmiş bir hesapta tek aşamalı bir değerlendirme; %80 ödül payıyla 200,000 USD tutarına kadar fonlu hesaplar.",
     "ogImageAlt": "Koyu zemin üzerinde Fiper Pro Traders logosu; İngilizce “Investing involves risk” ibaresiyle",
     "keywords": "prop trading, fonlu hesap, FPT, Fiper Pro Traders, Fiper Global, işlem değerlendirmesi, cTrader"
   },
@@ -98,7 +98,7 @@
   },
   "dashboardPreview": {
     "title": "Performansınızı takip edin",
-    "subtitle": "Müşteri alanı panelinin önizlemesi. Örnek veri — istatistik değil.",
+    "subtitle": "Müşteri alanı panelinin önizlemesi. Örnek veri\u00a0— istatistik değil.",
     "eyebrow": "Trader paneli",
     "nav": {
       "overview": "Genel bakış",
@@ -139,7 +139,7 @@
     "subtitle": "FPT hesaplarına, bağımsız bir teknoloji sağlayıcısının işlettiği cTrader üzerinden erişilir.",
     "eyebrow": "İşlem platformu",
     "official": "Resmî işlem platformu",
-    "headline": "cTrader — işlem terminali.",
+    "headline": "cTrader\u00a0— işlem terminali.",
     "body": "Piyasa derinliği, algoritmik yürütme ve tam bir mobil uygulama. Her FPT değerlendirmesi ve fonlu hesabı için kullanılabilir.",
     "features": {
       "dom": "Piyasa derinliği",
@@ -150,7 +150,7 @@
   },
   "ecosystem": {
     "title": "Fiper Global ekosisteminin parçası",
-    "subtitle": "FPT, Fiper Global tarafından desteklenir — modern trader’lar için tasarlanmış tam bir finansal altyapı.",
+    "subtitle": "FPT, Fiper Global tarafından desteklenir\u00a0— modern trader’lar için tasarlanmış tam bir finansal altyapı.",
     "fpt": {
       "title": "FPT",
       "desc": "Prop trading değerlendirmeleri",
@@ -206,7 +206,7 @@
       "contact": "İletişim",
       "about": "FPT hakkında"
     },
-    "copyright": "© 2026 Fiper Pro Traders — Bir Fiper Global Şirketi. Tüm hakları saklıdır.",
+    "copyright": "© 2026 Fiper Pro Traders\u00a0— Bir Fiper Global Şirketi. Tüm hakları saklıdır.",
     "support": "Destek"
   },
   "pricing": {
@@ -225,9 +225,9 @@
     "howItWorksTitle": "Tek aşama. Fonlanmaya doğrudan yol.",
     "howItWorksSubtitle": "Değerlendirmeyi geçin, sonra fonlu bir hesapta işlem yapın.",
     "phase1Label": "Değerlendirme (yalnızca tek aşama)",
-    "phase1Subtitle": "Simüle edilmiş değerlendirme — disiplininizi ve tutarlılığınızı tek aşamada kanıtlayın.",
+    "phase1Subtitle": "Simüle edilmiş değerlendirme\u00a0— disiplininizi ve tutarlılığınızı tek aşamada kanıtlayın.",
     "phase2Label": "Fonlanın",
-    "phase2Subtitle": "Fonlu hesap — değerlendirmeyi geçtikten sonra fonlu bir hesapta işlem yapın.",
+    "phase2Subtitle": "Fonlu hesap\u00a0— değerlendirmeyi geçtikten sonra fonlu bir hesapta işlem yapın.",
     "pricingEyebrow": "Fiyatlandırma",
     "pricingTitle": "Tek seferlik ücret. Abonelik yok.",
     "pricingSubtitle": "Hesap büyüklüğünüzü seçin ve değerlendirmenize bugün başlayın.",
@@ -250,7 +250,7 @@
     "rulesEyebrow": "Değerlendirme kuralları",
     "rulesTitle": "Net hedefler. Tanımlanmış limitler. Sürpriz yok.",
     "rulesSubtitle": "Her FPT değerlendirmesini ve fonlu hesabı yöneten tam kural seti.",
-    "rulesWarning": "İşlem koşulları, drawdown hesaplamaları ve kaldıraç seviyeleri enstrümana ve piyasa koşullarına göre değişebilir. En güncel parametreler için değerlendirme panelinizi her zaman kontrol edin.",
+    "rulesWarning": "İşlem koşulları, zarar limiti hesaplamaları ve kaldıraç seviyeleri enstrümana ve piyasa koşullarına göre değişebilir. En güncel parametreler için değerlendirme panelinizi her zaman kontrol edin.",
     "leverageEyebrow": "Kaldıraç",
     "leverageTitle": "Enstrümana göre kaldıraç dağılımı.",
     "instrument": "Enstrüman",
@@ -286,7 +286,7 @@
       "energy": "Enerji"
     },
     "chooseSize": "Hesap büyüklüğü seçin",
-    "metaDescription": "FPT değerlendirme kuralları ve ücretleri — 10,000 USD’den 200,000 USD’ye beş hesap büyüklüğü, tek aşama, yayımlanmış limitler.",
+    "metaDescription": "FPT değerlendirme kuralları ve ücretleri\u00a0— 10,000 USD’den 200,000 USD’ye beş hesap büyüklüğü, tek aşama, yayımlanmış limitler.",
     "metaKeywords": "prop trading değerlendirmesi, FPT ücretleri, fonlu hesap"
   },
   "about": {
@@ -294,11 +294,11 @@
       "p1title": "Şeffaf koşullar",
       "p1body": "Her kural, her ücret, her ödeme siz ödemeden önce yayınlanır. Geriye dönük değişiklik yok. Gizli madde yok.",
       "p2title": "Ödülden önce risk",
-      "p2body": "Düşüşleri atlatan trader sermayesini katlayarak büyütür. Kurallarımız sermayeyi korumak için vardır — sizi tuzağa düşürmek için değil.",
+      "p2body": "Düşüşleri atlatan trader sermayesini katlayarak büyütür. Kurallarımız sermayeyi korumak için vardır\u00a0— sizi tuzağa düşürmek için değil.",
       "p3title": "Bir yol, açıkça işaretlenmiş",
       "p3body": "Değerlendirme, fonlu hesap, ödül. Numara yok, dikkat dağıtmak için tasarlanmış paralel ürün hatları yok.",
       "p4title": "Pazarlama yerine altyapı",
-      "p4body": "Yürütme, likidite ve panellere yatırım yapıyoruz — influencer kampanyalarına değil. Platform kendi adına konuşur."
+      "p4body": "Yürütme, likidite ve panellere yatırım yapıyoruz\u00a0— influencer kampanyalarına değil. Platform kendi adına konuşur."
     },
     "ecosystem": {
       "fptTag": "Prop trading",
@@ -324,7 +324,7 @@
     "mission": {
       "content": "Yetenekli trader’ların gereksiz engellerle karşılaşmadan sermayeye erişmesi gerektiğine inanıyoruz. FPT, değerlendirmeden fonlu hesapta işleme şeffaf ve yapılandırılmış bir yol sunar."
     },
-    "subtitle": "FPT, Fiper Global’in prop trading kolu — modern trader’lar için tasarlanmış entegre bir finansal altyapı.",
+    "subtitle": "FPT, Fiper Global’in prop trading kolu\u00a0— modern trader’lar için tasarlanmış entegre bir finansal altyapı.",
     "title": "Hızlı ve akıllı işlem için tasarlandı",
     "metaDescription": "FPT, Fiper Global’in prop trading koludur. Şeffaf kurallar, ödülden önce risk, pazarlamadan önce altyapı."
   },
@@ -355,13 +355,13 @@
     "popular": {
       "q1": "Nasıl başlanır",
       "q2": "Ödemeler",
-      "q3": "Drawdown kuralları",
+      "q3": "Zarar limitleri",
       "q4": "Kâr hedefi"
     },
     "eyebrow": "Yardım Merkezi",
     "title1": "Yanıtlar. Düzenlenmiş.",
     "title2": "Aranabilir.",
-    "subtitle": "FPT’de gezinmek için ihtiyacınız olan her şey — ilk değerlendirmenizden ilk ödemenize kadar.",
+    "subtitle": "FPT’de gezinmek için ihtiyacınız olan her şey\u00a0— ilk değerlendirmenizden ilk ödemenize kadar.",
     "popularSearches": "Popüler aramalar:",
     "browseEyebrow": "Konuya göre gözat",
     "browseTitle": "Her yanıt, sıralanmış.",
@@ -376,13 +376,13 @@
     "contactSupport": "Desteğe başvur",
     "startChallenge": "Değerlendirmeye başlayın",
     "searchPlaceholder": "Yanıt ara…",
-    "metaDescription": "FPT Yardım Merkezi — değerlendirme, fonlu hesaplar, ödüller, Fiper Card, işlem kuralları ve platform hakkında yanıtlar.",
+    "metaDescription": "FPT Yardım Merkezi\u00a0— değerlendirme, fonlu hesaplar, ödüller, Fiper Card, işlem kuralları ve platform hakkında yanıtlar.",
     "readMore": "Devamını oku",
     "breadcrumb": "Gezinme yolu",
     "searchLabel": "Yardım merkezinde ara",
     "clearSearch": "Aramayı temizle",
     "searchHint": "Aramak için yazın veya aşağıdaki konulara göz atın.",
-    "searchNoMatch": "Sonuç yok — farklı anahtar kelimeler deneyin.",
+    "searchNoMatch": "Sonuç yok\u00a0— farklı anahtar kelimeler deneyin.",
     "orEmail": "Ya da e-posta ile:"
   },
   "partners": {
@@ -415,7 +415,7 @@
       },
       "tiers": {
         "title": "Otomatik kademe yükseltme",
-        "desc": "Kademe aylık satışlarınızı izler — başvuru yok, bekleme yok."
+        "desc": "Kademe aylık satışlarınızı izler\u00a0— başvuru yok, bekleme yok."
       }
     },
     "metaDescription": "FPT ortaklık programı: aylık satışlar üzerinden üç komisyon kademesi, kişisel yönlendirme bağlantısı ve kodu.",
@@ -434,8 +434,8 @@
   },
   "web": {
     "hero": {
-      "lead": "cTrader üzerinde dolar cinsinden açıklanan kurallarla tek aşamalı bir değerlendirme, ardından {{share}} payı ve her {{cycle}} günde bir ödemeyle fonlu bir hesap — ve her durakta doğrulanabilir bir sertifika.",
-      "ctaPrimary": "Değerlendirmeye başlayın · en düşük {{fee}}",
+      "lead": "cTrader üzerinde dolar cinsinden açıklanan kurallarla tek aşamalı bir değerlendirme, ardından {{share}} payı ve her {{cycle}} günde bir ödemeyle fonlu bir hesap\u00a0— ve her durakta doğrulanabilir bir sertifika.",
+      "ctaPrimary": "Değerlendirmeye başlayın\u00a0·\u00a0en düşük {{fee}}",
       "ctaSecondary": "Nasıl çalıştığını görün",
       "proof": {
         "target": "Kâr hedefi",
@@ -447,7 +447,7 @@
     },
     "path": {
       "eyebrow": "Fonlanmaya giden yol",
-      "title": "Üç durak — başlamadan önce her ekranı görürsünüz",
+      "title": "Üç durak\u00a0— başlamadan önce her ekranı görürsünüz",
       "sub": "Mecaz yok: burada gördüğünüz, hesabınızın içinde gördüğünüzdür.",
       "step1Title": "Değerlendirmenizi seçin",
       "step1Body": "{{min}} ile {{max}} arasında beş büyüklük, tek seferlik ücretle. Kurallarınız ödemeden önce dolar olarak görünür.",
@@ -464,17 +464,17 @@
       "title": "Tek ücret. Tek kural seti. Fark büyüklükte.",
       "account": "Değerlendirme hesabı",
       "popular": "En çok seçilen",
-      "oneTime": "· tek seferlik",
+      "oneTime": "tek seferlik",
       "target": "Hedef {{amount}}",
       "daily": "Günlük limit {{amount}}",
       "total": "Toplam limit {{amount}}",
       "start": "{{size}} ile başlayın",
       "startSize": "{{size}} ile başlayın",
-      "after": "Fonlandıktan sonra: {{share}} pay · {{days}} işlem gününden sonra her {{cycle}} günde bir ödeme · talep başına {{range}} · hesap teslim edildikten sonra ücretler iade edilmez."
+      "after": "Fonlandıktan sonra: {{share}} pay\u00a0·\u00a0{{days}} işlem gününden sonra her {{cycle}} günde bir ödeme\u00a0·\u00a0talep başına {{range}}\u00a0·\u00a0hesap teslim edildikten sonra ücretler iade edilmez."
     },
     "trust": {
       "eyebrow": "Doğrulanmış sertifikalar",
-      "title": "Her durak için bir sertifika — herkese açık doğrulama koduyla",
+      "title": "Her durak için bir sertifika\u00a0— herkese açık doğrulama koduyla",
       "sub": "Değerlendirmeyi geçmek ve fonlu hesap teslim edildikten sonra ödenen her ödeme: adınıza, herkesin burada kayıt olmadan doğrulayabileceği benzersiz kodlu bir sertifika.",
       "placeholder": "FPT-XXXXXXXXXX",
       "label": "Sertifika kodu",
@@ -494,7 +494,7 @@
       "q4": "Ücretler iade edilebilir mi?",
       "a4": "Ücret bir kez ödenir ve yalnızca hesabınız teslim edilmeden önce ve İade ve İptal Politikası’ndaki hallerde iade edilir. Teslimden sonra iade edilmez.",
       "q5": "Hangi enstrümanları hangi kaldıraçla işleyebilirim?",
-      "a5": "cTrader’da forex, metaller, endeksler, enerji ve seçili kripto paralar. Kaldıraç en fazla: forexte 1:{{forex}}, metallerde 1:{{metals}}, endekslerde 1:{{indices}}, enerjide 1:{{energy}} ve kriptoda 1:{{crypto}} — swapsız.",
+      "a5": "cTrader’da forex, metaller, endeksler, enerji ve seçili kripto paralar. Kaldıraç en fazla: forexte 1:{{forex}}, metallerde 1:{{metals}}, endekslerde 1:{{indices}}, enerjide 1:{{energy}} ve kriptoda 1:{{crypto}}\u00a0— swapsız.",
       "q6": "Bir sertifikayı nasıl doğrularım?",
       "a6": "Her sertifika FPT-XXXXXXXXXX biçiminde bir kod taşır. Yukarıdaki doğrulama alanına girin veya uygulamadaki herkese açık doğrulama sayfasını açın: sertifikanın durumu, sahibinin adı, türü ve hesap büyüklüğü kayıt olmadan görünür."
     },

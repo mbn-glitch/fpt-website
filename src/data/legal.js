@@ -4,6 +4,7 @@
  * The site never paraphrases a legal text; what is not published in the platform is not shown here.
  * UX-AUDIT-7 R1 — owner decisions 1–3 (1 Nov 2026); FPT-WEBSITE-DOMAIN — decisions 18 / 3-ب / 33-أ (4 Nov 2026): origins in src/config/site.js.
  */
+import { createElement } from 'react';
 import { APP_ORIGIN } from '../config/site.js';
 
 /** The ONE entity line — VERBATIM `LEGAL.entity.line` of fpt-platform/config/legal.ts, the same string the platform footer, the certificate,
@@ -13,6 +14,12 @@ export const ENTITY_LINE = {
   en: 'Fiper Global L.L.C-FZ — registered in the Meydan Free Zone, Dubai, United Arab Emirates (registration no. 2422384), Meydan Grandstand, 6th floor, Meydan Road, Nad Al Sheba, Dubai, U.A.E. Operating the Fiper Pro Traders (FPT) programme.',
   ar: 'فايبر غلوبال ذ.م.م – منطقة حرة، مسجلة في منطقة ميدان الحرة، دبي، الإمارات العربية المتحدة (رقم التسجيل 2422384)، ميدان غراندستاند، الطابق السادس، شارع ميدان، ند الشبا، دبي — المشغّل لبرنامج فايبر برو تريدرز (FPT).',
 };
+
+/** WEBL-D16 (re-check R3, 12 Nov 2026): a dash INSIDE the entity sentence («… دبي — المشغّل لبرنامج…», «L.L.C-FZ — registered…») could start a line (Arabic footer on
+ *  320 / 1366). The sentence is pinned verbatim, so its characters are not touched: at render time the word before each dash and the dash itself sit in one
+ *  unbreakable span — the text content stays the verbatim line (gates: check-entity-line on the source, check-line-edges --dist on the rendered pages). */
+const DASH_GLUE = /(\S+ [—–])(?= )/;
+export const entityLineNodes = (l) => ENTITY_LINE[l].split(DASH_GLUE).map((part, i) => (i % 2 ? createElement('span', { key: i, className: 'whitespace-nowrap' }, part) : part));
 
 /** Decision 2 — the simulated-accounts statement under the fixed risk line: Risk Disclosure Statement v1.0 § 2.1, verbatim (config/legal-texts/FPT-LEGAL-RISK.md). */
 export const SIMULATED_STATEMENT = {

@@ -63,7 +63,7 @@ const EA_TERM = /(?<![\p{L}\p{N}])(?:Expert Advisors?|EAs?)(?![\p{L}\p{N}])|(?:�
 /** Office decision ق-114 (re-check R2, WEBL-D13): in fr / es / pt / tr each loss limit has ONE name, the platform glossary's — «Perte quotidienne max / Perte maximale»,
  *  «Pérdida diaria máx / Pérdida máxima», «Perda diária máx / Perda máxima», «Maks Günlük Kayıp / Maksimum Kayıp» (the values of `challengePricing.maxDailyLoss|maxLoss`,
  *  as en / ar already do) — so «Drawdown» is refused as a rule NAME: the word with a daily / maximum / total qualifier on either side («Drawdown quotidien»,
- *  «Drawdown máximo», «drawdown total maximum», «Günlük Drawdown», «Maksimum Drawdown»). Like the Arabic rule it is CONTEXTUAL: the bare common noun stays
+ *  «Drawdown máximo», «drawdown total maximum», «Günlük Drawdown», «Maksimum Drawdown»). Like the Arabic rule it is CONTEXTUAL: for THIS rule the bare common noun passes (it is closed by DRAWDOWN_BARE below since re-check R3)
  *  («Règles de drawdown», «limites de drawdown», «survit aux drawdowns» — the wording of those sentences is the native reviewer's item) and the glossary entry
  *  `what-do-the-rule-names-mean` keeps its sentence «… ce que les autres réponses appellent « drawdown »». English is not scanned (its keys already read
  *  «Max Daily Loss / Max Loss»). */
@@ -84,6 +84,20 @@ const DRAWDOWN_RULE = new RegExp(`(?<![\\p{L}\\p{N}])(?:drawdowns?(?:\\s+${DD_Q}
   const broken = [...REFUSED.filter((t) => !hit(t)).map((t) => `not refused: «${t}»`), ...ALLOWED.filter(hit).map((t) => `glossary / common wording refused: «${t}»`)];
   if (broken.length) { console.error('check-glossary: FAIL — the «Drawdown» rule-name rule (ق-114) no longer holds on its own samples'); for (const x of broken) console.error(`  ${x}`); process.exit(1); }
 }
+/** WEBL-D13 (re-check R3, 12 Nov 2026): the BARE noun is closed too — «calculs de drawdown», «Règles de drawdown», «Comment le drawdown est-il calculé ?» and
+ *  «limites de drawdown» now read «limites de perte / límites de pérdida / limites de perda / zarar limitleri». In fr / es / pt / tr the word «drawdown» is refused
+ *  everywhere except (1) as a QUOTED mention — the glossary entry «… ce que les autres réponses appellent « drawdown »» — and (2) the About sentence
+ *  «… résiste aux drawdowns / sobrevive a los drawdowns / sobrevive aos drawdowns» (the native review of 12 Nov 2026 kept the trading word there; the office
+ *  left that sentence to the native speaker). */
+const DRAWDOWN_BARE = /(?<![\p{L}\p{N}])drawdown/giu;
+const bareDrawdownAllowed = (text, i) => { const before = text.slice(Math.max(0, i - 10), i); return /[«“"„][\s\u00a0\u202f]?$/u.test(before) || (/(?:^|[^\p{L}])(?:aux|a los|aos)\s$/iu.test(before) && /^drawdowns/i.test(text.slice(i))); };
+{
+  const hits = (t) => { DRAWDOWN_BARE.lastIndex = 0; let m; while ((m = DRAWDOWN_BARE.exec(t))) if (!bareDrawdownAllowed(t, m.index)) return true; return false; };
+  const REFUSED = ['Règles de drawdown', 'calculs de drawdown et niveaux de levier', 'Comment le drawdown est-il calculé ?', '¿Cómo se calcula el drawdown?', 'devem respeitar os limites de drawdown.', 'Drawdown nasıl hesaplanır?', 'drawdown hesaplamaları', 'Drawdown kuralları'];
+  const ALLOWED = ['ce que les autres réponses appellent « drawdown ».', 'lo que las demás respuestas llaman «drawdown».', 'chamam de “drawdown”.', 'diğer yanıtlarda “drawdown” denen şey', 'Le trader qui résiste aux drawdowns fait fructifier son capital.', 'El trader que sobrevive a los drawdowns', 'O trader que sobrevive aos drawdowns', 'Limites de perte', 'Zarar limitleri nasıl hesaplanır?'];
+  const broken = [...REFUSED.filter((t) => !hits(t)).map((t) => `not refused: «${t}»`), ...ALLOWED.filter(hits).map((t) => `allowed wording refused: «${t}»`)];
+  if (broken.length) { console.error('check-glossary: FAIL — the bare «drawdown» rule (WEBL-D13 R3) no longer holds on its own samples'); for (const x of broken) console.error(`  ${x}`); process.exit(1); }
+}
 const failures = [];
 const report = (where, text, m) => failures.push(`${where}: «${m[0]}» — …${text.slice(Math.max(0, m.index - 30), m.index + m[0].length + 30).replace(/\s+/g, ' ')}…`);
 const scan = (where, text, lang) => {
@@ -93,11 +107,20 @@ const scan = (where, text, lang) => {
   EA_TERM.lastIndex = 0; let m;
   while ((m = EA_TERM.exec(text))) if (!/MetaTrader/i.test(text.slice(Math.max(0, m.index - 160), m.index + m[0].length + 160))) report(where, text, m);
   if (DRAWDOWN_LANGS.includes(lang)) { DRAWDOWN_RULE.lastIndex = 0; while ((m = DRAWDOWN_RULE.exec(text))) report(`${where} [${lang}: «Drawdown» is not a rule name — ق-114]`, text, m); }
+  if (DRAWDOWN_LANGS.includes(lang)) { DRAWDOWN_BARE.lastIndex = 0; while ((m = DRAWDOWN_BARE.exec(text))) if (!bareDrawdownAllowed(text, m.index)) report(`${where} [${lang}: «drawdown» outside the glossary entry — the loss limits have their own words (WEBL-D13 R3)]`, text, m); }
 };
 // 1. locale values
 for (const l of ['en', 'ar', 'fr', 'es', 'pt', 'tr']) {
   const flat = (o, p = '') => Object.entries(o).flatMap(([k, v]) => (v && typeof v === 'object' ? flat(v, `${p}${k}.`) : [[`${p}${k}`, v]]));
   for (const [k, v] of flat(JSON.parse(readFileSync(path.join(ROOT, 'src/i18n/locales', `${l}.json`), 'utf8')))) if (typeof v === 'string') scan(`${l}.json ${k}`, v, l);
+}
+// 1b. WEBL-D34 (R3): a rule has ONE name per language in the source too — the keys of the unmounted preview card carry the same values as the rules table
+for (const l of ['en', 'ar', 'fr', 'es', 'pt', 'tr']) {
+  const j = JSON.parse(readFileSync(path.join(ROOT, 'src/i18n/locales', `${l}.json`), 'utf8'));
+  for (const [a, b] of [['maxDailyLoss', 'dailyDrawdown'], ['maxLoss', 'maxDrawdown'], ['profitTarget', 'profitTarget']]) {
+    const x = j.pricingPreview?.features?.[a]; const y = j.challengePricing?.rules?.[b];
+    if (x !== undefined && x !== y) failures.push(`${l}.json pricingPreview.features.${a} «${x}» ≠ challengePricing.rules.${b} «${y}» — one name per rule (WEBL-D34)`);
+  }
 }
 // 2. help content: every quoted literal that contains whitespace (a sentence), not ids / slugs / anchors
 {
@@ -120,4 +143,4 @@ if (DIST) {
   if (!failures.length) console.log(`check-glossary: ${pages} rendered pages scanned`);
 }
 if (failures.length) { console.error(`check-glossary: FAIL (${failures.length})`); for (const x of failures.slice(0, 80)) console.error(`  ${x}`); process.exit(1); }
-console.log(`check-glossary: PASS (six locales + help content${DIST ? ' + dist/ text' : ''}: no challenge / défi / desafío / desafio / zorluk / meydan okuma / تحدي / MT4 / MT5; Arabic rule names per WEBL-D13 — «السحب» refused in a loss-limit context only (8 refused + 11 payout samples self-checked), no bare «الخسارة القصوى»; ق-103 — «cBots», no «Expert Advisors / EAs» outside a MetaTrader sentence; ق-114 — fr / es / pt / tr: «Drawdown» refused as a rule name (12 refused + 14 allowed samples self-checked))`);
+console.log(`check-glossary: PASS (six locales + help content${DIST ? ' + dist/ text' : ''}: no challenge / défi / desafío / desafio / zorluk / meydan okuma / تحدي / MT4 / MT5; Arabic rule names per WEBL-D13 — «السحب» refused in a loss-limit context only (8 refused + 11 payout samples self-checked), no bare «الخسارة القصوى»; ق-103 — «cBots», no «Expert Advisors / EAs» outside a MetaTrader sentence; ق-114 — fr / es / pt / tr: «Drawdown» refused as a rule name (12 refused + 14 allowed samples self-checked); WEBL-D13 R3 — the bare «drawdown» only as a quoted mention or in the About sentence (8 refused + 9 allowed samples self-checked); WEBL-D34 — pricingPreview rule names = challengePricing.rules)`);

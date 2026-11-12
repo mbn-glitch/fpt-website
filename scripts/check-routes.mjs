@@ -42,13 +42,15 @@ for (const [p, want] of SITE_REDIRECTS) { const r = resolve(routes, DIST, p); ch
 // decision 53 — the six 404 pages are complete
 const legal = readFileSync(path.join(ROOT, 'src/data/legal.js'), 'utf8'); const eb = legal.slice(legal.indexOf('ENTITY_LINE = {')); const ENTITY = { en: eb.match(/^\s*en: '([^']*)'/m)[1], ar: eb.match(/^\s*ar: '([^']*)'/m)[1] };
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
+// WEBL-D16 (R3): the entity line is rendered with the word before each dash and the dash in one unbreakable span — its TEXT must still be the verbatim line
+const unglue = (h) => h.replace(/<span class="whitespace-nowrap">([^<]*)<\/span>/g, '$1');
 for (const lang of LANGS) {
   const html = readFileSync(file404(lang), 'utf8'); const el = lang === 'ar' ? 'ar' : 'en'; const probs = [];
   if ((html.match(/<title>/g) || []).length !== 1) probs.push('title≠1');
   if (!new RegExp(`<html lang="${lang}" dir="${lang === 'ar' ? 'rtl' : 'ltr'}">`).test(html)) probs.push('html lang/dir');
   if ((html.match(/<h1/g) || []).length !== 1) probs.push('h1≠1');
   if ((html.match(/data-risk-line/g) || []).length !== 1 || !html.includes(el === 'ar' ? 'الاستثمار ينطوي على مخاطر' : 'Investing involves risk')) probs.push('risk line≠1');
-  if ((html.match(/data-entity-line/g) || []).length !== 1 || !(html.includes(esc(ENTITY[el])) || html.includes(ENTITY[el]))) probs.push('entity line≠1');
+  if ((html.match(/data-entity-line/g) || []).length !== 1 || !(unglue(html).includes(esc(ENTITY[el])) || unglue(html).includes(ENTITY[el]))) probs.push('entity line≠1');
   if (!/name="robots" content="noindex"/.test(html)) probs.push('noindex');
   if (/data-prerendered="route"/.test(html) === false) probs.push('not pre-rendered');
   check(`404 page ${lang}: title · lang/dir · h1 · risk · entity once · noindex`, probs.length === 0, probs.join(', '));

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import SEO from '../components/SEO.jsx';
 import Section, { Eyebrow, SectionHeader } from '../components/ui/Section.jsx';
 import Button from '../components/ui/Button.jsx';
-import { ENTITY_LINE, localeLegal } from '../data/legal.js';
+import { entityLineNodes, localeLegal } from '../data/legal.js';
 import useAppLinks from '../hooks/useAppLinks.js';
 
 /** About — headline-dominant: h1 (the relationship line is the header's — owner decision 38-ب) + one primary action in the first screen (UXFW-014); principles; the three Fiper products (the Fiper Card row carries the owner's one sentence — decision 6); the entity line. No counters, no «12+ countries» (UXFW-005). */
@@ -86,7 +86,7 @@ export default function About() {
             </li>
           ))}
         </ul>
-        <p className="mt-10 text-center text-base text-tertiary" lang={l} dir={l === 'ar' ? 'rtl' : 'ltr'}>{ENTITY_LINE[l]}</p>
+        <p className="mt-10 text-center text-base text-tertiary" lang={l} dir={l === 'ar' ? 'rtl' : 'ltr'}>{entityLineNodes(l)}</p>
       </Section>
     </>
   );

@@ -140,12 +140,12 @@ export const faqs = [
     id: 'how-do-i-start', categoryId: 'getting-started', popular: true,
     question: 'How do I start?',
     questions: { ar: 'كيف أبدأ؟', fr: 'Comment commencer ?', es: '¿Cómo empiezo?', pt: 'Como começo?', tr: 'Nasıl başlarım?' },
-    answer: 'Choose an account size and buy the evaluation. Your cTrader credentials are made available in the client area after payment confirmation — within 48 hours at the latest.',
+    answer: 'Choose an account size and buy the evaluation. Your cTrader credentials are made available in the client area after payment confirmation — within 48 hours at the latest.',
     answers: {
-      ar: 'اختر حجم الحساب واشترِ التقييم. تُتاح بيانات دخول cTrader في منطقة العميل بعد تأكيد الدفع — خلال 48 ساعة على الأكثر.',
-      fr: 'Choisissez une taille de compte et achetez l’évaluation. Vos identifiants cTrader sont mis à disposition dans l’espace client après confirmation du paiement — sous 48 heures au plus tard.',
-      es: 'Elige un tamaño de cuenta y compra la evaluación. Tus credenciales de cTrader se ponen a disposición en el área de cliente tras la confirmación del pago — en 48 horas como máximo.',
-      pt: 'Escolha um tamanho de conta e compre a avaliação. Suas credenciais do cTrader ficam disponíveis na área do cliente após a confirmação do pagamento — em até 48 horas.',
+      ar: 'اختر حجم الحساب واشترِ التقييم. تُتاح بيانات دخول cTrader في منطقة العميل بعد تأكيد الدفع — خلال 48 ساعة على الأكثر.',
+      fr: 'Choisissez une taille de compte et achetez l’évaluation. Vos identifiants cTrader sont mis à disposition dans l’espace client après confirmation du paiement — sous 48 heures au plus tard.',
+      es: 'Elige un tamaño de cuenta y compra la evaluación. Tus credenciales de cTrader se ponen a disposición en el área de cliente tras la confirmación del pago — en 48 horas como máximo.',
+      pt: 'Escolha um tamanho de conta e compre a avaliação. Suas credenciais do cTrader ficam disponíveis na área do cliente após a confirmação do pagamento — em até 48 horas.',
       tr: 'Bir hesap büyüklüğü seçin ve değerlendirmeyi satın alın. cTrader giriş bilgileriniz ödeme onayından sonra en geç 48 saat içinde müşteri alanında kullanıma sunulur.',
     },
   },
@@ -205,13 +205,13 @@ export const faqs = [
     id: 'can-i-test-a-demo-account', categoryId: 'getting-started',
     question: 'Can I test a demo account before purchasing?',
     questions: { ar: 'هل يمكنني تجربة حساب تجريبي قبل الشراء؟', fr: "Puis-je tester un compte démo avant d’acheter ?", es: '¿Puedo probar una cuenta demo antes de comprar?', pt: 'Posso testar uma conta demo antes de comprar?', tr: 'Satın almadan önce demo hesabı test edebilir miyim?' },
-    answer: 'FPT does not offer a free demo. However, all evaluation accounts operate in a simulated environment — purchasing an evaluation is the equivalent of starting a monitored demo with the opportunity to earn.',
+    answer: 'FPT does not offer a free demo. However, all evaluation accounts operate in a simulated environment — purchasing an evaluation is the equivalent of starting a monitored demo with the opportunity to earn.',
     answers: {
-      ar: 'لا يقدم FPT تجربة مجانية. ومع ذلك، تعمل جميع حسابات التقييم في بيئة محاكاة — شراء تقييم يعادل البدء بحساب تجريبي مراقَب مع فرصة للكسب.',
-      fr: "FPT n’offre pas de démo gratuite. Toutefois, tous les comptes d’évaluation fonctionnent dans un environnement simulé — acheter une évaluation revient à démarrer une démo surveillée avec la possibilité de gagner.",
-      es: 'FPT no ofrece una demo gratuita. Sin embargo, todas las cuentas de evaluación operan en un entorno simulado — comprar una evaluación equivale a iniciar una demo supervisada con la oportunidad de ganar.',
-      pt: 'FPT não oferece demo gratuita. No entanto, todas as contas de avaliação operam em ambiente simulado — comprar uma avaliação equivale a iniciar uma demo monitorada com a oportunidade de ganhar.',
-      tr: 'FPT ücretsiz demo sunmaz. Ancak tüm değerlendirme hesapları simüle ortamda çalışır — bir değerlendirme satın almak, kazanma fırsatı olan izlenen bir demoya başlamakla eşdeğerdir.',
+      ar: 'لا يقدم FPT تجربة مجانية. ومع ذلك، تعمل جميع حسابات التقييم في بيئة محاكاة — شراء تقييم يعادل البدء بحساب تجريبي مراقَب مع فرصة للكسب.',
+      fr: "FPT n’offre pas de démo gratuite. Toutefois, tous les comptes d’évaluation fonctionnent dans un environnement simulé — acheter une évaluation revient à démarrer une démo surveillée avec la possibilité de gagner.",
+      es: 'FPT no ofrece una demo gratuita. Sin embargo, todas las cuentas de evaluación operan en un entorno simulado — comprar una evaluación equivale a iniciar una demo supervisada con la oportunidad de ganar.',
+      pt: 'FPT não oferece demo gratuita. No entanto, todas as contas de avaliação operam em ambiente simulado — comprar uma avaliação equivale a iniciar uma demo monitorada com a oportunidade de ganhar.',
+      tr: 'FPT ücretsiz demo sunmaz. Ancak tüm değerlendirme hesapları simüle ortamda çalışır — bir değerlendirme satın almak, kazanma fırsatı olan izlenen bir demoya başlamakla eşdeğerdir.',
     },
   },
   {
@@ -258,19 +258,19 @@ export const faqs = [
     id: 'what-do-the-rule-names-mean', categoryId: 'challenges-rules',
     question: 'What do Profit Target, Max Daily Loss and Max Loss mean?',
     questions: { ar: 'ماذا تعني «هدف الربح» و«الخسارة اليومية القصوى» و«الخسارة الإجمالية القصوى»؟', fr: 'Que signifient Objectif de profit, Perte quotidienne max et Perte maximale ?', es: '¿Qué significan Objetivo de beneficio, Pérdida diaria máx. y Pérdida máxima?', pt: 'O que significam Meta de lucro, Perda diária máx. e Perda máxima?', tr: 'Kâr hedefi, Maks. günlük zarar ve Maksimum zarar ne anlama gelir?' },
-    answer: 'Profit Target: 10 % of the starting account balance, to be reached during the evaluation. Max Daily Loss: 5 % — equity must not fall below 95 % of the day-start equity, measured at 00:00 Dubai time. Max Loss: 9 % of the initial balance — equity must stay above 91 %; these two loss limits are what the other answers call “drawdown”.',
+    answer: 'Profit Target: 10 % of the starting account balance, to be reached during the evaluation. Max Daily Loss: 5 % — equity must not fall below 95 % of the day-start equity, measured at 00:00 Dubai time. Max Loss: 9 % of the initial balance — equity must stay above 91 %; these two loss limits are what the other answers call “drawdown”.',
     answers: {
-      ar: 'هدف الربح (Profit Target): 10 % من رصيد الحساب الابتدائي، يُحقَّق خلال التقييم. الخسارة اليومية القصوى (Max Daily Loss): 5 % — يجب ألا تنخفض حقوق الحساب دون 95 % من حقوق الحساب في بداية اليوم، المقيسة في الساعة 00:00 بتوقيت دبي. الخسارة الإجمالية القصوى (Max Loss): 9 % من الرصيد الابتدائي — يجب أن تبقى حقوق الحساب فوق 91 %؛ وكلمة «السحب» في هذا الموقع تعني صرف الأرباح فقط، ولا تُستعمل لحدود الخسارة.',
-      fr: 'Objectif de profit (Profit Target) : 10 % du solde initial du compte, à atteindre pendant l’évaluation. Perte quotidienne max (Max Daily Loss) : 5 % — l’equity ne doit pas descendre sous 95 % de l’equity de début de journée, mesurée à 00:00 heure de Dubaï. Perte maximale (Max Loss) : 9 % du solde initial — l’equity doit rester au-dessus de 91 % ; ces deux limites de perte sont ce que les autres réponses appellent « drawdown ».',
-      es: 'Objetivo de beneficio (Profit Target): 10 % del saldo inicial de la cuenta, que debe alcanzarse durante la evaluación. Pérdida diaria máx. (Max Daily Loss): 5 % — el equity no debe caer por debajo del 95 % del equity de inicio del día, medido a las 00:00 hora de Dubái. Pérdida máxima (Max Loss): 9 % del saldo inicial — el equity debe mantenerse por encima del 91 %; estos dos límites de pérdida son lo que las demás respuestas llaman «drawdown».',
-      pt: 'Meta de lucro (Profit Target): 10 % do saldo inicial da conta, a ser atingida durante a avaliação. Perda diária máx. (Max Daily Loss): 5 % — o patrimônio não pode cair abaixo de 95 % do patrimônio de início do dia, medido às 00:00 no horário de Dubai. Perda máxima (Max Loss): 9 % do saldo inicial — o patrimônio deve permanecer acima de 91 %; esses dois limites de perda são o que as outras respostas chamam de “drawdown”.',
-      tr: 'Kâr hedefi (Profit Target): değerlendirme sırasında ulaşılması gereken, başlangıç hesap bakiyesinin %10’u. Maks. günlük zarar (Max Daily Loss): %5 — özkaynak, Dubai saatiyle 00:00’da ölçülen gün başı özkaynağının %95’inin altına düşmemelidir. Maksimum zarar (Max Loss): başlangıç bakiyesinin %9’u — özkaynak %91’in üzerinde kalmalıdır; diğer yanıtlarda “drawdown” denen şey bu iki zarar limitidir.',
+      ar: 'هدف الربح (Profit Target): 10 % من رصيد الحساب الابتدائي، يُحقَّق خلال التقييم. الخسارة اليومية القصوى (Max Daily Loss): 5 % — يجب ألا تنخفض حقوق الحساب دون 95 % من حقوق الحساب في بداية اليوم، المقيسة في الساعة 00:00 بتوقيت دبي. الخسارة الإجمالية القصوى (Max Loss): 9 % من الرصيد الابتدائي — يجب أن تبقى حقوق الحساب فوق 91 %؛ وكلمة «السحب» في هذا الموقع تعني صرف الأرباح فقط، ولا تُستعمل لحدود الخسارة.',
+      fr: 'Objectif de profit (Profit Target) : 10 % du solde initial du compte, à atteindre pendant l’évaluation. Perte quotidienne max (Max Daily Loss) : 5 % — l’equity ne doit pas descendre sous 95 % de l’equity de début de journée, mesurée à 00:00 heure de Dubaï. Perte maximale (Max Loss) : 9 % du solde initial — l’equity doit rester au-dessus de 91 % ; ces deux limites de perte sont ce que les autres réponses appellent « drawdown ».',
+      es: 'Objetivo de beneficio (Profit Target): 10 % del saldo inicial de la cuenta, que debe alcanzarse durante la evaluación. Pérdida diaria máx. (Max Daily Loss): 5 % — el equity no debe caer por debajo del 95 % del equity de inicio del día, medido a las 00:00 hora de Dubái. Pérdida máxima (Max Loss): 9 % del saldo inicial — el equity debe mantenerse por encima del 91 %; estos dos límites de pérdida son lo que las demás respuestas llaman «drawdown».',
+      pt: 'Meta de lucro (Profit Target): 10 % do saldo inicial da conta, a ser atingida durante a avaliação. Perda diária máx. (Max Daily Loss): 5 % — o patrimônio não pode cair abaixo de 95 % do patrimônio de início do dia, medido às 00:00 no horário de Dubai. Perda máxima (Max Loss): 9 % do saldo inicial — o patrimônio deve permanecer acima de 91 %; esses dois limites de perda são o que as outras respostas chamam de “drawdown”.',
+      tr: 'Kâr hedefi (Profit Target): değerlendirme sırasında ulaşılması gereken, başlangıç hesap bakiyesinin %10’u. Maks. günlük zarar (Max Daily Loss): %5 — özkaynak, Dubai saatiyle 00:00’da ölçülen gün başı özkaynağının %95’inin altına düşmemelidir. Maksimum zarar (Max Loss): başlangıç bakiyesinin %9’u — özkaynak %91’in üzerinde kalmalıdır; diğer yanıtlarda “drawdown” denen şey bu iki zarar limitidir.',
     },
   },
   {
     id: 'how-is-drawdown-calculated', categoryId: 'challenges-rules',
-    question: 'How is drawdown calculated — based on equity or balance?',
-    questions: { ar: 'كيف يُحسب حدّ الخسارة؟', fr: 'Comment le drawdown est-il calculé ?', es: '¿Cómo se calcula el drawdown?', pt: 'Como o drawdown é calculado?', tr: 'Drawdown nasıl hesaplanır?' },
+    question: 'How is drawdown calculated — based on equity or balance?',
+    questions: { ar: 'كيف يُحسب حدّ الخسارة؟', fr: 'Comment les limites de perte sont-elles calculées ?', es: '¿Cómo se calculan los límites de pérdida?', pt: 'Como os limites de perda são calculados?', tr: 'Zarar limitleri nasıl hesaplanır?' },
     answer: 'The daily limit is measured against the day-start equity (00:00 Dubai time); the maximum loss limit against the initial balance (equity must stay above 91 %). Both include the floating P&L of open positions; rewards paid are deducted from the balance.',
     answers: {
       ar: 'يُقاس الحد اليومي على حقوق الحساب في بداية اليوم (00:00 بتوقيت دبي)؛ وتُقاس الخسارة الإجمالية القصوى على الرصيد الابتدائي (يجب أن تبقى حقوق الحساب فوق 91 %). كلاهما يشمل الربح/الخسارة العائمة للمراكز المفتوحة؛ وتُخصم المكافآت المدفوعة من الرصيد.',
@@ -427,13 +427,13 @@ export const faqs = [
     id: 'do-funded-accounts-follow-same-rules', categoryId: 'funded-accounts',
     question: 'Do funded accounts follow the same rules as the evaluation?',
     questions: { ar: 'هل تتبع الحسابات الممولة نفس قواعد التقييم؟', fr: 'Les comptes financés suivent-ils les mêmes règles ?', es: '¿Las cuentas financiadas siguen las mismas reglas?', pt: 'As contas financiadas seguem as mesmas regras?', tr: 'Fonlu hesaplar aynı kuralları takip ediyor mu?' },
-    answer: 'The core risk parameters remain — daily drawdown, maximum drawdown, and minimum trading days. The profit target no longer applies.',
+    answer: 'The core risk parameters remain — daily drawdown, maximum drawdown, and minimum trading days. The profit target no longer applies.',
     answers: {
-      ar: 'تبقى معاملات المخاطر الأساسية — الخسارة اليومية القصوى والخسارة الإجمالية القصوى والحد الأدنى لأيام التداول. لا ينطبق هدف الربح بعد الآن.',
-      fr: 'Les paramètres de risque principaux restent — perte quotidienne max, perte maximale et nombre minimal de jours de trading. L’objectif de profit ne s’applique plus.',
-      es: 'Los parámetros de riesgo principales permanecen — pérdida diaria máx., pérdida máxima y días mínimos de trading. El objetivo de beneficio ya no aplica.',
-      pt: 'Os parâmetros de risco principais permanecem — perda diária máx., perda máxima e dias mínimos de trading. A meta de lucro não se aplica mais.',
-      tr: 'Temel risk parametreleri kalır — günlük zarar limiti, azami zarar limiti ve asgari işlem günü sayısı. Kâr hedefi artık geçerli değildir.',
+      ar: 'تبقى معاملات المخاطر الأساسية — الخسارة اليومية القصوى والخسارة الإجمالية القصوى والحد الأدنى لأيام التداول. لا ينطبق هدف الربح بعد الآن.',
+      fr: 'Les paramètres de risque principaux restent — perte quotidienne max, perte maximale et nombre minimal de jours de trading. L’objectif de profit ne s’applique plus.',
+      es: 'Los parámetros de riesgo principales permanecen — pérdida diaria máx., pérdida máxima y días mínimos de trading. El objetivo de beneficio ya no aplica.',
+      pt: 'Os parâmetros de risco principais permanecem — perda diária máx., perda máxima e dias mínimos de trading. A meta de lucro não se aplica mais.',
+      tr: 'Temel risk parametreleri kalır — günlük zarar limiti, azami zarar limiti ve asgari işlem günü sayısı. Kâr hedefi artık geçerli değildir.',
     },
   },
   {
@@ -489,7 +489,7 @@ export const faqs = [
     },
   },
   {
-    // Owner decision 6 (1 Nov 2026 23:08): the ONE wording about the Fiper Card — the owner's sentence, nothing else
+    // Owner decision 6 (1 Nov 2026 23:08): the ONE wording about the Fiper Card — the owner's sentence, nothing else
     id: 'how-do-i-use-the-fiper-card', categoryId: 'payouts-fiper-card',
     question: 'How do I use the Fiper Card?',
     questions: { ar: 'كيف أستخدم بطاقة فايبر؟', fr: 'Comment utiliser la Fiper Card ?', es: '¿Cómo uso la Fiper Card?', pt: 'Como uso o Fiper Card?', tr: 'Fiper Card’ı nasıl kullanırım?' },
@@ -542,8 +542,8 @@ export const faqs = [
     },
   },
   {
-    // Office decision ق-103 (11 Nov 2026): on this cTrader-only site the general term is «cBots» — the local word for robots + «(cBots)» at the first mention on a page
-    // (the question), then «cBots»; the MetaTrader term would belong only to a sentence saying MetaTrader advisors are not supported — none exists here.
+    // Office decision ق-103 (11 Nov 2026): on this cTrader-only site the general term is «cBots» — the local word for robots + «(cBots)» at the first mention on a page
+    // (the question), then «cBots»; the MetaTrader term would belong only to a sentence saying MetaTrader advisors are not supported — none exists here.
     id: 'can-i-use-cbots', categoryId: 'trading-conditions',
     question: 'Can I use trading robots (cBots)?',
     questions: { ar: 'هل الروبوتات (cBots) مسموح بها؟', fr: 'Puis-je utiliser des robots de trading (cBots) ?', es: '¿Puedo usar robots de trading (cBots)?', pt: 'Posso usar robôs de trading (cBots)?', tr: 'İşlem robotları (cBots) kullanabilir miyim?' },
@@ -589,10 +589,10 @@ export const faqs = [
     answer: 'These strategies are permitted, but they must respect the maximum drawdown and daily loss limits.',
     answers: {
       ar: 'هذه الاستراتيجيات مسموح بها، لكن يجب أن تحترم الخسارة الإجمالية القصوى والخسارة اليومية القصوى.',
-      fr: 'Ces stratégies sont autorisées mais doivent respecter les limites de drawdown.',
-      es: 'Estas estrategias están permitidas pero deben respetar los límites de drawdown.',
-      pt: 'Essas estratégias são permitidas mas devem respeitar os limites de drawdown.',
-      tr: 'Bu stratejilere izin verilir ancak drawdown limitlerine uymaları gerekir.',
+      fr: 'Ces stratégies sont autorisées mais doivent respecter les limites de perte.',
+      es: 'Estas estrategias están permitidas pero deben respetar los límites de pérdida.',
+      pt: 'Essas estratégias são permitidas mas devem respeitar os limites de perda.',
+      tr: 'Bu stratejilere izin verilir ancak maksimum zarar ve günlük zarar limitlerine uymaları gerekir.',
     },
   },
   {
@@ -690,13 +690,13 @@ export const faqs = [
     id: 'which-platform-do-you-use', categoryId: 'technical-platform',
     question: 'Which platform do you use?',
     questions: { ar: 'ما المنصة التي تستخدمونها؟', fr: 'Quelle plateforme utilisez-vous ?', es: '¿Qué plataforma usan?', pt: 'Qual plataforma vocês usam?', tr: 'Hangi platformu kullanıyorsunuz?' },
-    answer: 'FPT operates on cTrader — chosen for its institutional-grade execution, native depth-of-market, and advanced algorithmic capabilities.',
+    answer: 'FPT operates on cTrader — chosen for its institutional-grade execution, native depth-of-market, and advanced algorithmic capabilities.',
     answers: {
-      ar: 'يعمل FPT على cTrader — المختار لتنفيذه بمستوى مؤسسي وعمق السوق الأصلي وقدراته الخوارزمية المتقدمة.',
-      fr: 'FPT opère sur cTrader — choisi pour son exécution de niveau institutionnel, sa profondeur de marché native et ses capacités algorithmiques avancées.',
-      es: 'FPT opera en cTrader — elegido por su ejecución de nivel institucional, su profundidad de mercado nativa y sus capacidades algorítmicas avanzadas.',
-      pt: 'FPT opera no cTrader — escolhido por sua execução de nível institucional, profundidade de mercado nativa e capacidades algorítmicas avançadas.',
-      tr: 'FPT, cTrader üzerinde çalışır — kurumsal düzeyde yürütmesi, yerleşik piyasa derinliği ve gelişmiş algoritmik yetenekleri nedeniyle seçilmiştir.',
+      ar: 'يعمل FPT على cTrader — المختار لتنفيذه بمستوى مؤسسي وعمق السوق الأصلي وقدراته الخوارزمية المتقدمة.',
+      fr: 'FPT opère sur cTrader — choisi pour son exécution de niveau institutionnel, sa profondeur de marché native et ses capacités algorithmiques avancées.',
+      es: 'FPT opera en cTrader — elegido por su ejecución de nivel institucional, su profundidad de mercado nativa y sus capacidades algorítmicas avanzadas.',
+      pt: 'FPT opera no cTrader — escolhido por sua execução de nível institucional, profundidade de mercado nativa e capacidades algorítmicas avançadas.',
+      tr: 'FPT, cTrader üzerinde çalışır — kurumsal düzeyde yürütmesi, yerleşik piyasa derinliği ve gelişmiş algoritmik yetenekleri nedeniyle seçilmiştir.',
     },
   },
   {
@@ -778,7 +778,7 @@ export const faqs = [
     },
   },
   {
-    // WEBL-D22 (design office, decided): the fixed risk line exists in Arabic and English only — in fr / es / pt / tr it is NOT part of the translated sentence;
+    // WEBL-D22 (design office, decided): the fixed risk line exists in Arabic and English only — in fr / es / pt / tr it is NOT part of the translated sentence;
     // the accordion renders it after the answer as its own line with lang="en" (`fixedRiskLine`, FAQAccordion.jsx). en / ar keep it inside the answer in their language.
     id: 'can-you-guarantee-profits', categoryId: 'legal-general', fixedRiskLine: true,
     question: 'Can you guarantee profits?',
@@ -796,12 +796,12 @@ export const faqs = [
     id: 'in-which-jurisdiction-is-fpt-registered', categoryId: 'legal-general',
     question: 'In which jurisdiction is FPT registered?',
     questions: { ar: 'في أي ولاية قضائية يُسجَّل FPT؟', fr: 'Dans quelle juridiction FPT est-il enregistré ?', es: '¿En qué jurisdicción está registrado FPT?', pt: 'Em qual jurisdição FPT está registrado?', tr: 'FPT hangi yargı bölgesinde kayıtlıdır?' },
-    answer: 'FPT is operated by Fiper Global L.L.C-FZ — Company registration number 2422384 — registered in the Meydan Free Zone, Dubai, United Arab Emirates. The four legal documents are published in the client area.',
+    answer: 'FPT is operated by Fiper Global L.L.C-FZ — Company registration number 2422384 — registered in the Meydan Free Zone, Dubai, United Arab Emirates. The four legal documents are published in the client area.',
     answers: {
       ar: 'تشغّل FPT شركة فايبر غلوبال ذ.م.م – منطقة حرة (رقم السجل التجاري 2422384)، المسجلة في منطقة ميدان الحرة، دبي، الإمارات العربية المتحدة. والوثائق القانونية الأربع منشورة في منطقة العميل.',
-      fr: 'FPT est exploité par Fiper Global L.L.C-FZ — numéro d’enregistrement 2422384 — enregistrée dans la Meydan Free Zone, Dubaï, Émirats arabes unis. Les quatre documents juridiques sont publiés dans l’espace client.',
-      es: 'FPT es operado por Fiper Global L.L.C-FZ — número de registro 2422384 — registrada en la Meydan Free Zone, Dubái, Emiratos Árabes Unidos. Los cuatro documentos legales se publican en el área de cliente.',
-      pt: 'A FPT é operada pela Fiper Global L.L.C-FZ — número de registro 2422384 — registrada na Meydan Free Zone, Dubai, Emirados Árabes Unidos. Os quatro documentos legais são publicados na área do cliente.',
+      fr: 'FPT est exploité par Fiper Global L.L.C-FZ — numéro d’enregistrement 2422384 — enregistrée dans la Meydan Free Zone, Dubaï, Émirats arabes unis. Les quatre documents juridiques sont publiés dans l’espace client.',
+      es: 'FPT es operado por Fiper Global L.L.C-FZ — número de registro 2422384 — registrada en la Meydan Free Zone, Dubái, Emiratos Árabes Unidos. Los cuatro documentos legales se publican en el área de cliente.',
+      pt: 'A FPT é operada pela Fiper Global L.L.C-FZ — número de registro 2422384 — registrada na Meydan Free Zone, Dubai, Emirados Árabes Unidos. Os quatro documentos legais são publicados na área do cliente.',
       tr: 'FPT, Meydan Serbest Bölgesi, Dubai, Birleşik Arap Emirlikleri’nde kayıtlı Fiper Global L.L.C-FZ (şirket sicil numarası 2422384) tarafından işletilir. Dört yasal belge müşteri alanında yayımlanır.',
     },
   },
@@ -835,13 +835,13 @@ export const faqs = [
     id: 'what-are-the-commission-tiers', categoryId: 'partner-program', popular: true,
     question: 'What are the commission tiers?',
     questions: { ar: 'ما هي مستويات العمولة؟', fr: 'Quels sont les paliers de commission ?', es: '¿Cuáles son los niveles de comisión?', pt: 'Quais são os níveis de comissão?', tr: 'Komisyon kademeleri nelerdir?' },
-    answer: 'Tier 1: 15 % (1–9 sales a month) · Tier 2: 17.5 % (10–29) · Tier 3: 20 % (30+). The tier follows your monthly sales automatically.',
+    answer: 'Tier 1: 15 % (1–9 sales a month) · Tier 2: 17.5 % (10–29) · Tier 3: 20 % (30+). The tier follows your monthly sales automatically.',
     answers: {
-      ar: 'المستوى الأول: 15 % (1–9 مبيعات شهرياً) · المستوى الثاني: 17.5 % (10–29) · المستوى الثالث: 20 % (30+). يتبع المستوى مبيعاتك الشهرية تلقائياً.',
-      fr: 'Palier 1 : 15 % (1–9 ventes par mois) · Palier 2 : 17.5 % (10–29) · Palier 3 : 20 % (30+). Le palier suit automatiquement vos ventes mensuelles.',
-      es: 'Nivel 1: 15 % (1–9 ventas al mes) · Nivel 2: 17.5 % (10–29) · Nivel 3: 20 % (30+). El nivel sigue tus ventas mensuales automáticamente.',
-      pt: 'Nível 1: 15 % (1–9 vendas por mês) · Nível 2: 17.5 % (10–29) · Nível 3: 20 % (30+). O nível acompanha suas vendas mensais automaticamente.',
-      tr: 'Kademe 1: %15 (ayda 1–9 satış) · Kademe 2: %17.5 (10–29) · Kademe 3: %20 (30+). Kademe aylık satışlarınızı otomatik izler.',
+      ar: 'المستوى الأول: 15 % (1–9 مبيعات شهرياً) · المستوى الثاني: 17.5 % (10–29) · المستوى الثالث: 20 % (30+). يتبع المستوى مبيعاتك الشهرية تلقائياً.',
+      fr: 'Palier 1 : 15 % (1–9 ventes par mois) · Palier 2 : 17.5 % (10–29) · Palier 3 : 20 % (30+). Le palier suit automatiquement vos ventes mensuelles.',
+      es: 'Nivel 1: 15 % (1–9 ventas al mes) · Nivel 2: 17.5 % (10–29) · Nivel 3: 20 % (30+). El nivel sigue tus ventas mensuales automáticamente.',
+      pt: 'Nível 1: 15 % (1–9 vendas por mês) · Nível 2: 17.5 % (10–29) · Nível 3: 20 % (30+). O nível acompanha suas vendas mensais automaticamente.',
+      tr: 'Kademe 1: %15 (ayda 1–9 satış) · Kademe 2: %17.5 (10–29) · Kademe 3: %20 (30+). Kademe aylık satışlarınızı otomatik izler.',
     },
   },
   {

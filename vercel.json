@@ -1,6 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "routes": [
+    { "src": "^/(.*)$", "headers": { "X-Frame-Options": "DENY", "Content-Security-Policy": "frame-ancestors 'none'" }, "continue": true },
     { "src": "^/([^/\\\\].*)/$", "headers": { "Location": "/$1" }, "status": 308 },
     { "src": "^/pricing$", "headers": { "Location": "/challenges" }, "status": 308 },
     { "src": "^/(ar|fr|es|pt|tr)/pricing$", "headers": { "Location": "/$1/challenges" }, "status": 308 },

@@ -44,8 +44,8 @@ export const categories = [
   },
   {
     id: 'payouts-fiper-card', slug: 'payouts-fiper-card', icon: CreditCard,
-    title: 'Payouts',
-    titles: { ar: 'الدفعات', fr: 'Paiements', es: 'Pagos', pt: 'Pagamentos', tr: 'Ödemeler' },
+    title: 'Payouts & Fiper Card',
+    titles: { ar: 'الدفعات وبطاقة Fiper', fr: 'Paiements et Fiper Card', es: 'Pagos y Fiper Card', pt: 'Pagamentos e Fiper Card', tr: 'Ödemeler ve Fiper Card' },
     description: 'Rewards, how they are paid, and the Fiper Card.',
     descriptions: {
       ar: 'المكافآت وطرق دفعها وبطاقة فايبر.',
@@ -481,6 +481,20 @@ export const allFaqs = [
     },
   },
   {
+    // Owner decision 6 (1 Nov 2026 23:08): the ONE wording about the Fiper Card — the owner's sentence, nothing else
+    id: 'how-do-i-use-the-fiper-card', categoryId: 'payouts-fiper-card',
+    question: 'How do I use the Fiper Card?',
+    questions: { ar: 'كيف أستخدم بطاقة فايبر؟', fr: 'Comment utiliser la Fiper Card ?', es: '¿Cómo uso la Fiper Card?', pt: 'Como uso o Fiper Card?', tr: 'Fiper Card’ı nasıl kullanırım?' },
+    answer: 'The client issues the Fiper Card from inside Fiper, then transfers their balance to their account with Fiper, and uses the card normally.',
+    answers: {
+      ar: 'يُصدر العميل بطاقة فايبر من داخل فايبر، ثم يحوّل رصيده إلى حسابه في فايبر، ويستخدم بطاقته بشكل طبيعي.',
+      fr: 'Le client émet la Fiper Card depuis Fiper, transfère ensuite son solde vers son compte chez Fiper, puis utilise sa carte normalement.',
+      es: 'El cliente emite la Fiper Card desde dentro de Fiper, luego transfiere su saldo a su cuenta en Fiper y usa su tarjeta con normalidad.',
+      pt: 'O cliente emite o Fiper Card de dentro da Fiper, depois transfere o seu saldo para a sua conta na Fiper e usa o cartão normalmente.',
+      tr: 'Müşteri Fiper Card’ı Fiper içinden çıkarır, ardından bakiyesini Fiper’deki hesabına aktarır ve kartını normal şekilde kullanır.',
+    },
+  },
+  {
     id: 'what-leverage-do-you-offer', categoryId: 'trading-conditions',
     question: 'What leverage do you offer?',
     questions: { ar: 'ما الرافعة المالية التي تقدمونها؟', fr: 'Quel levier proposez-vous ?', es: '¿Qué apalancamiento ofrecen?', pt: 'Qual alavancagem vocês oferecem?', tr: 'Hangi kaldıraç sunuyorsunuz?' },
@@ -834,7 +848,6 @@ export const faqs = allFaqs.filter((f) => f.hidden !== true);
  */
 export const HELP_ALIASES = {
   'can-i-access-my-funds-faster': 'what-payout-methods-are-available',
-  'how-do-i-use-the-fiper-card': 'what-payout-methods-are-available',
 };
 export const resolveHelpId = (id) => (Object.prototype.hasOwnProperty.call(HELP_ALIASES, id) ? HELP_ALIASES[id] : id);
 

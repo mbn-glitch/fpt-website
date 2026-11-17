@@ -32,7 +32,7 @@ const dict = Object.fromEntries(['en', ...LANGS].map((l) => [l, Object.fromEntri
 for (const [k, en] of Object.entries(dict.en)) if (typeof en === 'string') rows.push({ where: `locales ${k}`, en, tr: Object.fromEntries(LANGS.map((l) => [l, dict[l][k]])) });
 const help = await import(path.join(ROOT, 'src', 'data', 'helpContent.js'));
 for (const c of help.categories) rows.push({ where: `help category ${c.id} description`, en: c.description, tr: c.descriptions || {} });
-for (const f of help.faqs) { rows.push({ where: `help ${f.id} question`, en: f.question, tr: f.questions || {} }); rows.push({ where: `help ${f.id} answer`, en: f.answer, tr: f.answers || {} }); }
+for (const f of help.allFaqs) { rows.push({ where: `help ${f.id} question`, en: f.question, tr: f.questions || {} }); rows.push({ where: `help ${f.id} answer`, en: f.answer, tr: f.answers || {} }); }
 
 const fails = []; const used = new Set(); let checked = 0; const measured = [];
 for (const r of rows) {

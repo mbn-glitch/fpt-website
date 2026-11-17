@@ -44,8 +44,8 @@ export const categories = [
   },
   {
     id: 'payouts-fiper-card', slug: 'payouts-fiper-card', icon: CreditCard,
-    title: 'Payouts & Fiper Card',
-    titles: { ar: 'الدفعات وبطاقة Fiper', fr: 'Paiements et Fiper Card', es: 'Pagos y Fiper Card', pt: 'Pagamentos e Fiper Card', tr: 'Ödemeler ve Fiper Card' },
+    title: 'Payouts',
+    titles: { ar: 'الدفعات', fr: 'Paiements', es: 'Pagos', pt: 'Pagamentos', tr: 'Ödemeler' },
     description: 'Rewards, how they are paid, and the Fiper Card.',
     descriptions: {
       ar: 'المكافآت وطرق دفعها وبطاقة فايبر.',
@@ -122,7 +122,12 @@ export const categories = [
   },
 ];
 
-export const faqs = [
+/**
+ * Every article of the file. `hidden: true` keeps an article's text here but out of the help centre: `faqs` below — the ONE list every page,
+ * count, search and anchor reads — drops it. CEO decision 387-[8](3), mirroring the client area (fpt-platform PR #120): the five trading-strategy
+ * articles are hidden until the forbidden-practices rule text is approved; their wording is not edited here. The check scripts read `allFaqs`.
+ */
+export const allFaqs = [
   {
     id: 'what-is-fpt', categoryId: 'getting-started',
     question: 'What is FPT?',
@@ -189,7 +194,7 @@ export const faqs = [
     },
   },
   {
-    id: 'what-trading-styles-work-best', categoryId: 'getting-started',
+    id: 'what-trading-styles-work-best', categoryId: 'getting-started', hidden: true,
     question: 'What trading styles work best with FPT?',
     questions: { ar: 'ما أساليب التداول الأنسب مع FPT؟', fr: 'Quels styles de trading fonctionnent le mieux ?', es: '¿Qué estilos de trading funcionan mejor?', pt: 'Quais estilos de trading funcionam melhor?', tr: 'Hangi trading stilleri en iyi çalışır?' },
     answer: 'FPT accommodates scalping, day trading, swing trading, and algorithmic execution via trading robots (cBots). High-frequency trading and arbitrage strategies are not permitted.',
@@ -476,33 +481,6 @@ export const faqs = [
     },
   },
   {
-    id: 'can-i-access-my-funds-faster', categoryId: 'payouts-fiper-card',
-    question: 'Can I access my funds faster?',
-    questions: { ar: 'هل يمكنني الوصول إلى أموالي بشكل أسرع؟', fr: 'Puis-je accéder à mes fonds plus rapidement ?', es: '¿Puedo acceder a mis fondos más rápido?', pt: 'Posso acessar meus fundos mais rápido?', tr: 'Fonlarıma daha hızlı erişebilir miyim?' },
-    answer: 'No. Rewards follow the 14-day cycle and are paid by crypto-currency or by internal transfer to your account with Fiper.',
-    answers: {
-      ar: 'لا. تتبع المكافآت دورة الـ14 يوماً وتُدفع بالعملات الرقمية أو بتحويل داخلي إلى حسابك لدى Fiper.',
-      fr: 'Non. Les récompenses suivent le cycle de 14 jours et sont payées en crypto-monnaie ou par transfert interne vers votre compte chez Fiper.',
-      es: 'No. Las recompensas siguen el ciclo de 14 días y se pagan en criptomoneda o por transferencia interna a tu cuenta en Fiper.',
-      pt: 'Não. As recompensas seguem o ciclo de 14 dias e são pagas em criptomoeda ou por transferência interna para a sua conta na Fiper.',
-      tr: 'Hayır. Ödüller 14 günlük döngüyü izler ve kripto para ile veya Fiper’deki hesabınıza dahili transferle ödenir.',
-    },
-  },
-  {
-    // Owner decision 6 (1 Nov 2026 23:08): the ONE wording about the Fiper Card — the owner's sentence, nothing else
-    id: 'how-do-i-use-the-fiper-card', categoryId: 'payouts-fiper-card',
-    question: 'How do I use the Fiper Card?',
-    questions: { ar: 'كيف أستخدم بطاقة فايبر؟', fr: 'Comment utiliser la Fiper Card ?', es: '¿Cómo uso la Fiper Card?', pt: 'Como uso o Fiper Card?', tr: 'Fiper Card’ı nasıl kullanırım?' },
-    answer: 'The client issues the Fiper Card from inside Fiper, then transfers their balance to their account with Fiper, and uses the card normally.',
-    answers: {
-      ar: 'يُصدر العميل بطاقة فايبر من داخل فايبر، ثم يحوّل رصيده إلى حسابه في فايبر، ويستخدم بطاقته بشكل طبيعي.',
-      fr: 'Le client émet la Fiper Card depuis Fiper, transfère ensuite son solde vers son compte chez Fiper, puis utilise sa carte normalement.',
-      es: 'El cliente emite la Fiper Card desde dentro de Fiper, luego transfiere su saldo a su cuenta en Fiper y usa su tarjeta con normalidad.',
-      pt: 'O cliente emite o Fiper Card de dentro da Fiper, depois transfere o seu saldo para a sua conta na Fiper e usa o cartão normalmente.',
-      tr: 'Müşteri Fiper Card’ı Fiper içinden çıkarır, ardından bakiyesini Fiper’deki hesabına aktarır ve kartını normal şekilde kullanır.',
-    },
-  },
-  {
     id: 'what-leverage-do-you-offer', categoryId: 'trading-conditions',
     question: 'What leverage do you offer?',
     questions: { ar: 'ما الرافعة المالية التي تقدمونها؟', fr: 'Quel levier proposez-vous ?', es: '¿Qué apalancamiento ofrecen?', pt: 'Qual alavancagem vocês oferecem?', tr: 'Hangi kaldıraç sunuyorsunuz?' },
@@ -544,7 +522,7 @@ export const faqs = [
   {
     // Office decision ق-103 (11 Nov 2026): on this cTrader-only site the general term is «cBots» — the local word for robots + «(cBots)» at the first mention on a page
     // (the question), then «cBots»; the MetaTrader term would belong only to a sentence saying MetaTrader advisors are not supported — none exists here.
-    id: 'can-i-use-cbots', categoryId: 'trading-conditions',
+    id: 'can-i-use-cbots', categoryId: 'trading-conditions', hidden: true,
     question: 'Can I use trading robots (cBots)?',
     questions: { ar: 'هل الروبوتات (cBots) مسموح بها؟', fr: 'Puis-je utiliser des robots de trading (cBots) ?', es: '¿Puedo usar robots de trading (cBots)?', pt: 'Posso usar robôs de trading (cBots)?', tr: 'İşlem robotları (cBots) kullanabilir miyim?' },
     answer: 'Yes. Automated trading via cBots is permitted under standard trading conditions.',
@@ -557,7 +535,7 @@ export const faqs = [
     },
   },
   {
-    id: 'is-high-frequency-trading-allowed', categoryId: 'trading-conditions',
+    id: 'is-high-frequency-trading-allowed', categoryId: 'trading-conditions', hidden: true,
     question: 'Is high-frequency trading allowed?',
     questions: { ar: 'هل التداول عالي التردد مسموح به؟', fr: 'Le trading haute fréquence est-il autorisé ?', es: '¿Está permitido el trading de alta frecuencia?', pt: 'O trading de alta frequência é permitido?', tr: 'Yüksek frekanslı trading izinli mi?' },
     answer: 'No. HFT strategies, arbitrage, tick scalping, and latency-based strategies are not permitted.',
@@ -570,7 +548,7 @@ export const faqs = [
     },
   },
   {
-    id: 'is-hedging-allowed', categoryId: 'trading-conditions',
+    id: 'is-hedging-allowed', categoryId: 'trading-conditions', hidden: true,
     question: 'Is hedging allowed?',
     questions: { ar: 'هل التحوط مسموح به؟', fr: 'La couverture est-elle autorisée ?', es: '¿Está permitido el hedging?', pt: 'O hedging é permitido?', tr: 'Hedging izinli mi?' },
     answer: 'Yes. Hedging within a single account is permitted. Hedging across multiple FPT accounts is not allowed.',
@@ -583,7 +561,7 @@ export const faqs = [
     },
   },
   {
-    id: 'is-martingale-or-grid-allowed', categoryId: 'trading-conditions',
+    id: 'is-martingale-or-grid-allowed', categoryId: 'trading-conditions', hidden: true,
     question: 'Is martingale or grid trading allowed?',
     questions: { ar: 'هل المارتينجيل أو التداول الشبكي مسموح به؟', fr: 'Le martingale ou grid trading est-il autorisé ?', es: '¿Está permitido el martingala o grid?', pt: 'Martingale ou grid são permitidos?', tr: 'Martingale veya grid izinli mi?' },
     answer: 'These strategies are permitted, but they must respect the maximum drawdown and daily loss limits.',
@@ -793,19 +771,6 @@ export const faqs = [
     },
   },
   {
-    id: 'in-which-jurisdiction-is-fpt-registered', categoryId: 'legal-general',
-    question: 'In which jurisdiction is FPT registered?',
-    questions: { ar: 'في أي ولاية قضائية يُسجَّل FPT؟', fr: 'Dans quelle juridiction FPT est-il enregistré ?', es: '¿En qué jurisdicción está registrado FPT?', pt: 'Em qual jurisdição FPT está registrado?', tr: 'FPT hangi yargı bölgesinde kayıtlıdır?' },
-    answer: 'FPT is operated by Fiper Global L.L.C-FZ — Company registration number 2422384 — registered in the Meydan Free Zone, Dubai, United Arab Emirates. The four legal documents are published in the client area.',
-    answers: {
-      ar: 'تشغّل FPT شركة فايبر غلوبال ذ.م.م – منطقة حرة (رقم السجل التجاري 2422384)، المسجلة في منطقة ميدان الحرة، دبي، الإمارات العربية المتحدة. والوثائق القانونية الأربع منشورة في منطقة العميل.',
-      fr: 'FPT est exploité par Fiper Global L.L.C-FZ — numéro d’enregistrement 2422384 — enregistrée dans la Meydan Free Zone, Dubaï, Émirats arabes unis. Les quatre documents juridiques sont publiés dans l’espace client.',
-      es: 'FPT es operado por Fiper Global L.L.C-FZ — número de registro 2422384 — registrada en la Meydan Free Zone, Dubái, Emiratos Árabes Unidos. Los cuatro documentos legales se publican en el área de cliente.',
-      pt: 'A FPT é operada pela Fiper Global L.L.C-FZ — número de registro 2422384 — registrada na Meydan Free Zone, Dubai, Emirados Árabes Unidos. Os quatro documentos legais são publicados na área do cliente.',
-      tr: 'FPT, Meydan Serbest Bölgesi, Dubai, Birleşik Arap Emirlikleri’nde kayıtlı Fiper Global L.L.C-FZ (şirket sicil numarası 2422384) tarafından işletilir. Dört yasal belge müşteri alanında yayımlanır.',
-    },
-  },
-  {
     id: 'how-is-my-personal-data-protected', categoryId: 'legal-general',
     question: 'How is my personal data protected?',
     questions: { ar: 'كيف تُحمى بياناتي الشخصية؟', fr: 'Comment mes données personnelles sont-elles protégées ?', es: '¿Cómo se protegen mis datos personales?', pt: 'Como meus dados pessoais são protegidos?', tr: 'Kişisel verilerim nasıl korunur?' },
@@ -858,6 +823,20 @@ export const faqs = [
     },
   },
 ];
+
+/** The help centre's articles — the hidden ones are neither listed, nor counted, nor searched, nor opened by their `#id`. */
+export const faqs = allFaqs.filter((f) => f.hidden !== true);
+
+/**
+ * Withdrawn articles whose old `#id` must not dead-end (same decision; the client area's `HELP_ALIASES`): withdrawn id → the article that answers
+ * the question now, in the same category page. The withdrawn jurisdiction article and the hidden ones have no alias: their old anchor opens the
+ * category page from the top.
+ */
+export const HELP_ALIASES = {
+  'can-i-access-my-funds-faster': 'what-payout-methods-are-available',
+  'how-do-i-use-the-fiper-card': 'what-payout-methods-are-available',
+};
+export const resolveHelpId = (id) => (Object.prototype.hasOwnProperty.call(HELP_ALIASES, id) ? HELP_ALIASES[id] : id);
 
 export const getCategoryBySlug = (slug) => categories.find((c) => c.slug === slug);
 export const getFaqsByCategory = (categoryId) => faqs.filter((f) => f.categoryId === categoryId);

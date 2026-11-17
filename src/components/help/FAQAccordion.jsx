@@ -4,6 +4,7 @@ import { ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { renderUnits } from '../../lib/money.jsx';
 import { RISK_LINE } from '../brand/RiskLine.jsx';
+import { resolveHelpId } from '../../data/helpContent.js';
 
 export default function FAQAccordion({ faqs }) {
   const [open, setOpen] = useState(null);
@@ -16,8 +17,11 @@ export default function FAQAccordion({ faqs }) {
   // (the `li[id]` carries the same scroll margin as a section).
   const { hash, key } = useLocation();
   useEffect(() => {
-    const id = hash ? decodeURIComponent(hash.slice(1)) : '';
-    if (id && faqs.some((f) => f.id === id)) setOpen(id);
+    const asked = hash ? decodeURIComponent(hash.slice(1)) : '';
+    const id = resolveHelpId(asked);   // a withdrawn article's old anchor opens the article that answers it now (HELP_ALIASES)
+    if (!id || !faqs.some((f) => f.id === id)) return;
+    setOpen(id);
+    if (id !== asked) document.getElementById(id)?.scrollIntoView({ block: 'start' });   // ScrollToTop looks for the asked id, which is gone
   }, [hash, key, faqs]);
 
   const getQuestion = (faq) => ((lang !== 'en' && faq.questions?.[lang]) ? faq.questions[lang] : faq.question);

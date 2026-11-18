@@ -341,7 +341,8 @@
     "channelsTitle": "Canaux de contact",
     "whatsapp": {
       "title": "Assistance WhatsApp",
-      "desc": "Parlez à l’équipe d’assistance, 24\u00a0h/24 et 7\u00a0j/7.",
+      "desc": "Parlez à l’équipe d’assistance",
+      "hours": "24\u00a0h/24, 7\u00a0j/7",
       "cta": "Démarrer la conversation"
     },
     "clientAreaNote": "Déjà client ? Les questions sur un compte sont traitées via les canaux d’assistance publiés dans l’espace client.",

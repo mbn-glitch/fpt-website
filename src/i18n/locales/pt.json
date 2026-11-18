@@ -341,7 +341,8 @@
     "channelsTitle": "Canais de contato",
     "whatsapp": {
       "title": "Suporte pelo WhatsApp",
-      "desc": "Fale com a equipe de suporte, 24\u00a0horas por dia, 7\u00a0dias por semana.",
+      "desc": "Fale com a equipe de suporte",
+      "hours": "24\u00a0horas por dia, 7\u00a0dias por semana",
       "cta": "Iniciar a conversa"
     },
     "clientAreaNote": "Já é cliente? Perguntas sobre uma conta são respondidas pelos canais de suporte publicados na área do cliente.",

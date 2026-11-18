@@ -341,7 +341,8 @@
     "channelsTitle": "Contact channels",
     "whatsapp": {
       "title": "WhatsApp support",
-      "desc": "Talk to the support team, 24\u00a0hours a day, 7\u00a0days a week.",
+      "desc": "Talk to the support team",
+      "hours": "24\u00a0hours, 7\u00a0days a week",
       "cta": "Start the conversation"
     },
     "clientAreaNote": "Already a client? Questions about an account are answered through the support channels published in the client area.",

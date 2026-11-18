@@ -36,6 +36,9 @@ export default function WhatsAppCard({ compact = false, className = '' }) {
             <WhatsAppMark size={20} />
             <span className="text-lg text-white fpt-num-text">{WHATSAPP_PHONE}</span>
           </div>
+          {/* The support line's hours (CEO 455-[3], office § C revised 18 Nov 2026): a small muted line under the number — the app's line under its support
+              card (`.vis-contact__d`: label step 13 px, --fpt-text-muted, line-height 1.5). Full card only: the compact side-column card has no number to sit under. */}
+          <div className="mt-1 text-[13px] leading-[1.5] text-fg-muted" data-whatsapp-hours="true">{t('contact.whatsapp.hours')}</div>
           <span className="mt-4 inline-flex items-center gap-1.5 min-h-11 text-base text-white/80 group-hover:text-white">
             {t('contact.whatsapp.cta')} <ArrowUpRight size={14} className="flip-rtl" aria-hidden="true" />
           </span>

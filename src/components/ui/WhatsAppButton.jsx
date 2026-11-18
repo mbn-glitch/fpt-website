@@ -4,8 +4,8 @@
  * (`WhatsAppCard.jsx`) in the contact section and the help centre. The green stays only inside the official mark file (third-party mark,
  * never recoloured).
  */
-export const WHATSAPP_URL = 'https://wa.me/971561111855';
-export const WHATSAPP_PHONE = '+971 56 111 1855';
+export const WHATSAPP_URL = 'https://wa.me/971545623724';
+export const WHATSAPP_PHONE = '+971 54 562 3724';
 export const WHATSAPP_MARK = '/images/third-party/whatsapp/whatsapp-mark.svg';
 
 export function WhatsAppMark({ size = 44, className = '' }) {

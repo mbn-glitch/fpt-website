@@ -5,6 +5,7 @@
   "help can-you-guarantee-profits answer es": "complete — WEBL-D22: the fixed risk line (the second English sentence) is not translated; the page renders it after the answer as its own lang=en line",
   "help can-you-guarantee-profits answer pt": "complete — WEBL-D22: the fixed risk line (the second English sentence) is not translated; the page renders it after the answer as its own lang=en line",
   "help can-you-guarantee-profits answer tr": "complete — WEBL-D22: the fixed risk line (the second English sentence) is not translated; the page renders it after the answer as its own lang=en line",
+  "help is-fpt-a-broker answer ar": "complete — CEO decision 432-[2]: the design office's accepted Arabic letters (WEBSITE-HELP-432/COPY.md, the app text of #120) join the English second and third sentences in one Arabic sentence with «،»",
   "help what-happens-if-i-dont-trade answer tr": "complete — the Turkish ordinal «23.» carries a dot that the sentence counter reads as a full stop",
   "locales web.path.step3Alt ar": "complete — the Arabic wording is simply shorter (0.54)",
   "locales web.trust.title ar": "complete — the Arabic headline of the office frame w2 is shorter (0.46)"

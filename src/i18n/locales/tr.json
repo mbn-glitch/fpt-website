@@ -342,6 +342,7 @@
     "whatsapp": {
       "title": "WhatsApp desteği",
       "desc": "Destek ekibiyle konuşun",
+      "hours": "Haftanın 7\u00a0günü 24\u00a0saat",
       "cta": "Sohbeti başlat"
     },
     "clientAreaNote": "Zaten müşteri misiniz? Hesapla ilgili sorular, müşteri alanında yayımlanan destek kanallarından yanıtlanır.",

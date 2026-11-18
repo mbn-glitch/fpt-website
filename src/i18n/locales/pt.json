@@ -342,6 +342,7 @@
     "whatsapp": {
       "title": "Suporte pelo WhatsApp",
       "desc": "Fale com a equipe de suporte",
+      "hours": "24\u00a0horas, 7\u00a0dias por semana",
       "cta": "Iniciar a conversa"
     },
     "clientAreaNote": "Já é cliente? Perguntas sobre uma conta são respondidas pelos canais de suporte publicados na área do cliente.",

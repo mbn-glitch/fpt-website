@@ -17,12 +17,29 @@ export const appLocale = (lang) => (lang === 'ar' ? 'ar' : 'en');
  *  and the cookie is host-only, so the ONLY way a referral survives the hop to `app.` is the query — FPT-DOMAIN-HANDOFF § 5). Same shape as the app's check. */
 export const REF_RE = /^[A-Za-z0-9-]{4,32}$/;
 
-/** An absolute URL into the client app: `appUrl('/signup', 'ar')` → https://app.fptraders.app/ar/signup, with `?ref=CODE` when a valid code is given. */
-export function appUrl(path = '/', lang = 'en', ref = '') {
-  const p = path === '/' ? '' : path.startsWith('/') ? path : `/${path}`;
-  const url = `${APP_ORIGIN}/${appLocale(lang)}${p}`;
-  return ref && REF_RE.test(ref) ? `${url}?ref=${encodeURIComponent(ref.toUpperCase())}` : url;
-}
-
 export const SIGNUP_PATH = '/signup';
 export const SIGNIN_PATH = '/signin';
+export const SHOP_PATH = '/shop';
+
+/** A catalogue product code as the platform writes it (`fpt-10k` … `fpt-200k` — src/data/platform-rules.json, `CATALOG_V1[].code`). */
+export const PRODUCT_CODE_RE = /^fpt-\d+k$/;
+
+/** An absolute URL into the client app: `appUrl('/signup', 'ar')` → https://app.fptraders.app/ar/signup, with `?ref=CODE` when a valid code is given
+ *  and any further `params` after it (`{ next: '/ar/shop?size=fpt-50k' }` → `&next=%2Far%2Fshop%3Fsize%3Dfpt-50k`; empty values are left out). */
+export function appUrl(path = '/', lang = 'en', ref = '', params = {}) {
+  const p = path === '/' ? '' : path.startsWith('/') ? path : `/${path}`;
+  const url = `${APP_ORIGIN}/${appLocale(lang)}${p}`;
+  const query = [];
+  if (ref && REF_RE.test(ref)) query.push(`ref=${encodeURIComponent(ref.toUpperCase())}`);
+  for (const [k, v] of Object.entries(params)) if (v) query.push(`${k}=${encodeURIComponent(v)}`);
+  return query.length ? `${url}?${query.join('&')}` : url;
+}
+
+/** AMIR-R1 F10 — sign-up for a CHOSEN size: the client's sign-up keeps `?next=` (a same-origin path, its `safeNext`) through the e-mail code, the
+ *  password step and the sign-in link, and its shop pre-selects `?size=<product code>` — so a size card opens
+ *  https://app.fptraders.app/<ar|en>/signup?next=%2F<ar|en>%2Fshop%3Fsize%3Dfpt-50k (`ref=CODE` first when the visit carried one; a signed-in
+ *  visitor is sent straight on to the shop). An unknown code gives the plain sign-up. Gate: scripts/check-app-links.mjs. */
+export function signupUrlForSize(code, lang = 'en', ref = '') {
+  const next = PRODUCT_CODE_RE.test(code || '') ? `/${appLocale(lang)}${SHOP_PATH}?size=${code}` : '';
+  return appUrl(SIGNUP_PATH, lang, ref, { next });
+}

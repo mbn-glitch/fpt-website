@@ -250,7 +250,6 @@
     "rulesEyebrow": "Evaluation rules",
     "rulesTitle": "Clear targets. Defined limits. No surprises.",
     "rulesSubtitle": "The full ruleset that governs every FPT evaluation and funded account.",
-    "rulesWarning": "Trading conditions, drawdown calculations, and leverage levels may vary depending on the instrument and market conditions. Always review your evaluation dashboard for the latest parameters.",
     "leverageEyebrow": "Leverage",
     "leverageTitle": "Instrument leverage breakdown.",
     "instrument": "Instrument",

@@ -27,6 +27,14 @@ export const SIMULATED_STATEMENT = {
   en: 'Every Account is simulated: prices come from real markets in real time, execution is simulated only, no money of the Client is deposited, held or traded, and no position on an Account exists in any real market.',
 };
 
+/** AMIR-R1 F21 — the Rules version of an Account is frozen for its whole life: Terms and Conditions § 18.2, verbatim (config/legal-texts/FPT-LEGAL-TERMS.md;
+ *  the same sentence in Terms 1.1 and 1.2, and § 6.1 says it of the Evaluation and the Funded Account). It replaces the /challenges warning «… may vary …
+ *  Always review your evaluation dashboard for the latest parameters», which contradicted it. Gate: scripts/check-rules-version.mjs. */
+export const RULES_VERSION_STATEMENT = {
+  ar: 'لا تسري التغييرات على القواعد إلا على الطلبات المقدمة بعد نشرها. ويحتفظ كل حساب، طوال مدته، بإصدار القواعد الساري وقت طلبه.',
+  en: 'Changes to the Rules apply only to Orders placed after their publication. Every Account keeps, for its whole life, the Rules version in force at the time of its Order.',
+};
+
 /** Decision 3 — the four published FPT documents (client area routes /[locale]/legal/[key] on APP_ORIGIN; Arabic and English exist, every other locale reads the English one). */
 const LEGAL_BASE = APP_ORIGIN;
 export const LEGAL_DOCS = [

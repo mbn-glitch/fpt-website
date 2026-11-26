@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { appUrl, SIGNUP_PATH, SIGNIN_PATH } from '../config/site.js';
+import { appUrl, signupUrlForSize, SIGNUP_PATH, SIGNIN_PATH } from '../config/site.js';
 import { readReferral } from '../lib/referral.js';
 
 /**
@@ -15,6 +15,8 @@ export default function useAppLinks() {
   useEffect(() => { setRef(readReferral()); }, []);
   return {
     signup: appUrl(SIGNUP_PATH, lang, ref),
+    /** sign-up that opens the app's shop on a chosen catalogue size afterwards (`fpt-10k` … — AMIR-R1 F10, src/config/site.js signupUrlForSize) */
+    signupForSize: (code) => signupUrlForSize(code, lang, ref),
     signin: appUrl(SIGNIN_PATH, lang, ref),
     home: appUrl('/', lang, ref),
   };

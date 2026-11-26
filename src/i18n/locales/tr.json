@@ -250,7 +250,6 @@
     "rulesEyebrow": "Değerlendirme kuralları",
     "rulesTitle": "Net hedefler. Tanımlanmış limitler. Sürpriz yok.",
     "rulesSubtitle": "Her FPT değerlendirmesini ve fonlu hesabı yöneten tam kural seti.",
-    "rulesWarning": "İşlem koşulları, zarar limiti hesaplamaları ve kaldıraç seviyeleri enstrümana ve piyasa koşullarına göre değişebilir. En güncel parametreler için değerlendirme panelinizi her zaman kontrol edin.",
     "leverageEyebrow": "Kaldıraç",
     "leverageTitle": "Enstrümana göre kaldıraç dağılımı.",
     "instrument": "Enstrüman",

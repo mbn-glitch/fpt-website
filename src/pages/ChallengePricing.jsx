@@ -207,7 +207,7 @@ export default function ChallengePricing() {
                 ))}
               </ul>
               <div className="mt-8">
-                <Button href={app.signup} external size="lg" className="w-full">
+                <Button href={app.signupForSize(CATALOG_V1[sizeIdx].code)} external size="lg" className="w-full">
                   {t('challengePricing.getStarted')}
                 </Button>
               </div>

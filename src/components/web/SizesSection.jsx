@@ -36,7 +36,7 @@ export default function SizesSection() {
                   <li>{rule('web.sizes.daily', p.sizeCents, RULES_V1.dailyLossBps)}</li>
                   <li>{rule('web.sizes.total', p.sizeCents, RULES_V1.maxLossBps)}</li>
                 </ul>
-                <a href={app.signup} target="_blank" rel="noopener noreferrer" className={`fpt-web-btn ${on ? 'gradient-red' : ''}`}>
+                <a href={app.signupForSize(p.code)} target="_blank" rel="noopener noreferrer" className={`fpt-web-btn ${on ? 'gradient-red' : ''}`}>
                   {t(on ? 'web.sizes.startSize' : 'web.sizes.start', { size: sizeLabel(p.sizeCents) })}
                 </a>
               </li>

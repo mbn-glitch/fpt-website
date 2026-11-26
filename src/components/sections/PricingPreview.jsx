@@ -60,7 +60,7 @@ export default function PricingPreview() {
           </ul>
 
           <div className="mt-8">
-            <Button href={app.signup} external size="lg" className="w-full">
+            <Button href={app.signupForSize(product.code)} external size="lg" className="w-full">
               {t('pricingPreview.cta')}
             </Button>
           </div>

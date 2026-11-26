@@ -5,11 +5,17 @@
  * the site's own routes answer 200; /api/webhooks/* answers 404 on purpose (providers are registered on app. — handoff § 3); with --apex also
  * www → apex 308 and the sitemap / robots / OG images on the apex.
  * UX-R2 (owner decisions 51 / 53, 4 Nov 2026): the app redirect is a POSITIVE list — every unknown or mistyped path (`/anything`, `/ar/anything`, `/fr/typo`,
- * `/xx/typo`, `/api/x`) answers 404 with the SITE's pre-rendered 404 page of the prefix language (<html lang>, <title>, h1, risk + entity line once).
+ * `/xx/typo`, `/api/x`) answers 404 with the SITE's pre-rendered 404 page of the prefix language (<html lang>, <title>, h1, risk line once + the footer line once —
+ * since the owner's decision 44, 26 Nov 2026, the owner's short regulatory line `SHORT_LINE` of src/data/legal.js, verbatim).
  *   node scripts/check-redirects-live.mjs --base https://fpt-website-rust.vercel.app
  *   node scripts/check-redirects-live.mjs --base https://fptraders.app --apex
  */
+import { readFileSync } from 'node:fs'; import path from 'node:path';
 const a = process.argv.slice(2); const opt = (n, d) => (a.includes(`--${n}`) ? a[a.indexOf(`--${n}`) + 1] : d);
+const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const legal = readFileSync(path.join(ROOT, 'src/data/legal.js'), 'utf8'); const sb = legal.slice(legal.indexOf('SHORT_LINE = {')); const SHORT = { en: sb.match(/^\s*en: '([^']*)'/m)[1], ar: sb.match(/^\s*ar: '([^']*)'/m)[1] };
+const unglue = (h) => h.replace(/<span class="whitespace-nowrap">([^<]*)<\/span>/g, '$1');
+const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
 const BASE = (opt('base', '') || '').replace(/\/$/, ''); const APEX = a.includes('--apex'); const APP = 'https://app.fptraders.app';
 if (!BASE) { console.error('usage: --base <url> [--apex]'); process.exit(2); }
 const Q = '?ref=TEST&next=%2Far%2Faccounts';
@@ -38,8 +44,9 @@ for (const p of SITE_200) { const r = await head(`${BASE}${p}`); check(`${p} →
 for (const p of SITE_404) { const r = await head(`${BASE}${p}`); check(`${p} → 404`, r.status === 404, `${r.status} ${r.location}`); }
 for (const [p, lang] of UNKNOWN_404) {
   const res = await fetch(`${BASE}${p}`, { redirect: 'manual' }); const h = await res.text();
-  const ok = res.status === 404 && new RegExp(`<html lang="${lang}" dir="${lang === 'ar' ? 'rtl' : 'ltr'}">`).test(h) && h.includes(`<title>${TITLE_404[lang]}`) && /<h1/.test(h) && (h.match(/data-risk-line/g) || []).length === 1 && (h.match(/data-entity-line/g) || []).length === 1;
-  check(`${p} → 404 with the ${lang} 404 page (lang/dir · title · h1 · risk + entity once)`, ok, `${res.status} ${(h.match(/<html lang="[^"]*"/) || [''])[0]} ${(h.match(/<title>[^<]*/) || ['no title'])[0]}`);
+  const ok = res.status === 404 && new RegExp(`<html lang="${lang}" dir="${lang === 'ar' ? 'rtl' : 'ltr'}">`).test(h) && h.includes(`<title>${TITLE_404[lang]}`) && /<h1/.test(h) && (h.match(/data-risk-line/g) || []).length === 1 && (h.match(/data-entity-line/g) || []).length === 1
+    && (unglue(h).includes(esc(SHORT[lang === 'ar' ? 'ar' : 'en'])) || unglue(h).includes(SHORT[lang === 'ar' ? 'ar' : 'en']));
+  check(`${p} → 404 with the ${lang} 404 page (lang/dir · title · h1 · risk + short line once)`, ok, `${res.status} ${(h.match(/<html lang="[^"]*"/) || [''])[0]} ${(h.match(/<title>[^<]*/) || ['no title'])[0]}`);
 }
 { const r = await head(`${BASE}/en/typo`); check('/en/typo → 308 /typo (then the English 404)', [301, 308].includes(r.status) && new URL(r.location, BASE).pathname === '/typo', `${r.status} ${r.location}`); }
 // Vercel answers its own (same-host) redirects with a RELATIVE Location — resolve it against BASE before comparing

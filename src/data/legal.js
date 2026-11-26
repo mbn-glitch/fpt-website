@@ -1,6 +1,6 @@
 /**
  * Legal facts of the public site — every value is copied from the platform's single source of truth (read-only):
- *   fpt-platform/config/legal.ts (LEGAL.entity, LEGAL.documents), fpt-platform/config/legal-texts/FPT-LEGAL-RISK.md § 2.1.
+ *   fpt-platform/config/legal.ts (LEGAL.entity, LEGAL.documents) and the owner's regulatory text fpt-platform/legal/REGULATORY-TEXT-20261126.md.
  * The site never paraphrases a legal text; what is not published in the platform is not shown here.
  * UX-AUDIT-7 R1 — owner decisions 1–3 (1 Nov 2026); FPT-WEBSITE-DOMAIN — decisions 18 / 3-ب / 33-أ (4 Nov 2026): origins in src/config/site.js.
  */
@@ -21,11 +21,18 @@ export const ENTITY_LINE = {
 const DASH_GLUE = /(\S+ [—–])(?= )/;
 export const entityLineNodes = (l) => ENTITY_LINE[l].split(DASH_GLUE).map((part, i) => (i % 2 ? createElement('span', { key: i, className: 'whitespace-nowrap' }, part) : part));
 
-/** Decision 2 — the simulated-accounts statement under the fixed risk line: Risk Disclosure Statement v1.0 § 2.1, verbatim (config/legal-texts/FPT-LEGAL-RISK.md). */
-export const SIMULATED_STATEMENT = {
-  ar: 'كل حساب هو حساب محاكاة: تُستمد الأسعار من الأسواق الحقيقية في الوقت الفعلي، أما التنفيذ فيجري بالمحاكاة فقط، ولا يودَع أي مال للعميل ولا يُحتفظ به ولا يُتداول به، ولا يوجد أي مركز مفتوح على الحساب في أي سوق حقيقية.',
-  en: 'Every Account is simulated: prices come from real markets in real time, execution is simulated only, no money of the Client is deposited, held or traded, and no position on an Account exists in any real market.',
+/** The owner's SHORT regulatory line (owner's decision 26 Nov 2026 — fpt-platform `legal/REGULATORY-TEXT-20261126.md`, sha256 99f324e0…, «السطر القصير» /
+ *  «Short line»; = `LEGAL.entity.shortLine` of fpt-platform/config/legal.ts), VERBATIM — never paraphrased, never split. Decision 44 «نعم» (26 Nov 2026,
+ *  ~08:35 Doha): it replaces the entity line in the footer of every page (Arabic and English; every other locale reads the English line). Its last sentence
+ *  is risk wording of the owner's text: the site risk-line gate exempts EXACTLY this sentence, by name; the fixed risk line stays its own element.
+ *  Gate: scripts/check-entity-line.mjs (pinned sha256, and = the platform's `shortLine` when that checkout carries it). */
+export const SHORT_LINE = {
+  en: 'Fiper Pro Traders is the trader-funding programme of the Fiper Global group, a regulated brokerage. The evaluation phase is a simulated service provided by Fiper Global L.L.C-FZ (reg. no. 2422384, Dubai). The funded account is a real account at Fiper Global MAU, licensed by the Financial Services Commission of Mauritius (licence GB23201759), to which the contractual relationship transfers on receipt. Trading carries a high level of risk.',
+  ar: 'فايبر برو تريدرز برنامج تمويل المتداولين من مجموعة فايبر غلوبال، الوسيط المالي المنظّم. مرحلة التقييم خدمة محاكاة تقدّمها فايبر غلوبال ذ.م.م – منطقة حرة (قيد 2422384، دبي). الحساب الممول حساب حقيقي لدى فايبر غلوبال موريشيوس المرخّصة من هيئة الخدمات المالية في موريشيوس (رخصة GB23201759)، وتنتقل إليها العلاقة التعاقدية باستلامه. التداول ينطوي على مخاطر عالية.',
 };
+
+/** WEBL-D16 for the short line: a dash inside it («ذ.م.م – منطقة حرة») never starts a line — the word before it and the dash in one unbreakable span. */
+export const shortLineNodes = (l) => SHORT_LINE[l].split(DASH_GLUE).map((part, i) => (i % 2 ? createElement('span', { key: i, className: 'whitespace-nowrap' }, part) : part));
 
 /** Decision 3 — the four published FPT documents (client area routes /[locale]/legal/[key] on APP_ORIGIN; Arabic and English exist, every other locale reads the English one). */
 const LEGAL_BASE = APP_ORIGIN;

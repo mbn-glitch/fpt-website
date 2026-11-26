@@ -32,7 +32,15 @@ else pass.push('Footer.jsx renders <RiskLine> (every route)');
 const app = readFileSync(path.join(ROOT, 'src/App.jsx'), 'utf8');
 if (!/<Footer\s*\/>/.test(app)) failures.push('App.jsx does not render <Footer /> for every route');
 
-// 2. no other risk wording anywhere in the sources (any other sentence fails — RISK-WORDING)
+// 2. no other risk wording anywhere in the sources (any other sentence fails — RISK-WORDING).
+// EXEMPT, by name and exact bytes only: the owner's SHORT regulatory line (owner's decision 44, 26 Nov 2026 — `SHORT_LINE` in src/data/legal.js, verbatim from
+// fpt-platform legal/REGULATORY-TEXT-20261126.md; its own last sentence «التداول ينطوي على مخاطر عالية.» / "Trading carries a high level of risk." is the
+// owner's text). The whole sentence is cut out of a line before the patterns run — a shortened, edited or second copy of the wording is still refused.
+const legalSrc = readFileSync(path.join(ROOT, 'src/data/legal.js'), 'utf8');
+const sb = legalSrc.slice(legalSrc.indexOf('SHORT_LINE = {'));
+const EXEMPT = ['en', 'ar'].map((l) => (sb.match(new RegExp(`^\\s*${l}: '([^']*)'`, 'm')) || [])[1]).filter(Boolean);
+if (EXEMPT.length !== 2) failures.push('src/data/legal.js: SHORT_LINE en/ar not found (the one exempt sentence)');
+else pass.push('RISK-WORDING exemption: the owner\'s short line (SHORT_LINE en/ar, decision 44) — exactly that sentence, nothing else');
 const OTHER = [
   /involves (substantial|significant|a high level of|considerable) risk/i,
   /risk of (losing|loss)/i,
@@ -54,7 +62,8 @@ for (const f of [...walk(path.join(ROOT, 'src')), path.join(ROOT, 'index.html')]
   const rel = path.relative(ROOT, f);
   if (rel.endsWith('scripts/check-risk-line.mjs')) continue;
   readFileSync(f, 'utf8').split('\n').forEach((ln, i) => {
-    for (const re of OTHER) if (re.test(ln)) failures.push(`RISK-WORDING ${rel}:${i + 1}: ${ln.trim().slice(0, 100)}`);
+    const rest = EXEMPT.reduce((s, x) => s.split(x).join(''), ln);
+    for (const re of OTHER) if (re.test(rest)) failures.push(`RISK-WORDING ${rel}:${i + 1}: ${ln.trim().slice(0, 100)}`);
   });
 }
 for (const p of pass) console.log(`PASS ${p}`);

@@ -8,8 +8,9 @@
  *     b) WEBL-D30 — no value starts with «·» (the fee note «· frais uniques» fell under the price and its line began with the separator; the note is its own
  *        line now and carries no separator).
  *   --dist (in `npm run check:dist`, after a build):
- *     c) WEBL-D16 — on every pre-rendered page the entity line (`data-entity-line`) holds each of its dashes inside an unbreakable span together with the word
- *        before it (`entityLineNodes`, src/data/legal.js) — the dash cannot start a line — and its TEXT is still the verbatim line of src/data/legal.js.
+ *     c) WEBL-D16 — on every pre-rendered page the footer line (`data-entity-line` — since the owner's decision 44, 26 Nov 2026, the owner's SHORT regulatory
+ *        line `SHORT_LINE`) holds each of its dashes inside an unbreakable span together with the word before it (`shortLineNodes`, src/data/legal.js) — the
+ *        dash cannot start a line — and its TEXT is still the verbatim line of src/data/legal.js.
  * The gate proves itself on its own samples at every run.
  *   node scripts/check-line-edges.mjs [--dist] → PASS / FAIL (exit 1)
  */
@@ -56,7 +57,7 @@ const decode = (s) => s.replace(/&nbsp;/g, NBSP).replace(/&amp;/g, '&').replace(
 /** problems of one rendered entity paragraph (inner HTML) against the verbatim line */
 const entityProblems = (inner, line) => {
   const out = [];
-  if (decode(inner.replace(GLUE, '$1').replace(/<!--.*?-->/g, '')) !== line) out.push('its text is not the verbatim entity line');
+  if (decode(inner.replace(GLUE, '$1').replace(/<!--.*?-->/g, '')) !== line) out.push('its text is not the verbatim footer line');
   const dashes = (line.match(/ [—–] /g) || []).length;
   const glued = [...inner.matchAll(GLUE)].filter((m) => /^\S+ [—–]$/.test(decode(m[1]))).length;
   if (glued !== dashes) out.push(`${glued} of ${dashes} dashes are held to the word before them (a dash can start a line)`);
@@ -77,7 +78,7 @@ let pages = 0;
 if (DIST) {
   const dist = path.join(ROOT, 'dist');
   if (!existsSync(dist)) { console.error('check-line-edges: dist/ missing — run the build first'); process.exit(1); }
-  const legal = readFileSync(path.join(ROOT, 'src/data/legal.js'), 'utf8'); const eb = legal.slice(legal.indexOf('ENTITY_LINE = {'));
+  const legal = readFileSync(path.join(ROOT, 'src/data/legal.js'), 'utf8'); const eb = legal.slice(legal.indexOf('SHORT_LINE = {')); // decision 44: the footer's line
   const ENTITY = { en: eb.match(/^\s*en: '([^']*)'/m)[1], ar: eb.match(/^\s*ar: '([^']*)'/m)[1] };
   const walk = (d, out = []) => { for (const e of readdirSync(d)) { const p = path.join(d, e); if (statSync(p).isDirectory()) walk(p, out); else if (e.endsWith('.html')) out.push(p); } return out; };
   for (const f of walk(dist)) {
@@ -92,4 +93,4 @@ if (DIST) {
   if (!pages) failures.push('no pre-rendered page with an entity line was found in dist/');
 }
 if (failures.length) { console.error(`check-line-edges: FAIL (${failures.length})`); for (const x of failures.slice(0, 60)) console.error(`  ${x}`); process.exit(1); }
-console.log(`check-line-edges: PASS (ق-115 — ${values} locale values with «·»: glued with U+00A0 on both sides, none starts with it${DIST ? `; ${pages} rendered pages: every dash of the entity line held to the word before it, text verbatim` : ''})`);
+console.log(`check-line-edges: PASS (ق-115 — ${values} locale values with «·»: glued with U+00A0 on both sides, none starts with it${DIST ? `; ${pages} rendered pages: every dash of the footer's short line held to the word before it, text verbatim` : ''})`);

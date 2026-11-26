@@ -40,9 +40,10 @@ for (const p of SITE_200) { const r = resolve(routes, DIST, p); check(`${p} → 
 for (const [p, want] of SITE_REDIRECTS) { const r = resolve(routes, DIST, p); check(`${p} → 308 ${want}`, r.status === 308 && r.location === want, `${r.status} ${r.location ?? ''}`); }
 { const r = resolve(routes, DIST, '/assets/x.js'); check('/assets/* carries the immutable cache header', /immutable/.test(r.headers['Cache-Control'] || ''), JSON.stringify(r.headers)); }
 // decision 53 — the six 404 pages are complete
-const legal = readFileSync(path.join(ROOT, 'src/data/legal.js'), 'utf8'); const eb = legal.slice(legal.indexOf('ENTITY_LINE = {')); const ENTITY = { en: eb.match(/^\s*en: '([^']*)'/m)[1], ar: eb.match(/^\s*ar: '([^']*)'/m)[1] };
+// decision 44 (26 Nov 2026): the footer's ONE data-entity-line paragraph carries the owner's SHORT regulatory line (SHORT_LINE), verbatim; the simulated-accounts sentence is gone
+const legal = readFileSync(path.join(ROOT, 'src/data/legal.js'), 'utf8'); const eb = legal.slice(legal.indexOf('SHORT_LINE = {')); const SHORT = { en: eb.match(/^\s*en: '([^']*)'/m)[1], ar: eb.match(/^\s*ar: '([^']*)'/m)[1] };
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
-// WEBL-D16 (R3): the entity line is rendered with the word before each dash and the dash in one unbreakable span — its TEXT must still be the verbatim line
+// WEBL-D16 (R3): the footer line is rendered with the word before each dash and the dash in one unbreakable span — its TEXT must still be the verbatim line
 const unglue = (h) => h.replace(/<span class="whitespace-nowrap">([^<]*)<\/span>/g, '$1');
 for (const lang of LANGS) {
   const html = readFileSync(file404(lang), 'utf8'); const el = lang === 'ar' ? 'ar' : 'en'; const probs = [];
@@ -50,10 +51,11 @@ for (const lang of LANGS) {
   if (!new RegExp(`<html lang="${lang}" dir="${lang === 'ar' ? 'rtl' : 'ltr'}">`).test(html)) probs.push('html lang/dir');
   if ((html.match(/<h1/g) || []).length !== 1) probs.push('h1≠1');
   if ((html.match(/data-risk-line/g) || []).length !== 1 || !html.includes(el === 'ar' ? 'الاستثمار ينطوي على مخاطر' : 'Investing involves risk')) probs.push('risk line≠1');
-  if ((html.match(/data-entity-line/g) || []).length !== 1 || !(unglue(html).includes(esc(ENTITY[el])) || unglue(html).includes(ENTITY[el]))) probs.push('entity line≠1');
+  if ((html.match(/data-entity-line/g) || []).length !== 1 || !(unglue(html).includes(esc(SHORT[el])) || unglue(html).includes(SHORT[el]))) probs.push('short line≠1');
+  if (/data-simulated-statement|Every Account is simulated|كل حساب هو حساب محاكاة/.test(html)) probs.push('the removed simulated-accounts sentence');
   if (!/name="robots" content="noindex"/.test(html)) probs.push('noindex');
   if (/data-prerendered="route"/.test(html) === false) probs.push('not pre-rendered');
-  check(`404 page ${lang}: title · lang/dir · h1 · risk · entity once · noindex`, probs.length === 0, probs.join(', '));
+  check(`404 page ${lang}: title · lang/dir · h1 · risk · short line once · no simulated sentence · noindex`, probs.length === 0, probs.join(', '));
 }
 console.log(rows.filter((r) => r.startsWith('FAIL')).join('\n'));
 console.log(`check-routes: ${fail ? 'FAIL' : 'PASS'} — ${pass} pass / ${fail} fail (${APP_PATHS.length} app paths × 2 → 308 app. · ${UNKNOWN_404.length} unknown paths → the site's 404 of the prefix language · six 404 pages complete)`);

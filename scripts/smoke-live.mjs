@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
  * Live smoke of a deployed build (FPT-WEBSITE-DOMAIN, 4 Nov 2026 — supersedes the R3 bash): the 90 pre-rendered pages answer 200 with one <title>,
- * one canonical on SITE_ORIGIN, the English lockup, the fixed risk line, the VERBATIM entity line, the simulated-accounts sentence, the support
+ * one canonical on SITE_ORIGIN, the English lockup, the fixed risk line, the owner's VERBATIM short regulatory line in the footer (decision 44, 26 Nov 2026 —
+ * the About page also keeps the verbatim entity line), NO simulated-accounts sentence (removed by decision 44), the support
  * mailbox and the app links on app.fptraders.app in the page's app locale; brand assets and font pieces are byte copies (sha256); the worker, the offline
  * page and the sitemap are served; no retired host anywhere in the HTML.
  *   node scripts/smoke-live.mjs --base https://fptraders.app
@@ -12,6 +13,8 @@ const BASE = (opt('base', '') || '').replace(/\/$/, ''); if (!BASE) { console.er
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const cfg = readFileSync(path.join(ROOT, 'src/config/site.js'), 'utf8'); const SITE = cfg.match(/SITE_ORIGIN = '([^']+)'/)[1]; const APP = cfg.match(/APP_ORIGIN = '([^']+)'/)[1]; const MAIL = cfg.match(/SUPPORT_EMAIL = '([^']+)'/)[1];
 const legal = readFileSync(path.join(ROOT, 'src/data/legal.js'), 'utf8'); const eb = legal.slice(legal.indexOf('ENTITY_LINE = {')); const ENTITY = { en: eb.match(/^\s*en: '([^']*)'/m)[1], ar: eb.match(/^\s*ar: '([^']*)'/m)[1] };
+const sb = legal.slice(legal.indexOf('SHORT_LINE = {')); const SHORT = { en: sb.match(/^\s*en: '([^']*)'/m)[1], ar: sb.match(/^\s*ar: '([^']*)'/m)[1] };
+const SIMULATED = /data-simulated-statement|Every Account is simulated|كل حساب هو حساب محاكاة/;
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
 // WEBL-D16 (R3): the entity line is rendered with the word before each dash and the dash in one unbreakable span — its TEXT must still be the verbatim line
 const unglue = (h) => h.replace(/<span class="whitespace-nowrap">([^<]*)<\/span>/g, '$1');
@@ -30,8 +33,9 @@ for (const l of LANGS) for (const r of ROUTES) {
   if ((h.match(/fpt-lockup-horizontal-en-white\.svg/g) || []).length < 2) probs.push('lockup');
   if (/lockup-horizontal-ar/.test(h)) probs.push('arabic lockup');
   if (!h.includes(l === 'ar' ? 'الاستثمار ينطوي على مخاطر' : 'Investing involves risk')) probs.push('risk line');
-  if (!unglue(h).includes(esc(ENTITY[el])) && !unglue(h).includes(ENTITY[el])) probs.push('entity line verbatim');
-  if (!/data-simulated-statement/.test(h)) probs.push('simulated statement');
+  if ((h.match(/data-entity-line/g) || []).length !== 1 || (!unglue(h).includes(esc(SHORT[el])) && !unglue(h).includes(SHORT[el]))) probs.push('short line verbatim once');
+  if (r === '/about' && !unglue(h).includes(esc(ENTITY[el])) && !unglue(h).includes(ENTITY[el])) probs.push('entity line verbatim (About)');
+  if (SIMULATED.test(h)) probs.push('the removed simulated-accounts sentence');
   if (!h.includes(`mailto:${MAIL}`) || !h.includes(`>${MAIL}<`)) probs.push('support e-mail');
   if (!h.includes(`href="${APP}/${el}/signup"`) || !h.includes(`href="${APP}/${el}/signin"`)) probs.push(`app links /${el}/`);
   if (!h.includes(`href="${APP}/${el}/legal/terms"`)) probs.push('legal link');
@@ -49,7 +53,8 @@ for (const l of LANGS) {
   if (!new RegExp(`<html lang="${l}" dir="${l === 'ar' ? 'rtl' : 'ltr'}">`).test(h)) probs.push('html lang/dir');
   if ((h.match(/<h1/g) || []).length !== 1) probs.push('h1≠1');
   if ((h.match(/data-risk-line/g) || []).length !== 1 || !h.includes(l === 'ar' ? 'الاستثمار ينطوي على مخاطر' : 'Investing involves risk')) probs.push('risk line≠1');
-  if ((h.match(/data-entity-line/g) || []).length !== 1 || !(unglue(h).includes(esc(ENTITY[el])) || unglue(h).includes(ENTITY[el]))) probs.push('entity line≠1');
+  if ((h.match(/data-entity-line/g) || []).length !== 1 || !(unglue(h).includes(esc(SHORT[el])) || unglue(h).includes(SHORT[el]))) probs.push('short line≠1');
+  if (SIMULATED.test(h)) probs.push('the removed simulated-accounts sentence');
   if (!/name="robots" content="noindex"/.test(h)) probs.push('noindex');
   if (/rel="canonical"/.test(h)) probs.push('canonical on a 404');
   check(`${p} (404 page ${l})`, probs.length === 0, probs.join(', '));

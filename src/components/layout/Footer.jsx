@@ -3,16 +3,17 @@ import { useTranslation } from 'react-i18next';
 import Logo from '../brand/Logo.jsx';
 import RiskLine from '../brand/RiskLine.jsx';
 import { localizedPath } from '../../hooks/useLocalizedPath.js';
-import { entityLineNodes, SIMULATED_STATEMENT, LEGAL_DOCS, legalUrl, localeLegal } from '../../data/legal.js';
+import { shortLineNodes, LEGAL_DOCS, legalUrl, localeLegal } from '../../data/legal.js';
 import { SUPPORT_EMAIL, SUPPORT_MAILTO } from '../../config/site.js';
 
 /**
  * Foot (WEB-VIS-1, design office frame w2, 7 Nov 2026 — kit .foot2): four columns 1.4fr / 1fr / 1fr / 1fr at 13 px / 1.8 in the muted colour — the 26 px lockup,
  * the tagline and the support mailbox (owner decision 18 — `help@fptraders.app`, platform setting `support.email`, as text); «Product» (how it works · sizes and
  * fees · rules · certificates), «Help» (FAQ · help centre · contact); «About» and the partner programme sit under the tagline in the first column, «Legal» (the four FPT documents published in the client area —
- * owner decision 3); then the 12 px legal block: the rights line, the ONE entity line VERBATIM from config/legal.ts (decision 3-ب), the fixed risk line
- * «الاستثمار ينطوي على مخاطر» / "Investing involves risk" (fiper-brand v2.3.4 Q4 / R12 — the kit's paraphrase «التداول ينطوي على مخاطر» is not the decided wording)
- * and the simulated-accounts sentence from the Risk Disclosure Statement § 2.1 (decision 2) — four elements flowing as ONE 12 px paragraph (the kit's legal block). The relationship line lives ONCE per page under the header lockup
+ * owner decision 3); then the 12 px legal block: the rights line, the owner's SHORT regulatory line VERBATIM (owner's decision 44, 26 Nov 2026 — it replaced the
+ * entity line of decision 3-ب here; the About page keeps the entity line), the fixed risk line «الاستثمار ينطوي على مخاطر» / "Investing involves risk"
+ * (fiper-brand v2.3.4 Q4 / R12 — the kit's paraphrase «التداول ينطوي على مخاطر» is not the decided wording) — three elements flowing as ONE 12 px paragraph
+ * (the kit's legal block). The simulated-accounts sentence of decision 2 (Risk Disclosure § 2.1) is REMOVED by the owner's decision 44. The relationship line lives ONCE per page under the header lockup
  * (decisions 38-ب / 65) — the kit's «Fiper Pro Traders · Part of Fiper Global» foot line is therefore the tagline here. No floating WhatsApp button (decision 40-أ).
  */
 export default function Footer() {
@@ -64,11 +65,12 @@ export default function Footer() {
 
           <div className="fpt-web-foot-legal">
             <p>{t('footer.copyright')}</p>
-            {/* Owner decision 1 (1 Nov 2026) + 3-ب (4 Nov 2026): the ONE entity line VERBATIM from config/legal.ts, in the page language (English for every non-Arabic locale), after the rights line; WEBL-D16: a dash inside it never starts a line (entityLineNodes) */}
-            <p lang={l} dir={l === 'ar' ? 'rtl' : 'ltr'} data-entity-line="true">{entityLineNodes(l)}</p>
-            {/* The fixed risk line (fiper-brand v2.3.4 Q4 / R12) — then the simulated-accounts sentence (Risk Disclosure Statement v1.0 § 2.1, verbatim) */}
+            {/* Owner's decision 44 (26 Nov 2026): the owner's short regulatory line VERBATIM (src/data/legal.js SHORT_LINE) in place of the entity line, in the page
+                language (English for every non-Arabic locale), after the rights line — still the footer's ONE `data-entity-line` paragraph the gates count; WEBL-D16:
+                a dash inside it never starts a line (shortLineNodes) */}
+            <p lang={l} dir={l === 'ar' ? 'rtl' : 'ltr'} data-entity-line="true" data-short-line="true">{shortLineNodes(l)}</p>
+            {/* The fixed risk line (fiper-brand v2.3.4 Q4 / R12); the simulated-accounts sentence that followed it is removed (decision 44) */}
             <RiskLine lang={lang} className="text-xs" />
-            <p lang={l} dir={l === 'ar' ? 'rtl' : 'ltr'} data-simulated-statement="true">{SIMULATED_STATEMENT[l]}</p>
           </div>
         </div>
       </div>

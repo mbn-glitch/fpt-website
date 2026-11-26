@@ -8,6 +8,7 @@ import { ACCOUNT_SIZES, CURRENCIES, BASE_RULES, calcFee, formatCurrency, formatS
 import { renderUnits, Unit } from '../lib/money.jsx';
 import useAppLinks from '../hooks/useAppLinks.js';
 import { RULES_V1, CATALOG_V1, pct, usd } from '../data/rules.js';
+import { RULES_VERSION_STATEMENT, localeLegal } from '../data/legal.js';
 
 /**
  * Evaluations — the one route for pricing (UXFW-028): hero (headline, one action to the sizes), the one-phase sequence, the selector
@@ -16,7 +17,8 @@ import { RULES_V1, CATALOG_V1, pct, usd } from '../data/rules.js';
  * the full rule set verbatim from RULES_V1, the leverage table. No «5× payouts», no invented min/max, no gold, no gradient (UXFW-038 / 017 / 012).
  */
 export default function ChallengePricing() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const legalLang = localeLegal(i18n.language);
   const app = useAppLinks();
   const [sizeIdx, setSizeIdx] = useState(2);
   const [currency, setCurrency] = useState('USD');
@@ -228,8 +230,9 @@ export default function ChallengePricing() {
           ))}
         </ul>
         <div className="mt-8 flex items-start gap-4 rounded-2xl border border-subtle bg-bg p-5 max-w-4xl">
-          <AlertTriangle size={20} className="text-warning shrink-0 mt-0.5" aria-hidden="true" />
-          <p className="text-base text-secondary leading-relaxed">{t('challengePricing.rulesWarning')}</p>
+          {/* AMIR-R1 F21: Terms § 18.2 verbatim (the Rules version is frozen for the Account's life) — Arabic / English as published, the English text on every other locale */}
+          <Info size={20} className="text-fg-muted shrink-0 mt-0.5" aria-hidden="true" />
+          <p lang={legalLang} dir={legalLang === 'ar' ? 'rtl' : 'ltr'} data-rules-version-statement="true" className="text-base text-secondary leading-relaxed">{RULES_VERSION_STATEMENT[legalLang]}</p>
         </div>
       </Section>
 
